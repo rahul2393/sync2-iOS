@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k6F-zy-akg">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -20,7 +21,7 @@
         <!--Permission Page Controller-->
         <scene sceneID="b3W-mL-Ogb">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="UQK-ts-qSm" customClass="PermissionPageController" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="UQK-ts-qSm" customClass="PermissionPageController" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyH-0y-7H9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="234" y="-549"/>
@@ -34,90 +35,119 @@
                         <viewControllerLayoutGuide type="bottom" id="02O-sH-nqf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UYn-n4-Itr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-background" translatesAutoresizingMaskIntoConstraints="NO" id="X7j-Yd-Ei4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sixgill-logo" translatesAutoresizingMaskIntoConstraints="NO" id="hSm-yW-laG">
-                                <rect key="frame" x="98" y="75" width="179" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgG-mg-Rlv">
-                                <rect key="frame" x="36" y="235" width="303" height="92"/>
+                                <rect key="frame" x="29" y="243" width="318" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="67"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sixgill Sync is the companion app to the Sixgill Sense developer platform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-8P-uEW">
-                                <rect key="frame" x="58" y="324" width="259" height="92"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l4b-n8-FB0">
+                                <rect key="frame" x="49" y="569" width="281" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sync 2.0 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyf-Gv-zlj">
-                                <rect key="frame" x="36" y="114" width="303" height="92"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="53"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jR5-i1-2Nk">
+                                        <rect key="frame" x="0.0" y="0.0" width="281" height="56"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="27"/>
+                                        <state key="normal" title="Create a new account">
+                                            <color key="titleColor" red="1" green="0.99688567819999996" blue="0.99838621989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97953930975459857" green="0.98841430809553732" blue="1" alpha="0.13143705985915494" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxw-Be-KG2">
+                                <rect key="frame" x="0.0" y="28" width="414" height="174.33333333333334"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sixgill-logo" translatesAutoresizingMaskIntoConstraints="NO" id="hSm-yW-laG">
+                                        <rect key="frame" x="118" y="31.666666666666668" width="179" height="51.666666666666657"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hSm-yW-laG" secondAttribute="height" multiplier="179:52" id="gRt-kQ-qfV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync 2.0 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="27" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nyf-Gv-zlj">
+                                        <rect key="frame" x="104.66666666666669" y="84.333333333333343" width="206.66666666666663" height="64.000000000000028"/>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="53"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.99709130569280091" blue="0.99233382887299437" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Nyf-Gv-zlj" firstAttribute="top" secondItem="hSm-yW-laG" secondAttribute="bottom" constant="1" id="6l0-tt-cPj"/>
+                                    <constraint firstItem="Nyf-Gv-zlj" firstAttribute="centerX" secondItem="hSm-yW-laG" secondAttribute="centerX" id="8Xh-dY-Oih"/>
+                                    <constraint firstItem="Nyf-Gv-zlj" firstAttribute="width" secondItem="hSm-yW-laG" secondAttribute="height" multiplier="103:26" id="Lye-Cf-thH"/>
+                                    <constraint firstAttribute="width" secondItem="bxw-Be-KG2" secondAttribute="height" multiplier="375:158" id="Q3Q-AV-1OL"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nyf-Gv-zlj" secondAttribute="bottom" constant="26.666666666666657" id="WLw-bB-lph"/>
+                                    <constraint firstItem="hSm-yW-laG" firstAttribute="centerX" secondItem="bxw-Be-KG2" secondAttribute="centerX" id="d9H-jq-xK6"/>
+                                    <constraint firstItem="hSm-yW-laG" firstAttribute="width" secondItem="bxw-Be-KG2" secondAttribute="height" multiplier="179:174" id="xee-Pr-tY7"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pcL-2I-1Sb">
-                                <rect key="frame" x="47" y="479" width="281" height="56"/>
+                                <rect key="frame" x="49" y="495" width="281" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fae-Xh-e7e">
-                                        <rect key="frame" x="8" y="13" width="265" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="281" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="27"/>
                                         <state key="normal" title="I have a Sense account">
                                             <color key="titleColor" red="1" green="0.99688567820342566" blue="0.99838621988285803" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <segue destination="xrE-Ce-l9n" kind="showDetail" identifier="goToLocation" action="showViewController:sender:" id="6eh-lK-VHz"/>
+                                            <action selector="haveAccountTapped:" destination="pzH-9K-fYv" eventType="touchUpInside" id="xrH-y3-KgO"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.46933599727927661" green="0.84405929128123069" blue="0.42267123739383489" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <gestureRecognizers/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l4b-n8-FB0">
-                                <rect key="frame" x="47" y="556" width="281" height="56"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sixgill Sync is the companion app to the Sixgill Sense developer platform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-8P-uEW">
+                                <rect key="frame" x="55" y="337" width="264" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97953930975459857" green="0.98841430809553732" blue="1" alpha="0.13143705985915494" colorSpace="custom" customColorSpace="displayP3"/>
-                            </view>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="X7j-Yd-Ei4" firstAttribute="top" secondItem="UYn-n4-Itr" secondAttribute="top" id="7ED-qZ-dns"/>
-                            <constraint firstItem="X7j-Yd-Ei4" firstAttribute="leading" secondItem="UYn-n4-Itr" secondAttribute="leading" id="WPU-D8-bnB"/>
-                            <constraint firstItem="X7j-Yd-Ei4" firstAttribute="bottom" secondItem="02O-sH-nqf" secondAttribute="top" id="xAl-vE-JqY"/>
-                            <constraint firstAttribute="trailing" secondItem="X7j-Yd-Ei4" secondAttribute="trailing" id="yAs-Ub-A8H"/>
+                            <constraint firstAttribute="trailing" secondItem="bxw-Be-KG2" secondAttribute="trailing" id="2HI-Wf-H0y"/>
+                            <constraint firstAttribute="trailing" secondItem="X7j-Yd-Ei4" secondAttribute="trailing" id="4fu-ft-u2w"/>
+                            <constraint firstItem="02O-sH-nqf" firstAttribute="top" secondItem="X7j-Yd-Ei4" secondAttribute="bottom" id="OlB-r8-ff3"/>
+                            <constraint firstItem="X7j-Yd-Ei4" firstAttribute="top" secondItem="UYn-n4-Itr" secondAttribute="top" id="Zp9-HH-ShP"/>
+                            <constraint firstItem="X7j-Yd-Ei4" firstAttribute="leading" secondItem="UYn-n4-Itr" secondAttribute="leading" id="eP2-sA-hG0"/>
+                            <constraint firstItem="bxw-Be-KG2" firstAttribute="top" secondItem="XOu-dY-SVS" secondAttribute="bottom" constant="8" id="xuT-AM-VJU"/>
+                            <constraint firstItem="bxw-Be-KG2" firstAttribute="leading" secondItem="UYn-n4-Itr" secondAttribute="leading" id="zpb-2P-1Ln"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DeB-5a-jeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="-549"/>
+            <point key="canvasLocation" x="963.76811594202911" y="-550.27173913043487"/>
         </scene>
         <!--Accounts-->
         <scene sceneID="Ugb-e3-jG7">
             <objects>
                 <tableViewController storyboardIdentifier="showPermissionRequests" title="Accounts" id="cz5-4y-8pz" customClass="AccountsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ePE-a5-poK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Bhy-fa-zrC">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bhy-fa-zrC" id="QML-nL-TNN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -140,7 +170,7 @@
         <scene sceneID="2CC-Yd-ydU">
             <objects>
                 <navigationController id="k6F-zy-akg" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="R9t-Fw-foG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R9t-Fw-foG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -152,24 +182,20 @@
             </objects>
             <point key="canvasLocation" x="137" y="202"/>
         </scene>
-        <!--View Controller-->
+        <!--Location Permission View Controller-->
         <scene sceneID="tbD-ta-TaD">
             <objects>
-                <viewController id="xrE-Ce-l9n" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="locationView" id="xrE-Ce-l9n" customClass="LocationPermissionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dpQ-OT-amE"/>
                         <viewControllerLayoutGuide type="bottom" id="ZhK-1u-Bb5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ayM-wO-YCy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-background" translatesAutoresizingMaskIntoConstraints="NO" id="U5U-5m-KZL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sixgill-logo" translatesAutoresizingMaskIntoConstraints="NO" id="uNY-cv-Obt">
-                                <rect key="frame" x="98" y="74" width="179" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location Services Permission" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWt-nd-p2l">
                                 <rect key="frame" x="0.0" y="134" width="375" height="125"/>
@@ -215,6 +241,10 @@
                                 <rect key="frame" x="123" y="263" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sixgill-logo" translatesAutoresizingMaskIntoConstraints="NO" id="uNY-cv-Obt">
+                                <rect key="frame" x="98" y="64" width="179" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -239,7 +269,7 @@
                         <viewControllerLayoutGuide type="bottom" id="OCh-Lp-YSl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QK9-aV-ZdW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blue-background" translatesAutoresizingMaskIntoConstraints="NO" id="KEj-Tz-dz1">

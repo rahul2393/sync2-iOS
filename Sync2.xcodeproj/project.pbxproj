@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */; };
+		E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F091EDDEEE300F27619 /* LocationPermissionViewController.m */; };
 		E9A3C2A81ED5FD1500A938CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2A71ED5FD1500A938CB /* main.m */; };
 		E9A3C2AB1ED5FD1500A938CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2AA1ED5FD1500A938CB /* AppDelegate.m */; };
 		E9A3C2B11ED5FD1500A938CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A3C2AF1ED5FD1500A938CB /* Main.storyboard */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		E93C3F041EDDE9EC00F27619 /* PermissionPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionPageController.h; sourceTree = "<group>"; };
 		E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionPageController.m; sourceTree = "<group>"; };
+		E93C3F081EDDEEE300F27619 /* LocationPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPermissionViewController.h; sourceTree = "<group>"; };
+		E93C3F091EDDEEE300F27619 /* LocationPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPermissionViewController.m; sourceTree = "<group>"; };
 		E9A3C2A31ED5FD1500A938CB /* Sync2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sync2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A3C2A71ED5FD1500A938CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9A3C2A91ED5FD1500A938CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +96,15 @@
 				E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */,
 			);
 			name = "Page Controlleer";
+			sourceTree = "<group>";
+		};
+		E93C3F071EDDEEA100F27619 /* Location Permission */ = {
+			isa = PBXGroup;
+			children = (
+				E93C3F081EDDEEE300F27619 /* LocationPermissionViewController.h */,
+				E93C3F091EDDEEE300F27619 /* LocationPermissionViewController.m */,
+			);
+			name = "Location Permission";
 			sourceTree = "<group>";
 		};
 		E9A3C29A1ED5FD1500A938CB = {
@@ -175,6 +187,7 @@
 		E9A3C2E21ED77D8600A938CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E93C3F071EDDEEA100F27619 /* Location Permission */,
 				E93C3F031EDDE9C100F27619 /* Page Controlleer */,
 				E9A3C2F71EDBA07000A938CB /* Accounts Table */,
 				E9A3C2E31ED77D8E00A938CB /* Welcome */,
@@ -325,6 +338,7 @@
 				E9A3C2EB1ED780CC00A938CB /* WelcomeViewController.m in Sources */,
 				E9A3C2A81ED5FD1500A938CB /* main.m in Sources */,
 				E9A3C2FA1EDBA08500A938CB /* AccountsTableViewController.m in Sources */,
+				E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */,
 				E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sixgill.Sync2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -480,6 +495,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sixgill.Sync2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

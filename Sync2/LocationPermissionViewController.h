@@ -1,5 +1,5 @@
 //
-//  PermissionPageController.h
+//  LocationPermissionViewController.h
 //  Sync2
 //
 //  Created by Ricky Kirkendall on 5/30/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PermissionPageController : UIPageViewController
-
--(void) next;
+@interface LocationPermissionViewController : UIViewController
 
 @end
