@@ -13,4 +13,7 @@
 
 @property (nonatomic, weak) PermissionPageController *parentPageViewController;
 
+- (IBAction)enableLocationTapped:(id)sender;
+- (IBAction)skipTapped:(id)sender;
+
 @end

@@ -12,5 +12,7 @@
 @interface MotionPermissionViewController : UIViewController
 
 @property (nonatomic, weak) PermissionPageController *parentPageViewController;
+- (IBAction)enableMotionTapped:(id)sender;
+- (IBAction)skipTapped:(id)sender;
 
 @end

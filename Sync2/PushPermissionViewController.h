@@ -11,5 +11,7 @@
 @interface PushPermissionViewController : UIViewController
 
 @property (nonatomic, weak) PermissionPageController *parentPageViewController;
+- (IBAction)enablePushTapped:(id)sender;
+- (IBAction)skipTapped:(id)sender;
 
 @end

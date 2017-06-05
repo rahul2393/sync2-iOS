@@ -19,4 +19,13 @@
     
 }
 
+- (IBAction)enableLocationTapped:(id)sender {
+    
+    [self.parentPageViewController next];
+}
+
+- (IBAction)skipTapped:(id)sender {
+    
+    [self.parentPageViewController next];
+}
 @end

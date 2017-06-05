@@ -9,6 +9,9 @@
 #import "PermissionPageController.h"
 #import "WelcomeViewController.h"
 #import "LocationPermissionViewController.h"
+#import "MotionPermissionViewController.h"
+#import "CameraPermissionViewController.h"
+#import "PushPermissionViewController.h"
 
 @interface PermissionPageController ()
 
@@ -23,10 +26,25 @@
     [super viewDidLoad];
     WelcomeViewController *welcomeVC = (WelcomeViewController *)[self ViewControllerFromStoryboard:@"welcomeView"];
     welcomeVC.parentPageViewController = self;
+    
     LocationPermissionViewController *locationVC = (LocationPermissionViewController *)[self ViewControllerFromStoryboard:@"locationView"];
+    locationVC.parentPageViewController = self;
+    
+    MotionPermissionViewController *motionVC = (MotionPermissionViewController *)[self ViewControllerFromStoryboard:@"motionActivityView"];
+    motionVC.parentPageViewController = self;
+    
+    CameraPermissionViewController *cameraVC = (CameraPermissionViewController *)[self ViewControllerFromStoryboard:@"cameraAccessView"];
+    cameraVC.parentPageViewController = self;
+    
+    PushPermissionViewController *pushVC = (PushPermissionViewController *)[self ViewControllerFromStoryboard:@"pushAccessView"];
+    pushVC.parentPageViewController = self;
+    
     
     self.vcDataSource = @[welcomeVC,
-                          locationVC];
+                          locationVC,
+                          motionVC,
+                          cameraVC,
+                          pushVC];
     
     if (self.viewControllers.count == 0) {
         [self setViewControllers:@[self.vcDataSource[0]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];

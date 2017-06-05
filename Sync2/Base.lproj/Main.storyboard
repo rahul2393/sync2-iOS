@@ -207,10 +207,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Bhy-fa-zrC">
-                                <rect key="frame" x="0.0" y="55" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bhy-fa-zrC" id="QML-nL-TNN">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -293,6 +293,9 @@
                                         <state key="normal" title="Enable Location Services">
                                             <color key="titleColor" red="1" green="0.99667738632681413" blue="0.99541662505197637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="enableLocationTapped:" destination="xrE-Ce-l9n" eventType="touchUpInside" id="2wZ-x8-RRu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.46933599729999997" green="0.84405929130000001" blue="0.42267123740000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -310,6 +313,9 @@
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.96002744496972803" green="0.96092273402742812" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="skipTapped:" destination="xrE-Ce-l9n" eventType="touchUpInside" id="KQW-Zs-jk7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Services Permission" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="21" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iWt-nd-p2l">
                                 <rect key="frame" x="20" y="128.33333333333337" width="374" height="141.66666666666663"/>
@@ -403,6 +409,9 @@
                                         <state key="normal" title="Enable Motion &amp; Activity">
                                             <color key="titleColor" red="1" green="0.99735923313859065" blue="0.98877749518109259" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="enableMotionTapped:" destination="BWB-kC-XmU" eventType="touchUpInside" id="wnV-Ht-hqG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.46933599729999997" green="0.84405929130000001" blue="0.42267123740000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -420,6 +429,9 @@
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.96002744500000003" green="0.96092273399999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="skipTapped:" destination="BWB-kC-XmU" eventType="touchUpInside" id="S2k-9y-8gQ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="21" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zik-jZ-ufl">
                                 <rect key="frame" x="20" y="128.33333333333337" width="374" height="141.66666666666663"/>
@@ -515,6 +527,9 @@ Permission</string>
                                         <state key="normal" title="Enable Camera Access">
                                             <color key="titleColor" red="0.97734551272179171" green="0.99518093238860295" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="enableCameraTapped:" destination="WLl-dr-Sa5" eventType="touchUpInside" id="1F0-aO-nOK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.46933599729999997" green="0.84405929130000001" blue="0.42267123740000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -532,6 +547,9 @@ Permission</string>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.96002744500000003" green="0.96092273399999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="skipTapped:" destination="WLl-dr-Sa5" eventType="touchUpInside" id="iL4-bM-aRI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera Access" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKr-ta-exD">
                                 <rect key="frame" x="20" y="128.33333333333337" width="374" height="141.66666666666663"/>
@@ -580,7 +598,7 @@ Permission</string>
         <!--Push Permission View Controller-->
         <scene sceneID="UuI-uI-lGN">
             <objects>
-                <viewController storyboardIdentifier="cameraAccessView" id="L4m-iJ-Mnc" customClass="PushPermissionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pushAccessView" id="L4m-iJ-Mnc" customClass="PushPermissionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dvg-Kc-oCV"/>
                         <viewControllerLayoutGuide type="bottom" id="hpy-Nd-aQ3"/>
@@ -625,6 +643,9 @@ Permission</string>
                                         <state key="normal" title="Enable Push Notifications">
                                             <color key="titleColor" red="0.97734551270000003" green="0.99518093240000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="enablePushTapped:" destination="L4m-iJ-Mnc" eventType="touchUpInside" id="Ozq-rc-Crc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.46933599729999997" green="0.84405929130000001" blue="0.42267123740000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -642,6 +663,9 @@ Permission</string>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.96002744500000003" green="0.96092273399999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="skipTapped:" destination="L4m-iJ-Mnc" eventType="touchUpInside" id="waM-WC-lbp"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="21" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="421-GC-OMY">
                                 <rect key="frame" x="20" y="128.33333333333337" width="374" height="141.66666666666663"/>
