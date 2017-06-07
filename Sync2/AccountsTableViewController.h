@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface AccountsTableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIImageView *noAccountsImageView;
+
+- (IBAction)addButtonTapped:(id)sender;
 
 @end

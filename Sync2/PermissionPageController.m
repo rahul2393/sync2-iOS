@@ -12,6 +12,7 @@
 #import "MotionPermissionViewController.h"
 #import "CameraPermissionViewController.h"
 #import "PushPermissionViewController.h"
+#import "SettingsManager.h"
 
 @interface PermissionPageController ()
 
@@ -56,6 +57,7 @@
     if (self.index+1 < self.vcDataSource.count) {
         self.index++;
     }else{
+        [[SettingsManager sharedManager] setHasOnboarded:YES];
         [self dismissViewControllerAnimated:YES completion:nil];
         return;
     }

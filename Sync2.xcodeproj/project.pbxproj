@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */; };
+		E90371441EE89B1E0033DED0 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E90371431EE89B1E0033DED0 /* Account.m */; };
 		E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */; };
 		E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F091EDDEEE300F27619 /* LocationPermissionViewController.m */; };
 		E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58251EE61E57000562FC /* MotionPermissionViewController.m */; };
 		E95F582A1EE61E7B000562FC /* CameraPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58291EE61E7B000562FC /* CameraPermissionViewController.m */; };
 		E95F582E1EE61EA3000562FC /* PushPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F582D1EE61EA3000562FC /* PushPermissionViewController.m */; };
+		E95F58321EE88258000562FC /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58311EE88258000562FC /* SettingsManager.m */; };
 		E9A3C2A81ED5FD1500A938CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2A71ED5FD1500A938CB /* main.m */; };
 		E9A3C2AB1ED5FD1500A938CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2AA1ED5FD1500A938CB /* AppDelegate.m */; };
 		E9A3C2B11ED5FD1500A938CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A3C2AF1ED5FD1500A938CB /* Main.storyboard */; };
@@ -43,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E903713E1EE89ABE0033DED0 /* AccountDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountDetailTableViewController.h; sourceTree = "<group>"; };
+		E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetailTableViewController.m; sourceTree = "<group>"; };
+		E90371421EE89B1E0033DED0 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		E90371431EE89B1E0033DED0 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		E93C3F041EDDE9EC00F27619 /* PermissionPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionPageController.h; sourceTree = "<group>"; };
 		E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionPageController.m; sourceTree = "<group>"; };
 		E93C3F081EDDEEE300F27619 /* LocationPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPermissionViewController.h; sourceTree = "<group>"; };
@@ -53,6 +60,8 @@
 		E95F58291EE61E7B000562FC /* CameraPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPermissionViewController.m; sourceTree = "<group>"; };
 		E95F582C1EE61EA3000562FC /* PushPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushPermissionViewController.h; sourceTree = "<group>"; };
 		E95F582D1EE61EA3000562FC /* PushPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushPermissionViewController.m; sourceTree = "<group>"; };
+		E95F58301EE88258000562FC /* SettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsManager.h; sourceTree = "<group>"; };
+		E95F58311EE88258000562FC /* SettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsManager.m; sourceTree = "<group>"; };
 		E9A3C2A31ED5FD1500A938CB /* Sync2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sync2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A3C2A71ED5FD1500A938CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9A3C2A91ED5FD1500A938CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,6 +107,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E903713D1EE89AA90033DED0 /* AccountDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E903713E1EE89ABE0033DED0 /* AccountDetailTableViewController.h */,
+				E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */,
+			);
+			name = AccountDetail;
+			sourceTree = "<group>";
+		};
+		E90371411EE89AF40033DED0 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				E90371421EE89B1E0033DED0 /* Account.h */,
+				E90371431EE89B1E0033DED0 /* Account.m */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
 		E93C3F031EDDE9C100F27619 /* Page Controlleer */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +168,15 @@
 				E95F582D1EE61EA3000562FC /* PushPermissionViewController.m */,
 			);
 			name = "Push Permission";
+			sourceTree = "<group>";
+		};
+		E95F582F1EE88244000562FC /* SettingsManager */ = {
+			isa = PBXGroup;
+			children = (
+				E95F58301EE88258000562FC /* SettingsManager.h */,
+				E95F58311EE88258000562FC /* SettingsManager.m */,
+			);
+			name = SettingsManager;
 			sourceTree = "<group>";
 		};
 		E9A3C29A1ED5FD1500A938CB = {
@@ -223,6 +259,7 @@
 		E9A3C2E21ED77D8600A938CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E903713D1EE89AA90033DED0 /* AccountDetail */,
 				E95F582B1EE61E94000562FC /* Push Permission */,
 				E95F58271EE61E6E000562FC /* Camera Permission */,
 				E95F58231EE61E14000562FC /* Motion Permission */,
@@ -246,6 +283,8 @@
 		E9A3C2E41ED77DAC00A938CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E90371411EE89AF40033DED0 /* Account */,
+				E95F582F1EE88244000562FC /* SettingsManager */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -375,11 +414,14 @@
 			files = (
 				E95F582A1EE61E7B000562FC /* CameraPermissionViewController.m in Sources */,
 				E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */,
+				E95F58321EE88258000562FC /* SettingsManager.m in Sources */,
 				E9A3C2AB1ED5FD1500A938CB /* AppDelegate.m in Sources */,
 				E9A3C2EB1ED780CC00A938CB /* WelcomeViewController.m in Sources */,
 				E9A3C2A81ED5FD1500A938CB /* main.m in Sources */,
 				E9A3C2FA1EDBA08500A938CB /* AccountsTableViewController.m in Sources */,
 				E95F582E1EE61EA3000562FC /* PushPermissionViewController.m in Sources */,
+				E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */,
+				E90371441EE89B1E0033DED0 /* Account.m in Sources */,
 				E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */,
 				E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */,
 			);
