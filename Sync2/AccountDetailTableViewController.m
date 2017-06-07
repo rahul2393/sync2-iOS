@@ -19,22 +19,32 @@
     [super viewDidLoad];
     
     if(!self.dataSourceSectionLabels){
-        self.dataSourceSectionLabels = @[@" ",
-                                         @"Data",
-                                         @"Rules"];
+        self.dataSourceSectionLabels = @[@"",
+                                         @"Data"];
     }
     
     
     if(!self.dataSourceSectionData){
-        self.dataSourceSectionData = @{@"Data": @[@"Location",
+        self.dataSourceSectionData = @{@"":@[@"Active Account"],
+                                       @"Data": @[@"Location",
                                                   @"Cadence",
                                                   @"Wifi",
                                                   @"Battery",
                                                   @"Beacons In-Range",
                                                   @"Geofences",
                                                   @"Last update sent"]};
+    }    
+    
+}
+
+-(NSString *)cellTitleForIndexPath:(NSIndexPath *)indexPath{
+    NSString *k = self.dataSourceSectionLabels[indexPath.section];
+    NSArray *v = self.dataSourceSectionData[k];
+    if (!v) {
+        return @"";
     }
     
+    return v[indexPath.row];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,49 +71,23 @@
     }
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.text = [self cellTitleForIndexPath:indexPath];
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return self.dataSourceSectionLabels[section];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation
