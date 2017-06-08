@@ -7,6 +7,7 @@
 //
 
 #import "NetworkManager.h"
+#import "TestNetworkInterface.h"
 
 @implementation NetworkManager
 
@@ -21,9 +22,17 @@
 
 - (id)init {
     if (self = [super init]) {
-        
+        self.interface = [[TestNetworkInterface alloc] init];
     }
     return self;
+}
+
+-(void) AccountForQRCodeId:(NSString *_Nonnull)qrCode withCompletion:(void ( ^ _Nullable )(NSDictionary * _Nullable accountData, NSError * _Nullable error))completed{
+    
+    [self.interface AccountForQRCodeId:qrCode withCompletion:^(NSDictionary * _Nullable accountData, NSError * _Nullable error) {
+        completed(accountData, error);
+    }];
+    
 }
 
 @end

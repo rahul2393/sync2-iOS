@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NetworkManager.h"
+@interface TestNetworkInterface : NSObject<NetworkManagerInterface>
 
-@interface TestNetworkInterface : NSObject
+-(void) AccountForQRCodeId:(NSString *_Nonnull)qrCode withCompletion:(void ( ^ _Nullable )(NSDictionary * _Nullable accountData, NSError * _Nullable error))completed;
 
 @end

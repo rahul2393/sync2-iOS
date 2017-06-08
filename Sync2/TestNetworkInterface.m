@@ -10,4 +10,11 @@
 
 @implementation TestNetworkInterface
 
+-(void) AccountForQRCodeId:(NSString *_Nonnull)qrCode withCompletion:(void ( ^ _Nullable )(NSDictionary * _Nullable accountData, NSError * _Nullable error))completed{
+    
+    NSDictionary *data = @{};
+    
+    completed(data, nil);
+}
+
 @end
