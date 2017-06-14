@@ -73,20 +73,42 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    switch (indexPath.section) {
+        case 0:
+        {
+            SwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"switchCell"];
+            if (cell == nil) {
+                cell = [[SwitchCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"switchCell"];
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.delegate = self;
+            return cell;
+        }
+            break;
+            
+        default:{
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+            
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+            }
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.textLabel.text = [self cellTitleForIndexPath:indexPath];
+            
+            return cell;
+        }
     }
     
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = [self cellTitleForIndexPath:indexPath];
-    
-    return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     return self.dataSourceSectionLabels[section];
+}
+
+-(void)activeSwitchToggled:(BOOL)state{
+    NSLog(@"Switch Toggled");
 }
 
 /*

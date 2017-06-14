@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "QRCodeReaderViewController.h"
-
 @interface AccountsTableViewController : UITableViewController<QRCodeReaderDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *noAccountsImageView;
 

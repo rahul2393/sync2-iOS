@@ -18,6 +18,7 @@
 		E95F582A1EE61E7B000562FC /* CameraPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58291EE61E7B000562FC /* CameraPermissionViewController.m */; };
 		E95F582E1EE61EA3000562FC /* PushPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F582D1EE61EA3000562FC /* PushPermissionViewController.m */; };
 		E95F58321EE88258000562FC /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58311EE88258000562FC /* SettingsManager.m */; };
+		E962B34D1EF1F42A00ECB920 /* SwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E962B34C1EF1F42A00ECB920 /* SwitchCell.m */; };
 		E9A3C2A81ED5FD1500A938CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2A71ED5FD1500A938CB /* main.m */; };
 		E9A3C2AB1ED5FD1500A938CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2AA1ED5FD1500A938CB /* AppDelegate.m */; };
 		E9A3C2B11ED5FD1500A938CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A3C2AF1ED5FD1500A938CB /* Main.storyboard */; };
@@ -76,6 +77,8 @@
 		E95F582D1EE61EA3000562FC /* PushPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushPermissionViewController.m; sourceTree = "<group>"; };
 		E95F58301EE88258000562FC /* SettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsManager.h; sourceTree = "<group>"; };
 		E95F58311EE88258000562FC /* SettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsManager.m; sourceTree = "<group>"; };
+		E962B34B1EF1F42A00ECB920 /* SwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchCell.h; sourceTree = "<group>"; };
+		E962B34C1EF1F42A00ECB920 /* SwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchCell.m; sourceTree = "<group>"; };
 		E9A3C2A31ED5FD1500A938CB /* Sync2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sync2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A3C2A71ED5FD1500A938CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9A3C2A91ED5FD1500A938CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -357,6 +360,8 @@
 				E90371491EE8B6B60033DED0 /* NetworkManager */,
 				E90371411EE89AF40033DED0 /* Account */,
 				E95F582F1EE88244000562FC /* SettingsManager */,
+				E962B34B1EF1F42A00ECB920 /* SwitchCell.h */,
+				E962B34C1EF1F42A00ECB920 /* SwitchCell.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 				E95F582A1EE61E7B000562FC /* CameraPermissionViewController.m in Sources */,
 				E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */,
 				E90371481EE8B6110033DED0 /* ListTableViewController.m in Sources */,
+				E962B34D1EF1F42A00ECB920 /* SwitchCell.m in Sources */,
 				E95F58321EE88258000562FC /* SettingsManager.m in Sources */,
 				E9A3C2AB1ED5FD1500A938CB /* AppDelegate.m in Sources */,
 				E90371521EE8B7DF0033DED0 /* TestNetworkInterface.m in Sources */,

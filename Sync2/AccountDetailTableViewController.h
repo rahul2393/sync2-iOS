@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AccountDetailTableViewController : UITableViewController
+#import "SwitchCell.h"
+@interface AccountDetailTableViewController : UITableViewController<SwitchDelegate>
 
 @end
