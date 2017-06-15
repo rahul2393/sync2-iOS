@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "PermissionPageController.h"
-
-@interface LocationPermissionViewController : UIViewController
+#import <CoreLocation/CoreLocation.h>
+@interface LocationPermissionViewController : UIViewController<CLLocationManagerDelegate>
 
 @property (nonatomic, weak) PermissionPageController *parentPageViewController;
 
 - (IBAction)enableLocationTapped:(id)sender;
 - (IBAction)skipTapped:(id)sender;
+
 
 @end

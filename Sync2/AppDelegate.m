@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SDKManager.h"
+#import "SettingsManager.h"
 @interface AppDelegate ()
 
 @end
@@ -17,8 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    //[SDKManager sharedManager];
+    NSString *activeAccountId = [[SettingsManager sharedManager] activeAccountId];
+    if (activeAccountId) {
+        [[SDKManager sharedManager] startSDKWithAPIKey:activeAccountId];
+        NSLog(@"SDK starting");
+    }
     
     return YES;
 }

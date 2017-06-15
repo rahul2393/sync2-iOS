@@ -27,10 +27,13 @@
     return self;
 }
 
+-(void)requestAlwaysLocationPermission{
+   [SGSDK requestAlwaysLocationPermission];
+}
+
 -(void) startSDKWithAPIKey:(NSString *)apiKey{
     [SGSDK clearLogs];
     [SGSDK initWithAPIKey:apiKey];
-    [SGSDK requestAlwaysLocationPermission];
 }
 
 -(NSString *) logs{
