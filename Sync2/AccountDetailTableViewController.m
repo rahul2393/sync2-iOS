@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSDictionary *dataSourceSectionData;
 @property (nonatomic, strong) NSArray *dataSourceSectionLabels;
 @property (nonatomic, strong) NSDictionary *sensorData;
+@property (nonatomic, strong) NSDate *sensorUpdateTime;
 @end
 
 @implementation AccountDetailTableViewController
@@ -200,6 +201,7 @@
 -(void)sensorUpdateSentWithData:(NSDictionary *)sensorData{
     NSLog(@"Getting data: %@",sensorData.description);
     self.sensorData = sensorData;
+    self.sensorUpdateTime = [NSDate date];
     [self.tableView reloadData];
 }
 
@@ -289,9 +291,8 @@
 }
 
 -(NSString *)lastUpdateSentString{
-    if (self.sensorData[@"SG_LOCATION_RESOURCE"]) {
-        CLLocation *l = (CLLocation *)self.sensorData[@"SG_LOCATION_RESOURCE"];
-        NSDate *date = l.timestamp;
+    if (self.sensorData[@"SG_LOCATION_RESOURCE"]) {        
+        NSDate *date = _sensorUpdateTime;
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.timeStyle = NSDateFormatterMediumStyle;
         NSString *toReturn = [formatter stringFromDate:date];

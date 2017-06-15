@@ -33,6 +33,7 @@
 
 -(void) startSDKWithAPIKey:(NSString *)apiKey{
     [SGSDK initWithAPIKey:apiKey];
+    [SGSDK setMotionActivityEnabled:YES];
 }
 
 -(void) clearLogs{

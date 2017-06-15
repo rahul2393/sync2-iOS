@@ -601,7 +601,7 @@ Permission</string>
                                     <constraint firstAttribute="height" constant="44" id="7Ms-a9-2Ic"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem systemItem="action" id="4g6-X9-se2">
+                                    <barButtonItem title="Copy" id="4g6-X9-se2">
                                         <connections>
                                             <action selector="actionButtonTapped:" destination="Y6I-gS-P2P" id="v1N-DB-mkw"/>
                                         </connections>

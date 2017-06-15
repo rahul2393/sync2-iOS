@@ -23,10 +23,10 @@
 		E962B3561EF1FDC400ECB920 /* SDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E962B3551EF1FDC400ECB920 /* SDKManager.m */; };
 		E962B3621EF213ED00ECB920 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E962B3611EF213ED00ECB920 /* CoreLocation.framework */; };
 		E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E962B3631EF2140800ECB920 /* UserNotifications.framework */; };
-		E962B36A1EF231F800ECB920 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E962B3681EF231EC00ECB920 /* SixgillSDK.framework */; };
-		E962B36B1EF231F800ECB920 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E962B3681EF231EC00ECB920 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E962B36C1EF2EEB300ECB920 /* AVFoundation.framework */; };
 		E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E962B36E1EF2F45000ECB920 /* CoreMotion.framework */; };
+		E9778A481EF30215006A025E /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9778A461EF3020C006A025E /* SixgillSDK.framework */; };
+		E9778A491EF30215006A025E /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9778A461EF3020C006A025E /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9A3C2A81ED5FD1500A938CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2A71ED5FD1500A938CB /* main.m */; };
 		E9A3C2AB1ED5FD1500A938CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2AA1ED5FD1500A938CB /* AppDelegate.m */; };
 		E9A3C2B11ED5FD1500A938CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A3C2AF1ED5FD1500A938CB /* Main.storyboard */; };
@@ -69,7 +69,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E962B36B1EF231F800ECB920 /* SixgillSDK.framework in Embed Frameworks */,
+				E9778A491EF30215006A025E /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,10 +108,10 @@
 		E962B3581EF20F1300ECB920 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SixgillSDK.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ios-sdk-workspace-cwfrdykrlvzweugrbljsaglytsum/Build/Products/Debug-iphoneos/SixgillSDK.framework"; sourceTree = "<group>"; };
 		E962B3611EF213ED00ECB920 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E962B3631EF2140800ECB920 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		E962B3681EF231EC00ECB920 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		E962B36C1EF2EEB300ECB920 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E962B36E1EF2F45000ECB920 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		E962B3701EF2F72500ECB920 /* Sync2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sync2.entitlements; sourceTree = "<group>"; };
+		E9778A461EF3020C006A025E /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		E9A3C2A31ED5FD1500A938CB /* Sync2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sync2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A3C2A71ED5FD1500A938CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9A3C2A91ED5FD1500A938CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 			files = (
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
-				E962B36A1EF231F800ECB920 /* SixgillSDK.framework in Frameworks */,
+				E9778A481EF30215006A025E /* SixgillSDK.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
 				E962B3621EF213ED00ECB920 /* CoreLocation.framework in Frameworks */,
 			);
@@ -310,7 +310,7 @@
 		E962B3531EF1FDB600ECB920 /* SDK Manager */ = {
 			isa = PBXGroup;
 			children = (
-				E962B3681EF231EC00ECB920 /* SixgillSDK.framework */,
+				E9778A461EF3020C006A025E /* SixgillSDK.framework */,
 				E962B3541EF1FDC400ECB920 /* SDKManager.h */,
 				E962B3551EF1FDC400ECB920 /* SDKManager.m */,
 			);

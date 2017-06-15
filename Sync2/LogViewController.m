@@ -39,5 +39,7 @@
 */
 
 - (IBAction)actionButtonTapped:(id)sender {
+    
+    [UIPasteboard generalPasteboard].string = self.logTextView.text;
 }
 @end

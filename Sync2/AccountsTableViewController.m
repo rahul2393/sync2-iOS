@@ -40,6 +40,7 @@
     if (![[SettingsManager sharedManager] hasOnboarded]) {
         [self performSegueWithIdentifier:@"showPermissionRequests" sender:self];
     }
+    [self.tableView reloadData];
 }
 
 
@@ -71,7 +72,12 @@
     }
     Account *a = self.dataSource[indexPath.row];
     cell.textLabel.text = a.accountName;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if ([a isActiveAccount]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     
     return cell;
 }
