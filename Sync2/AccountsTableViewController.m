@@ -69,8 +69,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
-    cell.textLabel.text = self.dataSource[indexPath.row];
+    Account *a = self.dataSource[indexPath.row];
+    cell.textLabel.text = a.accountName;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;

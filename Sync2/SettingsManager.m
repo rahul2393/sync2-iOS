@@ -43,8 +43,15 @@
 
 -(NSArray *) accounts{
     
-    return [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_ACCOUNTS];
+    NSArray *a = [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_ACCOUNTS];
+    NSMutableArray *toReturn = [NSMutableArray array];
+    for (NSDictionary *d in a) {
+        Account *acc = [[Account alloc] init];
+        [acc populateFromDictionary:d];
+        [toReturn addObject:acc];
+    }
     
+    return toReturn;
 }
 
 -(void) addAccount:(Account *)account{

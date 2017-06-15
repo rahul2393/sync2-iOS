@@ -10,6 +10,12 @@
 #import "SettingsManager.h"
 @implementation Account
 
+-(void) populateFromDictionary:(NSDictionary *)d{
+    self.accountId = d[dk_accountId];
+    self.accountName = d[dk_accountName];
+    self.apiKey = d[dk_apiKey];
+}
+
 -(NSDictionary *)toDictionary{
     
     if (!self.accountName) {

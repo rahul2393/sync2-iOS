@@ -20,6 +20,8 @@
 
 -(NSDictionary *)toDictionary;
 
+-(void) populateFromDictionary:(NSDictionary *)d;
+
 
 -(BOOL)isActiveAccount;
 @end
