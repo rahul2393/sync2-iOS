@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <SixgillSDK/SixgillSDK.h>
 @interface SDKManager : NSObject
 
 + (id)sharedManager;
@@ -16,4 +16,5 @@
 -(void) startSDKWithAPIKey:(NSString *)apiKey;
 -(void) stopSDK;
 
+-(void) setSensorDataDelegate:(id<SensorUpdateDelegate>)delegate;
 @end

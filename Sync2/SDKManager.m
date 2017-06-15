@@ -7,7 +7,6 @@
 //
 
 #import "SDKManager.h"
-#import <SixgillSDK/SixgillSDK.h>
 
 @implementation SDKManager
 
@@ -29,11 +28,17 @@
 }
 
 -(void) startSDKWithAPIKey:(NSString *)apiKey{
+    [SGSDK clearLogs];
     [SGSDK initWithAPIKey:apiKey];
+    [SGSDK requestAlwaysLocationPermission];
 }
 
 -(void) stopSDK{
     [SGSDK stop];
+}
+
+-(void) setSensorDataDelegate:(id<SensorUpdateDelegate>)delegate{
+    [SGSDK registerForSensorUpdates:delegate];
 }
 
 @end

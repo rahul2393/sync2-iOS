@@ -19,6 +19,7 @@
 
 // Last 2 Days
 +(NSString *) logs;
++(void) clearLogs;
 
 +(void) registerForSensorUpdates:(id<SensorUpdateDelegate>)delegate;
 
