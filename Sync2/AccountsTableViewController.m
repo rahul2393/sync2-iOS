@@ -8,9 +8,14 @@
 
 #import "AccountsTableViewController.h"
 #import "SettingsManager.h"
+#import "AccountDetailTableViewController.h"
+
+#define DEMO_API_KEY @"what hath God wrought?"
+
 @interface AccountsTableViewController ()
 
 @property (nonatomic,strong) NSArray *dataSource;
+@property (nonatomic, strong) Account *selectedAccount;
 
 @end
 
@@ -22,17 +27,10 @@
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = YES;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.dataSource = [[SettingsManager sharedManager] accounts];
     
     if (!self.dataSource) {
-        self.dataSource = @[@"Sixgill"];
-    }
-    
-    if (self.dataSource.count != 0) {
-        [self.noAccountsImageView setHidden:YES];
-    }else{
-        [self.noAccountsImageView setHidden:NO];
+        self.dataSource = @[];
     }
 }
 
@@ -53,7 +51,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    
+    if (self.dataSource.count != 0) {
+        [self.noAccountsImageView setHidden:YES];
+    }else{
+        [self.noAccountsImageView setHidden:NO];
+    }
+    
     return self.dataSource.count;
 }
 
@@ -73,11 +77,16 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.selectedAccount = self.dataSource[indexPath.row];
     [self performSegueWithIdentifier:@"showAccountDetail" sender:nil];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
+    if ([segue.identifier isEqualToString:@"showAccountDetail"]) {
+        AccountDetailTableViewController *detailVC = (AccountDetailTableViewController *)segue.destinationViewController;
+        detailVC.accountObject = self.selectedAccount;
+    }
 }
 
 - (IBAction)addButtonTapped:(id)sender {
@@ -101,8 +110,41 @@
 
 - (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
 {
+    // Show user feedback based on valid qr code or not
+    
+    BOOL validQR = NO;
+    BOOL alreadyUsed = NO;
+    
+    if ([result isEqualToString:DEMO_API_KEY]) {
+        validQR = YES;
+        // Check to see if demo account exists already
+        BOOL exists = NO;
+        for (Account *a in self.dataSource) {
+            if ([a.accountId isEqualToString:@"demoAccount"]) {
+                exists = YES;
+                break;
+            }
+        }
+        
+        if (!exists) {
+            
+            Account *demoAccount = [[Account alloc]init];
+            demoAccount.accountId = @"demoAccount";
+            demoAccount.apiKey = result;
+            demoAccount.accountName = @"Sixgill Demo";
+            [[SettingsManager sharedManager] addAccount:demoAccount];
+        }else{
+            alreadyUsed = exists;
+        }
+        
+        self.dataSource = [[SettingsManager sharedManager] accounts];
+        
+    }else{
+        validQR = NO;
+    }
+    
     [self dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"%@", result);
+        [self.tableView reloadData];
     }];
 }
 

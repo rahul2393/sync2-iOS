@@ -551,11 +551,63 @@ Permission</string>
                     </tableView>
                     <connections>
                         <segue destination="thu-9n-gYX" kind="show" identifier="showList" id="dGi-u2-StF"/>
+                        <segue destination="Y6I-gS-P2P" kind="show" identifier="goToLogView" id="bed-8b-8ap"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Eg-aG-tJI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1013.6" y="201.94902548725639"/>
+        </scene>
+        <!--SDK Logs-->
+        <scene sceneID="fvN-VE-wwq">
+            <objects>
+                <viewController title="SDK Logs" id="Y6I-gS-P2P" customClass="LogViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cex-w9-MdT"/>
+                        <viewControllerLayoutGuide type="bottom" id="M3M-i5-tVE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mLb-Qn-eBT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KBf-5S-VaZ">
+                                <rect key="frame" x="0.0" y="45" width="414" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJ9-1M-0o8">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7Ms-a9-2Ic"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="action" id="4g6-X9-se2">
+                                        <connections>
+                                            <action selector="actionButtonTapped:" destination="Y6I-gS-P2P" id="v1N-DB-mkw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YJ9-1M-0o8" secondAttribute="trailing" id="Ahg-hQ-a99"/>
+                            <constraint firstItem="KBf-5S-VaZ" firstAttribute="top" secondItem="mLb-Qn-eBT" secondAttribute="top" constant="45" id="Dy6-bA-3BG"/>
+                            <constraint firstItem="KBf-5S-VaZ" firstAttribute="leading" secondItem="mLb-Qn-eBT" secondAttribute="leading" id="HfY-Mo-au2"/>
+                            <constraint firstItem="M3M-i5-tVE" firstAttribute="top" secondItem="YJ9-1M-0o8" secondAttribute="bottom" id="St9-mB-MN9"/>
+                            <constraint firstAttribute="trailing" secondItem="KBf-5S-VaZ" secondAttribute="trailing" id="Yp4-r6-0yB"/>
+                            <constraint firstItem="YJ9-1M-0o8" firstAttribute="leading" secondItem="mLb-Qn-eBT" secondAttribute="leading" id="dUZ-CL-7Gb"/>
+                            <constraint firstItem="YJ9-1M-0o8" firstAttribute="top" secondItem="KBf-5S-VaZ" secondAttribute="bottom" id="jYr-uL-M8U"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logTextView" destination="KBf-5S-VaZ" id="Eiz-yB-UaB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BcA-th-1za" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1789.8550724637682" y="147.55434782608697"/>
         </scene>
         <!--List Table View Controller-->
         <scene sceneID="6Ey-kC-nPb">

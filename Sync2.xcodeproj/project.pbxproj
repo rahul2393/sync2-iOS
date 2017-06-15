@@ -19,6 +19,12 @@
 		E95F582E1EE61EA3000562FC /* PushPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F582D1EE61EA3000562FC /* PushPermissionViewController.m */; };
 		E95F58321EE88258000562FC /* SettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58311EE88258000562FC /* SettingsManager.m */; };
 		E962B34D1EF1F42A00ECB920 /* SwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E962B34C1EF1F42A00ECB920 /* SwitchCell.m */; };
+		E962B3511EF1FB2600ECB920 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E962B3501EF1FB2600ECB920 /* LogViewController.m */; };
+		E962B3561EF1FDC400ECB920 /* SDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E962B3551EF1FDC400ECB920 /* SDKManager.m */; };
+		E962B3621EF213ED00ECB920 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E962B3611EF213ED00ECB920 /* CoreLocation.framework */; };
+		E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E962B3631EF2140800ECB920 /* UserNotifications.framework */; };
+		E962B3651EF2145A00ECB920 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E962B35D1EF20FA900ECB920 /* SixgillSDK.framework */; };
+		E962B3661EF2145A00ECB920 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E962B35D1EF20FA900ECB920 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9A3C2A81ED5FD1500A938CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2A71ED5FD1500A938CB /* main.m */; };
 		E9A3C2AB1ED5FD1500A938CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2AA1ED5FD1500A938CB /* AppDelegate.m */; };
 		E9A3C2B11ED5FD1500A938CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A3C2AF1ED5FD1500A938CB /* Main.storyboard */; };
@@ -54,6 +60,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E962B3671EF2145B00ECB920 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E962B3661EF2145A00ECB920 /* SixgillSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E903713E1EE89ABE0033DED0 /* AccountDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountDetailTableViewController.h; sourceTree = "<group>"; };
 		E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetailTableViewController.m; sourceTree = "<group>"; };
@@ -79,6 +99,14 @@
 		E95F58311EE88258000562FC /* SettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsManager.m; sourceTree = "<group>"; };
 		E962B34B1EF1F42A00ECB920 /* SwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchCell.h; sourceTree = "<group>"; };
 		E962B34C1EF1F42A00ECB920 /* SwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchCell.m; sourceTree = "<group>"; };
+		E962B34F1EF1FB2600ECB920 /* LogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
+		E962B3501EF1FB2600ECB920 /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
+		E962B3541EF1FDC400ECB920 /* SDKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKManager.h; sourceTree = "<group>"; };
+		E962B3551EF1FDC400ECB920 /* SDKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKManager.m; sourceTree = "<group>"; };
+		E962B3581EF20F1300ECB920 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SixgillSDK.framework; path = "../../../../Library/Developer/Xcode/DerivedData/ios-sdk-workspace-cwfrdykrlvzweugrbljsaglytsum/Build/Products/Debug-iphoneos/SixgillSDK.framework"; sourceTree = "<group>"; };
+		E962B35D1EF20FA900ECB920 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
+		E962B3611EF213ED00ECB920 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E962B3631EF2140800ECB920 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		E9A3C2A31ED5FD1500A938CB /* Sync2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sync2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A3C2A71ED5FD1500A938CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9A3C2A91ED5FD1500A938CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -122,6 +150,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E962B3651EF2145A00ECB920 /* SixgillSDK.framework in Frameworks */,
+				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
+				E962B3621EF213ED00ECB920 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,12 +282,60 @@
 			name = SettingsManager;
 			sourceTree = "<group>";
 		};
+		E962B34E1EF1FAB000ECB920 /* Log Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				E962B34F1EF1FB2600ECB920 /* LogViewController.h */,
+				E962B3501EF1FB2600ECB920 /* LogViewController.m */,
+			);
+			name = "Log Viewer";
+			sourceTree = "<group>";
+		};
+		E962B3521EF1FBCC00ECB920 /* SwitchCell */ = {
+			isa = PBXGroup;
+			children = (
+				E962B34B1EF1F42A00ECB920 /* SwitchCell.h */,
+				E962B34C1EF1F42A00ECB920 /* SwitchCell.m */,
+			);
+			name = SwitchCell;
+			sourceTree = "<group>";
+		};
+		E962B3531EF1FDB600ECB920 /* SDK Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E962B35D1EF20FA900ECB920 /* SixgillSDK.framework */,
+				E962B3541EF1FDC400ECB920 /* SDKManager.h */,
+				E962B3551EF1FDC400ECB920 /* SDKManager.m */,
+			);
+			name = "SDK Manager";
+			sourceTree = "<group>";
+		};
+		E962B3571EF20F1300ECB920 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E962B3631EF2140800ECB920 /* UserNotifications.framework */,
+				E962B3611EF213ED00ECB920 /* CoreLocation.framework */,
+				E962B3581EF20F1300ECB920 /* SixgillSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E962B35F1EF2108200ECB920 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				E9A3C2A91ED5FD1500A938CB /* AppDelegate.h */,
+				E9A3C2AA1ED5FD1500A938CB /* AppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
 				E9A3C2A41ED5FD1500A938CB /* Products */,
+				E962B3571EF20F1300ECB920 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -275,8 +354,7 @@
 				E9A3C2E41ED77DAC00A938CB /* Model */,
 				E9A3C2E21ED77D8600A938CB /* Controller */,
 				E9A3C2CB1ED60FD700A938CB /* Resources */,
-				E9A3C2A91ED5FD1500A938CB /* AppDelegate.h */,
-				E9A3C2AA1ED5FD1500A938CB /* AppDelegate.m */,
+				E962B35F1EF2108200ECB920 /* App Delegate */,
 				E9A3C2AF1ED5FD1500A938CB /* Main.storyboard */,
 				E9A3C2B21ED5FD1500A938CB /* Assets.xcassets */,
 				E9A3C2B41ED5FD1500A938CB /* LaunchScreen.storyboard */,
@@ -331,6 +409,7 @@
 		E9A3C2E21ED77D8600A938CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E962B34E1EF1FAB000ECB920 /* Log Viewer */,
 				E9CCF4B91EF1E78200BF96C6 /* QRCodeReaderViewController */,
 				E90371451EE8B5E60033DED0 /* Wifi-Beacon List */,
 				E903713D1EE89AA90033DED0 /* AccountDetail */,
@@ -357,11 +436,11 @@
 		E9A3C2E41ED77DAC00A938CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E962B3531EF1FDB600ECB920 /* SDK Manager */,
 				E90371491EE8B6B60033DED0 /* NetworkManager */,
 				E90371411EE89AF40033DED0 /* Account */,
 				E95F582F1EE88244000562FC /* SettingsManager */,
-				E962B34B1EF1F42A00ECB920 /* SwitchCell.h */,
-				E962B34C1EF1F42A00ECB920 /* SwitchCell.m */,
+				E962B3521EF1FBCC00ECB920 /* SwitchCell */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -403,6 +482,7 @@
 				E9A3C29F1ED5FD1500A938CB /* Sources */,
 				E9A3C2A01ED5FD1500A938CB /* Frameworks */,
 				E9A3C2A11ED5FD1500A938CB /* Resources */,
+				E962B3671EF2145B00ECB920 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -507,6 +587,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E962B3561EF1FDC400ECB920 /* SDKManager.m in Sources */,
 				E95F582A1EE61E7B000562FC /* CameraPermissionViewController.m in Sources */,
 				E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */,
 				E90371481EE8B6110033DED0 /* ListTableViewController.m in Sources */,
@@ -528,6 +609,7 @@
 				E9CCF4C91EF1E78200BF96C6 /* QRToggleTorchButton.m in Sources */,
 				E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */,
 				E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */,
+				E962B3511EF1FB2600ECB920 /* LogViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +748,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GCKJ3PM88M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sync2",
+				);
 				INFOPLIST_FILE = Sync2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -680,6 +766,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GCKJ3PM88M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sync2",
+				);
 				INFOPLIST_FILE = Sync2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

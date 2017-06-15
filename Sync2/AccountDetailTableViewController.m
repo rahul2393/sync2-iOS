@@ -37,6 +37,12 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.title = self.accountObject.accountName;
+}
+
 -(NSString *)cellTitleForIndexPath:(NSIndexPath *)indexPath{
     NSString *k = self.dataSourceSectionLabels[indexPath.section];
     NSArray *v = self.dataSourceSectionData[k];
@@ -47,10 +53,6 @@
     return v[indexPath.row];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
@@ -83,6 +85,13 @@
             }
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.delegate = self;
+            
+            if ([self.accountObject isActiveAccount]) {
+                [cell.activeSwitch setOn:YES];
+            }else{
+                [cell.activeSwitch setOn:NO];
+            }
+            
             return cell;
         }
             break;
@@ -111,14 +120,5 @@
     NSLog(@"Switch Toggled");
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

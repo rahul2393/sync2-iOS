@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Account.h"
 @interface SettingsManager : NSObject
 
 + (id)sharedManager;
@@ -15,5 +15,12 @@
 -(BOOL) hasOnboarded;
 
 -(void) setHasOnboarded:(BOOL)hasOnboarded;
+
+-(void) addAccount:(Account *)account;
+
+-(NSArray *) accounts;
+
+-(NSString *)activeAccountId;
+-(void) setActiveAccountId:(NSString *)accountId;
 
 @end

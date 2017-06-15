@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SwitchCell.h"
+#import "Account.h"
 @interface AccountDetailTableViewController : UITableViewController<SwitchDelegate>
+
+@property (nonatomic, strong) Account *accountObject;
 
 @end

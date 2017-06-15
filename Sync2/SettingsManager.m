@@ -10,6 +10,10 @@
 
 #define KEY_HASONBOARDED @"hasOnboarded"
 
+#define KEY_ACCOUNTS @"accountsList"
+
+#define KEY_ACTIVEACCOUNTID @"activeAccountId"
+
 @implementation SettingsManager
 
 + (id)sharedManager {
@@ -34,6 +38,30 @@
 
 -(void) setHasOnboarded:(BOOL)hasOnboarded{
     [[NSUserDefaults standardUserDefaults] setBool:hasOnboarded forKey:KEY_HASONBOARDED];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(NSArray *) accounts{
+    
+    return [[NSUserDefaults standardUserDefaults] arrayForKey:KEY_ACCOUNTS];
+    
+}
+
+-(void) addAccount:(Account *)account{
+    NSArray *accounts = [[NSUserDefaults standardUserDefaults]arrayForKey:KEY_ACCOUNTS];
+    NSMutableArray *toSave = [NSMutableArray arrayWithArray:accounts];
+    [toSave addObject:[account toDictionary]];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:toSave forKey:KEY_ACCOUNTS];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(NSString *)activeAccountId{
+    return (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:KEY_ACTIVEACCOUNTID];
+}
+
+-(void) setActiveAccountId:(NSString *)accountId{
+    [[NSUserDefaults standardUserDefaults] setObject:accountId forKey:KEY_ACTIVEACCOUNTID];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
