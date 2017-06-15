@@ -17,4 +17,6 @@
 -(void) stopSDK;
 
 -(void) setSensorDataDelegate:(id<SensorUpdateDelegate>)delegate;
+
+-(NSString *) logs;
 @end

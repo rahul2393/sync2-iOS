@@ -33,6 +33,10 @@
     [SGSDK requestAlwaysLocationPermission];
 }
 
+-(NSString *) logs{
+    return [SGSDK logs];
+}
+
 -(void) stopSDK{
     [SGSDK stop];
 }

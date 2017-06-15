@@ -8,6 +8,8 @@
 //
 
 #import "AccountDetailTableViewController.h"
+#import "SettingsManager.h"
+
 @import CoreLocation;
 @interface AccountDetailTableViewController ()
 @property (nonatomic, strong) NSDictionary *dataSourceSectionData;
@@ -44,88 +46,21 @@
     
 }
 
--(NSString *)activityString{
-    if (self.sensorData[@"SG_ACTIVITY_RESOURCE"]) {
-        return self.sensorData[@"SG_ACTIVITY_RESOURCE"];
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if ([self.accountObject isActiveAccount]) {
+        [[SDKManager sharedManager] setSensorDataDelegate:self];
     }
-    return @"";
-}
--(NSString *)locationString{
-    if (self.sensorData[@"SG_LOCATION_RESOURCE"]) {
-        CLLocation *l = (CLLocation *)self.sensorData[@"SG_LOCATION_RESOURCE"];
-        NSString *toReturn = [NSString stringWithFormat:@"%f, %f", l.coordinate.latitude, l.coordinate.longitude];
-        return toReturn;
-    }
-    return @"";
 }
 
--(NSString *)cadenceString{
-    
-    if (self.sensorData[@"SG_CONFIGURATION_RESOURCE"]) {
-        NSDictionary *d =self.sensorData[@"SG_CONFIGURATION_RESOURCE"];
-        
-        if (d[@"location_update_cadence"]) {
-            NSNumber *cadenceSecondsNum = d[@"location_update_cadence"];
-            NSString *toReturn = [NSString stringWithFormat:@"%lu seconds", cadenceSecondsNum.integerValue];
-            return toReturn;
-        }
-    }
-    return @"";
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[SDKManager sharedManager] setSensorDataDelegate:nil];
+
 }
 
--(NSString *)wifiString{
-    if (self.sensorData[@"SG_WIFI_RESOURCE"]) {
-        NSDictionary *d =self.sensorData[@"SG_WIFI_RESOURCE"];
-        
-        if (d[@"SSID"]) {
-            NSString *wifiSSID = d[@"SSID"];
-            NSString *toReturn = [NSString stringWithFormat:@"%@", wifiSSID];
-            return toReturn;
-        }
-    }
-    return @"";
-}
-
--(NSString *)batteryString{
-    if (self.sensorData[@"SG_DEVICE_RESOURCE"]) {
-        NSDictionary *d =self.sensorData[@"SG_DEVICE_RESOURCE"];
-        
-        if (d[@"BATTERY_PERCENT"]) {
-            NSNumber *batteryPercent = d[@"BATTERY_PERCENT"];
-            NSString *toReturn = [NSString stringWithFormat:@"%lu%%", batteryPercent.integerValue];
-            return toReturn;
-        }
-    }
-    
-    return @"";
-}
-
--(NSString *)beaconsString{
-    if (self.sensorData[@"SG_BLUETOOTH_RESOURCE"]) {
-        NSArray *b =self.sensorData[@"SG_BLUETOOTH_RESOURCE"];
-        return [NSString stringWithFormat:@"%lu",b.count];
-    }
-    return @"0";
-    
-}
-
--(NSString *)geofencesString{
-    if (self.sensorData) {
-        return @"0";
-    }
-    return @"";
-}
-
--(NSString *)lastUpdateSentString{
-    if (self.sensorData[@"SG_LOCATION_RESOURCE"]) {
-        CLLocation *l = (CLLocation *)self.sensorData[@"SG_LOCATION_RESOURCE"];
-        NSDate *date = l.timestamp;
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        formatter.timeStyle = NSDateFormatterMediumStyle;
-        NSString *toReturn = [formatter stringFromDate:date];
-        return toReturn;
-    }
-    return @"";
+-(void) showLogsView{
+    [self performSegueWithIdentifier:@"goToLogView" sender:self];
 }
 
 
@@ -133,6 +68,8 @@
     [super viewWillAppear:animated];
     
     self.title = self.accountObject.accountName;
+    UIBarButtonItem *logsButton = [[UIBarButtonItem alloc]initWithTitle:@"Logs" style:UIBarButtonItemStylePlain target:self action:@selector(showLogsView)];
+    self.navigationItem.rightBarButtonItem = logsButton;
 
 }
 
@@ -250,11 +187,13 @@
     [[SDKManager sharedManager] stopSDK];
     [[SDKManager sharedManager] startSDKWithAPIKey:self.accountObject.apiKey];
     [[SDKManager sharedManager] setSensorDataDelegate:self];
+    [[SettingsManager sharedManager] setActiveAccountId:self.accountObject.accountId];
 }
 
 -(void) deactivateAccount{
     [[SDKManager sharedManager] stopSDK];
     [[SDKManager sharedManager] setSensorDataDelegate:nil];
+    [[SettingsManager sharedManager] setActiveAccountId:nil];
 }
 
 -(void)sensorUpdateSentWithData:(NSDictionary *)sensorData{
@@ -271,6 +210,93 @@
     }else{
         [self deactivateAccount];
     }
+}
+
+
+#pragma mark - Sensor Data Strings
+
+-(NSString *)activityString{
+    if (self.sensorData[@"SG_ACTIVITY_RESOURCE"]) {
+        return self.sensorData[@"SG_ACTIVITY_RESOURCE"];
+    }
+    return @"";
+}
+-(NSString *)locationString{
+    if (self.sensorData[@"SG_LOCATION_RESOURCE"]) {
+        CLLocation *l = (CLLocation *)self.sensorData[@"SG_LOCATION_RESOURCE"];
+        NSString *toReturn = [NSString stringWithFormat:@"%f, %f", l.coordinate.latitude, l.coordinate.longitude];
+        return toReturn;
+    }
+    return @"";
+}
+
+-(NSString *)cadenceString{
+    
+    if (self.sensorData[@"SG_CONFIGURATION_RESOURCE"]) {
+        NSDictionary *d =self.sensorData[@"SG_CONFIGURATION_RESOURCE"];
+        
+        if (d[@"location_update_cadence"]) {
+            NSNumber *cadenceSecondsNum = d[@"location_update_cadence"];
+            NSString *toReturn = [NSString stringWithFormat:@"%lu seconds", cadenceSecondsNum.integerValue];
+            return toReturn;
+        }
+    }
+    return @"";
+}
+
+-(NSString *)wifiString{
+    if (self.sensorData[@"SG_WIFI_RESOURCE"]) {
+        NSDictionary *d =self.sensorData[@"SG_WIFI_RESOURCE"];
+        
+        if (d[@"SSID"]) {
+            NSString *wifiSSID = d[@"SSID"];
+            NSString *toReturn = [NSString stringWithFormat:@"%@", wifiSSID];
+            return toReturn;
+        }
+    }
+    return @"";
+}
+
+-(NSString *)batteryString{
+    if (self.sensorData[@"SG_DEVICE_RESOURCE"]) {
+        NSDictionary *d =self.sensorData[@"SG_DEVICE_RESOURCE"];
+        
+        if (d[@"BATTERY_PERCENT"]) {
+            NSNumber *batteryPercent = d[@"BATTERY_PERCENT"];
+            NSString *toReturn = [NSString stringWithFormat:@"%lu%%", batteryPercent.integerValue];
+            return toReturn;
+        }
+    }
+    
+    return @"";
+}
+
+-(NSString *)beaconsString{
+    if (self.sensorData[@"SG_BLUETOOTH_RESOURCE"]) {
+        NSArray *b =self.sensorData[@"SG_BLUETOOTH_RESOURCE"];
+        return [NSString stringWithFormat:@"%lu",b.count];
+    }
+    return @"0";
+    
+}
+
+-(NSString *)geofencesString{
+    if (self.sensorData) {
+        return @"0";
+    }
+    return @"";
+}
+
+-(NSString *)lastUpdateSentString{
+    if (self.sensorData[@"SG_LOCATION_RESOURCE"]) {
+        CLLocation *l = (CLLocation *)self.sensorData[@"SG_LOCATION_RESOURCE"];
+        NSDate *date = l.timestamp;
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.timeStyle = NSDateFormatterMediumStyle;
+        NSString *toReturn = [formatter stringFromDate:date];
+        return toReturn;
+    }
+    return @"";
 }
 
 
