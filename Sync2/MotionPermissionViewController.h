@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PermissionPageController.h"
-
+#import <CoreMotion/CoreMotion.h>
 @interface MotionPermissionViewController : UIViewController
 
 @property (nonatomic, weak) PermissionPageController *parentPageViewController;

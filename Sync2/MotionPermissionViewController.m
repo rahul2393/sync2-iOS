@@ -9,7 +9,7 @@
 #import "MotionPermissionViewController.h"
 
 @interface MotionPermissionViewController ()
-
+@property(nonatomic, strong) CMMotionActivityManager *motionActivityManager;
 @end
 
 @implementation MotionPermissionViewController
@@ -19,10 +19,7 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 /*
 #pragma mark - Navigation
@@ -36,7 +33,12 @@
 
 - (IBAction)enableMotionTapped:(id)sender {
     
-    [self.parentPageViewController next];
+    self.motionActivityManager = [[CMMotionActivityManager alloc]init];
+    [self.motionActivityManager queryActivityStartingFromDate:[NSDate date] toDate:[NSDate date] toQueue:[NSOperationQueue mainQueue] withHandler:^(NSArray<CMMotionActivity *> * _Nullable activities, NSError * _Nullable error) {
+        
+        [self.parentPageViewController next];
+        
+    }];
 }
 
 - (IBAction)skipTapped:(id)sender {
