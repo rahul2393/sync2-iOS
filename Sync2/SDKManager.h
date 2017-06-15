@@ -19,6 +19,7 @@
 -(void) setSensorDataDelegate:(id<SensorUpdateDelegate>)delegate;
 
 -(NSString *) logs;
+-(void) clearLogs;
 
 -(void)requestAlwaysLocationPermission;
 @end

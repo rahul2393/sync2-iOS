@@ -185,6 +185,7 @@
 
 -(void) activateAccount{
     [[SDKManager sharedManager] stopSDK];
+    [[SDKManager sharedManager] clearLogs];
     [[SDKManager sharedManager] startSDKWithAPIKey:self.accountObject.apiKey];
     [[SDKManager sharedManager] setSensorDataDelegate:self];
     [[SettingsManager sharedManager] setActiveAccountId:self.accountObject.accountId];

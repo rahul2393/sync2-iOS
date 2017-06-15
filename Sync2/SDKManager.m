@@ -32,8 +32,11 @@
 }
 
 -(void) startSDKWithAPIKey:(NSString *)apiKey{
-    [SGSDK clearLogs];
     [SGSDK initWithAPIKey:apiKey];
+}
+
+-(void) clearLogs{
+    [SGSDK clearLogs];
 }
 
 -(NSString *) logs{

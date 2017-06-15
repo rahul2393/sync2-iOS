@@ -24,6 +24,12 @@
     [self.parentPageViewController next];
 }
 
+
+- (IBAction)createNewAccountTapped:(id)sender {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.sixgill.com"]];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

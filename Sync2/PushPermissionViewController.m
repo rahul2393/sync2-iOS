@@ -19,19 +19,42 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(permissionChanged)
+                                                 name:@"PushPermissionChanged"
+                                               object:nil];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+-(void)permissionChanged{
+    [self.parentPageViewController next];
+}
 
 - (IBAction)enablePushTapped:(id)sender {
     
-    [self.parentPageViewController next];
+    [self requestPushPermissions];
 }
 
 - (IBAction)skipTapped:(id)sender {
     
     [self.parentPageViewController next];
 }
+
+-(void)requestPushPermissions {
+    UIUserNotificationSettings *settings =
+    [UIUserNotificationSettings
+     settingsForTypes: UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound
+     categories:nil];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+}
+
 @end

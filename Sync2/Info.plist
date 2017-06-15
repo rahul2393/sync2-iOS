@@ -2,12 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSMotionUsageDescription</key>
-	<string>Sync uses your motion and activity data accurately inform your device about landmarks close to you.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Sync</string>
+	<string>Sync 2.0</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -28,6 +26,8 @@
 	<string>Sync uses your camera to scan QR codes that link to your Sixgill Sense applications.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Sync uses location services to send updates at regular intervals to your Sixgill Sense applications.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Sync uses your motion and activity data accurately inform your device about landmarks close to you.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Lato-Black.ttf</string>
