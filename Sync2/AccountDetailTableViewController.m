@@ -51,6 +51,7 @@
     [super viewDidAppear:animated];
     if ([self.accountObject isActiveAccount]) {
         [[SDKManager sharedManager] setSensorDataDelegate:self];
+        [[SDKManager sharedManager] forceUpdate];
     }
 }
 
@@ -190,6 +191,7 @@
     [[SDKManager sharedManager] startSDKWithAPIKey:self.accountObject.apiKey];
     [[SDKManager sharedManager] setSensorDataDelegate:self];
     [[SettingsManager sharedManager] setActiveAccountId:self.accountObject.accountId];
+    [[SDKManager sharedManager] forceUpdate];
 }
 
 -(void) deactivateAccount{

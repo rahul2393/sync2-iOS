@@ -21,5 +21,7 @@
 -(NSString *) logs;
 -(void) clearLogs;
 
+-(void)forceUpdate;
+
 -(void)requestAlwaysLocationPermission;
 @end

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SGSDK.h</key>
 		<data>
-		nLgQxp/nD6aGwW0uJsyRDuhpu8Y=
+		d+iu08S2qNHgBvIDGwMs06D11/Y=
 		</data>
 		<key>Headers/SensorUpdateDelegate.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		FZ3kMRI32p5Qaei6NYD/GZ8BurI=
+		yxJJGO198TVH2TLvlJvt9g3bzVI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -51,11 +51,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nLgQxp/nD6aGwW0uJsyRDuhpu8Y=
+			d+iu08S2qNHgBvIDGwMs06D11/Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			6w/3Buhn4bD5BAxOsuxkDkRTiDK9VCAW1vZaawJnP1Y=
+			OGnX2f1vWTMtFiBZ1QwtEOblBW5bKwIFkfU5YUCxOlU=
 			</data>
 		</dict>
 		<key>Headers/SensorUpdateDelegate.h</key>

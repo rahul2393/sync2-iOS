@@ -27,6 +27,10 @@
     return self;
 }
 
+-(void)forceUpdate{
+    [SGSDK forceSensorUpdate];
+}
+
 -(void)requestAlwaysLocationPermission{
    [SGSDK requestAlwaysLocationPermission];
 }

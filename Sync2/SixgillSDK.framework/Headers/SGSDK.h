@@ -23,6 +23,8 @@
 
 +(void) registerForSensorUpdates:(id<SensorUpdateDelegate>)delegate;
 
+// Add get high acc. location shot here
+
 +(void) requestAlwaysLocationPermission;
 
 +(void) requestInAppLocationPermission;
@@ -38,6 +40,8 @@
 
 +(NSString *)GUID;
 +(UIViewController *) inboxViewController;
+
++(void) forceSensorUpdate;
 
 +(void) stop;
 
