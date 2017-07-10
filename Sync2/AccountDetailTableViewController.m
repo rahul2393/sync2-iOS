@@ -203,8 +203,12 @@
 -(void)sensorUpdateSentWithData:(NSDictionary *)sensorData{
     NSLog(@"Getting data: %@",sensorData.description);
     self.sensorData = sensorData;
-    self.sensorUpdateTime = [NSDate date];
-    [self.tableView reloadData];
+    self.sensorUpdateTime = [NSDate date];        
+    
+    dispatch_async(dispatch_get_main_queue(),^{
+        [self.tableView reloadData];
+    });
+    
 }
 
 -(void)activeSwitchToggled:(BOOL)state{
