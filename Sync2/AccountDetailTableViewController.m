@@ -185,6 +185,14 @@
     return self.dataSourceSectionLabels[section];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1 && indexPath.row == 1) {
+        // Location
+        
+        [self performSegueWithIdentifier:@"showMapView" sender:self];
+    }
+}
+
 -(void) activateAccount{
     [[SDKManager sharedManager] stopSDK];
     [[SDKManager sharedManager] clearLogs];

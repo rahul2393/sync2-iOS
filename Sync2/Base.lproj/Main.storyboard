@@ -46,13 +46,13 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="174.33333333333334"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sixgill-logo" translatesAutoresizingMaskIntoConstraints="NO" id="hSm-yW-laG">
-                                        <rect key="frame" x="117.33333333333331" y="31.666666666666668" width="179.33333333333337" height="52"/>
+                                        <rect key="frame" x="117.33333333333331" y="33.333333333333329" width="179.33333333333337" height="51.999999999999986"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hSm-yW-laG" secondAttribute="height" multiplier="179:52" id="gRt-kQ-qfV"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync 2.0 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="27" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nyf-Gv-zlj">
-                                        <rect key="frame" x="104.33333333333331" y="76.666666666666657" width="206.33333333333337" height="63.666666666666657"/>
+                                        <rect key="frame" x="104.33333333333331" y="78.333333333333343" width="206.33333333333337" height="62.000000000000028"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="53"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -130,7 +130,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="34" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZgG-mg-Rlv">
-                                <rect key="frame" x="68.666666666666657" y="250.33333333333331" width="278.33333333333337" height="179.99999999999994"/>
+                                <rect key="frame" x="69.666666666666686" y="250.33333333333331" width="276.66666666666663" height="179.99999999999994"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="67"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -248,7 +248,7 @@
         <scene sceneID="2CC-Yd-ydU">
             <objects>
                 <navigationController id="k6F-zy-akg" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="R9t-Fw-foG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R9t-Fw-foG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -276,7 +276,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="K2E-i5-xYO">
-                                <rect key="frame" x="172" y="628" width="71" height="88"/>
+                                <rect key="frame" x="172" y="624.33333333333348" width="71" height="91.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="Rbk-aq-6Yy"/>
                                 </constraints>
@@ -294,16 +294,16 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync uses location services to send updates at regular intervals to your Sixgill Sense applications." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6YR-4b-CMr">
-                                <rect key="frame" x="50" y="448" width="319" height="68.666666666666629"/>
+                                <rect key="frame" x="50" y="448" width="319" height="66.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEg-nB-QoI" userLabel="ButtonView" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="78.666666666666686" y="536.66666666666652" width="256.66666666666663" height="45.333333333333371"/>
+                                <rect key="frame" x="83.333333333333314" y="534.66666666666663" width="247.33333333333337" height="43.666666666666742"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahQ-GT-6oi">
-                                        <rect key="frame" x="8" y="3" width="241.66666666666663" height="40.333333333333371"/>
+                                        <rect key="frame" x="8" y="3" width="232.33333333333337" height="38.666666666666742"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                         <state key="normal" title="Enable Location Services">
                                             <color key="titleColor" red="1" green="0.99667738632681413" blue="0.99541662505197637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -323,7 +323,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JR-6O-0yK">
-                                <rect key="frame" x="355" y="652.66666666666663" width="43" height="39"/>
+                                <rect key="frame" x="355" y="650.66666666666663" width="43" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.96002744496972803" green="0.96092273402742812" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -392,7 +392,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="qu4-dO-E4P">
-                                <rect key="frame" x="172" y="628" width="71" height="88"/>
+                                <rect key="frame" x="172" y="624.33333333333348" width="71" height="91.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="pzT-09-nxT"/>
                                 </constraints>
@@ -410,16 +410,16 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync uses your motion and activity data accurately inform your device about landmarks close to you." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fhW-ol-OVT">
-                                <rect key="frame" x="50" y="448" width="319" height="68.666666666666629"/>
+                                <rect key="frame" x="50" y="448" width="319" height="66.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGJ-c6-xxa" userLabel="ButtonView" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="78.666666666666686" y="536.66666666666652" width="256.66666666666663" height="45.333333333333371"/>
+                                <rect key="frame" x="83.333333333333314" y="534.66666666666663" width="247.33333333333337" height="43.666666666666742"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HvW-CT-jrD">
-                                        <rect key="frame" x="8" y="3" width="240.66666666666663" height="40.333333333333371"/>
+                                        <rect key="frame" x="8" y="3" width="231.33333333333337" height="38.666666666666742"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                         <state key="normal" title="Enable Motion &amp; Activity">
                                             <color key="titleColor" red="1" green="0.99735923313859065" blue="0.98877749518109259" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -439,7 +439,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsl-7A-tLn">
-                                <rect key="frame" x="355" y="652.66666666666663" width="43" height="39"/>
+                                <rect key="frame" x="355" y="650.66666666666663" width="43" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.96002744500000003" green="0.96092273399999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -571,6 +571,7 @@ Permission</string>
                     <connections>
                         <segue destination="thu-9n-gYX" kind="show" identifier="showList" id="dGi-u2-StF"/>
                         <segue destination="Y6I-gS-P2P" kind="show" identifier="goToLogView" id="bed-8b-8ap"/>
+                        <segue destination="RGB-7T-v8x" kind="show" identifier="showMapView" id="g6w-aM-LIo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Eg-aG-tJI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -626,7 +627,7 @@ Permission</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BcA-th-1za" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1789.8550724637682" y="147.55434782608697"/>
+            <point key="canvasLocation" x="2951" y="124"/>
         </scene>
         <!--List Table View Controller-->
         <scene sceneID="6Ey-kC-nPb">
@@ -654,7 +655,25 @@ Permission</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ott-2d-AdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="794"/>
+            <point key="canvasLocation" x="2951" y="818"/>
+        </scene>
+        <!--Map Marker View Controller-->
+        <scene sceneID="nPR-dv-An4">
+            <objects>
+                <viewController id="RGB-7T-v8x" customClass="MapMarkerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rBQ-9D-0Tw"/>
+                        <viewControllerLayoutGuide type="bottom" id="zcl-2P-xkp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kj2-1q-7FI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pb5-T6-xrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2951" y="1486"/>
         </scene>
         <!--Camera Permission View Controller-->
         <scene sceneID="vaa-pt-dV5">
@@ -672,7 +691,7 @@ Permission</string>
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="tBR-ba-obt">
-                                <rect key="frame" x="172" y="628" width="71" height="88"/>
+                                <rect key="frame" x="172" y="624.33333333333348" width="71" height="91.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="Eba-Cy-ke1"/>
                                 </constraints>
@@ -690,16 +709,16 @@ Permission</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync uses your camera to scan QR codes that link to your Sixgill Sense applications." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SA3-wT-aTt">
-                                <rect key="frame" x="50" y="448" width="319" height="68.666666666666629"/>
+                                <rect key="frame" x="50" y="448" width="319" height="66.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck0-45-zTp" userLabel="ButtonView" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="78.666666666666686" y="536.66666666666652" width="256.66666666666663" height="45.333333333333371"/>
+                                <rect key="frame" x="83.333333333333314" y="534.66666666666663" width="247.33333333333337" height="43.666666666666742"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrW-2z-nkS">
-                                        <rect key="frame" x="8" y="0.0" width="240.66666666666663" height="45.333333333333371"/>
+                                        <rect key="frame" x="8" y="0.0" width="231.33333333333337" height="43.666666666666742"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                         <state key="normal" title="Enable Camera Access">
                                             <color key="titleColor" red="0.97734551272179171" green="0.99518093238860295" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -719,7 +738,7 @@ Permission</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="374-Y2-OCY">
-                                <rect key="frame" x="355" y="652.66666666666663" width="43" height="39"/>
+                                <rect key="frame" x="355" y="650.66666666666663" width="43" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.96002744500000003" green="0.96092273399999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

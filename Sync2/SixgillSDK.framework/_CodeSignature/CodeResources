@@ -4,9 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/SGMSQueuePolicy.h</key>
+		<data>
+		V3CMMqCOQyky4rBK8rOEjCsKUy0=
+		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
-		d+iu08S2qNHgBvIDGwMs06D11/Y=
+		cyU0R4qn/ruUoCfcI8JTySibd+M=
 		</data>
 		<key>Headers/SensorUpdateDelegate.h</key>
 		<data>
@@ -23,6 +27,10 @@
 		<key>Modules/module.modulemap</key>
 		<data>
 		fR3/ROH4eZm8TDYuB+z1lC2VlGI=
+		</data>
+		<key>PrivateHeaders/SGMSQueue.h</key>
+		<data>
+		HNQJ56Wj3wiout27li7dwOkNVPk=
 		</data>
 		<key>both.txt</key>
 		<data>
@@ -47,15 +55,26 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/SGMSQueuePolicy.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			V3CMMqCOQyky4rBK8rOEjCsKUy0=
+			</data>
+			<key>hash2</key>
+			<data>
+			Sp7eZ8uQhiB0cBubKWTLAlnNQCEReFKbnrq/PhE1mlY=
+			</data>
+		</dict>
 		<key>Headers/SGSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			d+iu08S2qNHgBvIDGwMs06D11/Y=
+			cyU0R4qn/ruUoCfcI8JTySibd+M=
 			</data>
 			<key>hash2</key>
 			<data>
-			OGnX2f1vWTMtFiBZ1QwtEOblBW5bKwIFkfU5YUCxOlU=
+			sTQAhLqZTW2JhMnSXVCL1ZU04sp2gyXaVnpiN+u4Rh4=
 			</data>
 		</dict>
 		<key>Headers/SensorUpdateDelegate.h</key>
@@ -89,6 +108,17 @@
 			<key>hash2</key>
 			<data>
 			Rz9mcVuC9scKSPAHq6lx0mdmXRZyO/Cd+bDPtqnsGA4=
+			</data>
+		</dict>
+		<key>PrivateHeaders/SGMSQueue.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			HNQJ56Wj3wiout27li7dwOkNVPk=
+			</data>
+			<key>hash2</key>
+			<data>
+			swaAU2QBc4MsQvOvwqyIXzCY7zkUxN71+MJVhOLlKtk=
 			</data>
 		</dict>
 		<key>both.txt</key>

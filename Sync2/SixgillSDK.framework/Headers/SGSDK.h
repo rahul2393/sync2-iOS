@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "SensorUpdateDelegate.h"
+#import "SGMSQueuePolicy.h"
 /**
  `SGSDK` is the wrapper class that exists for the purpose of abstracting away implemenation details and providing a clean API to the user.
  **/
@@ -17,11 +18,20 @@
 
 +(void) initWithAPIKey:(NSString *)apiKey;
 
+// Configs
+
++(void) setBluetoothCollectionSpan:(NSInteger)collectionSpan;
++(void) setLocationCollectionSpan:(NSInteger)collectionSpan;
++(void) setLocationCollectionCachePolicy:(SGMSQueuePolicy)locationCachePolicy;
+
+
 // Last 2 Days
 +(NSString *) logs;
 +(void) clearLogs;
 
 +(void) registerForSensorUpdates:(id<SensorUpdateDelegate>)delegate;
+
++(NSArray *) sensorUpdateHistory:(NSUInteger)capacity;
 
 // Add get high acc. location shot here
 

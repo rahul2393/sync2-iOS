@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */; };
+		997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */; };
 		E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */; };
 		E90371441EE89B1E0033DED0 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E90371431EE89B1E0033DED0 /* Account.m */; };
 		E90371481EE8B6110033DED0 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90371471EE8B6110033DED0 /* ListTableViewController.m */; };
 		E903714C1EE8B6E10033DED0 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E903714B1EE8B6E10033DED0 /* NetworkManager.m */; };
 		E90371521EE8B7DF0033DED0 /* TestNetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = E90371511EE8B7DF0033DED0 /* TestNetworkInterface.m */; };
+		E9203F921F3513C900685576 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9203F911F3513C900685576 /* SixgillSDK.framework */; };
+		E9203F931F3513CC00685576 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9203F911F3513C900685576 /* SixgillSDK.framework */; };
+		E9203F941F3513CC00685576 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9203F911F3513C900685576 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */; };
 		E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F091EDDEEE300F27619 /* LocationPermissionViewController.m */; };
-		E9498ECB1F143DAC007FE665 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9498EC91F143DA7007FE665 /* SixgillSDK.framework */; };
-		E9498ECC1F143DAC007FE665 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9498EC91F143DA7007FE665 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58251EE61E57000562FC /* MotionPermissionViewController.m */; };
 		E95F582A1EE61E7B000562FC /* CameraPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58291EE61E7B000562FC /* CameraPermissionViewController.m */; };
 		E95F582E1EE61EA3000562FC /* PushPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F582D1EE61EA3000562FC /* PushPermissionViewController.m */; };
@@ -50,6 +53,7 @@
 		E9CCF4C71EF1E78200BF96C6 /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4C01EF1E78200BF96C6 /* QRCodeReaderView.m */; };
 		E9CCF4C81EF1E78200BF96C6 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4C21EF1E78200BF96C6 /* QRCodeReaderViewController.m */; };
 		E9CCF4C91EF1E78200BF96C6 /* QRToggleTorchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4C41EF1E78200BF96C6 /* QRToggleTorchButton.m */; };
+		E9D0A3671F3258CA00E7776C /* MapMarkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D0A3661F3258CA00E7776C /* MapMarkerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,13 +67,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E93626E41F1000BB0032E64F /* Embed Frameworks */ = {
+		E9203F951F3513CC00685576 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E9498ECC1F143DAC007FE665 /* SixgillSDK.framework in Embed Frameworks */,
+				E9203F941F3513CC00685576 /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +81,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1DA5955D2EF0589B2AC4F739 /* Pods-Sync2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		2DB0C3E88E97E1E5750C48B5 /* Pods-Sync2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6011B6B43DBF0AC7C6C0493 /* Pods-Sync2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2/Pods-Sync2.debug.xcconfig"; sourceTree = "<group>"; };
 		E903713E1EE89ABE0033DED0 /* AccountDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountDetailTableViewController.h; sourceTree = "<group>"; };
 		E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetailTableViewController.m; sourceTree = "<group>"; };
 		E90371421EE89B1E0033DED0 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
@@ -87,11 +96,11 @@
 		E903714B1EE8B6E10033DED0 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		E90371501EE8B7DF0033DED0 /* TestNetworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestNetworkInterface.h; sourceTree = "<group>"; };
 		E90371511EE8B7DF0033DED0 /* TestNetworkInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestNetworkInterface.m; sourceTree = "<group>"; };
+		E9203F911F3513C900685576 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		E93C3F041EDDE9EC00F27619 /* PermissionPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionPageController.h; sourceTree = "<group>"; };
 		E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionPageController.m; sourceTree = "<group>"; };
 		E93C3F081EDDEEE300F27619 /* LocationPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPermissionViewController.h; sourceTree = "<group>"; };
 		E93C3F091EDDEEE300F27619 /* LocationPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPermissionViewController.m; sourceTree = "<group>"; };
-		E9498EC91F143DA7007FE665 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		E95F58241EE61E57000562FC /* MotionPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionPermissionViewController.h; sourceTree = "<group>"; };
 		E95F58251EE61E57000562FC /* MotionPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionPermissionViewController.m; sourceTree = "<group>"; };
 		E95F58281EE61E7B000562FC /* CameraPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraPermissionViewController.h; sourceTree = "<group>"; };
@@ -148,6 +157,9 @@
 		E9CCF4C21EF1E78200BF96C6 /* QRCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderViewController.m; sourceTree = "<group>"; };
 		E9CCF4C31EF1E78200BF96C6 /* QRToggleTorchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRToggleTorchButton.h; sourceTree = "<group>"; };
 		E9CCF4C41EF1E78200BF96C6 /* QRToggleTorchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRToggleTorchButton.m; sourceTree = "<group>"; };
+		E9D0A3651F3258CA00E7776C /* MapMarkerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapMarkerViewController.h; sourceTree = "<group>"; };
+		E9D0A3661F3258CA00E7776C /* MapMarkerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapMarkerViewController.m; sourceTree = "<group>"; };
+		EB092CDF563232A27A3F7613 /* Pods-Sync2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2/Pods-Sync2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,11 +167,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9498ECB1F143DAC007FE665 /* SixgillSDK.framework in Frameworks */,
+				E9203F921F3513C900685576 /* SixgillSDK.framework in Frameworks */,
+				E9203F931F3513CC00685576 /* SixgillSDK.framework in Frameworks */,
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
 				E962B3621EF213ED00ECB920 /* CoreLocation.framework in Frameworks */,
+				58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,12 +181,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A30DAFCC74694937F10709D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6011B6B43DBF0AC7C6C0493 /* Pods-Sync2.debug.xcconfig */,
+				EB092CDF563232A27A3F7613 /* Pods-Sync2.release.xcconfig */,
+				1DA5955D2EF0589B2AC4F739 /* Pods-Sync2Tests.debug.xcconfig */,
+				2DB0C3E88E97E1E5750C48B5 /* Pods-Sync2Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E903713D1EE89AA90033DED0 /* AccountDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +350,8 @@
 				E962B3631EF2140800ECB920 /* UserNotifications.framework */,
 				E962B3611EF213ED00ECB920 /* CoreLocation.framework */,
 				E962B3581EF20F1300ECB920 /* SixgillSDK.framework */,
+				9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */,
+				894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -344,6 +372,7 @@
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
 				E9A3C2A41ED5FD1500A938CB /* Products */,
 				E962B3571EF20F1300ECB920 /* Frameworks */,
+				2A30DAFCC74694937F10709D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -359,7 +388,7 @@
 		E9A3C2A51ED5FD1500A938CB /* Sync2 */ = {
 			isa = PBXGroup;
 			children = (
-				E9498EC91F143DA7007FE665 /* SixgillSDK.framework */,
+				E9203F911F3513C900685576 /* SixgillSDK.framework */,
 				E962B3701EF2F72500ECB920 /* Sync2.entitlements */,
 				E9A3C2E41ED77DAC00A938CB /* Model */,
 				E9A3C2E21ED77D8600A938CB /* Controller */,
@@ -419,6 +448,7 @@
 		E9A3C2E21ED77D8600A938CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E9D0A3641F32587E00E7776C /* Map View */,
 				E962B34E1EF1FAB000ECB920 /* Log Viewer */,
 				E9CCF4B91EF1E78200BF96C6 /* QRCodeReaderViewController */,
 				E90371451EE8B5E60033DED0 /* Wifi-Beacon List */,
@@ -482,6 +512,15 @@
 			path = QRCodeReaderViewController;
 			sourceTree = "<group>";
 		};
+		E9D0A3641F32587E00E7776C /* Map View */ = {
+			isa = PBXGroup;
+			children = (
+				E9D0A3651F3258CA00E7776C /* MapMarkerViewController.h */,
+				E9D0A3661F3258CA00E7776C /* MapMarkerViewController.m */,
+			);
+			name = "Map View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -489,10 +528,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9A3C2C51ED5FD1500A938CB /* Build configuration list for PBXNativeTarget "Sync2" */;
 			buildPhases = (
+				F9857E0285B6AEDE068EA46F /* [CP] Check Pods Manifest.lock */,
 				E9A3C29F1ED5FD1500A938CB /* Sources */,
 				E9A3C2A01ED5FD1500A938CB /* Frameworks */,
 				E9A3C2A11ED5FD1500A938CB /* Resources */,
-				E93626E41F1000BB0032E64F /* Embed Frameworks */,
+				5B9F7C4283404FA980F4DA7C /* [CP] Embed Pods Frameworks */,
+				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
+				E9203F951F3513CC00685576 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -507,9 +549,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9A3C2C81ED5FD1500A938CB /* Build configuration list for PBXNativeTarget "Sync2Tests" */;
 			buildPhases = (
+				7B61590D97B2AAB5C193441C /* [CP] Check Pods Manifest.lock */,
 				E9A3C2B81ED5FD1500A938CB /* Sources */,
 				E9A3C2B91ED5FD1500A938CB /* Frameworks */,
 				E9A3C2BA1ED5FD1500A938CB /* Resources */,
+				D28A0CC4E2BA1A26A4433BBE /* [CP] Embed Pods Frameworks */,
+				8CEBC234F6CB56CC4AD34C4C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -600,6 +645,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B9F7C4283404FA980F4DA7C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B61590D97B2AAB5C193441C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8CEBC234F6CB56CC4AD34C4C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D28A0CC4E2BA1A26A4433BBE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9857E0285B6AEDE068EA46F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E9A3C29F1ED5FD1500A938CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -624,6 +762,7 @@
 				E9CCF4C51EF1E78200BF96C6 /* QRCameraSwitchButton.m in Sources */,
 				E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */,
 				E90371441EE89B1E0033DED0 /* Account.m in Sources */,
+				E9D0A3671F3258CA00E7776C /* MapMarkerViewController.m in Sources */,
 				E9CCF4C91EF1E78200BF96C6 /* QRToggleTorchButton.m in Sources */,
 				E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */,
 				E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */,
@@ -763,6 +902,7 @@
 		};
 		E9A3C2C61ED5FD1500A938CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6011B6B43DBF0AC7C6C0493 /* Pods-Sync2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sync2/Sync2.entitlements;
@@ -783,6 +923,7 @@
 		};
 		E9A3C2C71ED5FD1500A938CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB092CDF563232A27A3F7613 /* Pods-Sync2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sync2/Sync2.entitlements;
@@ -803,6 +944,7 @@
 		};
 		E9A3C2C91ED5FD1500A938CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DA5955D2EF0589B2AC4F739 /* Pods-Sync2Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = GCKJ3PM88M;
@@ -816,6 +958,7 @@
 		};
 		E9A3C2CA1ED5FD1500A938CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DB0C3E88E97E1E5750C48B5 /* Pods-Sync2Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = GCKJ3PM88M;
