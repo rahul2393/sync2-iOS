@@ -51,16 +51,18 @@
         m.map = mapView;
     }
     
-    
-    
-    
-    
     self.view = mapView;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadMap];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.title = @"Map";
     
 }
 

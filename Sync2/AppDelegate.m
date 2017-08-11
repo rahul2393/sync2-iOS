@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "SDKManager.h"
 #import "SettingsManager.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +20,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Fabric with:@[[Crashlytics class]]];
+
     // Override point for customization after application launch.
     NSString *activeAccountId = [[SettingsManager sharedManager] activeAccountId];
     if (activeAccountId) {

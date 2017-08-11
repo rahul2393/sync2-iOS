@@ -38,6 +38,11 @@
 -(void) startSDKWithAPIKey:(NSString *)apiKey{
     [SGSDK initWithAPIKey:apiKey];
     [SGSDK setMotionActivityEnabled:YES];
+    [SGSDK registerForLogUpdates:self];
+}
+
+-(void)SGReachLog:(NSString *)logMsg{
+    CLSLog(@"%@",logMsg);
 }
 
 -(void) clearLogs{

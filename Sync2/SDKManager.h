@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <SixgillSDK/SixgillSDK.h>
-@interface SDKManager : NSObject
+#import <Crashlytics/Crashlytics.h>
+@interface SDKManager : NSObject<SGLogDelegateProtocol>
 
 + (id)sharedManager;
 
@@ -20,6 +21,8 @@
 
 -(NSString *) logs;
 -(void) clearLogs;
+
+-(void)SGReachLog:(NSString *)logMsg;
 
 -(void)forceUpdate;
 
