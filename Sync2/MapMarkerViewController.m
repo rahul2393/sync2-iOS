@@ -25,9 +25,20 @@
     float lonf = lonn.floatValue;
     
     [GMSServices provideAPIKey:googleMapsAPIKey];
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latf
-                                                            longitude:lonf
-                                                                 zoom:18];
+    GMSCameraPosition *camera;
+    if (latf == 0 && lonf == 0) {
+        camera = [GMSCameraPosition cameraWithLatitude:latf
+                                               longitude:lonf
+                                                    zoom:1];
+
+    }else{
+        camera = [GMSCameraPosition cameraWithLatitude:latf
+                                      longitude:lonf
+                                           zoom:18];
+
+    }
+    
+    
     GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = camera.target;
@@ -46,7 +57,6 @@
         
         GMSMarker *m = [[GMSMarker alloc] init];
         m.position = CLLocationCoordinate2DMake(laf, lof);
-        m.snippet = @"Hello World";
         m.appearAnimation = kGMSMarkerAnimationPop;
         m.map = mapView;
     }
