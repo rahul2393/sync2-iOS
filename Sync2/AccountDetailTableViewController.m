@@ -232,11 +232,20 @@
 
 #pragma mark - Sensor Data Strings
 
+-(NSString *)emptyCellString{
+    if ([self.accountObject isActiveAccount]) {
+        return @"Updating...";
+    }else{
+        return @"";
+    }
+}
+
 -(NSString *)activityString{
     if (self.sensorData[@"SG_ACTIVITY_RESOURCE"]) {
         return self.sensorData[@"SG_ACTIVITY_RESOURCE"];
     }
-    return @"";
+    
+    return [self emptyCellString];
 }
 -(NSString *)locationString{
     if (self.sensorData[@"SG_LOCATION_RESOURCE"]) {
@@ -244,7 +253,9 @@
         NSString *toReturn = [NSString stringWithFormat:@"%f, %f", l.coordinate.latitude, l.coordinate.longitude];
         return toReturn;
     }
-    return @"";
+    
+    return [self emptyCellString];
+    
 }
 
 -(NSString *)cadenceString{
@@ -258,7 +269,8 @@
             return toReturn;
         }
     }
-    return @"";
+    
+    return [self emptyCellString];
 }
 
 -(NSString *)wifiString{
@@ -271,7 +283,8 @@
             return toReturn;
         }
     }
-    return @"";
+    
+    return [self emptyCellString];
 }
 
 -(NSString *)batteryString{
@@ -285,7 +298,7 @@
         }
     }
     
-    return @"";
+    return [self emptyCellString];
 }
 
 -(NSString *)beaconsString{
@@ -312,7 +325,7 @@
         NSString *toReturn = [formatter stringFromDate:date];
         return toReturn;
     }
-    return @"";
+    return @"Not sent yet";
 }
 
 
