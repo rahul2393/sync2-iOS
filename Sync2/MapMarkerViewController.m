@@ -40,10 +40,6 @@
     
     
     GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = camera.target;
-    marker.appearAnimation = kGMSMarkerAnimationPop;
-    marker.map = mapView;
     
     for (NSDictionary *d in locations) {
         NSNumber *lan = d[@"lat"];

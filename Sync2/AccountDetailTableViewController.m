@@ -307,7 +307,6 @@
         return [NSString stringWithFormat:@"%lu",b.count];
     }
     return @"0";
-    
 }
 
 -(NSString *)geofencesString{
