@@ -10,6 +10,7 @@
 #import "AccountDetailTableViewController.h"
 #import "SettingsManager.h"
 
+
 @import CoreLocation;
 @interface AccountDetailTableViewController ()
 @property (nonatomic, strong) NSDictionary *dataSourceSectionData;
@@ -30,7 +31,9 @@
     
     
     if(!self.dataSourceSectionData){
-        self.dataSourceSectionData = @{@"":@[@"Active Account"],
+        self.dataSourceSectionData = @{@"":@[@"Active Account",
+                                             @"Cluster Address",
+                                             @"Device ID"],
                                        @"Data": @[@"Activity",
                                                   @"Location",
                                                   @"Cadence",
@@ -105,78 +108,119 @@
     }
 }
 
+-(TextFieldTableViewCell *) textCellForTableView:(UITableView *)tableView{
+    TextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"textCell"];
+    
+    if (cell == nil) {
+        cell = [[TextFieldTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"textCell"];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell setup];
+    cell.delegate = self;
+    return cell;
+}
+
+-(UITableViewCell *) switchCellForTableView:(UITableView *)tableView{
+    SwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"switchCell"];
+    if (cell == nil) {
+        cell = [[SwitchCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"switchCell"];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.delegate = self;
+    
+    if ([self.accountObject isActiveAccount]) {
+        [cell.activeSwitch setOn:YES];
+    }else{
+        [cell.activeSwitch setOn:NO];
+    }
+    
+    return cell;
+
+}
+
+-(void)textCellWithId:(NSString *)cellId didFinishEditing:(NSString *)text{
+    if ([cellId isEqualToString:@"cluster"]) {
+        [SGSDK setClusterAddress:text];
+    }else if([cellId isEqualToString:@"deviceId"]){
+        [SGSDK setDeviceId:text];
+    }
+}
+
+-(UITableViewCell *) configSection:(NSIndexPath *)indexPath forTableView:(UITableView *)tableView{
+    switch (indexPath.row) {
+        case 0:
+            return [self switchCellForTableView:tableView];
+            break;
+        case 1:{
+            TextFieldTableViewCell *c = [self textCellForTableView:tableView];
+            c.label.text = @"Cluster Address";
+            c.textField.text = [SGSDK clusterAddress];
+            c.textCellId = @"cluster";
+            return c;
+        }
+            break;
+        default:{
+            TextFieldTableViewCell *c = [self textCellForTableView:tableView];
+            c.label.text = @"Device ID";
+            c.textCellId = @"deviceId";
+            c.textField.text = [SGSDK deviceId];
+            return c;
+        }
+            break;
+    }
+    
+}
+
+- (UITableViewCell *)dataSection:(NSIndexPath *)indexPath forTableView:(UITableView *)tableView{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.text = [self cellTitleForIndexPath:indexPath];
+    
+    switch (indexPath.row) {
+        case 0:
+            cell.detailTextLabel.text = [self activityString];
+            break;
+        case 1:
+            cell.detailTextLabel.text = [self locationString];
+            break;
+        case 2:
+            cell.detailTextLabel.text = [self cadenceString];
+            break;
+        case 3:
+            cell.detailTextLabel.text = [self wifiString];
+            break;
+        case 4:
+            cell.detailTextLabel.text = [self batteryString];
+            break;
+        case 5:
+            cell.detailTextLabel.text = [self beaconsString];
+            break;
+        case 6:
+            cell.detailTextLabel.text = [self geofencesString];
+            break;
+        default:
+            cell.detailTextLabel.text = [self lastUpdateSentString];
+            break;
+    }
+    
+    return cell;
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     switch (indexPath.section) {
         case 0:
-        {
-            SwitchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"switchCell"];
-            if (cell == nil) {
-                cell = [[SwitchCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"switchCell"];
-            }
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.delegate = self;
-            
-            if ([self.accountObject isActiveAccount]) {
-                [cell.activeSwitch setOn:YES];
-            }else{
-                [cell.activeSwitch setOn:NO];
-            }
-            
-            return cell;
-        }
+            return [self configSection:indexPath forTableView:tableView];
             break;
             
-        default:{
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-            
-            if (cell == nil) {
-                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
-            }
-            
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.textLabel.text = [self cellTitleForIndexPath:indexPath];
-            
-//            @"Data": @[@"Activity",
-//                       @"Location",
-//                       @"Cadence",
-//                       @"Wifi",
-//                       @"Battery",
-//                       @"Beacons In-Range",
-//                       @"Geofences",
-//                       @"Last update sent"]};
-
-            
-            switch (indexPath.row) {
-                case 0:
-                    cell.detailTextLabel.text = [self activityString];
-                    break;
-                case 1:
-                    cell.detailTextLabel.text = [self locationString];
-                    break;
-                case 2:
-                    cell.detailTextLabel.text = [self cadenceString];
-                    break;
-                case 3:
-                    cell.detailTextLabel.text = [self wifiString];
-                    break;
-                case 4:
-                    cell.detailTextLabel.text = [self batteryString];
-                    break;
-                case 5:
-                    cell.detailTextLabel.text = [self beaconsString];
-                    break;
-                case 6:
-                    cell.detailTextLabel.text = [self geofencesString];
-                    break;
-                default:
-                    cell.detailTextLabel.text = [self lastUpdateSentString];
-                    break;
-            }
-            
-            return cell;
-        }
+        default:
+            return [self dataSection:indexPath forTableView:tableView];
     }
     
 }

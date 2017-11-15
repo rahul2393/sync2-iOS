@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "SwitchCell.h"
+#import "TextFieldTableViewCell.h"
 #import "Account.h"
 #import "SDKManager.h"
-@interface AccountDetailTableViewController : UITableViewController<SwitchDelegate, SensorUpdateDelegate>
+
+@interface AccountDetailTableViewController : UITableViewController<SwitchDelegate, SensorUpdateDelegate, TextFieldCellDelegate>
 
 @property (nonatomic, strong) Account *accountObject;
 

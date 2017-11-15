@@ -26,7 +26,12 @@
 +(void) setLocationCollectionCachePolicy:(SGMSQueuePolicy)locationCachePolicy;
 
 
-// Last 2 Days
++(void) setClusterAddress:(NSString *)clusterAddress;
++(void) setDeviceId:(NSString *)deviceId;
++(NSString *)clusterAddress;
++(NSString *)deviceId;
+
+// Last 2 Days worth of logs
 +(NSString *) logs;
 +(void) clearLogs;
 
