@@ -4,17 +4,17 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/EventQueuePolicy.h</key>
+		<data>
+		+kQWAY0sQFqoBAWRv1Xdcm7nl0U=
+		</data>
 		<key>Headers/SGLogDelegate.h</key>
 		<data>
 		+SKa4cNUtaV2LxfweSsORmCNLlc=
 		</data>
-		<key>Headers/SGMSQueuePolicy.h</key>
-		<data>
-		V3CMMqCOQyky4rBK8rOEjCsKUy0=
-		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
-		2sK0zfsRyO/gkQCI+GoTvShPXGM=
+		RcDayAI6PTrDZasEjpvo00gZ1yM=
 		</data>
 		<key>Headers/SensorUpdateDelegate.h</key>
 		<data>
@@ -26,59 +26,34 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		a21yA5sl6Ob44wJzprTNWztocXI=
+		5ry2t60jaqtYFkistD3wRDMaBWY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		fR3/ROH4eZm8TDYuB+z1lC2VlGI=
 		</data>
-		<key>PrivateHeaders/SGMSQueue.h</key>
+		<key>PrivateHeaders/EventQueue.h</key>
 		<data>
-		HNQJ56Wj3wiout27li7dwOkNVPk=
+		x9XaoBZ7Xv4XH2MgGBIlAfF+pIc=
 		</data>
-		<key>both.txt</key>
+		<key>masefield.json</key>
 		<data>
-		gSEEu4cqym6U+JlNk+peLTzEZxg=
-		</data>
-		<key>cert.txt</key>
-		<data>
-		VZJc15kZUxpYFD6+QzH0Q5JDEPs=
-		</data>
-		<key>gRPCCertificates.bundle/Info.plist</key>
-		<data>
-		BRQgEMJ3RbiPif3hMDDAk/JcQ/U=
-		</data>
-		<key>gRPCCertificates.bundle/_CodeSignature/CodeDirectory</key>
-		<data>
-		v87tVwx4El6WsD/j5EnPorh/ZPQ=
-		</data>
-		<key>gRPCCertificates.bundle/_CodeSignature/CodeRequirements</key>
-		<data>
-		OnX22wWFKRSOFN1+obRynMCeyXM=
-		</data>
-		<key>gRPCCertificates.bundle/_CodeSignature/CodeRequirements-1</key>
-		<data>
-		vWR772jd0+eaXOEHlN/v6wytN7U=
-		</data>
-		<key>gRPCCertificates.bundle/_CodeSignature/CodeResources</key>
-		<data>
-		ZxxTydH2x72dxk8Ktt4nNlyAonU=
-		</data>
-		<key>gRPCCertificates.bundle/_CodeSignature/CodeSignature</key>
-		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
-		</data>
-		<key>gRPCCertificates.bundle/roots.pem</key>
-		<data>
-		15yFIIoDhaj7oxLWTc4LMys1lFk=
-		</data>
-		<key>privkey.txt</key>
-		<data>
-		059fqMzn1YSPhuoUrk9gdeq6b+g=
+		cTX7t+PiaO1sW34C3ZCwYwVQveM=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/EventQueuePolicy.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+kQWAY0sQFqoBAWRv1Xdcm7nl0U=
+			</data>
+			<key>hash2</key>
+			<data>
+			mc3lq7Kzy7N/alMEfn5oOx19P4zegCU9IM47/SLeU4o=
+			</data>
+		</dict>
 		<key>Headers/SGLogDelegate.h</key>
 		<dict>
 			<key>hash</key>
@@ -90,26 +65,15 @@
 			Z5d/IXXUzMAuMX8xEpxkaVI3/drKHG6xuabFUeEstgI=
 			</data>
 		</dict>
-		<key>Headers/SGMSQueuePolicy.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			V3CMMqCOQyky4rBK8rOEjCsKUy0=
-			</data>
-			<key>hash2</key>
-			<data>
-			Sp7eZ8uQhiB0cBubKWTLAlnNQCEReFKbnrq/PhE1mlY=
-			</data>
-		</dict>
 		<key>Headers/SGSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2sK0zfsRyO/gkQCI+GoTvShPXGM=
+			RcDayAI6PTrDZasEjpvo00gZ1yM=
 			</data>
 			<key>hash2</key>
 			<data>
-			bUjJ2/cStnCTWcgUtJk52O9DL/AR/+vDl5JSQG0Do6U=
+			kTmfFY2SHvL2V6x9ydqB2GeeseKzkww2x8vH+1aKxpY=
 			</data>
 		</dict>
 		<key>Headers/SensorUpdateDelegate.h</key>
@@ -145,125 +109,26 @@
 			Rz9mcVuC9scKSPAHq6lx0mdmXRZyO/Cd+bDPtqnsGA4=
 			</data>
 		</dict>
-		<key>PrivateHeaders/SGMSQueue.h</key>
+		<key>PrivateHeaders/EventQueue.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			HNQJ56Wj3wiout27li7dwOkNVPk=
+			x9XaoBZ7Xv4XH2MgGBIlAfF+pIc=
 			</data>
 			<key>hash2</key>
 			<data>
-			swaAU2QBc4MsQvOvwqyIXzCY7zkUxN71+MJVhOLlKtk=
+			lRWC2UQ1VjggWAWr00P2IfxOZqEs03ab1DgpE88j6As=
 			</data>
 		</dict>
-		<key>both.txt</key>
+		<key>masefield.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gSEEu4cqym6U+JlNk+peLTzEZxg=
+			cTX7t+PiaO1sW34C3ZCwYwVQveM=
 			</data>
 			<key>hash2</key>
 			<data>
-			SagjsFosVMThI9Bcy44NhsdJ4AgTnbaDahtdaFiOQBY=
-			</data>
-		</dict>
-		<key>cert.txt</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			VZJc15kZUxpYFD6+QzH0Q5JDEPs=
-			</data>
-			<key>hash2</key>
-			<data>
-			JBJS+4qzS1T6qcTbJLV7wYSp8c4r64x3ldpyK5ZgH2k=
-			</data>
-		</dict>
-		<key>gRPCCertificates.bundle/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			BRQgEMJ3RbiPif3hMDDAk/JcQ/U=
-			</data>
-			<key>hash2</key>
-			<data>
-			lpTpYoEy2OtGMKoMheTlB6YG7muzllEhfZcreN0geF0=
-			</data>
-		</dict>
-		<key>gRPCCertificates.bundle/_CodeSignature/CodeDirectory</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			v87tVwx4El6WsD/j5EnPorh/ZPQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			AIUVz5dS7tOrUt0yUVi3Dz20R1vs64gp3SbZ0OnnSc8=
-			</data>
-		</dict>
-		<key>gRPCCertificates.bundle/_CodeSignature/CodeRequirements</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			OnX22wWFKRSOFN1+obRynMCeyXM=
-			</data>
-			<key>hash2</key>
-			<data>
-			mHkgkE6rZQ51eIwFSqCwUk5qgL/HGqMt+NI3phdD+YY=
-			</data>
-		</dict>
-		<key>gRPCCertificates.bundle/_CodeSignature/CodeRequirements-1</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			vWR772jd0+eaXOEHlN/v6wytN7U=
-			</data>
-			<key>hash2</key>
-			<data>
-			pCYKKpfe6DY6j9Q7IZQoPXRuOX/Mr/CaLxqlTEt/eh0=
-			</data>
-		</dict>
-		<key>gRPCCertificates.bundle/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ZxxTydH2x72dxk8Ktt4nNlyAonU=
-			</data>
-			<key>hash2</key>
-			<data>
-			wMZwj4ZNNgsFdiFVLkNjdtn5zoWc6fk6pRvnfCMdJEI=
-			</data>
-		</dict>
-		<key>gRPCCertificates.bundle/_CodeSignature/CodeSignature</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
-			</data>
-			<key>hash2</key>
-			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
-			</data>
-		</dict>
-		<key>gRPCCertificates.bundle/roots.pem</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			15yFIIoDhaj7oxLWTc4LMys1lFk=
-			</data>
-			<key>hash2</key>
-			<data>
-			b/tZMlmdQ3hnC4bp/jf5UrnqBfYj++gheCWuR/KiIG4=
-			</data>
-		</dict>
-		<key>privkey.txt</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			059fqMzn1YSPhuoUrk9gdeq6b+g=
-			</data>
-			<key>hash2</key>
-			<data>
-			LK3xV/gy1ziVlQt8lfWp9cv54pWLNDMxJzvSormc7XM=
+			87+PmLWpD0MDrPIRyQKA6leHvzPIzMFHFyokXte8cbI=
 			</data>
 		</dict>
 	</dict>

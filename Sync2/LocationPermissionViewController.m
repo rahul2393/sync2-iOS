@@ -7,7 +7,7 @@
 //
 
 #import "LocationPermissionViewController.h"
-
+@import SixgillSDK;
 @interface LocationPermissionViewController ()
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @end

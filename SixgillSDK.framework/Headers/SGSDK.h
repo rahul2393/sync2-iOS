@@ -10,7 +10,7 @@
 
 #import "SensorUpdateDelegate.h"
 #import "SGLogDelegate.h"
-#import "SGMSQueuePolicy.h"
+#import "EventQueuePolicy.h"
 /**
  `SGSDK` is the wrapper class that exists for the purpose of abstracting away implemenation details and providing a clean API to the user.
  **/
@@ -19,16 +19,17 @@
 
 +(void) initWithAPIKey:(NSString *)apiKey;
 
++(void) enable;
++(void) disable;
+
++(void) showTestLocalNotification;
+
 // Configs
 
 +(void) setBluetoothCollectionSpan:(NSInteger)collectionSpan;
 +(void) setLocationCollectionSpan:(NSInteger)collectionSpan;
-+(void) setLocationCollectionCachePolicy:(SGMSQueuePolicy)locationCachePolicy;
++(void) setLocationCollectionCachePolicy:(EventQueuePolicy)locationCachePolicy;
 
-
-+(void) setClusterAddress:(NSString *)clusterAddress;
-+(void) setDeviceId:(NSString *)deviceId;
-+(NSString *)clusterAddress;
 +(NSString *)deviceId;
 
 // Last 2 Days worth of logs
@@ -41,13 +42,6 @@
 
 +(NSArray *) sensorUpdateHistory:(NSUInteger)capacity;
 
-// Add get high acc. location shot here
-
-+(void) requestAlwaysLocationPermission;
-
-
-+(void) requestInAppLocationPermission;
-
 
 +(void) didReceivePushNotificationPayload:(NSDictionary *)payload
                     withCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
@@ -55,14 +49,13 @@
 +(void) setPushToken:(NSString *)pushToken;
 +(NSString *) storedPushToken;
 
-+(void) setMotionActivityEnabled:(BOOL)enabled;
-
-+(NSString *)GUID;
 +(UIViewController *) inboxViewController;
 
 +(void) forceSensorUpdate;
 
-+(void) stop;
++(void) requestAlwaysPermission;
 
++(void) setMotionActivityEnabled:(BOOL)enabled;
 
++(BOOL) motionActivityEnabled;
 @end

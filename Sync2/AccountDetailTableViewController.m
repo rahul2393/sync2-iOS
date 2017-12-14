@@ -73,8 +73,8 @@
     [super viewWillAppear:animated];
     
     self.title = self.accountObject.accountName;
-    UIBarButtonItem *logsButton = [[UIBarButtonItem alloc]initWithTitle:@"Logs" style:UIBarButtonItemStylePlain target:self action:@selector(showLogsView)];
-    self.navigationItem.rightBarButtonItem = logsButton;
+//    UIBarButtonItem *logsButton = [[UIBarButtonItem alloc]initWithTitle:@"Logs" style:UIBarButtonItemStylePlain target:self action:@selector(showLogsView)];
+//    self.navigationItem.rightBarButtonItem = logsButton;
 
 }
 
@@ -140,9 +140,9 @@
 
 -(void)textCellWithId:(NSString *)cellId didFinishEditing:(NSString *)text{
     if ([cellId isEqualToString:@"cluster"]) {
-        [SGSDK setClusterAddress:text];
+        //[SGSDK setClusterAddress:text];
     }else if([cellId isEqualToString:@"deviceId"]){
-        [SGSDK setDeviceId:text];
+        //[SGSDK setDeviceId:text];
     }
 }
 
@@ -154,7 +154,7 @@
         case 1:{
             TextFieldTableViewCell *c = [self textCellForTableView:tableView];
             c.label.text = @"Cluster Address";
-            c.textField.text = [SGSDK clusterAddress];
+            c.textField.text = @"";//[SGSDK clusterAddress];
             c.textCellId = @"cluster";
             return c;
         }
@@ -286,14 +286,15 @@
 
 -(NSString *)activityString{
     if (self.sensorData[@"SG_ACTIVITY_RESOURCE"]) {
-        return self.sensorData[@"SG_ACTIVITY_RESOURCE"];
+        NSString *s = self.sensorData[@"SG_ACTIVITY_RESOURCE"][@"activity"];
+        return s;
     }
     
     return [self emptyCellString];
 }
 -(NSString *)locationString{
     if (self.sensorData[@"SG_LOCATION_RESOURCE"]) {
-        CLLocation *l = (CLLocation *)self.sensorData[@"SG_LOCATION_RESOURCE"];
+        CLLocation *l = (CLLocation *)self.sensorData[@"SG_LOCATION_RESOURCE"][@"location"];
         NSString *toReturn = [NSString stringWithFormat:@"%f, %f", l.coordinate.latitude, l.coordinate.longitude];
         return toReturn;
     }

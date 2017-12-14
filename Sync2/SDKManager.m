@@ -32,13 +32,13 @@
 }
 
 -(void)requestAlwaysLocationPermission{
-   [SGSDK requestAlwaysLocationPermission];
+   [SGSDK requestAlwaysPermission];
 }
 
 -(void) startSDKWithAPIKey:(NSString *)apiKey{
-    [SGSDK initWithAPIKey:apiKey];
-    [SGSDK setMotionActivityEnabled:YES];
-    [SGSDK registerForLogUpdates:self];
+    [SGSDK initWithAPIKey:@"01BWHNJHFCZXDVDYPTK8080WC1"];
+    [SGSDK enable];
+    [SGSDK requestAlwaysPermission];
 }
 
 -(void)SGReachLog:(NSString *)logMsg{
@@ -54,7 +54,7 @@
 }
 
 -(void) stopSDK{
-    [SGSDK stop];
+    [SGSDK disable];
 }
 
 -(void) setSensorDataDelegate:(id<SensorUpdateDelegate>)delegate{
