@@ -308,9 +308,11 @@
     if (self.sensorData[@"SG_CONFIGURATION_RESOURCE"]) {
         NSDictionary *d =self.sensorData[@"SG_CONFIGURATION_RESOURCE"];
         
-        if (d[@"location_update_cadence"]) {
-            NSNumber *cadenceSecondsNum = d[@"location_update_cadence"];
-            NSString *toReturn = [NSString stringWithFormat:@"%lu seconds", cadenceSecondsNum.integerValue];
+        if (d[@"cadence"]) {
+            NSNumber *cadenceSecondsNum = d[@"cadence"];
+            float sec = cadenceSecondsNum.floatValue / 1000;
+            NSNumber *secNum = [NSNumber numberWithFloat:sec];
+            NSString *toReturn = [NSString stringWithFormat:@"%lu seconds", secNum.integerValue];
             return toReturn;
         }
     }

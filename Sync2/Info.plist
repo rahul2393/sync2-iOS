@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.2</string>
+	<string>1.0.3</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -38,7 +38,11 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Sync uses your camera to scan QR codes that link to your Sixgill Sense applications.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Sync uses location services to send updates at regular intervals to your Sixgill Sense applications.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Sync uses location services to send updates at regular intervals to your Sixgill Sense applications.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Sync uses location services to send updates at regular intervals to your Sixgill Sense applications.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>Sync uses your motion and activity data accurately inform your device about landmarks close to you.</string>
@@ -71,16 +75,12 @@
 		<string>location-services</string>
 		<string>armv7</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Sync uses location services to send updates at regular intervals to your Sixgill Sense applications.</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Sync uses location services to send updates at regular intervals to your Sixgill Sense applications.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

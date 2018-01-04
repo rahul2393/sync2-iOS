@@ -26,7 +26,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		5ry2t60jaqtYFkistD3wRDMaBWY=
+		sBV7Mkh+uNgPTzPQt3vd0PZO85c=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -35,10 +35,6 @@
 		<key>PrivateHeaders/EventQueue.h</key>
 		<data>
 		x9XaoBZ7Xv4XH2MgGBIlAfF+pIc=
-		</data>
-		<key>masefield.json</key>
-		<data>
-		cTX7t+PiaO1sW34C3ZCwYwVQveM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -118,17 +114,6 @@
 			<key>hash2</key>
 			<data>
 			lRWC2UQ1VjggWAWr00P2IfxOZqEs03ab1DgpE88j6As=
-			</data>
-		</dict>
-		<key>masefield.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			cTX7t+PiaO1sW34C3ZCwYwVQveM=
-			</data>
-			<key>hash2</key>
-			<data>
-			87+PmLWpD0MDrPIRyQKA6leHvzPIzMFHFyokXte8cbI=
 			</data>
 		</dict>
 	</dict>
