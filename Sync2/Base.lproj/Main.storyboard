@@ -852,7 +852,7 @@
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glT-tP-kic">
                                 <rect key="frame" x="8" y="633" width="344" height="46"/>
-                                <color key="backgroundColor" red="1" green="0.079394028180000006" blue="0.0" alpha="0.33326198629999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="nhy-0R-jnw"/>
                                 </constraints>
@@ -869,7 +869,7 @@
                                         <state key="normal" title="Button" image="map-icon"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6vP-Mv-nyH" secondAttribute="height" multiplier="1:1" id="NCq-5E-t9J"/>
                                     <constraint firstItem="h5K-2y-mVX" firstAttribute="trailing" secondItem="6vP-Mv-nyH" secondAttribute="trailingMargin" id="UTi-Ss-g7o"/>
@@ -879,7 +879,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94902855157852173" green="0.94900804758071899" blue="0.94901210069656372" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="6vP-Mv-nyH" secondAttribute="trailing" constant="8" id="0lu-2m-k71"/>
                             <constraint firstItem="glT-tP-kic" firstAttribute="leading" secondItem="Leg-8D-doR" secondAttribute="leading" constant="8" id="RnO-Bk-ou3"/>
