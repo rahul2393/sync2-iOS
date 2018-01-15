@@ -684,7 +684,7 @@
         <!--Root View Controller-->
         <scene sceneID="YiX-nB-oPq">
             <objects>
-                <tableViewController id="YMA-yi-XVy" sceneMemberID="viewController">
+                <tableViewController id="YMA-yi-XVy" customClass="NotificationsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Odb-t3-m9D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -750,7 +750,7 @@
         <!--Root View Controller-->
         <scene sceneID="0Cd-hT-Oz5">
             <objects>
-                <tableViewController id="XSa-1P-cbv" sceneMemberID="viewController">
+                <tableViewController id="XSa-1P-cbv" customClass="RulesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="7B0-QM-ZC6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -870,10 +870,10 @@
             </objects>
             <point key="canvasLocation" x="9574" y="-227"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Rule Detail Table View Controller-->
         <scene sceneID="lm2-52-oXY">
             <objects>
-                <tableViewController id="nGG-mk-6xX" sceneMemberID="viewController">
+                <tableViewController id="nGG-mk-6xX" customClass="RuleDetailTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="H2u-6D-5sd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -901,7 +901,7 @@
         <!--Root View Controller-->
         <scene sceneID="Ogb-UC-vXo">
             <objects>
-                <tableViewController id="Inr-pE-Lew" sceneMemberID="viewController">
+                <tableViewController id="Inr-pE-Lew" customClass="LogDayTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ap8-bo-s0J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1064,10 +1064,10 @@
             </objects>
             <point key="canvasLocation" x="9573.9130434782619" y="-1534.2391304347827"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Settings Table View Controller-->
         <scene sceneID="qNq-fK-i45">
             <objects>
-                <tableViewController id="he8-FM-sod" sceneMemberID="viewController">
+                <tableViewController id="he8-FM-sod" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JfK-Qh-JLN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
