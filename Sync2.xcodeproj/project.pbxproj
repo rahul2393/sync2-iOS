@@ -15,6 +15,8 @@
 		E903714C1EE8B6E10033DED0 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E903714B1EE8B6E10033DED0 /* NetworkManager.m */; };
 		E90371521EE8B7DF0033DED0 /* TestNetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = E90371511EE8B7DF0033DED0 /* TestNetworkInterface.m */; };
 		E9128183200FDD1F0003072B /* TextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9128182200FDD1F0003072B /* TextViewTableViewCell.m */; };
+		E9128187201008BA0003072B /* SenseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E9128186201008BA0003072B /* SenseAPI.m */; };
+		E912818B20100B310003072B /* DummyChannelData.m in Sources */ = {isa = PBXBuildFile; fileRef = E912818A20100B310003072B /* DummyChannelData.m */; };
 		E92C51561FFEACFF006FC1CF /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92C51551FFEACFF006FC1CF /* SixgillSDK.framework */; };
 		E92C51571FFEACFF006FC1CF /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E92C51551FFEACFF006FC1CF /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */; };
@@ -109,6 +111,10 @@
 		E90371511EE8B7DF0033DED0 /* TestNetworkInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestNetworkInterface.m; sourceTree = "<group>"; };
 		E9128181200FDD1F0003072B /* TextViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextViewTableViewCell.h; sourceTree = "<group>"; };
 		E9128182200FDD1F0003072B /* TextViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextViewTableViewCell.m; sourceTree = "<group>"; };
+		E9128185201008BA0003072B /* SenseAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SenseAPI.h; sourceTree = "<group>"; };
+		E9128186201008BA0003072B /* SenseAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenseAPI.m; sourceTree = "<group>"; };
+		E912818920100B310003072B /* DummyChannelData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummyChannelData.h; sourceTree = "<group>"; };
+		E912818A20100B310003072B /* DummyChannelData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyChannelData.m; sourceTree = "<group>"; };
 		E92C51551FFEACFF006FC1CF /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		E93C3F041EDDE9EC00F27619 /* PermissionPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionPageController.h; sourceTree = "<group>"; };
 		E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionPageController.m; sourceTree = "<group>"; };
@@ -291,6 +297,34 @@
 			children = (
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		E9128184201008700003072B /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				E9D0A3641F32587E00E7776C /* Map View */,
+				E962B34E1EF1FAB000ECB920 /* Log Viewer */,
+				E9CCF4B91EF1E78200BF96C6 /* QRCodeReaderViewController */,
+				E90371451EE8B5E60033DED0 /* Wifi-Beacon List */,
+				E903713D1EE89AA90033DED0 /* AccountDetail */,
+				E95F582B1EE61E94000562FC /* Push Permission */,
+				E95F58271EE61E6E000562FC /* Camera Permission */,
+				E95F58231EE61E14000562FC /* Motion Permission */,
+				E93C3F071EDDEEA100F27619 /* Location Permission */,
+				E93C3F031EDDE9C100F27619 /* Page Controlleer */,
+				E9A3C2F71EDBA07000A938CB /* Accounts Table */,
+				E9A3C2E31ED77D8E00A938CB /* Welcome */,
+			);
+			name = Old;
+			sourceTree = "<group>";
+		};
+		E912818820100B180003072B /* dummy data */ = {
+			isa = PBXGroup;
+			children = (
+				E912818920100B310003072B /* DummyChannelData.h */,
+				E912818A20100B310003072B /* DummyChannelData.m */,
+			);
+			name = "dummy data";
 			sourceTree = "<group>";
 		};
 		E93C3F031EDDE9C100F27619 /* Page Controlleer */ = {
@@ -495,19 +529,8 @@
 		E9A3C2E21ED77D8600A938CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E9128184201008700003072B /* Old */,
 				E966682820082707006911C3 /* UI Update */,
-				E9D0A3641F32587E00E7776C /* Map View */,
-				E962B34E1EF1FAB000ECB920 /* Log Viewer */,
-				E9CCF4B91EF1E78200BF96C6 /* QRCodeReaderViewController */,
-				E90371451EE8B5E60033DED0 /* Wifi-Beacon List */,
-				E903713D1EE89AA90033DED0 /* AccountDetail */,
-				E95F582B1EE61E94000562FC /* Push Permission */,
-				E95F58271EE61E6E000562FC /* Camera Permission */,
-				E95F58231EE61E14000562FC /* Motion Permission */,
-				E93C3F071EDDEEA100F27619 /* Location Permission */,
-				E93C3F031EDDE9C100F27619 /* Page Controlleer */,
-				E9A3C2F71EDBA07000A938CB /* Accounts Table */,
-				E9A3C2E31ED77D8E00A938CB /* Welcome */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -525,7 +548,7 @@
 			isa = PBXGroup;
 			children = (
 				E9B76D66200D7CD40095030C /* TextCell - redesign */,
-				E9CCE7501F60930F008B1DE6 /* TextCell -old */,
+				E9CCE7501F60930F008B1DE6 /* TextCell - old */,
 				E962B3531EF1FDB600ECB920 /* SDK Manager */,
 				E90371491EE8B6B60033DED0 /* NetworkManager */,
 				E90371411EE89AF40033DED0 /* Account */,
@@ -619,6 +642,7 @@
 		E9B76D5C200D4F4F0095030C /* Data Channel Selection */ = {
 			isa = PBXGroup;
 			children = (
+				E912818820100B180003072B /* dummy data */,
 				E9B76D5D200D4F5F0095030C /* DataChannelSelectionViewController.h */,
 				E9B76D5E200D4F5F0095030C /* DataChannelSelectionViewController.m */,
 			);
@@ -648,6 +672,8 @@
 		E9B76D65200D61DE0095030C /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				E9128185201008BA0003072B /* SenseAPI.h */,
+				E9128186201008BA0003072B /* SenseAPI.m */,
 			);
 			name = Interfaces;
 			sourceTree = "<group>";
@@ -661,13 +687,13 @@
 			name = "TextCell - redesign";
 			sourceTree = "<group>";
 		};
-		E9CCE7501F60930F008B1DE6 /* TextCell -old */ = {
+		E9CCE7501F60930F008B1DE6 /* TextCell - old */ = {
 			isa = PBXGroup;
 			children = (
 				E95B9DBF1F609481007943CA /* TextFieldTableViewCell.h */,
 				E95B9DC01F609481007943CA /* TextFieldTableViewCell.m */,
 			);
-			name = "TextCell -old";
+			name = "TextCell - old";
 			sourceTree = "<group>";
 		};
 		E9CCF4B91EF1E78200BF96C6 /* QRCodeReaderViewController */ = {
@@ -942,6 +968,7 @@
 				E95F58321EE88258000562FC /* SettingsManager.m in Sources */,
 				E9A3C2AB1ED5FD1500A938CB /* AppDelegate.m in Sources */,
 				E90371521EE8B7DF0033DED0 /* TestNetworkInterface.m in Sources */,
+				E912818B20100B310003072B /* DummyChannelData.m in Sources */,
 				E9B76D5B200D4F450095030C /* ProjectSelectionViewController.m in Sources */,
 				E9A3C2EB1ED780CC00A938CB /* WelcomeViewController.m in Sources */,
 				E95B9DC11F609481007943CA /* TextFieldTableViewCell.m in Sources */,
@@ -958,6 +985,7 @@
 				E95F582E1EE61EA3000562FC /* PushPermissionViewController.m in Sources */,
 				E9B76D4B200D37B90095030C /* RuleDetailTableViewController.m in Sources */,
 				E9CCF4C51EF1E78200BF96C6 /* QRCameraSwitchButton.m in Sources */,
+				E9128187201008BA0003072B /* SenseAPI.m in Sources */,
 				E9128183200FDD1F0003072B /* TextViewTableViewCell.m in Sources */,
 				E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */,
 				E90371441EE89B1E0033DED0 /* Account.m in Sources */,

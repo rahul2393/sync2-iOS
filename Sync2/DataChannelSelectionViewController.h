@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DataChannelSelectionViewController : UIViewController
+@interface DataChannelSelectionViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *selectChannelButton;
+
+@property (nonatomic, strong) NSArray *channels;
+@property (nonatomic, readwrite) BOOL useDummy;
+
+- (IBAction)selectChannelButtonTapped:(id)sender;
 
 @end

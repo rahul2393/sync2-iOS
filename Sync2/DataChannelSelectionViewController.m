@@ -7,7 +7,7 @@
 //
 
 #import "DataChannelSelectionViewController.h"
-
+#import "DummyChannelData.h"
 @interface DataChannelSelectionViewController ()
 
 @end
@@ -19,19 +19,35 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if (!self.channels) {
+        
+        if (self.useDummy) {
+            self.channels = [DummyChannelData channelTitles];
+        }
+        
+        self.channels = [NSArray array];
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    switch (section) {
+        case 0:
+            return 1;
+        default:
+            return self.channels.count;
+    }
 }
-*/
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+- (IBAction)selectChannelButtonTapped:(id)sender {
+}
 @end

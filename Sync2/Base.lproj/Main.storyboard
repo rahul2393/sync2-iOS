@@ -593,6 +593,9 @@
                                     <state key="normal" title="Select Channel">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="selectChannelButtonTapped:" destination="5Jm-Uo-xcd" eventType="touchUpInside" id="CYc-QR-b3v"/>
+                                    </connections>
                                 </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dataChannelInfoCell" rowHeight="176" id="nw1-Xr-5ht" customClass="TextViewTableViewCell">
@@ -642,6 +645,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5Jm-Uo-xcd" id="ii9-Kk-Pd6"/>
+                                    <outlet property="delegate" destination="5Jm-Uo-xcd" id="78b-EF-EtR"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -655,6 +662,10 @@
                             <constraint firstItem="DHW-Ze-j2e" firstAttribute="leading" secondItem="5aJ-6E-ccx" secondAttribute="leading" id="v2d-BR-Bx8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="selectChannelButton" destination="9yI-df-ybp" id="BGC-tQ-vbI"/>
+                        <outlet property="tableView" destination="lRu-Wa-Ali" id="Yvg-Wv-gYJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwA-yp-eXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
