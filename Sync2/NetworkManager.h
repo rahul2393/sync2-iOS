@@ -18,8 +18,10 @@
 
 + (id)sharedManager;
 
+@property (nonatomic, strong) id<NetworkManagerInterface> interface;
+
 -(void) AccountForQRCodeId:(NSString *_Nonnull)qrCode withCompletion:(void ( ^ _Nullable )(NSDictionary * _Nullable accountData, NSError * _Nullable error))completed;
 
-@property (nonatomic, strong) id<NetworkManagerInterface> interface;
+
 
 @end

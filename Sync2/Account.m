@@ -28,8 +28,7 @@
     
     if(!self.apiKey){
         self.apiKey = @"";
-    }
-    
+    }    
     
     return @{dk_accountName:self.accountName,
              dk_apiKey:self.apiKey,
