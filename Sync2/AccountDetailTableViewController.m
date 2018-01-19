@@ -167,8 +167,7 @@
             return c;
         }
             break;
-    }
-    
+    }    
 }
 
 - (UITableViewCell *)dataSection:(NSIndexPath *)indexPath forTableView:(UITableView *)tableView{

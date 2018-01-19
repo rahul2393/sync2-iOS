@@ -13,6 +13,6 @@
 @property (nonatomic, strong) NSString *textCellId;
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
-@property (weak, nonatomic) IBOutlet UITextView *textField;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end

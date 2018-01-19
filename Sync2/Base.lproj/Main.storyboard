@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MOx-o9-HDz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nZx-4k-yIp">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -561,6 +561,26 @@
             </objects>
             <point key="canvasLocation" x="6520.8000000000002" y="-1344.0886699507389"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Dy-sW-6aw">
+            <objects>
+                <navigationController id="nZx-4k-yIp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cK1-67-HhD">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0062943333759903908" green="0.17320993542671204" blue="0.41451984643936157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5Jm-Uo-xcd" kind="relationship" relationship="rootViewController" id="32M-2e-VHD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f4o-Ns-qS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7264" y="-1416"/>
+        </scene>
         <!--Data Channel Selection View Controller-->
         <scene sceneID="VZB-2j-qJD">
             <objects>
@@ -573,18 +593,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHW-Ze-j2e">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <color key="barTintColor" red="0.0099832108244299889" green="0.1773892343044281" blue="0.41447064280509949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Select Data Channel to Use" id="sPN-B7-7Gq"/>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="lRu-Wa-Ali">
-                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9yI-df-ybp">
                                     <rect key="frame" x="0.0" y="249.33333333333337" width="414" height="44"/>
@@ -618,11 +628,11 @@
                                                         <constraint firstAttribute="height" constant="1" id="0J4-j6-8xH"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="69i-Zt-3Gc">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69i-Zt-3Gc">
                                                     <rect key="frame" x="15" y="45" width="384" height="120"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <string key="text">Your device will register with a Data Channel that you select and send data into Sixgill Sense through it.  We recommend selecting a Data Channel that corresponds to your device type.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -641,7 +651,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="label" destination="HT9-ct-SVc" id="cj8-eo-OmV"/>
-                                            <outlet property="textField" destination="69i-Zt-3Gc" id="qZG-OF-Jvt"/>
+                                            <outlet property="textView" destination="69i-Zt-3Gc" id="1gB-se-8pG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -653,15 +663,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DHW-Ze-j2e" firstAttribute="bottom" secondItem="lRu-Wa-Ali" secondAttribute="top" id="GUD-Cq-VOp"/>
-                            <constraint firstItem="DHW-Ze-j2e" firstAttribute="leading" secondItem="lRu-Wa-Ali" secondAttribute="leading" id="IIG-x2-aGA"/>
-                            <constraint firstItem="DHW-Ze-j2e" firstAttribute="top" secondItem="5aJ-6E-ccx" secondAttribute="top" id="NQb-1k-pUC"/>
-                            <constraint firstAttribute="trailing" secondItem="DHW-Ze-j2e" secondAttribute="trailing" id="hDh-p9-jld"/>
-                            <constraint firstItem="DHW-Ze-j2e" firstAttribute="trailing" secondItem="lRu-Wa-Ali" secondAttribute="trailing" id="hyA-ko-UvX"/>
+                            <constraint firstAttribute="trailing" secondItem="lRu-Wa-Ali" secondAttribute="trailing" id="TzQ-lE-LFf"/>
+                            <constraint firstItem="lRu-Wa-Ali" firstAttribute="leading" secondItem="5aJ-6E-ccx" secondAttribute="leading" id="Zb4-ym-9dM"/>
+                            <constraint firstItem="lRu-Wa-Ali" firstAttribute="top" secondItem="LPK-ZM-5Xp" secondAttribute="bottom" id="jPr-To-JIe"/>
                             <constraint firstItem="lRu-Wa-Ali" firstAttribute="bottom" secondItem="xoT-SY-iVU" secondAttribute="top" id="mpC-qd-DHR"/>
-                            <constraint firstItem="DHW-Ze-j2e" firstAttribute="leading" secondItem="5aJ-6E-ccx" secondAttribute="leading" id="v2d-BR-Bx8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="JXu-uD-eIC"/>
                     <connections>
                         <outlet property="selectChannelButton" destination="9yI-df-ybp" id="BGC-tQ-vbI"/>
                         <outlet property="tableView" destination="lRu-Wa-Ali" id="Yvg-Wv-gYJ"/>
@@ -669,7 +677,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwA-yp-eXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7322" y="-1343"/>
+            <point key="canvasLocation" x="7369.5652173913049" y="-1343.4782608695652"/>
         </scene>
         <!--Master Tab View Controller-->
         <scene sceneID="LeW-bi-v0N">
@@ -2603,7 +2611,7 @@ Permission</string>
         <image name="push-graphic" width="240" height="240"/>
         <image name="qr-graphic" width="300" height="300"/>
         <image name="rule-active-indicator-icon" width="36" height="36"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>

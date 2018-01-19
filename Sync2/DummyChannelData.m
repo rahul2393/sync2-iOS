@@ -11,7 +11,7 @@
 @implementation DummyChannelData
 
 +(NSString *) descriptionText{
-    return @"Your device will register with a Data Channel that you select and send data into Sixgill Sense through it.\n\n We recommend selecting a Data Channel that corresponds to your Device type.";
+    return @"Your device will register with a Data Channel that you select and send data into Sixgill Sense through it.\n\n We recommend selecting a Data Channel that corresponds to your device type.";
 }
 +(NSArray *) channelTitles{
     return @[@"Golf Courses App",
