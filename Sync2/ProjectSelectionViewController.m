@@ -7,31 +7,148 @@
 //
 
 #import "ProjectSelectionViewController.h"
+#import "DummyProjectData.h"
+#import "TextViewTableViewCell.h"
 
 @interface ProjectSelectionViewController ()
-
+@property (nonatomic, strong) NSArray *projects;
+@property (nonatomic, readwrite) BOOL useDummy;
+@property (nonatomic, readwrite) BOOL projectSelected;
+@property (nonatomic, readwrite) NSInteger selectedIx;
 @end
 
 @implementation ProjectSelectionViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if (!self.projects) {
+        
+        self.useDummy = YES;
+        
+        if (self.useDummy) {
+            self.projects = [DummyProjectData projects];
+        }else{
+            self.projects = [NSArray array];
+        }
+    }
+    
+    self.title = @"Select Project to Use";
+    
+    [self.selectProjectButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
+    [self.selectProjectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.selectedIx = -1;
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self setButtonEnabled:NO];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == 0) {
+        return;
+    }
+    
+    if (self.selectedIx == indexPath.row) {
+        self.projectSelected = !self.projectSelected;
+        self.selectedIx = -1;
+        [self setButtonEnabled:NO];
+    }else{
+        self.projectSelected = YES;
+        self.selectedIx = indexPath.row;
+        [self setButtonEnabled:YES];
+    }
+    
+    [self.tableView reloadData];
+    
 }
-*/
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    switch (section) {
+        case 0:
+            return 1;
+        default:
+            return self.projects.count;
+    }
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+-(TextViewTableViewCell *) textCellForTableView:(UITableView *)tableView{
+    TextViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"projectInfoCell"];
+    
+    if (cell == nil) {
+        cell = [[TextViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"projectInfoCell"];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+-(UITableViewCell *) descriptionCell{
+    TextViewTableViewCell *cell = [self textCellForTableView:self.tableView];
+    cell.label.text = @"Projects";
+    
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == 0) {
+        return 176.0;
+    }else{
+        return 44.0;
+    }
+    
+}
+
+-(void) setButtonEnabled:(BOOL)enabled{
+    self.selectProjectButton.enabled = enabled;
+}
+
+
+-(UITableViewCell *) channelCellForIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    if (cell == nil) {
+        cell = [[TextViewTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.text = self.projects[indexPath.row];
+    cell.detailTextLabel.text = @"iOS";
+    
+    if (self.selectedIx == indexPath.row && self.projectSelected) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    return cell;
+    
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    switch (indexPath.section) {
+        case 0:
+            return [self descriptionCell];
+        default:
+            return [self channelCellForIndexPath:indexPath];
+    }
+}
+
+
+- (IBAction)selectProjectButtonTapped:(id)sender {
+    
+    NSLog(@"Button tapped");
+    
+}
 @end

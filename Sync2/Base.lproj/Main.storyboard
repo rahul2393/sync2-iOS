@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nZx-4k-yIp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GG5-PT-2eE">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1109,6 +1109,23 @@
             </objects>
             <point key="canvasLocation" x="10364" y="-1534"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xHq-DH-kIG">
+            <objects>
+                <navigationController id="GG5-PT-2eE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kc4-UN-CmJ">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0062943333760000003" green="0.17320993539999999" blue="0.4145198464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="V7K-OI-iyV" kind="relationship" relationship="rootViewController" id="KTb-bQ-GTg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EXV-BS-KCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8065" y="-1416"/>
+        </scene>
         <!--Project Selection View Controller-->
         <scene sceneID="wY9-4F-diD">
             <objects>
@@ -1121,18 +1138,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9M-GL-iET">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <color key="barTintColor" red="0.0099832108239999995" green="0.1773892343" blue="0.41447064280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Select Project to Use" id="vCf-Ed-5Dc"/>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-7S-yj0">
-                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FZX-1b-EJD">
                                     <rect key="frame" x="0.0" y="249.33333333333337" width="414" height="44"/>
@@ -1141,9 +1148,12 @@
                                     <state key="normal" title="Select Project">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="selectProjectButtonTapped:" destination="V7K-OI-iyV" eventType="touchUpInside" id="889-B8-kIB"/>
+                                    </connections>
                                 </button>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dataChannelInfoCell" rowHeight="176" id="1U1-Eg-AO4" customClass="TextViewTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="projectInfoCell" rowHeight="176" id="1U1-Eg-AO4" customClass="TextViewTableViewCell">
                                         <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="176"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1U1-Eg-AO4" id="CJb-aH-21m">
@@ -1163,7 +1173,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="0HL-MN-MCn"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eil-CR-Abz">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eil-CR-Abz">
                                                     <rect key="frame" x="15" y="45" width="384" height="120"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <string key="text">You can manage and create projects within Sixgill Sense. Each project has their own Landmarks and Rules within it and one or many data channels.  We recommend selecting a Project that you want to test rules or Landmarks from.</string>
@@ -1186,27 +1196,33 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="label" destination="Dc5-4U-cKt" id="abL-66-aUG"/>
-                                            <outlet property="textField" destination="eil-CR-Abz" id="8Ob-AM-SrM"/>
+                                            <outlet property="textView" destination="eil-CR-Abz" id="eFF-oA-mGk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="V7K-OI-iyV" id="vDr-Mw-9sr"/>
+                                    <outlet property="delegate" destination="V7K-OI-iyV" id="GGB-gX-1ao"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="s9M-GL-iET" firstAttribute="bottom" secondItem="RpG-7S-yj0" secondAttribute="top" id="2bt-65-XPD"/>
-                            <constraint firstItem="s9M-GL-iET" firstAttribute="trailing" secondItem="RpG-7S-yj0" secondAttribute="trailing" id="6eJ-va-wi9"/>
-                            <constraint firstAttribute="trailing" secondItem="s9M-GL-iET" secondAttribute="trailing" id="ClR-JH-SFd"/>
-                            <constraint firstItem="s9M-GL-iET" firstAttribute="top" secondItem="agB-wX-HQ7" secondAttribute="top" id="Xyb-BF-n8a"/>
-                            <constraint firstItem="s9M-GL-iET" firstAttribute="leading" secondItem="agB-wX-HQ7" secondAttribute="leading" id="hoT-57-0W1"/>
-                            <constraint firstItem="s9M-GL-iET" firstAttribute="leading" secondItem="RpG-7S-yj0" secondAttribute="leading" id="m1O-cp-CIq"/>
+                            <constraint firstAttribute="trailing" secondItem="RpG-7S-yj0" secondAttribute="trailing" id="9sv-KX-ifj"/>
+                            <constraint firstItem="RpG-7S-yj0" firstAttribute="top" secondItem="sxg-6U-6uV" secondAttribute="bottom" id="ZxJ-Pv-Rgh"/>
+                            <constraint firstItem="RpG-7S-yj0" firstAttribute="leading" secondItem="agB-wX-HQ7" secondAttribute="leading" id="e4B-Bt-JzA"/>
                             <constraint firstItem="RpG-7S-yj0" firstAttribute="bottom" secondItem="dW8-0e-yOx" secondAttribute="top" id="yTv-Is-j2Z"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="G4w-z3-O0h"/>
+                    <connections>
+                        <outlet property="selectProjectButton" destination="FZX-1b-EJD" id="2ab-PJ-0pE"/>
+                        <outlet property="tableView" destination="RpG-7S-yj0" id="jdh-32-CcU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCf-lm-sLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8151" y="-1343"/>
+            <point key="canvasLocation" x="8150.7246376811599" y="-1343.4782608695652"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="c5E-lf-w8b">
