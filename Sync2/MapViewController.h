@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @import MapKit;
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIView *coordinateView;
 @property (weak, nonatomic) IBOutlet UIButton *mapSettingsButton;

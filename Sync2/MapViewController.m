@@ -22,7 +22,10 @@
     
     if (!self.coords) {
         self.coords = [DummyMapData coords];
+        self.mapView.delegate = self;
+        [self.mapView setShowsUserLocation:YES];
     }
+    self.title = @"Map";
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -45,9 +48,14 @@
 -(void) drawMapMarkers{
     for (NSArray *c in self.coords) {
         MKPointAnnotation *p = [[MKPointAnnotation alloc] init];
-        p.coordinate = CLLocationCoordinate2DMake([(NSNumber *)c[0] floatValue], [(NSNumber *)c[1] floatValue]);
+        p.coordinate = CLLocationCoordinate2DMake([(NSNumber *)c[0] floatValue], [(NSNumber *)c[1] floatValue]);        
         [self.mapView addAnnotation:p];
     }
+}
+
+-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
+    [self.mapView setCenterCoordinate:view.annotation.coordinate animated:YES];
+    self.coordinateLabel.text = [NSString stringWithFormat:@"%f, %f",view.annotation.coordinate.latitude, view.annotation.coordinate.longitude];
 }
 
 
