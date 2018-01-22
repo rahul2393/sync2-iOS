@@ -22,6 +22,7 @@
 		E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */; };
 		E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F091EDDEEE300F27619 /* LocationPermissionViewController.m */; };
 		E943D3E82012C27800882D09 /* DummyProjectData.m in Sources */ = {isa = PBXBuildFile; fileRef = E943D3E72012C27800882D09 /* DummyProjectData.m */; };
+		E943D3EC2012CC0700882D09 /* DummyMapData.m in Sources */ = {isa = PBXBuildFile; fileRef = E943D3EB2012CC0700882D09 /* DummyMapData.m */; };
 		E95B9DC11F609481007943CA /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E95B9DC01F609481007943CA /* TextFieldTableViewCell.m */; };
 		E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58251EE61E57000562FC /* MotionPermissionViewController.m */; };
 		E95F582A1EE61E7B000562FC /* CameraPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58291EE61E7B000562FC /* CameraPermissionViewController.m */; };
@@ -123,6 +124,8 @@
 		E93C3F091EDDEEE300F27619 /* LocationPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPermissionViewController.m; sourceTree = "<group>"; };
 		E943D3E62012C27800882D09 /* DummyProjectData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummyProjectData.h; sourceTree = "<group>"; };
 		E943D3E72012C27800882D09 /* DummyProjectData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyProjectData.m; sourceTree = "<group>"; };
+		E943D3EA2012CC0700882D09 /* DummyMapData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummyMapData.h; sourceTree = "<group>"; };
+		E943D3EB2012CC0700882D09 /* DummyMapData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyMapData.m; sourceTree = "<group>"; };
 		E95B9DBF1F609481007943CA /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
 		E95B9DC01F609481007943CA /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
 		E95F58241EE61E57000562FC /* MotionPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionPermissionViewController.h; sourceTree = "<group>"; };
@@ -357,6 +360,15 @@
 			name = "dummy data";
 			sourceTree = "<group>";
 		};
+		E943D3E92012CBF200882D09 /* dummy map data */ = {
+			isa = PBXGroup;
+			children = (
+				E943D3EA2012CC0700882D09 /* DummyMapData.h */,
+				E943D3EB2012CC0700882D09 /* DummyMapData.m */,
+			);
+			name = "dummy map data";
+			sourceTree = "<group>";
+		};
 		E95F58231EE61E14000562FC /* Motion Permission */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,12 +460,12 @@
 			children = (
 				E9B76D5C200D4F4F0095030C /* Data Channel Selection */,
 				E9B76D58200D4F300095030C /* Project Selection */,
+				E9B76D38200D31780095030C /* Map Controller */,
 				E9B76D4C200D4D5F0095030C /* Settings Table */,
 				E9B76D48200D37A90095030C /* Rule Detail Table */,
 				E9B76D44200D35AB0095030C /* Log Day Table */,
 				E9B76D40200D32490095030C /* Rules Table */,
 				E9B76D3C200D31BF0095030C /* Notifications Table Controller */,
-				E9B76D38200D31780095030C /* Map Controller */,
 				E9B76D37200969260095030C /* Tab Controller */,
 			);
 			name = "UI Update";
@@ -591,6 +603,7 @@
 		E9B76D38200D31780095030C /* Map Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E943D3E92012CBF200882D09 /* dummy map data */,
 				E9B76D39200D31940095030C /* MapViewController.h */,
 				E9B76D3A200D31940095030C /* MapViewController.m */,
 			);
@@ -977,6 +990,7 @@
 				E9B76D43200D32580095030C /* RulesTableViewController.m in Sources */,
 				E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */,
 				E90371481EE8B6110033DED0 /* ListTableViewController.m in Sources */,
+				E943D3EC2012CC0700882D09 /* DummyMapData.m in Sources */,
 				E962B34D1EF1F42A00ECB920 /* SwitchCell.m in Sources */,
 				E95F58321EE88258000562FC /* SettingsManager.m in Sources */,
 				E9A3C2AB1ED5FD1500A938CB /* AppDelegate.m in Sources */,

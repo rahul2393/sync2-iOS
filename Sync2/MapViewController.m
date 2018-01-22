@@ -7,8 +7,10 @@
 //
 
 #import "MapViewController.h"
-
+#import "DummyMapData.h"
 @interface MapViewController ()
+
+@property (nonatomic, strong) NSArray *coords;
 
 @end
 
@@ -16,22 +18,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    if (!self.coords) {
+        self.coords = [DummyMapData coords];
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self drawMapMarkers];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self zoomInOnLastCoord];
 }
-*/
 
+-(void) zoomInOnLastCoord{
+    CLLocationCoordinate2D last = CLLocationCoordinate2DMake([(NSNumber *)self.coords.lastObject[0] floatValue], [(NSNumber *)self.coords.lastObject[1] floatValue]);
+    [self.mapView setCenterCoordinate:last animated:YES];
+    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(last, 1000, 1000);
+    [self.mapView setRegion:zoomRegion animated:YES];
+}
+
+-(void) drawMapMarkers{
+    for (NSArray *c in self.coords) {
+        MKPointAnnotation *p = [[MKPointAnnotation alloc] init];
+        p.coordinate = CLLocationCoordinate2DMake([(NSNumber *)c[0] floatValue], [(NSNumber *)c[1] floatValue]);
+        [self.mapView addAnnotation:p];
+    }
+}
+
+
+
+- (IBAction)mapSettingsTapped:(id)sender {
+}
 @end

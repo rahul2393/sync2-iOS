@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GG5-PT-2eE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MOx-o9-HDz">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1019,7 +1019,7 @@
         <!--Map-->
         <scene sceneID="8XR-c7-Oej">
             <objects>
-                <viewController title="Map" id="M6G-YW-ApW" sceneMemberID="viewController">
+                <viewController title="Map" id="M6G-YW-ApW" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9CK-w6-uhB"/>
                         <viewControllerLayoutGuide type="bottom" id="jPl-LJ-qHw"/>
@@ -1033,9 +1033,31 @@
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glT-tP-kic">
                                 <rect key="frame" x="8" y="633" width="344" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34.035433, -118.417573" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLv-6r-IzO">
+                                        <rect key="frame" x="50.666666666666657" y="12" width="285.33333333333337" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-pin-icon" translatesAutoresizingMaskIntoConstraints="NO" id="CWU-yX-Xrb">
+                                        <rect key="frame" x="8" y="10" width="17" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="CWU-yX-Xrb" secondAttribute="height" multiplier="25:38" id="tkv-Gv-1sC"/>
+                                            <constraint firstAttribute="height" constant="26" id="uiO-wC-jwg"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="XLv-6r-IzO" firstAttribute="leading" secondItem="CWU-yX-Xrb" secondAttribute="trailing" constant="25.666666666666657" id="3jl-K1-HN3"/>
+                                    <constraint firstItem="XLv-6r-IzO" firstAttribute="top" secondItem="glT-tP-kic" secondAttribute="topMargin" constant="4" id="7U9-uT-pD4"/>
+                                    <constraint firstAttribute="bottom" secondItem="CWU-yX-Xrb" secondAttribute="bottom" constant="10" id="N93-mF-RKc"/>
+                                    <constraint firstItem="CWU-yX-Xrb" firstAttribute="top" secondItem="glT-tP-kic" secondAttribute="top" constant="10" id="YUb-cj-mvQ"/>
+                                    <constraint firstItem="CWU-yX-Xrb" firstAttribute="leading" secondItem="glT-tP-kic" secondAttribute="leading" constant="8" id="cbG-9r-H7A"/>
                                     <constraint firstAttribute="height" constant="46" id="nhy-0R-jnw"/>
+                                    <constraint firstItem="XLv-6r-IzO" firstAttribute="trailing" secondItem="glT-tP-kic" secondAttribute="trailingMargin" id="uxD-Az-Qir"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="XLv-6r-IzO" secondAttribute="bottom" constant="4" id="v1V-JR-ox2"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vP-Mv-nyH">
@@ -1048,6 +1070,9 @@
                                             <constraint firstAttribute="width" secondItem="h5K-2y-mVX" secondAttribute="height" multiplier="1:1" id="p0I-h9-VJo"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="map-icon"/>
+                                        <connections>
+                                            <action selector="mapSettingsTapped:" destination="M6G-YW-ApW" eventType="touchUpInside" id="DFD-AV-Wps"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1076,6 +1101,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A95-Fs-dqN"/>
+                    <connections>
+                        <outlet property="coordinateLabel" destination="XLv-6r-IzO" id="hNW-oS-YIY"/>
+                        <outlet property="coordinateView" destination="glT-tP-kic" id="JDV-tx-Ors"/>
+                        <outlet property="mapSettingsButton" destination="h5K-2y-mVX" id="spd-r6-jDB"/>
+                        <outlet property="mapView" destination="wZf-uv-HVs" id="gsF-DX-vdE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7p-jI-A3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2623,6 +2654,7 @@ Permission</string>
         <image name="icon-setup-complete" width="57" height="80"/>
         <image name="line-image" width="846" height="6"/>
         <image name="location-graphic" width="240" height="240"/>
+        <image name="location-pin-icon" width="48" height="72"/>
         <image name="map-icon" width="78" height="72"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="qr-graphic" width="300" height="300"/>
