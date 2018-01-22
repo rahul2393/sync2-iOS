@@ -11,5 +11,6 @@
 @interface DummyMapData : NSObject
 
 +(NSArray *) coords;
++(NSArray *) geofences;
 
 @end
