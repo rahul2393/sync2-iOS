@@ -35,6 +35,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self drawMapMarkers];
+    [self drawGeofences];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -57,16 +58,18 @@
     }
 }
 
--(void) drawGeofences {
+-(void) drawGeofences{
     
     NSInteger count = 0;
     for (NSArray *g in self.geofences) {
         NSArray *coordAr = self.geofences[count];
         CLLocationCoordinate2D geofenceArray[coordAr.count];
+        NSInteger ptCount = 0;
         for (NSArray *coordSet in g) {
             NSNumber *latNum = (NSNumber *)coordSet[0];
             NSNumber *lonNum = (NSNumber *)coordSet[1];
-            geofenceArray[count] = CLLocationCoordinate2DMake(latNum.doubleValue, lonNum.doubleValue);
+            geofenceArray[ptCount] = CLLocationCoordinate2DMake(latNum.doubleValue, lonNum.doubleValue);
+            ptCount++;
         }
         MKPolygon *poly = [MKPolygon polygonWithCoordinates:geofenceArray count:coordAr.count];
         [self.mapView addOverlay:poly];
@@ -75,13 +78,16 @@
 }
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    
     if (![overlay isKindOfClass:[MKPolygon class]]) {
         return nil;
     }
+    
     MKPolygon *polygon = (MKPolygon *)overlay;
     MKPolygonRenderer *renderer = [[MKPolygonRenderer alloc] initWithPolygon:polygon];
     renderer.fillColor = [[UIColor blueColor] colorWithAlphaComponent:0.4];
     return renderer;
+    
 }
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{

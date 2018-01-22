@@ -26,7 +26,7 @@
     [bluffsPoly addObject:@[@34.015677, @-118.500008]];
     
     
-    return bluffsPoly;
+    return @[bluffsPoly];
 }
 
 @end
