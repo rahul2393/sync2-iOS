@@ -12,6 +12,11 @@
 
 + (id)sharedManager;
 
+-(BOOL) mapShowLast5Pts;
+-(BOOL) mapShowGeofences;
+-(void) setMapShowLast5Pts:(BOOL)show;
+-(void) setMapShowGeofences:(BOOL)show;
+
 -(BOOL) hasOnboarded;
 
 -(void) setHasOnboarded:(BOOL)hasOnboarded;

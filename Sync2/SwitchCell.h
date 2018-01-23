@@ -10,7 +10,7 @@
 
 @protocol SwitchDelegate
 
--(void)activeSwitchToggled:(BOOL)state;
+-(void)activeSwitchToggled:(BOOL)state withTag:(NSInteger)tag;
 
 @end
 

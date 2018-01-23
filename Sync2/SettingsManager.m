@@ -14,6 +14,10 @@
 
 #define KEY_ACTIVEACCOUNTID @"activeAccountId"
 
+#define KEY_MAP_SHOWGEOFENCES @"showGeofences"
+
+#define KEY_MAP_SHOWLAST5PTS @"showLast5pts"
+
 @implementation SettingsManager
 
 + (id)sharedManager {
@@ -31,6 +35,23 @@
     }
     return self;
 }
+
+-(BOOL) mapShowLast5Pts{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:KEY_MAP_SHOWLAST5PTS];
+}
+-(BOOL) mapShowGeofences{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:KEY_MAP_SHOWGEOFENCES];
+}
+-(void) setMapShowLast5Pts:(BOOL)show{
+    [[NSUserDefaults standardUserDefaults] setBool:show forKey:KEY_MAP_SHOWLAST5PTS];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+-(void) setMapShowGeofences:(BOOL)show{
+    [[NSUserDefaults standardUserDefaults] setBool:show forKey:KEY_MAP_SHOWGEOFENCES];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
 
 -(BOOL) hasOnboarded{
     return [[NSUserDefaults standardUserDefaults] boolForKey:KEY_HASONBOARDED];

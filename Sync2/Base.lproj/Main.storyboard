@@ -1006,6 +1006,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2uC-ka-vpe">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.43946623800000001" green="0.79668909310000002" blue="0.41164535279999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.058823529409999999" green="0.15788578989999999" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1075,6 +1076,7 @@
                                         <state key="normal" title="Button" image="map-icon"/>
                                         <connections>
                                             <action selector="mapSettingsTapped:" destination="M6G-YW-ApW" eventType="touchUpInside" id="DFD-AV-Wps"/>
+                                            <segue destination="Lio-c0-MLe" kind="show" id="JOn-4X-ELk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1115,6 +1117,49 @@
             </objects>
             <point key="canvasLocation" x="9573.9130434782619" y="-1534.2391304347827"/>
         </scene>
+        <!--Map Settings Table View Controller-->
+        <scene sceneID="MZI-ea-OSS">
+            <objects>
+                <tableViewController id="Lio-c0-MLe" customClass="MapSettingsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="lPY-ey-VNX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="switchCell" id="kO6-Fh-7iF" customClass="SwitchCell">
+                                <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kO6-Fh-7iF" id="DPQ-jM-2do">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41S-Ba-4SG">
+                                            <rect key="frame" x="347" y="7" width="49" height="31"/>
+                                            <connections>
+                                                <action selector="activeSwitchToggled:" destination="kO6-Fh-7iF" eventType="valueChanged" id="NUG-aa-aZD"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="41S-Ba-4SG" firstAttribute="centerY" secondItem="DPQ-jM-2do" secondAttribute="centerY" id="0xl-eV-yVe"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="41S-Ba-4SG" secondAttribute="trailing" constant="-2" id="Dzi-IH-izv"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="activeSwitch" destination="41S-Ba-4SG" id="Y2G-af-x0G"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Lio-c0-MLe" id="XhD-ty-7nk"/>
+                            <outlet property="delegate" destination="Lio-c0-MLe" id="1kU-7L-MvQ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxJ-yo-bMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10259" y="-1534"/>
+        </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="qNq-fK-i45">
             <objects>
@@ -1141,7 +1186,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Msd-qB-O39" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10364" y="-1534"/>
+            <point key="canvasLocation" x="9226" y="-2217"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xHq-DH-kIG">
@@ -2662,7 +2707,7 @@ Permission</string>
         <image name="push-graphic" width="240" height="240"/>
         <image name="qr-graphic" width="300" height="300"/>
         <image name="rule-active-indicator-icon" width="36" height="36"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>

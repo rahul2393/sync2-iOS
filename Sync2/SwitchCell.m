@@ -26,7 +26,7 @@
 
 - (IBAction)activeSwitchToggled:(id)sender {
     
-    [self.delegate activeSwitchToggled:[self.activeSwitch isOn]];
+    [self.delegate activeSwitchToggled:[self.activeSwitch isOn] withTag:self.activeSwitch.tag];
     
 }
 @end

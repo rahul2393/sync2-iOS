@@ -8,10 +8,15 @@
 
 #import "MapViewController.h"
 #import "DummyMapData.h"
+#import "SettingsManager.h"
 @interface MapViewController ()
 
 @property (nonatomic, strong) NSArray *coords;
 @property (nonatomic, strong) NSArray *geofences;
+
+@property (nonatomic, readwrite) BOOL showLast5Locs;
+@property (nonatomic, readwrite) BOOL showGeo;
+
 @end
 
 @implementation MapViewController
@@ -34,8 +39,21 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self drawMapMarkers];
-    [self drawGeofences];
+    
+    _showGeo = [[SettingsManager sharedManager] mapShowGeofences];
+    _showLast5Locs = [[SettingsManager sharedManager] mapShowLast5Pts];
+    
+    [self.mapView removeOverlays:self.mapView.overlays];
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    
+    if (_showLast5Locs) {
+        [self drawMapMarkers];
+    }
+    
+    if (_showGeo) {
+        [self drawGeofences];
+    }
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
