@@ -23,6 +23,9 @@
 		E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F091EDDEEE300F27619 /* LocationPermissionViewController.m */; };
 		E943D3E82012C27800882D09 /* DummyProjectData.m in Sources */ = {isa = PBXBuildFile; fileRef = E943D3E72012C27800882D09 /* DummyProjectData.m */; };
 		E943D3EC2012CC0700882D09 /* DummyMapData.m in Sources */ = {isa = PBXBuildFile; fileRef = E943D3EB2012CC0700882D09 /* DummyMapData.m */; };
+		E9518B542017EF9E001818CC /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B532017EF9E001818CC /* Project.m */; };
+		E9518B572017EFA6001818CC /* DataChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B562017EFA6001818CC /* DataChannel.m */; };
+		E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B5A2017F0C8001818CC /* DummySettingsData.m */; };
 		E95B9DC11F609481007943CA /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E95B9DC01F609481007943CA /* TextFieldTableViewCell.m */; };
 		E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58251EE61E57000562FC /* MotionPermissionViewController.m */; };
 		E95F582A1EE61E7B000562FC /* CameraPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58291EE61E7B000562FC /* CameraPermissionViewController.m */; };
@@ -127,6 +130,12 @@
 		E943D3E72012C27800882D09 /* DummyProjectData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyProjectData.m; sourceTree = "<group>"; };
 		E943D3EA2012CC0700882D09 /* DummyMapData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummyMapData.h; sourceTree = "<group>"; };
 		E943D3EB2012CC0700882D09 /* DummyMapData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyMapData.m; sourceTree = "<group>"; };
+		E9518B522017EF9E001818CC /* Project.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
+		E9518B532017EF9E001818CC /* Project.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
+		E9518B552017EFA6001818CC /* DataChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataChannel.h; sourceTree = "<group>"; };
+		E9518B562017EFA6001818CC /* DataChannel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataChannel.m; sourceTree = "<group>"; };
+		E9518B592017F0C8001818CC /* DummySettingsData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummySettingsData.h; sourceTree = "<group>"; };
+		E9518B5A2017F0C8001818CC /* DummySettingsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummySettingsData.m; sourceTree = "<group>"; };
 		E95B9DBF1F609481007943CA /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
 		E95B9DC01F609481007943CA /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
 		E95F58241EE61E57000562FC /* MotionPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionPermissionViewController.h; sourceTree = "<group>"; };
@@ -372,6 +381,33 @@
 			name = "dummy map data";
 			sourceTree = "<group>";
 		};
+		E9518B502017EF6B001818CC /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				E9518B522017EF9E001818CC /* Project.h */,
+				E9518B532017EF9E001818CC /* Project.m */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
+		E9518B512017EF78001818CC /* DataChannel */ = {
+			isa = PBXGroup;
+			children = (
+				E9518B552017EFA6001818CC /* DataChannel.h */,
+				E9518B562017EFA6001818CC /* DataChannel.m */,
+			);
+			name = DataChannel;
+			sourceTree = "<group>";
+		};
+		E9518B582017F0B8001818CC /* dummy settings data */ = {
+			isa = PBXGroup;
+			children = (
+				E9518B592017F0C8001818CC /* DummySettingsData.h */,
+				E9518B5A2017F0C8001818CC /* DummySettingsData.m */,
+			);
+			name = "dummy settings data";
+			sourceTree = "<group>";
+		};
 		E95F58231EE61E14000562FC /* Motion Permission */ = {
 			isa = PBXGroup;
 			children = (
@@ -584,11 +620,13 @@
 		E9A3C2E41ED77DAC00A938CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E90371411EE89AF40033DED0 /* Account */,
+				E9518B512017EF78001818CC /* DataChannel */,
+				E9518B502017EF6B001818CC /* Project */,
 				E9B76D66200D7CD40095030C /* TextCell - redesign */,
 				E9CCE7501F60930F008B1DE6 /* TextCell - old */,
 				E962B3531EF1FDB600ECB920 /* SDK Manager */,
 				E90371491EE8B6B60033DED0 /* NetworkManager */,
-				E90371411EE89AF40033DED0 /* Account */,
 				E95F582F1EE88244000562FC /* SettingsManager */,
 				E962B3521EF1FBCC00ECB920 /* SwitchCell */,
 			);
@@ -662,6 +700,7 @@
 		E9B76D4C200D4D5F0095030C /* Settings Table */ = {
 			isa = PBXGroup;
 			children = (
+				E9518B582017F0B8001818CC /* dummy settings data */,
 				E9B76D4D200D4E580095030C /* SettingsTableViewController.h */,
 				E9B76D4E200D4E580095030C /* SettingsTableViewController.m */,
 			);
@@ -1003,6 +1042,7 @@
 				E9B76D43200D32580095030C /* RulesTableViewController.m in Sources */,
 				E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */,
 				E90371481EE8B6110033DED0 /* ListTableViewController.m in Sources */,
+				E9518B572017EFA6001818CC /* DataChannel.m in Sources */,
 				E943D3EC2012CC0700882D09 /* DummyMapData.m in Sources */,
 				E962B34D1EF1F42A00ECB920 /* SwitchCell.m in Sources */,
 				E95F58321EE88258000562FC /* SettingsManager.m in Sources */,
@@ -1031,12 +1071,14 @@
 				E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */,
 				E90371441EE89B1E0033DED0 /* Account.m in Sources */,
 				E943D3E82012C27800882D09 /* DummyProjectData.m in Sources */,
+				E9518B542017EF9E001818CC /* Project.m in Sources */,
 				E9B76D3B200D31940095030C /* MapViewController.m in Sources */,
 				E9D0A3671F3258CA00E7776C /* MapMarkerViewController.m in Sources */,
 				E9CCF4C91EF1E78200BF96C6 /* QRToggleTorchButton.m in Sources */,
 				E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */,
 				E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */,
 				E9B76D3F200D31E30095030C /* NotificationsTableViewController.m in Sources */,
+				E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */,
 				E962B3511EF1FB2600ECB920 /* LogViewController.m in Sources */,
 				E9B76D5F200D4F5F0095030C /* DataChannelSelectionViewController.m in Sources */,
 			);

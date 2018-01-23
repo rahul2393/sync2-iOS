@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSString *accountName;
 @property (nonatomic, strong) NSString *apiKey;
 @property (nonatomic, strong) NSString *accountId;
+@property (nonatomic, strong) NSString *accountEmail;
 
 -(NSDictionary *)toDictionary;
 
@@ -24,4 +25,5 @@
 
 
 -(BOOL)isActiveAccount;
+
 @end

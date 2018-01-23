@@ -36,6 +36,32 @@
     return self;
 }
 
+
+-(NSString *) currentAccountEmail{
+    return nil;
+}
+
+-(void) setAccountEmail:(NSString *)email{
+    
+}
+
+-(Project *) selectedProject{
+    return nil;
+}
+
+-(void) selectProject:(Project *)project{
+    
+}
+
+-(DataChannel *) selectedDataChannel{
+    return nil;
+}
+
+-(void) selectDataChannel:(DataChannel *) dataChannel{
+    
+}
+
+
 -(BOOL) mapShowLast5Pts{
     return [[NSUserDefaults standardUserDefaults] boolForKey:KEY_MAP_SHOWLAST5PTS];
 }

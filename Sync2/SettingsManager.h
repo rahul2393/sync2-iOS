@@ -8,9 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "Account.h"
+#import "Project.h"
+#import "DataChannel.h"
 @interface SettingsManager : NSObject
 
 + (id)sharedManager;
+
+
+-(NSString *) currentAccountEmail;
+-(void) setAccountEmail:(NSString *)email;
+
+-(Project *) selectedProject;
+-(void) selectProject:(Project *)project;
+
+-(DataChannel *) selectedDataChannel;
+-(void) selectDataChannel:(DataChannel *) dataChannel;
 
 -(BOOL) mapShowLast5Pts;
 -(BOOL) mapShowGeofences;
@@ -21,6 +33,8 @@
 
 -(void) setHasOnboarded:(BOOL)hasOnboarded;
 
+
+// Deprecated
 -(void) addAccount:(Account *)account;
 
 -(NSArray *) accounts;
