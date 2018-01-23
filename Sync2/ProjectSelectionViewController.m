@@ -149,6 +149,9 @@
 - (IBAction)selectProjectButtonTapped:(id)sender {
     
     NSLog(@"Button tapped");
+    if (self.navigationController) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
     
 }
 @end

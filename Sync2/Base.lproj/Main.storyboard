@@ -1222,6 +1222,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="V7K-OI-iyV" kind="show" identifier="projectSelection" id="aKA-lC-MXH"/>
+                        <segue destination="5Jm-Uo-xcd" kind="show" identifier="dataChannelSelection" id="EBg-Ce-M0N"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Msd-qB-O39" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2774,4 +2778,8 @@ Permission</string>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aKA-lC-MXH"/>
+        <segue reference="EBg-Ce-M0N"/>
+    </inferredMetricsTieBreakers>
 </document>

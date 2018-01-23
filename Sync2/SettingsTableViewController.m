@@ -87,12 +87,28 @@
         }
     }else{
         cell.textLabel.text = @"API URL";
+        cell.accessoryType = UITableViewCellAccessoryNone;
         cell.detailTextLabel.text = [DummySettingsData apiURL];
     }
     
     
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 1:
+                // Open project selection view
+                [self performSegueWithIdentifier:@"projectSelection" sender:self];
+                break;
+                
+            default:
+                [self performSegueWithIdentifier:@"dataChannelSelection" sender:self];
+                break;
+        }
+    }
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
