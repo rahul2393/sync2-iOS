@@ -686,6 +686,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dly-np-d4G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.98950674019607843" blue="0.98950674019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.050003938380000001" green="0.15788578989999999" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="selectedImageTintColor" red="0.0" green="0.98158007860183716" blue="0.23887109756469727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -731,19 +732,28 @@
                                             </constraints>
                                         </imageView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem Ipsum" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h78-wd-Rlg">
-                                            <rect key="frame" x="20" y="45" width="374" height="120"/>
+                                            <rect key="frame" x="20" y="45" width="374" height="79"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="November 31, 2017 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLV-31-z90">
+                                            <rect key="frame" x="26" y="141.00000000000014" width="362" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="xLV-31-z90" firstAttribute="bottom" secondItem="2eT-jZ-Cpb" secondAttribute="bottomMargin" constant="-5.9999999999998579" id="Bm5-4B-0xG"/>
+                                        <constraint firstItem="xLV-31-z90" firstAttribute="top" secondItem="h78-wd-Rlg" secondAttribute="bottom" constant="17.000000000000142" id="F1r-R0-9un"/>
                                         <constraint firstItem="h78-wd-Rlg" firstAttribute="top" secondItem="g88-Xb-flA" secondAttribute="bottom" constant="8" id="Kzt-PK-PGo"/>
                                         <constraint firstItem="FZz-D9-ytp" firstAttribute="top" secondItem="2eT-jZ-Cpb" secondAttribute="topMargin" constant="3" id="LER-hr-Eyg"/>
-                                        <constraint firstItem="h78-wd-Rlg" firstAttribute="bottom" secondItem="2eT-jZ-Cpb" secondAttribute="bottomMargin" id="OP5-rR-Oiv"/>
                                         <constraint firstItem="FZz-D9-ytp" firstAttribute="leading" secondItem="2eT-jZ-Cpb" secondAttribute="leadingMargin" id="W49-Pn-mDb"/>
                                         <constraint firstItem="g88-Xb-flA" firstAttribute="top" secondItem="FZz-D9-ytp" secondAttribute="bottom" constant="2.6699999999999999" id="hri-2w-GVg"/>
+                                        <constraint firstItem="xLV-31-z90" firstAttribute="trailing" secondItem="2eT-jZ-Cpb" secondAttribute="trailingMargin" constant="-6" id="iOQ-na-og8"/>
                                         <constraint firstItem="g88-Xb-flA" firstAttribute="trailing" secondItem="2eT-jZ-Cpb" secondAttribute="trailingMargin" id="iyp-mh-859"/>
+                                        <constraint firstItem="xLV-31-z90" firstAttribute="leading" secondItem="2eT-jZ-Cpb" secondAttribute="leadingMargin" constant="6" id="mkn-Oa-yZG"/>
                                         <constraint firstItem="FZz-D9-ytp" firstAttribute="trailing" secondItem="2eT-jZ-Cpb" secondAttribute="trailingMargin" id="o3o-cM-KNV"/>
                                         <constraint firstItem="g88-Xb-flA" firstAttribute="leading" secondItem="2eT-jZ-Cpb" secondAttribute="leadingMargin" id="o6R-8Z-Iwk"/>
                                         <constraint firstItem="h78-wd-Rlg" firstAttribute="trailing" secondItem="2eT-jZ-Cpb" secondAttribute="trailingMargin" id="tdi-oD-aJ2"/>
@@ -751,8 +761,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dateLabel" destination="xLV-31-z90" id="YeK-sf-vaO"/>
                                     <outlet property="label" destination="FZz-D9-ytp" id="8N2-o2-3DK"/>
-                                    <outlet property="textField" destination="h78-wd-Rlg" id="t1I-6v-FbX"/>
+                                    <outlet property="textView" destination="h78-wd-Rlg" id="8hQ-mI-uGM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -761,7 +772,16 @@
                             <outlet property="delegate" destination="YMA-yi-XVy" id="j68-QG-tcf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="btJ-dU-avB"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="btJ-dU-avB">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" image="Settings" id="Vev-ij-zJW">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="amc-nY-38N" kind="presentation" id="3fk-4r-8EV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWN-Xd-GcT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -972,6 +992,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4zb-UN-wPC">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.050003938380000001" green="0.15788578989999999" blue="0.47498111259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="XSa-1P-cbv" kind="relationship" relationship="rootViewController" id="sFO-lt-XOF"/>
@@ -989,6 +1013,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G2J-2y-4BU">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.050003938380000001" green="0.15788578989999999" blue="0.47498111259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="YMA-yi-XVy" kind="relationship" relationship="rootViewController" id="bjH-Np-F3Y"/>
@@ -2779,6 +2807,7 @@ Permission</string>
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="3fk-4r-8EV"/>
         <segue reference="aKA-lC-MXH"/>
         <segue reference="EBg-Ce-M0N"/>
     </inferredMetricsTieBreakers>

@@ -26,6 +26,8 @@
 		E9518B542017EF9E001818CC /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B532017EF9E001818CC /* Project.m */; };
 		E9518B572017EFA6001818CC /* DataChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B562017EFA6001818CC /* DataChannel.m */; };
 		E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B5A2017F0C8001818CC /* DummySettingsData.m */; };
+		E9518B5F2018026B001818CC /* DummyNotificationData.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B5E2018026B001818CC /* DummyNotificationData.m */; };
+		E9518B64201802F9001818CC /* TextNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B63201802F9001818CC /* TextNotification.m */; };
 		E95B9DC11F609481007943CA /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E95B9DC01F609481007943CA /* TextFieldTableViewCell.m */; };
 		E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58251EE61E57000562FC /* MotionPermissionViewController.m */; };
 		E95F582A1EE61E7B000562FC /* CameraPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58291EE61E7B000562FC /* CameraPermissionViewController.m */; };
@@ -136,6 +138,10 @@
 		E9518B562017EFA6001818CC /* DataChannel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataChannel.m; sourceTree = "<group>"; };
 		E9518B592017F0C8001818CC /* DummySettingsData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummySettingsData.h; sourceTree = "<group>"; };
 		E9518B5A2017F0C8001818CC /* DummySettingsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummySettingsData.m; sourceTree = "<group>"; };
+		E9518B5D2018026B001818CC /* DummyNotificationData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummyNotificationData.h; sourceTree = "<group>"; };
+		E9518B5E2018026B001818CC /* DummyNotificationData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyNotificationData.m; sourceTree = "<group>"; };
+		E9518B62201802F9001818CC /* TextNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextNotification.h; sourceTree = "<group>"; };
+		E9518B63201802F9001818CC /* TextNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextNotification.m; sourceTree = "<group>"; };
 		E95B9DBF1F609481007943CA /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
 		E95B9DC01F609481007943CA /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
 		E95F58241EE61E57000562FC /* MotionPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionPermissionViewController.h; sourceTree = "<group>"; };
@@ -408,6 +414,32 @@
 			name = "dummy settings data";
 			sourceTree = "<group>";
 		};
+		E9518B5C20180240001818CC /* Dummy Notification Data */ = {
+			isa = PBXGroup;
+			children = (
+				E9518B5D2018026B001818CC /* DummyNotificationData.h */,
+				E9518B5E2018026B001818CC /* DummyNotificationData.m */,
+			);
+			name = "Dummy Notification Data";
+			sourceTree = "<group>";
+		};
+		E9518B60201802D8001818CC /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				E9518B61201802E8001818CC /* TextNotification */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
+		E9518B61201802E8001818CC /* TextNotification */ = {
+			isa = PBXGroup;
+			children = (
+				E9518B62201802F9001818CC /* TextNotification.h */,
+				E9518B63201802F9001818CC /* TextNotification.m */,
+			);
+			name = TextNotification;
+			sourceTree = "<group>";
+		};
 		E95F58231EE61E14000562FC /* Motion Permission */ = {
 			isa = PBXGroup;
 			children = (
@@ -620,6 +652,7 @@
 		E9A3C2E41ED77DAC00A938CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9518B60201802D8001818CC /* Notifications */,
 				E90371411EE89AF40033DED0 /* Account */,
 				E9518B512017EF78001818CC /* DataChannel */,
 				E9518B502017EF6B001818CC /* Project */,
@@ -664,6 +697,7 @@
 		E9B76D3C200D31BF0095030C /* Notifications Table Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E9518B5C20180240001818CC /* Dummy Notification Data */,
 				E9B76D3D200D31E30095030C /* NotificationsTableViewController.h */,
 				E9B76D3E200D31E30095030C /* NotificationsTableViewController.m */,
 			);
@@ -1054,12 +1088,14 @@
 				E95B9DC11F609481007943CA /* TextFieldTableViewCell.m in Sources */,
 				E9A3C2A81ED5FD1500A938CB /* main.m in Sources */,
 				E98430BC20169E5A00F11887 /* MapSettingsTableViewController.m in Sources */,
+				E9518B64201802F9001818CC /* TextNotification.m in Sources */,
 				E9B76D63200D61770095030C /* SenseNetworkManager.m in Sources */,
 				E9CCF4C81EF1E78200BF96C6 /* QRCodeReaderViewController.m in Sources */,
 				E966682B20082743006911C3 /* MasterTabViewController.m in Sources */,
 				E9CCF4C61EF1E78200BF96C6 /* QRCodeReader.m in Sources */,
 				E9B76D47200D35BB0095030C /* LogDayTableViewController.m in Sources */,
 				E9B76D4F200D4E580095030C /* SettingsTableViewController.m in Sources */,
+				E9518B5F2018026B001818CC /* DummyNotificationData.m in Sources */,
 				E9CCF4C71EF1E78200BF96C6 /* QRCodeReaderView.m in Sources */,
 				E9A3C2FA1EDBA08500A938CB /* AccountsTableViewController.m in Sources */,
 				E903714C1EE8B6E10033DED0 /* NetworkManager.m in Sources */,
