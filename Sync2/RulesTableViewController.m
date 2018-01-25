@@ -10,6 +10,8 @@
 
 @interface RulesTableViewController ()
 
+@property (nonatomic, strong) NSArray *rules;
+
 @end
 
 @implementation RulesTableViewController
@@ -23,6 +25,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = @"Rules";
+    
+    if (self.rules.count == 0) {
+        [self.tableView setHidden:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
