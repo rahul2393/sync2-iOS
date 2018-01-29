@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="234" y="-549"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="SZl-ox-SCl">
             <objects>
-                <viewController id="5P7-yC-Z8k" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcomeView" id="5P7-yC-Z8k" customClass="WelcomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vzv-Vo-LVR"/>
                         <viewControllerLayoutGuide type="bottom" id="hYH-lO-8pE"/>
@@ -109,6 +109,9 @@
                                         <state key="normal" title="Login with Sense Account">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="haveAccountTapped:" destination="5P7-yC-Z8k" eventType="touchUpInside" id="UQ5-YJ-XZv"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAZ-i0-n4P">
                                         <rect key="frame" x="30" y="139" width="314" height="32"/>
@@ -132,6 +135,9 @@
                                         <state key="normal" title="Sign up for Sixgill Sense Account">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="createNewAccountTapped:" destination="5P7-yC-Z8k" eventType="touchUpInside" id="Wzg-dT-IHT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -173,10 +179,10 @@
             </objects>
             <point key="canvasLocation" x="970.39999999999998" y="-1341.8719211822661"/>
         </scene>
-        <!--View Controller-->
+        <!--Setup Info View Controller-->
         <scene sceneID="xUf-j9-3o2">
             <objects>
-                <viewController id="tSH-2J-ZtM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setupInfoView" id="tSH-2J-ZtM" customClass="SetupInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Gv-WZ-XAd"/>
                         <viewControllerLayoutGuide type="bottom" id="pIm-qT-hi7"/>
@@ -198,6 +204,9 @@
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="continueTapped:" destination="tSH-2J-ZtM" eventType="touchUpInside" id="r1Z-Il-tzi"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide-graphic" translatesAutoresizingMaskIntoConstraints="NO" id="9CK-dX-iOo">
                                 <rect key="frame" x="157.66666666666666" y="153" width="99.999999999999972" height="91.666666666666686"/>
@@ -282,10 +291,10 @@
             </objects>
             <point key="canvasLocation" x="1685.5999999999999" y="-1342.6108374384237"/>
         </scene>
-        <!--View Controller-->
+        <!--Setup Info View Controller-->
         <scene sceneID="umg-Gs-eej">
             <objects>
-                <viewController id="8F4-S6-Crc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setupCompleteView" id="8F4-S6-Crc" customClass="SetupInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fUo-GJ-eOd"/>
                         <viewControllerLayoutGuide type="bottom" id="h85-4g-rHb"/>
@@ -307,6 +316,9 @@
                                 <state key="normal" title="Continue to Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="continueTapped:" destination="8F4-S6-Crc" eventType="touchUpInside" id="XI6-mo-4J7"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-setup-complete" translatesAutoresizingMaskIntoConstraints="NO" id="VaS-Wc-atR">
                                 <rect key="frame" x="171" y="153" width="72" height="101"/>
@@ -1394,7 +1406,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="c5E-lf-w8b">
             <objects>
-                <viewController storyboardIdentifier="welcomeView" id="pzH-9K-fYv" customClass="WelcomeViewController" sceneMemberID="viewController">
+                <viewController id="pzH-9K-fYv" customClass="WelcomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XOu-dY-SVS"/>
                         <viewControllerLayoutGuide type="bottom" id="02O-sH-nqf"/>
@@ -1626,7 +1638,7 @@
         <!--Location Permission View Controller-->
         <scene sceneID="tbD-ta-TaD">
             <objects>
-                <viewController storyboardIdentifier="locationView" id="xrE-Ce-l9n" customClass="LocationPermissionViewController" sceneMemberID="viewController">
+                <viewController id="xrE-Ce-l9n" customClass="LocationPermissionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dpQ-OT-amE"/>
                         <viewControllerLayoutGuide type="bottom" id="ZhK-1u-Bb5"/>
@@ -1742,7 +1754,7 @@
         <!--Motion Permission View Controller-->
         <scene sceneID="Pzw-R1-cZ9">
             <objects>
-                <viewController storyboardIdentifier="motionActivityView" id="BWB-kC-XmU" customClass="MotionPermissionViewController" sceneMemberID="viewController">
+                <viewController id="BWB-kC-XmU" customClass="MotionPermissionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IeO-J6-C3H"/>
                         <viewControllerLayoutGuide type="bottom" id="EiV-4R-Y0c"/>
@@ -2067,7 +2079,7 @@ Permission</string>
         <!--Camera Permission View Controller-->
         <scene sceneID="vaa-pt-dV5">
             <objects>
-                <viewController storyboardIdentifier="cameraAccessView" id="WLl-dr-Sa5" customClass="CameraPermissionViewController" sceneMemberID="viewController">
+                <viewController id="WLl-dr-Sa5" customClass="CameraPermissionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fCF-dH-ttm"/>
                         <viewControllerLayoutGuide type="bottom" id="e3N-2k-IZ9"/>
@@ -2183,7 +2195,7 @@ Permission</string>
         <!--Push Permission View Controller-->
         <scene sceneID="UuI-uI-lGN">
             <objects>
-                <viewController storyboardIdentifier="pushAccessView" id="L4m-iJ-Mnc" customClass="PushPermissionViewController" sceneMemberID="viewController">
+                <viewController id="L4m-iJ-Mnc" customClass="PushPermissionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dvg-Kc-oCV"/>
                         <viewControllerLayoutGuide type="bottom" id="hpy-Nd-aQ3"/>
@@ -2296,10 +2308,10 @@ Permission</string>
             </objects>
             <point key="canvasLocation" x="3618" y="-555"/>
         </scene>
-        <!--View Controller-->
+        <!--Location Permission View Controller-->
         <scene sceneID="pZ4-bv-leC">
             <objects>
-                <viewController id="OH9-tq-5sV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="locationView" id="OH9-tq-5sV" customClass="LocationPermissionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8mu-oX-BbB"/>
                         <viewControllerLayoutGuide type="bottom" id="Xbi-7g-nVy"/>
@@ -2411,10 +2423,10 @@ Permission</string>
             </objects>
             <point key="canvasLocation" x="2469.5999999999999" y="-1342.6108374384237"/>
         </scene>
-        <!--View Controller-->
+        <!--Motion Permission View Controller-->
         <scene sceneID="rpE-Y3-hGK">
             <objects>
-                <viewController id="RLu-La-yTo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="motionActivityView" id="RLu-La-yTo" customClass="MotionPermissionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eIm-hH-1hi"/>
                         <viewControllerLayoutGuide type="bottom" id="Sla-DY-gNz"/>
@@ -2526,10 +2538,10 @@ Permission</string>
             </objects>
             <point key="canvasLocation" x="3261.5999999999999" y="-1343.3497536945813"/>
         </scene>
-        <!--View Controller-->
+        <!--Push Permission View Controller-->
         <scene sceneID="GdE-P1-DSP">
             <objects>
-                <viewController id="oy2-56-TfY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pushAccessView" id="oy2-56-TfY" customClass="PushPermissionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6LY-60-Ikl"/>
                         <viewControllerLayoutGuide type="bottom" id="dEs-Ci-kVX"/>
@@ -2641,10 +2653,10 @@ Permission</string>
             </objects>
             <point key="canvasLocation" x="4872.8000000000002" y="-1343.3497536945813"/>
         </scene>
-        <!--View Controller-->
+        <!--Camera Permission View Controller-->
         <scene sceneID="bjk-YU-ary">
             <objects>
-                <viewController id="PgW-4D-Zho" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cameraAccessView" id="PgW-4D-Zho" customClass="CameraPermissionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nA8-HY-BPm"/>
                         <viewControllerLayoutGuide type="bottom" id="1zr-7K-hiv"/>

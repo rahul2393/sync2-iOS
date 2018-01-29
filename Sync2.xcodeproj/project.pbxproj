@@ -17,6 +17,7 @@
 		E9128183200FDD1F0003072B /* TextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9128182200FDD1F0003072B /* TextViewTableViewCell.m */; };
 		E9128187201008BA0003072B /* SenseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E9128186201008BA0003072B /* SenseAPI.m */; };
 		E912818B20100B310003072B /* DummyChannelData.m in Sources */ = {isa = PBXBuildFile; fileRef = E912818A20100B310003072B /* DummyChannelData.m */; };
+		E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9352478201FC9FE008D4F19 /* SetupInfoViewController.m */; };
 		E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */; };
 		E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F091EDDEEE300F27619 /* LocationPermissionViewController.m */; };
 		E943D3E82012C27800882D09 /* DummyProjectData.m in Sources */ = {isa = PBXBuildFile; fileRef = E943D3E72012C27800882D09 /* DummyProjectData.m */; };
@@ -125,6 +126,8 @@
 		E9128186201008BA0003072B /* SenseAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenseAPI.m; sourceTree = "<group>"; };
 		E912818920100B310003072B /* DummyChannelData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummyChannelData.h; sourceTree = "<group>"; };
 		E912818A20100B310003072B /* DummyChannelData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyChannelData.m; sourceTree = "<group>"; };
+		E9352477201FC9FE008D4F19 /* SetupInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetupInfoViewController.h; sourceTree = "<group>"; };
+		E9352478201FC9FE008D4F19 /* SetupInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetupInfoViewController.m; sourceTree = "<group>"; };
 		E93C3F041EDDE9EC00F27619 /* PermissionPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionPageController.h; sourceTree = "<group>"; };
 		E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionPageController.m; sourceTree = "<group>"; };
 		E93C3F081EDDEEE300F27619 /* LocationPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPermissionViewController.h; sourceTree = "<group>"; };
@@ -336,11 +339,6 @@
 				E962B34E1EF1FAB000ECB920 /* Log Viewer */,
 				E9CCF4B91EF1E78200BF96C6 /* QRCodeReaderViewController */,
 				E90371451EE8B5E60033DED0 /* Wifi-Beacon List */,
-				E95F582B1EE61E94000562FC /* Push Permission */,
-				E95F58271EE61E6E000562FC /* Camera Permission */,
-				E95F58231EE61E14000562FC /* Motion Permission */,
-				E93C3F071EDDEEA100F27619 /* Location Permission */,
-				E93C3F031EDDE9C100F27619 /* Page Controlleer */,
 				E9A3C2F71EDBA07000A938CB /* Accounts Table */,
 				E9A3C2E31ED77D8E00A938CB /* Welcome */,
 			);
@@ -354,6 +352,28 @@
 				E912818A20100B310003072B /* DummyChannelData.m */,
 			);
 			name = "dummy data";
+			sourceTree = "<group>";
+		};
+		E9352475201FC947008D4F19 /* Permission Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9352476201FC9EB008D4F19 /* Setup Info */,
+				E95F582B1EE61E94000562FC /* Push Permission */,
+				E95F58271EE61E6E000562FC /* Camera Permission */,
+				E95F58231EE61E14000562FC /* Motion Permission */,
+				E93C3F071EDDEEA100F27619 /* Location Permission */,
+				E93C3F031EDDE9C100F27619 /* Page Controlleer */,
+			);
+			name = "Permission Views";
+			sourceTree = "<group>";
+		};
+		E9352476201FC9EB008D4F19 /* Setup Info */ = {
+			isa = PBXGroup;
+			children = (
+				E9352477201FC9FE008D4F19 /* SetupInfoViewController.h */,
+				E9352478201FC9FE008D4F19 /* SetupInfoViewController.m */,
+			);
+			name = "Setup Info";
 			sourceTree = "<group>";
 		};
 		E93C3F031EDDE9C100F27619 /* Page Controlleer */ = {
@@ -551,6 +571,7 @@
 		E966682820082707006911C3 /* UI Update */ = {
 			isa = PBXGroup;
 			children = (
+				E9352475201FC947008D4F19 /* Permission Views */,
 				E903713D1EE89AA90033DED0 /* Log Details */,
 				E98430B920169E4800F11887 /* Map Settings */,
 				E9B76D5C200D4F4F0095030C /* Data Channel Selection */,
@@ -1117,6 +1138,7 @@
 				E98430BC20169E5A00F11887 /* MapSettingsTableViewController.m in Sources */,
 				E9518B64201802F9001818CC /* TextNotification.m in Sources */,
 				E9B76D63200D61770095030C /* SenseNetworkManager.m in Sources */,
+				E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */,
 				E9CCF4C81EF1E78200BF96C6 /* QRCodeReaderViewController.m in Sources */,
 				E966682B20082743006911C3 /* MasterTabViewController.m in Sources */,
 				E9CCF4C61EF1E78200BF96C6 /* QRCodeReader.m in Sources */,

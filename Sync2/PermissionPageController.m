@@ -12,6 +12,7 @@
 #import "MotionPermissionViewController.h"
 #import "CameraPermissionViewController.h"
 #import "PushPermissionViewController.h"
+#import "SetupInfoViewController.h"
 #import "SettingsManager.h"
 
 @interface PermissionPageController ()
@@ -25,8 +26,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    WelcomeViewController *welcomeVC = (WelcomeViewController *)[self ViewControllerFromStoryboard:@"welcomeView"];
-    welcomeVC.parentPageViewController = self;
+//    WelcomeViewController *welcomeVC = (WelcomeViewController *)[self ViewControllerFromStoryboard:@"welcomeView"];
+//    welcomeVC.parentPageViewController = self;
+    
+    SetupInfoViewController *setupInfoVC = (SetupInfoViewController *)[self ViewControllerFromStoryboard:@"setupInfoView"];
+    setupInfoVC.parentPageViewController = self;
     
     LocationPermissionViewController *locationVC = (LocationPermissionViewController *)[self ViewControllerFromStoryboard:@"locationView"];
     locationVC.parentPageViewController = self;
@@ -40,12 +44,16 @@
     PushPermissionViewController *pushVC = (PushPermissionViewController *)[self ViewControllerFromStoryboard:@"pushAccessView"];
     pushVC.parentPageViewController = self;
     
+    SetupInfoViewController *setupCompleteVC = (SetupInfoViewController *)[self ViewControllerFromStoryboard:@"setupCompleteView"];
+    setupCompleteVC.parentPageViewController = self;
+
     
-    self.vcDataSource = @[welcomeVC,
+    self.vcDataSource = @[setupInfoVC,
                           locationVC,
                           motionVC,
                           cameraVC,
-                          pushVC];
+                          pushVC,
+                          setupCompleteVC];
     
     if (self.viewControllers.count == 0) {
         [self setViewControllers:@[self.vcDataSource[0]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
