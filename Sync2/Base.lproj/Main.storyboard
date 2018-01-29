@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MOx-o9-HDz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5P7-yC-Z8k">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -935,7 +935,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="rTf-4f-gJ8" secondAttribute="trailing" constant="68" id="xFB-Gv-fKu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Lup-S8-t22"/>
+                    <navigationItem key="navigationItem" id="Lup-S8-t22">
+                        <barButtonItem key="rightBarButtonItem" title="SEttings" image="Settings" id="3SD-yy-lwQ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="amc-nY-38N" kind="presentation" id="O1Z-QH-8zQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="jAI-k0-Xpb" id="meL-aV-3TE"/>
                         <segue destination="nGG-mk-6xX" kind="show" id="L41-eK-DKX"/>
@@ -982,6 +989,9 @@
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.050003938380000001" green="0.15788578989999999" blue="0.47498111259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="0Qg-qg-H78" kind="relationship" relationship="rootViewController" id="hhg-Me-Yiw"/>
@@ -1958,7 +1968,14 @@ Permission</string>
                             <outlet property="delegate" destination="0Qg-qg-H78" id="Sgc-GS-yaz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="wft-DK-DuL"/>
+                    <navigationItem key="navigationItem" id="wft-DK-DuL">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" image="Settings" id="2kg-pg-4Lb">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="amc-nY-38N" kind="presentation" id="qKf-9j-muk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="thu-9n-gYX" kind="show" identifier="showList" id="dGi-u2-StF"/>
                         <segue destination="Y6I-gS-P2P" kind="show" identifier="goToLogView" id="bed-8b-8ap"/>
@@ -3029,7 +3046,7 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3fk-4r-8EV"/>
+        <segue reference="qKf-9j-muk"/>
         <segue reference="aKA-lC-MXH"/>
         <segue reference="EBg-Ce-M0N"/>
     </inferredMetricsTieBreakers>

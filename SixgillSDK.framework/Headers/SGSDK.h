@@ -22,6 +22,28 @@
 +(void) enable;
 +(void) disable;
 
++(NSString *)deviceId;
+
+// Last 2 Days worth of logs
++(NSString *) logs;
++(void) clearLogs;
+
++(void) didReceivePushNotificationPayload:(NSDictionary *)payload
+                    withCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
+
++(void) setPushToken:(NSString *)pushToken;
++(NSString *) storedPushToken;
+
++(void) forceSensorUpdate;
+
++(void) requestAlwaysPermission;
+
++(void) setMotionActivityEnabled:(BOOL)enabled;
++(BOOL) motionActivityEnabled;
+
+
+// deprecated
+
 +(void) showTestLocalNotification;
 
 // Configs
@@ -30,11 +52,7 @@
 +(void) setLocationCollectionSpan:(NSInteger)collectionSpan;
 +(void) setLocationCollectionCachePolicy:(EventQueuePolicy)locationCachePolicy;
 
-+(NSString *)deviceId;
 
-// Last 2 Days worth of logs
-+(NSString *) logs;
-+(void) clearLogs;
 
 +(void) registerForLogUpdates:(id<SGLogDelegateProtocol>)delegate;
 
@@ -43,19 +61,6 @@
 +(NSArray *) sensorUpdateHistory:(NSUInteger)capacity;
 
 
-+(void) didReceivePushNotificationPayload:(NSDictionary *)payload
-                    withCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
-
-+(void) setPushToken:(NSString *)pushToken;
-+(NSString *) storedPushToken;
-
 +(UIViewController *) inboxViewController;
 
-+(void) forceSensorUpdate;
-
-+(void) requestAlwaysPermission;
-
-+(void) setMotionActivityEnabled:(BOOL)enabled;
-
-+(BOOL) motionActivityEnabled;
 @end

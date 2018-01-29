@@ -25,12 +25,8 @@
     
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
-    // Override point for customization after application launch.
-    NSString *activeAccountId = [[SettingsManager sharedManager] activeAccountId];
-    if (activeAccountId) {
-        [[SDKManager sharedManager] startSDKWithAPIKey:activeAccountId];
-        NSLog(@"SDK starting");
-    }
+    [[SDKManager sharedManager] startSDKWithAPIKey:@""];
+    NSLog(@"SDK starting");
     
     return YES;
 }

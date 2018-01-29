@@ -31,8 +31,7 @@
     
     
     if(!self.dataSourceSectionData){
-        self.dataSourceSectionData = @{@"":@[@"Active Account",
-                                             @"Cluster Address",
+        self.dataSourceSectionData = @{@"":@[@"Cluster Address",
                                              @"Device ID"],
                                        @"Data": @[@"Activity",
                                                   @"Location",
@@ -52,10 +51,8 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    if ([self.accountObject isActiveAccount]) {
-        [[SDKManager sharedManager] setSensorDataDelegate:self];
-        [[SDKManager sharedManager] forceUpdate];
-    }
+    [[SDKManager sharedManager] setSensorDataDelegate:self];
+    [[SDKManager sharedManager] forceUpdate];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -72,7 +69,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    self.title = self.accountObject.accountName;
+    self.title = @"Log Information";
 //    UIBarButtonItem *logsButton = [[UIBarButtonItem alloc]initWithTitle:@"Logs" style:UIBarButtonItemStylePlain target:self action:@selector(showLogsView)];
 //    self.navigationItem.rightBarButtonItem = logsButton;
 
@@ -148,10 +145,7 @@
 
 -(UITableViewCell *) configSection:(NSIndexPath *)indexPath forTableView:(UITableView *)tableView{
     switch (indexPath.row) {
-        case 0:
-            return [self switchCellForTableView:tableView];
-            break;
-        case 1:{
+        case 0:{
             TextFieldTableViewCell *c = [self textCellForTableView:tableView];
             c.label.text = @"Cluster Address";
             c.textField.text = @"";//[SGSDK clusterAddress];
@@ -228,13 +222,6 @@
     return self.dataSourceSectionLabels[section];
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 1 && indexPath.row == 1) {
-        // Location
-        
-        [self performSegueWithIdentifier:@"showMapView" sender:self];
-    }
-}
 
 -(void) activateAccount{
     [[SDKManager sharedManager] stopSDK];
