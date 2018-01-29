@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "DummyMapData.h"
 #import "SettingsManager.h"
+@import SixgillSDK;
 @interface MapViewController ()
 
 @property (nonatomic, strong) NSArray *coords;
@@ -69,11 +70,24 @@
 }
 
 -(void) drawMapMarkers{
-    for (NSArray *c in self.coords) {
+    NSArray *locations = [SGSDK sensorUpdateHistory:10];
+    
+    for (NSDictionary *d in locations) {
+        NSNumber *lan = d[@"lat"];
+        NSNumber *lon = d[@"lon"];
+        float laf = lan.floatValue;
+        float lof = lon.floatValue;
+        
+        if (laf == 0.0 && lof == 0.0) {
+            continue;
+        }
+        
         MKPointAnnotation *p = [[MKPointAnnotation alloc] init];
-        p.coordinate = CLLocationCoordinate2DMake([(NSNumber *)c[0] floatValue], [(NSNumber *)c[1] floatValue]);        
+        p.coordinate = CLLocationCoordinate2DMake(laf, lof);
         [self.mapView addAnnotation:p];
+        
     }
+    
 }
 
 -(void) drawGeofences{

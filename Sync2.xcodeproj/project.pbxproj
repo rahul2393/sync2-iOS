@@ -560,6 +560,7 @@
 		E962B3571EF20F1300ECB920 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E99D4D1E201AA4F800685320 /* SixgillSDK.framework */,
 				E962B36E1EF2F45000ECB920 /* CoreMotion.framework */,
 				E962B36C1EF2EEB300ECB920 /* AVFoundation.framework */,
 				E962B3631EF2140800ECB920 /* UserNotifications.framework */,
@@ -612,7 +613,6 @@
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
-				E99D4D1E201AA4F800685320 /* SixgillSDK.framework */,
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
 				E9A3C2A41ED5FD1500A938CB /* Products */,
