@@ -7,7 +7,7 @@
 //
 
 #import "WelcomeViewController.h"
-
+#import "SettingsManager.h"
 @interface WelcomeViewController ()
 
 @end
@@ -17,9 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
+        
 }
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if (![[SettingsManager sharedManager] hasOnboarded]) {
+        [self performSegueWithIdentifier:@"showPermissionRequests" sender:self];
+    }
+}
+
 - (IBAction)haveAccountTapped:(id)sender {
     [self.parentPageViewController next];
 }
@@ -29,12 +37,6 @@
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.sixgill.com"]];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 
 @end

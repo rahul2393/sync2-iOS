@@ -25,7 +25,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="UQK-ts-qSm" customClass="PermissionPageController" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyH-0y-7H9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="-549"/>
+            <point key="canvasLocation" x="241" y="-882"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="SZl-ox-SCl">
@@ -111,6 +111,7 @@
                                         </state>
                                         <connections>
                                             <action selector="haveAccountTapped:" destination="5P7-yC-Z8k" eventType="touchUpInside" id="UQ5-YJ-XZv"/>
+                                            <segue destination="oH9-Ao-Hwe" kind="show" id="4Zd-7m-m4S"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAZ-i0-n4P">
@@ -174,10 +175,13 @@
                             <constraint firstItem="vca-f6-GOz" firstAttribute="trailing" secondItem="hye-cK-U6Z" secondAttribute="trailing" id="ePy-06-qN2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="UQK-ts-qSm" kind="presentation" identifier="showPermissionRequests" id="FMR-PW-2uc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHJ-B3-1Gx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970.39999999999998" y="-1341.8719211822661"/>
+            <point key="canvasLocation" x="996" y="-1343"/>
         </scene>
         <!--Setup Info View Controller-->
         <scene sceneID="xUf-j9-3o2">
@@ -1612,12 +1616,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="noAccountsImageView" destination="WMn-Bu-8bH" id="pwB-Gi-q5j"/>
-                        <segue destination="UQK-ts-qSm" kind="presentation" identifier="showPermissionRequests" id="OKZ-FH-9gs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spF-nu-CuD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="202"/>
+            <point key="canvasLocation" x="413" y="190"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2CC-Yd-ydU">
@@ -1633,7 +1636,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVo-Dr-65A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="202"/>
+            <point key="canvasLocation" x="-454" y="190"/>
         </scene>
         <!--Location Permission View Controller-->
         <scene sceneID="tbD-ta-TaD">
@@ -1683,9 +1686,6 @@
                                         <state key="normal" title="Enable Location Services">
                                             <color key="titleColor" red="1" green="0.99667738632681413" blue="0.99541662505197637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="enableLocationTapped:" destination="xrE-Ce-l9n" eventType="touchUpInside" id="2wZ-x8-RRu"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.46933599729999997" green="0.84405929130000001" blue="0.42267123740000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2333,6 +2333,9 @@ Permission</string>
                                 <state key="normal" title="Enable Location Services">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="enableLocationTapped:" destination="OH9-tq-5sV" eventType="touchUpInside" id="5d6-9q-lpw"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-graphic" translatesAutoresizingMaskIntoConstraints="NO" id="ffU-e2-I0T">
                                 <rect key="frame" x="157.66666666666666" y="142" width="99.999999999999972" height="91"/>
@@ -2385,6 +2388,9 @@ Permission</string>
                                 <state key="normal" title="Skip this step">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="skipTapped:" destination="OH9-tq-5sV" eventType="touchUpInside" id="sJx-ki-ZWZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2448,6 +2454,9 @@ Permission</string>
                                 <state key="normal" title="Enable Motion and Activity">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="enableMotionTapped:" destination="RLu-La-yTo" eventType="touchUpInside" id="IB7-Qw-JOr"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="activity-graphic" translatesAutoresizingMaskIntoConstraints="NO" id="hJH-cw-mue">
                                 <rect key="frame" x="157.66666666666666" y="142" width="99.999999999999972" height="91"/>
@@ -2500,6 +2509,9 @@ Permission</string>
                                 <state key="normal" title="Skip this step">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="skipTapped:" destination="RLu-La-yTo" eventType="touchUpInside" id="QY5-bo-Ra9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2563,6 +2575,9 @@ Permission</string>
                                 <state key="normal" title="Enable Push Notifications">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="enablePushTapped:" destination="oy2-56-TfY" eventType="touchUpInside" id="Fje-lN-TO6"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="push-graphic" translatesAutoresizingMaskIntoConstraints="NO" id="j2i-FF-d3I">
                                 <rect key="frame" x="157.66666666666666" y="142" width="99.999999999999972" height="91"/>
@@ -2615,6 +2630,9 @@ Permission</string>
                                 <state key="normal" title="Skip this step">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="skipTapped:" destination="oy2-56-TfY" eventType="touchUpInside" id="Xhz-5i-hvR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2678,6 +2696,9 @@ Permission</string>
                                 <state key="normal" title="Enable Camera Acecss">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="enableCameraTapped:" destination="PgW-4D-Zho" eventType="touchUpInside" id="abl-5G-1Qs"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera-graphic" translatesAutoresizingMaskIntoConstraints="NO" id="x2Z-eh-LpU">
                                 <rect key="frame" x="157.66666666666666" y="142" width="99.999999999999972" height="91"/>
@@ -2730,6 +2751,9 @@ Permission</string>
                                 <state key="normal" title="Skip this step">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="skipTapped:" destination="PgW-4D-Zho" eventType="touchUpInside" id="TZB-fw-ZOX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
