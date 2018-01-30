@@ -8,6 +8,7 @@
 
 #import "SenseAPI.h"
 #import "Project.h"
+#import "DataChannel.h"
 #define SERVER_ADDRESS @"http://sense-api-staging.sixgill.run"
 
 @implementation SenseAPI
@@ -82,10 +83,58 @@
 
 -(void) GetDataChannelsWithCompletion:(void ( ^ _Nullable )(NSArray *dataChannels, NSError * _Nullable error))completed{
     
+    NSDictionary *headers = @{ @"authorization": [self bearerToken],
+                               @"accept": @"application/json",
+                               @"connection": @"keep-alive" };
     
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/channels"]]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                        
+                                                        NSArray *channels = [self channelsFromData:data];
+                                                        completed(channels, nil);
+                                                    }
+                                                }];
+    [dataTask resume];
     
 }
 
+
+-(NSArray *) channelsFromData:(NSData *) data{
+    NSMutableArray *toReturn = [NSMutableArray array];
+    
+    NSError *error = nil;
+    id object = [NSJSONSerialization
+                 JSONObjectWithData:data
+                 options:0
+                 error:&error];
+    
+    
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *responseDict = (NSDictionary *)object;
+        if(responseDict[@"data"]){
+            NSArray *projectObjects = (NSArray *)responseDict[@"data"];
+            for (NSDictionary *projectObject in projectObjects) {
+                DataChannel *p = [[DataChannel alloc] initWithData:projectObject];
+                [toReturn addObject:p];
+            }
+        }
+    }
+    
+    
+    return toReturn;
+}
 
 -(NSArray *) projectsFromData:(NSData *) data{
     NSMutableArray *toReturn = [NSMutableArray array];
