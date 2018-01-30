@@ -11,5 +11,10 @@
 @interface DataChannel : NSObject
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *objectId;
+@property (nonatomic, strong) NSString *type;
+@property (nonatomic, readwrite) BOOL enabled;
+
+- (instancetype)initWithData:(NSDictionary *)data;
 
 @end

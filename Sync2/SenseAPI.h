@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "SenseNetworkManager.h"
-
+#import "SGToken.h"
 @interface SenseAPI : NSObject<SenseNetworkManagerInterface>
 
+@property (nonatomic, strong) SGToken *jwToken;
 
 
 @end

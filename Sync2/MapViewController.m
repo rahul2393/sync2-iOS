@@ -85,9 +85,7 @@
         MKPointAnnotation *p = [[MKPointAnnotation alloc] init];
         p.coordinate = CLLocationCoordinate2DMake(laf, lof);
         [self.mapView addAnnotation:p];
-        
     }
-    
 }
 
 -(void) drawGeofences{

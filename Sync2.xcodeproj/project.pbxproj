@@ -19,6 +19,7 @@
 		E912818B20100B310003072B /* DummyChannelData.m in Sources */ = {isa = PBXBuildFile; fileRef = E912818A20100B310003072B /* DummyChannelData.m */; };
 		E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9352478201FC9FE008D4F19 /* SetupInfoViewController.m */; };
 		E9352481201FD301008D4F19 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9352480201FD301008D4F19 /* LoginViewController.m */; };
+		E9352485201FF050008D4F19 /* SGToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E9352484201FF050008D4F19 /* SGToken.m */; };
 		E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */; };
 		E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3F091EDDEEE300F27619 /* LocationPermissionViewController.m */; };
 		E943D3E82012C27800882D09 /* DummyProjectData.m in Sources */ = {isa = PBXBuildFile; fileRef = E943D3E72012C27800882D09 /* DummyProjectData.m */; };
@@ -131,6 +132,8 @@
 		E9352478201FC9FE008D4F19 /* SetupInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetupInfoViewController.m; sourceTree = "<group>"; };
 		E935247F201FD301008D4F19 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E9352480201FD301008D4F19 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E9352483201FF050008D4F19 /* SGToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGToken.h; sourceTree = "<group>"; };
+		E9352484201FF050008D4F19 /* SGToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGToken.m; sourceTree = "<group>"; };
 		E93C3F041EDDE9EC00F27619 /* PermissionPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionPageController.h; sourceTree = "<group>"; };
 		E93C3F051EDDE9EC00F27619 /* PermissionPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionPageController.m; sourceTree = "<group>"; };
 		E93C3F081EDDEEE300F27619 /* LocationPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPermissionViewController.h; sourceTree = "<group>"; };
@@ -385,6 +388,15 @@
 				E9352480201FD301008D4F19 /* LoginViewController.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		E9352482201FF03E008D4F19 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				E9352483201FF050008D4F19 /* SGToken.h */,
+				E9352484201FF050008D4F19 /* SGToken.m */,
+			);
+			name = Token;
 			sourceTree = "<group>";
 		};
 		E93C3F031EDDE9C100F27619 /* Page Controlleer */ = {
@@ -710,6 +722,7 @@
 		E9A3C2E41ED77DAC00A938CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9352482201FF03E008D4F19 /* Token */,
 				E9485EAA20194DAE00B553E2 /* Rules */,
 				E9518B60201802D8001818CC /* Notifications */,
 				E90371411EE89AF40033DED0 /* Account */,
@@ -1149,6 +1162,7 @@
 				E9A3C2EB1ED780CC00A938CB /* WelcomeViewController.m in Sources */,
 				E95B9DC11F609481007943CA /* TextFieldTableViewCell.m in Sources */,
 				E9A3C2A81ED5FD1500A938CB /* main.m in Sources */,
+				E9352485201FF050008D4F19 /* SGToken.m in Sources */,
 				E98430BC20169E5A00F11887 /* MapSettingsTableViewController.m in Sources */,
 				E9518B64201802F9001818CC /* TextNotification.m in Sources */,
 				E9B76D63200D61770095030C /* SenseNetworkManager.m in Sources */,
