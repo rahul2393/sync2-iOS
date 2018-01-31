@@ -74,7 +74,6 @@
 		E9B76D4F200D4E580095030C /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D4E200D4E580095030C /* SettingsTableViewController.m */; };
 		E9B76D5B200D4F450095030C /* ProjectSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D5A200D4F450095030C /* ProjectSelectionViewController.m */; };
 		E9B76D5F200D4F5F0095030C /* DataChannelSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D5E200D4F5F0095030C /* DataChannelSelectionViewController.m */; };
-		E9B76D63200D61770095030C /* SenseNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D62200D61770095030C /* SenseNetworkManager.m */; };
 		E9CCF4C51EF1E78200BF96C6 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4BB1EF1E78200BF96C6 /* QRCameraSwitchButton.m */; };
 		E9CCF4C61EF1E78200BF96C6 /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4BD1EF1E78200BF96C6 /* QRCodeReader.m */; };
 		E9CCF4C71EF1E78200BF96C6 /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4C01EF1E78200BF96C6 /* QRCodeReaderView.m */; };
@@ -226,8 +225,6 @@
 		E9B76D5A200D4F450095030C /* ProjectSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectSelectionViewController.m; sourceTree = "<group>"; };
 		E9B76D5D200D4F5F0095030C /* DataChannelSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataChannelSelectionViewController.h; sourceTree = "<group>"; };
 		E9B76D5E200D4F5F0095030C /* DataChannelSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataChannelSelectionViewController.m; sourceTree = "<group>"; };
-		E9B76D61200D61770095030C /* SenseNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SenseNetworkManager.h; sourceTree = "<group>"; };
-		E9B76D62200D61770095030C /* SenseNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenseNetworkManager.m; sourceTree = "<group>"; };
 		E9CCF4BA1EF1E78200BF96C6 /* QRCameraSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCameraSwitchButton.h; sourceTree = "<group>"; };
 		E9CCF4BB1EF1E78200BF96C6 /* QRCameraSwitchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCameraSwitchButton.m; sourceTree = "<group>"; };
 		E9CCF4BC1EF1E78200BF96C6 /* QRCodeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReader.h; sourceTree = "<group>"; };
@@ -851,8 +848,6 @@
 			isa = PBXGroup;
 			children = (
 				E9B76D65200D61DE0095030C /* Interfaces */,
-				E9B76D61200D61770095030C /* SenseNetworkManager.h */,
-				E9B76D62200D61770095030C /* SenseNetworkManager.m */,
 			);
 			name = Redesign;
 			sourceTree = "<group>";
@@ -1179,7 +1174,6 @@
 				E9352485201FF050008D4F19 /* SGToken.m in Sources */,
 				E98430BC20169E5A00F11887 /* MapSettingsTableViewController.m in Sources */,
 				E9518B64201802F9001818CC /* TextNotification.m in Sources */,
-				E9B76D63200D61770095030C /* SenseNetworkManager.m in Sources */,
 				E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */,
 				E9CCF4C81EF1E78200BF96C6 /* QRCodeReaderViewController.m in Sources */,
 				E966682B20082743006911C3 /* MasterTabViewController.m in Sources */,

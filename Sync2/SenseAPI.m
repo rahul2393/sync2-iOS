@@ -43,11 +43,10 @@
                                                         
                                                         SGToken *token = [[SGToken alloc]initWithData:data];
                                                         self.jwToken = token;
-                                                        
+                                                        completed(nil);
                                                     }
                                                 }];
     [dataTask resume];
-    
 }
 
 # pragma mark - Get Projects
