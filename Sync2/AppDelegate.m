@@ -63,9 +63,6 @@
     [[SDKManager sharedManager] startSDKWithAPIKey:@""];
     NSLog(@"SDK starting");
     
-    
-    [self networkTests];
-    
     return YES;
 }
 

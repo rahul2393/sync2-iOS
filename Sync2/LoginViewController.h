@@ -10,8 +10,12 @@
 #import "QRCodeReaderViewController.h"
 @interface LoginViewController : UIViewController <QRCodeReaderDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *invalidLoginView;
 
 - (IBAction)qrButtonTapped:(id)sender;
 
+- (IBAction)loginButtonTapped:(id)sender;
+
+- (IBAction)dismissInvalidLoginViewTapped:(id)sender;
 
 @end

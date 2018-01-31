@@ -58,4 +58,15 @@
 - (IBAction)qrButtonTapped:(id)sender {
     [self qrButtonActivated];
 }
+
+- (IBAction)loginButtonTapped:(id)sender {
+    
+    [self.invalidLoginView setHidden: NO];
+}
+
+- (IBAction)dismissInvalidLoginViewTapped:(id)sender {
+    
+    [self.invalidLoginView setHidden: YES];
+    
+}
 @end

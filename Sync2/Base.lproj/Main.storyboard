@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MOx-o9-HDz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5P7-yC-Z8k">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -432,6 +432,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="oH9-Ao-Hwe" eventType="touchUpInside" id="7d1-fv-Mry"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sync-logo" translatesAutoresizingMaskIntoConstraints="NO" id="wfr-HE-fm0">
                                 <rect key="frame" x="98" y="28" width="218" height="89"/>
@@ -529,6 +532,44 @@
                                     <action selector="qrButtonTapped:" destination="oH9-Ao-Hwe" eventType="touchUpInside" id="u5Z-7Z-OKQ"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mue-wg-cES">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid e-mail / password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xs-ZS-rDs">
+                                        <rect key="frame" x="8" y="25" width="257" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="4ca-eD-lmZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" red="0.84063689720812185" green="0.84063689720812185" blue="0.84063689720812185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDd-s1-lBg">
+                                        <rect key="frame" x="335" y="24" width="71" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="71" id="cxk-Nm-2EH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Dismiss">
+                                            <color key="titleColor" red="0.84063689720000001" green="0.84063689720000001" blue="0.84063689720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dismissInvalidLoginViewTapped:" destination="oH9-Ao-Hwe" eventType="touchUpInside" id="owa-xi-LhK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.62916402284263961" green="0.02942778662001681" blue="0.0" alpha="0.9357609160958904" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="wDd-s1-lBg" firstAttribute="leading" secondItem="7Xs-ZS-rDs" secondAttribute="trailing" constant="70" id="16e-he-CTc"/>
+                                    <constraint firstItem="wDd-s1-lBg" firstAttribute="top" secondItem="mue-wg-cES" secondAttribute="top" constant="24" id="51L-6h-TDq"/>
+                                    <constraint firstAttribute="height" constant="71" id="6nh-wQ-BwG"/>
+                                    <constraint firstItem="7Xs-ZS-rDs" firstAttribute="top" secondItem="mue-wg-cES" secondAttribute="top" constant="25" id="AbR-Af-N1Z"/>
+                                    <constraint firstItem="7Xs-ZS-rDs" firstAttribute="leading" secondItem="mue-wg-cES" secondAttribute="leading" constant="8" id="ESe-Ya-85V"/>
+                                    <constraint firstAttribute="bottom" secondItem="wDd-s1-lBg" secondAttribute="bottom" constant="17" id="MZU-an-CMt"/>
+                                    <constraint firstAttribute="trailing" secondItem="wDd-s1-lBg" secondAttribute="trailing" constant="8" id="TO1-nz-jSn"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Xs-ZS-rDs" secondAttribute="bottom" constant="19" id="YOy-b3-dDQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -557,9 +598,11 @@
                             <constraint firstItem="dKk-DY-i10" firstAttribute="top" secondItem="aHE-v1-poH" secondAttribute="bottom" constant="4" id="YAD-e1-8f3"/>
                             <constraint firstItem="dKk-DY-i10" firstAttribute="trailing" secondItem="aHE-v1-poH" secondAttribute="trailing" id="YIg-XF-jjd"/>
                             <constraint firstItem="xif-Ls-K1a" firstAttribute="leading" secondItem="4f1-7r-Sd0" secondAttribute="leading" id="aEz-B9-Ns3"/>
+                            <constraint firstAttribute="trailing" secondItem="mue-wg-cES" secondAttribute="trailing" id="blE-HM-BFy"/>
                             <constraint firstItem="tG4-8R-Krf" firstAttribute="top" secondItem="Stj-dX-joZ" secondAttribute="bottom" constant="23" id="cAm-AL-Fiu"/>
                             <constraint firstItem="gVR-tA-QQg" firstAttribute="trailing" secondItem="4f1-7r-Sd0" secondAttribute="trailingMargin" id="cDz-bs-28c"/>
                             <constraint firstItem="cGA-DR-CHo" firstAttribute="trailing" secondItem="4f1-7r-Sd0" secondAttribute="trailingMargin" constant="-35" id="dOz-f8-hy5"/>
+                            <constraint firstItem="mue-wg-cES" firstAttribute="leading" secondItem="4f1-7r-Sd0" secondAttribute="leading" id="fsq-zF-Ib8"/>
                             <constraint firstItem="b4A-zL-5Yo" firstAttribute="height" secondItem="tG4-8R-Krf" secondAttribute="height" id="gtA-ic-FM3"/>
                             <constraint firstItem="4Ec-WT-RS9" firstAttribute="centerX" secondItem="4f1-7r-Sd0" secondAttribute="centerX" id="hWV-fo-Asw"/>
                             <constraint firstItem="Stj-dX-joZ" firstAttribute="top" secondItem="2tb-Cx-iXx" secondAttribute="bottom" constant="8" id="i3u-hj-lyV"/>
@@ -576,16 +619,20 @@
                             <constraint firstItem="2tb-Cx-iXx" firstAttribute="trailing" secondItem="4f1-7r-Sd0" secondAttribute="trailingMargin" id="tFq-1v-92w"/>
                             <constraint firstItem="cGA-DR-CHo" firstAttribute="top" secondItem="b8L-A2-5wD" secondAttribute="bottom" constant="8" id="utY-bc-n7z"/>
                             <constraint firstItem="cGA-DR-CHo" firstAttribute="centerX" secondItem="4f1-7r-Sd0" secondAttribute="centerX" id="vk4-fs-Rhl"/>
+                            <constraint firstItem="mue-wg-cES" firstAttribute="top" secondItem="4f1-7r-Sd0" secondAttribute="top" id="x6A-Sl-tWH"/>
                             <constraint firstItem="fvQ-Pj-SN8" firstAttribute="leading" secondItem="cGA-DR-CHo" secondAttribute="leading" id="xd6-36-agi"/>
                             <constraint firstItem="2tb-Cx-iXx" firstAttribute="top" secondItem="4Ec-WT-RS9" secondAttribute="bottom" priority="750" constant="65" id="yN4-Ig-13Z"/>
                             <constraint firstItem="4Ec-WT-RS9" firstAttribute="leading" secondItem="dKk-DY-i10" secondAttribute="leading" id="yaz-MX-pak"/>
                             <constraint firstItem="tG4-8R-Krf" firstAttribute="leading" secondItem="4f1-7r-Sd0" secondAttribute="leadingMargin" priority="750" constant="129" id="zoW-1d-nFh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="invalidLoginView" destination="mue-wg-cES" id="guf-Ar-ZAm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCs-j9-Zeq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6520.8000000000002" y="-1344.0886699507389"/>
+            <point key="canvasLocation" x="6520.289855072464" y="-1344.2934782608697"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8Dy-sW-6aw">
@@ -3087,7 +3134,7 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
         <image name="map-icon" width="78" height="72"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="qr-graphic" width="300" height="300"/>
-        <image name="sixgill-logo" width="165" height="120"/>
+        <image name="sixgill-logo" width="325" height="95"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>
