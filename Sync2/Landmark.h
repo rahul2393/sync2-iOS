@@ -34,4 +34,6 @@
 
 -(MKPolygon *)mkPolygon;
 
+- (instancetype)initWithData:(NSDictionary *)data;
+
 @end

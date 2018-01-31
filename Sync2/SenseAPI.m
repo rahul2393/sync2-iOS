@@ -9,6 +9,7 @@
 #import "SenseAPI.h"
 #import "Project.h"
 #import "DataChannel.h"
+#import "Landmark.h"
 #define SERVER_ADDRESS @"http://sense-api-staging.sixgill.run"
 
 @implementation SenseAPI
@@ -113,10 +114,61 @@
 
 # pragma mark - Get Landmarks
 
--(void) GetLandmarksWithCompletion:(void ( ^ _Nullable )(NSArray *dataChannels, NSError * _Nullable error))completed{
+-(void) GetLandmarksForProject:(NSString *_Nonnull)projectId WithCompletion:(void ( ^ _Nullable )(NSArray *landmarks, NSError * _Nullable error))completed{
     
+    NSDictionary *headers = @{ @"authorization": [self bearerToken],
+                               @"accept": @"application/json",
+                               @"connection": @"keep-alive" };
+    
+    NSString *url = [NSString stringWithFormat:@"%@/%@/landmarks", [self urlForEndPoint:@"/v2/projects"],projectId];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                        
+                                                        NSArray *landmarks = [self landmarksFromData:data];
+                                                        completed(landmarks, nil);
+                                                    }
+                                                }];
+    [dataTask resume];
 }
 
+
+-(NSArray *) landmarksFromData:(NSData *) data{
+    NSMutableArray *toReturn = [NSMutableArray array];
+    
+    NSError *error = nil;
+    id object = [NSJSONSerialization
+                 JSONObjectWithData:data
+                 options:0
+                 error:&error];
+    
+    
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *responseDict = (NSDictionary *)object;
+        if(responseDict[@"data"]){
+            NSArray *landmarkObjects = (NSArray *)responseDict[@"data"];
+            for (NSDictionary *lmo in landmarkObjects) {
+                Landmark *p = [[Landmark alloc] initWithData:lmo];
+                [toReturn addObject:p];
+            }
+        }
+    }
+    
+    
+    return toReturn;
+}
 
 
 -(NSArray *) channelsFromData:(NSData *) data{
