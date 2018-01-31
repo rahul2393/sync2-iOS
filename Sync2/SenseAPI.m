@@ -111,6 +111,12 @@
 }
 
 
+# pragma mark - Get Landmarks
+
+-(void) GetLandmarksWithCompletion:(void ( ^ _Nullable )(NSArray *dataChannels, NSError * _Nullable error))completed{
+    
+}
+
 
 
 -(NSArray *) channelsFromData:(NSData *) data{

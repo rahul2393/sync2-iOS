@@ -10,6 +10,56 @@
 
 @implementation Landmark
 
+- (instancetype)initWithData:(NSDictionary *)data
+{
+    self = [super init];
+    if (self) {
+        if (data[@"id"]) {
+            self.objectId = data[@"id"];
+        }
+        else{
+            self.objectId = @"";
+        }
+        if (data[@"name"]) {
+            self.name = data[@"name"];
+        }else{
+            self.name = @"";
+        }
+        if (data[@"address"]) {
+            self.address = data[@"address"];
+        }else{
+            self.address = @"";
+        }
+        if (data[@"projectId"]) {
+            self.projectId = data[@"projectId"];
+        }
+        else{
+            self.projectId = @"";
+        }
+        if (data[@"type"]) {
+            self.type = data[@"type"];
+        }else{
+            self.type = @"";
+        }
+        
+        if (data[@"model"]) {
+            NSDictionary *model = data[@"model"];
+            self.geometryType = model[@"type"];
+            
+            if ([self.geometryType isEqualToString:@"circle"]) {
+                self.center = model[@"center"];
+                self.radius = model[@"radius"];
+            }else if ([self.geometryType isEqualToString:@"rectangle"]){
+                self.sePoint = model[@"se"];
+                self.nwPoint = model[@"nw"];
+            }else if([self.geometryType isEqualToString:@"polygon"]){
+                self.polyPts = model[@"points"];
+            }
+        }
+    }
+    return self;
+}
+
 -(MKPolygon *)mkPolygon{
     if (![self.geometryType isEqualToString:@"polygon"]) {
         return nil;
