@@ -25,8 +25,6 @@
 
 - (id)init {
     if (self = [super init]) {
-        self.userToken = [[SGToken alloc] init];
-        self.userOrgToken = [[SGToken alloc] init];
     }
     return self;
 }
@@ -35,6 +33,9 @@
 
 -(void) LoginWithEmail:(NSString *_Nonnull)email andPassword:(NSString *_Nonnull)password
         withCompletion:(void ( ^ _Nullable )(NSError * _Nullable error))completed{
+    
+    self.userToken = nil;
+    self.userOrgToken = nil;
     
     NSDictionary *headers = @{ @"content-type": @"application/json" };
     NSDictionary *parameters = @{ @"email": email,
@@ -60,6 +61,10 @@
                                                         NSLog(@"%@", httpResponse);
                                                         
                                                         SGToken *token = [[SGToken alloc]initWithData:data];
+                                                        if ([token.token isEqualToString:@""]) {
+                                                            completed(nil);
+                                                            return;
+                                                        }
                                                         self.userToken = token;
                                                         
                                                         [self GetOrganizationsIds:^(NSArray *orgIds, NSError * _Nullable error) {

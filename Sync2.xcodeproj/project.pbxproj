@@ -847,7 +847,8 @@
 		E9B76D60200D61490095030C /* Redesign */ = {
 			isa = PBXGroup;
 			children = (
-				E9B76D65200D61DE0095030C /* Interfaces */,
+				E9128185201008BA0003072B /* SenseAPI.h */,
+				E9128186201008BA0003072B /* SenseAPI.m */,
 			);
 			name = Redesign;
 			sourceTree = "<group>";
@@ -860,15 +861,6 @@
 				E903714B1EE8B6E10033DED0 /* NetworkManager.m */,
 			);
 			name = Old;
-			sourceTree = "<group>";
-		};
-		E9B76D65200D61DE0095030C /* Interfaces */ = {
-			isa = PBXGroup;
-			children = (
-				E9128185201008BA0003072B /* SenseAPI.h */,
-				E9128186201008BA0003072B /* SenseAPI.m */,
-			);
-			name = Interfaces;
 			sourceTree = "<group>";
 		};
 		E9B76D66200D7CD40095030C /* TextCell - redesign */ = {

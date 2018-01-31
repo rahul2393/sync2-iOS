@@ -423,7 +423,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ec-WT-RS9">
-                                <rect key="frame" x="55" y="335" width="304" height="46"/>
+                                <rect key="frame" x="55" y="336" width="304" height="46"/>
                                 <color key="backgroundColor" red="0.12692853809999999" green="0.3115601838" blue="0.74908894299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="TGV-xy-AOG"/>
@@ -459,7 +459,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-image" translatesAutoresizingMaskIntoConstraints="NO" id="dKk-DY-i10">
-                                <rect key="frame" x="55" y="309" width="304" height="2"/>
+                                <rect key="frame" x="55" y="310" width="304" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="qfu-gM-0aC"/>
                                 </constraints>
@@ -483,7 +483,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tb-Cx-iXx">
-                                <rect key="frame" x="20" y="446" width="374" height="21"/>
+                                <rect key="frame" x="20" y="447" width="374" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="oA5-KQ-cER"/>
                                 </constraints>
@@ -492,7 +492,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan a QR code from a Sixgill Sense channel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Stj-dX-joZ">
-                                <rect key="frame" x="20" y="475" width="374" height="20"/>
+                                <rect key="frame" x="20" y="476" width="374" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="o8v-PC-SLn"/>
                                 </constraints>
@@ -510,7 +510,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aHE-v1-poH">
-                                <rect key="frame" x="55" y="288" width="304" height="17"/>
+                                <rect key="frame" x="55" y="289" width="304" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="6Wf-Zc-Y8T"/>
                                 </constraints>
@@ -519,7 +519,7 @@
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr-graphic" translatesAutoresizingMaskIntoConstraints="NO" id="tG4-8R-Krf">
-                                <rect key="frame" x="149" y="518" width="116" height="116"/>
+                                <rect key="frame" x="149" y="519" width="116" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="116" id="51q-d7-kyU"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="CIH-bo-lTI"/>
@@ -527,7 +527,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4A-zL-5Yo">
-                                <rect key="frame" x="149" y="518" width="116" height="116"/>
+                                <rect key="frame" x="149" y="519" width="116" height="116"/>
                                 <connections>
                                     <action selector="qrButtonTapped:" destination="oH9-Ao-Hwe" eventType="touchUpInside" id="u5Z-7Z-OKQ"/>
                                 </connections>
@@ -627,7 +627,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailAddressField" destination="cGA-DR-CHo" id="Qrv-gt-WQg"/>
                         <outlet property="invalidLoginView" destination="mue-wg-cES" id="guf-Ar-ZAm"/>
+                        <outlet property="passwordField" destination="aHE-v1-poH" id="0fe-Hc-vAw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCs-j9-Zeq" userLabel="First Responder" sceneMemberID="firstResponder"/>

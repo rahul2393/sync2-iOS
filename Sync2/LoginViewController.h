@@ -11,6 +11,8 @@
 @interface LoginViewController : UIViewController <QRCodeReaderDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *invalidLoginView;
+@property (weak, nonatomic) IBOutlet UITextField *emailAddressField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 - (IBAction)qrButtonTapped:(id)sender;
 

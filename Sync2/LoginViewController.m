@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import "SenseAPI.h"
 @interface LoginViewController ()
 
 @end
@@ -19,9 +19,15 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void) attemptLogin{
+    [[SenseAPI sharedManager] LoginWithEmail:self.emailAddressField.text andPassword:self.passwordField.text withCompletion:^(NSError * _Nullable error) {
+        if (![[SenseAPI sharedManager] userToken]) {
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self.invalidLoginView setHidden:NO];
+                self.passwordField.text = @"";
+            });
+        }
+    }];
 }
 
 - (void)qrButtonActivated{
@@ -60,8 +66,7 @@
 }
 
 - (IBAction)loginButtonTapped:(id)sender {
-    
-    [self.invalidLoginView setHidden: NO];
+    [self attemptLogin];
 }
 
 - (IBAction)dismissInvalidLoginViewTapped:(id)sender {
