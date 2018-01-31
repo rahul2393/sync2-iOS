@@ -36,7 +36,7 @@
 }
 
 -(void) startSDKWithAPIKey:(NSString *)apiKey{
-    [SGSDK initWithAPIKey:@"01BWHNJHFCZXDVDYPTK8080WC1"];
+    [SGSDK initWithAPIKey:@"mCYx0s5rN00o+xNRcALiO3Qe"];
     [SGSDK enable];
     [SGSDK setMotionActivityEnabled:YES];
 //    [SGSDK requestAlwaysPermission];

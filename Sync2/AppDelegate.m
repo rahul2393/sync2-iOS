@@ -11,12 +11,47 @@
 #import "SettingsManager.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import "SenseAPI.h"
+#import "Landmark.h"
 @import SixgillSDK;
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+
+-(void) networkTests{
+    
+    
+    // Login
+    
+    [[SenseAPI sharedManager] LoginWithEmail:@"rkirkendall@sixgill.com" andPassword:@"rickyricky1" withCompletion:^(NSError * _Nullable error) {
+        [[SenseAPI sharedManager] GetProjectsWithCompletion:^(NSArray *projects, NSError * _Nullable error) {
+            NSLog(@"Found projects: ");
+            for (Project *p in projects) {
+                NSLog(@"%@",p.name);
+                [[SenseAPI sharedManager] GetLandmarksForProject:p.objectId WithCompletion:^(NSArray *landmarks, NSError * _Nullable error) {
+                    NSLog(@"-- Project has landmarks: ");
+                    for (Landmark *lm in landmarks) {
+                        
+                        NSLog(@"--- %@", lm.name);
+                    }
+                }];
+            }
+        }];
+        
+        [[SenseAPI sharedManager] GetDataChannelsWithCompletion:^(NSArray *channels, NSError * _Nullable error) {
+            NSLog(@"Found channels: ");
+            for (Project *p in channels) {
+                NSLog(@"%@",p.name);
+            }
+        }];
+        
+    }];
+    
+    
+    
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -27,6 +62,9 @@
     
     [[SDKManager sharedManager] startSDKWithAPIKey:@""];
     NSLog(@"SDK starting");
+    
+    
+    [self networkTests];
     
     return YES;
 }

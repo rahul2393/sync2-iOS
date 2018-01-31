@@ -17,7 +17,10 @@
 -(void) LoginWithEmail:(NSString *_Nonnull)email andPassword:(NSString *_Nonnull)password
         withCompletion:(void ( ^ _Nullable )(NSError * _Nullable error))completed;
 
-@property (nonatomic, strong) SGToken *jwToken;
+@property (nonatomic, strong) SGToken *userToken;
+@property (nonatomic, strong) SGToken *userOrgToken;
+
++ (id)sharedManager;
 
 
 @end

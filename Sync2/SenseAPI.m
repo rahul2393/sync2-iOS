@@ -14,6 +14,23 @@
 
 @implementation SenseAPI
 
++ (id)sharedManager {
+    static SenseAPI *sharedMyManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedMyManager = [[self alloc] init];
+    });
+    return sharedMyManager;
+}
+
+- (id)init {
+    if (self = [super init]) {
+        self.userToken = [[SGToken alloc] init];
+        self.userOrgToken = [[SGToken alloc] init];
+    }
+    return self;
+}
+
 #pragma mark - Authentication
 
 -(void) LoginWithEmail:(NSString *_Nonnull)email andPassword:(NSString *_Nonnull)password
@@ -37,12 +54,81 @@
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                     if (error) {
                                                         NSLog(@"%@", error);
+                                                        completed(error);
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
                                                         
                                                         SGToken *token = [[SGToken alloc]initWithData:data];
-                                                        self.jwToken = token;
+                                                        self.userToken = token;
+                                                        
+                                                        [self GetOrganizationsIds:^(NSArray *orgIds, NSError * _Nullable error) {
+                                                            [self SetOrgId:orgIds[0] withCompletion:^(NSError * _Nullable error) {
+                                                                completed(nil);
+                                                            }];
+                                                        }];
+                                                    }
+                                                }];
+    [dataTask resume];
+}
+
+# pragma mark - Get Organizations
+
+// This is janky as hell.
+
+-(void) GetOrganizationsIds:(void ( ^ _Nullable )(NSArray *orgIds, NSError * _Nullable error))completed{
+    NSDictionary *headers = @{ @"authorization": [self bearerToken],
+                               @"accept": @"application/json",
+                               @"connection": @"keep-alive" };
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/organizations"]]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                        
+                                                        NSArray *orgIds = [self organizationIdsFromData:data];
+                                                        completed(orgIds, nil);
+                                                    }
+                                                }];
+    [dataTask resume];
+}
+
+-(void) SetOrgId:(NSString *_Nonnull)orgId withCompletion:(void ( ^ _Nullable )(NSError * _Nullable error))completed{
+    
+    NSDictionary *headers = @{ @"content-type": @"application/json",
+                               @"authorization": [self bearerToken] };
+    NSDictionary *parameters = @{ @"organizationId": orgId };
+    
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://sense-api-staging.sixgill.run/v2/setOrganization"]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"POST"];
+    [request setAllHTTPHeaderFields:headers];
+    [request setHTTPBody:postData];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                        completed(error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                        
+                                                        self.userOrgToken = [[SGToken alloc]initWithData:data];
                                                         completed(nil);
                                                     }
                                                 }];
@@ -53,7 +139,7 @@
 
 -(void) GetProjectsWithCompletion:(void ( ^ _Nullable )(NSArray * projects, NSError * _Nullable error))completed{
     
-    NSDictionary *headers = @{ @"authorization": [self bearerToken],
+    NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
                                @"accept": @"application/json",
                                @"connection": @"keep-alive" };
     
@@ -83,7 +169,7 @@
 
 -(void) GetDataChannelsWithCompletion:(void ( ^ _Nullable )(NSArray *dataChannels, NSError * _Nullable error))completed{
     
-    NSDictionary *headers = @{ @"authorization": [self bearerToken],
+    NSDictionary *headers = @{ @"authorization": [self bearerOrgToken],
                                @"accept": @"application/json",
                                @"connection": @"keep-alive" };
     
@@ -115,7 +201,7 @@
 
 -(void) GetLandmarksForProject:(NSString *_Nonnull)projectId WithCompletion:(void ( ^ _Nullable )(NSArray *landmarks, NSError * _Nullable error))completed{
     
-    NSDictionary *headers = @{ @"authorization": [self bearerToken],
+    NSDictionary *headers = @{ @"authorization": [self bearerOrgToken],
                                @"accept": @"application/json",
                                @"connection": @"keep-alive" };
     
@@ -143,6 +229,29 @@
     [dataTask resume];
 }
 
+-(NSArray *) organizationIdsFromData:(NSData *)data{
+    NSMutableArray *toReturn = [NSMutableArray array];
+    
+    NSError *error = nil;
+    id object = [NSJSONSerialization
+                 JSONObjectWithData:data
+                 options:0
+                 error:&error];
+    
+    
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *responseDict = (NSDictionary *)object;
+        if(responseDict[@"data"]){
+            NSArray *orgs = (NSArray *)responseDict[@"data"];
+            for (NSDictionary *org in orgs) {
+                NSString *orgID = org[@"id"];
+                [toReturn addObject:orgID];
+            }
+        }
+    }
+    
+    return toReturn;
+}
 
 -(NSArray *) landmarksFromData:(NSData *) data{
     NSMutableArray *toReturn = [NSMutableArray array];
@@ -221,8 +330,16 @@
 }
 
 -(NSString *) bearerToken{
-    if (self.jwToken) {
-        return [NSString stringWithFormat:@"Bearer %@",self.jwToken.token];
+    if (self.userToken) {
+        return [NSString stringWithFormat:@"Bearer %@",self.userToken.token];
+    }
+    
+    return @"";
+}
+
+-(NSString *) bearerOrgToken{
+    if (self.userOrgToken) {
+        return [NSString stringWithFormat:@"Bearer %@",self.userOrgToken.token];
     }
     
     return @"";
