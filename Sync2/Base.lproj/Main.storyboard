@@ -1362,6 +1362,9 @@
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0062943333760000003" green="0.17320993539999999" blue="0.4145198464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="V7K-OI-iyV" kind="relationship" relationship="rootViewController" id="KTb-bQ-GTg"/>
@@ -3144,7 +3147,7 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qKf-9j-muk"/>
+        <segue reference="3fk-4r-8EV"/>
         <segue reference="XtT-hd-MMq"/>
         <segue reference="mzM-J5-9TN"/>
     </inferredMetricsTieBreakers>
