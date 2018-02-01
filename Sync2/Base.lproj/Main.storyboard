@@ -630,6 +630,7 @@
                         <outlet property="emailAddressField" destination="cGA-DR-CHo" id="Qrv-gt-WQg"/>
                         <outlet property="invalidLoginView" destination="mue-wg-cES" id="guf-Ar-ZAm"/>
                         <outlet property="passwordField" destination="aHE-v1-poH" id="0fe-Hc-vAw"/>
+                        <segue destination="MOx-o9-HDz" kind="show" identifier="showTabController" id="dKW-jL-B8K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCs-j9-Zeq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -771,6 +772,8 @@
                         <segue destination="myb-OP-fNK" kind="relationship" relationship="viewControllers" id="qNG-dY-FlY"/>
                         <segue destination="pji-3k-kYe" kind="relationship" relationship="viewControllers" id="1yE-BB-Daq"/>
                         <segue destination="ti7-xg-rMP" kind="relationship" relationship="viewControllers" id="jBg-I0-tSH"/>
+                        <segue destination="nZx-4k-yIp" kind="presentation" identifier="showDataChannelSelection" id="bdL-UT-Onr"/>
+                        <segue destination="GG5-PT-2eE" kind="presentation" identifier="showProjectSelection" id="tiO-Cx-fFe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8d-Lw-iXG" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -8,10 +8,10 @@
 
 #import "ProjectSelectionViewController.h"
 #import "DummyProjectData.h"
+#import "Project.h"
 #import "TextViewTableViewCell.h"
 
 @interface ProjectSelectionViewController ()
-@property (nonatomic, strong) NSArray *projects;
 @property (nonatomic, readwrite) BOOL useDummy;
 @property (nonatomic, readwrite) BOOL projectSelected;
 @property (nonatomic, readwrite) NSInteger selectedIx;
@@ -26,7 +26,7 @@
     
     if (!self.projects) {
         
-        self.useDummy = YES;
+        self.useDummy = NO;
         
         if (self.useDummy) {
             self.projects = [DummyProjectData projects];
@@ -63,6 +63,7 @@
         self.selectedIx = indexPath.row;
         [self setButtonEnabled:YES];
     }
+    
     
     [self.tableView reloadData];
     
@@ -122,7 +123,16 @@
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = self.projects[indexPath.row];
+    
+    
+    
+    if (self.useDummy) {
+        cell.textLabel.text = self.projects[indexPath.row];
+    }else{
+        Project *p = self.projects[indexPath.row];
+        cell.textLabel.text = p.name;
+    }
+    
     cell.detailTextLabel.text = @"iOS";
     
     if (self.selectedIx == indexPath.row && self.projectSelected) {
@@ -149,8 +159,12 @@
 - (IBAction)selectProjectButtonTapped:(id)sender {
     
     NSLog(@"Button tapped");
-    if (self.navigationController) {
+    if (self.navigationController.viewControllers.count > 1) {
         [self.navigationController popToRootViewControllerAnimated:YES];
+    }else{
+        [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            
+        }];
     }
     
 }

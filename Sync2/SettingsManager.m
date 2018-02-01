@@ -18,6 +18,9 @@
 
 #define KEY_MAP_SHOWLAST5PTS @"showLast5pts"
 
+#define KEY_SelectedProjectId @"selectedProjectId"
+#define KEY_SelectedDataChannelId @"selectedDataChannelId"
+
 @implementation SettingsManager
 
 + (id)sharedManager {
@@ -45,20 +48,30 @@
     
 }
 
--(Project *) selectedProject{
-    return nil;
+-(void) signout{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannelId];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedProjectId];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_ACTIVEACCOUNTID];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
+-(NSString *) selectedProjectId{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SelectedProjectId];
 }
 
 -(void) selectProject:(Project *)project{
-    
+    [[NSUserDefaults standardUserDefaults] setObject:project.objectId forKey:KEY_SelectedProjectId];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
--(DataChannel *) selectedDataChannel{
-    return nil;
+-(NSString *) selectedDataChannelId{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SelectedDataChannelId];
 }
 
 -(void) selectDataChannel:(DataChannel *) dataChannel{
-    
+    [[NSUserDefaults standardUserDefaults] setObject:dataChannel.objectId forKey:KEY_SelectedDataChannelId];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 

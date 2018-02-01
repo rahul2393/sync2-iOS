@@ -8,6 +8,9 @@
 
 #import "LoginViewController.h"
 #import "SenseAPI.h"
+#import "DataChannelSelectionViewController.h"
+#import "ProjectSelectionViewController.h"
+
 @interface LoginViewController ()
 
 @end
@@ -20,15 +23,27 @@
 }
 
 -(void) attemptLogin{
+    
+    self.emailAddressField.text = @"rkirkendall@sixgill.com";
+    self.passwordField.text = @"rickyricky1";
+    
+    [self.emailAddressField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
+    
     [[SenseAPI sharedManager] LoginWithEmail:self.emailAddressField.text andPassword:self.passwordField.text withCompletion:^(NSError * _Nullable error) {
         if (![[SenseAPI sharedManager] userToken]) {
             dispatch_async(dispatch_get_main_queue(),^{
                 [self.invalidLoginView setHidden:NO];
                 self.passwordField.text = @"";
             });
+        }else{
+
+            // Login was good.
+            [self performSegueWithIdentifier:@"showTabController" sender:self];
         }
     }];
 }
+
 
 - (void)qrButtonActivated{
     

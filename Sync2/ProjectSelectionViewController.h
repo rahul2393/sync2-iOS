@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *selectProjectButton;
 
+@property (nonatomic, strong) NSArray *projects;
 
 - (IBAction)selectProjectButtonTapped:(id)sender;
 

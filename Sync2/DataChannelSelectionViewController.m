@@ -148,8 +148,13 @@
 - (IBAction)selectChannelButtonTapped:(id)sender {
     
     NSLog(@"Button tapped");
-    if (self.navigationController) {
+    
+    if (self.navigationController.viewControllers.count > 1) {
         [self.navigationController popToRootViewControllerAnimated:YES];
+    }else{
+        [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            
+        }];
     }
 }
 @end

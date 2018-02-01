@@ -18,10 +18,10 @@
 -(NSString *) currentAccountEmail;
 -(void) setAccountEmail:(NSString *)email;
 
--(Project *) selectedProject;
+-(NSString *) selectedProjectId;
 -(void) selectProject:(Project *)project;
 
--(DataChannel *) selectedDataChannel;
+-(NSString *) selectedDataChannelId;
 -(void) selectDataChannel:(DataChannel *) dataChannel;
 
 -(BOOL) mapShowLast5Pts;
