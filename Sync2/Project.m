@@ -37,4 +37,15 @@
     return self;
 }
 
+-(NSDictionary *) toDictionary{
+    
+    if (!self.name || !self.objectId) {
+        return nil;
+    }
+    
+    return @{@"name":self.name,
+             @"objectId":self.objectId,
+             @"enabled":[NSNumber numberWithBool:self.enabled]};
+}
+
 @end

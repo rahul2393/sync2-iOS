@@ -16,4 +16,6 @@
 
 - (instancetype)initWithData:(NSDictionary *)data;
 
+-(NSDictionary *) toDictionary;
+
 @end
