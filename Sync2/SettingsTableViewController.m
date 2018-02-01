@@ -9,8 +9,13 @@
 #import "SettingsTableViewController.h"
 #import "DummySettingsData.h"
 #import "SettingsManager.h"
+#import "SenseAPI.h"
+#import "DataChannelSelectionViewController.h"
+#import "ProjectSelectionViewController.h"
 @interface SettingsTableViewController ()
 @property (nonatomic, readwrite) BOOL useDummyData;
+@property (nonatomic, strong) NSArray *dataChannels;
+@property (nonatomic, strong) NSArray *projects;
 @end
 
 @implementation SettingsTableViewController
@@ -23,6 +28,44 @@
     self.title = @"Settings";
     
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
+-(void) loadProjects{
+    [[SenseAPI sharedManager] GetProjectsWithCompletion:^(NSArray *projects, NSError * _Nullable error) {
+        self.projects = projects;
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self performSegueWithIdentifier:@"projectSelection" sender:self];
+        });
+    }];
+}
+
+-(void) loadDataChannels{
+    [[SenseAPI sharedManager] GetDataChannelsWithCompletion:^(NSArray *dataChannels, NSError * _Nullable error) {
+        self.dataChannels = dataChannels;
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self performSegueWithIdentifier:@"dataChannelSelection" sender:self];
+        });
+        
+    }];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"dataChannelSelection"]) {
+        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
+        DataChannelSelectionViewController *dcsvc = (DataChannelSelectionViewController *)nav.viewControllers[0];
+        dcsvc.channels = self.dataChannels;
+    }else if ([segue.identifier isEqualToString:@"projectSelection"]) {
+        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
+        ProjectSelectionViewController *vc = (ProjectSelectionViewController *)nav.viewControllers[0];
+        vc.projects = self.projects;
+    }
+}
+
 
 #pragma mark - Table view data source
 
@@ -48,9 +91,7 @@
         default:
             return 1;
     }
-    
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self dummyCellForRowAtIndexPath:indexPath];
@@ -111,8 +152,6 @@
         cell.detailTextLabel.text = [DummySettingsData apiURL];
     }
     
-    
-    
     return cell;
 }
 
@@ -121,11 +160,11 @@
         switch (indexPath.row) {
             case 1:
                 // Open project selection view
-                [self performSegueWithIdentifier:@"projectSelection" sender:self];
+                [self loadProjects];
                 break;
                 
             default:
-                [self performSegueWithIdentifier:@"dataChannelSelection" sender:self];
+                [self loadDataChannels];
                 break;
         }
     }

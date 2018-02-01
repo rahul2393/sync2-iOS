@@ -41,7 +41,11 @@
 -(void) loadDataChannels{
     [[SenseAPI sharedManager] GetDataChannelsWithCompletion:^(NSArray *dataChannels, NSError * _Nullable error) {
         self.dataChannels = dataChannels;
-        [self performSegueWithIdentifier:@"showDataChannelSelection" sender:self];
+        
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self performSegueWithIdentifier:@"showDataChannelSelection" sender:self];
+        });
+        
     }];
 }
 
@@ -60,7 +64,10 @@
 -(void) loadProjects{
     [[SenseAPI sharedManager] GetProjectsWithCompletion:^(NSArray *projects, NSError * _Nullable error) {
         self.projects = projects;
-        [self performSegueWithIdentifier:@"showProjectSelection" sender:self];
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self performSegueWithIdentifier:@"showProjectSelection" sender:self];
+        });
+        
     }];
 }
 

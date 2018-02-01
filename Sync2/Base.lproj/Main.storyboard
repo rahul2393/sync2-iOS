@@ -753,7 +753,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwA-yp-eXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7369.5652173913049" y="-1343.4782608695652"/>
+            <point key="canvasLocation" x="7319" y="-1343"/>
         </scene>
         <!--Master Tab View Controller-->
         <scene sceneID="LeW-bi-v0N">
@@ -1346,8 +1346,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="V7K-OI-iyV" kind="show" identifier="projectSelection" id="aKA-lC-MXH"/>
-                        <segue destination="5Jm-Uo-xcd" kind="show" identifier="dataChannelSelection" id="EBg-Ce-M0N"/>
+                        <segue destination="nZx-4k-yIp" kind="presentation" identifier="dataChannelSelection" id="mzM-J5-9TN"/>
+                        <segue destination="GG5-PT-2eE" kind="presentation" identifier="projectSelection" id="XtT-hd-MMq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Msd-qB-O39" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3145,7 +3145,7 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qKf-9j-muk"/>
-        <segue reference="KTb-bQ-GTg"/>
-        <segue reference="EBg-Ce-M0N"/>
+        <segue reference="XtT-hd-MMq"/>
+        <segue reference="mzM-J5-9TN"/>
     </inferredMetricsTieBreakers>
 </document>
