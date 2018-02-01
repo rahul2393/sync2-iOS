@@ -41,9 +41,10 @@
                 self.passwordField.text = @"";
             });
         }else{
-
             // Login was good.
-            [self performSegueWithIdentifier:@"showTabController" sender:self];
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self performSegueWithIdentifier:@"showTabController" sender:self];
+            });
         }
     }];
 }

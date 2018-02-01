@@ -49,7 +49,7 @@
     }
     
     return @{@"name":self.name,
-             @"objectId":self.objectId,
+             @"id":self.objectId,
              @"enabled": [NSNumber numberWithBool:self.enabled]};
 }
 

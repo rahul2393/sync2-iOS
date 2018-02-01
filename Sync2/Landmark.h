@@ -33,6 +33,8 @@
 
 
 -(MKPolygon *)mkPolygon;
+-(MKCircle *)mkCircle;
+-(MKPolygon *)mkMapRect;
 
 - (instancetype)initWithData:(NSDictionary *)data;
 

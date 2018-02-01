@@ -47,13 +47,13 @@
             self.geometryType = model[@"type"];
             
             if ([self.geometryType isEqualToString:@"circle"]) {
-                self.center = model[@"center"];
-                self.radius = model[@"radius"];
+                self.center = model[@"geometry"][@"center"];
+                self.radius = model[@"geometry"][@"radius"];
             }else if ([self.geometryType isEqualToString:@"rectangle"]){
-                self.sePoint = model[@"se"];
-                self.nwPoint = model[@"nw"];
+                self.sePoint = model[@"geometry"][@"se"];
+                self.nwPoint = model[@"geometry"][@"nw"];
             }else if([self.geometryType isEqualToString:@"polygon"]){
-                self.polyPts = model[@"points"];
+                self.polyPts = model[@"geometry"][@"points"];
             }
         }
     }
