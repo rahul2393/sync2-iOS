@@ -18,8 +18,8 @@
 
 #define KEY_MAP_SHOWLAST5PTS @"showLast5pts"
 
-#define KEY_SelectedProjectId @"selectedProjectId"
-#define KEY_SelectedDataChannelId @"selectedDataChannelId"
+#define KEY_SelectedProject @"selectedProject"
+#define KEY_SelectedDataChannel @"selectedDataChannel"
 
 @implementation SettingsManager
 
@@ -49,28 +49,42 @@
 }
 
 -(void) logout{
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannelId];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedProjectId];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannel];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedProject];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_ACTIVEACCOUNTID];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 
--(NSString *) selectedProjectId{
-    return [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SelectedProjectId];
+-(Project *) selectedProject{
+    NSDictionary *d = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SelectedProject];
+    if (!d) {
+        return nil;
+    }
+    
+    Project *p = [[Project alloc]initWithData:d];
+    
+    return p;
 }
 
 -(void) selectProject:(Project *)project{
-    [[NSUserDefaults standardUserDefaults] setObject:project.objectId forKey:KEY_SelectedProjectId];
+    [[NSUserDefaults standardUserDefaults] setObject:[project toDictionary] forKey:KEY_SelectedProject];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
--(NSString *) selectedDataChannelId{
-    return [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SelectedDataChannelId];
+-(DataChannel *) selectedDataChannel{
+    NSDictionary *d = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SelectedDataChannel];
+    if (!d) {
+        return nil;
+    }
+    
+    DataChannel *dc = [[DataChannel alloc]initWithData:d];
+    
+    return dc;
 }
 
 -(void) selectDataChannel:(DataChannel *) dataChannel{
-    [[NSUserDefaults standardUserDefaults] setObject:dataChannel.objectId forKey:KEY_SelectedDataChannelId];
+    [[NSUserDefaults standardUserDefaults] setObject:[dataChannel toDictionary] forKey:KEY_SelectedDataChannel];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

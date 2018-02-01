@@ -8,6 +8,7 @@
 
 #import "SettingsTableViewController.h"
 #import "DummySettingsData.h"
+#import "SettingsManager.h"
 @interface SettingsTableViewController ()
 @property (nonatomic, readwrite) BOOL useDummyData;
 @end
@@ -17,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _useDummyData = YES;
+    _useDummyData = NO;
     
     self.title = @"Settings";
     
@@ -75,13 +76,32 @@
             }
             case 1:{
                 cell.textLabel.text = @"Project";
-                cell.detailTextLabel.text = [[DummySettingsData project] name];
+                if (self.useDummyData) {
+                    cell.detailTextLabel.text = [[DummySettingsData project] name];
+                }else{
+                    Project *selected = [[SettingsManager sharedManager] selectedProject];
+                    NSString *t = @"";
+                    if (selected) {
+                        t = selected.name;
+                    }
+                    cell.detailTextLabel.text = t;
+                }
+                
             }
                 break;
                 
             default:{
                 cell.textLabel.text = @"Data Channel";
-                cell.detailTextLabel.text = [[DummySettingsData dataChannel] name];
+                if (self.useDummyData) {
+                    cell.detailTextLabel.text = [[DummySettingsData dataChannel] name];
+                }else{
+                    DataChannel *selected = [[SettingsManager sharedManager] selectedDataChannel];
+                    NSString *t = @"";
+                    if (selected) {
+                        t = selected.name;
+                    }
+                    cell.detailTextLabel.text = t;
+                }
             }
                 break;
         }

@@ -31,9 +31,9 @@
 }
 
 -(void) checkCurrentAccountState{
-    if (![[SettingsManager sharedManager] selectedProjectId]) {
+    if (![[SettingsManager sharedManager] selectedProject]) {
         [self loadProjects];
-    }else if (![[SettingsManager sharedManager] selectedDataChannelId]) {
+    }else if (![[SettingsManager sharedManager] selectedDataChannel]) {
         [self loadDataChannels];
     }
 }
