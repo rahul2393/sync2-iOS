@@ -6,6 +6,8 @@
 //  Copyright © 2018 Sixgill. All rights reserved.
 //
 
+
+#import "SettingsManager.h"
 #import "LoginViewController.h"
 #import "SenseAPI.h"
 #import "DataChannelSelectionViewController.h"
@@ -23,6 +25,8 @@
 }
 
 -(void) attemptLogin{
+    
+    [[SettingsManager sharedManager] logout];
     
     self.emailAddressField.text = @"rkirkendall@sixgill.com";
     self.passwordField.text = @"rickyricky1";

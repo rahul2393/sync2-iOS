@@ -10,6 +10,7 @@
 #import "DummyProjectData.h"
 #import "Project.h"
 #import "TextViewTableViewCell.h"
+#import "SettingsManager.h"
 
 @interface ProjectSelectionViewController ()
 @property (nonatomic, readwrite) BOOL useDummy;
@@ -157,6 +158,8 @@
 
 
 - (IBAction)selectProjectButtonTapped:(id)sender {
+    
+    [[SettingsManager sharedManager] selectProject:self.projects[self.selectedIx]];
     
     NSLog(@"Button tapped");
     if (self.navigationController.viewControllers.count > 1) {

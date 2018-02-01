@@ -27,18 +27,13 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self checkCurrentProject];
-    [self checkCurrentDataChannel];
+    [self checkCurrentAccountState];
 }
 
--(void) checkCurrentProject{
-    if (![[SettingsManager sharedManager] selectedProject]) {
+-(void) checkCurrentAccountState{
+    if (![[SettingsManager sharedManager] selectedProjectId]) {
         [self loadProjects];
-    }
-}
-
--(void) checkCurrentDataChannel{
-    if (![[SettingsManager sharedManager] selectedDataChannel]) {
+    }else if (![[SettingsManager sharedManager] selectedDataChannelId]) {
         [self loadDataChannels];
     }
 }

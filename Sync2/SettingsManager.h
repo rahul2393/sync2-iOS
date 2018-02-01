@@ -14,6 +14,8 @@
 
 + (id)sharedManager;
 
+-(void) logout;
+
 
 -(NSString *) currentAccountEmail;
 -(void) setAccountEmail:(NSString *)email;

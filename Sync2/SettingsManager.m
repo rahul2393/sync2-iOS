@@ -48,7 +48,7 @@
     
 }
 
--(void) signout{
+-(void) logout{
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannelId];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedProjectId];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_ACTIVEACCOUNTID];
@@ -89,8 +89,6 @@
     [[NSUserDefaults standardUserDefaults] setBool:show forKey:KEY_MAP_SHOWGEOFENCES];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
-
 
 -(BOOL) hasOnboarded{
     return [[NSUserDefaults standardUserDefaults] boolForKey:KEY_HASONBOARDED];

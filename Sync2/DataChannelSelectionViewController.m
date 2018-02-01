@@ -9,6 +9,8 @@
 #import "DataChannelSelectionViewController.h"
 #import "DummyChannelData.h"
 #import "TextViewTableViewCell.h"
+#import "DataChannel.h"
+#import "SettingsManager.h"
 @interface DataChannelSelectionViewController ()
 
 @property (nonatomic, readwrite) NSInteger selectedChannelIx;
@@ -24,7 +26,7 @@
     
     if (!self.channels) {
         
-        self.useDummy = YES;
+        self.useDummy = NO;
         
         if (self.useDummy) {
             self.channels = [DummyChannelData channelTitles];
@@ -121,7 +123,14 @@
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = self.channels[indexPath.row];
+    
+    if (self.useDummy) {
+        cell.textLabel.text = self.channels[indexPath.row];
+    }else{
+        DataChannel *dc = self.channels[indexPath.row];
+        cell.textLabel.text = dc.name;
+    }
+    
     cell.detailTextLabel.text = @"iOS";
     
     if (self.selectedChannelIx == indexPath.row && self.channelSelected) {
@@ -146,6 +155,8 @@
 }
 
 - (IBAction)selectChannelButtonTapped:(id)sender {
+    
+    [[SettingsManager sharedManager] selectDataChannel:self.channels[self.selectedChannelIx]];
     
     NSLog(@"Button tapped");
     
