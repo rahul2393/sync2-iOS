@@ -10,6 +10,9 @@
 #import "Project.h"
 #import "DataChannel.h"
 #import "Landmark.h"
+#import "APIKey.h"
+#import "SettingsManager.h"
+#import "SDKManager.h"
 #define SERVER_ADDRESS @"http://sense-api-staging.sixgill.run"
 
 @implementation SenseAPI
@@ -170,6 +173,40 @@
     [dataTask resume];
 }
 
+-(void) GetAPIKeys:(void ( ^ _Nullable )(NSArray * apiKeys, NSError * _Nullable error))completed{
+    
+    NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
+                               @"accept": @"application/json",
+                               @"connection": @"keep-alive" };
+    
+    NSString *projectId = [[[SettingsManager sharedManager] selectedDataChannel] objectId];
+    NSString *fmt = [NSString stringWithFormat:@"/v2/channels/%@/apiKeys", projectId];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:fmt]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
+    
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                        
+                                                        NSArray *apiKeys = [self apiKeysFomData:data];
+                                                        APIKey *k = [apiKeys firstObject];
+                                                        [[SDKManager sharedManager] stopSDK];
+                                                        [[SDKManager sharedManager] startSDKWithAPIKey:k.apiKey];
+                                                        
+                                                        completed(nil, nil);
+                                                    }
+                                                }];
+    [dataTask resume];
+}
+
 # pragma mark - Get Data Channels
 
 -(void) GetDataChannelsWithCompletion:(void ( ^ _Nullable )(NSArray *dataChannels, NSError * _Nullable error))completed{
@@ -275,6 +312,31 @@
             for (NSDictionary *lmo in landmarkObjects) {
                 Landmark *p = [[Landmark alloc] initWithData:lmo];
                 [toReturn addObject:p];
+            }
+        }
+    }
+    
+    
+    return toReturn;
+}
+
+-(NSArray *) apiKeysFomData:(NSData *) data{
+    NSMutableArray *toReturn = [NSMutableArray array];
+    
+    NSError *error = nil;
+    id object = [NSJSONSerialization
+                 JSONObjectWithData:data
+                 options:0
+                 error:&error];
+    
+    
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *responseDict = (NSDictionary *)object;
+        if(responseDict[@"data"]){
+            NSArray *apis = (NSArray *)responseDict[@"data"];
+            for (NSDictionary *apiObject in apis) {
+                APIKey *a = [[APIKey alloc] initWithData:apiObject];
+                [toReturn addObject:a];
             }
         }
     }

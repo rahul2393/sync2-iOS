@@ -16,6 +16,7 @@
 @property (nonatomic, readwrite) BOOL useDummyData;
 @property (nonatomic, strong) NSArray *dataChannels;
 @property (nonatomic, strong) NSArray *projects;
+@property (nonatomic, strong) NSString *serverURL;
 @end
 
 @implementation SettingsTableViewController
@@ -31,6 +32,10 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.serverURL = [[SettingsManager sharedManager] serverURL];
+    if (!self.serverURL) {
+        self.serverURL = @"sense-api-staging.sixgill.run";
+    }
     
     [self.tableView reloadData];
 }
@@ -94,10 +99,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self dummyCellForRowAtIndexPath:indexPath];
+    return [self dataCellForIndexPath:indexPath];
 }
 
--(UITableViewCell *) dummyCellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(UITableViewCell *) dataCellForIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     if (cell == nil) {
@@ -111,7 +116,11 @@
         switch (indexPath.row) {
             case 0:{
                 cell.textLabel.text = @"Logged-In Email";
-                cell.detailTextLabel.text = [[DummySettingsData account] accountEmail];
+                NSString *email = [[SettingsManager sharedManager] currentAccountEmail];
+                if (!email) {
+                    email = @"";
+                }
+                cell.detailTextLabel.text = email;
                 cell.accessoryType = UITableViewCellAccessoryNone;
                 break;
             }
@@ -149,7 +158,7 @@
     }else{
         cell.textLabel.text = @"API URL";
         cell.accessoryType = UITableViewCellAccessoryNone;
-        cell.detailTextLabel.text = [DummySettingsData apiURL];
+        cell.detailTextLabel.text = self.serverURL;
     }
     
     return cell;
@@ -171,6 +180,8 @@
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
+    
+    
     
     [self dismissModal];
     

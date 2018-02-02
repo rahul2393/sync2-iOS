@@ -22,7 +22,8 @@
 - (IBAction)enableLocationTapped:(id)sender {
     
     _locationManager.delegate = self;
-    [_locationManager requestAlwaysAuthorization];
+    //[_locationManager requestAlwaysAuthorization];
+    [SGSDK requestAlwaysPermission];
 }
 
 - (IBAction)skipTapped:(id)sender {

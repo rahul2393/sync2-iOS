@@ -7,7 +7,7 @@
 //
 
 #import "SettingsManager.h"
-
+#import "SenseAPI.h"
 #define KEY_HASONBOARDED @"hasOnboarded"
 
 #define KEY_ACCOUNTS @"accountsList"
@@ -20,6 +20,7 @@
 
 #define KEY_SelectedProject @"selectedProject"
 #define KEY_SelectedDataChannel @"selectedDataChannel"
+#define KEY_ServerURL @"urlKey"
 
 @implementation SettingsManager
 
@@ -48,11 +49,24 @@
     
 }
 
+-(NSString *)serverURL{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:KEY_ServerURL];
+    
+}
+-(void)setServerURL:(NSString *)url{
+    [[NSUserDefaults standardUserDefaults] setObject:url forKey:KEY_ServerURL];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 -(void) logout{
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannel];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedProject];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_ACTIVEACCOUNTID];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
+-(void) associateAPIWithDataChannel{
     
 }
 
@@ -86,6 +100,11 @@
 -(void) selectDataChannel:(DataChannel *) dataChannel{
     [[NSUserDefaults standardUserDefaults] setObject:[dataChannel toDictionary] forKey:KEY_SelectedDataChannel];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[SenseAPI sharedManager]GetAPIKeys:^(NSArray *apiKeys, NSError * _Nullable error) {
+        
+    }];
+    
 }
 
 
