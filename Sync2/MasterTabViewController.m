@@ -30,7 +30,20 @@
     [self checkCurrentAccountState];
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    if (![[SettingsManager sharedManager] currentAccountEmail]) {
+        [self performSegueWithIdentifier:@"logoutSegue" sender:self];
+        return;
+    }
+    
+}
+
 -(void) checkCurrentAccountState{
+    if (![[SettingsManager sharedManager] currentAccountEmail]) {
+        return;
+    }
     if (![[SettingsManager sharedManager] selectedProject]) {
         [self loadProjects];
     }else if (![[SettingsManager sharedManager] selectedDataChannel]) {

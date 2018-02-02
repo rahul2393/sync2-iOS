@@ -69,7 +69,7 @@
                                                             return;
                                                         }
                                                         self.userToken = token;
-                                                        
+                                                        [[SettingsManager sharedManager] setCurrentAccountEmail:email];
                                                         [self GetOrganizationsIds:^(NSArray *orgIds, NSError * _Nullable error) {
                                                             [self SetOrgId:orgIds[0] withCompletion:^(NSError * _Nullable error) {
                                                                 completed(nil);

@@ -172,8 +172,11 @@
                 [self loadProjects];
                 break;
                 
-            default:
+            case 2:
                 [self loadDataChannels];
+                break;
+                
+            default:
                 break;
         }
     }
@@ -185,5 +188,11 @@
     
     [self dismissModal];
     
+}
+
+- (IBAction)logoutTapped:(id)sender {
+    
+    [[SettingsManager sharedManager] logout];
+    [self dismissModal];
 }
 @end

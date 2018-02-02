@@ -18,7 +18,7 @@
 
 
 -(NSString *) currentAccountEmail;
--(void) setAccountEmail:(NSString *)email;
+-(void) setCurrentAccountEmail:(NSString *)email;
 
 -(NSString *)serverURL;
 -(void)setServerURL:(NSString *)url;

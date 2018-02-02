@@ -10,5 +10,6 @@
 
 @interface SettingsTableViewController : UITableViewController
 - (IBAction)doneButtonTapped:(id)sender;
+- (IBAction)logoutTapped:(id)sender;
 
 @end

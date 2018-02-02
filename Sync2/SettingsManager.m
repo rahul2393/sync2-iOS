@@ -18,6 +18,8 @@
 
 #define KEY_MAP_SHOWLAST5PTS @"showLast5pts"
 
+#define KEY_AccountEmail @"accountEmail"
+
 #define KEY_SelectedProject @"selectedProject"
 #define KEY_SelectedDataChannel @"selectedDataChannel"
 #define KEY_ServerURL @"urlKey"
@@ -42,11 +44,12 @@
 
 
 -(NSString *) currentAccountEmail{
-    return nil;
+    return [[NSUserDefaults standardUserDefaults] objectForKey:KEY_AccountEmail];
 }
 
--(void) setAccountEmail:(NSString *)email{
-    
+-(void) setCurrentAccountEmail:(NSString *)email{
+    [[NSUserDefaults standardUserDefaults] setObject:email forKey:KEY_AccountEmail];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(NSString *)serverURL{
@@ -60,6 +63,7 @@
 
 -(void) logout{
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannel];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_AccountEmail];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedProject];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_ACTIVEACCOUNTID];
     [[NSUserDefaults standardUserDefaults] synchronize];
