@@ -28,8 +28,8 @@
     
     [[SettingsManager sharedManager] logout];
     
-    self.emailAddressField.text = @"rkirkendall@sixgill.com";
-    self.passwordField.text = @"rickyricky1";
+    //self.emailAddressField.text = @"rkirkendall@sixgill.com";
+    //self.passwordField.text = @"rickyricky1";
     
     [self.emailAddressField resignFirstResponder];
     [self.passwordField resignFirstResponder];
@@ -82,7 +82,7 @@
 }
 
 - (IBAction)qrButtonTapped:(id)sender {
-    [self qrButtonActivated];
+    //[self qrButtonActivated];
 }
 
 - (IBAction)loginButtonTapped:(id)sender {
