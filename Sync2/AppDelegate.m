@@ -60,9 +60,6 @@
     
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
-    [[SDKManager sharedManager] startSDKWithAPIKey:@""];
-    NSLog(@"SDK starting");
-    
     return YES;
 }
 

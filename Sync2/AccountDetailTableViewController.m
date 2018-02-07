@@ -224,6 +224,7 @@
 
 
 -(void) activateAccount{
+    // should not still be getting called
     [[SDKManager sharedManager] stopSDK];
     [[SDKManager sharedManager] clearLogs];
     [[SDKManager sharedManager] startSDKWithAPIKey:self.accountObject.apiKey];

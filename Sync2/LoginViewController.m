@@ -10,6 +10,7 @@
 #import "SettingsManager.h"
 #import "LoginViewController.h"
 #import "SenseAPI.h"
+#import "SDKManager.h"
 #import "DataChannelSelectionViewController.h"
 #import "ProjectSelectionViewController.h"
 
@@ -28,8 +29,8 @@
     
     [[SettingsManager sharedManager] logout];
     
-    //self.emailAddressField.text = @"rkirkendall@sixgill.com";
-    //self.passwordField.text = @"rickyricky1";
+    self.emailAddressField.text = @"rkirkendall@sixgill.com";
+    self.passwordField.text = @"rickyricky1";
     
     [self.emailAddressField resignFirstResponder];
     [self.passwordField resignFirstResponder];

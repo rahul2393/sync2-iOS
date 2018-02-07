@@ -177,11 +177,12 @@
                     </view>
                     <connections>
                         <segue destination="UQK-ts-qSm" kind="presentation" identifier="showPermissionRequests" id="FMR-PW-2uc"/>
+                        <segue destination="MOx-o9-HDz" kind="show" identifier="alreadySignedIn" id="gO2-P8-Yfg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHJ-B3-1Gx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="-1343"/>
+            <point key="canvasLocation" x="957" y="-1343"/>
         </scene>
         <!--Setup Info View Controller-->
         <scene sceneID="xUf-j9-3o2">
@@ -3152,7 +3153,8 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="O1Z-QH-8zQ"/>
-        <segue reference="XtT-hd-MMq"/>
-        <segue reference="mzM-J5-9TN"/>
+        <segue reference="tiO-Cx-fFe"/>
+        <segue reference="gO2-P8-Yfg"/>
+        <segue reference="bdL-UT-Onr"/>
     </inferredMetricsTieBreakers>
 </document>

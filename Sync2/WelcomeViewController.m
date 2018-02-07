@@ -25,11 +25,13 @@
     [super viewDidAppear:animated];
     if (![[SettingsManager sharedManager] hasOnboarded]) {
         [self performSegueWithIdentifier:@"showPermissionRequests" sender:self];
+    }else if ([[SettingsManager sharedManager] currentAccountEmail]) {
+        [self performSegueWithIdentifier:@"alreadySignedIn" sender:self];
     }
 }
 
 - (IBAction)haveAccountTapped:(id)sender {
-    [self.parentPageViewController next];
+    
 }
 
 

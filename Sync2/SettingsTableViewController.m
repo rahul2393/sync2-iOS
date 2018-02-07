@@ -10,6 +10,7 @@
 #import "DummySettingsData.h"
 #import "SettingsManager.h"
 #import "SenseAPI.h"
+#import "SDKManager.h"
 #import "DataChannelSelectionViewController.h"
 #import "ProjectSelectionViewController.h"
 @interface SettingsTableViewController ()
@@ -193,6 +194,7 @@
 - (IBAction)logoutTapped:(id)sender {
     
     [[SettingsManager sharedManager] logout];
+    [[SDKManager sharedManager] stopSDK];
     [self dismissModal];
 }
 @end
