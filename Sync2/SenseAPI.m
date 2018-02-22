@@ -13,7 +13,7 @@
 #import "APIKey.h"
 #import "SettingsManager.h"
 #import "SDKManager.h"
-#define SERVER_ADDRESS @"http://sense-api-staging.sixgill.run"
+#define SERVER_ADDRESS @"https://sense-api.sixgill.com"
 
 @implementation SenseAPI
 
@@ -119,7 +119,7 @@
     
     NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://sense-api-staging.sixgill.run/v2/setOrganization"]
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/setOrganization"]]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];
