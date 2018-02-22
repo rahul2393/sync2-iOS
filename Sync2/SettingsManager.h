@@ -23,7 +23,7 @@
 -(NSString *)serverURL;
 -(void)setServerURL:(NSString *)url;
 
-- (Project *) selectedProject;
+-(Project *) selectedProject;
 -(void) selectProject:(Project *)project;
 
 -(DataChannel *) selectedDataChannel;

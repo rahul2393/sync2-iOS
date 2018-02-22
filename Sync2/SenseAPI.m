@@ -198,6 +198,7 @@
                                                         
                                                         NSArray *apiKeys = [self apiKeysFomData:data];
                                                         APIKey *k = [apiKeys firstObject];
+                                                        [[SDKManager sharedManager] setCurrentAPIKey:k.apiKey];
                                                         [[SDKManager sharedManager] stopSDK];
                                                         [[SDKManager sharedManager] startSDKWithAPIKey:k.apiKey];
                                                         

@@ -20,6 +20,8 @@
 
 #define KEY_AccountEmail @"accountEmail"
 
+
+
 #define KEY_SelectedProject @"selectedProject"
 #define KEY_SelectedDataChannel @"selectedDataChannel"
 #define KEY_ServerURL @"urlKey"
@@ -70,10 +72,6 @@
     
 }
 
--(void) associateAPIWithDataChannel{
-    
-}
-
 -(Project *) selectedProject{
     NSDictionary *d = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SelectedProject];
     if (!d) {
@@ -108,8 +106,9 @@
     [[SenseAPI sharedManager]GetAPIKeys:^(NSArray *apiKeys, NSError * _Nullable error) {
         
     }];
-    
 }
+
+
 
 
 -(BOOL) mapShowLast5Pts{

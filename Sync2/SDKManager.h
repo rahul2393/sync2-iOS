@@ -14,6 +14,9 @@
 + (id)sharedManager;
 
 
+- (NSString *) currentAPIKey;
+- (void) setCurrentAPIKey:(NSString *) apiKey;
+
 -(void) startSDKWithAPIKey:(NSString *)apiKey;
 -(void) stopSDK;
 

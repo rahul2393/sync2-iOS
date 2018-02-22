@@ -8,6 +8,8 @@
 
 #import "SDKManager.h"
 
+#define KEY_API @"currentAPIKey"
+
 @implementation SDKManager
 
 
@@ -25,6 +27,15 @@
         
     }
     return self;
+}
+
+- (NSString *) currentAPIKey{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:KEY_API];
+}
+
+- (void) setCurrentAPIKey:(NSString *) apiKey{
+    [[NSUserDefaults standardUserDefaults] setObject:apiKey forKey:KEY_API];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(void)forceUpdate{
