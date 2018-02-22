@@ -79,7 +79,8 @@
 		E9CCF4C81EF1E78200BF96C6 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4C21EF1E78200BF96C6 /* QRCodeReaderViewController.m */; };
 		E9CCF4C91EF1E78200BF96C6 /* QRToggleTorchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4C41EF1E78200BF96C6 /* QRToggleTorchButton.m */; };
 		E9D0A3671F3258CA00E7776C /* MapMarkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D0A3661F3258CA00E7776C /* MapMarkerViewController.m */; };
-		E9DC1A67203F62DC00186B4C /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DC1A66203F62DC00186B4C /* SixgillSDK.framework */; };
+		E9DC1A6A203F632A00186B4C /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DC1A66203F62DC00186B4C /* SixgillSDK.framework */; };
+		E9DC1A6B203F632A00186B4C /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9DC1A66203F62DC00186B4C /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9F0A29420240B41007B7711 /* APIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F0A29320240B41007B7711 /* APIKey.m */; };
 /* End PBXBuildFile section */
 
@@ -94,12 +95,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E9DAECF0203625720073E8D9 /* Embed Frameworks */ = {
+		E9DC1A6C203F632A00186B4C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E9DC1A6B203F632A00186B4C /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9DC1A67203F62DC00186B4C /* SixgillSDK.framework in Frameworks */,
+				E9DC1A6A203F632A00186B4C /* SixgillSDK.framework in Frameworks */,
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
@@ -946,7 +948,7 @@
 				5B9F7C4283404FA980F4DA7C /* [CP] Embed Pods Frameworks */,
 				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
 				E9EB06801F3CFA36000545DD /* ShellScript */,
-				E9DAECF0203625720073E8D9 /* Embed Frameworks */,
+				E9DC1A6C203F632A00186B4C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

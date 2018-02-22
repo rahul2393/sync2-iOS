@@ -29,7 +29,10 @@
     
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
-    if (![[SettingsManager sharedManager] currentAccountEmail] && [[SDKManager sharedManager] currentAPIKey]) {
+    NSString *e = [[SettingsManager sharedManager] currentAccountEmail];
+    NSString *a = [[SDKManager sharedManager] currentAPIKey];
+    
+    if (e && a) {
         [[SDKManager sharedManager] startSDKWithAPIKey: [[SDKManager sharedManager] currentAPIKey]];
     }
     

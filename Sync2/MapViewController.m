@@ -82,9 +82,12 @@
 }
 
 -(void) zoomInOnLastCoord{
-    CLLocationCoordinate2D last = CLLocationCoordinate2DMake([(NSNumber *)self.coords.lastObject[0] floatValue], [(NSNumber *)self.coords.lastObject[1] floatValue]);
-    [self.mapView setCenterCoordinate:last animated:YES];
-    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(last, 1000, 1000);
+    CLLocationCoordinate2D location;
+    location.latitude = self.mapView.userLocation.coordinate.latitude;
+    location.longitude = self.mapView.userLocation.coordinate.longitude;
+    
+    [self.mapView setCenterCoordinate:location animated:YES];
+    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
     [self.mapView setRegion:zoomRegion animated:YES];
 }
 
