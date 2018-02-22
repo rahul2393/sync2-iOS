@@ -146,7 +146,6 @@
                 [self.mapView addOverlay:p];
             }
         }
-        
     }
 }
 

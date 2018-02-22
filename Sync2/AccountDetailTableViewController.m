@@ -9,7 +9,7 @@
 
 #import "AccountDetailTableViewController.h"
 #import "SettingsManager.h"
-
+#import "SenseAPI.h"
 
 @import CoreLocation;
 @interface AccountDetailTableViewController ()
@@ -147,8 +147,8 @@
     switch (indexPath.row) {
         case 0:{
             TextFieldTableViewCell *c = [self textCellForTableView:tableView];
-            c.label.text = @"Cluster Address";
-            c.textField.text = @"";//[SGSDK clusterAddress];
+            c.label.text = @"Server Address";
+            c.textField.text = [SenseAPI serverAddress];
             c.textCellId = @"cluster";
             return c;
         }

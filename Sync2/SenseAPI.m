@@ -17,6 +17,10 @@
 
 @implementation SenseAPI
 
++ (NSString *) serverAddress{
+    return SERVER_ADDRESS;
+}
+
 + (id)sharedManager {
     static SenseAPI *sharedMyManager = nil;
     static dispatch_once_t onceToken;

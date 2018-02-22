@@ -348,7 +348,6 @@
 			isa = PBXGroup;
 			children = (
 				E9D0A3641F32587E00E7776C /* Map View */,
-				E962B34E1EF1FAB000ECB920 /* Log Viewer */,
 				E9CCF4B91EF1E78200BF96C6 /* QRCodeReaderViewController */,
 				E90371451EE8B5E60033DED0 /* Wifi-Beacon List */,
 				E9A3C2F71EDBA07000A938CB /* Accounts Table */,
@@ -610,6 +609,7 @@
 		E966682820082707006911C3 /* UI Update */ = {
 			isa = PBXGroup;
 			children = (
+				E962B34E1EF1FAB000ECB920 /* Log Viewer */,
 				E935247E201FD2F6008D4F19 /* Login */,
 				E9A3C2E31ED77D8E00A938CB /* Welcome */,
 				E9352475201FC947008D4F19 /* Permission Views */,

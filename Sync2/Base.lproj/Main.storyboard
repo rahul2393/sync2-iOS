@@ -2051,16 +2051,15 @@ Permission</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="wft-DK-DuL">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" image="Settings" id="2kg-pg-4Lb">
+                        <barButtonItem key="rightBarButtonItem" title="Dev" id="2kg-pg-4Lb">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="amc-nY-38N" kind="presentation" id="qKf-9j-muk"/>
+                                <segue destination="Y6I-gS-P2P" kind="show" id="bKF-86-wQl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="thu-9n-gYX" kind="show" identifier="showList" id="dGi-u2-StF"/>
-                        <segue destination="Y6I-gS-P2P" kind="show" identifier="goToLogView" id="bed-8b-8ap"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Eg-aG-tJI" userLabel="First Responder" sceneMemberID="firstResponder"/>

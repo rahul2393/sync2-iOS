@@ -24,5 +24,7 @@
 
 + (id)sharedManager;
 
++ (NSString *) serverAddress;
+
 
 @end

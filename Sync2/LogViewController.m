@@ -9,23 +9,26 @@
 #import "LogViewController.h"
 
 @interface LogViewController ()
-
+@property (nonatomic, strong) NSString *logs;
 @end
 
 @implementation LogViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.logs = [[SDKManager sharedManager] logs];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    NSString *logs = [[SDKManager sharedManager] logs];
+    [self.logTextView setText:self.logs];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     
-    self.logTextView.text = logs;    
-    
+    [self.logTextView setText:self.logs];
 }
 
 - (IBAction)actionButtonTapped:(id)sender {
