@@ -52,7 +52,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [[SDKManager sharedManager] setSensorDataDelegate:self];
-    [[SDKManager sharedManager] forceUpdate];
+    //[[SDKManager sharedManager] forceUpdate];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -240,7 +240,6 @@
 }
 
 -(void)sensorUpdateSentWithData:(NSDictionary *)sensorData{
-    NSLog(@"Getting data: %@",sensorData.description);
     self.sensorData = sensorData;
     self.sensorUpdateTime = [NSDate date];        
     
@@ -297,7 +296,7 @@
         
         if (d[@"cadence"]) {
             NSNumber *cadenceSecondsNum = d[@"cadence"];
-            float sec = cadenceSecondsNum.floatValue / 1000;
+            float sec = cadenceSecondsNum.floatValue / 100000;
             NSNumber *secNum = [NSNumber numberWithFloat:sec];
             NSString *toReturn = [NSString stringWithFormat:@"%lu seconds", secNum.integerValue];
             return toReturn;

@@ -2050,14 +2050,7 @@ Permission</string>
                             <outlet property="delegate" destination="0Qg-qg-H78" id="Sgc-GS-yaz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="wft-DK-DuL">
-                        <barButtonItem key="rightBarButtonItem" title="Dev" id="2kg-pg-4Lb">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <segue destination="Y6I-gS-P2P" kind="show" id="bKF-86-wQl"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="wft-DK-DuL"/>
                     <connections>
                         <segue destination="thu-9n-gYX" kind="show" identifier="showList" id="dGi-u2-StF"/>
                     </connections>
@@ -2075,17 +2068,17 @@ Permission</string>
                         <viewControllerLayoutGuide type="bottom" id="M3M-i5-tVE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mLb-Qn-eBT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KBf-5S-VaZ">
-                                <rect key="frame" x="0.0" y="45" width="414" height="598"/>
+                                <rect key="frame" x="0.0" y="45" width="414" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJ9-1M-0o8">
-                                <rect key="frame" x="0.0" y="643" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="7Ms-a9-2Ic"/>
                                 </constraints>
@@ -3146,7 +3139,7 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
         <image name="map-icon" width="78" height="72"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="qr-graphic" width="300" height="300"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>
