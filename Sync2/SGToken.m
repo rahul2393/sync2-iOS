@@ -34,4 +34,3 @@
     return self;
 }
 @end
-//http://sense-api-staging.sixgill.run/v2/projects/01C3H7JN6E71VFH02NH28CMSY2/rules

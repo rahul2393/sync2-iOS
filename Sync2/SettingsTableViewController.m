@@ -35,7 +35,7 @@
     [super viewWillAppear:animated];
     self.serverURL = [[SettingsManager sharedManager] serverURL];
     if (!self.serverURL) {
-        self.serverURL = @"sense-api-staging.sixgill.run";
+        self.serverURL = @"sense-ingress-api.sixgill.com";
     }
     
     [self.tableView reloadData];
