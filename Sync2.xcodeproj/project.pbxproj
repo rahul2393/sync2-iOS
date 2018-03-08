@@ -79,9 +79,12 @@
 		E9CCF4C81EF1E78200BF96C6 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4C21EF1E78200BF96C6 /* QRCodeReaderViewController.m */; };
 		E9CCF4C91EF1E78200BF96C6 /* QRToggleTorchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4C41EF1E78200BF96C6 /* QRToggleTorchButton.m */; };
 		E9D0A3671F3258CA00E7776C /* MapMarkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D0A3661F3258CA00E7776C /* MapMarkerViewController.m */; };
-		E9D77D3B2047409000BFF0C2 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D77D3A2047408F00BFF0C2 /* SixgillSDK.framework */; };
-		E9D77D3C2047409000BFF0C2 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9D77D3A2047408F00BFF0C2 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9F0A29420240B41007B7711 /* APIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F0A29320240B41007B7711 /* APIKey.m */; };
+		E9F29C152050B8EB0024E3B5 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F29C142050B8EB0024E3B5 /* Environment.m */; };
+		E9F29C192051BB330024E3B5 /* EnvironmentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F29C182051BB330024E3B5 /* EnvironmentManager.m */; };
+		E9FC99F5204E06300060B81D /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FC99F4204E06300060B81D /* SixgillSDK.framework */; };
+		E9FC99F6204E06300060B81D /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9FC99F4204E06300060B81D /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E9FC99FB204E0BE20060B81D /* EnvironmentSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FC99FA204E0BE20060B81D /* EnvironmentSelectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,13 +98,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E9DC1A6C203F632A00186B4C /* Embed Frameworks */ = {
+		E9FC99F7204E06300060B81D /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E9D77D3C2047409000BFF0C2 /* SixgillSDK.framework in Embed Frameworks */,
+				E9FC99F6204E06300060B81D /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,9 +244,15 @@
 		E9CCF4C41EF1E78200BF96C6 /* QRToggleTorchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRToggleTorchButton.m; sourceTree = "<group>"; };
 		E9D0A3651F3258CA00E7776C /* MapMarkerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapMarkerViewController.h; sourceTree = "<group>"; };
 		E9D0A3661F3258CA00E7776C /* MapMarkerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapMarkerViewController.m; sourceTree = "<group>"; };
-		E9D77D3A2047408F00BFF0C2 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		E9F0A29220240B41007B7711 /* APIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
 		E9F0A29320240B41007B7711 /* APIKey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIKey.m; sourceTree = "<group>"; };
+		E9F29C132050B8EB0024E3B5 /* Environment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
+		E9F29C142050B8EB0024E3B5 /* Environment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Environment.m; sourceTree = "<group>"; };
+		E9F29C172051BB330024E3B5 /* EnvironmentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnvironmentManager.h; sourceTree = "<group>"; };
+		E9F29C182051BB330024E3B5 /* EnvironmentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnvironmentManager.m; sourceTree = "<group>"; };
+		E9FC99F4204E06300060B81D /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
+		E9FC99F9204E0BE20060B81D /* EnvironmentSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnvironmentSelectionViewController.h; sourceTree = "<group>"; };
+		E9FC99FA204E0BE20060B81D /* EnvironmentSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnvironmentSelectionViewController.m; sourceTree = "<group>"; };
 		EB092CDF563232A27A3F7613 /* Pods-Sync2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2/Pods-Sync2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,7 +261,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9D77D3B2047409000BFF0C2 /* SixgillSDK.framework in Frameworks */,
+				E9FC99F5204E06300060B81D /* SixgillSDK.framework in Frameworks */,
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
@@ -608,6 +617,7 @@
 		E966682820082707006911C3 /* UI Update */ = {
 			isa = PBXGroup;
 			children = (
+				E9FC99F8204E0BAC0060B81D /* Environment Selection */,
 				E962B34E1EF1FAB000ECB920 /* Log Viewer */,
 				E935247E201FD2F6008D4F19 /* Login */,
 				E9A3C2E31ED77D8E00A938CB /* Welcome */,
@@ -647,7 +657,7 @@
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
-				E9D77D3A2047408F00BFF0C2 /* SixgillSDK.framework */,
+				E9FC99F4204E06300060B81D /* SixgillSDK.framework */,
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
 				E9A3C2A41ED5FD1500A938CB /* Products */,
@@ -746,6 +756,8 @@
 		E9A3C2E41ED77DAC00A938CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9F29C162051BB0F0024E3B5 /* Environment Manager */,
+				E9F29C122050B8A60024E3B5 /* Environment */,
 				E9F0A29120240B2F007B7711 /* API Key */,
 				E97A204A2023D0F500FDB7B2 /* Notification Manager */,
 				E928BB2B20210BED0002C59E /* Landmark */,
@@ -934,6 +946,33 @@
 			name = "API Key";
 			sourceTree = "<group>";
 		};
+		E9F29C122050B8A60024E3B5 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				E9F29C132050B8EB0024E3B5 /* Environment.h */,
+				E9F29C142050B8EB0024E3B5 /* Environment.m */,
+			);
+			name = Environment;
+			sourceTree = "<group>";
+		};
+		E9F29C162051BB0F0024E3B5 /* Environment Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E9F29C172051BB330024E3B5 /* EnvironmentManager.h */,
+				E9F29C182051BB330024E3B5 /* EnvironmentManager.m */,
+			);
+			name = "Environment Manager";
+			sourceTree = "<group>";
+		};
+		E9FC99F8204E0BAC0060B81D /* Environment Selection */ = {
+			isa = PBXGroup;
+			children = (
+				E9FC99F9204E0BE20060B81D /* EnvironmentSelectionViewController.h */,
+				E9FC99FA204E0BE20060B81D /* EnvironmentSelectionViewController.m */,
+			);
+			name = "Environment Selection";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -948,7 +987,7 @@
 				5B9F7C4283404FA980F4DA7C /* [CP] Embed Pods Frameworks */,
 				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
 				E9EB06801F3CFA36000545DD /* ShellScript */,
-				E9DC1A6C203F632A00186B4C /* Embed Frameworks */,
+				E9FC99F7204E06300060B81D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1185,6 +1224,7 @@
 				E9A3C2AB1ED5FD1500A938CB /* AppDelegate.m in Sources */,
 				E9485EA920194DA800B553E2 /* DummyRulesData.m in Sources */,
 				E90371521EE8B7DF0033DED0 /* TestNetworkInterface.m in Sources */,
+				E9F29C192051BB330024E3B5 /* EnvironmentManager.m in Sources */,
 				E912818B20100B310003072B /* DummyChannelData.m in Sources */,
 				E9B76D5B200D4F450095030C /* ProjectSelectionViewController.m in Sources */,
 				E9A3C2EB1ED780CC00A938CB /* WelcomeViewController.m in Sources */,
@@ -1221,8 +1261,10 @@
 				E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */,
 				E9B76D3F200D31E30095030C /* NotificationsTableViewController.m in Sources */,
 				E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */,
+				E9F29C152050B8EB0024E3B5 /* Environment.m in Sources */,
 				E962B3511EF1FB2600ECB920 /* LogViewController.m in Sources */,
 				E9B76D5F200D4F5F0095030C /* DataChannelSelectionViewController.m in Sources */,
+				E9FC99FB204E0BE20060B81D /* EnvironmentSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

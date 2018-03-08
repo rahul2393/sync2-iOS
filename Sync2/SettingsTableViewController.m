@@ -41,6 +41,10 @@
     [self.tableView reloadData];
 }
 
+-(void) loadEnvironments{
+    [self performSegueWithIdentifier:@"goToEnvironmentSelection" sender:self];
+}
+
 -(void) loadProjects{
     [[SenseAPI sharedManager] GetProjectsWithCompletion:^(NSArray *projects, NSError * _Nullable error) {
         self.projects = projects;
@@ -157,9 +161,8 @@
                 break;
         }
     }else{
-        cell.textLabel.text = @"API URL";
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        cell.detailTextLabel.text = self.serverURL;
+        cell.textLabel.text = @"Environment";
+        cell.detailTextLabel.text = @"";
     }
     
     return cell;
@@ -180,12 +183,12 @@
             default:
                 break;
         }
+    }else{
+        [self loadEnvironments];
     }
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
-    
-    
     
     [self dismissModal];
     

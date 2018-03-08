@@ -24,6 +24,8 @@
 
 +(NSString *)deviceId;
 
++(void) setIngressURL:(NSString *)urlString;
+
 // Last 2 Days worth of logs
 +(NSString *) logs;
 +(void) clearLogs;
