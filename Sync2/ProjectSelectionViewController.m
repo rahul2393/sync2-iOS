@@ -41,12 +41,34 @@
     [self.selectProjectButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
     [self.selectProjectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.selectedIx = -1;
+    [self setButtonEnabled:NO];
     
+    if (!self.useDummy) {
+        Project *selectedProject = [[SettingsManager sharedManager] selectedProject];
+        if (selectedProject) {
+            NSUInteger selectedIndex = [self.projects indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([[(Project *)obj objectId] isEqualToString:selectedProject.objectId]) {
+                    *stop = YES;
+                    return YES;
+                }
+                return NO;
+            }];
+            
+            if (selectedIndex != NSNotFound) {
+                self.projectSelected = YES;
+                self.selectedIx = selectedIndex;
+                [self setButtonEnabled:YES];
+                
+                UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelTapped)];
+                cancelItem.tintColor = [UIColor whiteColor];
+                self.navigationItem.leftBarButtonItem = cancelItem;
+            }
+        }
+    }
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self setButtonEnabled:NO];
+- (void)cancelTapped {
+    [self dismissScreen];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -162,13 +184,17 @@
     [[SettingsManager sharedManager] selectProject:self.projects[self.selectedIx]];
     
     NSLog(@"Button tapped");
+    [self dismissScreen];
+}
+
+- (void)dismissScreen {
     if (self.navigationController.viewControllers.count > 1) {
         [self.navigationController popToRootViewControllerAnimated:YES];
-    }else{
+    } else {
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
             
         }];
     }
-    
 }
+
 @end

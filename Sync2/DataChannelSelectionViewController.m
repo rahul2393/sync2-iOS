@@ -40,12 +40,34 @@
     [self.selectChannelButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
     [self.selectChannelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.selectedChannelIx = -1;
+    [self setButtonEnabled:NO];
     
+    if (!self.useDummy) {
+        DataChannel *selectedChannel = [[SettingsManager sharedManager] selectedDataChannel];
+        if (selectedChannel) {
+            NSUInteger selectedIndex = [self.channels indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([[(DataChannel *)obj objectId] isEqualToString:selectedChannel.objectId]) {
+                    *stop = YES;
+                    return YES;
+                }
+                return NO;
+            }];
+
+            if (selectedIndex != NSNotFound) {
+                self.channelSelected = YES;
+                self.selectedChannelIx = selectedIndex;
+                [self setButtonEnabled:YES];
+                
+                UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelTapped)];
+                cancelItem.tintColor = [UIColor whiteColor];
+                self.navigationItem.leftBarButtonItem = cancelItem;
+            }
+        }
+    }
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self setButtonEnabled:NO];
+- (void)cancelTapped {
+    [self dismissScreen];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -160,12 +182,17 @@
     
     NSLog(@"Button tapped");
     
+    [self dismissScreen];
+}
+
+- (void)dismissScreen {
     if (self.navigationController.viewControllers.count > 1) {
         [self.navigationController popToRootViewControllerAnimated:YES];
-    }else{
+    } else {
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
             
         }];
     }
 }
+
 @end
