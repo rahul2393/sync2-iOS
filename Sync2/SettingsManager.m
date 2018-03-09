@@ -24,7 +24,6 @@
 
 #define KEY_SelectedProject @"selectedProject"
 #define KEY_SelectedDataChannel @"selectedDataChannel"
-#define KEY_ServerURL @"urlKey"
 
 @implementation SettingsManager
 
@@ -54,14 +53,6 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
--(NSString *)serverURL{
-    return [[NSUserDefaults standardUserDefaults] objectForKey:KEY_ServerURL];
-    
-}
--(void)setServerURL:(NSString *)url{
-    [[NSUserDefaults standardUserDefaults] setObject:url forKey:KEY_ServerURL];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
 
 -(void) logout{
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannel];

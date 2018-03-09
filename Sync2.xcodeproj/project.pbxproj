@@ -18,6 +18,8 @@
 		E9128187201008BA0003072B /* SenseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E9128186201008BA0003072B /* SenseAPI.m */; };
 		E912818B20100B310003072B /* DummyChannelData.m in Sources */ = {isa = PBXBuildFile; fileRef = E912818A20100B310003072B /* DummyChannelData.m */; };
 		E928BB2E20210C1A0002C59E /* Landmark.m in Sources */ = {isa = PBXBuildFile; fileRef = E928BB2D20210C1A0002C59E /* Landmark.m */; };
+		E92E7375205219AF0087A7F2 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F29C1A205214C70024E3B5 /* SixgillSDK.framework */; };
+		E92E7376205219AF0087A7F2 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9F29C1A205214C70024E3B5 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9352478201FC9FE008D4F19 /* SetupInfoViewController.m */; };
 		E9352481201FD301008D4F19 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9352480201FD301008D4F19 /* LoginViewController.m */; };
 		E9352485201FF050008D4F19 /* SGToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E9352484201FF050008D4F19 /* SGToken.m */; };
@@ -82,8 +84,6 @@
 		E9F0A29420240B41007B7711 /* APIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F0A29320240B41007B7711 /* APIKey.m */; };
 		E9F29C152050B8EB0024E3B5 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F29C142050B8EB0024E3B5 /* Environment.m */; };
 		E9F29C192051BB330024E3B5 /* EnvironmentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F29C182051BB330024E3B5 /* EnvironmentManager.m */; };
-		E9FC99F5204E06300060B81D /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9FC99F4204E06300060B81D /* SixgillSDK.framework */; };
-		E9FC99F6204E06300060B81D /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9FC99F4204E06300060B81D /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9FC99FB204E0BE20060B81D /* EnvironmentSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FC99FA204E0BE20060B81D /* EnvironmentSelectionViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -98,13 +98,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E9FC99F7204E06300060B81D /* Embed Frameworks */ = {
+		E92E7377205219AF0087A7F2 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E9FC99F6204E06300060B81D /* SixgillSDK.framework in Embed Frameworks */,
+				E92E7376205219AF0087A7F2 /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +250,7 @@
 		E9F29C142050B8EB0024E3B5 /* Environment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Environment.m; sourceTree = "<group>"; };
 		E9F29C172051BB330024E3B5 /* EnvironmentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnvironmentManager.h; sourceTree = "<group>"; };
 		E9F29C182051BB330024E3B5 /* EnvironmentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnvironmentManager.m; sourceTree = "<group>"; };
-		E9FC99F4204E06300060B81D /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
+		E9F29C1A205214C70024E3B5 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		E9FC99F9204E0BE20060B81D /* EnvironmentSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnvironmentSelectionViewController.h; sourceTree = "<group>"; };
 		E9FC99FA204E0BE20060B81D /* EnvironmentSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnvironmentSelectionViewController.m; sourceTree = "<group>"; };
 		EB092CDF563232A27A3F7613 /* Pods-Sync2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2/Pods-Sync2.release.xcconfig"; sourceTree = "<group>"; };
@@ -261,7 +261,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9FC99F5204E06300060B81D /* SixgillSDK.framework in Frameworks */,
+				E92E7375205219AF0087A7F2 /* SixgillSDK.framework in Frameworks */,
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
@@ -657,7 +657,7 @@
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
-				E9FC99F4204E06300060B81D /* SixgillSDK.framework */,
+				E9F29C1A205214C70024E3B5 /* SixgillSDK.framework */,
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
 				E9A3C2A41ED5FD1500A938CB /* Products */,
@@ -987,7 +987,7 @@
 				5B9F7C4283404FA980F4DA7C /* [CP] Embed Pods Frameworks */,
 				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
 				E9EB06801F3CFA36000545DD /* ShellScript */,
-				E9FC99F7204E06300060B81D /* Embed Frameworks */,
+				E92E7377205219AF0087A7F2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

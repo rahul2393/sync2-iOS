@@ -14,6 +14,7 @@
 #import "DataChannelSelectionViewController.h"
 #import "ProjectSelectionViewController.h"
 #import "EnvironmentSelectionViewController.h"
+#import "EnvironmentManager.h"
 @interface SettingsTableViewController ()
 @property (nonatomic, readwrite) BOOL useDummyData;
 @property (nonatomic, strong) NSArray *dataChannels;
@@ -34,10 +35,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.serverURL = [[SettingsManager sharedManager] serverURL];
-    if (!self.serverURL) {
-        self.serverURL = @"sense-ingress-api.sixgill.com";
-    }
+    self.serverURL = [SenseAPI serverAddress];
     
     [self.tableView reloadData];
 }
@@ -166,8 +164,11 @@
                 break;
         }
     }else{
+        
+        Environment *env = [[EnvironmentManager sharedManager] environments][[[EnvironmentManager sharedManager] selectedEnvironment]];
+        
         cell.textLabel.text = @"Environment";
-        cell.detailTextLabel.text = @"";
+        cell.detailTextLabel.text = env.name;
     }
     
     return cell;

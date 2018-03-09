@@ -20,9 +20,6 @@
 -(NSString *) currentAccountEmail;
 -(void) setCurrentAccountEmail:(NSString *)email;
 
--(NSString *)serverURL;
--(void)setServerURL:(NSString *)url;
-
 -(Project *) selectedProject;
 -(void) selectProject:(Project *)project;
 

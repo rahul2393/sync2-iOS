@@ -33,10 +33,11 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     Environment *env = self.environments[envIndex];
-    
-    [[SettingsManager sharedManager] logout];
-    [[SDKManager sharedManager] stopSDK];
     [[SDKManager sharedManager] setIngressUrl:env.ingressURL];
+    [[SDKManager sharedManager] stopSDK];
+    [[SettingsManager sharedManager] logout];
+    
+    
 }
 
 -(NSInteger) selectedEnvironment{

@@ -1521,7 +1521,7 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="selectProjectButtonTapped:" destination="WnQ-wr-7hG" eventType="touchUpInside" id="44G-5I-tbG"/>
+                                        <action selector="selectEnvironmentButtonTapped:" destination="WnQ-wr-7hG" eventType="touchUpInside" id="3tc-aO-PAB"/>
                                     </connections>
                                 </button>
                                 <prototypes>
@@ -3257,7 +3257,7 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
         <image name="map-icon" width="78" height="72"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="qr-graphic" width="300" height="300"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>

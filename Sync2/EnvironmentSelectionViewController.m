@@ -11,7 +11,8 @@
 #import "EnvironmentManager.h"
 @interface EnvironmentSelectionViewController ()
 
-@property (nonatomic, readwrite) BOOL environmentSelected;
+@property (nonatomic, readwrite) BOOL environmentChanged;
+@property (nonatomic, readwrite) NSInteger startingIx;
 @property (nonatomic, readwrite) NSInteger selectedIx;
 @end
 
@@ -31,13 +32,14 @@
     
     [self.selectEnvironmentButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
     [self.selectEnvironmentButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.selectedIx = -1;
+    self.startingIx = [[EnvironmentManager sharedManager] selectedEnvironment];
+    self.selectedIx = self.startingIx;
     
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self setButtonEnabled:NO];
+    [self setButtonEnabled:YES];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -46,17 +48,7 @@
         return;
     }
     
-    if (self.selectedIx == indexPath.row) {
-        self.environmentSelected = !self.environmentSelected;
-        self.selectedIx = -1;
-        [self setButtonEnabled:NO];
-    }else{
-        self.environmentSelected = YES;
-        self.selectedIx = indexPath.row;
-        [self setButtonEnabled:YES];
-    }
-    
-    
+    self.selectedIx = indexPath.row;
     [self.tableView reloadData];
     
 }
@@ -120,7 +112,7 @@
     
     cell.textLabel.text = env.name;
     
-    if (self.selectedIx == indexPath.row && self.environmentSelected) {
+    if (self.selectedIx == indexPath.row) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }else{
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -140,20 +132,28 @@
     }
 }
 
-
-- (IBAction)selectProjectButtonTapped:(id)sender {
+- (IBAction)selectEnvironmentButtonTapped:(id)sender {
     
-    [[EnvironmentManager sharedManager] setSelectedEnvironment:self.selectedIx];
-    
-    NSLog(@"Button tapped");
-    if (self.navigationController.viewControllers.count > 1) {
-        [self.navigationController popToRootViewControllerAnimated:YES];
+    if (self.selectedIx == self.startingIx) {
+        if (self.navigationController.viewControllers.count > 1) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }else{
+            [self.navigationController dismissViewControllerAnimated:YES completion:^{
+               
+            }];
+        }
     }else{
-        [self.navigationController dismissViewControllerAnimated:YES completion:^{
-            [self.settingsVC logout];
-        }];
+        [[EnvironmentManager sharedManager] setSelectedEnvironment:self.selectedIx];
+        
+        if (self.navigationController.viewControllers.count > 1) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }else{
+            [self.navigationController dismissViewControllerAnimated:YES completion:^{
+                [self.settingsVC logout];
+            }];
+        }
     }
-    
 }
+
 
 @end
