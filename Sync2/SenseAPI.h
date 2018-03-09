@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SGToken.h"
+#import "EnvironmentManager.h"
 
 @interface SenseAPI : NSObject
 

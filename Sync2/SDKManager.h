@@ -30,4 +30,7 @@
 -(void)forceUpdate;
 
 -(void)requestAlwaysLocationPermission;
+
+-(void) setIngressUrl:(NSString *)ingressUrl;
+
 @end

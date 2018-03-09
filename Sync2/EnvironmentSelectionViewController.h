@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Environment.h"
+#import "SettingsTableViewController.h"
+
 @interface EnvironmentSelectionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIButton *selectEnvironmentButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) SettingsTableViewController *settingsVC;
 
 @property (nonatomic, strong) NSArray *environments;
 

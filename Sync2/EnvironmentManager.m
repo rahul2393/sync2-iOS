@@ -7,6 +7,8 @@
 //
 
 #import "EnvironmentManager.h"
+#import "SettingsManager.h"
+#import "SDKManager.h"
 
 #define kEnvironmentIxStore @"kEnvironmentIxStore"
 
@@ -22,13 +24,27 @@
 }
 
 -(void) setSelectedEnvironment:(NSInteger)envIndex{
+    
+    if (envIndex >= self.environments.count) {
+        return;
+    }
+    
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:envIndex] forKey:kEnvironmentIxStore];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    Environment *env = self.environments[envIndex];
+    
+    [[SettingsManager sharedManager] logout];
+    [[SDKManager sharedManager] stopSDK];
+    [[SDKManager sharedManager] setIngressUrl:env.ingressURL];
 }
 
 -(NSInteger) selectedEnvironment{
     NSNumber *envIx = [[NSUserDefaults standardUserDefaults] objectForKey:kEnvironmentIxStore];
-    return [envIx integerValue];
+    if (envIx) {
+        return [envIx integerValue];
+    }
+    return 1;
 }
 
 - (id)init {
@@ -37,12 +53,12 @@
         Environment *staging = [[Environment alloc] init];
         staging.name = @"Staging";
         staging.senseURL = @"http://sense-api-staging.sixgill.run";
-        staging.ingressURL = @"";
+        staging.ingressURL = @"http://sense-ingress-api-staging.sixgill.run";
         
         Environment *prod = [[Environment alloc] init];
         prod.name = @"Production";
         prod.senseURL = @"https://sense-api.sixgill.com";
-        prod.ingressURL = @"";
+        prod.ingressURL = @"https://sense-ingress-api.sixgill.com";
         
         self.environments = @[staging, prod];
         

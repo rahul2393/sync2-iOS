@@ -13,12 +13,16 @@
 #import "APIKey.h"
 #import "SettingsManager.h"
 #import "SDKManager.h"
-#define SERVER_ADDRESS @"https://sense-api.sixgill.com"
 
 @implementation SenseAPI
 
 + (NSString *) serverAddress{
-    return SERVER_ADDRESS;
+    
+    NSArray *envs = [[EnvironmentManager sharedManager] environments];
+    
+    Environment *env = envs[[[EnvironmentManager sharedManager] selectedEnvironment]];
+    
+    return env.senseURL;
 }
 
 + (id)sharedManager {
@@ -419,7 +423,7 @@
 
 
 -(NSString *) urlForEndPoint:(NSString *)endpoint{
-    return [NSString stringWithFormat:@"%@%@", SERVER_ADDRESS, endpoint];
+    return [NSString stringWithFormat:@"%@%@", [SenseAPI serverAddress], endpoint];
 }
 
 

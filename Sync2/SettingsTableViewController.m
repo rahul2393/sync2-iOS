@@ -13,6 +13,7 @@
 #import "SDKManager.h"
 #import "DataChannelSelectionViewController.h"
 #import "ProjectSelectionViewController.h"
+#import "EnvironmentSelectionViewController.h"
 @interface SettingsTableViewController ()
 @property (nonatomic, readwrite) BOOL useDummyData;
 @property (nonatomic, strong) NSArray *dataChannels;
@@ -73,6 +74,10 @@
         UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
         ProjectSelectionViewController *vc = (ProjectSelectionViewController *)nav.viewControllers[0];
         vc.projects = self.projects;
+    }else if([segue.identifier isEqualToString:@"goToEnvironmentSelection"]){
+        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
+        EnvironmentSelectionViewController *vc = (EnvironmentSelectionViewController *)nav.viewControllers[0];
+        vc.settingsVC = self;
     }
 }
 
@@ -194,10 +199,14 @@
     
 }
 
-- (IBAction)logoutTapped:(id)sender {
-    
+-(void) logout{
     [[SettingsManager sharedManager] logout];
     [[SDKManager sharedManager] stopSDK];
     [self dismissModal];
+}
+
+- (IBAction)logoutTapped:(id)sender {
+    
+    [self logout];
 }
 @end

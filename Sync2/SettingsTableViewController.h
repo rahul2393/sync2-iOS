@@ -12,4 +12,6 @@
 - (IBAction)doneButtonTapped:(id)sender;
 - (IBAction)logoutTapped:(id)sender;
 
+-(void) logout;
+
 @end

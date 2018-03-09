@@ -143,14 +143,14 @@
 
 - (IBAction)selectProjectButtonTapped:(id)sender {
     
-    //[[SettingsManager sharedManager] selectProject:self.e[self.selectedIx]];
+    [[EnvironmentManager sharedManager] setSelectedEnvironment:self.selectedIx];
     
     NSLog(@"Button tapped");
     if (self.navigationController.viewControllers.count > 1) {
         [self.navigationController popToRootViewControllerAnimated:YES];
     }else{
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
-            
+            [self.settingsVC logout];
         }];
     }
     

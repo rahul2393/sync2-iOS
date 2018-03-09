@@ -38,6 +38,14 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+-(void) setIngressUrl:(NSString *)ingressUrl{
+    if (!ingressUrl) {
+        return;
+    }
+    
+    [SGSDK setIngressURL:ingressUrl];
+}
+
 -(void)forceUpdate{
     [SGSDK forceSensorUpdate];
 }
