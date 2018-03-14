@@ -15,6 +15,8 @@
 #import "SettingsManager.h"
 #import "SDKManager.h"
 #import "Landmark.h"
+#import "WelcomeViewController.h"
+
 @import SixgillSDK;
 @interface AppDelegate ()
 
@@ -71,7 +73,14 @@
      object:self];
 }
 
-
-
+- (void)showLoginScreen {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    WelcomeViewController *viewController = (WelcomeViewController *)[storyboard instantiateViewControllerWithIdentifier:@"welcomeView"];
+    
+    [[SettingsManager sharedManager] logout];
+    [[SDKManager sharedManager] stopSDK];
+    [self.window setRootViewController:viewController];
+    [self.window makeKeyAndVisible];
+}
 
 @end

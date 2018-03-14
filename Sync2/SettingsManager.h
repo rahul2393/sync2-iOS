@@ -10,6 +10,7 @@
 #import "Account.h"
 #import "Project.h"
 #import "DataChannel.h"
+#import "SGToken.h"
 @interface SettingsManager : NSObject
 
 + (id)sharedManager;
@@ -19,6 +20,12 @@
 
 -(NSString *) currentAccountEmail;
 -(void) setCurrentAccountEmail:(NSString *)email;
+
+- (SGToken *)currentUserToken;
+- (void)setCurrentUserToken:(SGToken *)userToken;
+
+- (SGToken *)currentUserOrgToken;
+- (void)setCurrentUserOrgToken:(SGToken *)userOrgToken;
 
 -(Project *) selectedProject;
 -(void) selectProject:(Project *)project;

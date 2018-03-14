@@ -13,6 +13,7 @@
 #import "APIKey.h"
 #import "SettingsManager.h"
 #import "SDKManager.h"
+#import "AppDelegate.h"
 
 @implementation SenseAPI
 
@@ -38,6 +39,35 @@
     if (self = [super init]) {
     }
     return self;
+}
+
+- (void)setUserToken:(SGToken *)userToken {
+    [[SettingsManager sharedManager] setCurrentUserToken:userToken];
+}
+
+- (SGToken*)userToken {
+    return [[SettingsManager sharedManager] currentUserToken];
+}
+
+- (void)setUserOrgToken:(SGToken *)userOrgToken {
+    [[SettingsManager sharedManager] setCurrentUserOrgToken:userOrgToken];
+}
+
+- (SGToken*)userOrgToken {
+   return [[SettingsManager sharedManager] currentUserOrgToken];
+}
+
+- (BOOL)checkForUnauthorizedStatus:(NSHTTPURLResponse *) httpResponse {
+    if (httpResponse.statusCode == 401) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            AppDelegate *appDel = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [appDel showLoginScreen];
+        });
+        NSLog(@"Error %ld, take user to the login screen", (long)httpResponse.statusCode);
+        return true;
+    }
+    
+    return false;
 }
 
 #pragma mark - Authentication
@@ -70,6 +100,9 @@
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
+                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
+                                                            return;
+                                                        }
                                                         
                                                         SGToken *token = [[SGToken alloc]initWithData:data];
                                                         if ([token.token isEqualToString:@""]) {
@@ -111,6 +144,9 @@
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
+                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
+                                                            return;
+                                                        }
                                                         
                                                         NSArray *orgIds = [self organizationIdsFromData:data];
                                                         completed(orgIds, nil);
@@ -143,6 +179,9 @@
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
+                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
+                                                            return;
+                                                        }
                                                         
                                                         self.userOrgToken = [[SGToken alloc]initWithData:data];
                                                         completed(nil);
@@ -173,6 +212,9 @@
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
+                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
+                                                            return;
+                                                        }
                                                         
                                                         NSArray *projects = [self projectsFromData:data];
                                                         completed(projects, nil);
@@ -194,7 +236,8 @@
     
     [request setHTTPMethod:@"GET"];
     [request setAllHTTPHeaderFields:headers];
-    
+    [self formatURLRequest:request];
+
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -203,6 +246,9 @@
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
+                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
+                                                            return;
+                                                        }
                                                         
                                                         NSArray *apiKeys = [self apiKeysFomData:data];
                                                         APIKey *k = [apiKeys firstObject];
@@ -229,6 +275,7 @@
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"GET"];
     [request setAllHTTPHeaderFields:headers];
+    [self formatURLRequest:request];
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
@@ -238,6 +285,9 @@
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
+                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
+                                                            return;
+                                                        }
                                                         
                                                         NSArray *channels = [self channelsFromData:data];
                                                         completed(channels, nil);
@@ -272,12 +322,28 @@
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
+                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
+                                                            return;
+                                                        }
                                                         
                                                         NSArray *landmarks = [self landmarksFromData:data];
                                                         completed(landmarks, nil);
                                                     }
                                                 }];
     [dataTask resume];
+}
+
+- (void)formatURLRequest:(NSURLRequest *)request{
+    NSMutableString *message = [NSMutableString stringWithString:@"---REQUEST------------------\n"];
+    [message appendFormat:@"URL: %@\n",[request.URL description] ];
+    [message appendFormat:@"METHOD: %@\n",[request HTTPMethod]];
+    for (NSString *header in [request allHTTPHeaderFields])
+    {
+        [message appendFormat:@"%@: %@\n",header,[request valueForHTTPHeaderField:header]];
+    }
+    [message appendFormat:@"BODY: %@\n",[[NSString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding]];
+    [message appendString:@"----------------------------\n"];
+    printf("%s", [message UTF8String]);
 }
 
 -(NSArray *) organizationIdsFromData:(NSData *)data{

@@ -20,7 +20,9 @@
 
 #define KEY_AccountEmail @"accountEmail"
 
+#define KEY_UserToken @"userToken"
 
+#define KEY_UserOrgToken @"userOrgToken"
 
 #define KEY_SelectedProject @"selectedProject"
 #define KEY_SelectedDataChannel @"selectedDataChannel"
@@ -53,10 +55,33 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+- (SGToken *)currentUserToken {
+    NSData *userData = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_UserToken];
+    return [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+}
+
+- (void)setCurrentUserToken:(SGToken *)userToken {
+    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:userToken];
+    [[NSUserDefaults standardUserDefaults] setObject:encodedObject forKey:KEY_UserToken];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (SGToken *)currentUserOrgToken {
+    NSData *userOrgData = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_UserOrgToken];
+    return [NSKeyedUnarchiver unarchiveObjectWithData:userOrgData];
+}
+
+- (void)setCurrentUserOrgToken:(SGToken *)userOrgToken {
+    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:userOrgToken];
+    [[NSUserDefaults standardUserDefaults] setObject:encodedObject forKey:KEY_UserOrgToken];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 -(void) logout{
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannel];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_AccountEmail];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_UserToken];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_UserOrgToken];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedProject];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_ACTIVEACCOUNTID];
     [[NSUserDefaults standardUserDefaults] synchronize];
