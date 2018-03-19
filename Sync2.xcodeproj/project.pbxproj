@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */; };
 		997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */; };
-		E902BD4B205C81B00010E1F6 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E902BD4A205C81AF0010E1F6 /* SixgillSDK.framework */; };
-		E902BD4C205C81B00010E1F6 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E902BD4A205C81AF0010E1F6 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */; };
 		E90371441EE89B1E0033DED0 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E90371431EE89B1E0033DED0 /* Account.m */; };
 		E90371481EE8B6110033DED0 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E90371471EE8B6110033DED0 /* ListTableViewController.m */; };
@@ -67,6 +65,10 @@
 		E9A3C2E01ED6101100A938CB /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9A3C2D61ED6101100A938CB /* Lato-Regular.ttf */; };
 		E9A3C2EB1ED780CC00A938CB /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2EA1ED780CC00A938CB /* WelcomeViewController.m */; };
 		E9A3C2FA1EDBA08500A938CB /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2F91EDBA08500A938CB /* AccountsTableViewController.m */; };
+		E9B30056206031A60034329C /* Sync2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B30055206031A60034329C /* Sync2UITests.m */; };
+		E9B3005F206034930034329C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B3005E206034930034329C /* SnapshotHelper.swift */; };
+		E9B300612060430E0034329C /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B300602060430E0034329C /* SixgillSDK.framework */; };
+		E9B300622060430E0034329C /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9B300602060430E0034329C /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9B76D3B200D31940095030C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D3A200D31940095030C /* MapViewController.m */; };
 		E9B76D3F200D31E30095030C /* NotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D3E200D31E30095030C /* NotificationsTableViewController.m */; };
 		E9B76D43200D32580095030C /* RulesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D42200D32580095030C /* RulesTableViewController.m */; };
@@ -95,6 +97,13 @@
 			remoteGlobalIDString = E9A3C2A21ED5FD1500A938CB;
 			remoteInfo = Sync2;
 		};
+		E9B30058206031A60034329C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A3C29B1ED5FD1500A938CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9A3C2A21ED5FD1500A938CB;
+			remoteInfo = Sync2;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -104,7 +113,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E902BD4C205C81B00010E1F6 /* SixgillSDK.framework in Embed Frameworks */,
+				E9B300622060430E0034329C /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,7 +126,6 @@
 		894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6011B6B43DBF0AC7C6C0493 /* Pods-Sync2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2/Pods-Sync2.debug.xcconfig"; sourceTree = "<group>"; };
-		E902BD4A205C81AF0010E1F6 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		E903713E1EE89ABE0033DED0 /* AccountDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountDetailTableViewController.h; sourceTree = "<group>"; };
 		E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetailTableViewController.m; sourceTree = "<group>"; };
 		E90371421EE89B1E0033DED0 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
@@ -216,6 +224,12 @@
 		E9A3C2EA1ED780CC00A938CB /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		E9A3C2F81EDBA08500A938CB /* AccountsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsTableViewController.h; sourceTree = "<group>"; };
 		E9A3C2F91EDBA08500A938CB /* AccountsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsTableViewController.m; sourceTree = "<group>"; };
+		E9B30053206031A50034329C /* Sync2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sync2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9B30055206031A60034329C /* Sync2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sync2UITests.m; sourceTree = "<group>"; };
+		E9B30057206031A60034329C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9B3005D206034920034329C /* Sync2UITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sync2UITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		E9B3005E206034930034329C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		E9B300602060430E0034329C /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		E9B76D39200D31940095030C /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		E9B76D3A200D31940095030C /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		E9B76D3D200D31E30095030C /* NotificationsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsTableViewController.h; sourceTree = "<group>"; };
@@ -261,7 +275,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E902BD4B205C81B00010E1F6 /* SixgillSDK.framework in Frameworks */,
+				E9B300612060430E0034329C /* SixgillSDK.framework in Frameworks */,
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
@@ -275,6 +289,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9B30050206031A50034329C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,9 +678,10 @@
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
-				E902BD4A205C81AF0010E1F6 /* SixgillSDK.framework */,
+				E9B300602060430E0034329C /* SixgillSDK.framework */,
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
+				E9B30054206031A60034329C /* Sync2UITests */,
 				E9A3C2A41ED5FD1500A938CB /* Products */,
 				E962B3571EF20F1300ECB920 /* Frameworks */,
 				2A30DAFCC74694937F10709D /* Pods */,
@@ -671,6 +693,7 @@
 			children = (
 				E9A3C2A31ED5FD1500A938CB /* Sync2.app */,
 				E9A3C2BC1ED5FD1500A938CB /* Sync2Tests.xctest */,
+				E9B30053206031A50034329C /* Sync2UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -784,6 +807,17 @@
 				E9A3C2F91EDBA08500A938CB /* AccountsTableViewController.m */,
 			);
 			name = "Accounts Table";
+			sourceTree = "<group>";
+		};
+		E9B30054206031A60034329C /* Sync2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				E9B3005E206034930034329C /* SnapshotHelper.swift */,
+				E9B30055206031A60034329C /* Sync2UITests.m */,
+				E9B30057206031A60034329C /* Info.plist */,
+				E9B3005D206034920034329C /* Sync2UITests-Bridging-Header.h */,
+			);
+			path = Sync2UITests;
 			sourceTree = "<group>";
 		};
 		E9B76D37200969260095030C /* Tab Controller */ = {
@@ -1019,6 +1053,24 @@
 			productReference = E9A3C2BC1ED5FD1500A938CB /* Sync2Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E9B30052206031A50034329C /* Sync2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9B3005C206031A60034329C /* Build configuration list for PBXNativeTarget "Sync2UITests" */;
+			buildPhases = (
+				E9B3004F206031A50034329C /* Sources */,
+				E9B30050206031A50034329C /* Frameworks */,
+				E9B30051206031A50034329C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9B30059206031A60034329C /* PBXTargetDependency */,
+			);
+			name = Sync2UITests;
+			productName = Sync2UITests;
+			productReference = E9B30053206031A50034329C /* Sync2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1047,6 +1099,13 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = E9A3C2A21ED5FD1500A938CB;
 					};
+					E9B30052206031A50034329C = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = 37M84NL89E;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E9A3C2A21ED5FD1500A938CB;
+					};
 				};
 			};
 			buildConfigurationList = E9A3C29E1ED5FD1500A938CB /* Build configuration list for PBXProject "Sync2" */;
@@ -1064,6 +1123,7 @@
 			targets = (
 				E9A3C2A21ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BB1ED5FD1500A938CB /* Sync2Tests */,
+				E9B30052206031A50034329C /* Sync2UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1090,6 +1150,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E9A3C2BA1ED5FD1500A938CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9B30051206031A50034329C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1276,6 +1343,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E9B3004F206031A50034329C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9B30056206031A60034329C /* Sync2UITests.m in Sources */,
+				E9B3005F206034930034329C /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1283,6 +1359,11 @@
 			isa = PBXTargetDependency;
 			target = E9A3C2A21ED5FD1500A938CB /* Sync2 */;
 			targetProxy = E9A3C2BD1ED5FD1500A938CB /* PBXContainerItemProxy */;
+		};
+		E9B30059206031A60034329C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E9A3C2A21ED5FD1500A938CB /* Sync2 */;
+			targetProxy = E9B30058206031A60034329C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1474,6 +1555,64 @@
 			};
 			name = Release;
 		};
+		E9B3005A206031A60034329C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 37M84NL89E;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Sync2UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sixgill.Sync2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sync2UITests/Sync2UITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Sync2;
+			};
+			name = Debug;
+		};
+		E9B3005B206031A60034329C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 37M84NL89E;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Sync2UITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sixgill.Sync2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sync2UITests/Sync2UITests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Sync2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1500,6 +1639,15 @@
 			buildConfigurations = (
 				E9A3C2C91ED5FD1500A938CB /* Debug */,
 				E9A3C2CA1ED5FD1500A938CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9B3005C206031A60034329C /* Build configuration list for PBXNativeTarget "Sync2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9B3005A206031A60034329C /* Debug */,
+				E9B3005B206031A60034329C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
