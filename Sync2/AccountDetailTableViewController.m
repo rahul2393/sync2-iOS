@@ -271,6 +271,12 @@
 }
 
 -(NSString *)activityString{
+    
+    #if TARGET_IPHONE_SIMULATOR
+        NSString * toReturn = @"stationary";
+        return toReturn;
+    #endif
+    
     if (self.sensorData[@"SG_ACTIVITY_RESOURCE"]) {
         NSString *s = self.sensorData[@"SG_ACTIVITY_RESOURCE"][@"activity"];
         return s;
@@ -278,6 +284,7 @@
     
     return [self emptyCellString];
 }
+
 -(NSString *)locationString{
     if (self.sensorData[@"SG_LOCATION_RESOURCE"]) {
         CLLocation *l = (CLLocation *)self.sensorData[@"SG_LOCATION_RESOURCE"][@"location"];
@@ -296,7 +303,7 @@
         
         if (d[@"cadence"]) {
             NSNumber *cadenceSecondsNum = d[@"cadence"];
-            float sec = cadenceSecondsNum.floatValue / 100000;
+            float sec = cadenceSecondsNum.floatValue / 1000 ;
             NSNumber *secNum = [NSNumber numberWithFloat:sec];
             NSString *toReturn = [NSString stringWithFormat:@"%lu seconds", secNum.integerValue];
             return toReturn;
@@ -307,15 +314,23 @@
 }
 
 -(NSString *)wifiString{
+    NSString *toReturn;
     if (self.sensorData[@"SG_WIFI_RESOURCE"]) {
         NSDictionary *d =self.sensorData[@"SG_WIFI_RESOURCE"];
-        
+        NSString *model = [[UIDevice currentDevice] model];
         if (d[@"SSID"]) {
             NSString *wifiSSID = d[@"SSID"];
-            NSString *toReturn = [NSString stringWithFormat:@"%@", wifiSSID];
+            toReturn = [NSString stringWithFormat:@"%@", wifiSSID];
             return toReturn;
         }
     }
+    
+    #if TARGET_IPHONE_SIMULATOR
+        toReturn = @"WeWork";
+        return toReturn;
+    #endif
+    
+    
     
     return [self emptyCellString];
 }
@@ -326,6 +341,12 @@
         
         if (d[@"BATTERY_PERCENT"]) {
             NSNumber *batteryPercent = d[@"BATTERY_PERCENT"];
+            
+            // For simulator screenshots
+            if (batteryPercent.integerValue > 100 || batteryPercent.integerValue < 0) {
+                batteryPercent = @45;
+            }
+            
             NSString *toReturn = [NSString stringWithFormat:@"%lu%%", batteryPercent.integerValue];
             return toReturn;
         }

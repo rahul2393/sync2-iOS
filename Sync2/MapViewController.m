@@ -52,9 +52,8 @@
     }
     [[SenseAPI sharedManager] GetLandmarksForProject:currentProject.objectId WithCompletion:^(NSArray *landmarks, NSError * _Nullable error) {
         self.landmarks = landmarks;
-    }];
-    
-    [self drawLandmarks];
+        [self drawLandmarks];
+    }];        
 }
 
 -(void)viewWillAppear:(BOOL)animated{
