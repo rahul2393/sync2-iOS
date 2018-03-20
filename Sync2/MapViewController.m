@@ -89,6 +89,9 @@
     [self.mapView setCenterCoordinate:location animated:YES];
     MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
     [self.mapView setRegion:zoomRegion animated:YES];
+    
+    self.coordinateLabel.text = [NSString stringWithFormat:@"%f, %f",location.latitude, location.longitude];
+    
 }
 
 -(void) drawMapMarkers{
