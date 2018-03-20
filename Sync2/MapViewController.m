@@ -81,12 +81,24 @@
 }
 
 -(void) zoomInOnLastCoord{
+    
     CLLocationCoordinate2D location;
+    MKCoordinateRegion zoomRegion;
+#if TARGET_IPHONE_SIMULATOR
+    location = CLLocationCoordinate2DMake(51.5100946, -0.1367563);
+    [self.mapView setCenterCoordinate:location animated:YES];
+    zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
+    [self.mapView setRegion:zoomRegion animated:YES];
+    
+    self.coordinateLabel.text = [NSString stringWithFormat:@"%f, %f",location.latitude, location.longitude];
+    return;
+#endif
+    
     location.latitude = self.mapView.userLocation.coordinate.latitude;
     location.longitude = self.mapView.userLocation.coordinate.longitude;
     
     [self.mapView setCenterCoordinate:location animated:YES];
-    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
+    zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
     [self.mapView setRegion:zoomRegion animated:YES];
     
     self.coordinateLabel.text = [NSString stringWithFormat:@"%f, %f",location.latitude, location.longitude];

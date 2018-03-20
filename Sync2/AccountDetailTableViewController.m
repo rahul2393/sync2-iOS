@@ -286,6 +286,11 @@
 }
 
 -(NSString *)locationString{
+    
+#if TARGET_IPHONE_SIMULATOR
+    return @"51.5100946, -0.1367563";
+#endif
+    
     if (self.sensorData[@"SG_LOCATION_RESOURCE"]) {
         CLLocation *l = (CLLocation *)self.sensorData[@"SG_LOCATION_RESOURCE"][@"location"];
         NSString *toReturn = [NSString stringWithFormat:@"%f, %f", l.coordinate.latitude, l.coordinate.longitude];
@@ -297,6 +302,10 @@
 }
 
 -(NSString *)cadenceString{
+    
+#if TARGET_IPHONE_SIMULATOR
+    return @"60 seconds";
+#endif
     
     if (self.sensorData[@"SG_CONFIGURATION_RESOURCE"]) {
         NSDictionary *d =self.sensorData[@"SG_CONFIGURATION_RESOURCE"];
@@ -336,6 +345,11 @@
 }
 
 -(NSString *)batteryString{
+    
+#if TARGET_IPHONE_SIMULATOR
+    return @"100%";
+#endif
+    
     if (self.sensorData[@"SG_DEVICE_RESOURCE"]) {
         NSDictionary *d =self.sensorData[@"SG_DEVICE_RESOURCE"];
         
@@ -356,6 +370,7 @@
 }
 
 -(NSString *)beaconsString{
+    
     if (self.sensorData[@"SG_BLUETOOTH_RESOURCE"]) {
         NSArray *b =self.sensorData[@"SG_BLUETOOTH_RESOURCE"];
         return [NSString stringWithFormat:@"%lu",b.count];
@@ -364,6 +379,10 @@
 }
 
 -(NSString *)geofencesString{
+#if TARGET_IPHONE_SIMULATOR
+    return @"0";
+#endif
+    
     if (self.sensorData) {
         return @"0";
     }
@@ -371,6 +390,15 @@
 }
 
 -(NSString *)lastUpdateSentString{
+    
+#if TARGET_IPHONE_SIMULATOR
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.timeStyle = NSDateFormatterMediumStyle;
+    NSDate *date = [NSDate date];
+    NSString *toReturn = [formatter stringFromDate:date];
+    return toReturn;
+#endif
+    
     if (self.sensorData[@"SG_LOCATION_RESOURCE"]) {        
         NSDate *date = _sensorUpdateTime;
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
