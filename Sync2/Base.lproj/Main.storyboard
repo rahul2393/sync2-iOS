@@ -490,7 +490,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tb-Cx-iXx">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tb-Cx-iXx">
                                         <rect key="frame" x="8" y="446.66666666666669" width="398" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="oA5-KQ-cER"/>
@@ -499,7 +499,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan a QR code from a Sixgill Sense channel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Stj-dX-joZ">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan a QR code from a Sixgill Sense channel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Stj-dX-joZ">
                                         <rect key="frame" x="20" y="475.66666666666669" width="374" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="o8v-PC-SLn"/>
@@ -526,7 +526,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr-graphic" translatesAutoresizingMaskIntoConstraints="NO" id="tG4-8R-Krf">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr-graphic" translatesAutoresizingMaskIntoConstraints="NO" id="tG4-8R-Krf">
                                         <rect key="frame" x="149" y="518.66666666666663" width="116" height="116"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="116" id="51q-d7-kyU"/>
@@ -534,7 +534,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="riY-FM-twV"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4A-zL-5Yo">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4A-zL-5Yo">
                                         <rect key="frame" x="149" y="518.66666666666663" width="116" height="116"/>
                                         <connections>
                                             <action selector="qrButtonTapped:" destination="oH9-Ao-Hwe" eventType="touchUpInside" id="u5Z-7Z-OKQ"/>
@@ -780,7 +780,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwA-yp-eXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7615" y="-1333"/>
+            <point key="canvasLocation" x="7299" y="-1390"/>
         </scene>
         <!--Master Tab View Controller-->
         <scene sceneID="LeW-bi-v0N">
@@ -797,7 +797,6 @@
                     <connections>
                         <segue destination="k3B-Al-8Ut" kind="relationship" relationship="viewControllers" id="LjP-7p-sKc"/>
                         <segue destination="myb-OP-fNK" kind="relationship" relationship="viewControllers" id="qNG-dY-FlY"/>
-                        <segue destination="pji-3k-kYe" kind="relationship" relationship="viewControllers" id="1yE-BB-Daq"/>
                         <segue destination="ti7-xg-rMP" kind="relationship" relationship="viewControllers" id="jBg-I0-tSH"/>
                         <segue destination="nZx-4k-yIp" kind="presentation" identifier="showDataChannelSelection" id="bdL-UT-Onr"/>
                         <segue destination="GG5-PT-2eE" kind="presentation" identifier="showProjectSelection" id="tiO-Cx-fFe"/>
@@ -902,18 +901,18 @@
                         <viewControllerLayoutGuide type="bottom" id="LC1-cw-NFv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1dP-yw-cWG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rules-empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="af7-sD-Psh">
-                                <rect key="frame" x="132" y="263" width="150" height="160"/>
+                                <rect key="frame" x="132" y="288" width="150" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="2nt-z0-gPg"/>
                                     <constraint firstAttribute="width" secondItem="af7-sD-Psh" secondAttribute="height" multiplier="15:16" id="qW9-Wv-oYO"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No rules exist in this project." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="rTf-4f-gJ8">
-                                <rect key="frame" x="88" y="441" width="238" height="21"/>
+                                <rect key="frame" x="88" y="466" width="238" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="238" id="Bkk-1u-eik"/>
                                     <constraint firstAttribute="height" constant="21" id="is8-yH-N5s"/>
@@ -923,7 +922,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="jAI-k0-Xpb">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="textNotificationCell" rowHeight="176" id="TSH-PP-LDU">
@@ -1063,7 +1062,7 @@
             <objects>
                 <tableViewController id="nGG-mk-6xX" customClass="RuleDetailTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="H2u-6D-5sd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -1384,7 +1383,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Msd-qB-O39" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9226" y="-2217"/>
+            <point key="canvasLocation" x="8716" y="-2248"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xHq-DH-kIG">
@@ -1508,7 +1507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dCf-lm-sLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8150.7246376811599" y="-1343.4782608695652"/>
+            <point key="canvasLocation" x="8109" y="-1391"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0gc-ei-Cgi">
@@ -3305,8 +3304,8 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="O1Z-QH-8zQ"/>
-        <segue reference="XtT-hd-MMq"/>
-        <segue reference="gO2-P8-Yfg"/>
-        <segue reference="mzM-J5-9TN"/>
+        <segue reference="tiO-Cx-fFe"/>
+        <segue reference="dKW-jL-B8K"/>
+        <segue reference="bdL-UT-Onr"/>
     </inferredMetricsTieBreakers>
 </document>
