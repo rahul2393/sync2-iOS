@@ -99,9 +99,10 @@
     
     [app.buttons[@"Login with Sense Account"] tap];
     
+
     XCUIElementQuery *scrollViewsQuery = app.scrollViews;
     XCUIElement *textField = [scrollViewsQuery childrenMatchingType:XCUIElementTypeTextField].element;
-    
+    [textField tap];
     [textField typeText:@"rkirkendall@sixgill.com"];
     
     XCUIElement *secureTextField = [scrollViewsQuery childrenMatchingType:XCUIElementTypeSecureTextField].element;
@@ -114,11 +115,11 @@
     [projecttableTable/*@START_MENU_TOKEN@*/.staticTexts[@"My project"]/*[[".cells[@\"project cell\"].staticTexts[@\"My project\"]",".cells[@\"My project\"].staticTexts[@\"My project\"]",".staticTexts[@\"My project\"]"],[[[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
     [projecttableTable.staticTexts[@"Select Project"] tap];
     
-
     
-    XCUIElement *channelTable = app.tables[@"channelTable"];
-    [channelTable.staticTexts[@"ios chanel"] tap];
-    [channelTable.staticTexts[@"Select Channel"] tap];
+    XCUIElement *channeltableTable = app.tables[@"channelTable"];
+    [channeltableTable/*@START_MENU_TOKEN@*/.staticTexts[@"ios channel"]/*[[".cells[@\"ios channel\"].staticTexts[@\"ios channel\"]",".staticTexts[@\"ios channel\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/ tap];
+    [channeltableTable.staticTexts[@"Select Channel"] tap];
+    
     
             
     

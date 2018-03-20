@@ -154,6 +154,8 @@
     }else{
         DataChannel *dc = self.channels[indexPath.row];
         cell.textLabel.text = dc.name;
+        cell.accessibilityIdentifier = dc.name;
+        cell.accessibilityLabel = @"channel cell";
     }
     
     cell.detailTextLabel.text = @"iOS";
