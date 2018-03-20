@@ -24,6 +24,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.tableView.accessibilityIdentifier = @"channelTable";
+    self.tableView.accessibilityLabel = @"channelTable";
+    
     if (!self.channels) {
         
         self.useDummy = NO;

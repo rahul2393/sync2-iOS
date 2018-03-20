@@ -697,6 +697,9 @@
                                     <rect key="frame" x="0.0" y="249.33333333333337" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.12692853808403015" green="0.31156018376350403" blue="0.74908894300460815" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="select-channel-button" label="Select Channel">
+                                        <bool key="isElement" value="NO"/>
+                                    </accessibility>
                                     <state key="normal" title="Select Channel">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -749,9 +752,6 @@
                                                 <constraint firstItem="Oey-E1-fdk" firstAttribute="trailing" secondItem="lxT-ZA-VaK" secondAttribute="trailingMargin" id="zpP-cs-gST"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <bool key="isElement" value="YES"/>
-                                        </accessibility>
                                         <connections>
                                             <outlet property="label" destination="HT9-ct-SVc" id="cj8-eo-OmV"/>
                                             <outlet property="textView" destination="69i-Zt-3Gc" id="1gB-se-8pG"/>
@@ -766,6 +766,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" staticText="YES"/>
                             <bool key="isElement" value="YES"/>
                         </accessibility>
                         <constraints>
@@ -1421,13 +1422,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-7S-yj0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-7S-yj0" userLabel="table">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FZX-1b-EJD">
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FZX-1b-EJD" userLabel="select-project-button">
                                     <rect key="frame" x="0.0" y="249.33333333333337" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.12692853809999999" green="0.3115601838" blue="0.74908894299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="select-project-button" label="Select Project">
+                                        <bool key="isElement" value="NO"/>
+                                    </accessibility>
                                     <state key="normal" title="Select Project">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -1480,9 +1484,6 @@
                                                 <constraint firstItem="fuV-8u-vhM" firstAttribute="trailing" secondItem="CJb-aH-21m" secondAttribute="trailingMargin" id="yW5-7b-mX0"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <bool key="isElement" value="YES"/>
-                                        </accessibility>
                                         <connections>
                                             <outlet property="label" destination="Dc5-4U-cKt" id="abL-66-aUG"/>
                                             <outlet property="textView" destination="eil-CR-Abz" id="eFF-oA-mGk"/>
@@ -1496,9 +1497,6 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <accessibility key="accessibilityConfiguration">
-                            <bool key="isElement" value="YES"/>
-                        </accessibility>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="RpG-7S-yj0" secondAttribute="trailing" id="9sv-KX-ifj"/>
                             <constraint firstItem="RpG-7S-yj0" firstAttribute="top" secondItem="sxg-6U-6uV" secondAttribute="bottom" id="ZxJ-Pv-Rgh"/>
@@ -1555,6 +1553,7 @@
                                     <rect key="frame" x="0.0" y="196.33333333333334" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.12692853809999999" green="0.3115601838" blue="0.74908894299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="select-enviornment-button" label="Select Environment"/>
                                     <state key="normal" title="Select Environment">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -3304,7 +3303,7 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
         <image name="map-icon" width="78" height="72"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="qr-graphic" width="300" height="300"/>
-        <image name="sixgill-logo" width="165" height="120"/>
+        <image name="sixgill-logo" width="325" height="95"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>

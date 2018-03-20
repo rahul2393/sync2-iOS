@@ -25,6 +25,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.tableView.accessibilityIdentifier = @"projectTable";
+    self.tableView.accessibilityLabel = @"projectTable";
+    
     if (!self.projects) {
         
         self.useDummy = NO;
@@ -154,6 +157,8 @@
     }else{
         Project *p = self.projects[indexPath.row];
         cell.textLabel.text = p.name;
+        cell.accessibilityIdentifier = p.name;
+        cell.accessibilityLabel = @"project cell";
     }
     
     cell.detailTextLabel.text = @"iOS";
