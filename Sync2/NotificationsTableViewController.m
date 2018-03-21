@@ -10,6 +10,7 @@
 #import "DummyNotificationData.h"
 #import "TextViewTableViewCell.h"
 #import "TextNotification.h"
+#import "SettingsManager.h"
 @interface NotificationsTableViewController ()
 
 @property (nonatomic, readwrite) BOOL useDummyData;
@@ -22,11 +23,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.useDummyData = YES;
+    self.useDummyData = NO;
+    
     if (self.useDummyData) {
         self.notifications = [DummyNotificationData notifications];
-    }else{
-        self.notifications = @[];
+    } else {
+        self.notifications = [[SettingsManager sharedManager] savedRemoteNotificationPayloads];
     }
     
     self.title = @"Notifications";

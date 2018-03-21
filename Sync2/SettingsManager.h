@@ -33,6 +33,9 @@
 -(DataChannel *) selectedDataChannel;
 -(void) selectDataChannel:(DataChannel *) dataChannel;
 
+- (NSArray*)savedRemoteNotificationPayloads;
+- (void)saveRemoteNotificationPayload:(NSDictionary *)payload;
+    
 -(BOOL) mapShowLast5Pts;
 -(BOOL) mapShowGeofences;
 -(void) setMapShowLast5Pts:(BOOL)show;

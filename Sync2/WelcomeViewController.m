@@ -17,14 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-        
+    
 }
 
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     if (![[SettingsManager sharedManager] hasOnboarded]) {
-        [self performSegueWithIdentifier:@"showPermissionRequests" sender:self];
+        [self performSegueWithIdentifier:@"showLicenseAgreement" sender:self];
     }else if ([[SettingsManager sharedManager] currentAccountEmail]) {
         [self performSegueWithIdentifier:@"alreadySignedIn" sender:self];
     }

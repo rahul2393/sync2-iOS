@@ -6,8 +6,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,7 +27,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="UQK-ts-qSm" customClass="PermissionPageController" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyH-0y-7H9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="-882"/>
+            <point key="canvasLocation" x="-538" y="-345"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="SZl-ox-SCl">
@@ -176,13 +178,107 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="UQK-ts-qSm" kind="presentation" identifier="showPermissionRequests" id="FMR-PW-2uc"/>
                         <segue destination="MOx-o9-HDz" kind="show" identifier="alreadySignedIn" id="gO2-P8-Yfg"/>
+                        <segue destination="cp0-ji-nh1" kind="presentation" identifier="showLicenseAgreement" id="cO5-zU-tHL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHJ-B3-1Gx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957" y="-1343"/>
+            <point key="canvasLocation" x="-631" y="-1534"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="M2p-sK-ZzC">
+            <objects>
+                <viewController storyboardIdentifier="eulaView" id="cp0-ji-nh1" customClass="EULAViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yd7-h0-KS9"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Mq-AC-Ygk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PsJ-Ce-vi1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-softlight-background" translatesAutoresizingMaskIntoConstraints="NO" id="zUq-zy-nUY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sync-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Wa3-c6-PHF">
+                                <rect key="frame" x="98" y="48" width="218" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Wa3-c6-PHF" secondAttribute="height" multiplier="218:89" id="RBv-El-rcS"/>
+                                    <constraint firstAttribute="height" constant="89" id="Wn7-2a-PNI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End-User License Agreement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7s-NB-9If">
+                                <rect key="frame" x="20" y="167" width="374" height="32.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLO-Wr-EB8">
+                                <rect key="frame" x="30" y="656" width="162" height="50"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.30980392159999998" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9ix-Xu-94Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Decline">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="declineAgreement:" destination="cp0-ji-nh1" eventType="touchUpInside" id="XWA-81-7px"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0I-GB-d42">
+                                <rect key="frame" x="222" y="656" width="162" height="50"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.30980392159999998" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Accept">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="acceptAgreement:" destination="cp0-ji-nh1" eventType="touchUpInside" id="Psg-Bb-1LI"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMM-lg-xF2">
+                                <rect key="frame" x="10" y="219.33333333333334" width="394" height="416.66666666666663"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HMM-lg-xF2" firstAttribute="top" secondItem="a7s-NB-9If" secondAttribute="bottom" constant="20" id="1pT-YF-UuJ"/>
+                            <constraint firstItem="zUq-zy-nUY" firstAttribute="leading" secondItem="PsJ-Ce-vi1" secondAttribute="leading" id="2qu-0o-qTN"/>
+                            <constraint firstItem="9Mq-AC-Ygk" firstAttribute="top" secondItem="r0I-GB-d42" secondAttribute="bottom" constant="30" id="34n-Kt-f4H"/>
+                            <constraint firstAttribute="bottom" secondItem="zUq-zy-nUY" secondAttribute="bottom" id="6x5-9X-PH6"/>
+                            <constraint firstItem="Wa3-c6-PHF" firstAttribute="centerX" secondItem="PsJ-Ce-vi1" secondAttribute="centerX" id="9ar-PU-sYW"/>
+                            <constraint firstItem="9Mq-AC-Ygk" firstAttribute="top" secondItem="BLO-Wr-EB8" secondAttribute="bottom" constant="30" id="F2A-UO-LZz"/>
+                            <constraint firstItem="BLO-Wr-EB8" firstAttribute="top" secondItem="HMM-lg-xF2" secondAttribute="bottom" constant="20" id="Hpl-ks-2YL"/>
+                            <constraint firstItem="r0I-GB-d42" firstAttribute="leading" secondItem="PsJ-Ce-vi1" secondAttribute="centerX" constant="15" id="MMk-GJ-mSY"/>
+                            <constraint firstItem="r0I-GB-d42" firstAttribute="height" secondItem="BLO-Wr-EB8" secondAttribute="height" id="PYD-5d-BCS"/>
+                            <constraint firstItem="a7s-NB-9If" firstAttribute="top" secondItem="Wa3-c6-PHF" secondAttribute="bottom" constant="30" id="S9P-ed-Mmu"/>
+                            <constraint firstItem="BLO-Wr-EB8" firstAttribute="leading" secondItem="PsJ-Ce-vi1" secondAttribute="leading" constant="30" id="Xei-dA-n4i"/>
+                            <constraint firstAttribute="centerX" secondItem="BLO-Wr-EB8" secondAttribute="trailing" constant="15" id="b3N-GY-qSV"/>
+                            <constraint firstItem="Wa3-c6-PHF" firstAttribute="top" secondItem="yd7-h0-KS9" secondAttribute="bottom" multiplier="2" constant="8" symbolic="YES" id="fcP-Jr-9UR"/>
+                            <constraint firstAttribute="trailing" secondItem="HMM-lg-xF2" secondAttribute="trailing" constant="10" id="ipV-P8-m4z"/>
+                            <constraint firstItem="a7s-NB-9If" firstAttribute="leading" secondItem="PsJ-Ce-vi1" secondAttribute="leading" constant="20" id="m2l-Bm-CSc"/>
+                            <constraint firstAttribute="trailing" secondItem="zUq-zy-nUY" secondAttribute="trailing" id="qGh-W2-WSc"/>
+                            <constraint firstAttribute="trailing" secondItem="a7s-NB-9If" secondAttribute="trailing" constant="20" id="sEz-BT-Nyg"/>
+                            <constraint firstItem="r0I-GB-d42" firstAttribute="width" secondItem="BLO-Wr-EB8" secondAttribute="width" id="sLT-pa-xOH"/>
+                            <constraint firstItem="HMM-lg-xF2" firstAttribute="leading" secondItem="PsJ-Ce-vi1" secondAttribute="leading" constant="10" id="tAT-ms-QJO"/>
+                            <constraint firstItem="zUq-zy-nUY" firstAttribute="top" secondItem="PsJ-Ce-vi1" secondAttribute="top" id="xfW-bx-Xbg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="qKz-dH-1qu" kind="presentation" identifier="showTermsOfService" id="zUh-qs-vxl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OA7-tR-qXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="155" y="-1535"/>
         </scene>
         <!--Setup Info View Controller-->
         <scene sceneID="xUf-j9-3o2">
@@ -201,7 +297,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XvS-1i-qdo">
                                 <rect key="frame" x="50" y="619" width="314" height="50"/>
-                                <color key="backgroundColor" red="0.12692853809999999" green="0.3115601838" blue="0.74908894299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.12549019607843137" green="0.30980392156862746" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Q04-de-3kF"/>
                                 </constraints>
@@ -238,7 +334,7 @@
                                 <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.0" green="1" blue="0.067953254670000005" alpha="0.73592679794520544" colorSpace="custom" customColorSpace="displayP3"/>
                             </pageControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next steps will guide you though the Sync setup " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5QP-ss-boc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next steps will guide you though the Sync setup " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5QP-ss-boc" userLabel="Next steps will guide you though the Sync setup">
                                 <rect key="frame" x="50" y="278.66666666666669" width="314" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="mQe-Ga-1vN"/>
@@ -294,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZq-Qw-PgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1685.5999999999999" y="-1342.6108374384237"/>
+            <point key="canvasLocation" x="1667" y="-1587"/>
         </scene>
         <!--Setup Info View Controller-->
         <scene sceneID="umg-Gs-eej">
@@ -1807,7 +1903,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DeB-5a-jeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956.52173913043487" y="-553.53260869565224"/>
+            <point key="canvasLocation" x="823" y="-555"/>
         </scene>
         <!--Accounts-->
         <scene sceneID="Ugb-e3-jG7">
@@ -1865,7 +1961,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVo-Dr-65A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-454" y="190"/>
+            <point key="canvasLocation" x="-452" y="479"/>
         </scene>
         <!--Location Permission View Controller-->
         <scene sceneID="tbD-ta-TaD">
@@ -3036,6 +3132,100 @@ Permission</string>
             </objects>
             <point key="canvasLocation" x="8672" y="-2247"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="cAw-u2-fgU">
+            <objects>
+                <viewController storyboardIdentifier="tosView" id="qKz-dH-1qu" customClass="TOSViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hrL-Uf-6in"/>
+                        <viewControllerLayoutGuide type="bottom" id="qcM-nI-Hvg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="70D-us-sk8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-softlight-background" translatesAutoresizingMaskIntoConstraints="NO" id="2Dz-41-f2U">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sync-logo" translatesAutoresizingMaskIntoConstraints="NO" id="x8Z-Nm-Y0O">
+                                <rect key="frame" x="98" y="48" width="218" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="ajL-el-WkA"/>
+                                    <constraint firstAttribute="width" secondItem="x8Z-Nm-Y0O" secondAttribute="height" multiplier="218:89" id="toP-ir-uuj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Service" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tsK-8O-LHX">
+                                <rect key="frame" x="20" y="167" width="374" height="32.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYE-6Q-kwy">
+                                <rect key="frame" x="30" y="656" width="162" height="50"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.30980392159999998" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="o8s-Ic-56Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Decline">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="declineService:" destination="qKz-dH-1qu" eventType="touchUpInside" id="AqX-U8-NGj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoC-R4-eKZ">
+                                <rect key="frame" x="222" y="656" width="162" height="50"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.30980392159999998" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Accept">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="acceptService:" destination="qKz-dH-1qu" eventType="touchUpInside" id="YXI-Re-vKc"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOF-xl-YDl">
+                                <rect key="frame" x="10" y="219.33333333333334" width="394" height="416.66666666666663"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience. Sync needs certain permissions and device access to give you the best possible experience.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qcM-nI-Hvg" firstAttribute="top" secondItem="jYE-6Q-kwy" secondAttribute="bottom" constant="30" id="66N-oJ-9Mf"/>
+                            <constraint firstAttribute="bottom" secondItem="2Dz-41-f2U" secondAttribute="bottom" id="6kJ-Jl-mbc"/>
+                            <constraint firstItem="jYE-6Q-kwy" firstAttribute="leading" secondItem="70D-us-sk8" secondAttribute="leading" constant="30" id="8YG-NB-TU0"/>
+                            <constraint firstItem="x8Z-Nm-Y0O" firstAttribute="centerX" secondItem="70D-us-sk8" secondAttribute="centerX" id="CNg-ys-qaO"/>
+                            <constraint firstItem="lOF-xl-YDl" firstAttribute="leading" secondItem="70D-us-sk8" secondAttribute="leading" constant="10" id="L3D-UV-81g"/>
+                            <constraint firstItem="lOF-xl-YDl" firstAttribute="top" secondItem="tsK-8O-LHX" secondAttribute="bottom" constant="20" id="LQB-Tj-cyr"/>
+                            <constraint firstItem="x8Z-Nm-Y0O" firstAttribute="top" secondItem="hrL-Uf-6in" secondAttribute="bottom" multiplier="2" constant="8" symbolic="YES" id="M9J-Sj-7ee"/>
+                            <constraint firstItem="tsK-8O-LHX" firstAttribute="top" secondItem="x8Z-Nm-Y0O" secondAttribute="bottom" constant="30" id="OhN-Lq-pFu"/>
+                            <constraint firstAttribute="trailing" secondItem="tsK-8O-LHX" secondAttribute="trailing" constant="20" id="TWS-Tr-Gu4"/>
+                            <constraint firstItem="qcM-nI-Hvg" firstAttribute="top" secondItem="ZoC-R4-eKZ" secondAttribute="bottom" constant="30" id="aYB-rJ-euD"/>
+                            <constraint firstItem="tsK-8O-LHX" firstAttribute="leading" secondItem="70D-us-sk8" secondAttribute="leading" constant="20" id="brs-74-Z2B"/>
+                            <constraint firstAttribute="trailing" secondItem="lOF-xl-YDl" secondAttribute="trailing" constant="10" id="f3g-MX-fnM"/>
+                            <constraint firstAttribute="centerX" secondItem="jYE-6Q-kwy" secondAttribute="trailing" constant="15" id="hge-lF-yxZ"/>
+                            <constraint firstItem="ZoC-R4-eKZ" firstAttribute="leading" secondItem="70D-us-sk8" secondAttribute="centerX" constant="15" id="kPb-HW-P61"/>
+                            <constraint firstItem="2Dz-41-f2U" firstAttribute="top" secondItem="70D-us-sk8" secondAttribute="top" id="kkM-ud-d2b"/>
+                            <constraint firstItem="2Dz-41-f2U" firstAttribute="leading" secondItem="70D-us-sk8" secondAttribute="leading" id="lKU-1q-A7g"/>
+                            <constraint firstItem="ZoC-R4-eKZ" firstAttribute="width" secondItem="jYE-6Q-kwy" secondAttribute="width" id="s2H-fh-OFp"/>
+                            <constraint firstItem="jYE-6Q-kwy" firstAttribute="top" secondItem="lOF-xl-YDl" secondAttribute="bottom" constant="20" id="vaN-vV-8ob"/>
+                            <constraint firstAttribute="trailing" secondItem="2Dz-41-f2U" secondAttribute="trailing" id="x4r-AY-0RE"/>
+                            <constraint firstItem="ZoC-R4-eKZ" firstAttribute="height" secondItem="jYE-6Q-kwy" secondAttribute="height" id="zNf-Bo-dvw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="UQK-ts-qSm" kind="presentation" identifier="showPermissionRequests" id="ahU-ZS-aL7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DCC-b7-IlQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907" y="-1535"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Camera" width="1200" height="1200"/>
@@ -3298,7 +3488,7 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
         <image name="map-icon" width="78" height="72"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="qr-graphic" width="300" height="300"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>

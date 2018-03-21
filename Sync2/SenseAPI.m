@@ -78,7 +78,7 @@
     self.userToken = nil;
     self.userOrgToken = nil;
     
-    NSDictionary *headers = @{ @"content-type": @"application/json" };
+    NSDictionary *headers = @{ @"Content-type": @"application/json" };
     NSDictionary *parameters = @{ @"email": email,
                                   @"password": password };
     
@@ -126,9 +126,9 @@
 // This is janky as hell.
 
 -(void) GetOrganizationsIds:(void ( ^ _Nullable )(NSArray *orgIds, NSError * _Nullable error))completed{
-    NSDictionary *headers = @{ @"authorization": [self bearerToken],
-                               @"accept": @"application/json",
-                               @"connection": @"keep-alive" };
+    NSDictionary *headers = @{ @"Authorization": [self bearerToken],
+                               @"Accept": @"application/json",
+                               @"Connection": @"keep-alive" };
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/organizations"]]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -157,8 +157,8 @@
 
 -(void) SetOrgId:(NSString *_Nonnull)orgId withCompletion:(void ( ^ _Nullable )(NSError * _Nullable error))completed{
     
-    NSDictionary *headers = @{ @"content-type": @"application/json",
-                               @"authorization": [self bearerToken] };
+    NSDictionary *headers = @{ @"Content-Type": @"application/json",
+                               @"Authorization": [self bearerToken] };
     NSDictionary *parameters = @{ @"organizationId": orgId };
     
     NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
@@ -195,8 +195,8 @@
 -(void) GetProjectsWithCompletion:(void ( ^ _Nullable )(NSArray * projects, NSError * _Nullable error))completed{
     
     NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
-                               @"accept": @"application/json",
-                               @"connection": @"keep-alive" };
+                               @"Accept": @"application/json",
+                               @"Connection": @"keep-alive" };
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/projects"]]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -226,8 +226,8 @@
 -(void) GetAPIKeys:(void ( ^ _Nullable )(NSArray * apiKeys, NSError * _Nullable error))completed{
     
     NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
-                               @"accept": @"application/json",
-                               @"connection": @"keep-alive" };
+                               @"Accept": @"application/json",
+                               @"Connection": @"keep-alive" };
     
     NSString *projectId = [[[SettingsManager sharedManager] selectedDataChannel] objectId];
     NSString *fmt = [NSString stringWithFormat:@"/v2/channels/%@/apiKeys", projectId];
@@ -266,9 +266,9 @@
 
 -(void) GetDataChannelsWithCompletion:(void ( ^ _Nullable )(NSArray *dataChannels, NSError * _Nullable error))completed{
     
-    NSDictionary *headers = @{ @"authorization": [self bearerOrgToken],
-                               @"accept": @"application/json",
-                               @"connection": @"keep-alive" };
+    NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
+                               @"Accept": @"application/json",
+                               @"Connection": @"keep-alive" };
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/channels"]]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -302,9 +302,9 @@
 
 -(void) GetLandmarksForProject:(NSString *_Nonnull)projectId WithCompletion:(void ( ^ _Nullable )(NSArray *landmarks, NSError * _Nullable error))completed{
     
-    NSDictionary *headers = @{ @"authorization": [self bearerOrgToken],
-                               @"accept": @"application/json",
-                               @"connection": @"keep-alive" };
+    NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
+                               @"Accept": @"application/json",
+                               @"Connection": @"keep-alive" };
     
     NSString *url = [NSString stringWithFormat:@"%@/%@/landmarks", [self urlForEndPoint:@"/v2/projects"],projectId];
     

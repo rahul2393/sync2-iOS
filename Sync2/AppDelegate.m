@@ -53,8 +53,8 @@
     
 }
 
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
-    
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+    [self saveRemoteNotificationPayload:userInfo];
     [SGSDK didReceivePushNotificationPayload:userInfo withCompletionHandler:completionHandler];
     
 }
@@ -81,6 +81,10 @@
     [[SDKManager sharedManager] stopSDK];
     [self.window setRootViewController:viewController];
     [self.window makeKeyAndVisible];
+}
+
+- (void) saveRemoteNotificationPayload:(NSDictionary*) userInfo {
+    [[SettingsManager sharedManager] saveRemoteNotificationPayload:userInfo];
 }
 
 @end

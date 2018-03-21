@@ -8,6 +8,8 @@
 
 #import "SettingsManager.h"
 #import "SenseAPI.h"
+#import "TextNotification.h"
+
 #define KEY_HASONBOARDED @"hasOnboarded"
 
 #define KEY_ACCOUNTS @"accountsList"
@@ -23,6 +25,8 @@
 #define KEY_UserToken @"userToken"
 
 #define KEY_UserOrgToken @"userOrgToken"
+
+#define KEY_Notifications @"notifications"
 
 #define KEY_SelectedProject @"selectedProject"
 #define KEY_SelectedDataChannel @"selectedDataChannel"
@@ -77,6 +81,32 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+
+- (void)saveRemoteNotificationPayload:(NSDictionary *)payload {
+    TextNotification *textNotification = [[TextNotification alloc] initWithPayload:payload];
+    
+    if (textNotification != nil) {
+        NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+        [savedNotifications insertObject:textNotification atIndex:0];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:savedNotifications] forKey:KEY_Notifications];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
+- (NSArray *)savedRemoteNotificationPayloads {
+    NSData *savedData = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_Notifications];
+    
+    if (savedData != nil) {
+        NSArray *payloads = [NSKeyedUnarchiver unarchiveObjectWithData:savedData];
+        if (payloads == nil) {
+            return [NSArray array];
+        }
+        return payloads;
+    } else {
+        return [NSArray array];
+    }
+}
+
 -(void) logout{
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannel];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_AccountEmail];
@@ -84,6 +114,7 @@
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_UserOrgToken];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedProject];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_ACTIVEACCOUNTID];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_Notifications];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
 }

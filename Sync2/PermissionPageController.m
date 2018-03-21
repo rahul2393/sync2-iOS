@@ -66,7 +66,7 @@
         self.index++;
     }else{
         [[SettingsManager sharedManager] setHasOnboarded:YES];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:NO completion:nil];
         return;
     }
     

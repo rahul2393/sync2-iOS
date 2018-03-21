@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */; };
+		7520226620610845007FD829 /* EULAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7520226520610845007FD829 /* EULAViewController.m */; };
+		7520226A2061099C007FD829 /* TOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752022692061099C007FD829 /* TOSViewController.m */; };
 		997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */; };
 		E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */; };
 		E90371441EE89B1E0033DED0 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E90371431EE89B1E0033DED0 /* Account.m */; };
@@ -67,8 +69,6 @@
 		E9A3C2FA1EDBA08500A938CB /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2F91EDBA08500A938CB /* AccountsTableViewController.m */; };
 		E9B30056206031A60034329C /* Sync2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B30055206031A60034329C /* Sync2UITests.m */; };
 		E9B3005F206034930034329C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B3005E206034930034329C /* SnapshotHelper.swift */; };
-		E9B300612060430E0034329C /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B300602060430E0034329C /* SixgillSDK.framework */; };
-		E9B300622060430E0034329C /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9B300602060430E0034329C /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9B76D3B200D31940095030C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D3A200D31940095030C /* MapViewController.m */; };
 		E9B76D3F200D31E30095030C /* NotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D3E200D31E30095030C /* NotificationsTableViewController.m */; };
 		E9B76D43200D32580095030C /* RulesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D42200D32580095030C /* RulesTableViewController.m */; };
@@ -83,6 +83,8 @@
 		E9CCF4C81EF1E78200BF96C6 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4C21EF1E78200BF96C6 /* QRCodeReaderViewController.m */; };
 		E9CCF4C91EF1E78200BF96C6 /* QRToggleTorchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4C41EF1E78200BF96C6 /* QRToggleTorchButton.m */; };
 		E9D0A3671F3258CA00E7776C /* MapMarkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D0A3661F3258CA00E7776C /* MapMarkerViewController.m */; };
+		E9DA07192061D43100EDB259 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DA07182061D43100EDB259 /* SixgillSDK.framework */; };
+		E9DA071A2061D43100EDB259 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9DA07182061D43100EDB259 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9F0A29420240B41007B7711 /* APIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F0A29320240B41007B7711 /* APIKey.m */; };
 		E9F29C152050B8EB0024E3B5 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F29C142050B8EB0024E3B5 /* Environment.m */; };
 		E9F29C192051BB330024E3B5 /* EnvironmentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F29C182051BB330024E3B5 /* EnvironmentManager.m */; };
@@ -107,13 +109,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E9B350AF20589C27004C9810 /* Embed Frameworks */ = {
+		E9DA071B2061D43100EDB259 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E9B300622060430E0034329C /* SixgillSDK.framework in Embed Frameworks */,
+				E9DA071A2061D43100EDB259 /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,6 +125,10 @@
 /* Begin PBXFileReference section */
 		1DA5955D2EF0589B2AC4F739 /* Pods-Sync2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2DB0C3E88E97E1E5750C48B5 /* Pods-Sync2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		752022642061082D007FD829 /* EULAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EULAViewController.h; sourceTree = "<group>"; };
+		7520226520610845007FD829 /* EULAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EULAViewController.m; sourceTree = "<group>"; };
+		7520226820610988007FD829 /* TOSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOSViewController.h; sourceTree = "<group>"; };
+		752022692061099C007FD829 /* TOSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOSViewController.m; sourceTree = "<group>"; };
 		894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6011B6B43DBF0AC7C6C0493 /* Pods-Sync2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2/Pods-Sync2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -229,7 +235,6 @@
 		E9B30057206031A60034329C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9B3005D206034920034329C /* Sync2UITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sync2UITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E9B3005E206034930034329C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
-		E9B300602060430E0034329C /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		E9B76D39200D31940095030C /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		E9B76D3A200D31940095030C /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		E9B76D3D200D31E30095030C /* NotificationsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsTableViewController.h; sourceTree = "<group>"; };
@@ -259,6 +264,7 @@
 		E9CCF4C41EF1E78200BF96C6 /* QRToggleTorchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRToggleTorchButton.m; sourceTree = "<group>"; };
 		E9D0A3651F3258CA00E7776C /* MapMarkerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapMarkerViewController.h; sourceTree = "<group>"; };
 		E9D0A3661F3258CA00E7776C /* MapMarkerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapMarkerViewController.m; sourceTree = "<group>"; };
+		E9DA07182061D43100EDB259 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		E9F0A29220240B41007B7711 /* APIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
 		E9F0A29320240B41007B7711 /* APIKey.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIKey.m; sourceTree = "<group>"; };
 		E9F29C132050B8EB0024E3B5 /* Environment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
@@ -275,7 +281,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9B300612060430E0034329C /* SixgillSDK.framework in Frameworks */,
+				E9DA07192061D43100EDB259 /* SixgillSDK.framework in Frameworks */,
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
@@ -311,6 +317,24 @@
 				2DB0C3E88E97E1E5750C48B5 /* Pods-Sync2Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		75202263206107D5007FD829 /* End-User License Agreement */ = {
+			isa = PBXGroup;
+			children = (
+				752022642061082D007FD829 /* EULAViewController.h */,
+				7520226520610845007FD829 /* EULAViewController.m */,
+			);
+			name = "End-User License Agreement";
+			sourceTree = "<group>";
+		};
+		7520226720610952007FD829 /* Terms of Service */ = {
+			isa = PBXGroup;
+			children = (
+				7520226820610988007FD829 /* TOSViewController.h */,
+				752022692061099C007FD829 /* TOSViewController.m */,
+			);
+			name = "Terms of Service";
 			sourceTree = "<group>";
 		};
 		E903713D1EE89AA90033DED0 /* Log Details */ = {
@@ -638,6 +662,8 @@
 		E966682820082707006911C3 /* UI Update */ = {
 			isa = PBXGroup;
 			children = (
+				7520226720610952007FD829 /* Terms of Service */,
+				75202263206107D5007FD829 /* End-User License Agreement */,
 				E9FC99F8204E0BAC0060B81D /* Environment Selection */,
 				E962B34E1EF1FAB000ECB920 /* Log Viewer */,
 				E935247E201FD2F6008D4F19 /* Login */,
@@ -678,7 +704,7 @@
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
-				E9B300602060430E0034329C /* SixgillSDK.framework */,
+				E9DA07182061D43100EDB259 /* SixgillSDK.framework */,
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
 				E9B30054206031A60034329C /* Sync2UITests */,
@@ -1021,7 +1047,7 @@
 				5B9F7C4283404FA980F4DA7C /* [CP] Embed Pods Frameworks */,
 				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
 				E9EB06801F3CFA36000545DD /* ShellScript */,
-				E9B350AF20589C27004C9810 /* Embed Frameworks */,
+				E9DA071B2061D43100EDB259 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1317,6 +1343,7 @@
 				E9128187201008BA0003072B /* SenseAPI.m in Sources */,
 				E9128183200FDD1F0003072B /* TextViewTableViewCell.m in Sources */,
 				E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */,
+				7520226A2061099C007FD829 /* TOSViewController.m in Sources */,
 				E90371441EE89B1E0033DED0 /* Account.m in Sources */,
 				E943D3E82012C27800882D09 /* DummyProjectData.m in Sources */,
 				E9518B542017EF9E001818CC /* Project.m in Sources */,
@@ -1326,6 +1353,7 @@
 				E9485EAD20194DB600B553E2 /* Rule.m in Sources */,
 				E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */,
 				E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */,
+				7520226620610845007FD829 /* EULAViewController.m in Sources */,
 				E9B76D3F200D31E30095030C /* NotificationsTableViewController.m in Sources */,
 				E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */,
 				E9F29C152050B8EB0024E3B5 /* Environment.m in Sources */,

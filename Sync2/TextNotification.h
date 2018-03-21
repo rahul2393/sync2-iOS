@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSString *body;
 @property (nonatomic, strong) NSDate *date;
 
+- (instancetype)initWithPayload:(NSDictionary *)payload;
+
 -(NSString *)displayableDate;
 
 @end
