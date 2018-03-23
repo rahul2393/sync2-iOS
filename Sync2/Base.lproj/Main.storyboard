@@ -242,7 +242,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMM-lg-xF2">
                                 <rect key="frame" x="10" y="219.33333333333334" width="394" height="416.66666666666663"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">“Developer” End User License Agreement (“Agreement”)
+                                <string key="text">“Developer” End User License Agreement (“Agreement”)
 
 IMPORTANT READ CAREFULLY: This Agreement is a legal and binding agreement between you the Application Developer (“Developer” or “You” or “Your”) and Sixgill, LLC (“Sixgill”) for the use of Software and or API’s as set forth and defined herein.
 
@@ -370,7 +370,7 @@ This Agreement represents the complete agreement concerning this license between
 EACH PARTY RECOGNIZES AND AGREES THAT THE WARRANTY DISCLAIMERS AND LIABILITY AND REMEDY LIMITATIONS IN THIS AGREEMENT ARE MATERIAL BARGAINED FOR BASES OF THIS AGREEMENT AND THAT THEY HAVE BEEN TAKEN INTO ACCOUNT AND REFLECTED IN DETERMINING THE CONSIDERATION TO BE GIVEN BY EACH PARTY UNDER THIS AGREEMENT AND IN THE DECISION BY EACH PARTY TO ENTER INTO THIS AGREEMENT.
 
 Questions concerning this Agreement should be sent to the address set forth below. Any notices or correspondences will only be effective if sent to such address.
-Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401</mutableString>
+Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -3316,7 +3316,7 @@ Permission</string>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOF-xl-YDl">
                                 <rect key="frame" x="10" y="219.33333333333334" width="394" height="416.66666666666663"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Sixgill, LLC (“Sixgill”) values the privacy of our users. This Privacy Policy describes the Sixgill policies and procedures on the collection, use, and disclosure of Your information. This Privacy Policy is subject to the Sixgill Terms and Conditions of Use. Your use of Sixgill Products and Services (also “Software”) and any information You provide remain subject to the terms of this Privacy Policy. Please read the following to learn more about our privacy policy.
+                                <string key="text">Sixgill, LLC (“Sixgill”) values the privacy of our users. This Privacy Policy describes the Sixgill policies and procedures on the collection, use, and disclosure of Your information. This Privacy Policy is subject to the Sixgill Terms and Conditions of Use. Your use of Sixgill Products and Services (also “Software”) and any information You provide remain subject to the terms of this Privacy Policy. Please read the following to learn more about our privacy policy.
 
 What This Privacy Policy Covers [OR] The Information Sixgill Collects
 
@@ -3413,7 +3413,7 @@ Sixgill, LLC
 312 Arizona Avenue
 Santa Monica, California 90401
 
-revised: 5/9/2016</mutableString>
+revised: 5/9/2016</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -3713,7 +3713,7 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
         <image name="map-icon" width="78" height="72"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="qr-graphic" width="300" height="300"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>
