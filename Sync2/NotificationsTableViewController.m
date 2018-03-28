@@ -25,14 +25,19 @@
     
     self.useDummyData = NO;
     
+    self.title = @"Notifications";
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
     if (self.useDummyData) {
         self.notifications = [DummyNotificationData notifications];
     } else {
         self.notifications = [[SettingsManager sharedManager] savedRemoteNotificationPayloads];
     }
     
-    self.title = @"Notifications";
-
 }
 
 
