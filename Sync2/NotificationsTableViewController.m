@@ -31,7 +31,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     if (self.useDummyData) {
         self.notifications = [DummyNotificationData notifications];
     } else {
@@ -58,12 +58,12 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.notifications.count;
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return self.notifications.count;
+    return 1;
 }
 
 
@@ -81,7 +81,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 176;
+    return 144;
 }
 
 @end

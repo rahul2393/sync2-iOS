@@ -1040,11 +1040,11 @@ Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="textNotificationCell" rowHeight="176" id="7tV-eR-WdI" customClass="TextViewTableViewCell">
-                                <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="176"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="textNotificationCell" rowHeight="144" id="7tV-eR-WdI" customClass="TextViewTableViewCell">
+                                <rect key="frame" x="0.0" y="55.333333333333336" width="414" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7tV-eR-WdI" id="2eT-jZ-Cpb">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="175.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="143.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Data Channels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZz-D9-ytp">
@@ -1060,22 +1060,23 @@ Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401</string>
                                                 <constraint firstAttribute="height" constant="1" id="yXO-K4-FCh"/>
                                             </constraints>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem Ipsum" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h78-wd-Rlg">
-                                            <rect key="frame" x="20" y="45" width="374" height="79"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Lorem Ipsum" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h78-wd-Rlg">
+                                            <rect key="frame" x="20" y="45" width="374" height="60"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                         </textView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="November 31, 2017 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLV-31-z90">
-                                            <rect key="frame" x="26" y="141" width="362" height="18"/>
+                                            <rect key="frame" x="26" y="113" width="362" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="xLV-31-z90" firstAttribute="bottom" secondItem="2eT-jZ-Cpb" secondAttribute="bottomMargin" constant="-5.9999999999998579" id="Bm5-4B-0xG"/>
-                                        <constraint firstItem="xLV-31-z90" firstAttribute="top" secondItem="h78-wd-Rlg" secondAttribute="bottom" constant="17.000000000000142" id="F1r-R0-9un"/>
+                                        <constraint firstItem="xLV-31-z90" firstAttribute="bottom" secondItem="2eT-jZ-Cpb" secondAttribute="bottomMargin" constant="-1.9999999999998579" id="Bm5-4B-0xG"/>
+                                        <constraint firstItem="xLV-31-z90" firstAttribute="top" secondItem="h78-wd-Rlg" secondAttribute="bottom" constant="8" id="F1r-R0-9un"/>
                                         <constraint firstItem="h78-wd-Rlg" firstAttribute="top" secondItem="g88-Xb-flA" secondAttribute="bottom" constant="8" id="Kzt-PK-PGo"/>
                                         <constraint firstItem="FZz-D9-ytp" firstAttribute="top" secondItem="2eT-jZ-Cpb" secondAttribute="topMargin" constant="3" id="LER-hr-Eyg"/>
                                         <constraint firstItem="FZz-D9-ytp" firstAttribute="leading" secondItem="2eT-jZ-Cpb" secondAttribute="leadingMargin" id="W49-Pn-mDb"/>
