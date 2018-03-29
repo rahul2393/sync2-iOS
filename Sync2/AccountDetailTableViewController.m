@@ -263,11 +263,7 @@
 #pragma mark - Sensor Data Strings
 
 -(NSString *)emptyCellString{
-    if ([self.accountObject isActiveAccount]) {
-        return @"Updating...";
-    }else{
-        return @"";
-    }
+    return @"Updating...";
 }
 
 -(NSString *)activityString{
