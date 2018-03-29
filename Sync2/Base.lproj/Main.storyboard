@@ -1097,8 +1097,8 @@ Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401</string>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="YMA-yi-XVy" id="0PX-Lw-H0P"/>
-                            <outlet property="delegate" destination="YMA-yi-XVy" id="j68-QG-tcf"/>
+                            <outlet property="dataSource" destination="YMA-yi-XVy" id="CUt-VX-0bk"/>
+                            <outlet property="delegate" destination="YMA-yi-XVy" id="O4j-Bu-aao"/>
                         </connections>
                     </tableView>
                     <toolbarItems/>
@@ -1111,6 +1111,9 @@ Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401</string>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="Odb-t3-m9D" id="Ax0-0Q-zip"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWN-Xd-GcT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1370,7 +1373,7 @@ Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NRL-xn-rvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8858" y="-882"/>
+            <point key="canvasLocation" x="8858" y="-889"/>
         </scene>
         <!--Map-->
         <scene sceneID="dxV-t2-vbm">
@@ -3713,12 +3716,12 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
         <image name="map-icon" width="78" height="72"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="qr-graphic" width="300" height="300"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="O1Z-QH-8zQ"/>
+        <segue reference="3fk-4r-8EV"/>
         <segue reference="tiO-Cx-fFe"/>
         <segue reference="dKW-jL-B8K"/>
         <segue reference="bdL-UT-Onr"/>

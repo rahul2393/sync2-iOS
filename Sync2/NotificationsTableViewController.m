@@ -35,11 +35,25 @@
     if (self.useDummyData) {
         self.notifications = [DummyNotificationData notifications];
     } else {
-        self.notifications = [[SettingsManager sharedManager] savedRemoteNotificationPayloads];
+        [self update];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(update)
+                                                 name:@"PushReceived"
+                                               object:nil];
     
 }
 
+-(void) update{
+    self.notifications = [[SettingsManager sharedManager] savedRemoteNotificationPayloads];
+    [self.tableView reloadData];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 #pragma mark - Table view data source
 

@@ -57,6 +57,10 @@
     [self saveRemoteNotificationPayload:userInfo];
     [SGSDK didReceivePushNotificationPayload:userInfo withCompletionHandler:completionHandler];
     
+    //PushReceived
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"PushReceived"
+     object:self];
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
