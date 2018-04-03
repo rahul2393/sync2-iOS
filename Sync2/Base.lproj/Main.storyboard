@@ -453,7 +453,7 @@ Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="xs8-na-kOn">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="xs8-na-kOn">
                                 <rect key="frame" x="151.66666666666666" y="679" width="111.99999999999997" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="112" id="0zA-NM-MNh"/>
@@ -565,7 +565,7 @@ Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="5" translatesAutoresizingMaskIntoConstraints="NO" id="K6k-XZ-RyD">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="4" translatesAutoresizingMaskIntoConstraints="NO" id="K6k-XZ-RyD">
                                 <rect key="frame" x="151.66666666666666" y="679" width="111.99999999999997" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="112" id="a62-UJ-aXQ"/>
@@ -2802,7 +2802,7 @@ Permission</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="OY1-Kz-JiZ">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="OY1-Kz-JiZ">
                                 <rect key="frame" x="151.66666666666666" y="679" width="111.99999999999997" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="EsQ-rA-UWQ"/>
@@ -2923,7 +2923,7 @@ Permission</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="C5z-w9-Tnx">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="C5z-w9-Tnx">
                                 <rect key="frame" x="151.66666666666666" y="679" width="111.99999999999997" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="112" id="W8M-ko-Tms"/>
@@ -3044,7 +3044,7 @@ Permission</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="4" translatesAutoresizingMaskIntoConstraints="NO" id="JMh-IY-OeK">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="JMh-IY-OeK">
                                 <rect key="frame" x="151.66666666666666" y="679" width="111.99999999999997" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="eCW-cL-nUa"/>
@@ -3239,7 +3239,7 @@ Permission</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htl-Rj-cne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4069.5999999999999" y="-1343.3497536945813"/>
+            <point key="canvasLocation" x="4091" y="-2029"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kcP-xv-8oc">
@@ -3717,7 +3717,7 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
         <image name="map-icon" width="78" height="72"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="qr-graphic" width="300" height="300"/>
-        <image name="sixgill-logo" width="165" height="120"/>
+        <image name="sixgill-logo" width="325" height="95"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>

@@ -38,8 +38,8 @@
     MotionPermissionViewController *motionVC = (MotionPermissionViewController *)[self ViewControllerFromStoryboard:@"motionActivityView"];
     motionVC.parentPageViewController = self;
     
-    CameraPermissionViewController *cameraVC = (CameraPermissionViewController *)[self ViewControllerFromStoryboard:@"cameraAccessView"];
-    cameraVC.parentPageViewController = self;
+    //CameraPermissionViewController *cameraVC = (CameraPermissionViewController *)[self ViewControllerFromStoryboard:@"cameraAccessView"];
+    //cameraVC.parentPageViewController = self;
     
     PushPermissionViewController *pushVC = (PushPermissionViewController *)[self ViewControllerFromStoryboard:@"pushAccessView"];
     pushVC.parentPageViewController = self;
@@ -51,7 +51,6 @@
     self.vcDataSource = @[setupInfoVC,
                           locationVC,
                           motionVC,
-                          cameraVC,
                           pushVC,
                           setupCompleteVC];
     
