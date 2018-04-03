@@ -70,7 +70,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TextViewTableViewCell *cell = (TextViewTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"textNotificationCell" forIndexPath:indexPath];
     
-    TextNotification *tn = (TextNotification *) self.notifications[indexPath.row];
+    TextNotification *tn = (TextNotification *) self.notifications[indexPath.section];
     cell.label.text = tn.title;
     cell.textView.text = tn.body;
     cell.dateLabel.text = [tn displayableDate];
