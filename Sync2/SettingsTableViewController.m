@@ -63,6 +63,28 @@
     }];
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    
+    if (section != 0) {
+        return nil;
+    }
+    
+    UIView *labelView = [[UIView alloc]initWithFrame:CGRectMake(10, 0, tableView.frame.size.width-20, 100)];
+    UILabel *label = [[UILabel alloc] initWithFrame:labelView.frame];
+    label.numberOfLines = 0;
+    label.textColor = [UIColor darkGrayColor];
+    label.text = @"Project and channel are set for the duration of your session. Please logout to change these settings.";
+    [labelView addSubview:label];
+    return labelView;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if (section != 0) {
+        return 0;
+    }
+    return 100;
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"dataChannelSelection"]) {
         UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
@@ -143,6 +165,7 @@
                         t = selected.name;
                     }
                     cell.detailTextLabel.text = t;
+                    cell.accessoryType = UITableViewCellAccessoryNone;
                 }
                 
             }
@@ -159,6 +182,7 @@
                         t = selected.name;
                     }
                     cell.detailTextLabel.text = t;
+                    cell.accessoryType = UITableViewCellAccessoryNone;
                 }
             }
                 break;
@@ -179,11 +203,11 @@
         switch (indexPath.row) {
             case 1:
                 // Open project selection view
-                [self loadProjects];
+                //[self loadProjects];
                 break;
                 
             case 2:
-                [self loadDataChannels];
+                //[self loadDataChannels];
                 break;
                 
             default:
