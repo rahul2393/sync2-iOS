@@ -242,135 +242,88 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMM-lg-xF2">
                                 <rect key="frame" x="10" y="219.33333333333334" width="394" height="416.66666666666663"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">“Developer” End User License Agreement (“Agreement”)
+                                <mutableString key="text">“Developer” End User License Agreement (“Agreement”)
 
 IMPORTANT READ CAREFULLY: This Agreement is a legal and binding agreement between you the Application Developer (“Developer” or “You” or “Your”) and Sixgill, LLC (“Sixgill”) for the use of Software and or API’s as set forth and defined herein.
 
 YOU ARE ABOUT TO DOWNLOAD, AND OR INSTALL, AND OR USE SOFTWARE PROVIDED TO YOU BY SIXGILL AND OR ITS LICENSEES AND OR AGENTS.
-
 BY CLICKING ON THE “I ACCEPT” BUTTON OR OTHERWISE INSTALLING OR USING ANY PART OF THE SOFTWARE, YOU ARE CONSENTING TO BECOME A PARTY TO THIS AGREEMENT AND TO BE BOUND BY ITS TERMS. YOUR WRITTEN APPROVAL IS NOT A PREREQUISITE TO THE VALIDITY OR ENFORCEABILITY OF THIS AGREEMENT.
-
 IF YOU DO NOT WANT TO BECOME A PARTY TO THIS AGREEMENT OR DO NOT AGREE WITH OR CANNOT COMPLY WITH ALL OF ITS TERMS, DO NOT CLICK ON THE “I ACCEPT” BUTTON OR INSTALL OR USE ANY PART OF THE SOFTWARE, AND YOU WILL NOT BE LICENSED TO THE SOFTWARE OR BE AUTHORIZED TO USE ANY PART OF THE SOFTWARE.
-
 Definitions:
-
-(A)  “Application:” Developer’s Software that is or will be used for business or entertainment by End Users.
-(B)  “Application Developer” (“Developer” or “You” or “Your”): The individual and or company that receives a Sixgill Developer License to either imbed or uses Sixgill’s API’s and or Software in an application or solution for End Users.
-(C)  “API’s:” Sixgill’s set of routines protocols, libraries, and tools used by Developer to build software applications
-(D)  “End User:” The person and or company who uses the software after it has been fully developed and distributed by the Application Developer.
-(E)  “End User Personal Information:” Includes , but is not limited to End User’s name, email address, birth date, gender, address, cell phone number, cell phone service provider, current location, places of interest, personal habits, path of travel, occupation, industry, personal interests, relationship information, lifestyle information, social media interactions, and personal pictures/photographs. Additionally, information from any device or browser used to view, register or download products and services including but not limited to cell phone, tablet, PDA, computer and car. Such additional information may include but is not limited to IP address, unique identifier number (IMEI and the like), cookie information, software and hardware attributes, location, location information and webpage requests.
-(F)  “License:” Restricted right to use Sixgill Software
-(G)  “Locatee:” The location of a device/individual that an End User, using the Application Developer’s Application, request the location of.
-(H)  “Locator:” The End User requesting a location and or the Developers Application requesting a location on behalf of End User.
-(I)  “Software:” Sixgill API’s and Sixgill Reach (“Reach”) provide to Developer together with all related materials, documentation, updates or modifications provided to You by Sixgill or its licensees or agents.
-(J)  “Reach:” Sixgill’s proprietary libraries and executable code set for integration into Developer’s Application.
+* (A)  “Application:” Developer’s Software that is or will be used for business or entertainment by End Users. 
+* (B)  “Application Developer” (“Developer” or “You” or “Your”): The individual and or company that receives a Sixgill Developer License to either imbed or uses Sixgill’s API’s and or Software in an application or solution for End Users. 
+* (C)  “API’s:” Sixgill’s set of routines protocols, libraries, and tools used by Developer to build software applications 
+* (D)  “End User:” The person and or company who uses the software after it has been fully developed and distributed by the Application Developer. 
+* (E)  “End User Personal Information:” Includes , but is not limited to End User’s name, email address, birth date, gender, address, cell phone number, cell phone service provider, current location, places of interest, personal habits, path of travel, occupation, industry, personal interests, relationship information, lifestyle information, social media interactions, and personal pictures/photographs. Additionally, information from any device or browser used to view, register or download products and services including but not limited to cell phone, tablet, PDA, computer and car. Such additional information may include but is not limited to IP address, unique identifier number (IMEI and the like), cookie information, software and hardware attributes, location, location information and webpage requests. 
+* (F)  “License:” Restricted right to use Sixgill Software 
+* (G)  “Locatee:” The location of a device/individual that an End User, using the Application Developer’s Application, request the location of. 
+* (H)  “Locator:” The End User requesting a location and or the Developers Application requesting a location on behalf of End User. 
+* (I)  “Software:” Sixgill API’s, Sixgill Sync, and Sixgill Reach (“Reach”) provide to Developer together with all related materials, documentation, updates or modifications provided to You by Sixgill or its licensees or agents. 
+* (J)  “Reach and Sync:” Sixgill’s proprietary app, libraries and executable code set for integration into Developer’s Application. 
 Under this Agreement, You are obtaining a Developer License that will allow you to use a copy of the Software for integration into applications that You develop in accordance with the terms and conditions herein.
-
 1. License.
-
-(a) Developer License. Subject to Your compliance with the terms and conditions of this Agreement and the restrictions and exceptions set forth in the Software “README” file, if any, incorporated herein by reference, Sixgill hereby grants to You a limited non-exclusive license to:
-(i) use of the Software only for integration into Applications that You develop and only provided You agree to provide the End User documentation pertaining to the use, collection, storage and dissemination of End User Personal Information (including End User’s current and historical location information) together with Your and Sixgill’s Privacy Policy as required below;
-(ii) internal use and development without fees to reproduce internally and use internally the Software complete and unmodified for the purpose of designing, developing, and testing your products and solutions.
-B. to distribute software without fees to reproduce and distribute those files specifically identified as distributable in the Software “README” file (“Distributables”) provided that:
-(i) you distribute the Software complete and unmodified and only bundled as part of, and for the sole purpose of running, your Applications,
-(ii) you do not distribute additional software intended to replace any component(s) of the Software;
-C. to distribute Redistributables without fees to reproduce and distribute those files specifically identified as redistributable in the Software “README” file (“Redistributables”) provided that:
-(i) you distribute the Redistributables complete and unmodified, and only bundled as part of Applications,
-(ii) you do not distribute additional software intended to supersede any component(s) of the Redistributables (unless otherwise specified in the applicable README file).
+* (a) Developer License. Subject to Your compliance with the terms and conditions of this Agreement and the restrictions and exceptions set forth in the Software “README” file, if any, incorporated herein by reference, Sixgill hereby grants to You a limited non-exclusive license to: 
+    * (i) use of the Software only for integration into Applications that You develop and only provided You agree to provide the End User documentation pertaining to the use, collection, storage and dissemination of End User Personal Information (including End User’s current and historical location information) together with Your and Sixgill’s Privacy Policy as required below; 
+    * (ii) internal use and development without fees to reproduce internally and use internally the Software complete and unmodified for the purpose of designing, developing, and testing your products and solutions. 
+* B. to distribute software without fees to reproduce and distribute those files specifically identified as distributable in the Software “README” file (“Distributables”) provided that: 
+    * (i) you distribute the Software complete and unmodified and only bundled as part of, and for the sole purpose of running, your Applications, 
+    * (ii) you do not distribute additional software intended to replace any component(s) of the Software; 
+* C. to distribute Redistributables without fees to reproduce and distribute those files specifically identified as redistributable in the Software “README” file (“Redistributables”) provided that: 
+    * (i) you distribute the Redistributables complete and unmodified, and only bundled as part of Applications, 
+    * (ii) you do not distribute additional software intended to supersede any component(s) of the Redistributables (unless otherwise specified in the applicable README file). 
 2. License Restrictions.
-
 (a) General Restrictions. You shall not (nor shall You permit anyone else to) directly or indirectly: (i) copy (except as expressly set forth above), modify, or distribute the Software or any portion thereof; (ii) reverse engineer, disassemble, decompile or otherwise attempt to discover the source code or structure, sequence and organization of the Software or any portion thereof (except where the foregoing is permitted by applicable local law, and then only to the extent so permitted); (iii) rent or lease the Software or any portion thereof to a third party, or otherwise use or allow the use of the Software or any portion thereof to be used for any commercial purpose or on behalf of any third party without Sixgill being properly compensated; (iv) remove or obscure any proprietary notices on the Software; (v) post or otherwise make available the Software, or any portion thereof, in any form, on the Internet or other publicly-available forum; (vi) distribute copies of the Software to others (electronically or otherwise) outside your Application; (vii) use a previous version of the Software after you receive a new version and are asked to discontinue using the previous version; (viii) export or re-export the Software in violation of any laws or regulations; or (ix) make any single copy of the Software available for use by multiple users over any network or from any remote workstation or terminal. Each single device on which the Software is installed and used shall be primarily available to only a single user. You are responsible for all fees and costs associated with the copying and installation of the Software. As a specific condition of this license, (i) you agree to defend and indemnify Sixgill and its licensors from and against any damages, costs, liabilities, settlement amounts and/or expenses (including attorneys’ fees) incurred in connection with any claim, lawsuit or action by any third party that arises or results from the use or distribution of any and all Programs and/or Software; (ii) You agree to use the Software in compliance with all applicable laws, including without limitation copyright laws, and that You will not copy, transmit, perform or distribute any audio, video or other content using the Software without obtaining all necessary licenses or permissions from the owner of the content. (iii) You acknowledge the Software and its features and functions, when used alone or in combination with a computing device or other systems, may be protected by one or more of US and/or foreign patents. A listing of any such patents may be included in the “About” box or menu associated with the Software and Sixgill reserves the right update that listing from time to time, but You should not consider any such listing to be a complete or exhaustive list of all patents that may cover the Software and You should not consider the absence of any such listing to be an indication that no patents cover the Software.
-
 3. Special Restrictions, Disclaimers and Liability Limitations with respect to the use of the Software.
-
 The Software is subject to the following restrictions, disclaimers and liability limitations:
-
-(a) Third Party Mapping Products, Data and Content. The Software may work in conjunction with or rely upon third party mapping products, data and content that are not owned or controlled by Sixgill in any way and which are used at Your own risk. Sixgill disclaims all liability that might arise from the use of such products, data or content. Sixgill does not verify the validity or accuracy of such products, data and content and Your right to use, copy or do anything with such products, data or content is solely at the discretion of the third party provider of such products, data and content.
-(b) Utilization of Software under Dangerous Conditions. Should the End User of Your Application use of the Software under certain conditions, such as walking, driving or in other conditions where their attention may be impaired, can lead to injury or death or to the injury or death of third parties. Sixgill disclaims all liability that might arise from End Users of Your Application who’s use of the Software under any circumstances where doing so might put them, their possessions, or third parties at risk or in any kind of danger.
+* (a) Third Party Mapping Products, Data and Content. The Software may work in conjunction with or rely upon third party mapping products, data and content that are not owned or controlled by Sixgill in any way and which are used at Your own risk. Sixgill disclaims all liability that might arise from the use of such products, data or content. Sixgill does not verify the validity or accuracy of such products, data and content and Your right to use, copy or do anything with such products, data or content is solely at the discretion of the third party provider of such products, data and content. 
+* (b) Utilization of Software under Dangerous Conditions. Should the End User of Your Application use of the Software under certain conditions, such as walking, driving or in other conditions where their attention may be impaired, can lead to injury or death or to the injury or death of third parties. Sixgill disclaims all liability that might arise from End Users of Your Application who’s use of the Software under any circumstances where doing so might put them, their possessions, or third parties at risk or in any kind of danger. 
 4. Proprietary Rights.
-
 Sixgill and its licensors shall own and retain all right, title, and (except as expressly licensed hereunder) interest in and to the Software, all copies or portions thereof. Any, derivative works created by You shall belong to You. The Software is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. Notwithstanding anything else, the Software is licensed and not sold. All rights in the Software not specifically granted in this Agreement are reserved by Sixgill and its licensors.
-
 5. Confidentiality.
-
 You agree to maintain the Software and any data or databases contained therein in confidence and that You will not, other than provided for herein, disclose or distribute the Software to any third party without the express written consent of Sixgill. You may not use the Software except as set forth herein. You further agree to take all reasonable precautions to preclude access of unauthorized persons to the Software.
-
 6. Term and Termination.
-
 This license is effective until terminated hereunder. You may terminate the license at any time by destroying the Software (including the related documentation) together with all copies or modifications in any form. Sixgill will have the right to terminate the license granted herein immediately if You fail to comply with or breach any term or condition of this Agreement. The license granted to You herein will terminate automatically upon any breach of Sections 1, 2, 3, 13 or 14. Sixgill will also have the right to terminate the license granted herein immediately upon its sole discretion. Upon termination of this Agreement for any reason, You shall immediately stop using the Software and shall destroy and remove from all computers, hard drives, networks, and other storage media all copies of the Software. Sections 2 through 19 shall survive any termination of this Agreement.
-
 7. Limited Warranty.
-
 Sixgill and its licensors warrant only that the Software will perform substantially in accordance with the specifications stated for the Software in any documentation, if any, accompanying the Software for a period of ninety (90) days (the “Warranty Period”). THIS WARRANTY SHALL NOT APPLY TO ANY SOFTWARE WHICH HAS BEEN ABUSED, MISUSED, DAMAGED, ALTERED, NEGLECTED, OR SUBJECTED TO UNAUTHORIZED REPAIR OR INSTALLATION, AS REASONABLY DETERMINED BY SIXGILL.
-
 NOTWITHSTANDING ANYTHING ELSE HEREIN, THE ENTIRE LIABILITY OF SIXGILL AND ITS LICENSORS, AND YOUR EXCLUSIVE REMEDY FOR A BREACH OF THE FORGOING WARRANTY, SHALL BE, AT SIXGILL’ OPTION AND EXPENSE: (A) REPAIR OR REPLACEMENT OF THE SOFTWARE FOR SOFTWARE THAT MEETS THE WARRANTY OR (B) IF REPAIRING OR REPLACING THE SOFTWARE IS NOT COMMERCIALLY PRACTICABLE IN SIXGILL’ SOLE DISCRETION, REFUND OF THE PURCHASE PRICE PAID BY YOU, IF ANY, IN BOTH CASES ONLY WHERE THE SOFTWARE IS RETURNED TO SIXGILL, WITHIN THE WARRANTY PERIOD.
-
 8. Warranty Disclaimer.
-
 THE LIMITED WARRANTY SET FORTH IN SECTION 7 IS THE ONLY WARRANTY PROVIDED BY SIXGILL. EXCEPT FOR THE FOREGOING, THE SOFTWARE AND ANY SERVICES ARE PROVIDED “AS IS” AND SIXGILL MAKES NO WARRANTY OF ANY KIND WITH REGARD TO THE SOFTWARE OR ANY SERVICES PROVIDED BY SIXGILL HEREUNDER. SIXGILL EXPRESSLY DISCLAIMS ANY OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
 FURTHER, SIXGILL DOES NOT WARRANT RESULTS OF USE OR THAT THE SOFTWARE IS BUG FREE OR THAT ITS USE WILL BE UNINTERRUPTED. SIXGILL AND ITS LICENSORS DO NOT AND CANNOT WARRANT THE RESULTS YOU MAY OBTAIN BY USING THE SOFTWARE. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS AGREEMENT.
-
 SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES OR LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY MAY LAST, SO THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU. THIS WARRANTY GIVES YOU SPECIFIC LEGAL RIGHTS AND YOU MAY ALSO HAVE OTHER RIGHTS WHICH VARY FROM JURISDICTION TO JURISDICTION.
-
 9. Limitation of Liability.
-
 NOTWITHSTANDING ANYTHING ELSE HEREIN, UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, INCLUDING, BUT NOT LIMITED TO, TORT, CONTRACT, NEGLIGENCE, STRICT LIABILITY, OR OTHERWISE, SHALL SIXGILL OR ITS LICENSORS BE LIABLE TO YOU OR ANY OTHER PERSON (I) FOR ANY PUNITIVE, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOST PROFITS, LOSS OF GOODWILL, WORK STOPPAGE, ACCURACY OF RESULTS, COMPUTER FAILURE OR MALFUNCTION, OR DAMAGES RESULTING FROM YOUR USE OF THE SOFTWARE OR THE SERVICES PROVIDED BY OR ON BEHALF OF SIXGILL, OR (II) FOR ANY MATTER BEYOND SIXGILL’ OR ITS LICENSORS’ REASONABLE CONTROL. SIXGILL’ AND ITS LICENSORS’ MAXIMUM LIABILITY FOR DAMAGES OF ANY KIND WHATSOEVER ARISING OUT OF THIS AGREEMENT SHALL BE LIMITED TO THE PURCHASE PRICE PAID BY YOU FOR THE SOFTWARE, EXCEPT WHERE NOT PERMITTED BY APPLICABLE LAW, IN WHICH CASE SIXGILL’ LIABILITY SHALL BE LIMITED TO THE MINIMUM AMOUNT PERMITTED BY SUCH APPLICABLE LAW. THE FOREGOING LIMITATIONS SHALL APPLY EVEN IF SIXGILL HAS BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES.
-
 SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THE ABOVE LIMITATION AND EXCLUSION MAY NOT APPLY TO YOU.
-
 10. Export.
-
 You shall comply with all export laws and restrictions and regulations of the Department of Commerce, the United States Department of Treasury Office of Foreign Assets Control (“OFAC”), or other United States or foreign agency or authority, and You shall not export, or allow the export or re-export of the Software in violation of any such restrictions, laws or regulations. By using the Software, You agree to the foregoing and represent and warrant that You are not located in, under the control of, or a national or resident of any restricted country.
-
 11. Indemnity.
-
 You shall indemnify and hold harmless Sixgill from any third party claims, damages, liabilities, costs and fees (including reasonable attorney fees) arising from Your use and End Users of your Application of the Software as well as from Your failure to comply with any term of this Agreement.
 12. Government Restricted Rights.
-
 If You are or are developing an Application for an agency, department, or other entity of the United States Government (“Government”), the use, duplication, reproduction, release, modification, disclosure or transfer of the Software, or any related documentation of any kind, including technical data or related manuals, is restricted in accordance with Federal Acquisition Regulation 12.212 for civilian agencies and Defense Federal Acquisition Regulation Supplement 227.7202 for military agencies. This Software is commercial computer software and the related documentation is commercial computer software documentation. The use of the Software and related documentation is further restricted in accordance with the terms of this Agreement, or any modification hereto. Sixgill, LLC is located at 312 Arizona Ave, Santa Monica, CA 90401.
-
 13. End User Personal Information.
-
 Developer shall collect, use, hold and disclose Personal Information received, directly or indirectly, by Developer strictly in accordance with best industry practices, does not conflict with SIXGILL’s most current Privacy Policy and Terms of Use available at http://www.sixgill.com/legal/ and shall comply with all applicable laws, rules and regulations relating to the protection and privacy of such Personal Information.
-
 14. Notices and Consent.
-
 (i) Notice
-
 Sixgill software may from time to time utilize Your End User’s network operator and or a location aggregator to help garner a location from a device, Developer shall integrate a conspicuous and stand-alone notice, as amended from time-to-time, into its registration process for its Developer Application that substantially conforms to the following:
-
 This is not an application provided by your network operator. If you use this application, it may require such network operator to disclose your customer information, including location information, to the application provider, Sixgill or some other third party. By providing your consent, you authorize your network operator, Sixgill or some other third party to disclose your information to third parties solely for the purpose of enabling this application. Please review the application’s terms of use and privacy policies for more information about how the application will collect, access, use, or disclose your information. Terms of use and other policies usually are available on the application provider’s Web site. If you aren’t comfortable with the application’s polices, don’t use it. You acknowledge and agree that (1) your relationship with the application provider is separate from your relationship with your network operator and Sixgill and or other third party location providers ; (2) your network operator, Sixgill and third party location providers are not responsible for this application; and (3) you will hold harmless your network operator, Sixgill and third party locations providers and their contractors, agents, subsidiaries, affiliates, officers, employees, agents, successors and assigns from any judgments, claims, actions, losses, liabilities or expenses arising from or attributable to this application or the acts or omissions of the application provider.”
-
 15. Revocation.
-
 Developer shall provide End Users with a method for revoking any consent granted for access to Personal Information. Developer shall send periodic messages to the End User reminding such End User of consents granted for access to Personal Information
-
 16. Recordkeeping
-
 Developer shall retain each record for until the later of (a) as long as the associated consent is relied upon, (b) as long as required by applicable law, and (c) two (2) years after the location query. Developer shall also make such records available to Sixgill upon request in a format specified by Sixgill.
 For each Developer Application, the Developer notice record may be required to be provided to Sixgill before Sixgill provides location information.
 For self-service location-based service Developer Applications where the Developer End User’s location information is accessible by someone other than the Developer End User, the Developer shall maintain verifiable records (e.g., data log of each instance of the Developer End User’s request to use the service. Such log must be maintained for a minimum of two (2) years from the location query. The log must be made available to Sixgill upon request in a format specified by Sixgill.
-
 17. Safeguards
-
 Developer shall carefully consider the safety implications of each location-based service and implement the appropriate safeguards to address foreseeable risks. As such, Developer shall continuously monitor the use of its Developer Application(s) for any activity that violates any applicable policies or other relevant terms of use, including any fraudulent, inappropriate or potentially harmful behavior and promptly restrict the offending users from any further use of the Developer Application. Developer shall also provide a resource for its End Users to report abuse of the Developer Application and a process that can address that abuse in a timely manner. Similar safeguards shall be required for any Developer Application that obtains any Sixgill Confidential Information.
-
 For Developer Applications where End Users are able to locate other end users (e.g. social networking applications), Developer shall provide the locatee with the option of being notified each time that a locatee is being located and by whom. If such a Developer Application is one in which only adults may participate, then Developer shall verify the End User’s age using a reliable method. Similar consent shall be required for any Developer Application that discloses any Sixgill Confidential Information to another Developer End User.
-
 18. Trademarks and Logos.
-
 You acknowledge and agree between you and Sixgill that Sixgill owns all of its trademarks and all Sixgill related trademarks, service marks, logos and other brand designations (“Sixgill Marks”), and you agree to comply with the Sixgill Trademark and Logo Usage Requirements. Any use you make of the Sixgill Marks inures to Sixgill’s benefit.
-
 Revocation. Developer shall provide End Users with a method for revoking any consent granted for access to Personal Information. Developer shall send periodic messages to the End User reminding such End User of consents granted for access to Personal Information.
-
 19. General.
-
 This Agreement represents the complete agreement concerning this license between the parties and supersedes all prior agreements and representations between them. This Agreement may be amended only by a writing executed by both parties. If any provision of this Agreement is held to be illegal or unenforceable, that provision shall be limited or eliminated to the minimum extent necessary to make it legal and enforceable and this Agreement shall otherwise remain in full force and effect and enforceable. The failure of Sixgill to act with respect to a breach of this Agreement by You or others does not constitute a waiver and shall not limit Sixgill’ rights with respect to such breach or any subsequent breaches. This Agreement is personal to You and may not be assigned or transferred for any reason whatsoever without Sixgill’s prior written consent and any action or conduct in violation of the foregoing shall be void and without effect. Sixgill expressly reserves the right to assign this Agreement and to delegate any of its obligations hereunder. This Agreement shall be governed by and construed under California law (without regard to its conflicts of laws provisions) as such law applies to agreements between California residents entered into and to be performed within California. The sole and exclusive jurisdiction and venue for actions arising under this Agreement shall be the State and Federal courts in Los Angeles County, California; You hereby agree to service of process in accordance with the rules of such courts.
-
 EACH PARTY RECOGNIZES AND AGREES THAT THE WARRANTY DISCLAIMERS AND LIABILITY AND REMEDY LIMITATIONS IN THIS AGREEMENT ARE MATERIAL BARGAINED FOR BASES OF THIS AGREEMENT AND THAT THEY HAVE BEEN TAKEN INTO ACCOUNT AND REFLECTED IN DETERMINING THE CONSIDERATION TO BE GIVEN BY EACH PARTY UNDER THIS AGREEMENT AND IN THE DECISION BY EACH PARTY TO ENTER INTO THIS AGREEMENT.
-
 Questions concerning this Agreement should be sent to the address set forth below. Any notices or correspondences will only be effective if sent to such address.
-Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401</string>
+Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401
+
+</mutableString>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -3717,7 +3670,7 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
         <image name="map-icon" width="78" height="72"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="qr-graphic" width="300" height="300"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
     </resources>
