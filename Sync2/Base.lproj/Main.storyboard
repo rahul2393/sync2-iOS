@@ -21,6 +21,26 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="h7N-br-QQa">
+            <objects>
+                <navigationController id="Ql4-PW-vcG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Le-Uo-gmk">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0062943333760000003" green="0.17320993539999999" blue="0.4145198464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oKn-1F-Kmu" kind="relationship" relationship="rootViewController" id="Qfy-Iq-g1t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="peT-uY-jJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2430" y="-1511"/>
+        </scene>
         <!--Permission Page Controller-->
         <scene sceneID="b3W-mL-Ogb">
             <objects>
@@ -28,6 +48,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyH-0y-7H9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-538" y="-345"/>
+        </scene>
+        <!--Signup WebVC-->
+        <scene sceneID="u4c-Eg-9jL">
+            <objects>
+                <viewController id="oKn-1F-Kmu" customClass="SignupWebVC" customModule="Sync2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5X3-Km-JuG"/>
+                        <viewControllerLayoutGuide type="bottom" id="DcA-B7-CJM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7uu-S2-gPU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="T3s-Ci-hP2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XF0-2N-u89" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1770" y="-1511"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="SZl-ox-SCl">
@@ -180,11 +219,12 @@
                     <connections>
                         <segue destination="MOx-o9-HDz" kind="show" identifier="alreadySignedIn" id="gO2-P8-Yfg"/>
                         <segue destination="cp0-ji-nh1" kind="presentation" identifier="showLicenseAgreement" id="cO5-zU-tHL"/>
+                        <segue destination="Ql4-PW-vcG" kind="show" identifier="goToSignupView" id="iXE-p4-Tk7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHJ-B3-1Gx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-631" y="-1534"/>
+            <point key="canvasLocation" x="-857" y="-1511"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="M2p-sK-ZzC">
@@ -242,7 +282,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMM-lg-xF2">
                                 <rect key="frame" x="10" y="219.33333333333334" width="394" height="416.66666666666663"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">“Developer” End User License Agreement (“Agreement”)
+                                <string key="text">“Developer” End User License Agreement (“Agreement”)
 
 IMPORTANT READ CAREFULLY: This Agreement is a legal and binding agreement between you the Application Developer (“Developer” or “You” or “Your”) and Sixgill, LLC (“Sixgill”) for the use of Software and or API’s as set forth and defined herein.
 
@@ -323,7 +363,7 @@ EACH PARTY RECOGNIZES AND AGREES THAT THE WARRANTY DISCLAIMERS AND LIABILITY AND
 Questions concerning this Agreement should be sent to the address set forth below. Any notices or correspondences will only be effective if sent to such address.
 Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401
 
-</mutableString>
+</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -3677,7 +3717,7 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
     <inferredMetricsTieBreakers>
         <segue reference="3fk-4r-8EV"/>
         <segue reference="XtT-hd-MMq"/>
-        <segue reference="dKW-jL-B8K"/>
+        <segue reference="gO2-P8-Yfg"/>
         <segue reference="mzM-J5-9TN"/>
     </inferredMetricsTieBreakers>
 </document>

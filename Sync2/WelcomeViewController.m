@@ -37,7 +37,9 @@
 
 - (IBAction)createNewAccountTapped:(id)sender {
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.sixgill.com"]];
+    [self performSegueWithIdentifier:@"goToSignupView" sender:self];
+    
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.sixgill.com"]];
 }
 
 

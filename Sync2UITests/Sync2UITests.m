@@ -41,6 +41,13 @@
 - (void)testTakeScreenshots {
     
     XCUIApplication *app = [[XCUIApplication alloc] init];
+    
+    
+    XCUIElement *acceptButton = [[XCUIApplication alloc] init].buttons[@"Accept"];
+    [acceptButton tap];
+    [acceptButton tap];
+    
+    
     [Snapshot snapshot:@"01StartingScreen" timeWaitingForIdle:10];
     [app.buttons[@"Continue"] tap];
     [app.buttons[@"Enable Location Services"] tap];
@@ -51,12 +58,6 @@
     
     [app.buttons[@"Enable Motion and Activity"] tap];
     [self addUIInterruptionMonitorWithDescription:@"\u201cSync\u201d Would Like to Access Your Motion & Fitness Activity" handler:^BOOL(XCUIElement * _Nonnull alert) {
-        [alert.buttons[@"OK"] tap];
-        return YES;
-    }];
-    
-    [app.buttons[@"Enable Camera Access"] tap];
-    [self addUIInterruptionMonitorWithDescription:@"\u201cSync\u201d Would Like to Access the Camera" handler:^BOOL(XCUIElement * _Nonnull alert) {
         [alert.buttons[@"OK"] tap];
         return YES;
     }];
