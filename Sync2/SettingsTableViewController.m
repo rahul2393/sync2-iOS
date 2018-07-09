@@ -218,11 +218,6 @@
     }
 }
 
-- (IBAction)doneButtonTapped:(id)sender {
-    
-    [self dismissModal];
-    
-}
 
 -(void) logout{
     [[SettingsManager sharedManager] logout];
