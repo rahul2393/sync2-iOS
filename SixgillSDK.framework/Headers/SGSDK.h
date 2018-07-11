@@ -11,6 +11,7 @@
 #import "SensorUpdateDelegate.h"
 #import "SGLogDelegate.h"
 #import "EventQueuePolicy.h"
+#import "SGIoTDevice.h"
 /**
  `SGSDK` is the wrapper class that exists for the purpose of abstracting away implemenation details and providing a clean API to the user.
  **/
@@ -43,6 +44,10 @@
 +(void) setMotionActivityEnabled:(BOOL)enabled;
 +(BOOL) motionActivityEnabled;
 
+#pragma mark - IoT
++(SGIoTDevice *) registerIoTDevice:(NSString *)deviceName
+                  andChannelAPIKey:(NSString *)channelAPIKey
+                           sensors:(NSArray *)sensors;
 
 // deprecated
 
@@ -55,7 +60,6 @@
 +(void) setLocationCollectionCachePolicy:(EventQueuePolicy)locationCachePolicy;
 
 
-
 +(void) registerForLogUpdates:(id<SGLogDelegateProtocol>)delegate;
 
 +(void) registerForSensorUpdates:(id<SensorUpdateDelegate>)delegate;
@@ -64,5 +68,12 @@
 
 
 +(UIViewController *) inboxViewController;
+
+
+#pragma mark - IoT
++(NSArray *) registeredIoTDevices;
++(void) registerIoTDeviceName:(NSString *)deviceName;
++(void) sendIoTDevice:(SGIoTDevice *)device data:(NSDictionary *)data;
+
 
 @end

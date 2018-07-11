@@ -9,8 +9,6 @@
 #import "AppDelegate.h"
 #import "SDKManager.h"
 #import "SettingsManager.h"
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
 #import "SenseAPI.h"
 #import "SettingsManager.h"
 #import "SDKManager.h"
@@ -18,6 +16,8 @@
 #import "WelcomeViewController.h"
 
 @import SixgillSDK;
+@import Firebase;
+@import Fabric;
 @interface AppDelegate ()
 
 @end
@@ -26,8 +26,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [Fabric with:@[[Crashlytics class]]];
-
     
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
@@ -38,6 +36,8 @@
         [[SDKManager sharedManager] startSDKWithAPIKey: [[SDKManager sharedManager] currentAPIKey]];
     }
     
+    [FIRApp configure];
+    [Fabric.sharedSDK setDebug:YES];
     return YES;
 }
 

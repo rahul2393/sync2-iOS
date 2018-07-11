@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>118324061787-ce5hmp12k3vhpqk20de5c2t0068fotbo.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.118324061787-ce5hmp12k3vhpqk20de5c2t0068fotbo</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAS1AsaTuc-QgUjemL06lmk3mJL2FsdpKI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>118324061787</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sixgill.sync</string>
+	<key>PROJECT_ID</key>
+	<string>sixgill-test-291a0</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sixgill-test-291a0.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:118324061787:ios:32c130a7a13ad5b2</string>
+	<key>DATABASE_URL</key>
+	<string>https://sixgill-test-291a0.firebaseio.com</string>
+</dict>
+</plist>

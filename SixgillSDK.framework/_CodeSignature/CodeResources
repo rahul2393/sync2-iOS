@@ -8,13 +8,17 @@
 		<data>
 		+kQWAY0sQFqoBAWRv1Xdcm7nl0U=
 		</data>
+		<key>Headers/SGIoTDevice.h</key>
+		<data>
+		JtMUFmJvsnZ5bqjEFrtAu/0zkgo=
+		</data>
 		<key>Headers/SGLogDelegate.h</key>
 		<data>
 		+SKa4cNUtaV2LxfweSsORmCNLlc=
 		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
-		J/ijP5SjEcj34XIwAS0oLBhYvbs=
+		WqatSr3IDv3hhnIHW98v9FIMve8=
 		</data>
 		<key>Headers/SensorUpdateDelegate.h</key>
 		<data>
@@ -26,7 +30,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		wAm7P2rYH5F+w8ukHAtryNm9LEY=
+		TgsmnmqRcMVRTHnVQ3wieFnmU/c=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,6 +54,17 @@
 			mc3lq7Kzy7N/alMEfn5oOx19P4zegCU9IM47/SLeU4o=
 			</data>
 		</dict>
+		<key>Headers/SGIoTDevice.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			JtMUFmJvsnZ5bqjEFrtAu/0zkgo=
+			</data>
+			<key>hash2</key>
+			<data>
+			fGBygHbt7vHjbKWcwMOsozC29FmCIRGRAiiXAJ6eEHs=
+			</data>
+		</dict>
 		<key>Headers/SGLogDelegate.h</key>
 		<dict>
 			<key>hash</key>
@@ -65,11 +80,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			J/ijP5SjEcj34XIwAS0oLBhYvbs=
+			WqatSr3IDv3hhnIHW98v9FIMve8=
 			</data>
 			<key>hash2</key>
 			<data>
-			PuPgYLvKQ9zESfBkWLBqujG79tb+rLkIdRyzrXojTAw=
+			/abdcnBdL0MABBnEJ0Z1o+HUFO8VJpfo66WE56oOJys=
 			</data>
 		</dict>
 		<key>Headers/SensorUpdateDelegate.h</key>

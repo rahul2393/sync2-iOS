@@ -10,6 +10,7 @@
 		58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */; };
 		7520226620610845007FD829 /* EULAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7520226520610845007FD829 /* EULAViewController.m */; };
 		7520226A2061099C007FD829 /* TOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752022692061099C007FD829 /* TOSViewController.m */; };
+		756C2D5820F5FEE7008560FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */; };
 		997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */; };
 		E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */; };
 		E90371441EE89B1E0033DED0 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E90371431EE89B1E0033DED0 /* Account.m */; };
@@ -130,6 +131,7 @@
 		7520226520610845007FD829 /* EULAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EULAViewController.m; sourceTree = "<group>"; };
 		7520226820610988007FD829 /* TOSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOSViewController.h; sourceTree = "<group>"; };
 		752022692061099C007FD829 /* TOSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOSViewController.m; sourceTree = "<group>"; };
+		756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6011B6B43DBF0AC7C6C0493 /* Pods-Sync2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2/Pods-Sync2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -716,6 +718,7 @@
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
+				756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */,
 				E9FB1487207D828500A00EFF /* SixgillSDK.framework */,
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
@@ -1057,10 +1060,9 @@
 				E9A3C29F1ED5FD1500A938CB /* Sources */,
 				E9A3C2A01ED5FD1500A938CB /* Frameworks */,
 				E9A3C2A11ED5FD1500A938CB /* Resources */,
-				5B9F7C4283404FA980F4DA7C /* [CP] Embed Pods Frameworks */,
 				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
-				E9EB06801F3CFA36000545DD /* ShellScript */,
 				E9FB148A207D828600A00EFF /* Embed Frameworks */,
+				756C2D5920F60012008560FF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1079,8 +1081,6 @@
 				E9A3C2B81ED5FD1500A938CB /* Sources */,
 				E9A3C2B91ED5FD1500A938CB /* Frameworks */,
 				E9A3C2BA1ED5FD1500A938CB /* Resources */,
-				D28A0CC4E2BA1A26A4433BBE /* [CP] Embed Pods Frameworks */,
-				8CEBC234F6CB56CC4AD34C4C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1186,6 +1186,7 @@
 				E9A3C2E01ED6101100A938CB /* Lato-Regular.ttf in Resources */,
 				E9A3C2DB1ED6101100A938CB /* Lato-Hairline.ttf in Resources */,
 				E9A3C2B11ED5FD1500A938CB /* Main.storyboard in Resources */,
+				756C2D5820F5FEE7008560FF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1212,29 +1213,32 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5B9F7C4283404FA980F4DA7C /* [CP] Embed Pods Frameworks */ = {
+		756C2D5920F60012008560FF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"";
 		};
 		7B61590D97B2AAB5C193441C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1242,57 +1246,17 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sync2Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		8CEBC234F6CB56CC4AD34C4C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D28A0CC4E2BA1A26A4433BBE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E9EB06801F3CFA36000545DD /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 36b32d12ac7d92a39a0cd98ce373985136df6461 7f1bf37b2ed2d1394a6a5f72fbf44fef98fa0539fbaa5ce4c2b79547502a6ea1";
 		};
 		F9857E0285B6AEDE068EA46F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1300,13 +1264,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sync2-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
