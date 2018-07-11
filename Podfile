@@ -6,8 +6,9 @@ target 'Sync2' do
   # use_frameworks!
     pod 'GoogleMaps'
     pod 'GooglePlaces'
-    pod 'Fabric'
-    pod 'Crashlytics'
+    pod 'Firebase/Core'
+    pod 'Fabric', '~> 1.7.9'
+    pod 'Crashlytics', '~> 3.10.4'
 
   # Pods for Sync2
 
