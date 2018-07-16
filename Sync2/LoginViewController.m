@@ -40,8 +40,8 @@
     
     [[SettingsManager sharedManager] logout];
     
-    self.emailAddressField.text = @"ritik.rishu@hotcocoasoftware.com";
-    self.passwordField.text = @"password123";
+    //self.emailAddressField.text = @"rkirkendall@sixgill.com";
+    //self.passwordField.text = @"rickyricky1";
     
     [self.emailAddressField resignFirstResponder];
     [self.passwordField resignFirstResponder];

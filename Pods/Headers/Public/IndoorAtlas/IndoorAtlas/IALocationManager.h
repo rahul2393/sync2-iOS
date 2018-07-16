@@ -1,1 +1,0 @@
-../../../../IndoorAtlas/indooratlas-ios-sdk/IndoorAtlas.framework/Headers/IALocationManager.h
