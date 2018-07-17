@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5P7-yC-Z8k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A45-xF-NUN">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -39,7 +39,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peT-uY-jJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2430" y="-1511"/>
+            <point key="canvasLocation" x="154" y="-2265"/>
         </scene>
         <!--Permission Page Controller-->
         <scene sceneID="b3W-mL-Ogb">
@@ -66,7 +66,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XF0-2N-u89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1770" y="-1511"/>
+            <point key="canvasLocation" x="851" y="-2265"/>
+        </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="9UX-5F-mbR">
+            <objects>
+                <viewController id="A45-xF-NUN" customClass="SplashViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Uu-gZ-dtr"/>
+                        <viewControllerLayoutGuide type="bottom" id="j37-dK-gze"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bxK-Un-MUa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-softlight-background" translatesAutoresizingMaskIntoConstraints="NO" id="PC2-Ph-ueM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sync-logo" translatesAutoresizingMaskIntoConstraints="NO" id="haf-XM-5Bg">
+                                <rect key="frame" x="117" y="184" width="180" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="sQ0-PU-bEE"/>
+                                    <constraint firstAttribute="height" constant="77" id="yFF-AM-725"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner" translatesAutoresizingMaskIntoConstraints="NO" id="fEA-zi-dWD">
+                                <rect key="frame" x="195" y="311" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="98s-wq-WDZ"/>
+                                    <constraint firstAttribute="height" constant="24" id="gfO-2X-BIg"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome-screen-footer" translatesAutoresizingMaskIntoConstraints="NO" id="8Sr-1Z-YP8">
+                                <rect key="frame" x="179.66666666666666" y="646" width="55" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qpn-Rx-tkU"/>
+                                    <constraint firstAttribute="width" constant="55" id="qzd-Xd-pmk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fEA-zi-dWD" firstAttribute="centerX" secondItem="bxK-Un-MUa" secondAttribute="centerX" id="KJv-zf-ySy"/>
+                            <constraint firstItem="8Sr-1Z-YP8" firstAttribute="bottom" secondItem="bxK-Un-MUa" secondAttribute="bottom" constant="-50" id="NcE-N8-xZv"/>
+                            <constraint firstItem="PC2-Ph-ueM" firstAttribute="bottom" secondItem="bxK-Un-MUa" secondAttribute="bottom" id="PHH-s3-oS7"/>
+                            <constraint firstAttribute="trailing" secondItem="PC2-Ph-ueM" secondAttribute="trailing" id="Q39-Eq-IfC"/>
+                            <constraint firstItem="8Sr-1Z-YP8" firstAttribute="centerX" secondItem="bxK-Un-MUa" secondAttribute="centerX" id="QeO-qd-4TQ"/>
+                            <constraint firstItem="PC2-Ph-ueM" firstAttribute="leading" secondItem="bxK-Un-MUa" secondAttribute="leading" id="XZb-6t-f3B"/>
+                            <constraint firstItem="fEA-zi-dWD" firstAttribute="top" secondItem="haf-XM-5Bg" secondAttribute="bottom" constant="50" id="eJ1-hj-0Gd"/>
+                            <constraint firstItem="haf-XM-5Bg" firstAttribute="top" secondItem="bxK-Un-MUa" secondAttribute="top" constant="184" id="ucj-pp-4oV"/>
+                            <constraint firstItem="PC2-Ph-ueM" firstAttribute="top" secondItem="bxK-Un-MUa" secondAttribute="top" id="w5f-Bh-vYV"/>
+                            <constraint firstItem="haf-XM-5Bg" firstAttribute="centerX" secondItem="bxK-Un-MUa" secondAttribute="centerX" id="zfx-ki-mSt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="spinner" destination="fEA-zi-dWD" id="mYb-5D-i7i"/>
+                        <segue destination="5P7-yC-Z8k" kind="show" identifier="showWelcomeScreen" id="pIx-Q0-xEV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ICM-EY-DIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1728" y="-1534"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="SZl-ox-SCl">
@@ -3682,12 +3742,15 @@ NOE05DTpNPE09DUGNQk1DgAAAAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAADUQA
         <image name="push-graphic" width="240" height="240"/>
         <image name="qr-graphic" width="300" height="300"/>
         <image name="sixgill-logo" width="325" height="95"/>
+        <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
+        <image name="welcome-screen-footer" width="165" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XtT-hd-MMq"/>
-        <segue reference="dKW-jL-B8K"/>
+        <segue reference="gO2-P8-Yfg"/>
         <segue reference="mzM-J5-9TN"/>
+        <segue reference="pIx-Q0-xEV"/>
     </inferredMetricsTieBreakers>
 </document>
