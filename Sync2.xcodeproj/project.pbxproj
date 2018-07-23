@@ -10,6 +10,8 @@
 		58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */; };
 		7520226620610845007FD829 /* EULAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7520226520610845007FD829 /* EULAViewController.m */; };
 		7520226A2061099C007FD829 /* TOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752022692061099C007FD829 /* TOSViewController.m */; };
+		753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70C2105600B00C11223 /* UIViewExtension.m */; };
+		753CB7102105D07900C11223 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70F2105D07900C11223 /* GradientView.m */; };
 		756C2D5820F5FEE7008560FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */; };
 		759926EC20FE2E790073693F /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759926EB20FE2E790073693F /* SplashViewController.m */; };
 		997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */; };
@@ -129,6 +131,10 @@
 		7520226520610845007FD829 /* EULAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EULAViewController.m; sourceTree = "<group>"; };
 		7520226820610988007FD829 /* TOSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOSViewController.h; sourceTree = "<group>"; };
 		752022692061099C007FD829 /* TOSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOSViewController.m; sourceTree = "<group>"; };
+		753CB70B21055FF600C11223 /* UIViewExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewExtension.h; sourceTree = "<group>"; };
+		753CB70C2105600B00C11223 /* UIViewExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewExtension.m; sourceTree = "<group>"; };
+		753CB70E2105D06000C11223 /* GradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
+		753CB70F2105D07900C11223 /* GradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
 		756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		759926EA20FE2E5D0073693F /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		759926EB20FE2E790073693F /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
@@ -791,7 +797,10 @@
 				E9A3C2E21ED77D8600A938CB /* Controller */,
 				E9A3C2CB1ED60FD700A938CB /* Resources */,
 				E962B35F1EF2108200ECB920 /* App Delegate */,
-				E9A3C2AF1ED5FD1500A938CB /* Main.storyboard */,
+				753CB7142106423600C11223 /* Storyboard and Xibs */,
+				753CB7132106420300C11223 /* Cells */,
+				753CB712210641E400C11223 /* Extensions */,
+				753CB711210641C400C11223 /* Views */,
 				E9A3C2B21ED5FD1500A938CB /* Assets.xcassets */,
 				E9A3C2B41ED5FD1500A938CB /* LaunchScreen.storyboard */,
 				E9A3C2B71ED5FD1500A938CB /* Info.plist */,
@@ -1364,11 +1373,13 @@
 				E912818B20100B310003072B /* DummyChannelData.m in Sources */,
 				E9B76D5B200D4F450095030C /* ProjectSelectionViewController.m in Sources */,
 				E9A3C2EB1ED780CC00A938CB /* WelcomeViewController.m in Sources */,
+				753CB7102105D07900C11223 /* GradientView.m in Sources */,
 				E95B9DC11F609481007943CA /* TextFieldTableViewCell.m in Sources */,
 				E9A3C2A81ED5FD1500A938CB /* main.m in Sources */,
 				E9352485201FF050008D4F19 /* SGToken.m in Sources */,
 				E98430BC20169E5A00F11887 /* MapSettingsTableViewController.m in Sources */,
 				E9518B64201802F9001818CC /* TextNotification.m in Sources */,
+				753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */,
 				E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */,
 				E94738842081465900A49CC2 /* SignupWebVC.swift in Sources */,
 				E9CCF4C81EF1E78200BF96C6 /* QRCodeReaderViewController.m in Sources */,

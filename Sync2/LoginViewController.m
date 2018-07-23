@@ -147,4 +147,7 @@
     [self.invalidLoginView setHidden: YES];
     
 }
+
+- (IBAction)ForgotPasswordTapped:(id)sender {
+}
 @end

@@ -13,11 +13,14 @@
 @property (weak, nonatomic) IBOutlet UIView *invalidLoginView;
 @property (weak, nonatomic) IBOutlet UITextField *emailAddressField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *apiURLField;
 
 - (IBAction)qrButtonTapped:(id)sender;
 
 - (IBAction)loginButtonTapped:(id)sender;
 
 - (IBAction)dismissInvalidLoginViewTapped:(id)sender;
+
+- (IBAction)ForgotPasswordTapped:(id)sender;
 
 @end

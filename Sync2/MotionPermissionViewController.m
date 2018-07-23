@@ -19,7 +19,21 @@
     // Do any additional setup after loading the view.
 }
 
-
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        
+        switch ((int)[[UIScreen mainScreen] nativeBounds].size.height) {
+                
+            case 1136:
+                _skipButtonBottomConstraint.constant = 0.5;
+                break;
+            default:
+                _skipButtonBottomConstraint.constant = 32.5;
+        }
+    }
+}
 
 /*
 #pragma mark - Navigation
