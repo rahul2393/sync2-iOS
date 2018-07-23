@@ -340,6 +340,42 @@
 			name = "Terms of Service";
 			sourceTree = "<group>";
 		};
+		753CB711210641C400C11223 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				753CB70E2105D06000C11223 /* GradientView.h */,
+				753CB70F2105D07900C11223 /* GradientView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		753CB712210641E400C11223 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				753CB70B21055FF600C11223 /* UIViewExtension.h */,
+				753CB70C2105600B00C11223 /* UIViewExtension.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		753CB7132106420300C11223 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				75DE39782101D3490006BA78 /* ProjectSelectionTableViewCell.h */,
+				75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		753CB7142106423600C11223 /* Storyboard and Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				E9A3C2AF1ED5FD1500A938CB /* Main.storyboard */,
+				75DE397A2101D3490006BA78 /* ProjectSelectionTableViewCell.xib */,
+			);
+			name = "Storyboard and Xibs";
+			sourceTree = "<group>";
+		};
 		759926E920FE2E190073693F /* Splash */ = {
 			isa = PBXGroup;
 			children = (
