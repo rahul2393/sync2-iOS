@@ -8,9 +8,10 @@
 
 #import "DataChannelSelectionViewController.h"
 #import "DummyChannelData.h"
-#import "TextViewTableViewCell.h"
 #import "DataChannel.h"
 #import "SettingsManager.h"
+#import "ProjectSelectionTableViewCell.h"
+
 @interface DataChannelSelectionViewController ()
 
 @property (nonatomic, readwrite) NSInteger selectedChannelIx;
@@ -26,6 +27,7 @@
     
     self.tableView.accessibilityIdentifier = @"channelTable";
     self.tableView.accessibilityLabel = @"channelTable";
+    [self.tableView registerNib:[UINib nibWithNibName:@"ProjectSelectionTableViewCell" bundle:nil] forCellReuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
     
     if (!self.channels) {
         
@@ -37,8 +39,6 @@
             self.channels = [NSArray array];
         }
     }
-    
-    self.title = @"Select Data Channel to Use";
     
     [self.selectChannelButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
     [self.selectChannelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -73,11 +73,19 @@
     [self dismissScreen];
 }
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.channels.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 49.0;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [self channelCellForIndexPath:indexPath];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (indexPath.section == 0) {
-        return;
-    }
     
     if (self.selectedChannelIx == indexPath.row) {
         self.channelSelected = !self.channelSelected;
@@ -93,92 +101,26 @@
     
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    switch (section) {
-        case 0:
-            return 1;
-        default:
-            return self.channels.count;
-    }
-}
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
-}
-
--(TextViewTableViewCell *) textCellForTableView:(UITableView *)tableView{
-    TextViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dataChannelInfoCell"];
-    
-    if (cell == nil) {
-        cell = [[TextViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"dataChannelInfoCell"];
-    }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
-}
-
--(UITableViewCell *) descriptionCell{
-    TextViewTableViewCell *cell = [self textCellForTableView:self.tableView];
-    cell.label.text = @"Data Channels";
-    cell.textView.text = [DummyChannelData descriptionText];
-    
-    return cell;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (indexPath.section == 0) {
-        return 176.0;
-    }else{
-        return 44.0;
-    }
-    
-}
-
 -(void) setButtonEnabled:(BOOL)enabled{
     self.selectChannelButton.enabled = enabled;
 }
 
 
 -(UITableViewCell *) channelCellForIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell"];
-    
+    ProjectSelectionTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
+  
     if (cell == nil) {
-        cell = [[TextViewTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        cell = [[ProjectSelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
     }
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+
     if (self.useDummy) {
-        cell.textLabel.text = self.channels[indexPath.row];
-    }else{
+        [cell configureCell:(self.selectedChannelIx == indexPath.row  &&  self.channelSelected) name:self.channels[indexPath.row] platform:@"IOS"];
+    }else {
         DataChannel *dc = self.channels[indexPath.row];
-        cell.textLabel.text = dc.name;
-        cell.accessibilityIdentifier = dc.name;
-        cell.accessibilityLabel = @"channel cell";
-    }
-    
-    cell.detailTextLabel.text = @"iOS";
-    
-    if (self.selectedChannelIx == indexPath.row && self.channelSelected) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }else{
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        [cell configureCell:(self.selectedChannelIx == indexPath.row  &&  self.channelSelected) name:dc.name platform:@"IOS"];
     }
     
     return cell;
-    
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    switch (indexPath.section) {
-        case 0:
-            return [self descriptionCell];
-        default:
-            return [self channelCellForIndexPath:indexPath];
-    }
-    
 }
 
 - (IBAction)selectChannelButtonTapped:(id)sender {

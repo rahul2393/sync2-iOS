@@ -11,6 +11,7 @@
 #import "Project.h"
 #import "TextViewTableViewCell.h"
 #import "SettingsManager.h"
+#import "ProjectSelectionTableViewCell.h"
 
 @interface ProjectSelectionViewController ()
 @property (nonatomic, readwrite) BOOL useDummy;
@@ -27,6 +28,7 @@
     
     self.tableView.accessibilityIdentifier = @"projectTable";
     self.tableView.accessibilityLabel = @"projectTable";
+    [self.tableView registerNib:[UINib nibWithNibName:@"ProjectSelectionTableViewCell" bundle:nil] forCellReuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
     
     if (!self.projects) {
         
@@ -131,7 +133,7 @@
     if (indexPath.section == 0) {
         return 176.0;
     }else{
-        return 44.0;
+        return 49.0;
     }
     
 }
@@ -142,11 +144,13 @@
 
 
 -(UITableViewCell *) channelCellForIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell"];
+
+    ProjectSelectionTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    if (cell == nil) {
-        cell = [[TextViewTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
-    }
+        
+        if (!cell) {
+            cell = [[ProjectSelectionTableViewCell alloc] initWithStyle:UITableViewStylePlain reuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
+        }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -164,9 +168,9 @@
     cell.detailTextLabel.text = @"iOS";
     
     if (self.selectedIx == indexPath.row && self.projectSelected) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        //cell selected
     }else{
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        //cell not selected
     }
     
     return cell;

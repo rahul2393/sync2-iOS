@@ -10,7 +10,6 @@
 
 @interface DummyChannelData : NSObject
 
-+(NSString *) descriptionText;
 +(NSArray *) channelTitles;
 
 @end
