@@ -82,7 +82,20 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [self channelCellForIndexPath:indexPath];
+    ProjectSelectionTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
+    
+    if (cell == nil) {
+        cell = [[ProjectSelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
+    }
+    
+    if (self.useDummy) {
+        [cell configureCell:(self.selectedChannelIx == indexPath.row  &&  self.channelSelected) name:self.channels[indexPath.row] platform:@"IOS"];
+    }else {
+        DataChannel *dc = self.channels[indexPath.row];
+        [cell configureCell:(self.selectedChannelIx == indexPath.row  &&  self.channelSelected) name:dc.name platform:dc.type];
+    }
+    
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -105,23 +118,6 @@
     self.selectChannelButton.enabled = enabled;
 }
 
-
--(UITableViewCell *) channelCellForIndexPath:(NSIndexPath *)indexPath{
-    ProjectSelectionTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
-  
-    if (cell == nil) {
-        cell = [[ProjectSelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
-    }
-
-    if (self.useDummy) {
-        [cell configureCell:(self.selectedChannelIx == indexPath.row  &&  self.channelSelected) name:self.channels[indexPath.row] platform:@"IOS"];
-    }else {
-        DataChannel *dc = self.channels[indexPath.row];
-        [cell configureCell:(self.selectedChannelIx == indexPath.row  &&  self.channelSelected) name:dc.name platform:@"IOS"];
-    }
-    
-    return cell;
-}
 
 - (IBAction)selectChannelButtonTapped:(id)sender {
     

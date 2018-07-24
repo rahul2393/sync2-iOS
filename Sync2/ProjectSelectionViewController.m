@@ -9,7 +9,6 @@
 #import "ProjectSelectionViewController.h"
 #import "DummyProjectData.h"
 #import "Project.h"
-#import "TextViewTableViewCell.h"
 #import "SettingsManager.h"
 #import "ProjectSelectionTableViewCell.h"
 
@@ -78,10 +77,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 0) {
-        return;
-    }
-    
     if (self.selectedIx == indexPath.row) {
         self.projectSelected = !self.projectSelected;
         self.selectedIx = -1;
@@ -98,44 +93,11 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    switch (section) {
-        case 0:
-            return 1;
-        default:
-            return self.projects.count;
-    }
-}
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
-}
-
--(TextViewTableViewCell *) textCellForTableView:(UITableView *)tableView{
-    TextViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"projectInfoCell"];
-    
-    if (cell == nil) {
-        cell = [[TextViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"projectInfoCell"];
-    }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
-}
-
--(UITableViewCell *) descriptionCell{
-    TextViewTableViewCell *cell = [self textCellForTableView:self.tableView];
-    cell.label.text = @"Projects";
-    
-    return cell;
+    return self.projects.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (indexPath.section == 0) {
-        return 176.0;
-    }else{
-        return 49.0;
-    }
-    
+    return 49.0;
 }
 
 -(void) setButtonEnabled:(BOOL)enabled{
@@ -145,32 +107,17 @@
 
 -(UITableViewCell *) channelCellForIndexPath:(NSIndexPath *)indexPath{
 
-    ProjectSelectionTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell"];
+    ProjectSelectionTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
     
-        
-        if (!cell) {
-            cell = [[ProjectSelectionTableViewCell alloc] initWithStyle:UITableViewStylePlain reuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
-        }
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    
-    
-    if (self.useDummy) {
-        cell.textLabel.text = self.projects[indexPath.row];
-    }else{
-        Project *p = self.projects[indexPath.row];
-        cell.textLabel.text = p.name;
-        cell.accessibilityIdentifier = p.name;
-        cell.accessibilityLabel = @"project cell";
+    if (!cell) {
+        cell = [[ProjectSelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
     }
     
-    cell.detailTextLabel.text = @"iOS";
-    
-    if (self.selectedIx == indexPath.row && self.projectSelected) {
-        //cell selected
+    if (self.useDummy) {
+        [cell configureCell:(self.selectedIx == indexPath.row && self.projectSelected) name:self.projects[indexPath.row] platform:@""];
     }else{
-        //cell not selected
+        Project *p = self.projects[indexPath.row];
+        [cell configureCell:(self.selectedIx == indexPath.row && self.projectSelected) name:p.name platform:@""];
     }
     
     return cell;
@@ -178,13 +125,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    switch (indexPath.section) {
-        case 0:
-            return [self descriptionCell];
-        default:
-            return [self channelCellForIndexPath:indexPath];
-    }
+    return [self channelCellForIndexPath:indexPath];
 }
 
 
