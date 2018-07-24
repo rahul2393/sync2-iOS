@@ -11,6 +11,7 @@
 #import "TextViewTableViewCell.h"
 #import "TextNotification.h"
 #import "SettingsManager.h"
+#import "JoiningNotificationTableViewCell.h"
 @interface NotificationsTableViewController ()
 
 @property (nonatomic, readwrite) BOOL useDummyData;
@@ -23,10 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.useDummyData = NO;
-    
-    self.title = @"Notifications";
-
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 200;
+//    [self.tableView setContentInset:UIEdgeInsetsMake(10, 10, 0, 0)];
+    self.useDummyData = YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -58,7 +59,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.notifications.count;
+    return 5;
     
 }
 
