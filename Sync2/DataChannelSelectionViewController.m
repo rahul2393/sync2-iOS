@@ -89,10 +89,14 @@
     }
     
     if (self.useDummy) {
-        [cell configureCell:(self.selectedChannelIx == indexPath.row  &&  self.channelSelected) name:self.channels[indexPath.row] platform:@"IOS"];
+        cell.cellSelectedImage.image = (self.selectedChannelIx == indexPath.row  &&  self.channelSelected) ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
+        cell.channelName.text = self.channels[indexPath.row];
+        cell.platformName.text = @"IOS";
     }else {
         DataChannel *dc = self.channels[indexPath.row];
-        [cell configureCell:(self.selectedChannelIx == indexPath.row  &&  self.channelSelected) name:dc.name platform:dc.type];
+        cell.channelName.text = dc.name;
+        cell.platformName.text = dc.type;
+        cell.cellSelectedImage.image = (self.selectedChannelIx == indexPath.row  &&  self.channelSelected) ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
     }
     
     return cell;

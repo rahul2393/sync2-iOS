@@ -15,7 +15,6 @@
 		756C2D5820F5FEE7008560FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */; };
 		759926EC20FE2E790073693F /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759926EB20FE2E790073693F /* SplashViewController.m */; };
 		75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */; };
-		75DE397C2101D3490006BA78 /* ProjectSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DE397A2101D3490006BA78 /* ProjectSelectionTableViewCell.xib */; };
 		997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */; };
 		E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */; };
 		E90371441EE89B1E0033DED0 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E90371431EE89B1E0033DED0 /* Account.m */; };
@@ -142,7 +141,6 @@
 		759926EB20FE2E790073693F /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		75DE39782101D3490006BA78 /* ProjectSelectionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectSelectionTableViewCell.h; sourceTree = "<group>"; };
 		75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectSelectionTableViewCell.m; sourceTree = "<group>"; };
-		75DE397A2101D3490006BA78 /* ProjectSelectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectSelectionTableViewCell.xib; sourceTree = "<group>"; };
 		894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6011B6B43DBF0AC7C6C0493 /* Pods-Sync2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2/Pods-Sync2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -372,8 +370,8 @@
 		753CB7132106420300C11223 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				75DE39782101D3490006BA78 /* ProjectSelectionTableViewCell.h */,
-				75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */,
+				753CB71621070B2000C11223 /* Notifications */,
+				753CB71521070AF000C11223 /* Project-Channel-Selection */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -381,10 +379,38 @@
 		753CB7142106423600C11223 /* Storyboard and Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				753CB729210715DC00C11223 /* ProjectSelectionTableViewCell.xib */,
 				E9A3C2AF1ED5FD1500A938CB /* Main.storyboard */,
-				75DE397A2101D3490006BA78 /* ProjectSelectionTableViewCell.xib */,
 			);
 			name = "Storyboard and Xibs";
+			sourceTree = "<group>";
+		};
+		753CB71521070AF000C11223 /* Project-Channel-Selection */ = {
+			isa = PBXGroup;
+			children = (
+				75DE39782101D3490006BA78 /* ProjectSelectionTableViewCell.h */,
+				75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */,
+			);
+			name = "Project-Channel-Selection";
+			sourceTree = "<group>";
+		};
+		753CB71621070B2000C11223 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				753CB71721070B8100C11223 /* WelcomeNotificationTableViewCell.h */,
+				753CB71821070B8100C11223 /* WelcomeNotificationTableViewCell.m */,
+				753CB71A21070BD500C11223 /* JoiningNotificationTableViewCell.h */,
+				753CB71B21070BD500C11223 /* JoiningNotificationTableViewCell.m */,
+				753CB71D21070BE900C11223 /* FeedbackNotificationTableViewCell.h */,
+				753CB71E21070BE900C11223 /* FeedbackNotificationTableViewCell.m */,
+				753CB72021070BFD00C11223 /* SurveyNotificationTableViewCell.h */,
+				753CB72121070BFD00C11223 /* SurveyNotificationTableViewCell.m */,
+				753CB72321070C1500C11223 /* ScheduleNotificationTableViewCell.h */,
+				753CB72421070C1500C11223 /* ScheduleNotificationTableViewCell.m */,
+				753CB72621070C2C00C11223 /* VisitNotificationTableViewCell.h */,
+				753CB72721070C2C00C11223 /* VisitNotificationTableViewCell.m */,
+			);
+			name = Notifications;
 			sourceTree = "<group>";
 		};
 		759926E920FE2E190073693F /* Splash */ = {
@@ -1237,7 +1263,7 @@
 				E9A3C2DE1ED6101100A938CB /* Lato-Light.ttf in Resources */,
 				E9A3C2B61ED5FD1500A938CB /* LaunchScreen.storyboard in Resources */,
 				E9A3C2D81ED6101100A938CB /* Lato-BlackItalic.ttf in Resources */,
-				75DE397C2101D3490006BA78 /* ProjectSelectionTableViewCell.xib in Resources */,
+				753CB72A210715E300C11223 /* ProjectSelectionTableViewCell.xib in Resources */,
 				E9A3C2B31ED5FD1500A938CB /* Assets.xcassets in Resources */,
 				E9A3C2DF1ED6101100A938CB /* Lato-LightItalic.ttf in Resources */,
 				E9A3C2DC1ED6101100A938CB /* Lato-HairlineItalic.ttf in Resources */,

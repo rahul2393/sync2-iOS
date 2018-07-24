@@ -15,12 +15,6 @@
     // Initialization code
 }
 
--(void)configureCell:(BOOL)selected name:(NSString*)name platform:(NSString*)platform {
-    _cellSelectedImage.image = selected ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
-    _channelName.text = name;
-    _platformName.text = platform;
-}
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }

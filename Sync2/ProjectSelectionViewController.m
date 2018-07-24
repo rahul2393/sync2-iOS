@@ -114,10 +114,14 @@
     }
     
     if (self.useDummy) {
-        [cell configureCell:(self.selectedIx == indexPath.row && self.projectSelected) name:self.projects[indexPath.row] platform:@""];
+        cell.cellSelectedImage.image = (self.selectedIx == indexPath.row && self.projectSelected) ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
+        cell.channelName.text = self.projects[indexPath.row];
+        cell.platformName.text = @"";
     }else{
         Project *p = self.projects[indexPath.row];
-        [cell configureCell:(self.selectedIx == indexPath.row && self.projectSelected) name:p.name platform:@""];
+        cell.cellSelectedImage.image = (self.selectedIx == indexPath.row && self.projectSelected) ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
+        cell.channelName.text = p.name;
+        cell.platformName.text = @"";
     }
     
     return cell;

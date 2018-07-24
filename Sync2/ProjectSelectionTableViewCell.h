@@ -13,7 +13,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *channelName;
 @property (weak, nonatomic) IBOutlet UILabel *platformName;
 
-- (void)configureCell:(BOOL)selected name:(NSString*)name platform:(NSString*)platform;
-
-
 @end
