@@ -12,6 +12,11 @@
 		7520226A2061099C007FD829 /* TOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752022692061099C007FD829 /* TOSViewController.m */; };
 		753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70C2105600B00C11223 /* UIViewExtension.m */; };
 		753CB7102105D07900C11223 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70F2105D07900C11223 /* GradientView.m */; };
+		753CB71F21070BE900C11223 /* FeedbackNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB71E21070BE900C11223 /* FeedbackNotificationTableViewCell.m */; };
+		753CB72221070BFD00C11223 /* SurveyNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB72121070BFD00C11223 /* SurveyNotificationTableViewCell.m */; };
+		753CB72521070C1500C11223 /* ScheduleNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB72421070C1500C11223 /* ScheduleNotificationTableViewCell.m */; };
+		753CB72821070C2C00C11223 /* VisitNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB72721070C2C00C11223 /* VisitNotificationTableViewCell.m */; };
+		753CB72A210715E300C11223 /* ProjectSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 753CB729210715DC00C11223 /* ProjectSelectionTableViewCell.xib */; };
 		756C2D5820F5FEE7008560FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */; };
 		759926EC20FE2E790073693F /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759926EB20FE2E790073693F /* SplashViewController.m */; };
 		75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */; };
@@ -136,6 +141,15 @@
 		753CB70C2105600B00C11223 /* UIViewExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewExtension.m; sourceTree = "<group>"; };
 		753CB70E2105D06000C11223 /* GradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		753CB70F2105D07900C11223 /* GradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
+		753CB71D21070BE900C11223 /* FeedbackNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackNotificationTableViewCell.h; sourceTree = "<group>"; };
+		753CB71E21070BE900C11223 /* FeedbackNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackNotificationTableViewCell.m; sourceTree = "<group>"; };
+		753CB72021070BFD00C11223 /* SurveyNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SurveyNotificationTableViewCell.h; sourceTree = "<group>"; };
+		753CB72121070BFD00C11223 /* SurveyNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SurveyNotificationTableViewCell.m; sourceTree = "<group>"; };
+		753CB72321070C1500C11223 /* ScheduleNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScheduleNotificationTableViewCell.h; sourceTree = "<group>"; };
+		753CB72421070C1500C11223 /* ScheduleNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScheduleNotificationTableViewCell.m; sourceTree = "<group>"; };
+		753CB72621070C2C00C11223 /* VisitNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitNotificationTableViewCell.h; sourceTree = "<group>"; };
+		753CB72721070C2C00C11223 /* VisitNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitNotificationTableViewCell.m; sourceTree = "<group>"; };
+		753CB729210715DC00C11223 /* ProjectSelectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectSelectionTableViewCell.xib; sourceTree = "<group>"; };
 		756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		759926EA20FE2E5D0073693F /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		759926EB20FE2E790073693F /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
@@ -1407,8 +1421,10 @@
 				E9A3C2EB1ED780CC00A938CB /* WelcomeViewController.m in Sources */,
 				753CB7102105D07900C11223 /* GradientView.m in Sources */,
 				E95B9DC11F609481007943CA /* TextFieldTableViewCell.m in Sources */,
+				753CB72521070C1500C11223 /* ScheduleNotificationTableViewCell.m in Sources */,
 				E9A3C2A81ED5FD1500A938CB /* main.m in Sources */,
 				E9352485201FF050008D4F19 /* SGToken.m in Sources */,
+				753CB71C21070BD500C11223 /* JoiningNotificationTableViewCell.m in Sources */,
 				E98430BC20169E5A00F11887 /* MapSettingsTableViewController.m in Sources */,
 				E9518B64201802F9001818CC /* TextNotification.m in Sources */,
 				753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */,
@@ -1422,8 +1438,10 @@
 				E9B76D4F200D4E580095030C /* SettingsTableViewController.m in Sources */,
 				E9518B5F2018026B001818CC /* DummyNotificationData.m in Sources */,
 				E9CCF4C71EF1E78200BF96C6 /* QRCodeReaderView.m in Sources */,
+				753CB72821070C2C00C11223 /* VisitNotificationTableViewCell.m in Sources */,
 				E9A3C2FA1EDBA08500A938CB /* AccountsTableViewController.m in Sources */,
 				759926EC20FE2E790073693F /* SplashViewController.m in Sources */,
+				753CB71F21070BE900C11223 /* FeedbackNotificationTableViewCell.m in Sources */,
 				E903714C1EE8B6E10033DED0 /* NetworkManager.m in Sources */,
 				E95F582E1EE61EA3000562FC /* PushPermissionViewController.m in Sources */,
 				E9B76D4B200D37B90095030C /* RuleDetailTableViewController.m in Sources */,
@@ -1445,10 +1463,12 @@
 				E9B76D3F200D31E30095030C /* NotificationsTableViewController.m in Sources */,
 				E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */,
 				E9F29C152050B8EB0024E3B5 /* Environment.m in Sources */,
+				753CB72221070BFD00C11223 /* SurveyNotificationTableViewCell.m in Sources */,
 				E962B3511EF1FB2600ECB920 /* LogViewController.m in Sources */,
 				75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */,
 				E9B76D5F200D4F5F0095030C /* DataChannelSelectionViewController.m in Sources */,
 				E9FC99FB204E0BE20060B81D /* EnvironmentSelectionViewController.m in Sources */,
+				753CB71921070B8100C11223 /* WelcomeNotificationTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
