@@ -12,6 +12,7 @@
 		7520226A2061099C007FD829 /* TOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752022692061099C007FD829 /* TOSViewController.m */; };
 		753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70C2105600B00C11223 /* UIViewExtension.m */; };
 		753CB7102105D07900C11223 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70F2105D07900C11223 /* GradientView.m */; };
+		753CB71921070B8100C11223 /* WelcomeNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB71821070B8100C11223 /* WelcomeNotificationTableViewCell.m */; };
 		753CB71C21070BD500C11223 /* JoiningNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB71B21070BD500C11223 /* JoiningNotificationTableViewCell.m */; };
 		753CB71F21070BE900C11223 /* FeedbackNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB71E21070BE900C11223 /* FeedbackNotificationTableViewCell.m */; };
 		753CB72221070BFD00C11223 /* SurveyNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB72121070BFD00C11223 /* SurveyNotificationTableViewCell.m */; };
@@ -142,6 +143,8 @@
 		753CB70C2105600B00C11223 /* UIViewExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewExtension.m; sourceTree = "<group>"; };
 		753CB70E2105D06000C11223 /* GradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		753CB70F2105D07900C11223 /* GradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
+		753CB71721070B8100C11223 /* WelcomeNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcomeNotificationTableViewCell.h; sourceTree = "<group>"; };
+		753CB71821070B8100C11223 /* WelcomeNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeNotificationTableViewCell.m; sourceTree = "<group>"; };
 		753CB71A21070BD500C11223 /* JoiningNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoiningNotificationTableViewCell.h; sourceTree = "<group>"; };
 		753CB71B21070BD500C11223 /* JoiningNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoiningNotificationTableViewCell.m; sourceTree = "<group>"; };
 		753CB71D21070BE900C11223 /* FeedbackNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackNotificationTableViewCell.h; sourceTree = "<group>"; };

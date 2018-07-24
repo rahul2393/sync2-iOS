@@ -11,7 +11,11 @@
 #import "TextViewTableViewCell.h"
 #import "TextNotification.h"
 #import "SettingsManager.h"
+
+#import "WelcomeNotificationTableViewCell.h"
 #import "JoiningNotificationTableViewCell.h"
+#import "VisitNotificationTableViewCell.h"
+
 @interface NotificationsTableViewController ()
 
 @property (nonatomic, readwrite) BOOL useDummyData;
@@ -67,22 +71,41 @@
     return 1;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TextViewTableViewCell *cell = (TextViewTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"textNotificationCell" forIndexPath:indexPath];
-    
-    TextNotification *tn = (TextNotification *) self.notifications[indexPath.section];
-    cell.label.text = tn.title;
-    cell.textView.text = tn.body;
-    cell.dateLabel.text = [tn displayableDate];
-    
-    // Configure the cell...
-    
-    return cell;
+    switch (indexPath.section) {
+        case 0: {
+            printf("sdfa");
+            WelcomeNotificationTableViewCell *cell = (WelcomeNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"WelcomeNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            TextNotification *tn = (TextNotification *) self.notifications[0];
+            cell.titleLabel.text = tn.title;
+            cell.detailLabel.text = tn.body;
+            cell.dateLabel.text = [tn displayableDate];
+
+            // Configure the cell...
+
+            return cell;
+        }
+        case 1: {
+            printf("grvfcd");
+            JoiningNotificationTableViewCell *cell = (JoiningNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"JoiningNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            return cell;
+        }
+        default: {
+            JoiningNotificationTableViewCell *cell = (JoiningNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"JoiningNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            return cell;
+        }
+    }
+
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 144;
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView* footer = [[UIView alloc] init];
+    footer.backgroundColor = [UIColor clearColor];
+    return footer;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 10;
 }
 
 @end
