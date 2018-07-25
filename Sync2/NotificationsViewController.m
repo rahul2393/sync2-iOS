@@ -1,12 +1,12 @@
 //
-//  NotificationsTableViewController.m
+//  NotificationsViewController.m
 //  Sync2
 //
 //  Created by Ricky Kirkendall on 1/15/18.
 //  Copyright © 2018 Sixgill. All rights reserved.
 //
 
-#import "NotificationsTableViewController.h"
+#import "NotificationsViewController.h"
 #import "DummyNotificationData.h"
 #import "TextViewTableViewCell.h"
 #import "TextNotification.h"
@@ -19,7 +19,7 @@
 #import "ScheduleNotificationTableViewCell.h"
 #import "VisitNotificationTableViewCell.h"
 
-@interface NotificationsTableViewController ()
+@interface NotificationsViewController ()
 
 @property (nonatomic, readwrite) BOOL useDummyData;
 @property (nonatomic, strong) NSArray *notifications;
@@ -29,13 +29,15 @@
 
 #define SURVEY_OPTION_CELL_HEIGHT 38
 
-@implementation NotificationsTableViewController
+@implementation NotificationsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 200;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 //    [self.tableView setContentInset:UIEdgeInsetsMake(10, 10, 0, 0)];
     self.useDummyData = YES;
 }
@@ -53,6 +55,21 @@
                                              selector:@selector(update)
                                                  name:@"PushReceived"
                                                object:nil];
+
+    if (![[UIApplication sharedApplication] isRegisteredForRemoteNotifications]) {
+        self.tableView.hidden = true;
+        self.noNotificationsView.hidden = true;
+        self.permissionMissingView.hidden = false;
+    } else if ([[SettingsManager sharedManager] savedRemoteNotificationPayloads].count == 0) {
+        self.tableView.hidden = true;
+        self.noNotificationsView.hidden = false;
+        self.permissionMissingView.hidden = true;
+    } else {
+        self.tableView.hidden = false;
+        self.noNotificationsView.hidden = true;
+        self.permissionMissingView.hidden = true;
+    }
+
     
 }
 
@@ -134,4 +151,8 @@
     return 10;
 }
 
+- (IBAction)openDeviceSettings:(id)sender {
+    NSURL* settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    [[UIApplication sharedApplication] openURL:settingsURL];
+}
 @end

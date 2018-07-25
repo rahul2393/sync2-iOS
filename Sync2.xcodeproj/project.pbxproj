@@ -85,7 +85,7 @@
 		E9B30056206031A60034329C /* Sync2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B30055206031A60034329C /* Sync2UITests.m */; };
 		E9B3005F206034930034329C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B3005E206034930034329C /* SnapshotHelper.swift */; };
 		E9B76D3B200D31940095030C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D3A200D31940095030C /* MapViewController.m */; };
-		E9B76D3F200D31E30095030C /* NotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D3E200D31E30095030C /* NotificationsTableViewController.m */; };
+		E9B76D3F200D31E30095030C /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D3E200D31E30095030C /* NotificationsViewController.m */; };
 		E9B76D43200D32580095030C /* RulesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D42200D32580095030C /* RulesTableViewController.m */; };
 		E9B76D47200D35BB0095030C /* LogDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D46200D35BB0095030C /* LogDayTableViewController.m */; };
 		E9B76D4B200D37B90095030C /* RuleDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D4A200D37B90095030C /* RuleDetailTableViewController.m */; };
@@ -277,8 +277,8 @@
 		E9B3005E206034930034329C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		E9B76D39200D31940095030C /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		E9B76D3A200D31940095030C /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		E9B76D3D200D31E30095030C /* NotificationsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsTableViewController.h; sourceTree = "<group>"; };
-		E9B76D3E200D31E30095030C /* NotificationsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationsTableViewController.m; sourceTree = "<group>"; };
+		E9B76D3D200D31E30095030C /* NotificationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
+		E9B76D3E200D31E30095030C /* NotificationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
 		E9B76D41200D32580095030C /* RulesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesTableViewController.h; sourceTree = "<group>"; };
 		E9B76D42200D32580095030C /* RulesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesTableViewController.m; sourceTree = "<group>"; };
 		E9B76D45200D35BB0095030C /* LogDayTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogDayTableViewController.h; sourceTree = "<group>"; };
@@ -812,7 +812,7 @@
 				E935247E201FD2F6008D4F19 /* Login */,
 				E9B76D38200D31780095030C /* Map Controller */,
 				E98430B920169E4800F11887 /* Map Settings */,
-				E9B76D3C200D31BF0095030C /* Notifications Table Controller */,
+				E9B76D3C200D31BF0095030C /* Notifications Controller */,
 				E9352475201FC947008D4F19 /* Permission Views */,
 				E9B76D58200D4F300095030C /* Project Selection */,
 				E9B76D48200D37A90095030C /* Rule Detail Table */,
@@ -1010,14 +1010,14 @@
 			name = "Map Controller";
 			sourceTree = "<group>";
 		};
-		E9B76D3C200D31BF0095030C /* Notifications Table Controller */ = {
+		E9B76D3C200D31BF0095030C /* Notifications Controller */ = {
 			isa = PBXGroup;
 			children = (
 				E9518B5C20180240001818CC /* Dummy Notification Data */,
-				E9B76D3D200D31E30095030C /* NotificationsTableViewController.h */,
-				E9B76D3E200D31E30095030C /* NotificationsTableViewController.m */,
+				E9B76D3D200D31E30095030C /* NotificationsViewController.h */,
+				E9B76D3E200D31E30095030C /* NotificationsViewController.m */,
 			);
-			name = "Notifications Table Controller";
+			name = "Notifications Controller";
 			sourceTree = "<group>";
 		};
 		E9B76D40200D32490095030C /* Rules Table */ = {
@@ -1494,7 +1494,7 @@
 				E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */,
 				E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */,
 				7520226620610845007FD829 /* EULAViewController.m in Sources */,
-				E9B76D3F200D31E30095030C /* NotificationsTableViewController.m in Sources */,
+				E9B76D3F200D31E30095030C /* NotificationsViewController.m in Sources */,
 				E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */,
 				E9F29C152050B8EB0024E3B5 /* Environment.m in Sources */,
 				753CB72221070BFD00C11223 /* SurveyNotificationTableViewCell.m in Sources */,
