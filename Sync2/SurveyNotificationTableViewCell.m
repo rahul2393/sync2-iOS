@@ -7,12 +7,14 @@
 //
 
 #import "SurveyNotificationTableViewCell.h"
+#import "OptionSurveyTableViewCell.h"
 
 @implementation SurveyNotificationTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -23,4 +25,21 @@
 
 - (IBAction)sendTapped:(id)sender {
 }
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    OptionSurveyTableViewCell *cell = (OptionSurveyTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"OptionSurveyTableViewCellIdentifier" forIndexPath:indexPath];
+    cell.optionValueLabel.text = self.data[indexPath.row];
+    cell.selectedImageView.image = (indexPath.row % 2 == 0 ) ? [UIImage imageNamed: @"radio-button-check"] : [UIImage imageNamed: @"radio-button-unselected"];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 38;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.data.count;
+}
+
+
 @end

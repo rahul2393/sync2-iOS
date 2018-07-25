@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subDetailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *calendarDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *calendarDayTimeLabel;
 - (IBAction)scheduleTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 

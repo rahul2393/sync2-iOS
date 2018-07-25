@@ -23,8 +23,11 @@
 
 @property (nonatomic, readwrite) BOOL useDummyData;
 @property (nonatomic, strong) NSArray *notifications;
+@property (nonatomic, readwrite) NSInteger SURVEY_OPTION_CELL_HEIGHT;
 
 @end
+
+#define SURVEY_OPTION_CELL_HEIGHT 38
 
 @implementation NotificationsTableViewController
 
@@ -82,38 +85,43 @@
             cell.detailLabel.text = tn.body;
             cell.dateLabel.text = [tn displayableDate];
 
-            // Configure the cell...
-
             return cell;
         }
         case 1: {
             JoiningNotificationTableViewCell *cell = (JoiningNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"JoiningNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            
             return cell;
         }
         case 2: {
             FeedbackNotificationTableViewCell *cell = (FeedbackNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"FeedbackNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            cell.feedbackTextView.placeholder = @"e.g. Needs another whiteboard";
+            
             return cell;
         }
         case 3: {
             SurveyNotificationTableViewCell *cell = (SurveyNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"SurveyNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            NSArray *data = @[@"Black Coffee", @"Coldbrew Coffee", @"Espresso Coffee", @"Latte"];
+            cell.data = data;
+            cell.tableViewHeightConstraint.constant = data.count * SURVEY_OPTION_CELL_HEIGHT;
+            cell.tableView.backgroundColor = [UIColor redColor];
+            [cell.tableView reloadData];
+            
             return cell;
         }
         case 4: {
             ScheduleNotificationTableViewCell *cell = (ScheduleNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"ScheduleNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            
             return cell;
         }
         case 5: {
             VisitNotificationTableViewCell *cell = (VisitNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"VisitNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            
             return cell;
         }
         default: {
             return [[UITableViewCell alloc] init];
         }
     }
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {

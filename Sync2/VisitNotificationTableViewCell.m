@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.mapView.delegate = self;
     // Initialization code
 }
 
