@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface FeedbackNotificationTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UITextView *feedbackTextField;
+- (IBAction)sendFeedbackTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end

@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ScheduleNotificationTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subDetailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *calendarDateLabel;
+- (IBAction)scheduleTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end
