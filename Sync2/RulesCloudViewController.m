@@ -1,20 +1,20 @@
 //
-//  RulesTableViewController.m
+//  RulesCloudViewController.m
 //  Sync2
 //
 //  Created by Ricky Kirkendall on 1/15/18.
 //  Copyright © 2018 Sixgill. All rights reserved.
 //
 
-#import "RulesTableViewController.h"
+#import "RulesCloudViewController.h"
 
-@interface RulesTableViewController ()
+@interface RulesCloudViewController ()
 
 @property (nonatomic, strong) NSArray *rules;
 
 @end
 
-@implementation RulesTableViewController
+@implementation RulesCloudViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,10 +24,13 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.title = @"Rules";
     
     if (self.rules.count == 0) {
         [self.tableView setHidden:YES];
+        [self.emptyView setHidden:NO];
+    } else {
+        [self.tableView setHidden:NO];
+        [self.emptyView setHidden:YES];
     }
 }
 
@@ -40,7 +43,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 0;
+    return self.rules.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

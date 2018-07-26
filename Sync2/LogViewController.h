@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Account.h"
 #import "SDKManager.h"
-@interface LogViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextView *logTextView;
-- (IBAction)actionButtonTapped:(id)sender;
-
-
+#import "CustomSegmentControl.h"
+@interface LogViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet CustomSegmentControl *segmentView;
 
 @end

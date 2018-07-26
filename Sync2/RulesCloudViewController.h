@@ -1,5 +1,5 @@
 //
-//  RulesTableViewController.h
+//  RulesCloudViewController.h
 //  Sync2
 //
 //  Created by Ricky Kirkendall on 1/15/18.
@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RulesTableViewController : UIViewController
+@interface RulesCloudViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *emptyView;
 
 @end

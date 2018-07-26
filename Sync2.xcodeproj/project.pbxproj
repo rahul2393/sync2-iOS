@@ -22,6 +22,9 @@
 		75502A4F210876D300BFCA2A /* GCPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A4D210876D300BFCA2A /* GCPlaceholderTextView.m */; };
 		75502A5221087DA600BFCA2A /* OptionSurveyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A5121087DA600BFCA2A /* OptionSurveyTableViewCell.m */; };
 		75502A7421099DA800BFCA2A /* CustomSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A7321099DA700BFCA2A /* CustomSegmentControl.m */; };
+		75502A782109DAD700BFCA2A /* LogListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A772109DAD700BFCA2A /* LogListViewController.m */; };
+		75502A7B210A155200BFCA2A /* RulesEdgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A7A210A155200BFCA2A /* RulesEdgeViewController.m */; };
+		75502A7E210A162D00BFCA2A /* RulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A7D210A162D00BFCA2A /* RulesViewController.m */; };
 		756C2D5820F5FEE7008560FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */; };
 		759926EC20FE2E790073693F /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759926EB20FE2E790073693F /* SplashViewController.m */; };
 		75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */; };
@@ -87,7 +90,7 @@
 		E9B3005F206034930034329C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B3005E206034930034329C /* SnapshotHelper.swift */; };
 		E9B76D3B200D31940095030C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D3A200D31940095030C /* MapViewController.m */; };
 		E9B76D3F200D31E30095030C /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D3E200D31E30095030C /* NotificationsViewController.m */; };
-		E9B76D43200D32580095030C /* RulesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D42200D32580095030C /* RulesTableViewController.m */; };
+		E9B76D43200D32580095030C /* RulesCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D42200D32580095030C /* RulesCloudViewController.m */; };
 		E9B76D47200D35BB0095030C /* LogDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D46200D35BB0095030C /* LogDayTableViewController.m */; };
 		E9B76D4B200D37B90095030C /* RuleDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D4A200D37B90095030C /* RuleDetailTableViewController.m */; };
 		E9B76D4F200D4E580095030C /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D4E200D4E580095030C /* SettingsTableViewController.m */; };
@@ -165,6 +168,12 @@
 		75502A5121087DA600BFCA2A /* OptionSurveyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OptionSurveyTableViewCell.m; sourceTree = "<group>"; };
 		75502A7321099DA700BFCA2A /* CustomSegmentControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentControl.m; sourceTree = "<group>"; };
 		75502A7521099DC000BFCA2A /* CustomSegmentControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSegmentControl.h; sourceTree = "<group>"; };
+		75502A762109DAD700BFCA2A /* LogListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogListViewController.h; sourceTree = "<group>"; };
+		75502A772109DAD700BFCA2A /* LogListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogListViewController.m; sourceTree = "<group>"; };
+		75502A79210A155200BFCA2A /* RulesEdgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesEdgeViewController.h; sourceTree = "<group>"; };
+		75502A7A210A155200BFCA2A /* RulesEdgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesEdgeViewController.m; sourceTree = "<group>"; };
+		75502A7C210A162D00BFCA2A /* RulesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesViewController.h; sourceTree = "<group>"; };
+		75502A7D210A162D00BFCA2A /* RulesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesViewController.m; sourceTree = "<group>"; };
 		756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		759926EA20FE2E5D0073693F /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		759926EB20FE2E790073693F /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
@@ -282,8 +291,8 @@
 		E9B76D3A200D31940095030C /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		E9B76D3D200D31E30095030C /* NotificationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
 		E9B76D3E200D31E30095030C /* NotificationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
-		E9B76D41200D32580095030C /* RulesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesTableViewController.h; sourceTree = "<group>"; };
-		E9B76D42200D32580095030C /* RulesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesTableViewController.m; sourceTree = "<group>"; };
+		E9B76D41200D32580095030C /* RulesCloudViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesCloudViewController.h; sourceTree = "<group>"; };
+		E9B76D42200D32580095030C /* RulesCloudViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesCloudViewController.m; sourceTree = "<group>"; };
 		E9B76D45200D35BB0095030C /* LogDayTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogDayTableViewController.h; sourceTree = "<group>"; };
 		E9B76D46200D35BB0095030C /* LogDayTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogDayTableViewController.m; sourceTree = "<group>"; };
 		E9B76D49200D37B90095030C /* RuleDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuleDetailTableViewController.h; sourceTree = "<group>"; };
@@ -478,6 +487,8 @@
 			children = (
 				E903713E1EE89ABE0033DED0 /* AccountDetailTableViewController.h */,
 				E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */,
+				75502A762109DAD700BFCA2A /* LogListViewController.h */,
+				75502A772109DAD700BFCA2A /* LogListViewController.m */,
 			);
 			name = "Log Data";
 			sourceTree = "<group>";
@@ -1029,8 +1040,12 @@
 			isa = PBXGroup;
 			children = (
 				E9485EA620194D1E00B553E2 /* Dummy rules data */,
-				E9B76D41200D32580095030C /* RulesTableViewController.h */,
-				E9B76D42200D32580095030C /* RulesTableViewController.m */,
+				E9B76D41200D32580095030C /* RulesCloudViewController.h */,
+				75502A7C210A162D00BFCA2A /* RulesViewController.h */,
+				75502A7D210A162D00BFCA2A /* RulesViewController.m */,
+				75502A79210A155200BFCA2A /* RulesEdgeViewController.h */,
+				75502A7A210A155200BFCA2A /* RulesEdgeViewController.m */,
+				E9B76D42200D32580095030C /* RulesCloudViewController.m */,
 			);
 			name = "Rules Table";
 			sourceTree = "<group>";
@@ -1439,13 +1454,14 @@
 			files = (
 				E962B3561EF1FDC400ECB920 /* SDKManager.m in Sources */,
 				E95F582A1EE61E7B000562FC /* CameraPermissionViewController.m in Sources */,
-				E9B76D43200D32580095030C /* RulesTableViewController.m in Sources */,
+				E9B76D43200D32580095030C /* RulesCloudViewController.m in Sources */,
 				E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */,
 				E9352481201FD301008D4F19 /* LoginViewController.m in Sources */,
 				E90371481EE8B6110033DED0 /* ListTableViewController.m in Sources */,
 				E97A204D2023D10900FDB7B2 /* NotificationManager.m in Sources */,
 				E9518B572017EFA6001818CC /* DataChannel.m in Sources */,
 				E928BB2E20210C1A0002C59E /* Landmark.m in Sources */,
+				75502A782109DAD700BFCA2A /* LogListViewController.m in Sources */,
 				E943D3EC2012CC0700882D09 /* DummyMapData.m in Sources */,
 				E962B34D1EF1F42A00ECB920 /* SwitchCell.m in Sources */,
 				E95F58321EE88258000562FC /* SettingsManager.m in Sources */,
@@ -1503,8 +1519,10 @@
 				E9B76D3F200D31E30095030C /* NotificationsViewController.m in Sources */,
 				E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */,
 				E9F29C152050B8EB0024E3B5 /* Environment.m in Sources */,
+				75502A7B210A155200BFCA2A /* RulesEdgeViewController.m in Sources */,
 				753CB72221070BFD00C11223 /* SurveyNotificationTableViewCell.m in Sources */,
 				E962B3511EF1FB2600ECB920 /* LogViewController.m in Sources */,
+				75502A7E210A162D00BFCA2A /* RulesViewController.m in Sources */,
 				75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */,
 				E9B76D5F200D4F5F0095030C /* DataChannelSelectionViewController.m in Sources */,
 				E9FC99FB204E0BE20060B81D /* EnvironmentSelectionViewController.m in Sources */,

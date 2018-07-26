@@ -1,35 +1,33 @@
-    //
-//  LogViewController.m
+//
+//  RulesViewController.m
 //  Sync2
 //
-//  Created by Ricky Kirkendall on 6/14/17.
-//  Copyright © 2017 Sixgill. All rights reserved.
+//  Created by Sanchit Mittal on 26/07/18.
+//  Copyright © 2018 Sixgill. All rights reserved.
 //
 
-#import "LogViewController.h"
-#import "AccountDetailTableViewController.h"
-#import "LogListViewController.h"
+#import "RulesViewController.h"
+#import "RulesEdgeViewController.h"
+#import "RulesCloudViewController.h"
 
-@interface LogViewController ()
-@property (nonatomic, strong) NSString *logs;
+@interface RulesViewController ()
 @property (nonatomic,strong) UIPageViewController* pageController;
 @property (nonatomic, readwrite) NSMutableArray *viewControllers;
 @property (nonatomic, readwrite) NSInteger currentPage;
-@property (nonatomic, readwrite) AccountDetailTableViewController* vc1;
-@property (nonatomic, readwrite) LogListViewController* vc2;
+@property (nonatomic, readwrite) RulesEdgeViewController* vc1;
+@property (nonatomic, readwrite) RulesCloudViewController* vc2;
 -(void) createPageViewController;
 -(NSUInteger) indexofviewController: (UIViewController*) viewController;
 @end
 
-@implementation LogViewController
+@implementation RulesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.viewControllers = [[NSMutableArray alloc] init];
-    self.logs = [[SDKManager sharedManager] logs];
     
-    self.vc1 = [self.storyboard instantiateViewControllerWithIdentifier:@"LogMapViewControllerIdentifier"];
-    self.vc2 = [self.storyboard instantiateViewControllerWithIdentifier:@"LogListViewControllerIdentifier"];
+    self.vc1 = [self.storyboard instantiateViewControllerWithIdentifier:@"RulesEdgeViewControllerIdentifier"];
+    self.vc2 = [self.storyboard instantiateViewControllerWithIdentifier:@"RulesCloudViewControllerIdentifier"];
     
     
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
