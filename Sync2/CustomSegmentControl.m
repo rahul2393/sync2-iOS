@@ -12,41 +12,37 @@
 @interface CustomSegmentControl ()
 @property (nonatomic, readwrite) UIView* selector;
 @property (nonatomic, readwrite) NSMutableArray *buttonArray;
-
-@property (nonatomic, readwrite) NSInteger selectedSegmentIndex;
 - (void) updateView;
-//- (void) buttonTapped: (UIButton*) button;
-//buttonTapped(button: UIButton
 @end
 
 @implementation CustomSegmentControl
 
 -(void) setCommaSeperatedButtonTitles:(NSString *)commaSeperatedButtonTitles {
     _commaSeperatedButtonTitles = commaSeperatedButtonTitles;
-//    [self setNeedsLayout];
+    [self updateView];
 }
 
 - (void)setTextColor:(UIColor *)textColor {
     _textColor = textColor;
+    [self updateView];
 }
 
 - (void)setSelectorColor:(UIColor *)selectorColor {
     _selectorColor = selectorColor;
-//    [self setNeedsLayout];
+    [self updateView];
 }
 
 - (void)setSelectorTextColor:(UIColor *)selectorTextColor {
     _selectorTextColor = selectorTextColor;
-//    [self setNeedsLayout];
+    [self updateView];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
     if (self) {
-        _selectedSegmentIndex = 0;
-        _buttonArray = [[NSMutableArray alloc] init];
-        [self updateView];
+        self.selectedSegmentIndex = 0;
+        self.buttonArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -55,15 +51,14 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _selectedSegmentIndex = 0;
-        _buttonArray = [[NSMutableArray alloc] init];
-        [self updateView];
+        self.selectedSegmentIndex = 0;
+        self.buttonArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 -(void) updateView {
-    [_buttonArray removeAllObjects];
+    [self.buttonArray removeAllObjects];
     for (UIView* view in self.subviews) {
         [view removeFromSuperview];
     }
@@ -78,18 +73,19 @@
         [self.buttonArray addObject:button];
     }
     
-    [self.buttonArray[0] setTitleColor:_selectorTextColor forState:normal];
-    CGFloat selectorWidth = self.frame.size.width / buttonTitles.count;
+    [self.buttonArray[0] setTitleColor:self.selectorTextColor forState:normal];
+//    CGFloat selectorWidth = self.frame.size.width / buttonTitles.count;
+    CGFloat selectorWidth = UIScreen.mainScreen.bounds.size.width / buttonTitles.count;
     
     NSInteger y = (CGRectGetMaxY(self.frame) - CGRectGetMinY(self.frame) - 3.0);
     
     self.selector = [[UIView alloc] initWithFrame:CGRectMake(0, y, selectorWidth, 3.0)];
     self.selector.backgroundColor = self.selectorColor;
-    [self addSubview:_selector];
+    [self addSubview:self.selector];
     
     // Create a StackView
     
-    UIStackView *stackView = [[UIStackView alloc] initWithArrangedSubviews:_buttonArray];
+    UIStackView *stackView = [[UIStackView alloc] initWithArrangedSubviews:self.buttonArray];
     stackView.axis = UILayoutConstraintAxisHorizontal;
     stackView.alignment = UIStackViewAlignmentFill;
     stackView.distribution = UIStackViewDistributionFillEqually;
@@ -107,14 +103,14 @@
 - (void)buttonTapped:(UIButton *)button {
     
     int buttonIndex;
-    for (buttonIndex = 0; buttonIndex < [_buttonArray count]; buttonIndex++) {
-        UIButton* btn = [_buttonArray objectAtIndex:buttonIndex];
+    for (buttonIndex = 0; buttonIndex < [self.buttonArray count]; buttonIndex++) {
+        UIButton* btn = [self.buttonArray objectAtIndex:buttonIndex];
         
-        [btn setTitleColor:_textColor forState:normal];
+        [btn setTitleColor:self.textColor forState:normal];
         
         if (btn == button) {
-            _selectedSegmentIndex = buttonIndex;
-            CGFloat selectorStartPosition = self.frame.size.width / _buttonArray.count * buttonIndex;
+            self.selectedSegmentIndex = buttonIndex;
+            CGFloat selectorStartPosition = UIScreen.mainScreen.bounds.size.width / self.buttonArray.count * buttonIndex;
             
             [UIView animateWithDuration:0.3 animations:^{
                 CGRect frame = self.selector.frame;
@@ -122,17 +118,18 @@
                 self.selector.frame = frame;
             }];
             
-            [btn setTitleColor:_selectorTextColor forState:normal];
+            [btn setTitleColor:self.selectorTextColor forState:normal];
         }
     }
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
-- (void)updateSegmentedControlSegs:(int)index {
-    for(UIButton* btn in _buttonArray) {
-        [btn setTitleColor:_textColor forState:normal];
+- (void)updateSegmentedControlSegs:(NSInteger)index {
+    for(UIButton* btn in self.buttonArray) {
+        [btn setTitleColor:self.textColor forState:normal];
     }
     
-    CGFloat selectorStartPosition = self.frame.size.width / _buttonArray.count * index;
+    CGFloat selectorStartPosition = UIScreen.mainScreen.bounds.size.width / self.buttonArray.count * index;
     
     [UIView animateWithDuration:0.3 animations:^{
         CGRect frame = self.selector.frame;
@@ -141,7 +138,7 @@
 
     }];
     
-    [_buttonArray[index] setTitleColor:_selectorTextColor forState:normal];
+    [self.buttonArray[index] setTitleColor:self.selectorTextColor forState:normal];
 }
 
 @end

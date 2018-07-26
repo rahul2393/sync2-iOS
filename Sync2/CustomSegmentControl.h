@@ -16,5 +16,6 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable UIColor* textColor;
 @property (nonatomic) IBInspectable UIColor* selectorColor;
 @property (nonatomic) IBInspectable UIColor* selectorTextColor;
--(void) updateSegmentedControlSegs:(int)index;
+@property (nonatomic, readwrite) NSInteger selectedSegmentIndex;
+-(void) updateSegmentedControlSegs:(NSInteger)index;
 @end
