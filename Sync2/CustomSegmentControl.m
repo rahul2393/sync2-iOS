@@ -73,8 +73,11 @@
         [self.buttonArray addObject:button];
     }
     
+    if (!(self.buttonArray.count > 0 )) {
+        return ;
+    }
+    
     [self.buttonArray[0] setTitleColor:self.selectorTextColor forState:normal];
-//    CGFloat selectorWidth = self.frame.size.width / buttonTitles.count;
     CGFloat selectorWidth = UIScreen.mainScreen.bounds.size.width / buttonTitles.count;
     
     NSInteger y = (CGRectGetMaxY(self.frame) - CGRectGetMinY(self.frame) - 3.0);

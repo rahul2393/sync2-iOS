@@ -1125,14 +1125,14 @@ You can now proceed to Login.</string>
                         <color key="selectedImageTintColor" red="0.0" green="0.98158007860183716" blue="0.23887109756469727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="k3B-Al-8Ut" kind="relationship" relationship="viewControllers" id="LjP-7p-sKc"/>
-                        <segue destination="myb-OP-fNK" kind="relationship" relationship="viewControllers" id="qNG-dY-FlY"/>
-                        <segue destination="ti7-xg-rMP" kind="relationship" relationship="viewControllers" id="jBg-I0-tSH"/>
                         <segue destination="nZx-4k-yIp" kind="presentation" identifier="showDataChannelSelection" id="bdL-UT-Onr"/>
                         <segue destination="GG5-PT-2eE" kind="presentation" identifier="showProjectSelection" id="tiO-Cx-fFe"/>
                         <segue destination="5P7-yC-Z8k" kind="show" identifier="logoutSegue" id="Xep-ZI-SYY"/>
-                        <segue destination="amc-nY-38N" kind="relationship" relationship="viewControllers" id="4Fn-di-4V7"/>
+                        <segue destination="k3B-Al-8Ut" kind="relationship" relationship="viewControllers" id="LjP-7p-sKc"/>
+                        <segue destination="myb-OP-fNK" kind="relationship" relationship="viewControllers" id="qNG-dY-FlY"/>
                         <segue destination="pji-3k-kYe" kind="relationship" relationship="viewControllers" id="w7q-1m-dbb"/>
+                        <segue destination="ti7-xg-rMP" kind="relationship" relationship="viewControllers" id="jBg-I0-tSH"/>
+                        <segue destination="amc-nY-38N" kind="relationship" relationship="viewControllers" id="4Fn-di-4V7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8d-Lw-iXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1499,7 +1499,7 @@ Let us know what you would like to see:</string>
                                                             <rect key="frame" x="0.0" y="28" width="280" height="38"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lv-xe-yKM" id="5ET-8I-o9t">
-                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="38"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="37.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-yQ-dY7">
@@ -2043,14 +2043,14 @@ Permission Missing</string>
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rules-empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="af7-sD-Psh">
-                                        <rect key="frame" x="85" y="194" width="150" height="160"/>
+                                        <rect key="frame" x="122.5" y="183" width="75" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="2nt-z0-gPg"/>
+                                            <constraint firstAttribute="width" constant="75" id="2nt-z0-gPg"/>
                                             <constraint firstAttribute="width" secondItem="af7-sD-Psh" secondAttribute="height" multiplier="15:16" id="qW9-Wv-oYO"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No rules exist in this project." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="rTf-4f-gJ8">
-                                        <rect key="frame" x="68" y="372" width="184" height="21"/>
+                                        <rect key="frame" x="68" y="281" width="184" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="is8-yH-N5s"/>
                                         </constraints>
@@ -2064,12 +2064,12 @@ Permission Missing</string>
                                     <constraint firstItem="rTf-4f-gJ8" firstAttribute="top" secondItem="af7-sD-Psh" secondAttribute="bottom" constant="18" id="7h9-dN-aBQ"/>
                                     <constraint firstItem="rTf-4f-gJ8" firstAttribute="leading" secondItem="oHC-MO-7Xp" secondAttribute="leading" constant="68" id="ADL-HI-JrM"/>
                                     <constraint firstItem="af7-sD-Psh" firstAttribute="centerX" secondItem="oHC-MO-7Xp" secondAttribute="centerX" id="KLe-3O-0kJ"/>
-                                    <constraint firstItem="af7-sD-Psh" firstAttribute="centerY" secondItem="oHC-MO-7Xp" secondAttribute="centerY" id="l4b-HE-s6W"/>
+                                    <constraint firstItem="af7-sD-Psh" firstAttribute="centerY" secondItem="oHC-MO-7Xp" secondAttribute="centerY" constant="-51" id="ZET-b9-qfk"/>
                                     <constraint firstAttribute="trailing" secondItem="rTf-4f-gJ8" secondAttribute="trailing" constant="68" id="yHh-GJ-uof"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="jAI-k0-Xpb">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="jAI-k0-Xpb">
+                                <rect key="frame" x="0.0" y="19" width="320" height="548"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="textNotificationCell" rowHeight="132" id="TSH-PP-LDU">
@@ -3322,14 +3322,14 @@ Permission</string>
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rules-empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="61a-cD-0cc">
-                                        <rect key="frame" x="85" y="194" width="150" height="160"/>
+                                        <rect key="frame" x="122.5" y="183" width="75" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="2yf-Cy-WdH"/>
+                                            <constraint firstAttribute="width" constant="75" id="2yf-Cy-WdH"/>
                                             <constraint firstAttribute="width" secondItem="61a-cD-0cc" secondAttribute="height" multiplier="15:16" id="h5w-xA-dnw"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No rules exist in this project." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Gap-l6-Xp3">
-                                        <rect key="frame" x="68" y="372" width="184" height="21"/>
+                                        <rect key="frame" x="68" y="281" width="184" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="s47-vw-Ngv"/>
                                         </constraints>
@@ -3344,7 +3344,7 @@ Permission</string>
                                     <constraint firstItem="61a-cD-0cc" firstAttribute="centerX" secondItem="YRh-np-3n1" secondAttribute="centerX" id="Jft-at-J2S"/>
                                     <constraint firstAttribute="trailing" secondItem="Gap-l6-Xp3" secondAttribute="trailing" constant="68" id="fWT-rf-oWY"/>
                                     <constraint firstItem="Gap-l6-Xp3" firstAttribute="top" secondItem="61a-cD-0cc" secondAttribute="bottom" constant="18" id="kdK-DW-aWk"/>
-                                    <constraint firstItem="61a-cD-0cc" firstAttribute="centerY" secondItem="YRh-np-3n1" secondAttribute="centerY" id="yDu-cu-M4n"/>
+                                    <constraint firstItem="61a-cD-0cc" firstAttribute="centerY" secondItem="YRh-np-3n1" secondAttribute="centerY" constant="-51" id="yDu-cu-M4n"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Vmg-yO-U3D">
@@ -4683,9 +4683,9 @@ revised: 5/9/2016</string>
         <image name="welcome-screen-footer" width="165" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XtT-hd-MMq"/>
+        <segue reference="tiO-Cx-fFe"/>
         <segue reference="dKW-jL-B8K"/>
-        <segue reference="mzM-J5-9TN"/>
+        <segue reference="bdL-UT-Onr"/>
         <segue reference="Xep-ZI-SYY"/>
     </inferredMetricsTieBreakers>
 </document>
