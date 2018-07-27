@@ -9,29 +9,31 @@
 #import "LogListViewController.h"
 
 @interface LogListViewController ()
-
+@property NSArray* logs;
 @end
 
 @implementation LogListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.tableview.delegate = self;
+    self.tableview.dataSource = self;
+    
+    self.logs = [[NSArray alloc] initWithObjects: @"1:10:00 PM, June 20, 2018", @"1:09:30 PM, June 20, 2018", @"1:09:00 PM, June 20, 2018", @"1:08:30 PM, June 20, 2018", @"1:08:00 PM, June 20, 2018", @"1:07:30 PM, June 20, 2018", @"1:07:00 PM, June 20, 2018", @"1:06:30 PM, June 20, 2018", nil] ;
+
+    [self.tableview reloadData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 8;
 }
 
-/*
-#pragma mark - Navigation
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LogListCellIdentifier" forIndexPath:indexPath];
+    cell.textLabel.text = self.logs[indexPath.row];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return cell;
 }
-*/
 
 @end
