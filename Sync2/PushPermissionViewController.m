@@ -7,6 +7,7 @@
 //
 
 #import "PushPermissionViewController.h"
+#import "Device.h"
 
 @interface PushPermissionViewController ()
 
@@ -26,16 +27,13 @@
                                              selector:@selector(permissionChanged)
                                                  name:@"PushPermissionChanged"
                                                object:nil];
-    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
-        
-        switch ((int)[[UIScreen mainScreen] nativeBounds].size.height) {
-                
-            case 1136:
-                _skipButtonBottomConstraint.constant = 0.5;
-                break;
-            default:
-                _skipButtonBottomConstraint.constant = 32.5;
-        }
+    
+    switch (UIDevice.currentDevice.screenType) {
+        case iPhoneX:
+            _skipButtonBottomConstraint.constant = 0.5;
+            break;
+        default:
+            _skipButtonBottomConstraint.constant = 32.5;
     }
 }
 

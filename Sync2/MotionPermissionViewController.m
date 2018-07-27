@@ -7,7 +7,7 @@
 //
 
 #import "MotionPermissionViewController.h"
-
+#import "Device.h"
 @interface MotionPermissionViewController ()
 @property(nonatomic, strong) CMMotionActivityManager *motionActivityManager;
 @end
@@ -22,17 +22,14 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
-        
-        switch ((int)[[UIScreen mainScreen] nativeBounds].size.height) {
-                
-            case 1136:
-                _skipButtonBottomConstraint.constant = 0.5;
-                break;
-            default:
-                _skipButtonBottomConstraint.constant = 32.5;
-        }
+    switch (UIDevice.currentDevice.screenType) {
+        case iPhoneX:
+            _skipButtonBottomConstraint.constant = 0.5;
+            break;
+        default:
+            _skipButtonBottomConstraint.constant = 32.5;
     }
+    
 }
 
 /*

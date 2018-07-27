@@ -1496,6 +1496,7 @@
 				E9CCF4C61EF1E78200BF96C6 /* QRCodeReader.m in Sources */,
 				E9B76D47200D35BB0095030C /* LogDayTableViewController.m in Sources */,
 				E9B76D4F200D4E580095030C /* SettingsTableViewController.m in Sources */,
+				75D71583210AF214007378D5 /* Device.m in Sources */,
 				E9518B5F2018026B001818CC /* DummyNotificationData.m in Sources */,
 				E9CCF4C71EF1E78200BF96C6 /* QRCodeReaderView.m in Sources */,
 				75502A7421099DA800BFCA2A /* CustomSegmentControl.m in Sources */,
