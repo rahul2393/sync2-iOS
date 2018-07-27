@@ -7,7 +7,7 @@
 //
 
 #import "LogViewController.h"
-#import "AccountDetailTableViewController.h"
+#import "LogMapViewController.h"
 #import "LogListViewController.h"
 
 @interface LogViewController ()
@@ -15,7 +15,7 @@
 @property (nonatomic,strong) UIPageViewController* pageController;
 @property (nonatomic, readwrite) NSMutableArray *viewControllers;
 @property (nonatomic, readwrite) NSInteger currentPage;
-@property (nonatomic, readwrite) AccountDetailTableViewController* vc1;
+@property (nonatomic, readwrite) LogMapViewController* vc1;
 @property (nonatomic, readwrite) LogListViewController* vc2;
 -(void) createPageViewController;
 -(NSUInteger) indexofviewController: (UIViewController*) viewController;
