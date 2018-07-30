@@ -75,7 +75,7 @@
 		E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E962B36E1EF2F45000ECB920 /* CoreMotion.framework */; };
 		E966682B20082743006911C3 /* MasterTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E966682A20082743006911C3 /* MasterTabViewController.m */; };
 		E97A204D2023D10900FDB7B2 /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E97A204C2023D10900FDB7B2 /* NotificationManager.m */; };
-		E98430BC20169E5A00F11887 /* MapSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E98430BB20169E5A00F11887 /* MapSettingsTableViewController.m */; };
+		E98430BC20169E5A00F11887 /* MapSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E98430BB20169E5A00F11887 /* MapSettingsViewController.m */; };
 		E9A3C2A81ED5FD1500A938CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2A71ED5FD1500A938CB /* main.m */; };
 		E9A3C2AB1ED5FD1500A938CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A3C2AA1ED5FD1500A938CB /* AppDelegate.m */; };
 		E9A3C2B11ED5FD1500A938CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A3C2AF1ED5FD1500A938CB /* Main.storyboard */; };
@@ -278,8 +278,8 @@
 		E966682A20082743006911C3 /* MasterTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterTabViewController.m; sourceTree = "<group>"; };
 		E97A204B2023D10900FDB7B2 /* NotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
 		E97A204C2023D10900FDB7B2 /* NotificationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationManager.m; sourceTree = "<group>"; };
-		E98430BA20169E5A00F11887 /* MapSettingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapSettingsTableViewController.h; sourceTree = "<group>"; };
-		E98430BB20169E5A00F11887 /* MapSettingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapSettingsTableViewController.m; sourceTree = "<group>"; };
+		E98430BA20169E5A00F11887 /* MapSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapSettingsViewController.h; sourceTree = "<group>"; };
+		E98430BB20169E5A00F11887 /* MapSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapSettingsViewController.m; sourceTree = "<group>"; };
 		E9A3C2A31ED5FD1500A938CB /* Sync2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sync2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A3C2A71ED5FD1500A938CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9A3C2A91ED5FD1500A938CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -879,8 +879,8 @@
 		E98430B920169E4800F11887 /* Map Settings */ = {
 			isa = PBXGroup;
 			children = (
-				E98430BA20169E5A00F11887 /* MapSettingsTableViewController.h */,
-				E98430BB20169E5A00F11887 /* MapSettingsTableViewController.m */,
+				E98430BA20169E5A00F11887 /* MapSettingsViewController.h */,
+				E98430BB20169E5A00F11887 /* MapSettingsViewController.m */,
 			);
 			name = "Map Settings";
 			sourceTree = "<group>";
@@ -1518,7 +1518,7 @@
 				E9352485201FF050008D4F19 /* SGToken.m in Sources */,
 				753CB71C21070BD500C11223 /* JoiningNotificationTableViewCell.m in Sources */,
 				75502A81210A5DC800BFCA2A /* LogMapViewController.m in Sources */,
-				E98430BC20169E5A00F11887 /* MapSettingsTableViewController.m in Sources */,
+				E98430BC20169E5A00F11887 /* MapSettingsViewController.m in Sources */,
 				E9518B64201802F9001818CC /* TextNotification.m in Sources */,
 				753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */,
 				E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */,
