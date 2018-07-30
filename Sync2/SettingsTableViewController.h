@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsTableViewController : UITableViewController
+@interface SettingsTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)logoutTapped:(id)sender;
 -(void) logout;
 

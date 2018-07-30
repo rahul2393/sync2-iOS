@@ -15,6 +15,7 @@
 #import "ProjectSelectionViewController.h"
 #import "EnvironmentSelectionViewController.h"
 #import "EnvironmentManager.h"
+#import "SettingsTableViewCell.h"
 @interface SettingsTableViewController ()
 @property (nonatomic, readwrite) BOOL useDummyData;
 @property (nonatomic, strong) NSArray *dataChannels;
@@ -29,8 +30,9 @@
     
     _useDummyData = NO;
     
-    self.title = @"Settings";
-    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -63,26 +65,37 @@
     }];
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *labelView = [[UIView alloc]initWithFrame:CGRectMake(10, 0, tableView.frame.size.width-20, 28)];
+    labelView.backgroundColor = [UIColor clearColor];
     
-    if (section != 0) {
-        return nil;
-    }
-    
-    UIView *labelView = [[UIView alloc]initWithFrame:CGRectMake(10, 0, tableView.frame.size.width-20, 100)];
     UILabel *label = [[UILabel alloc] initWithFrame:labelView.frame];
-    label.numberOfLines = 0;
-    label.textColor = [UIColor darkGrayColor];
-    label.text = @"Project and channel are set for the duration of your session. Please logout to change these settings.";
+    [label setFont:[UIFont systemFontOfSize:14]];
+
+    if (section == 0) {
+        label.text = @"Account";
+    } else {
+        label.text = @"Device Info";
+    }
+
     [labelView addSubview:label];
+    
     return labelView;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 28;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 28)];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (section != 0) {
-        return 0;
-    }
-    return 100;
+    return 28;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -122,22 +135,15 @@
 
     switch (section) {
         case 0:
-            return 3;
+            return 4;
         default:
-            return 1;
+            return 6;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self dataCellForIndexPath:indexPath];
-}
-
--(UITableViewCell *) dataCellForIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    SettingsTableViewCell *cell = (SettingsTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:@"SettingsTableViewCellIdentifier" forIndexPath:indexPath];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
-    }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -145,54 +151,97 @@
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:{
-                cell.textLabel.text = @"Logged-In Email";
+                cell.keyLabel.text = @"Logged-In Email";
                 NSString *email = [[SettingsManager sharedManager] currentAccountEmail];
                 if (!email) {
                     email = @"";
                 }
-                cell.detailTextLabel.text = email;
+                cell.valueLabel.text = email;
                 cell.accessoryType = UITableViewCellAccessoryNone;
                 break;
             }
             case 1:{
-                cell.textLabel.text = @"Project";
+                cell.keyLabel.text = @"Project";
                 if (self.useDummyData) {
-                    cell.detailTextLabel.text = [[DummySettingsData project] name];
+                    cell.valueLabel.text = [[DummySettingsData project] name];
                 }else{
                     Project *selected = [[SettingsManager sharedManager] selectedProject];
                     NSString *t = @"";
                     if (selected) {
                         t = selected.name;
                     }
-                    cell.detailTextLabel.text = t;
-                    cell.accessoryType = UITableViewCellAccessoryNone;
+                    cell.valueLabel.text = t;
                 }
-                
-            }
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 break;
-                
-            default:{
-                cell.textLabel.text = @"Data Channel";
+            }
+            case 2:{
+                cell.keyLabel.text = @"Data Channel";
                 if (self.useDummyData) {
-                    cell.detailTextLabel.text = [[DummySettingsData dataChannel] name];
+                    cell.valueLabel.text = [[DummySettingsData dataChannel] name];
                 }else{
                     DataChannel *selected = [[SettingsManager sharedManager] selectedDataChannel];
                     NSString *t = @"";
                     if (selected) {
                         t = selected.name;
                     }
-                    cell.detailTextLabel.text = t;
-                    cell.accessoryType = UITableViewCellAccessoryNone;
+                    cell.valueLabel.text = t;
                 }
-            }
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 break;
+            }
+            case 3:{
+                cell.keyLabel.text = @"API URL";
+                cell.valueLabel.text = @"sense-api.sixgill.io";
+                cell.accessoryType = UITableViewCellAccessoryNone;
+                break;
+            }
+            default:{
+                break;
+            }
         }
     }else{
         
-        Environment *env = [[EnvironmentManager sharedManager] environments][[[EnvironmentManager sharedManager] selectedEnvironment]];
+        switch (indexPath.row) {
+            case 0: {
+                cell.keyLabel.text = @"Device ID";
+                cell.valueLabel.text = @"01C7HHDH10Y0RDKNRWDYAX7VXY";
+                break;
+            }
+            case 1: {
+                cell.keyLabel.text = @"Device Type";
+                cell.valueLabel.text = @"iOS";
+                break;
+            }
+            case 2: {
+                cell.keyLabel.text = @"Manufacturer";
+                cell.valueLabel.text = @"Apple";
+                break;
+            }
+            case 3: {
+                cell.keyLabel.text = @"Model";
+                cell.valueLabel.text = @"iPhone 8";
+                break;
+            }
+            case 4: {
+                cell.keyLabel.text = @"OS Version";
+                cell.valueLabel.text = @"11.4";
+                break;
+            }
+            case 5: {
+                cell.keyLabel.text = @"Software Version";
+                cell.valueLabel.text = @"11.4";
+                break;
+            }
+            default:
+                break;
+        }
+        cell.accessoryType = UITableViewCellAccessoryNone;
         
-        cell.textLabel.text = @"Environment";
-        cell.detailTextLabel.text = env.name;
+//        Environment *env = [[EnvironmentManager sharedManager] environments][[[EnvironmentManager sharedManager] selectedEnvironment]];
+//
+//        cell.keyLabel.text = @"Environment";
+//        cell.valueLabel.text = env.name;
     }
     
     return cell;
