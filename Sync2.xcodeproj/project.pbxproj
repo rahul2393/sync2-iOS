@@ -30,6 +30,7 @@
 		759926EC20FE2E790073693F /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759926EB20FE2E790073693F /* SplashViewController.m */; };
 		75D71583210AF214007378D5 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71582210AF214007378D5 /* Device.m */; };
 		75D71587210B0D10007378D5 /* LogMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71586210B0D10007378D5 /* LogMapTableViewCell.m */; };
+		75D7158A210B41F8007378D5 /* RulesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71589210B41F8007378D5 /* RulesTableViewCell.m */; };
 		75D71590210C5A2C007378D5 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D7158F210C5A2C007378D5 /* SettingsTableViewCell.m */; };
 		75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */; };
 		997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */; };
@@ -187,6 +188,8 @@
 		75D71584210AF224007378D5 /* Device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		75D71585210B0D10007378D5 /* LogMapTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogMapTableViewCell.h; sourceTree = "<group>"; };
 		75D71586210B0D10007378D5 /* LogMapTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogMapTableViewCell.m; sourceTree = "<group>"; };
+		75D71588210B41F8007378D5 /* RulesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesTableViewCell.h; sourceTree = "<group>"; };
+		75D71589210B41F8007378D5 /* RulesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesTableViewCell.m; sourceTree = "<group>"; };
 		75D7158E210C5A2C007378D5 /* SettingsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewCell.h; sourceTree = "<group>"; };
 		75D7158F210C5A2C007378D5 /* SettingsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewCell.m; sourceTree = "<group>"; };
 		75DE39782101D3490006BA78 /* ProjectSelectionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectSelectionTableViewCell.h; sourceTree = "<group>"; };
@@ -1059,6 +1062,8 @@
 			children = (
 				E9485EA620194D1E00B553E2 /* Dummy rules data */,
 				E9B76D41200D32580095030C /* RulesCloudViewController.h */,
+				75D71588210B41F8007378D5 /* RulesTableViewCell.h */,
+				75D71589210B41F8007378D5 /* RulesTableViewCell.m */,
 				75502A7C210A162D00BFCA2A /* RulesViewController.h */,
 				75502A7D210A162D00BFCA2A /* RulesViewController.m */,
 				75502A79210A155200BFCA2A /* RulesEdgeViewController.h */,
@@ -1528,6 +1533,7 @@
 				E9128187201008BA0003072B /* SenseAPI.m in Sources */,
 				75D71590210C5A2C007378D5 /* SettingsTableViewCell.m in Sources */,
 				E9128183200FDD1F0003072B /* TextViewTableViewCell.m in Sources */,
+				75D7158A210B41F8007378D5 /* RulesTableViewCell.m in Sources */,
 				E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */,
 				7520226A2061099C007FD829 /* TOSViewController.m in Sources */,
 				E90371441EE89B1E0033DED0 /* Account.m in Sources */,

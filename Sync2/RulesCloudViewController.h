@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RulesCloudViewController : UIViewController
+@interface RulesCloudViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *emptyView;
 
