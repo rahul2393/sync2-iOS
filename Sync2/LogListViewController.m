@@ -7,6 +7,7 @@
 //
 
 #import "LogListViewController.h"
+#import "LogMapViewController.h"
 
 @interface LogListViewController ()
 @property NSArray* logs;
@@ -34,6 +35,13 @@
     cell.textLabel.text = self.logs[indexPath.row];
 
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    LogMapViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LogMapViewControllerIdentifier"];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 @end

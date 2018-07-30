@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @import MapKit;
 
-@interface LogMapViewController : UIViewController <UITabBarDelegate, UITableViewDataSource>
+@interface LogMapViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *dateTimePickerLabel;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
