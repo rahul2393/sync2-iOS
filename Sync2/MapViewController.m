@@ -43,6 +43,9 @@
     }
     
     self.title = @"Map";
+    
+    [self.permissionMissingView setHidden:false];
+    
 }
 
 - (void) loadLandmarks{
@@ -94,7 +97,7 @@
     zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
     [self.mapView setRegion:zoomRegion animated:YES];
 
-    self.coordinateLabel.text = [NSString stringWithFormat:@"%f, %f",location.latitude, location.longitude];
+//    self.coordinateLabel.text = [NSString stringWithFormat:@"%f, %f",location.latitude, location.longitude];
     return;
 #endif
     
@@ -105,8 +108,8 @@
     zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
     [self.mapView setRegion:zoomRegion animated:YES];
     
-    self.coordinateLabel.text = [NSString stringWithFormat:@"%f, %f",location.latitude, location.longitude];
-    
+//    self.coordinateLabel.text = [NSString stringWithFormat:@"%f, %f",location.latitude, location.longitude];
+//
 }
 
 -(void) drawMapMarkers{
@@ -187,10 +190,13 @@
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
     [self.mapView setCenterCoordinate:view.annotation.coordinate animated:YES];
-    self.coordinateLabel.text = [NSString stringWithFormat:@"%f, %f",view.annotation.coordinate.latitude, view.annotation.coordinate.longitude];
+//    self.coordinateLabel.text = [NSString stringWithFormat:@"%f, %f",view.annotation.coordinate.latitude, view.annotation.coordinate.longitude];
 }
 
 
 - (IBAction)mapSettingsTapped:(id)sender {
+}
+
+- (IBAction)chooseMapTapped:(id)sender {
 }
 @end
