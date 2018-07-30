@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */; };
+		751C4A76210F0B530040E717 /* RulesInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A75210F0B530040E717 /* RulesInformationViewController.m */; };
+		751C4A79210F0FB20040E717 /* RulesInformationEdgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A78210F0FB10040E717 /* RulesInformationEdgeViewController.m */; };
+		751C4A7C210F0FC50040E717 /* RulesInformationCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A7B210F0FC50040E717 /* RulesInformationCloudViewController.m */; };
 		7520226620610845007FD829 /* EULAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7520226520610845007FD829 /* EULAViewController.m */; };
 		7520226A2061099C007FD829 /* TOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752022692061099C007FD829 /* TOSViewController.m */; };
 		753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70C2105600B00C11223 /* UIViewExtension.m */; };
@@ -97,7 +100,6 @@
 		E9B76D3F200D31E30095030C /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D3E200D31E30095030C /* NotificationsViewController.m */; };
 		E9B76D43200D32580095030C /* RulesCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D42200D32580095030C /* RulesCloudViewController.m */; };
 		E9B76D47200D35BB0095030C /* LogDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D46200D35BB0095030C /* LogDayTableViewController.m */; };
-		E9B76D4B200D37B90095030C /* RuleDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D4A200D37B90095030C /* RuleDetailTableViewController.m */; };
 		E9B76D4F200D4E580095030C /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D4E200D4E580095030C /* SettingsTableViewController.m */; };
 		E9B76D5B200D4F450095030C /* ProjectSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D5A200D4F450095030C /* ProjectSelectionViewController.m */; };
 		E9B76D5F200D4F5F0095030C /* DataChannelSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D5E200D4F5F0095030C /* DataChannelSelectionViewController.m */; };
@@ -146,6 +148,12 @@
 /* Begin PBXFileReference section */
 		1DA5955D2EF0589B2AC4F739 /* Pods-Sync2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2DB0C3E88E97E1E5750C48B5 /* Pods-Sync2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		751C4A74210F0B530040E717 /* RulesInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesInformationViewController.h; sourceTree = "<group>"; };
+		751C4A75210F0B530040E717 /* RulesInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesInformationViewController.m; sourceTree = "<group>"; };
+		751C4A77210F0FB10040E717 /* RulesInformationEdgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesInformationEdgeViewController.h; sourceTree = "<group>"; };
+		751C4A78210F0FB10040E717 /* RulesInformationEdgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesInformationEdgeViewController.m; sourceTree = "<group>"; };
+		751C4A7A210F0FC50040E717 /* RulesInformationCloudViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesInformationCloudViewController.h; sourceTree = "<group>"; };
+		751C4A7B210F0FC50040E717 /* RulesInformationCloudViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesInformationCloudViewController.m; sourceTree = "<group>"; };
 		752022642061082D007FD829 /* EULAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EULAViewController.h; sourceTree = "<group>"; };
 		7520226520610845007FD829 /* EULAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EULAViewController.m; sourceTree = "<group>"; };
 		7520226820610988007FD829 /* TOSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOSViewController.h; sourceTree = "<group>"; };
@@ -310,8 +318,6 @@
 		E9B76D42200D32580095030C /* RulesCloudViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesCloudViewController.m; sourceTree = "<group>"; };
 		E9B76D45200D35BB0095030C /* LogDayTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogDayTableViewController.h; sourceTree = "<group>"; };
 		E9B76D46200D35BB0095030C /* LogDayTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogDayTableViewController.m; sourceTree = "<group>"; };
-		E9B76D49200D37B90095030C /* RuleDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuleDetailTableViewController.h; sourceTree = "<group>"; };
-		E9B76D4A200D37B90095030C /* RuleDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuleDetailTableViewController.m; sourceTree = "<group>"; };
 		E9B76D4D200D4E580095030C /* SettingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		E9B76D4E200D4E580095030C /* SettingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		E9B76D59200D4F450095030C /* ProjectSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectSelectionViewController.h; sourceTree = "<group>"; };
@@ -1062,11 +1068,17 @@
 			children = (
 				E9485EA620194D1E00B553E2 /* Dummy rules data */,
 				E9B76D41200D32580095030C /* RulesCloudViewController.h */,
+				751C4A74210F0B530040E717 /* RulesInformationViewController.h */,
+				751C4A75210F0B530040E717 /* RulesInformationViewController.m */,
 				75D71588210B41F8007378D5 /* RulesTableViewCell.h */,
 				75D71589210B41F8007378D5 /* RulesTableViewCell.m */,
 				75502A7C210A162D00BFCA2A /* RulesViewController.h */,
+				751C4A7A210F0FC50040E717 /* RulesInformationCloudViewController.h */,
+				751C4A7B210F0FC50040E717 /* RulesInformationCloudViewController.m */,
 				75502A7D210A162D00BFCA2A /* RulesViewController.m */,
 				75502A79210A155200BFCA2A /* RulesEdgeViewController.h */,
+				751C4A77210F0FB10040E717 /* RulesInformationEdgeViewController.h */,
+				751C4A78210F0FB10040E717 /* RulesInformationEdgeViewController.m */,
 				75502A7A210A155200BFCA2A /* RulesEdgeViewController.m */,
 				E9B76D42200D32580095030C /* RulesCloudViewController.m */,
 			);
@@ -1085,8 +1097,6 @@
 		E9B76D48200D37A90095030C /* Rule Detail Table */ = {
 			isa = PBXGroup;
 			children = (
-				E9B76D49200D37B90095030C /* RuleDetailTableViewController.h */,
-				E9B76D4A200D37B90095030C /* RuleDetailTableViewController.m */,
 			);
 			name = "Rule Detail Table";
 			sourceTree = "<group>";
@@ -1497,6 +1507,7 @@
 				E9F29C192051BB330024E3B5 /* EnvironmentManager.m in Sources */,
 				E912818B20100B310003072B /* DummyChannelData.m in Sources */,
 				75502A4F210876D300BFCA2A /* GCPlaceholderTextView.m in Sources */,
+				751C4A7C210F0FC50040E717 /* RulesInformationCloudViewController.m in Sources */,
 				E9B76D5B200D4F450095030C /* ProjectSelectionViewController.m in Sources */,
 				E9A3C2EB1ED780CC00A938CB /* WelcomeViewController.m in Sources */,
 				753CB7102105D07900C11223 /* GradientView.m in Sources */,
@@ -1526,9 +1537,9 @@
 				E9A3C2FA1EDBA08500A938CB /* AccountsTableViewController.m in Sources */,
 				759926EC20FE2E790073693F /* SplashViewController.m in Sources */,
 				753CB71F21070BE900C11223 /* FeedbackNotificationTableViewCell.m in Sources */,
+				751C4A79210F0FB20040E717 /* RulesInformationEdgeViewController.m in Sources */,
 				E903714C1EE8B6E10033DED0 /* NetworkManager.m in Sources */,
 				E95F582E1EE61EA3000562FC /* PushPermissionViewController.m in Sources */,
-				E9B76D4B200D37B90095030C /* RuleDetailTableViewController.m in Sources */,
 				E9CCF4C51EF1E78200BF96C6 /* QRCameraSwitchButton.m in Sources */,
 				E9128187201008BA0003072B /* SenseAPI.m in Sources */,
 				75D71590210C5A2C007378D5 /* SettingsTableViewCell.m in Sources */,
@@ -1536,6 +1547,7 @@
 				75D7158A210B41F8007378D5 /* RulesTableViewCell.m in Sources */,
 				E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */,
 				7520226A2061099C007FD829 /* TOSViewController.m in Sources */,
+				751C4A76210F0B530040E717 /* RulesInformationViewController.m in Sources */,
 				E90371441EE89B1E0033DED0 /* Account.m in Sources */,
 				E943D3E82012C27800882D09 /* DummyProjectData.m in Sources */,
 				E9518B542017EF9E001818CC /* Project.m in Sources */,

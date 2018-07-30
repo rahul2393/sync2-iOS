@@ -37,11 +37,15 @@
     [self updateView];
 }
 
+- (void)setSelectedSegmentIndex:(NSInteger)selectedSegmentIndex {
+    _selectedSegmentIndex = selectedSegmentIndex;
+    [self updateView];
+}
+
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
     if (self) {
-        self.selectedSegmentIndex = 0;
         self.buttonArray = [[NSMutableArray alloc] init];
     }
     return self;
@@ -51,7 +55,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.selectedSegmentIndex = 0;
         self.buttonArray = [[NSMutableArray alloc] init];
     }
     return self;
@@ -77,12 +80,13 @@
         return ;
     }
     
-    [self.buttonArray[0] setTitleColor:self.selectorTextColor forState:normal];
+    
+    [self.buttonArray[self.selectedSegmentIndex] setTitleColor:self.selectorTextColor forState:normal];
     CGFloat selectorWidth = UIScreen.mainScreen.bounds.size.width / buttonTitles.count;
     
     NSInteger y = (CGRectGetMaxY(self.frame) - CGRectGetMinY(self.frame) - 3.0);
     
-    self.selector = [[UIView alloc] initWithFrame:CGRectMake(0, y, selectorWidth, 3.0)];
+    self.selector = [[UIView alloc] initWithFrame:CGRectMake(UIScreen.mainScreen.bounds.size.width / self.buttonArray.count * self.selectedSegmentIndex, y, selectorWidth, 3.0)];
     self.selector.backgroundColor = self.selectorColor;
     [self addSubview:self.selector];
     

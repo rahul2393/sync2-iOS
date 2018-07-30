@@ -8,6 +8,7 @@
 
 #import "RulesCloudViewController.h"
 #import "RulesTableViewCell.h"
+#import "RulesInformationViewController.h"
 @interface RulesCloudViewController ()
 
 @property (nonatomic, strong) NSArray *rules;
@@ -99,7 +100,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    RulesInformationViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RulesInformationViewControllerIdentifier"];
+    vc.currentPage = 1;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
