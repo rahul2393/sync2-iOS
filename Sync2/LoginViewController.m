@@ -29,6 +29,9 @@
     self.emailAddressField.delegate = self;
     self.passwordField.delegate = self;
     
+    self.emailAddressField.text = @"ritik.rishu@hotcocoasoftware.com";
+    self.passwordField.text = @"password123";
+    
     [self registerForKeyboardNotifications];
 }
 
