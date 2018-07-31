@@ -16,11 +16,10 @@
 
 @property (nonatomic, readwrite) NSInteger selectedChannelIx;
 @property (nonatomic, readwrite) BOOL channelSelected;
-
+-(void) filterIOSChannels: (NSArray*) channels;
 @end
 
 @implementation DataChannelSelectionViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -46,8 +45,11 @@
     [self setButtonEnabled:NO];
     
     if (!self.useDummy) {
+        [self filterIOSChannels:self.channels];
+        
         DataChannel *selectedChannel = [[SettingsManager sharedManager] selectedDataChannel];
         if (selectedChannel) {
+            
             NSUInteger selectedIndex = [self.channels indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 if ([[(DataChannel *)obj objectId] isEqualToString:selectedChannel.objectId]) {
                     *stop = YES;
@@ -61,24 +63,41 @@
                 self.selectedChannelIx = selectedIndex;
                 [self setButtonEnabled:YES];
                 
-                UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelTapped)];
-                cancelItem.tintColor = [UIColor whiteColor];
-                self.navigationItem.leftBarButtonItem = cancelItem;
+//                UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelTapped)];
+//                cancelItem.tintColor = [UIColor whiteColor];
+//                self.navigationItem.leftBarButtonItem = cancelItem;
             }
         }
     }
+}
+
+- (void)filterIOSChannels:(NSArray *)channels {
+    NSPredicate *iosPredicate = [NSPredicate predicateWithFormat:@"SELF.type MATCHES[cd] %@",@"IOS"];
+    self.channels = [self.channels filteredArrayUsingPredicate:iosPredicate];
 }
 
 - (void)cancelTapped {
     [self dismissScreen];
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.channels.count;
+-(void) setButtonEnabled:(BOOL)enabled{
+    self.selectChannelButton.enabled = enabled;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 49.0;
+- (void)dismissScreen {
+    if (self.navigationController.viewControllers.count > 1) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    } else {
+        [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }
+}
+
+#pragma mark - Table view data source
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.channels.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -89,17 +108,22 @@
     }
     
     if (self.useDummy) {
-        cell.cellSelectedImage.image = (self.selectedChannelIx == indexPath.row  &&  self.channelSelected) ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
         cell.channelName.text = self.channels[indexPath.row];
         cell.platformName.text = @"IOS";
     }else {
         DataChannel *dc = self.channels[indexPath.row];
         cell.channelName.text = dc.name;
         cell.platformName.text = dc.type;
-        cell.cellSelectedImage.image = (self.selectedChannelIx == indexPath.row  &&  self.channelSelected) ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
     }
+    cell.cellSelectedImage.image = (self.selectedChannelIx == indexPath.row  &&  self.channelSelected) ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
     
     return cell;
+}
+
+#pragma mark - Table view delegate
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 49.0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -118,10 +142,7 @@
     
 }
 
--(void) setButtonEnabled:(BOOL)enabled{
-    self.selectChannelButton.enabled = enabled;
-}
-
+#pragma mark - IBAction
 
 - (IBAction)selectChannelButtonTapped:(id)sender {
     
@@ -132,14 +153,5 @@
     [self dismissScreen];
 }
 
-- (void)dismissScreen {
-    if (self.navigationController.viewControllers.count > 1) {
-        [self.navigationController popToRootViewControllerAnimated:YES];
-    } else {
-        [self.navigationController dismissViewControllerAnimated:YES completion:^{
-            
-        }];
-    }
-}
 
 @end

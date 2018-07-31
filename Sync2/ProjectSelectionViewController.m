@@ -75,6 +75,52 @@
     [self dismissScreen];
 }
 
+-(void) setButtonEnabled:(BOOL)enabled{
+    self.selectProjectButton.enabled = enabled;
+}
+
+- (void)dismissScreen {
+    if (self.navigationController.viewControllers.count > 1) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    } else {
+        [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }
+}
+
+#pragma mark - Table view data source
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.projects.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    ProjectSelectionTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
+    
+    if (!cell) {
+        cell = [[ProjectSelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
+    }
+    
+    if (self.useDummy) {
+        cell.channelName.text = self.projects[indexPath.row];
+    }else{
+        Project *p = self.projects[indexPath.row];
+        cell.channelName.text = p.name;
+    }
+    cell.cellSelectedImage.image = (self.selectedIx == indexPath.row && self.projectSelected) ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
+    cell.platformName.text = @"";
+    
+    return cell;
+}
+
+
+#pragma mark - Table view delegate
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 49.0;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (self.selectedIx == indexPath.row) {
@@ -87,51 +133,12 @@
         [self setButtonEnabled:YES];
     }
     
-    
     [self.tableView reloadData];
     
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.projects.count;
-}
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 49.0;
-}
-
--(void) setButtonEnabled:(BOOL)enabled{
-    self.selectProjectButton.enabled = enabled;
-}
-
-
--(UITableViewCell *) channelCellForIndexPath:(NSIndexPath *)indexPath{
-
-    ProjectSelectionTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
-    
-    if (!cell) {
-        cell = [[ProjectSelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
-    }
-    
-    if (self.useDummy) {
-        cell.cellSelectedImage.image = (self.selectedIx == indexPath.row && self.projectSelected) ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
-        cell.channelName.text = self.projects[indexPath.row];
-        cell.platformName.text = @"";
-    }else{
-        Project *p = self.projects[indexPath.row];
-        cell.cellSelectedImage.image = (self.selectedIx == indexPath.row && self.projectSelected) ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
-        cell.channelName.text = p.name;
-        cell.platformName.text = @"";
-    }
-    
-    return cell;
-    
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [self channelCellForIndexPath:indexPath];
-}
-
+#pragma mark - IBAction
 
 - (IBAction)selectProjectButtonTapped:(id)sender {
     
@@ -139,16 +146,6 @@
     
     NSLog(@"Button tapped");
     [self dismissScreen];
-}
-
-- (void)dismissScreen {
-    if (self.navigationController.viewControllers.count > 1) {
-        [self.navigationController popToRootViewControllerAnimated:YES];
-    } else {
-        [self.navigationController dismissViewControllerAnimated:YES completion:^{
-            
-        }];
-    }
 }
 
 @end
