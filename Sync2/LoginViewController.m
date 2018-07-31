@@ -64,22 +64,6 @@
     }];
 }
 
-- (void)qrButtonActivated{
-    
-    // Create the reader object
-    QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
-    
-    // Instantiate the view controller
-    QRCodeReaderViewController *vc = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Cancel" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:NO showTorchButton:NO];
-    
-    vc.delegate = self;
-    
-    // Set the presentation style
-    self.modalPresentationStyle = UIModalPresentationFormSheet;
-    
-    [self presentViewController:vc animated:YES completion:NULL];
-}
-
 #pragma mark - Keyboard handling
 
 - (void)registerForKeyboardNotifications {
@@ -100,10 +84,10 @@
     
     // Scroll up so that the login button is visible
     CGPoint loginButtonBottom = CGPointMake(CGRectGetMinX(self.loginButton.frame), CGRectGetMaxY(self.loginButton.frame));
-    
+
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbSize.height;
-    
+
     if (!CGRectContainsPoint(aRect, loginButtonBottom) ) {
         CGPoint scrollPoint = CGPointMake(0.0, self.loginButton.frame.origin.y - kbSize.height);
         [self.scrollView setContentOffset:scrollPoint animated:YES];
@@ -123,23 +107,7 @@
     return YES;
 }
 
-#pragma mark - QRCodeReader Delegate Methods
-
-- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
-{
-    // Show user feedback based on valid qr code or not
-    
-    
-}
-
-- (void)readerDidCancel:(QRCodeReaderViewController *)reader
-{
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (IBAction)qrButtonTapped:(id)sender {
-    //[self qrButtonActivated];
-}
+#pragma mark - IBAction
 
 - (IBAction)loginButtonTapped:(id)sender {
     [self attemptLogin];

@@ -7,15 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "QRCodeReaderViewController.h"
-@interface LoginViewController : UIViewController <QRCodeReaderDelegate>
+@interface LoginViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIView *invalidLoginView;
 @property (weak, nonatomic) IBOutlet UITextField *emailAddressField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *apiURLField;
-
-- (IBAction)qrButtonTapped:(id)sender;
 
 - (IBAction)loginButtonTapped:(id)sender;
 

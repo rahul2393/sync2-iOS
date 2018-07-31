@@ -105,6 +105,7 @@
                                                         }
                                                         
                                                         SGToken *token = [[SGToken alloc]initWithData:data];
+                                                        NSLog(@"Received user token %@", token.token);
                                                         if ([token.token isEqualToString:@""]) {
                                                             completed(nil);
                                                             return;
