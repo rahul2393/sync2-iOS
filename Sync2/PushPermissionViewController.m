@@ -27,14 +27,6 @@
                                              selector:@selector(permissionChanged)
                                                  name:@"PushPermissionChanged"
                                                object:nil];
-    
-    switch (UIDevice.currentDevice.screenType) {
-        case iPhoneX:
-            _skipButtonBottomConstraint.constant = 0.5;
-            break;
-        default:
-            _skipButtonBottomConstraint.constant = 32.5;
-    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

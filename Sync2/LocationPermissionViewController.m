@@ -22,14 +22,6 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
-    switch (UIDevice.currentDevice.screenType) {
-        case iPhoneX:
-            _skipButtonBottomConstraint.constant = 0.5;
-            break;
-        default:
-            _skipButtonBottomConstraint.constant = 32.5;
-    }
 
 }
 

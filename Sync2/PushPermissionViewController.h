@@ -13,6 +13,4 @@
 @property (nonatomic, weak) PermissionPageController *parentPageViewController;
 - (IBAction)enablePushTapped:(id)sender;
 - (IBAction)skipTapped:(id)sender;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *skipButtonBottomConstraint;
-
 @end
