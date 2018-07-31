@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Account.h"
 #import "SDKManager.h"
-#import "CustomSegmentControl.h"
-@interface LogViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate>
-@property (weak, nonatomic) IBOutlet CustomSegmentControl *segmentView;
+#import "CustomSegmentControlViewController.h"
+
+@interface LogViewController : CustomSegmentControlViewController
 
 @end

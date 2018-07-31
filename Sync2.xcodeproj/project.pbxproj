@@ -37,6 +37,7 @@
 		75D71590210C5A2C007378D5 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D7158F210C5A2C007378D5 /* SettingsTableViewCell.m */; };
 		75D71593210C899F007378D5 /* ChooseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71592210C899F007378D5 /* ChooseMapViewController.m */; };
 		75D71596210C8C0A007378D5 /* ChooseMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71595210C8C0A007378D5 /* ChooseMapTableViewCell.m */; };
+		75DABA39211043820040A170 /* CustomSegmentControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DABA38211043820040A170 /* CustomSegmentControlViewController.m */; };
 		75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */; };
 		997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */; };
 		E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */; };
@@ -206,6 +207,8 @@
 		75D71592210C899F007378D5 /* ChooseMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseMapViewController.m; sourceTree = "<group>"; };
 		75D71594210C8C0A007378D5 /* ChooseMapTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseMapTableViewCell.h; sourceTree = "<group>"; };
 		75D71595210C8C0A007378D5 /* ChooseMapTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseMapTableViewCell.m; sourceTree = "<group>"; };
+		75DABA37211043820040A170 /* CustomSegmentControlViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSegmentControlViewController.h; sourceTree = "<group>"; };
+		75DABA38211043820040A170 /* CustomSegmentControlViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentControlViewController.m; sourceTree = "<group>"; };
 		75DE39782101D3490006BA78 /* ProjectSelectionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectSelectionTableViewCell.h; sourceTree = "<group>"; };
 		75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectSelectionTableViewCell.m; sourceTree = "<group>"; };
 		894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -421,6 +424,8 @@
 				75502A4B210876B000BFCA2A /* GradientView */,
 				75502A7321099DA700BFCA2A /* CustomSegmentControl.m */,
 				75502A7521099DC000BFCA2A /* CustomSegmentControl.h */,
+				75DABA37211043820040A170 /* CustomSegmentControlViewController.h */,
+				75DABA38211043820040A170 /* CustomSegmentControlViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1502,6 +1507,7 @@
 				E9B76D43200D32580095030C /* RulesCloudViewController.m in Sources */,
 				E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */,
 				E9352481201FD301008D4F19 /* LoginViewController.m in Sources */,
+				75DABA39211043820040A170 /* CustomSegmentControlViewController.m in Sources */,
 				E90371481EE8B6110033DED0 /* ListTableViewController.m in Sources */,
 				E97A204D2023D10900FDB7B2 /* NotificationManager.m in Sources */,
 				E9518B572017EFA6001818CC /* DataChannel.m in Sources */,

@@ -8,14 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-IB_DESIGNABLE
-
 @interface CustomSegmentControl : UIControl
 
-@property (nonatomic) IBInspectable NSString* commaSeperatedButtonTitles;
-@property (nonatomic) IBInspectable UIColor* textColor;
-@property (nonatomic) IBInspectable UIColor* selectorColor;
-@property (nonatomic) IBInspectable UIColor* selectorTextColor;
+@property (nonatomic) NSString* commaSeperatedButtonTitles;
+@property (nonatomic) UIColor* textColor;
+@property (nonatomic) UIColor* selectorColor;
+@property (nonatomic) UIColor* selectorTextColor;
 @property (nonatomic, readwrite) NSInteger selectedSegmentIndex;
 -(void) updateSegmentedControlSegs:(NSInteger)index;
 @end

@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CustomSegmentControl.h"
+#import "CustomSegmentControlViewController.h"
 
-@interface RulesInformationViewController : UIViewController <UIPageViewControllerDelegate, UIPageViewControllerDataSource, UIScrollViewDelegate>
-@property (weak, nonatomic) IBOutlet CustomSegmentControl *segmentView;
-@property (nonatomic, readwrite) NSInteger currentPage;
+@interface RulesInformationViewController : CustomSegmentControlViewController
 
 @end
