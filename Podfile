@@ -16,8 +16,7 @@ target 'Sync2' do
     pod 'Fabric', '~> 1.7.9'
     pod 'Crashlytics', '~> 3.10.4'
 
-
-    pod 'SixgillSDK'
+#    pod 'SixgillSDK'
 
   target 'Sync2Tests' do
     inherit! :search_paths

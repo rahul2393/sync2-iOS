@@ -1,10 +1,4 @@
 PODS:
-  - CocoaLumberjack (3.4.2):
-    - CocoaLumberjack/Default (= 3.4.2)
-    - CocoaLumberjack/Extensions (= 3.4.2)
-  - CocoaLumberjack/Default (3.4.2)
-  - CocoaLumberjack/Extensions (3.4.2):
-    - CocoaLumberjack/Default
   - Crashlytics (3.10.5):
     - Fabric (~> 1.7.9)
   - Fabric (1.7.9)
@@ -37,8 +31,6 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - SixgillSDK (0.1.5):
-    - CocoaLumberjack
 
 DEPENDENCIES:
   - Crashlytics (~> 3.10.4)
@@ -46,11 +38,9 @@ DEPENDENCIES:
   - Firebase/Core
   - GoogleMaps
   - GooglePlaces
-  - SixgillSDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - CocoaLumberjack
     - Crashlytics
     - Fabric
     - Firebase
@@ -61,11 +51,8 @@ SPEC REPOS:
     - GooglePlaces
     - GoogleToolboxForMac
     - nanopb
-  https://github.com/sixgill/SixgillPodSpecs.git:
-    - SixgillSDK
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   Crashlytics: 7f2e38d302d9da96475b3d64d86fb29e31a542b7
   Fabric: a2917d3895e4c1569b9c3170de7320ea1b1e6661
   Firebase: 355bd535bfdacaa82a7fe8d9784115edefd6fc03
@@ -76,8 +63,7 @@ SPEC CHECKSUMS:
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  SixgillSDK: c49b49b7d96ae77de4b81a95b12ff4f3136b70ae
 
-PODFILE CHECKSUM: ff1e03c0f495e65ebcc20b8effc181dd7bdb1c35
+PODFILE CHECKSUM: 83112396a87bce9ef996f1af7ca486651b38f958
 
 COCOAPODS: 1.5.3
