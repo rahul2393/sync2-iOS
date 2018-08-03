@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Account.h"
-#import "SDKManager.h"
 #import "CustomSegmentControlViewController.h"
 
 @interface LogViewController : CustomSegmentControlViewController

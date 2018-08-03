@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventCountLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+- (IBAction)selectDateTapped:(id)sender;
 
 @end

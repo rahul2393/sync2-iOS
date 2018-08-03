@@ -9,7 +9,6 @@
 #import "LogViewController.h"
 
 @interface LogViewController ()
-@property (nonatomic, strong) NSString *logs;
 @end
 
 @implementation LogViewController
@@ -33,7 +32,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.logs = [[SDKManager sharedManager] logs];
 }
 
 @end
