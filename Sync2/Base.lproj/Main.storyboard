@@ -2684,8 +2684,8 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="48.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pcuhalev@sixgill.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0W-sY-vnJ">
-                                                    <rect key="frame" x="20" y="16.5" width="138.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0W-sY-vnJ">
+                                                    <rect key="frame" x="20" y="16.5" width="6.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2698,7 +2698,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Cit-HX-5Sy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="k0W-sY-vnJ" secondAttribute="trailing" constant="10" id="CZh-gp-zbG"/>
+                                                <constraint firstItem="Cit-HX-5Sy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="k0W-sY-vnJ" secondAttribute="trailing" constant="5" id="CZh-gp-zbG"/>
                                                 <constraint firstItem="Cit-HX-5Sy" firstAttribute="centerY" secondItem="fhl-2z-5co" secondAttribute="centerY" id="GuR-mf-kPM"/>
                                                 <constraint firstAttribute="trailing" secondItem="Cit-HX-5Sy" secondAttribute="trailing" constant="12" id="Pj4-Tc-RgW"/>
                                                 <constraint firstItem="k0W-sY-vnJ" firstAttribute="leading" secondItem="fhl-2z-5co" secondAttribute="leading" constant="20" id="sW3-Bi-lP5"/>
@@ -4043,8 +4043,8 @@ Permission</string>
                                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7T-WR-Qqf">
-                                                                    <rect key="frame" x="20" y="13.5" width="35.5" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7T-WR-Qqf">
+                                                                    <rect key="frame" x="20" y="13.5" width="6.5" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -5344,13 +5344,17 @@ revised: 5/9/2016</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="E6J-NE-XCV">
-                                        <rect key="frame" x="259" y="22.5" width="16" height="8"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXV-1A-t0b">
+                                        <rect key="frame" x="251" y="3.5" width="44" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="8" id="pd8-ap-6Gv"/>
-                                            <constraint firstAttribute="width" constant="16" id="uWF-UK-JAN"/>
+                                            <constraint firstAttribute="width" constant="44" id="AgS-JF-7Ec"/>
+                                            <constraint firstAttribute="width" secondItem="IXV-1A-t0b" secondAttribute="height" multiplier="1:1" id="mVG-EO-tXP"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" image="arrow-down"/>
+                                        <connections>
+                                            <action selector="selectDateTapped:" destination="JUD-M4-Qgc" eventType="touchUpInside" id="eAw-GO-ghL"/>
+                                        </connections>
+                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-image" translatesAutoresizingMaskIntoConstraints="NO" id="YDG-ND-lny">
                                         <rect key="frame" x="0.0" y="48.5" width="300" height="2"/>
                                         <constraints>
@@ -5375,18 +5379,18 @@ revised: 5/9/2016</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="FrX-WN-M9v" firstAttribute="top" secondItem="YDG-ND-lny" secondAttribute="bottom" constant="15" id="3c7-to-tKn"/>
-                                    <constraint firstItem="YDG-ND-lny" firstAttribute="top" secondItem="E6J-NE-XCV" secondAttribute="bottom" constant="18" id="4kY-R2-wqk"/>
                                     <constraint firstItem="YDG-ND-lny" firstAttribute="leading" secondItem="JRU-wc-LAq" secondAttribute="leading" id="5LQ-8f-a1f"/>
                                     <constraint firstAttribute="trailing" secondItem="YDG-ND-lny" secondAttribute="trailing" id="AhM-Yh-spn"/>
                                     <constraint firstItem="YDG-ND-lny" firstAttribute="centerY" secondItem="JRU-wc-LAq" secondAttribute="centerY" id="KFU-Pk-H9V"/>
                                     <constraint firstItem="tz1-Pv-nsZ" firstAttribute="bottom" secondItem="YDG-ND-lny" secondAttribute="top" constant="-12" id="P9L-Ag-Eq0"/>
-                                    <constraint firstItem="E6J-NE-XCV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hfe-3o-NYK" secondAttribute="trailing" constant="10" id="PwJ-su-vU1"/>
                                     <constraint firstItem="FrX-WN-M9v" firstAttribute="centerX" secondItem="JRU-wc-LAq" secondAttribute="centerX" id="S1R-BU-chD"/>
                                     <constraint firstItem="tz1-Pv-nsZ" firstAttribute="leading" secondItem="JRU-wc-LAq" secondAttribute="leading" constant="30" id="VBe-xH-k5T"/>
                                     <constraint firstAttribute="height" constant="100" id="Ye6-MK-4mb"/>
-                                    <constraint firstAttribute="trailing" secondItem="E6J-NE-XCV" secondAttribute="trailing" constant="25" id="ZRL-j4-opa"/>
                                     <constraint firstItem="hfe-3o-NYK" firstAttribute="leading" secondItem="tz1-Pv-nsZ" secondAttribute="trailing" constant="15" id="f1R-zz-G5Q"/>
+                                    <constraint firstItem="IXV-1A-t0b" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hfe-3o-NYK" secondAttribute="trailing" constant="10" id="gOU-oz-gd8"/>
                                     <constraint firstItem="hfe-3o-NYK" firstAttribute="centerY" secondItem="tz1-Pv-nsZ" secondAttribute="centerY" id="lzZ-OO-cve"/>
+                                    <constraint firstAttribute="trailing" secondItem="IXV-1A-t0b" secondAttribute="trailing" constant="5" id="mko-tq-AcR"/>
+                                    <constraint firstItem="IXV-1A-t0b" firstAttribute="centerY" secondItem="hfe-3o-NYK" secondAttribute="centerY" id="q2X-zA-tIr"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">

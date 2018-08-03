@@ -16,11 +16,14 @@
 #import "EnvironmentSelectionViewController.h"
 #import "EnvironmentManager.h"
 #import "SettingsTableViewCell.h"
+
+@import SixgillSDK;
+
 @interface SettingsTableViewController ()
 @property (nonatomic, readwrite) BOOL useDummyData;
 @property (nonatomic, strong) NSArray *dataChannels;
 @property (nonatomic, strong) NSArray *projects;
-@property (nonatomic, strong) NSString *serverURL;
+@property NSDictionary* log;
 @end
 
 @implementation SettingsTableViewController
@@ -33,11 +36,11 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 
+    self.log = [SGSDK sensorUpdateHistory:1].lastObject;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.serverURL = [SenseAPI serverAddress];
     
     [self.tableView reloadData];
 }
@@ -146,7 +149,7 @@
     
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
     if (indexPath.section == 0) {
         switch (indexPath.row) {
@@ -157,7 +160,6 @@
                     email = @"";
                 }
                 cell.valueLabel.text = email;
-                cell.accessoryType = UITableViewCellAccessoryNone;
                 break;
             }
             case 1:{
@@ -192,8 +194,7 @@
             }
             case 3:{
                 cell.keyLabel.text = @"API URL";
-                cell.valueLabel.text = @"sense-api.sixgill.io";
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                cell.valueLabel.text = [SenseAPI serverAddress];
                 break;
             }
             default:{
@@ -205,43 +206,36 @@
         switch (indexPath.row) {
             case 0: {
                 cell.keyLabel.text = @"Device ID";
-                cell.valueLabel.text = @"01C7HHDH10Y0RDKNRWDYAX7VXY";
+                cell.valueLabel.text = self.log[@"device-info-guid"];
                 break;
             }
             case 1: {
                 cell.keyLabel.text = @"Device Type";
-                cell.valueLabel.text = @"iOS";
                 break;
             }
             case 2: {
                 cell.keyLabel.text = @"Manufacturer";
-                cell.valueLabel.text = @"Apple";
+                cell.valueLabel.text = self.log[@"device-info-platform"];
                 break;
             }
             case 3: {
                 cell.keyLabel.text = @"Model";
-                cell.valueLabel.text = @"iPhone 8";
+                cell.valueLabel.text = self.log[@"device-info-model"];
                 break;
             }
             case 4: {
                 cell.keyLabel.text = @"OS Version";
-                cell.valueLabel.text = @"11.4";
+                cell.valueLabel.text = self.log[@"device-info-osversion"];
                 break;
             }
             case 5: {
                 cell.keyLabel.text = @"Software Version";
-                cell.valueLabel.text = @"11.4";
                 break;
             }
             default:
                 break;
         }
-        cell.accessoryType = UITableViewCellAccessoryNone;
         
-//        Environment *env = [[EnvironmentManager sharedManager] environments][[[EnvironmentManager sharedManager] selectedEnvironment]];
-//
-//        cell.keyLabel.text = @"Environment";
-//        cell.valueLabel.text = env.name;
     }
     
     return cell;
