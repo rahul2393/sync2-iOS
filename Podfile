@@ -15,6 +15,8 @@ target 'Sync2' do
     pod 'Firebase/Core'
     pod 'Fabric', '~> 1.7.9'
     pod 'Crashlytics', '~> 3.10.4'
+    pod 'ActionSheetPicker-3.0'
+
 
 #    pod 'SixgillSDK'
 

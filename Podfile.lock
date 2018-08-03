@@ -1,4 +1,5 @@
 PODS:
+  - ActionSheetPicker-3.0 (2.3.0)
   - Crashlytics (3.10.5):
     - Fabric (~> 1.7.9)
   - Fabric (1.7.9)
@@ -33,6 +34,7 @@ PODS:
   - nanopb/encode (0.3.8)
 
 DEPENDENCIES:
+  - ActionSheetPicker-3.0
   - Crashlytics (~> 3.10.4)
   - Fabric (~> 1.7.9)
   - Firebase/Core
@@ -41,6 +43,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ActionSheetPicker-3.0
     - Crashlytics
     - Fabric
     - Firebase
@@ -53,6 +56,7 @@ SPEC REPOS:
     - nanopb
 
 SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
   Crashlytics: 7f2e38d302d9da96475b3d64d86fb29e31a542b7
   Fabric: a2917d3895e4c1569b9c3170de7320ea1b1e6661
   Firebase: 355bd535bfdacaa82a7fe8d9784115edefd6fc03
@@ -64,6 +68,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 83112396a87bce9ef996f1af7ca486651b38f958
+PODFILE CHECKSUM: 37ed028667d9e1320a05ee907c7814b527a14087
 
 COCOAPODS: 1.5.3
