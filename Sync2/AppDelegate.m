@@ -14,12 +14,15 @@
 #import "SDKManager.h"
 #import "Landmark.h"
 #import "WelcomeViewController.h"
+#define kMapsAPIKey @"AIzaSyB1cmT9dsqS4RophYmCuapFc1LzUk5tpA4"
 
 @import SixgillSDK;
+@import GoogleMaps;
+@import GooglePlaces;
 @import Firebase;
 @import Fabric;
-@interface AppDelegate ()
 
+@interface AppDelegate ()
 @end
 
 @implementation AppDelegate
@@ -35,6 +38,9 @@
     if (e && a) {
         [[SDKManager sharedManager] startSDKWithAPIKey: [[SDKManager sharedManager] currentAPIKey]];
     }
+    
+    [GMSServices provideAPIKey:kMapsAPIKey];
+    [GMSPlacesClient provideAPIKey:kMapsAPIKey];
     
     [FIRApp configure];
     [Fabric.sharedSDK setDebug:YES];

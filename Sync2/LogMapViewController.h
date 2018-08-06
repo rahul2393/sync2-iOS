@@ -7,15 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-@import MapKit;
+@import GoogleMaps;
 
-@interface LogMapViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate>
+@interface LogMapViewController : UIViewController
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *dateTimePickerLabel;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *dateTimeLabel;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) NSDictionary *event;
-- (IBAction)viewSDKLogsTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *prevMapButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextMapButton;
+@property (weak, nonatomic) IBOutlet UIView *noLogsView;
+@property (weak, nonatomic) IBOutlet UIView *mapDisplayView;
+@property (weak, nonatomic) IBOutlet UIView *mapDataView;
+@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+
+- (IBAction)datePickerTapped:(id)sender;
+- (IBAction)showPrevMap:(id)sender;
+- (IBAction)showNextMap:(id)sender;
 
 @end
