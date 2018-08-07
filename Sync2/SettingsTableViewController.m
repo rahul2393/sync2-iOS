@@ -110,11 +110,12 @@
         UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
         ProjectSelectionViewController *vc = (ProjectSelectionViewController *)nav.viewControllers[0];
         vc.projects = self.projects;
-    }else if([segue.identifier isEqualToString:@"goToEnvironmentSelection"]){
-        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
-        EnvironmentSelectionViewController *vc = (EnvironmentSelectionViewController *)nav.viewControllers[0];
-        vc.settingsVC = self;
     }
+//    else if([segue.identifier isEqualToString:@"goToEnvironmentSelection"]){
+//        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
+//        EnvironmentSelectionViewController *vc = (EnvironmentSelectionViewController *)nav.viewControllers[0];
+//        vc.settingsVC = self;
+//    }
 }
 
 
@@ -246,19 +247,21 @@
         switch (indexPath.row) {
             case 1:
                 // Open project selection view
-                //[self loadProjects];
+                [self loadProjects];
                 break;
                 
             case 2:
-                //[self loadDataChannels];
+                // Open channel selection view
+                [self loadDataChannels];
                 break;
                 
             default:
                 break;
         }
-    }else{
-        [self loadEnvironments];
     }
+//    else{
+//        [self loadEnvironments];
+//    }
 }
 
 

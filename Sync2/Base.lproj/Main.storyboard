@@ -1046,7 +1046,7 @@ You can now proceed to Login.</string>
                         <viewControllerLayoutGuide type="bottom" id="xoT-SY-iVU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5aJ-6E-ccx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hty-Eq-4VU">
@@ -1105,7 +1105,7 @@ You can now proceed to Login.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lRu-Wa-Ali">
-                                <rect key="frame" x="10" y="293" width="355" height="402"/>
+                                <rect key="frame" x="10" y="293" width="355" height="353"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -1121,7 +1121,7 @@ You can now proceed to Login.</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yI-df-ybp">
-                                <rect key="frame" x="10" y="710" width="355" height="44"/>
+                                <rect key="frame" x="10" y="661" width="355" height="44"/>
                                 <color key="backgroundColor" red="0.12692853808403015" green="0.31156018376350403" blue="0.74908894300460815" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration" identifier="select-channel-button" label="Select Channel">
                                     <bool key="isElement" value="NO"/>
@@ -1143,7 +1143,7 @@ You can now proceed to Login.</string>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEv-GE-DmP">
-                                <rect key="frame" x="0.0" y="278" width="375" height="432"/>
+                                <rect key="frame" x="0.0" y="278" width="375" height="383"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -2763,6 +2763,8 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                     <navigationItem key="navigationItem" title="Settings" id="06e-Qh-65G"/>
                     <connections>
                         <outlet property="tableView" destination="yAz-B7-Fes" id="V1Y-Uq-adl"/>
+                        <segue destination="nZx-4k-yIp" kind="show" identifier="dataChannelSelection" id="X8u-Xy-liR"/>
+                        <segue destination="GG5-PT-2eE" kind="show" identifier="projectSelection" id="sfn-Bk-AGt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H22-hf-Irn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2798,7 +2800,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                         <viewControllerLayoutGuide type="bottom" id="dW8-0e-yOx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="agB-wX-HQ7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ir-Qq-HDZ">
@@ -2850,7 +2852,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-7S-yj0" userLabel="table">
-                                <rect key="frame" x="10" y="313" width="355" height="382"/>
+                                <rect key="frame" x="10" y="313" width="355" height="333"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -2866,7 +2868,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZX-1b-EJD" userLabel="select-project-button">
-                                <rect key="frame" x="10" y="710" width="355" height="44"/>
+                                <rect key="frame" x="10" y="661" width="355" height="44"/>
                                 <color key="backgroundColor" red="0.12692853809999999" green="0.3115601838" blue="0.74908894299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration" identifier="select-project-button" label="Select Project">
                                     <bool key="isElement" value="NO"/>
@@ -2888,7 +2890,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lA-6p-rgy">
-                                <rect key="frame" x="0.0" y="298" width="375" height="412"/>
+                                <rect key="frame" x="0.0" y="298" width="375" height="363"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -5881,7 +5883,9 @@ revised: 5/9/2016</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Zvf-Iq-LJc"/>
+        <segue reference="sfn-Bk-AGt"/>
         <segue reference="dKW-jL-B8K"/>
+        <segue reference="X8u-Xy-liR"/>
         <segue reference="Xep-ZI-SYY"/>
     </inferredMetricsTieBreakers>
 </document>
