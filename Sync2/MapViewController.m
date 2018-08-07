@@ -21,6 +21,7 @@
 @property (nonatomic, readwrite) BOOL showGeo;
 @property (nonatomic, readwrite) BOOL useDummyData;
 
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @end
 
 @implementation MapViewController
@@ -28,6 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.mapView setShowsUserLocation:YES];
+    self.locationManager = [[CLLocationManager alloc] init];
+    
+    self.locationManager.delegate = self;
     
     self.useDummyData = NO;
     
@@ -43,8 +47,6 @@
     }
     
     self.title = @"Map";
-    
-    [self.permissionMissingView setHidden:false];
     
 }
 
@@ -199,4 +201,28 @@
 
 - (IBAction)chooseMapTapped:(id)sender {
 }
+
+- (IBAction)openDeviceSettings:(id)sender {
+    NSURL* settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    [[UIApplication sharedApplication] openURL:settingsURL];
+}
+
+#pragma mark - Permission View
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    switch ([CLLocationManager authorizationStatus]) {
+        case kCLAuthorizationStatusNotDetermined:
+        case kCLAuthorizationStatusDenied:
+        case kCLAuthorizationStatusRestricted:
+            [self.permissionMissingView setHidden:NO];
+            break;
+        case kCLAuthorizationStatusAuthorizedAlways:
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+            [self.permissionMissingView setHidden:YES];
+            break;
+        default:
+            break;
+    }
+}
+
 @end
