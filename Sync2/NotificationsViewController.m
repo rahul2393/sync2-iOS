@@ -19,6 +19,8 @@
 #import "ScheduleNotificationTableViewCell.h"
 #import "VisitNotificationTableViewCell.h"
 
+@import UserNotifications;
+
 @interface NotificationsViewController ()
 
 @property (nonatomic, readwrite) BOOL useDummyData;
@@ -34,12 +36,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 200;
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-//    [self.tableView setContentInset:UIEdgeInsetsMake(10, 10, 0, 0)];
+    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 200;
+    
     self.useDummyData = YES;
+    
+    [self permissionChanged];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(permissionChanged)
+                                                 name:@"PushPermissionChanged"
+                                               object:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -55,22 +70,6 @@
                                              selector:@selector(update)
                                                  name:@"PushReceived"
                                                object:nil];
-
-    if (![[UIApplication sharedApplication] isRegisteredForRemoteNotifications]) {
-        self.tableView.hidden = true;
-        self.noNotificationsView.hidden = true;
-        self.permissionMissingView.hidden = false;
-    } else if ([[SettingsManager sharedManager] savedRemoteNotificationPayloads].count == 0) {
-        self.tableView.hidden = true;
-        self.noNotificationsView.hidden = false;
-        self.permissionMissingView.hidden = true;
-    } else {
-        self.tableView.hidden = false;
-        self.noNotificationsView.hidden = true;
-        self.permissionMissingView.hidden = true;
-    }
-
-    
 }
 
 -(void) update{
@@ -155,4 +154,38 @@
     NSURL* settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     [[UIApplication sharedApplication] openURL:settingsURL];
 }
+
+#pragma mark - Permission View
+
+
+- (void)permissionChanged {
+    
+    [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+        dispatch_async(dispatch_get_main_queue(),^{
+            switch ([settings authorizationStatus]) {
+                case UNAuthorizationStatusNotDetermined:
+                case UNAuthorizationStatusDenied:
+                    self.permissionMissingView.hidden = false;
+                    self.tableView.hidden = true;
+                    self.noNotificationsView.hidden = true;
+                    break;
+                case UNAuthorizationStatusAuthorized:
+                    if ([[SettingsManager sharedManager] savedRemoteNotificationPayloads].count == 0) {
+                        self.noNotificationsView.hidden = false;
+                        self.tableView.hidden = true;
+                        self.permissionMissingView.hidden = true;
+                    } else {
+                        self.tableView.hidden = false;
+                        self.noNotificationsView.hidden = true;
+                        self.permissionMissingView.hidden = true;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        });
+    }];
+}
+
+
 @end

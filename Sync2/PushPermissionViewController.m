@@ -24,8 +24,8 @@
     [super viewDidAppear:animated];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(permissionChanged)
-                                                 name:@"PushPermissionChanged"
+                                             selector:@selector(didRegisterChanged)
+                                                 name:@"didRegisterChanged"
                                                object:nil];
 }
 
@@ -34,7 +34,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
--(void)permissionChanged{
+-(void)didRegisterChanged{
     [self.parentPageViewController next];
 }
 

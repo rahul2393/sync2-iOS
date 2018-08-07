@@ -73,14 +73,18 @@
     
     // All instances of TestClass will be notified
     [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"PushPermissionChanged"
+     postNotificationName:@"didRegisterChanged"
      object:self];
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
     [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"PushPermissionChanged"
+     postNotificationName:@"didRegisterChanged"
      object:self];
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PushPermissionChanged" object:self];
 }
 
 - (void)showLoginScreen {
