@@ -170,15 +170,18 @@
                     self.noNotificationsView.hidden = true;
                     break;
                 case UNAuthorizationStatusAuthorized:
-                    if ([[SettingsManager sharedManager] savedRemoteNotificationPayloads].count == 0) {
-                        self.noNotificationsView.hidden = false;
-                        self.tableView.hidden = true;
-                        self.permissionMissingView.hidden = true;
-                    } else {
-                        self.tableView.hidden = false;
-                        self.noNotificationsView.hidden = true;
-                        self.permissionMissingView.hidden = true;
-                    }
+                    self.tableView.hidden = false;
+                    self.noNotificationsView.hidden = true;
+                    self.permissionMissingView.hidden = true;
+//                    if ([[SettingsManager sharedManager] savedRemoteNotificationPayloads].count == 0) {
+//                        self.noNotificationsView.hidden = false;
+//                        self.tableView.hidden = true;
+//                        self.permissionMissingView.hidden = true;
+//                    } else {
+//                        self.tableView.hidden = false;
+//                        self.noNotificationsView.hidden = true;
+//                        self.permissionMissingView.hidden = true;
+//                    }
                     break;
                 default:
                     break;

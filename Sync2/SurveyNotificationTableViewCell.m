@@ -9,12 +9,25 @@
 #import "SurveyNotificationTableViewCell.h"
 #import "OptionSurveyTableViewCell.h"
 
+@interface SurveyNotificationTableViewCell ()
+
+@property (nonatomic, strong) NSMutableArray *radioButtonChecked;
+
+@end
+
 @implementation SurveyNotificationTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.radioButtonChecked = [[NSMutableArray alloc] init];
+    
+    [self.radioButtonChecked addObject:[NSNumber numberWithBool:TRUE]];
+    [self.radioButtonChecked addObject:[NSNumber numberWithBool:FALSE]];
+    [self.radioButtonChecked addObject:[NSNumber numberWithBool:TRUE]];
+    [self.radioButtonChecked addObject:[NSNumber numberWithBool:FALSE]];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -29,7 +42,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     OptionSurveyTableViewCell *cell = (OptionSurveyTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"OptionSurveyTableViewCellIdentifier" forIndexPath:indexPath];
     cell.optionValueLabel.text = self.data[indexPath.row];
-    cell.selectedImageView.image = (indexPath.row % 2 == 0 ) ? [UIImage imageNamed: @"radio-button-check"] : [UIImage imageNamed: @"radio-button-unselected"];
+    cell.selectedImageView.image = [[self.radioButtonChecked objectAtIndex:indexPath.row] boolValue] ? [UIImage imageNamed: @"radio-button-check"] : [UIImage imageNamed: @"radio-button-unselected"];
     return cell;
 }
 
@@ -39,6 +52,12 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.data.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [[self.radioButtonChecked objectAtIndex:indexPath.row] boolValue] ? [self.radioButtonChecked replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:FALSE]] : [self.radioButtonChecked replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:TRUE]];
+    [self.tableView reloadData];
 }
 
 
