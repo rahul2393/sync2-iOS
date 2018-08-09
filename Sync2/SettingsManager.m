@@ -9,6 +9,7 @@
 #import "SettingsManager.h"
 #import "SenseAPI.h"
 #import "TextNotification.h"
+#import "SDKManager.h"
 
 #define KEY_HASONBOARDED @"hasOnboarded"
 
@@ -117,6 +118,7 @@
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_Notifications];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    [[SDKManager sharedManager] clearSensorsData];
 }
 
 -(Project *) selectedProject{

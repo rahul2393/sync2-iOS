@@ -35,6 +35,7 @@
 
 - (NSArray *) sensorsData;
 - (void) setSensorsData:(NSMutableDictionary *)event;
+- (void) clearSensorsData;
 
 
 @end

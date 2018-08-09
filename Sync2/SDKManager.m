@@ -62,6 +62,11 @@
     
 }
 
+- (void)clearSensorsData {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:Sensors_Data_Key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 -(void) setIngressUrl:(NSString *)ingressUrl{
     if (!ingressUrl) {
         return;
