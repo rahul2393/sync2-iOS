@@ -33,4 +33,8 @@
 
 -(void) setIngressUrl:(NSString *)ingressUrl;
 
+- (NSArray *) sensorsData;
+- (void) setSensorsData:(NSMutableDictionary *)event;
+
+
 @end

@@ -22,7 +22,7 @@
     
     [self.mapView setUserInteractionEnabled:NO];
     
-    NSDate *date = [[NSDate alloc] initWithTimeInterval:0 sinceDate:self.event[@"location-timestamp"]];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[self.event[@"device-timestamp"] doubleValue] / 1000.0];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"h:mm:ss a, MMMM dd, yyyy"];

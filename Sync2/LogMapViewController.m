@@ -11,7 +11,7 @@
 #import "ActionSheetPicker.h"
 #import "Device.h"
 #import <GMUHeatmapTileLayer.h>
-
+#import "SDKManager.h"
 @import SixgillSDK;
 
 @interface LogMapViewController ()
@@ -92,7 +92,7 @@
     NSDictionary *currentEvent = self.logs[self.currentIndex];
     _vc.event = currentEvent;
     
-    NSDate *date = [[NSDate alloc] initWithTimeInterval:0 sinceDate:currentEvent[@"location-timestamp"]];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[currentEvent[@"device-timestamp"] doubleValue] / 1000.0];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"h:mm:ss a, MMMM dd, yyyy"];
     self.dateTimeLabel.text = [dateFormatter stringFromDate:date];
@@ -125,7 +125,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"LogMapSegueIdentifier"]) {
         _vc = [segue destinationViewController];
-        _vc.event = [SGSDK sensorUpdateHistory:100].lastObject;
+        _vc.event = [[SDKManager sharedManager] sensorsData].lastObject;
     }
 }
 
@@ -162,8 +162,8 @@
 
 - (void)filterLogList {
     
-    self.logs = [[SGSDK sensorUpdateHistory:100] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
-        NSDate *date = [[NSDate alloc] initWithTimeInterval:0 sinceDate:evaluatedObject[@"location-timestamp"]];
+    self.logs = [[[SDKManager sharedManager] sensorsData] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[evaluatedObject[@"device-timestamp"] doubleValue] / 1000.0];
         
         if([date compare: _fromDate] == NSOrderedDescending &&  [date compare:_toDate] == NSOrderedAscending) {
             return true;
@@ -188,7 +188,6 @@
 
 - (void)createHeatMap {
     NSMutableArray *list = [[NSMutableArray alloc] init];
-//    var list = [GMUWeightedLatLng]()
     
     for(NSDictionary *event in self.logs) {
         CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:[event[@"lat"] doubleValue] longitude: [event[@"lon"] doubleValue]];

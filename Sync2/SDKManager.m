@@ -9,6 +9,7 @@
 #import "SDKManager.h"
 
 #define KEY_API @"currentAPIKey"
+#define Sensors_Data_Key @"sensorsDataKey"
 
 @implementation SDKManager
 
@@ -36,6 +37,29 @@
 - (void) setCurrentAPIKey:(NSString *) apiKey{
     [[NSUserDefaults standardUserDefaults] setObject:apiKey forKey:KEY_API];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSArray *)sensorsData {
+    NSArray *sensorsData = [[NSUserDefaults standardUserDefaults] arrayForKey:Sensors_Data_Key];
+    if (!sensorsData) {
+        sensorsData = @[];
+    }
+    return sensorsData;
+}
+
+- (void)setSensorsData:(NSMutableDictionary *)event {
+    
+    NSArray *sensorUpdateHistory = [[NSUserDefaults standardUserDefaults] arrayForKey:Sensors_Data_Key];
+    if (!sensorUpdateHistory) {
+        sensorUpdateHistory = @[];
+    }
+    
+    NSMutableArray *mutableUpdateHistory = [sensorUpdateHistory mutableCopy];
+    [mutableUpdateHistory insertObject:event atIndex:0];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:mutableUpdateHistory forKey:Sensors_Data_Key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
 }
 
 -(void) setIngressUrl:(NSString *)ingressUrl{

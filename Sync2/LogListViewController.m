@@ -10,6 +10,7 @@
 #import "LogInformationViewController.h"
 #import "ActionSheetPicker.h"
 #import "Device.h"
+#import "SDKManager.h"
 
 @import SixgillSDK;
 @interface LogListViewController ()
@@ -76,7 +77,7 @@
     
     NSDictionary *d = self.logs[indexPath.row];
     
-    NSDate *date = [[NSDate alloc] initWithTimeInterval:0 sinceDate:d[@"location-timestamp"]];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[d[@"device-timestamp"] doubleValue] / 1000.0];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"h:mm:ss a, MMMM dd, yyyy"];
@@ -129,7 +130,7 @@
         }
         return false;
     }]];
-    
+
     [self updateDateLabel];
 }
 

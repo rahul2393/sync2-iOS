@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@import SixgillSDK;
 
-@interface MasterTabViewController : UITabBarController
+@interface MasterTabViewController : UITabBarController <SensorUpdateDelegate>
 
 @end

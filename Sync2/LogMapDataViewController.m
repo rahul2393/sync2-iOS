@@ -56,8 +56,10 @@
         }
         case 2: {
             cell.nameLabel.text = @"Location";
-            if (_event != nil) {
+            if (_event != nil && _event[@"lat"] != nil  &&  _event[@"lon"] != nil) {
                 cell.valueLabel.text = [NSString stringWithFormat: @"%@, %@", _event[@"lat"], _event[@"lon"]];;
+            } else {
+                cell.valueLabel.text = @"-";
             }
             break;
         }

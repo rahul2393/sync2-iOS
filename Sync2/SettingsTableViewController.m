@@ -35,13 +35,11 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-
-    self.log = [SGSDK sensorUpdateHistory:1].lastObject;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    self.log = [[SDKManager sharedManager] sensorsData].lastObject;
     [self.tableView reloadData];
 }
 
