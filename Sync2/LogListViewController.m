@@ -58,12 +58,25 @@
             break;
     }
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(filterLogList)
+                                                 name:@"sensorDataUpdated"
+                                               object:nil];
+    
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)setLogs:(NSArray *)logs {
     _logs = logs;
-    [self.tableview reloadData];
-    self.eventCountLabel.text = [NSString stringWithFormat:@"%lu Events", (unsigned long)self.logs.count];
+    dispatch_async(dispatch_get_main_queue(),^{
+        [self.tableview reloadData];
+        self.eventCountLabel.text = [NSString stringWithFormat:@"%lu Events", (unsigned long)self.logs.count];
+    });
+    
 }
 
 #pragma mark - Table view data source
@@ -117,13 +130,15 @@
 }
 
 - (void)updateDateLabel {
-    _dateLabel.text = [NSString stringWithFormat:@"%@-%@", [_dateLabelFormatter  stringFromDate:_fromDate], [_dateLabelFormatter  stringFromDate:_toDate]];
+    dispatch_async(dispatch_get_main_queue(),^{
+        _dateLabel.text = [NSString stringWithFormat:@"%@-%@", [_dateLabelFormatter  stringFromDate:_fromDate], [_dateLabelFormatter  stringFromDate:_toDate]];
+    });
 }
 
 - (void)filterLogList {
-    
-    self.logs = [[SGSDK sensorUpdateHistory:100] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
-        NSDate *date = [[NSDate alloc] initWithTimeInterval:0 sinceDate:evaluatedObject[@"location-timestamp"]];
+    self.logs = [[[SDKManager sharedManager] sensorsData] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+        
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[evaluatedObject[@"device-timestamp"] doubleValue] / 1000.0];
         
         if([date compare: _fromDate] == NSOrderedDescending &&  [date compare:_toDate] == NSOrderedAscending) {
             return true;

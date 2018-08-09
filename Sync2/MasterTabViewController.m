@@ -142,6 +142,8 @@
     
     [[SDKManager sharedManager] setSensorsData:event];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"sensorDataUpdated" object:self];
+    
 }
 
 

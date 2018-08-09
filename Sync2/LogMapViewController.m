@@ -69,6 +69,15 @@
         default:
             break;
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(filterLogList)
+                                                 name:@"sensorDataUpdated"
+                                               object:nil];
+}
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)setLogs:(NSArray *)logs {
@@ -95,18 +104,22 @@
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:[currentEvent[@"device-timestamp"] doubleValue] / 1000.0];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"h:mm:ss a, MMMM dd, yyyy"];
-    self.dateTimeLabel.text = [dateFormatter stringFromDate:date];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.dateTimeLabel.text = [dateFormatter stringFromDate:date];
+    });
     
     
     CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:[currentEvent[@"lat"] doubleValue] longitude: [currentEvent[@"lon"] doubleValue]];
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithTarget:currentLocation.coordinate zoom:10];
-    self.mapView.camera = camera;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.mapView.camera = camera;
 
-    // Creates a marker in the center of the map.
-    self.marker.position = currentLocation.coordinate;
-    self.marker.map = self.mapView;
-    
-    [self handleShowPrevNextButtons];
+        // Creates a marker in the center of the map.
+        self.marker.position = currentLocation.coordinate;
+        self.marker.map = self.mapView;
+        
+        [self handleShowPrevNextButtons];
+    });
 }
 
 - (void)handleShowPrevNextButtons {
@@ -157,7 +170,9 @@
 }
 
 - (void)updateDateLabel {
-    _dateTimePickerLabel.text = [NSString stringWithFormat:@"%@-%@", [_dateLabelFormatter  stringFromDate:_fromDate], [_dateLabelFormatter  stringFromDate:_toDate]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _dateTimePickerLabel.text = [NSString stringWithFormat:@"%@-%@", [_dateLabelFormatter  stringFromDate:_fromDate], [_dateLabelFormatter  stringFromDate:_toDate]];
+    });
 }
 
 - (void)filterLogList {
@@ -175,15 +190,19 @@
 }
 
 - (void)showEmptyView {
-    [self.noLogsView setHidden:NO];
-    [self.mapDisplayView setHidden:YES];
-    [self.mapDataView setHidden:YES];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.noLogsView setHidden:NO];
+        [self.mapDisplayView setHidden:YES];
+        [self.mapDataView setHidden:YES];
+    });
 }
 
 - (void)showLogsView {
-    [self.noLogsView setHidden:YES];
-    [self.mapDisplayView setHidden:NO];
-    [self.mapDataView setHidden:NO];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.noLogsView setHidden:YES];
+        [self.mapDisplayView setHidden:NO];
+        [self.mapDataView setHidden:NO];
+    });
 }
 
 - (void)createHeatMap {
@@ -194,8 +213,11 @@
         GMUWeightedLatLng* coords = [[GMUWeightedLatLng alloc] initWithCoordinate:currentLocation.coordinate intensity:1.0];
         [list addObject:coords];
     }
-    self.heatmapLayer.weightedData = list;
-    self.heatmapLayer.map = self.mapView;
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.heatmapLayer.weightedData = list;
+        self.heatmapLayer.map = self.mapView;
+    });
 
 }
 
