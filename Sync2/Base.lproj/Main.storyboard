@@ -1738,31 +1738,34 @@ Let us know what you would like to see:</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Today, 2:30 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO7-7k-obr">
-                                                            <rect key="frame" x="50" y="16" width="246" height="17"/>
+                                                            <rect key="frame" x="50.000000000000007" y="16" width="99.666666666666686" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="1aE-vg-urF">
-                                                            <rect key="frame" x="311" y="18.5" width="6" height="12"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNl-DM-Xko">
+                                                            <rect key="frame" x="289" y="13.5" width="44" height="22"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="12" id="Jsy-dh-vbx"/>
-                                                                <constraint firstAttribute="width" constant="6" id="jOM-Wa-TCg"/>
+                                                                <constraint firstAttribute="height" constant="44" id="1r5-CY-SuC"/>
+                                                                <constraint firstAttribute="width" constant="44" id="WW4-oA-z3z"/>
                                                             </constraints>
-                                                        </imageView>
+                                                            <state key="normal" title="Button" image="arrow-down"/>
+                                                            <connections>
+                                                                <action selector="datePickerTapped:" destination="OgH-Xl-NzN" eventType="touchUpInside" id="CjI-hi-IH1"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="1aE-vg-urF" secondAttribute="trailing" constant="18" id="1RZ-UJ-xhj"/>
-                                                        <constraint firstItem="1aE-vg-urF" firstAttribute="leading" secondItem="fO7-7k-obr" secondAttribute="trailing" constant="15" id="3nZ-Ib-3f0"/>
                                                         <constraint firstItem="QRG-lK-6dt" firstAttribute="centerX" secondItem="7oA-vU-Mou" secondAttribute="centerX" id="4pf-WQ-gsP"/>
                                                         <constraint firstItem="7oA-vU-Mou" firstAttribute="centerY" secondItem="HsN-ZA-G4O" secondAttribute="centerY" id="Fjh-g4-dL3"/>
                                                         <constraint firstItem="fO7-7k-obr" firstAttribute="leading" secondItem="7oA-vU-Mou" secondAttribute="trailing" constant="15" id="HEg-eH-noB"/>
                                                         <constraint firstItem="7oA-vU-Mou" firstAttribute="leading" secondItem="HsN-ZA-G4O" secondAttribute="leading" constant="11" id="O5V-bR-X5T"/>
+                                                        <constraint firstAttribute="trailing" secondItem="tNl-DM-Xko" secondAttribute="trailing" constant="2" id="TSY-e9-XW9"/>
                                                         <constraint firstItem="fO7-7k-obr" firstAttribute="centerY" secondItem="HsN-ZA-G4O" secondAttribute="centerY" id="Ue9-ie-ENu"/>
-                                                        <constraint firstItem="1aE-vg-urF" firstAttribute="centerY" secondItem="HsN-ZA-G4O" secondAttribute="centerY" id="XY7-SO-c7b"/>
                                                         <constraint firstItem="QRG-lK-6dt" firstAttribute="centerY" secondItem="7oA-vU-Mou" secondAttribute="centerY" id="ciq-TK-JCa"/>
                                                         <constraint firstAttribute="height" constant="49" id="daw-Jg-0Qo"/>
+                                                        <constraint firstItem="tNl-DM-Xko" firstAttribute="centerY" secondItem="HsN-ZA-G4O" secondAttribute="centerY" id="n2p-iK-5Ju"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -1952,7 +1955,7 @@ Let us know what you would like to see:</string>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PQ-1Z-ezt">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PQ-1Z-ezt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-notification" translatesAutoresizingMaskIntoConstraints="NO" id="Xrg-pP-QPa">
@@ -1982,7 +1985,7 @@ Notifications yet.</string>
                                     <constraint firstItem="Xrg-pP-QPa" firstAttribute="centerX" secondItem="6PQ-1Z-ezt" secondAttribute="centerX" id="K5q-3Q-Z80"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z11-pA-Du6">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z11-pA-Du6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tot-RH-xQw">
@@ -5861,7 +5864,6 @@ revised: 5/9/2016</string>
         <image name="arrow-left-blue" width="8" height="12"/>
         <image name="arrow-right" width="8" height="12"/>
         <image name="arrow-right-blue" width="8" height="12"/>
-        <image name="arrow_down" width="14" height="6"/>
         <image name="blue-background" width="700" height="1298"/>
         <image name="blue-softlight-background" width="1125" height="2001"/>
         <image name="calendar-map" width="24" height="24"/>

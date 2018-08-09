@@ -7,6 +7,7 @@
 //
 
 #import "ScheduleNotificationTableViewCell.h"
+#import "ActionSheetPicker.h"
 
 @implementation ScheduleNotificationTableViewCell
 
@@ -22,5 +23,15 @@
 }
 
 - (IBAction)scheduleTapped:(id)sender {
+}
+
+- (IBAction)datePickerTapped:(id)sender {
+    
+    [ActionSheetDatePicker showPickerWithTitle:@"From" datePickerMode:UIDatePickerModeDateAndTime selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
+    } cancelBlock:^(ActionSheetDatePicker *picker) {
+        
+    }
+                                        origin:sender];
+
 }
 @end

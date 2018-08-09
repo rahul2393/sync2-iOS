@@ -58,9 +58,6 @@
     [[SenseAPI sharedManager] GetLandmarksForProject:currentProject.objectId WithCompletion:^(NSArray *landmarks, NSError * _Nullable error) {
         self.landmarks = landmarks;
         
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//
-//        });
         [self drawLandmarks];
     }];        
 }
