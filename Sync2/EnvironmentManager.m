@@ -47,7 +47,7 @@
     }
     Environment *env = self.environments[0];
     [[SDKManager sharedManager] setIngressUrl:env.ingressURL];
-    return 0;
+    return 1;
     
 }
 
