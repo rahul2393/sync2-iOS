@@ -5880,7 +5880,7 @@ revised: 5/9/2016</string>
         <image name="notification-permission-missing" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
@@ -5891,6 +5891,6 @@ revised: 5/9/2016</string>
         <segue reference="sfn-Bk-AGt"/>
         <segue reference="dKW-jL-B8K"/>
         <segue reference="X8u-Xy-liR"/>
-        <segue reference="Xep-ZI-SYY"/>
+        <segue reference="pIx-Q0-xEV"/>
     </inferredMetricsTieBreakers>
 </document>
