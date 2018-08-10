@@ -24,8 +24,13 @@
     // Do any additional setup after loading the view.
     
     self.title = @"Choose Map";
-    self.selectedChannelIx = -1;
+    
+    [self.selectMapButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
+    [self.selectMapButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self setButtonEnabled:NO];
+    
+    self.selectedChannelIx = -1;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
