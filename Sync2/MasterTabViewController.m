@@ -53,10 +53,10 @@
     if (![[SettingsManager sharedManager] currentAccountEmail]) {
         return;
     }
-    if (![[SettingsManager sharedManager] selectedProject]) {
-        [self loadProjects];
-    }else if (![[SettingsManager sharedManager] selectedDataChannel]) {
+    if (![[SettingsManager sharedManager] selectedDataChannel]) {
         [self loadDataChannels];
+    }else if (![[SettingsManager sharedManager] selectedProject]) {
+        [self loadProjects];
     }
 }
 
