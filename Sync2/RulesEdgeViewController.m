@@ -7,6 +7,7 @@
 //
 
 #import "RulesEdgeViewController.h"
+#import "Device.h"
 
 @interface RulesEdgeViewController ()
 
@@ -25,6 +26,25 @@
     } else {
         [self.tableview setHidden:NO];
         [self.emptyView setHidden:YES];
+    }
+    
+    // Setting tableview constraints
+    switch (UIDevice.currentDevice.screenType) {
+        case iPhoneX:
+        case iPhones_6Plus_6sPlus_7Plus_8Plus:
+            self.tableViewHeightConstraint.constant = 569;
+            self.emptyViewHeightConstraint.constant = 569;
+            break;
+        case iPhones_6_6s_7_8:
+            self.tableViewHeightConstraint.constant = 481;
+            self.emptyViewHeightConstraint.constant = 481;
+            break;
+        case iPhones_5_5s_5c_SE:
+            self.tableViewHeightConstraint.constant = 481;
+            self.emptyViewHeightConstraint.constant = 481;
+            break;
+        default:
+            break;
     }
 }
 

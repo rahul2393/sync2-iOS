@@ -11,5 +11,7 @@
 @interface RulesEdgeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet UIView *emptyView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *emptyViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeightConstraint;
 
 @end
