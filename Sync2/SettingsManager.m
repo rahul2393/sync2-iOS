@@ -13,6 +13,8 @@
 
 #define KEY_HASONBOARDED @"hasOnboarded"
 
+#define KEY_HASACCEPTEDAGREEMENT @"hasAcceptedAgreement"
+
 #define KEY_ACCOUNTS @"accountsList"
 
 #define KEY_ACTIVEACCOUNTID @"activeAccountId"
@@ -181,6 +183,15 @@
 
 -(void) setHasOnboarded:(BOOL)hasOnboarded{
     [[NSUserDefaults standardUserDefaults] setBool:hasOnboarded forKey:KEY_HASONBOARDED];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (BOOL)hasAcceptedAgreement {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:KEY_HASACCEPTEDAGREEMENT];
+}
+
+- (void)setHasAcceptedAgreement:(BOOL)hasAcceptedAgreement {
+    [[NSUserDefaults standardUserDefaults] setBool:hasAcceptedAgreement forKey:KEY_HASACCEPTEDAGREEMENT];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

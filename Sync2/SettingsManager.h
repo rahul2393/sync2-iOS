@@ -45,6 +45,10 @@
 
 -(void) setHasOnboarded:(BOOL)hasOnboarded;
 
+-(BOOL) hasAcceptedAgreement;
+
+-(void) setHasAcceptedAgreement:(BOOL)hasAcceptedAgreement;
+
 
 // Deprecated
 -(void) addAccount:(Account *)account;

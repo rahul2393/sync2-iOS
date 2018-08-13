@@ -55,6 +55,10 @@
                                              selector:@selector(permissionChanged)
                                                  name:@"PushPermissionChanged"
                                                object:nil];
+    
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes: UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

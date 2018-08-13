@@ -23,15 +23,13 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    if (![[SettingsManager sharedManager] hasOnboarded]) {
-        [self performSegueWithIdentifier:@"showLicenseAgreement" sender:self];
-    }else if ([[SettingsManager sharedManager] currentAccountEmail]) {
+    if ([[SettingsManager sharedManager] currentAccountEmail]) {
         [self performSegueWithIdentifier:@"alreadySignedIn" sender:self];
     }
 }
 
 - (IBAction)haveAccountTapped:(id)sender {
-    
+    [self performSegueWithIdentifier:@"showPermissionRequests" sender:self];
 }
 
 

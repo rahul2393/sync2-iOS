@@ -12,6 +12,8 @@
 #import "SettingsManager.h"
 #import "ProjectSelectionTableViewCell.h"
 
+@import SixgillSDK;
+
 @interface ProjectSelectionViewController ()
 @property (nonatomic, readwrite) BOOL useDummy;
 @property (nonatomic, readwrite) BOOL projectSelected;
@@ -146,6 +148,9 @@
     
     NSLog(@"Button tapped");
     [self dismissScreen];
+    
+    [SGSDK requestAlwaysPermission];
+    
 }
 
 @end

@@ -19,14 +19,6 @@
     [super viewDidLoad];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    if ([[SettingsManager sharedManager] hasOnboarded]) {
-        [self dismissViewControllerAnimated:NO completion:nil];
-    }
-}
-
 - (IBAction)declineAgreement:(id)sender {
 }
 

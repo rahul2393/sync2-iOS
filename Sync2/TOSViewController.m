@@ -19,19 +19,12 @@
     [super viewDidLoad];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    if ([[SettingsManager sharedManager] hasOnboarded]) {
-        [self dismissViewControllerAnimated:NO completion:nil];
-    }
-}
-
 - (IBAction)declineService:(id)sender {
 }
 
 - (IBAction)acceptService:(id)sender {
-    [self performSegueWithIdentifier:@"showPermissionRequests" sender:self];
+    [[SettingsManager sharedManager] setHasAcceptedAgreement:true];
+    [self performSegueWithIdentifier:@"showWelcomeScreen" sender:self];
 }
 
 @end

@@ -39,7 +39,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peT-uY-jJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="154" y="-2265"/>
+            <point key="canvasLocation" x="1569" y="-2257"/>
         </scene>
         <!--Permission Page Controller-->
         <scene sceneID="b3W-mL-Ogb">
@@ -47,7 +47,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="UQK-ts-qSm" customClass="PermissionPageController" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyH-0y-7H9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-454" y="-660"/>
+            <point key="canvasLocation" x="-404" y="-626"/>
         </scene>
         <!--Signup WebVC-->
         <scene sceneID="u4c-Eg-9jL">
@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XF0-2N-u89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="-2265"/>
+            <point key="canvasLocation" x="1569" y="-2164"/>
         </scene>
         <!--Splash View Controller-->
         <scene sceneID="9UX-5F-mbR">
@@ -121,12 +121,15 @@
                     </view>
                     <connections>
                         <outlet property="spinner" destination="fEA-zi-dWD" id="mYb-5D-i7i"/>
-                        <segue destination="5P7-yC-Z8k" kind="show" identifier="showWelcomeScreen" id="pIx-Q0-xEV"/>
+                        <segue destination="cp0-ji-nh1" kind="show" identifier="showLicenseAgreement" id="IQM-XY-Z6P"/>
+                        <segue destination="5P7-yC-Z8k" kind="show" identifier="showWelcomeScreen" id="06h-aU-o4p"/>
+                        <segue destination="oH9-Ao-Hwe" kind="show" identifier="goToLoginView" id="tam-M8-If5"/>
+                        <segue destination="MOx-o9-HDz" kind="show" identifier="alreadySignedIn" id="az3-hw-ZNG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICM-EY-DIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1728" y="-1534"/>
+            <point key="canvasLocation" x="-2143" y="-1391"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="SZl-ox-SCl">
@@ -188,7 +191,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="haveAccountTapped:" destination="5P7-yC-Z8k" eventType="touchUpInside" id="UQ5-YJ-XZv"/>
-                                    <segue destination="oH9-Ao-Hwe" kind="show" id="4Zd-7m-m4S"/>
+                                    <segue destination="UQK-ts-qSm" kind="show" identifier="showPermissionRequests" id="GW0-9N-eo0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAZ-i0-n4P">
@@ -284,14 +287,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="MOx-o9-HDz" kind="show" identifier="alreadySignedIn" id="gO2-P8-Yfg"/>
-                        <segue destination="cp0-ji-nh1" kind="presentation" identifier="showLicenseAgreement" id="cO5-zU-tHL"/>
                         <segue destination="Ql4-PW-vcG" kind="show" identifier="goToSignupView" id="iXE-p4-Tk7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHJ-B3-1Gx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-858.75" y="-1511.6197183098591"/>
+            <point key="canvasLocation" x="-375" y="-1390"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="M2p-sK-ZzC">
@@ -471,12 +472,12 @@ Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="qKz-dH-1qu" kind="presentation" identifier="showTermsOfService" id="zUh-qs-vxl"/>
+                        <segue destination="qKz-dH-1qu" kind="show" identifier="showTermsOfService" id="zUh-qs-vxl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OA7-tR-qXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="155" y="-1535"/>
+            <point key="canvasLocation" x="-1332" y="-2109"/>
         </scene>
         <!--Setup Info View Controller-->
         <scene sceneID="xUf-j9-3o2">
@@ -607,12 +608,12 @@ Sixgill, LLC, 312 Arizona Ave, Santa Monica, CA 90401
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZq-Qw-PgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1687" y="-1345"/>
+            <point key="canvasLocation" x="1655" y="-1343"/>
         </scene>
-        <!--Setup Info View Controller-->
+        <!--Setup Complete View Controller-->
         <scene sceneID="umg-Gs-eej">
             <objects>
-                <viewController storyboardIdentifier="setupCompleteView" id="8F4-S6-Crc" customClass="SetupInfoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setupCompleteView" id="8F4-S6-Crc" customClass="SetupCompleteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fUo-GJ-eOd"/>
                         <viewControllerLayoutGuide type="bottom" id="h85-4g-rHb"/>
@@ -678,7 +679,8 @@ You can now proceed to Login.</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="continueTapped:" destination="8F4-S6-Crc" eventType="touchUpInside" id="XI6-mo-4J7"/>
+                                            <action selector="continueTapped:" destination="8F4-S6-Crc" eventType="touchUpInside" id="aH4-U8-aN8"/>
+                                            <segue destination="oH9-Ao-Hwe" kind="show" identifier="goToLoginView" id="Vd6-oQ-gLl"/>
                                         </connections>
                                     </button>
                                     <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="4" translatesAutoresizingMaskIntoConstraints="NO" id="K6k-XZ-RyD">
@@ -1046,7 +1048,7 @@ You can now proceed to Login.</string>
                         <viewControllerLayoutGuide type="bottom" id="xoT-SY-iVU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5aJ-6E-ccx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hty-Eq-4VU">
@@ -1105,7 +1107,7 @@ You can now proceed to Login.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lRu-Wa-Ali">
-                                <rect key="frame" x="10" y="293" width="355" height="353"/>
+                                <rect key="frame" x="10" y="293" width="355" height="402"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -1121,7 +1123,7 @@ You can now proceed to Login.</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yI-df-ybp">
-                                <rect key="frame" x="10" y="661" width="355" height="44"/>
+                                <rect key="frame" x="10" y="710" width="355" height="44"/>
                                 <color key="backgroundColor" red="0.12692853808403015" green="0.31156018376350403" blue="0.74908894300460815" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration" identifier="select-channel-button" label="Select Channel">
                                     <bool key="isElement" value="NO"/>
@@ -1143,7 +1145,7 @@ You can now proceed to Login.</string>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEv-GE-DmP">
-                                <rect key="frame" x="0.0" y="278" width="375" height="383"/>
+                                <rect key="frame" x="0.0" y="278" width="375" height="432"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -1173,7 +1175,7 @@ You can now proceed to Login.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwA-yp-eXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8040" y="-2571"/>
+            <point key="canvasLocation" x="8213" y="-2649"/>
         </scene>
         <!--Master Tab View Controller-->
         <scene sceneID="LeW-bi-v0N">
@@ -2810,7 +2812,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                         <viewControllerLayoutGuide type="bottom" id="dW8-0e-yOx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="agB-wX-HQ7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ir-Qq-HDZ">
@@ -2862,7 +2864,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-7S-yj0" userLabel="table">
-                                <rect key="frame" x="10" y="313" width="355" height="333"/>
+                                <rect key="frame" x="10" y="313" width="355" height="382"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -2878,7 +2880,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZX-1b-EJD" userLabel="select-project-button">
-                                <rect key="frame" x="10" y="661" width="355" height="44"/>
+                                <rect key="frame" x="10" y="710" width="355" height="44"/>
                                 <color key="backgroundColor" red="0.12692853809999999" green="0.3115601838" blue="0.74908894299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration" identifier="select-project-button" label="Select Project">
                                     <bool key="isElement" value="NO"/>
@@ -2900,7 +2902,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lA-6p-rgy">
-                                <rect key="frame" x="0.0" y="298" width="375" height="363"/>
+                                <rect key="frame" x="0.0" y="298" width="375" height="412"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -3108,7 +3110,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcL-2I-1Sb">
-                                <rect key="frame" x="15" y="569" width="346" height="62"/>
+                                <rect key="frame" x="14" y="569" width="346" height="62"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fae-Xh-e7e">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="62"/>
@@ -3134,7 +3136,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4b-n8-FB0">
-                                <rect key="frame" x="15" y="653" width="347" height="61.666666666666629"/>
+                                <rect key="frame" x="14" y="653" width="347" height="61.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jR5-i1-2Nk">
                                         <rect key="frame" x="0.0" y="1" width="346" height="61.666666666666664"/>
@@ -3158,13 +3160,13 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Sixgill Sync is the companion app to the Sixgill Sense developer platform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-8P-uEW">
-                                <rect key="frame" x="32.333333333333343" y="461" width="310.33333333333326" height="77"/>
+                                <rect key="frame" x="31.333333333333343" y="461" width="310.33333333333326" height="77"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="34" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZgG-mg-Rlv">
-                                <rect key="frame" x="49.333333333333343" y="258.33333333333331" width="278.33333333333326" height="201.66666666666669"/>
+                                <rect key="frame" x="48.333333333333343" y="258.33333333333331" width="278.33333333333326" height="201.66666666666669"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="67"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -5453,12 +5455,12 @@ revised: 5/9/2016</string>
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="UQK-ts-qSm" kind="presentation" identifier="showPermissionRequests" id="ahU-ZS-aL7"/>
+                        <segue destination="5P7-yC-Z8k" kind="show" identifier="showWelcomeScreen" id="CP3-Hb-LwB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCC-b7-IlQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="907" y="-1535"/>
+            <point key="canvasLocation" x="-375" y="-2110"/>
         </scene>
         <!--Log List View Controller-->
         <scene sceneID="guK-Kh-V0f">
@@ -5888,7 +5890,7 @@ revised: 5/9/2016</string>
         <image name="notification-permission-missing" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="165" height="120"/>
+        <image name="sixgill-logo" width="325" height="95"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
@@ -5896,9 +5898,10 @@ revised: 5/9/2016</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Zvf-Iq-LJc"/>
-        <segue reference="sfn-Bk-AGt"/>
-        <segue reference="gO2-P8-Yfg"/>
-        <segue reference="X8u-Xy-liR"/>
-        <segue reference="Xep-ZI-SYY"/>
+        <segue reference="tiO-Cx-fFe"/>
+        <segue reference="az3-hw-ZNG"/>
+        <segue reference="bdL-UT-Onr"/>
+        <segue reference="tam-M8-If5"/>
+        <segue reference="06h-aU-o4p"/>
     </inferredMetricsTieBreakers>
 </document>
