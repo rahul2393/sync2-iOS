@@ -13,6 +13,7 @@
 #import "CameraPermissionViewController.h"
 #import "PushPermissionViewController.h"
 #import "SetupInfoViewController.h"
+#import "SetupCompleteViewController.h"
 #import "SettingsManager.h"
 
 @interface PermissionPageController ()
@@ -44,7 +45,7 @@
     PushPermissionViewController *pushVC = (PushPermissionViewController *)[self ViewControllerFromStoryboard:@"pushAccessView"];
     pushVC.parentPageViewController = self;
     
-    SetupInfoViewController *setupCompleteVC = (SetupInfoViewController *)[self ViewControllerFromStoryboard:@"setupCompleteView"];
+    SetupCompleteViewController *setupCompleteVC = (SetupCompleteViewController *)[self ViewControllerFromStoryboard:@"setupCompleteView"];
     setupCompleteVC.parentPageViewController = self;
 
     
@@ -65,7 +66,6 @@
         self.index++;
     }else{
         [[SettingsManager sharedManager] setHasOnboarded:YES];
-        [self dismissViewControllerAnimated:NO completion:nil];
         return;
     }
     
