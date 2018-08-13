@@ -63,9 +63,9 @@
                 self.selectedChannelIx = selectedIndex;
                 [self setButtonEnabled:YES];
                 
-//                UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelTapped)];
-//                cancelItem.tintColor = [UIColor whiteColor];
-//                self.navigationItem.leftBarButtonItem = cancelItem;
+                UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelTapped)];
+                cancelItem.tintColor = [UIColor whiteColor];
+                self.navigationItem.leftBarButtonItem = cancelItem;
             }
         }
     }
