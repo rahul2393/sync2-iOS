@@ -32,6 +32,8 @@
     
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
+    UINavigationBar.appearance.tintColor = [[UIColor alloc] initWithRed:0.439 green:0.796 blue:0.412 alpha:1];
+    
     NSString *e = [[SettingsManager sharedManager] currentAccountEmail];
     NSString *a = [[SDKManager sharedManager] currentAPIKey];
     
