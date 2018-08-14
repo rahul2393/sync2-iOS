@@ -43,8 +43,14 @@
     if ([[segue identifier] isEqualToString:@"LogInformationSegueIdentifier"]) {
         LogMapDataViewController* vc = [segue destinationViewController];
         vc.event = _event;
+        vc.buttonLabelText = @"Copy Log";
+        vc.delegate = self;
     }
 }
 
+- (void)logsButtonTapped {
+    UIPasteboard *board = UIPasteboard.generalPasteboard;
+    board.string = [NSString stringWithFormat:@"%@", self.event];
+}
 
 @end

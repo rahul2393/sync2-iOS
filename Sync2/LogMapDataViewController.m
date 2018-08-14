@@ -29,10 +29,12 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-
+    
+    [_logsButton setTitle:_buttonLabelText forState:UIControlStateNormal];
 }
 
-- (IBAction)viewSDKLogsTapped:(id)sender {
+- (IBAction)logsButtonTapped:(id)sender {
+    [self.delegate logsButtonTapped];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

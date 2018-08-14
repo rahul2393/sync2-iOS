@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LogMapDataViewController.h"
 @import GoogleMaps;
 
-@interface LogMapViewController : UIViewController
+@interface LogMapViewController : UIViewController <LogMapDataDelegate>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *dateTimePickerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateTimeLabel;

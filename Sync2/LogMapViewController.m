@@ -14,6 +14,8 @@
 #import "SDKManager.h"
 @import SixgillSDK;
 
+#define kLogsButtonLabel @"Copy All Logs"
+
 @interface LogMapViewController ()
 @property (nonatomic, strong) LogMapDataViewController* vc;
 @property (nonatomic) NSArray* logs;
@@ -99,6 +101,8 @@
     
     NSDictionary *currentEvent = self.logs[self.currentIndex];
     _vc.event = currentEvent;
+    _vc.buttonLabelText = kLogsButtonLabel;
+    _vc.delegate = self;
     
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:[currentEvent[@"device-timestamp"] doubleValue] / 1000.0];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -138,6 +142,8 @@
     if ([[segue identifier] isEqualToString:@"LogMapSegueIdentifier"]) {
         _vc = [segue destinationViewController];
         _vc.event = [[SDKManager sharedManager] sensorsData].lastObject;
+        _vc.buttonLabelText = kLogsButtonLabel;
+        _vc.delegate = self;
     }
 }
 
@@ -224,6 +230,10 @@
         self.heatmapLayer.map = self.mapView;
     });
 
+}
+
+- (void)logsButtonTapped {
+    
 }
 
 @end

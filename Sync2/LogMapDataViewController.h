@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LogMapDataDelegate
+
+-(void) logsButtonTapped;
+
+@end;
+
 @interface LogMapDataViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) NSDictionary *event;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-- (IBAction)viewSDKLogsTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *logsButton;
+- (IBAction)logsButtonTapped:(id)sender;
+@property (weak, nonatomic) NSDictionary *event;
+@property (weak, nonatomic) NSString *buttonLabelText;
+@property (nonatomic, weak) id<LogMapDataDelegate> delegate;
 @end
