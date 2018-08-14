@@ -896,7 +896,7 @@ You can now proceed to Login.</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2y-eM-hRS">
-                                        <rect key="frame" x="130" y="728" width="116" height="44"/>
+                                        <rect key="frame" x="130" y="762" width="116" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="66n-kT-ttd"/>
                                         </constraints>
@@ -1591,7 +1591,7 @@ Let us know what you would like to see:</string>
                                                             <rect key="frame" x="0.0" y="28" width="335" height="38"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lv-xe-yKM" id="5ET-8I-o9t">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="37.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-yQ-dY7">
@@ -2699,7 +2699,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 <rect key="frame" x="10" y="98" width="355" height="601"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mgh-0E-bhY">
-                                    <rect key="frame" x="0.0" y="77" width="355" height="44"/>
+                                    <rect key="frame" x="0.0" y="122.33333333333334" width="355" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.0" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -2717,13 +2717,13 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </button>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsTableViewCellIdentifier" rowHeight="49" id="9Cg-Qz-yRx" customClass="SettingsTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="355" height="49"/>
+                                        <rect key="frame" x="0.0" y="55.333333333333343" width="355" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Cg-Qz-yRx" id="fhl-2z-5co">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="48.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0W-sY-vnJ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0W-sY-vnJ" customClass="CopyLabel">
                                                     <rect key="frame" x="20" y="16.666666666666668" width="6.6666666666666679" height="17.000000000000004"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -2756,7 +2756,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="keyLabel" destination="Cit-HX-5Sy" id="bML-y6-4rl"/>
-                                            <outlet property="valueLabel" destination="k0W-sY-vnJ" id="2Wn-04-23T"/>
+                                            <outlet property="valueLabel" destination="k0W-sY-vnJ" id="XpB-Yp-Maa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -5744,7 +5744,7 @@ revised: 5/9/2016</string>
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7T-WR-Qqf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7T-WR-Qqf" customClass="CopyLabel">
                                                     <rect key="frame" x="20" y="13.666666666666664" width="6.6666666666666679" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -5767,7 +5767,7 @@ revised: 5/9/2016</string>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="Yif-JP-jhx" id="5HW-zC-QoB"/>
-                                            <outlet property="valueLabel" destination="e7T-WR-Qqf" id="InW-4j-YVG"/>
+                                            <outlet property="valueLabel" destination="e7T-WR-Qqf" id="bMS-kU-KC8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -5796,8 +5796,7 @@ revised: 5/9/2016</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="viewSDKLogsTapped:" destination="bYQ-d0-h7J" eventType="touchUpInside" id="6aQ-hY-bPi"/>
-                                    <action selector="viewSDKLogsTapped:" destination="am3-Jl-xRQ" eventType="touchUpInside" id="d6z-zR-D9l"/>
+                                    <action selector="logsButtonTapped:" destination="bYQ-d0-h7J" eventType="touchUpInside" id="kn8-6e-2mv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -5815,6 +5814,7 @@ revised: 5/9/2016</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logsButton" destination="Mab-WC-6jy" id="gaF-g4-XfX"/>
                         <outlet property="tableView" destination="3wz-1i-jDv" id="SLK-fX-ngt"/>
                     </connections>
                 </viewController>
@@ -5859,7 +5859,7 @@ revised: 5/9/2016</string>
         <image name="notification-permission-missing" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="165" height="120"/>
+        <image name="sixgill-logo" width="325" height="95"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>

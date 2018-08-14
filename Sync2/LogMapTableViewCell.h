@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CopyLabel.h"
 
 @interface LogMapTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+@property (weak, nonatomic) IBOutlet CopyLabel *valueLabel;
 
 @end

@@ -149,6 +149,7 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.valueLabel.enableCopy = false;
     
     if (indexPath.section == 0) {
         switch (indexPath.row) {
@@ -206,6 +207,7 @@
             case 0: {
                 cell.keyLabel.text = @"Device ID";
                 cell.valueLabel.text = self.log[@"device-info-guid"];
+                cell.valueLabel.enableCopy = true;
                 break;
             }
             case 1: {

@@ -41,11 +41,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LogMapTableViewCell *cell = (LogMapTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LogMapTableViewCellIdentifier" forIndexPath:indexPath];
+    cell.valueLabel.enableCopy = false;
     switch (indexPath.row) {
         case 0: {
             cell.nameLabel.text = @"Device ID";
             if (_event != nil) {
                 cell.valueLabel.text = _event[@"device-info-guid"];
+                cell.valueLabel.enableCopy = true;
             }
             break;
         }
