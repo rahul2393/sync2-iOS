@@ -29,6 +29,7 @@
 		75502A7B210A155200BFCA2A /* RulesEdgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A7A210A155200BFCA2A /* RulesEdgeViewController.m */; };
 		75502A7E210A162D00BFCA2A /* RulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A7D210A162D00BFCA2A /* RulesViewController.m */; };
 		75502A81210A5DC800BFCA2A /* LogMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A80210A5DC800BFCA2A /* LogMapViewController.m */; };
+		75511ABD2122FAF100D98E1A /* CopyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75511ABC2122FAF100D98E1A /* CopyLabel.m */; };
 		755F25A62111CA4C0083E044 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 755F25A32111C55C0083E044 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		756C2D5820F5FEE7008560FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */; };
 		75840431211F5931001AEF91 /* SetupCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75840430211F5931001AEF91 /* SetupCompleteViewController.m */; };
@@ -197,6 +198,8 @@
 		75502A7D210A162D00BFCA2A /* RulesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesViewController.m; sourceTree = "<group>"; };
 		75502A7F210A5DC800BFCA2A /* LogMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogMapViewController.h; sourceTree = "<group>"; };
 		75502A80210A5DC800BFCA2A /* LogMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogMapViewController.m; sourceTree = "<group>"; };
+		75511ABC2122FAF100D98E1A /* CopyLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyLabel.m; sourceTree = "<group>"; };
+		75511ABE2122FB0200D98E1A /* CopyLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyLabel.h; sourceTree = "<group>"; };
 		755F25A32111C55C0083E044 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7584042F211F5931001AEF91 /* SetupCompleteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetupCompleteViewController.h; sourceTree = "<group>"; };
@@ -438,6 +441,8 @@
 				75502A7521099DC000BFCA2A /* CustomSegmentControl.h */,
 				75DABA37211043820040A170 /* CustomSegmentControlViewController.h */,
 				75DABA38211043820040A170 /* CustomSegmentControlViewController.m */,
+				75511ABC2122FAF100D98E1A /* CopyLabel.m */,
+				75511ABE2122FB0200D98E1A /* CopyLabel.h */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1530,6 +1535,7 @@
 				75E352982116D62800471D39 /* LogInformationViewController.m in Sources */,
 				75D71593210C899F007378D5 /* ChooseMapViewController.m in Sources */,
 				75D71587210B0D10007378D5 /* LogMapTableViewCell.m in Sources */,
+				75511ABD2122FAF100D98E1A /* CopyLabel.m in Sources */,
 				E90371521EE8B7DF0033DED0 /* TestNetworkInterface.m in Sources */,
 				E9F29C192051BB330024E3B5 /* EnvironmentManager.m in Sources */,
 				E912818B20100B310003072B /* DummyChannelData.m in Sources */,
