@@ -32,16 +32,13 @@
     switch (UIDevice.currentDevice.screenType) {
         case iPhoneX:
         case iPhones_6Plus_6sPlus_7Plus_8Plus:
-            self.tableViewHeightConstraint.constant = 569;
-            self.emptyViewHeightConstraint.constant = 569;
+            self.tableViewHeightConstraint.constant = 589;
+            self.emptyViewHeightConstraint.constant = 589;
             break;
         case iPhones_6_6s_7_8:
-            self.tableViewHeightConstraint.constant = 481;
-            self.emptyViewHeightConstraint.constant = 481;
-            break;
         case iPhones_5_5s_5c_SE:
-            self.tableViewHeightConstraint.constant = 481;
-            self.emptyViewHeightConstraint.constant = 481;
+            self.tableViewHeightConstraint.constant = 501;
+            self.emptyViewHeightConstraint.constant = 501;
             break;
         default:
             break;
