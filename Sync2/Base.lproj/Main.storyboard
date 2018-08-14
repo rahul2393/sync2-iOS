@@ -203,13 +203,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pa-qU-695">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="8pa-qU-695">
                                 <rect key="frame" x="47" y="705" width="281" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="3DN-KU-RxR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="Sign up for Sixgill Sense Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -223,6 +224,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="createNewAccountTapped:" destination="5P7-yC-Z8k" eventType="touchUpInside" id="Wzg-dT-IHT"/>
@@ -786,25 +788,6 @@ You can now proceed to Login.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ec-WT-RS9">
-                                        <rect key="frame" x="50" y="448" width="275.66666666666669" height="46"/>
-                                        <color key="backgroundColor" red="0.0" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="TGV-xy-AOG"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Login">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="loginButtonTapped:" destination="oH9-Ao-Hwe" eventType="touchUpInside" id="7d1-fv-Mry"/>
-                                        </connections>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sync-logo" translatesAutoresizingMaskIntoConstraints="NO" id="wfr-HE-fm0">
                                         <rect key="frame" x="111" y="60" width="154" height="65"/>
                                         <constraints>
@@ -893,6 +876,25 @@ You can now proceed to Login.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="url"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ec-WT-RS9">
+                                        <rect key="frame" x="50" y="448" width="275.66666666666669" height="46"/>
+                                        <color key="backgroundColor" red="0.0" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="TGV-xy-AOG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="oH9-Ao-Hwe" eventType="touchUpInside" id="7d1-fv-Mry"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2y-eM-hRS">
                                         <rect key="frame" x="130" y="728" width="116" height="44"/>
                                         <constraints>
@@ -914,12 +916,14 @@ You can now proceed to Login.</string>
                                     <constraint firstItem="fvQ-Pj-SN8" firstAttribute="trailing" secondItem="cGA-DR-CHo" secondAttribute="trailing" id="5Cc-XG-L3t"/>
                                     <constraint firstItem="4Ec-WT-RS9" firstAttribute="trailing" secondItem="dKk-DY-i10" secondAttribute="trailing" id="67d-YK-0Lm"/>
                                     <constraint firstItem="fvQ-Pj-SN8" firstAttribute="leading" secondItem="cGA-DR-CHo" secondAttribute="leading" id="6TM-r0-I8n"/>
+                                    <constraint firstItem="G2y-eM-hRS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4Ec-WT-RS9" secondAttribute="bottom" constant="20" id="6rc-KJ-FKx"/>
                                     <constraint firstItem="aHE-v1-poH" firstAttribute="top" secondItem="gVR-tA-QQg" secondAttribute="bottom" constant="8" id="7Cw-IC-g42"/>
                                     <constraint firstItem="b8L-A2-5wD" firstAttribute="top" secondItem="seU-7n-pzp" secondAttribute="bottom" constant="23" id="7IC-pX-L6V"/>
                                     <constraint firstItem="lvY-cT-DIp" firstAttribute="leading" secondItem="f0R-vO-obt" secondAttribute="leading" id="8Ub-zF-6BR"/>
                                     <constraint firstItem="cGA-DR-CHo" firstAttribute="leading" secondItem="Ov3-Xa-p0a" secondAttribute="leading" constant="50" id="9J1-Ab-cHh"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="gVR-tA-QQg" secondAttribute="trailing" id="9kq-gW-BJe"/>
                                     <constraint firstItem="f0R-vO-obt" firstAttribute="top" secondItem="lvY-cT-DIp" secondAttribute="bottom" constant="4" id="AyJ-5e-mAh"/>
+                                    <constraint firstAttribute="bottom" secondItem="G2y-eM-hRS" secondAttribute="bottom" constant="6" id="Bee-g6-nEG"/>
                                     <constraint firstItem="lvY-cT-DIp" firstAttribute="trailing" secondItem="f0R-vO-obt" secondAttribute="trailing" id="Bkm-qs-SQW"/>
                                     <constraint firstItem="nbS-Qm-2L5" firstAttribute="top" secondItem="dKk-DY-i10" secondAttribute="bottom" constant="25" id="Hqv-7V-Ald"/>
                                     <constraint firstItem="Hnu-i4-SzT" firstAttribute="top" secondItem="Ov3-Xa-p0a" secondAttribute="top" id="I3H-Dg-6K8"/>
@@ -941,7 +945,6 @@ You can now proceed to Login.</string>
                                     <constraint firstItem="seU-7n-pzp" firstAttribute="top" secondItem="wfr-HE-fm0" secondAttribute="bottom" constant="43" id="k1A-9D-iPL"/>
                                     <constraint firstItem="f0R-vO-obt" firstAttribute="leading" secondItem="fvQ-Pj-SN8" secondAttribute="leading" id="ltP-qy-T6D"/>
                                     <constraint firstItem="dKk-DY-i10" firstAttribute="leading" secondItem="aHE-v1-poH" secondAttribute="leading" id="mal-bK-5Z4"/>
-                                    <constraint firstAttribute="bottom" secondItem="G2y-eM-hRS" secondAttribute="bottom" constant="40" id="mdr-Mu-ZnU"/>
                                     <constraint firstItem="cGA-DR-CHo" firstAttribute="centerX" secondItem="Ov3-Xa-p0a" secondAttribute="centerX" id="sd9-OI-OrG"/>
                                     <constraint firstItem="G2y-eM-hRS" firstAttribute="centerX" secondItem="Ov3-Xa-p0a" secondAttribute="centerX" id="ugj-ae-YCc"/>
                                     <constraint firstAttribute="trailing" secondItem="nbS-Qm-2L5" secondAttribute="trailing" id="uvk-40-Vgr"/>
@@ -5865,7 +5868,7 @@ revised: 5/9/2016</string>
     <inferredMetricsTieBreakers>
         <segue reference="Zvf-Iq-LJc"/>
         <segue reference="sfn-Bk-AGt"/>
-        <segue reference="az3-hw-ZNG"/>
+        <segue reference="dKW-jL-B8K"/>
         <segue reference="X8u-Xy-liR"/>
         <segue reference="tam-M8-If5"/>
         <segue reference="06h-aU-o4p"/>
