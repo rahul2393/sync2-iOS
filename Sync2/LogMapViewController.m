@@ -54,6 +54,7 @@
     
     
     [self filterLogList];
+    self.currentIndex = 0;
     
     // Setting view constraints
     switch (UIDevice.currentDevice.screenType) {
@@ -71,7 +72,7 @@
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(filterLogList)
+                                             selector:@selector(updateViewWithSensorData)
                                                  name:@"sensorDataUpdated"
                                                object:nil];
 }
@@ -91,8 +92,6 @@
     _logs = logs;
     
     [self createHeatMap];
-    
-    self.currentIndex = 0;
 }
 
 - (void)setCurrentIndex:(NSInteger)currentIndex {
@@ -159,6 +158,7 @@
             _fromDate = localFromDate;
             _toDate = selectedDate;
             [self filterLogList];
+            self.currentIndex = 0;
         } cancelBlock:^(ActionSheetDatePicker *picker) {
             
         }
@@ -187,6 +187,11 @@
     }]];
     
     [self updateDateLabel];
+}
+
+- (void)updateViewWithSensorData {
+    [self filterLogList];
+    self.currentIndex += 1;
 }
 
 - (void)showEmptyView {
