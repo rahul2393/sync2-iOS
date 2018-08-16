@@ -231,8 +231,8 @@
                                @"Accept": @"application/json",
                                @"Connection": @"keep-alive" };
     
-    NSString *projectId = [[[SettingsManager sharedManager] selectedDataChannel] objectId];
-    NSString *fmt = [NSString stringWithFormat:@"/v2/channels/%@/apiKeys", projectId];
+    NSString *channelId = [[[SettingsManager sharedManager] selectedDataChannel] objectId];
+    NSString *fmt = [NSString stringWithFormat:@"/v2/channels/%@/apiKeys", channelId];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:fmt]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     

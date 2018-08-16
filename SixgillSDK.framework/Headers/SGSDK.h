@@ -19,8 +19,10 @@
 @interface SGSDK : NSObject
 
 +(void) initWithAPIKey:(NSString *)apiKey;
++(void) initWithAPIKey:(NSString *)apiKey onSuccessHandler:(void (^)())onSuccessBlock onFailureHandler:(void (^)(NSString *))onFailureBlock;
 
 +(void) enable;
++(void) enable:(void (^)())onSuccessBlock onFailureHandler:(void (^)(NSString *))onFailureBlock;
 +(void) disable;
 
 +(NSString *)deviceId;

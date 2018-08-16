@@ -45,7 +45,7 @@
     if (envIx) {
         return [envIx integerValue];
     }
-    Environment *env = self.environments[0];
+    Environment *env = self.environments[1];
     [[SDKManager sharedManager] setIngressUrl:env.ingressURL];
     return 1;
     

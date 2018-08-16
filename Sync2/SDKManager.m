@@ -84,10 +84,17 @@
 }
 
 -(void) startSDKWithAPIKey:(NSString *)apiKey{
-    [SGSDK initWithAPIKey:apiKey];
-    [SGSDK enable];
-    [SGSDK setMotionActivityEnabled:YES];
-//    [SGSDK requestAlwaysPermission];
+    [SGSDK initWithAPIKey:apiKey onSuccessHandler:^{
+        
+        
+    } onFailureHandler:^(NSString *msg) {
+    }];
+  
+    [SGSDK enable:^{
+        [SGSDK setMotionActivityEnabled:YES];
+//        [SGSDK requestAlwaysPermission];
+    } onFailureHandler:^(NSString *msg) {
+    }];
 }
 
 -(void)SGReachLog:(NSString *)logMsg{
