@@ -10,6 +10,7 @@
 
 #define KEY_API @"currentAPIKey"
 #define Sensors_Data_Key @"sensorsDataKey"
+#define sensorHistoryMax 2500
 
 @implementation SDKManager
 
@@ -40,16 +41,20 @@
 }
 
 - (NSArray *)sensorsData {
-    NSArray *sensorsData = [[NSUserDefaults standardUserDefaults] arrayForKey:Sensors_Data_Key];
-    if (!sensorsData) {
-        sensorsData = @[];
+    NSData *sensorsData = [[NSUserDefaults standardUserDefaults] dataForKey:Sensors_Data_Key];
+    NSArray *sensorsArray = [NSKeyedUnarchiver unarchiveObjectWithData:sensorsData];
+     if (!sensorsArray) {
+        sensorsArray = @[];
     }
-    return sensorsData;
+    
+    return sensorsArray;
 }
 
-- (void)setSensorsData:(NSMutableDictionary *)event {
+- (void)setSensorsData:(Event *)event {
     
-    NSArray *sensorUpdateHistory = [[NSUserDefaults standardUserDefaults] arrayForKey:Sensors_Data_Key];
+    NSData *sensorData = [[NSUserDefaults standardUserDefaults] dataForKey:Sensors_Data_Key];
+    NSArray *sensorUpdateHistory = [NSKeyedUnarchiver unarchiveObjectWithData:sensorData];
+    
     if (!sensorUpdateHistory) {
         sensorUpdateHistory = @[];
     }
@@ -57,7 +62,12 @@
     NSMutableArray *mutableUpdateHistory = [sensorUpdateHistory mutableCopy];
     [mutableUpdateHistory insertObject:event atIndex:0];
     
-    [[NSUserDefaults standardUserDefaults] setObject:mutableUpdateHistory forKey:Sensors_Data_Key];
+    if (mutableUpdateHistory.count > sensorHistoryMax) {
+        [mutableUpdateHistory removeLastObject];
+    }
+    
+    NSData *updatedSensorData = [NSKeyedArchiver archivedDataWithRootObject:mutableUpdateHistory];
+    [[NSUserDefaults standardUserDefaults] setObject:updatedSensorData forKey:Sensors_Data_Key];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
@@ -85,14 +95,11 @@
 
 -(void) startSDKWithAPIKey:(NSString *)apiKey{
     [SGSDK initWithAPIKey:apiKey onSuccessHandler:^{
-        
-        
-    } onFailureHandler:^(NSString *msg) {
-    }];
-  
-    [SGSDK enable:^{
-        [SGSDK setMotionActivityEnabled:YES];
-//        [SGSDK requestAlwaysPermission];
+        [SGSDK enable:^{
+            [SGSDK setMotionActivityEnabled:YES];
+            //        [SGSDK requestAlwaysPermission];
+        } onFailureHandler:^(NSString *msg) {
+        }];
     } onFailureHandler:^(NSString *msg) {
     }];
 }
