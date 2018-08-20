@@ -13,6 +13,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailAddressField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *apiURLField;
+@property (weak, nonatomic) IBOutlet UITextField *ingressAPIURLField;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *customURLButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollableViewHeightConstraint;
 
 - (IBAction)loginButtonTapped:(id)sender;
 
@@ -20,4 +25,5 @@
 
 - (IBAction)ForgotPasswordTapped:(id)sender;
 
+- (IBAction)customURLButtonTapped:(id)sender;
 @end
