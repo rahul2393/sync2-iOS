@@ -126,7 +126,10 @@
 }
 
 - (void)handleShowPrevNextButtons {
-    if (_currentIndex == 0) {
+    if (self.logs == nil || self.logs.count == 1) {
+        [self.prevMapButton setHidden:YES];
+        [self.nextMapButton setHidden:YES];
+    } else if (_currentIndex == 0) {
         [self.prevMapButton setHidden:YES];
         [self.nextMapButton setHidden:NO];
     } else if (_currentIndex == (self.logs.count-1)) {
@@ -148,11 +151,13 @@
 }
 
 - (IBAction)showNextMap:(id)sender {
-    self.currentIndex +=1;
+    if (self.logs.count > self.currentIndex) {
+        self.currentIndex += 1;
+    }    
 }
 
 - (IBAction)showPrevMap:(id)sender {
-    self.currentIndex -=1;
+    self.currentIndex -= 1;
 }
 
 - (IBAction)datePickerTapped:(id)sender {
