@@ -7,7 +7,7 @@
 //
 
 #import "LogViewController.h"
-
+#import <CoreMotion/CoreMotion.h>
 @interface LogViewController ()
 @end
 
@@ -31,6 +31,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CMMotionActivityManager* motionActivityManager = [[CMMotionActivityManager alloc]init];
+    [motionActivityManager queryActivityStartingFromDate:[NSDate date] toDate:[NSDate date] toQueue:[NSOperationQueue mainQueue] withHandler:^(NSArray<CMMotionActivity *> * _Nullable activities, NSError * _Nullable error) {
+        
+    }];
 
 }
 
