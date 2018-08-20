@@ -202,7 +202,13 @@
 
 - (void)updateViewWithSensorData {
     [self filterLogList];
-    self.currentIndex += 1;
+    Event *recentLog = [[SDKManager sharedManager] sensorsData].firstObject;
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:(recentLog.timestamp / 1000.0)];
+    
+    if([date compare: _fromDate] == NSOrderedDescending &&  [date compare:_toDate] == NSOrderedAscending  &&  self.logs.count > (self.currentIndex+1)) {
+        self.currentIndex += 1;
+    }
 }
 
 - (void)showEmptyView {
