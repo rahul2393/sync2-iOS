@@ -233,7 +233,14 @@
 }
 
 - (void)logsButtonTapped {
-    
+    UIPasteboard *board = UIPasteboard.generalPasteboard;
+
+    NSString *eventsString = @"[";
+    for (Event *log in self.logs) {
+        eventsString = [eventsString stringByAppendingString:[NSString stringWithFormat:@"%@", log]];
+    }
+    eventsString = [eventsString stringByAppendingString:@"]"];
+    board.string = eventsString;
 }
 
 @end
