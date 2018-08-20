@@ -13,6 +13,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    self.feedbackTextView.delegate = self;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -23,4 +25,15 @@
 
 - (IBAction)sendFeedbackTapped:(id)sender {
 }
+
+#pragma mark - UITextViewDelegate methods
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text isEqualToString:@"\n"]) {
+        [self.feedbackTextView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
 @end

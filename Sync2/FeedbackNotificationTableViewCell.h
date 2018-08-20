@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GCPlaceholderTextView.h"
 
-@interface FeedbackNotificationTableViewCell : UITableViewCell
+@interface FeedbackNotificationTableViewCell : UITableViewCell<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet GCPlaceholderTextView *feedbackTextView;
