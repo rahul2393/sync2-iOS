@@ -32,7 +32,7 @@
     
     [self.selectEnvironmentButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
     [self.selectEnvironmentButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.startingIx = [[EnvironmentManager sharedManager] selectedEnvironment];
+//    self.startingIx = [[EnvironmentManager sharedManager] selectedEnvironment];
     self.selectedIx = self.startingIx;
     
 }
@@ -143,7 +143,7 @@
             }];
         }
     }else{
-        [[EnvironmentManager sharedManager] setSelectedEnvironment:self.selectedIx];
+//        [[EnvironmentManager sharedManager] setSelectedEnvironment:self.selectedIx];
         
         if (self.navigationController.viewControllers.count > 1) {
             [self.navigationController popToRootViewControllerAnimated:YES];

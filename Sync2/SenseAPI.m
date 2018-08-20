@@ -20,11 +20,7 @@
 
 + (NSString *) serverAddress{
     
-    NSArray *envs = [[EnvironmentManager sharedManager] environments];
-    
-    Environment *env = envs[[[EnvironmentManager sharedManager] selectedEnvironment]];
-    
-    return env.senseURL;
+    return [[EnvironmentManager sharedManager] selectedEnvironment];
 }
 
 + (id)sharedManager {

@@ -10,7 +10,7 @@
 #import "SettingsManager.h"
 #import "SDKManager.h"
 
-#define kEnvironmentIxStore @"kEnvironmentIxStore"
+#define kEnvironmentSenseURL @"kEnvironmentSenseURL"
 
 @implementation EnvironmentManager
 
@@ -23,32 +23,24 @@
     return sharedMyManager;
 }
 
--(void) setSelectedEnvironment:(NSInteger)envIndex{
-    
-    if (envIndex >= self.environments.count) {
-        return;
-    }
-    
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:envIndex] forKey:kEnvironmentIxStore];
+- (void)setSelectedEnvironment:(NSString *)senseURL {
+
+    [[NSUserDefaults standardUserDefaults] setObject:senseURL forKey:kEnvironmentSenseURL];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    Environment *env = self.environments[envIndex];
-    [[SDKManager sharedManager] setIngressUrl:env.ingressURL];
     [[SDKManager sharedManager] stopSDK];
     [[SettingsManager sharedManager] logout];
-    
-    
 }
 
--(NSInteger) selectedEnvironment{
-    NSNumber *envIx = [[NSUserDefaults standardUserDefaults] objectForKey:kEnvironmentIxStore];
-    if (envIx) {
-        return [envIx integerValue];
+- (NSString *)selectedEnvironment {
+    
+    NSString *senseURL = [[NSUserDefaults standardUserDefaults] stringForKey:kEnvironmentSenseURL];
+    if (senseURL) {
+        return senseURL;
     }
     Environment *env = self.environments[1];
     [[SDKManager sharedManager] setIngressUrl:env.ingressURL];
-    return 1;
-    
+    return env.senseURL;
 }
 
 - (id)init {
