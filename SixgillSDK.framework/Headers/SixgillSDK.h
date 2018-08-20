@@ -17,3 +17,4 @@ FOUNDATION_EXPORT const unsigned char SixgillSDKVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <SixgillSDK/PublicHeader.h>
 
 #import <SixgillSDK/SGSDK.h>
+#import <SixgillSDK/Ingress.pbobjc.h>

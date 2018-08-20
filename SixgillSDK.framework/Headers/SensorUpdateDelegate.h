@@ -9,9 +9,11 @@
 #ifndef SensorUpdateDelegate_h
 #define SensorUpdateDelegate_h
 
+#import "Ingress.pbobjc.h"
+
 @protocol SensorUpdateDelegate
 
--(void)sensorUpdateSentWithData:(NSDictionary *)sensorData;
+-(void)sensorUpdateSentWithData:(Event *)sensorData;
 
 @end
 
