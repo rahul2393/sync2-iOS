@@ -16,13 +16,13 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.commaSeperatedButtonTitles =@"Map, List";
+        self.commaSeperatedButtonTitles =@"List, Map";
         self.textColor = [UIColor whiteColor];
         self.selectorColor = [UIColor colorWithRed:0.3 green:0.86 blue:0.35 alpha:1];
         self.selectorTextColor = [UIColor colorWithRed:0.3 green:0.86 blue:0.35 alpha:1];
         self.currentPage = 0;
         
-        self.viewControllerIdentifiers = [NSArray arrayWithObjects:@"LogMapViewControllerIdentifier", @"LogListViewControllerIdentifier", nil];
+        self.viewControllerIdentifiers = [NSArray arrayWithObjects:@"LogListViewControllerIdentifier", @"LogMapViewControllerIdentifier", nil];
     }
     return self;
 }
