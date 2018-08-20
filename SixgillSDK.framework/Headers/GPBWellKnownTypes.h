@@ -36,15 +36,9 @@
  #define GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS 0
 #endif
 
-#if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import "Any.pbobjc.h"
- #import "Duration.pbobjc.h"
- #import "Timestamp.pbobjc.h"
-#else
- #import "Any.pbobjc.h"
- #import "Duration.pbobjc.h"
- #import "Timestamp.pbobjc.h"
-#endif
+#import "Any.pbobjc.h"
+#import "Duration.pbobjc.h"
+#import "Timestamp.pbobjc.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

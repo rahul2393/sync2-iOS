@@ -1354,7 +1354,7 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 37M84NL89E;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1760,6 +1760,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Sync2/Sync2.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 37M84NL89E;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1773,6 +1774,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixgill.sync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "39ef2244-8cf2-4d60-acf0-e2f2b1956961";
+				PROVISIONING_PROFILE_SPECIFIER = "Sanchit Mittal Prov Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sync2/Sync2-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1787,6 +1790,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Sync2/Sync2.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 37M84NL89E;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1800,6 +1805,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixgill.sync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4f8506c8-043c-4251-9f27-9bef201f491c";
+				PROVISIONING_PROFILE_SPECIFIER = "App Store Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sync2/Sync2-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

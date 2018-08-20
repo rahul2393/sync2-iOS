@@ -50,27 +50,13 @@
  #define GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS 0
 #endif
 
-// Well-known proto types
-#if GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS
- #import <Protobuf/Any.pbobjc.h>
- #import <Protobuf/Api.pbobjc.h>
- #import <Protobuf/Duration.pbobjc.h>
- #import <Protobuf/Empty.pbobjc.h>
- #import <Protobuf/FieldMask.pbobjc.h>
- #import <Protobuf/SourceContext.pbobjc.h>
- #import <Protobuf/Struct.pbobjc.h>
- #import <Protobuf/Timestamp.pbobjc.h>
- #import <Protobuf/Type.pbobjc.h>
- #import <Protobuf/Wrappers.pbobjc.h>
-#else
- #import "Any.pbobjc.h"
- #import "Api.pbobjc.h"
- #import "Duration.pbobjc.h"
- #import "Empty.pbobjc.h"
- #import "FieldMask.pbobjc.h"
- #import "SourceContext.pbobjc.h"
- #import "Struct.pbobjc.h"
- #import "Timestamp.pbobjc.h"
- #import "Type.pbobjc.h"
- #import "Wrappers.pbobjc.h"
-#endif
+#import "Any.pbobjc.h"
+#import "Api.pbobjc.h"
+#import "Duration.pbobjc.h"
+#import "Empty.pbobjc.h"
+#import "FieldMask.pbobjc.h"
+#import "SourceContext.pbobjc.h"
+#import "Struct.pbobjc.h"
+#import "Timestamp.pbobjc.h"
+#import "Type.pbobjc.h"
+#import "Wrappers.pbobjc.h"
