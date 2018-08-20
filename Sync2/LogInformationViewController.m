@@ -22,14 +22,14 @@
     
     [self.mapView setUserInteractionEnabled:NO];
     
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[self.event[@"device-timestamp"] doubleValue] / 1000.0];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:(self.event.timestamp / 1000.0)];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"h:mm:ss a, MMMM dd, yyyy"];
     self.dateTImeLabel.text = [dateFormatter stringFromDate:date];
     
     
-    CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:[self.event[@"lat"] doubleValue] longitude: [self.event[@"lon"] doubleValue]];
+    CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:self.event.locationsArray[0].latitude longitude: self.event.locationsArray[0].longitude];
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithTarget:currentLocation.coordinate zoom:10];
     self.mapView.camera = camera;
     

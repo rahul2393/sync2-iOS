@@ -34,7 +34,7 @@
 -(void) setIngressUrl:(NSString *)ingressUrl;
 
 - (NSArray *) sensorsData;
-- (void) setSensorsData:(NSMutableDictionary *)event;
+- (void) setSensorsData:(Event *)event;
 - (void) clearSensorsData;
 
 

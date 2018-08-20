@@ -99,12 +99,12 @@
 - (void)setCurrentIndex:(NSInteger)currentIndex {
     _currentIndex = currentIndex;
     
-    NSDictionary *currentEvent = self.logs[self.currentIndex];
+    Event *currentEvent = self.logs[self.currentIndex];
     _vc.event = currentEvent;
     _vc.buttonLabelText = kLogsButtonLabel;
     _vc.delegate = self;
     
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[currentEvent[@"device-timestamp"] doubleValue] / 1000.0];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:(currentEvent.timestamp / 1000.0)];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"h:mm:ss a, MMMM dd, yyyy"];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -112,7 +112,7 @@
     });
     
     
-    CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:[currentEvent[@"lat"] doubleValue] longitude: [currentEvent[@"lon"] doubleValue]];
+    CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:currentEvent.locationsArray[0].latitude longitude: currentEvent.locationsArray[0].longitude];
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithTarget:currentLocation.coordinate zoom:10];
     dispatch_async(dispatch_get_main_queue(), ^{
         self.mapView.camera = camera;
@@ -183,10 +183,10 @@
 
 - (void)filterLogList {
     
-    self.logs = [[[SDKManager sharedManager] sensorsData] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[evaluatedObject[@"device-timestamp"] doubleValue] / 1000.0];
+    self.logs = [[[SDKManager sharedManager] sensorsData] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Event*  _Nullable log, NSDictionary<NSString *,id> * _Nullable bindings) {
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:(log.timestamp / 1000.0)];
         
-        if([date compare: _fromDate] == NSOrderedDescending &&  [date compare:_toDate] == NSOrderedAscending) {
+        if([date compare: _fromDate] != NSOrderedAscending &&  [date compare:_toDate] != NSOrderedDescending) {
             return true;
         }
         return false;
@@ -219,8 +219,8 @@
 - (void)createHeatMap {
     NSMutableArray *list = [[NSMutableArray alloc] init];
     
-    for(NSDictionary *event in self.logs) {
-        CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:[event[@"lat"] doubleValue] longitude: [event[@"lon"] doubleValue]];
+    for(Event *event in self.logs) {
+        CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:event.locationsArray[0].latitude longitude: event.locationsArray[0].longitude];
         GMUWeightedLatLng* coords = [[GMUWeightedLatLng alloc] initWithCoordinate:currentLocation.coordinate intensity:1.0];
         [list addObject:coords];
     }

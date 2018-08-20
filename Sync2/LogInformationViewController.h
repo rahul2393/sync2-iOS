@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "LogMapDataViewController.h"
+@import SixgillSDK;
 @import GoogleMaps;
 
 @interface LogInformationViewController : UIViewController<LogMapDataDelegate>
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 
 @property (weak, nonatomic) IBOutlet UILabel *dateTImeLabel;
-@property (weak, nonatomic) NSDictionary *event;
+@property (weak, nonatomic) Event *event;
 @end

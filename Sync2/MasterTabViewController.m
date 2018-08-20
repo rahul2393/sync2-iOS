@@ -13,6 +13,8 @@
 #import "ProjectSelectionViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "SDKManager.h"
+
+@import SixgillSDK;
 @interface MasterTabViewController ()
 
 @property (nonatomic, strong) NSArray *dataChannels;
@@ -93,54 +95,8 @@
     }];
 }
 
-- (void)sensorUpdateSentWithData:(NSDictionary *)sensorData {
-    
-        NSMutableDictionary *event = [[NSMutableDictionary alloc] init];
-    
-        if (sensorData[@"SG_LOCATION_RESOURCE"]) {
-            
-            CLLocation *loc = sensorData[@"SG_LOCATION_RESOURCE"][@"location"];
-            NSNumber *lat = [NSNumber numberWithFloat:loc.coordinate.latitude];
-            NSNumber *lon = [NSNumber numberWithFloat:loc.coordinate.longitude];
-            event[@"lat"] = lat;
-            event[@"lon"] = lon;
-            event[@"location-timestamp"] = loc.timestamp;
-        }
-        
-        if (sensorData[@"SG_ACTIVITY_RESOURCE"]) {
-            
-            event[@"activity"] = sensorData[@"SG_ACTIVITY_RESOURCE"][@"activity"];
-            event[@"activity-timeStamp"] = sensorData[@"SG_ACTIVITY_RESOURCE"][@"timestamp"];
-        }
-        
-        if (sensorData[@"SG_BLUETOOTH_RESOURCE"]) {
-            
-            event[@"bluetooth-beacons"] = sensorData[@"SG_BLUETOOTH_RESOURCE"][@"beacons"];
-            event[@"bluetooth-timeStamp"] = sensorData[@"SG_BLUETOOTH_RESOURCE"][@"timestamp"];
-        }
-        
-        if (sensorData[@"SG_CONFIGURATION_RESOURCE"]) {
-            
-            event[@"configuration-cadence"] = sensorData[@"SG_CONFIGURATION_RESOURCE"][@"cadence"];
-            event[@"configuration-enabled"] = sensorData[@"SG_CONFIGURATION_RESOURCE"][@"enabled"];
-            event[@"configuration-eventTtl"] = sensorData[@"SG_CONFIGURATION_RESOURCE"][@"eventTtl"];
-            event[@"configuration-maxStorage"] = sensorData[@"SG_CONFIGURATION_RESOURCE"][@"maxStorage"];
-            event[@"configuration-useSensorsArray"] = sensorData[@"SG_CONFIGURATION_RESOURCE"][@"useSensorsArray"];
-        }
-        
-        if (sensorData[@"SG_DEVICE_RESOURCE"]) {
-            
-            event[@"device-battery-percent"] = sensorData[@"SG_DEVICE_RESOURCE"][@"BATTERY_PERCENT"];
-            event[@"device-battery-state"] = sensorData[@"SG_DEVICE_RESOURCE"][@"BATTERY_STATE"];
-            event[@"device-info-guid"] = sensorData[@"SG_DEVICE_RESOURCE"][@"DEVICE_INFO"][@"GUID"];
-            event[@"device-info-model"] = sensorData[@"SG_DEVICE_RESOURCE"][@"DEVICE_INFO"][@"MODEL"];
-            event[@"device-info-osversion"] = sensorData[@"SG_DEVICE_RESOURCE"][@"DEVICE_INFO"][@"OSVERSION"];
-            event[@"device-info-platform"] = sensorData[@"SG_DEVICE_RESOURCE"][@"DEVICE_INFO"][@"PLATFORM"];
-            event[@"device-pushToken"] = sensorData[@"SG_DEVICE_RESOURCE"][@"PUSH_TOKEN"];
-            event[@"device-timestamp"] = sensorData[@"SG_DEVICE_RESOURCE"][@"timestamp"];
-        }
-    
-    [[SDKManager sharedManager] setSensorsData:event];
+- (void)sensorUpdateSentWithData:(Event *)sensorData {
+    [[SDKManager sharedManager] setSensorsData:sensorData];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"sensorDataUpdated" object:self];
     

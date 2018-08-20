@@ -23,7 +23,7 @@
 @property (nonatomic, readwrite) BOOL useDummyData;
 @property (nonatomic, strong) NSArray *dataChannels;
 @property (nonatomic, strong) NSArray *projects;
-@property NSDictionary* log;
+@property Event* log;
 @end
 
 @implementation SettingsTableViewController
@@ -201,32 +201,32 @@
                 break;
             }
         }
-    }else{
-        
+    } else {
         switch (indexPath.row) {
             case 0: {
                 cell.keyLabel.text = @"Device ID";
-                cell.valueLabel.text = self.log[@"device-info-guid"];
+                cell.valueLabel.text = [SGSDK deviceId];
                 cell.valueLabel.enableCopy = true;
                 break;
             }
             case 1: {
                 cell.keyLabel.text = @"Device Type";
+                cell.valueLabel.text = self.log.properties.type;
                 break;
             }
             case 2: {
                 cell.keyLabel.text = @"Manufacturer";
-                cell.valueLabel.text = self.log[@"device-info-platform"];
+                cell.valueLabel.text = self.log.properties.manufacturer;
                 break;
             }
             case 3: {
                 cell.keyLabel.text = @"Model";
-                cell.valueLabel.text = self.log[@"device-info-model"];
+                cell.valueLabel.text = self.log.properties.model;
                 break;
             }
             case 4: {
                 cell.keyLabel.text = @"OS Version";
-                cell.valueLabel.text = self.log[@"device-info-osversion"];
+                cell.valueLabel.text = self.log.properties.osVersion;
                 break;
             }
             case 5: {

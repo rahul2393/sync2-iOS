@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@import SixgillSDK;
 
 @protocol LogMapDataDelegate
 
@@ -18,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *logsButton;
 - (IBAction)logsButtonTapped:(id)sender;
-@property (weak, nonatomic) NSDictionary *event;
+@property (weak, nonatomic) Event *event;
 @property (weak, nonatomic) NSString *buttonLabelText;
 @property (nonatomic, weak) id<LogMapDataDelegate> delegate;
 @end

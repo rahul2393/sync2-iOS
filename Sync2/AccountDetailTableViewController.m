@@ -239,7 +239,7 @@
     [[SettingsManager sharedManager] setActiveAccountId:nil];
 }
 
--(void)sensorUpdateSentWithData:(NSDictionary *)sensorData{
+-(void)sensorUpdateSentWithData:(Event *)sensorData{
     self.sensorData = sensorData;
     self.sensorUpdateTime = [NSDate date];        
     

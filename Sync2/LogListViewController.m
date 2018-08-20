@@ -88,9 +88,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LogListCellIdentifier" forIndexPath:indexPath];
     
-    NSDictionary *d = self.logs[indexPath.row];
+    Event *d = self.logs[indexPath.row];
     
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[d[@"device-timestamp"] doubleValue] / 1000.0];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:(d.timestamp / 1000.0)];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"h:mm:ss a, MMMM dd, yyyy"];
@@ -136,9 +136,9 @@
 }
 
 - (void)filterLogList {
-    self.logs = [[[SDKManager sharedManager] sensorsData] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+    self.logs = [[[SDKManager sharedManager] sensorsData] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Event*  _Nullable log, NSDictionary<NSString *,id> * _Nullable bindings) {
         
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[evaluatedObject[@"device-timestamp"] doubleValue] / 1000.0];
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:(log.timestamp / 1000.0)];
         
         if([date compare: _fromDate] == NSOrderedDescending &&  [date compare:_toDate] == NSOrderedAscending) {
             return true;
