@@ -184,10 +184,6 @@
 		<data>
 		9awNG7wmfcZpU92Wt1rg9nEmWDM=
 		</data>
-		<key>protoc</key>
-		<data>
-		acw/fPT0a0Nj60cwPObHJRnvQLE=
-		</data>
 		<key>readme.txt</key>
 		<data>
 		ybFMczTxMFc4bl79h1hAPrL1z/Q=
@@ -697,17 +693,6 @@
 			<key>hash2</key>
 			<data>
 			Y4gd2A193DRdXMTdSV9vwKc/xHXO38eceMKErQs+hhg=
-			</data>
-		</dict>
-		<key>protoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			acw/fPT0a0Nj60cwPObHJRnvQLE=
-			</data>
-			<key>hash2</key>
-			<data>
-			nhUPzKUecjWGIArgRSD0Q4PK4jgnjzP0ou3X7W+1ADg=
 			</data>
 		</dict>
 		<key>readme.txt</key>
