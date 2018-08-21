@@ -93,7 +93,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RulesTableViewCell *cell = (RulesTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"RulesTableViewCellIdentifier" forIndexPath:indexPath];
     
-    Rule *rule = self.rules[indexPath.row];
+    Rule *rule = self.rules[indexPath.section];
     cell.titleLabel.text = rule.name;
     cell.detailLabel.text = rule.ruledescription;
     cell.actionCountLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)rule.actions.count];
