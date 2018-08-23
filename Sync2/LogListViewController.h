@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LogBaseViewController.h"
 
-@interface LogListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface LogListViewController : LogBaseViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventCountLabel;

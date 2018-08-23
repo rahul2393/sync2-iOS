@@ -8,19 +8,11 @@
 
 #import "LogListViewController.h"
 #import "LogInformationViewController.h"
-#import "ActionSheetPicker.h"
+
 #import "Device.h"
 #import "SDKManager.h"
 
 @import SixgillSDK;
-@interface LogListViewController ()
-@property NSDate* fromDate;
-@property NSDate* toDate;
-@property (nonatomic) NSArray* logs;
-@property NSDateFormatter *dateLabelFormatter;
--(void) updateDateLabel;
--(void) filterLogList;
-@end
 
 @implementation LogListViewController
 
@@ -29,18 +21,6 @@
     
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
-    
-    // Setting initial `from` as today's 12am and `to` date as current time.
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
-    _fromDate = [calendar dateBySettingHour:0 minute:0 second:0 ofDate:[NSDate date] options:0];
-    _toDate = [NSDate date];
-    
-    _dateLabelFormatter = [[NSDateFormatter alloc] init];
-    [_dateLabelFormatter setDateFormat:@"MMM dd, h:mm a"];
-    [self updateDateLabel];
-    
-    [self filterLogList];
-    
     
     // Setting tableview constraints
     switch (UIDevice.currentDevice.screenType) {
@@ -57,26 +37,6 @@
         default:
             break;
     }
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(filterLogList)
-                                                 name:@"sensorDataUpdated"
-                                               object:nil];
-    
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (void)setLogs:(NSArray *)logs {
-    _logs = logs;
-    dispatch_async(dispatch_get_main_queue(),^{
-        [self.tableview reloadData];
-        self.eventCountLabel.text = [NSString stringWithFormat:@"%lu Events", (unsigned long)self.logs.count];
-    });
-    
 }
 
 #pragma mark - Table view data source
@@ -110,43 +70,32 @@
 #pragma mark - IBAction
 
 - (IBAction)selectDateTapped:(id)sender {
-    __block NSDate *localFromDate = nil;
+    [self datesSelected:sender];
+}
 
-    [ActionSheetDatePicker showPickerWithTitle:@"From" datePickerMode:UIDatePickerModeDateAndTime selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
-        localFromDate = selectedDate;
-        [ActionSheetDatePicker showPickerWithTitle:@"To" datePickerMode:UIDatePickerModeDateAndTime selectedDate:selectedDate minimumDate:selectedDate maximumDate:[NSDate distantFuture] doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
-            _fromDate = localFromDate;
-            _toDate = selectedDate;
-            [self filterLogList];
-        } cancelBlock:^(ActionSheetDatePicker *picker) {
-            
-        }
-        origin:sender];
-    } cancelBlock:^(ActionSheetDatePicker *picker) {
-        
-    }
-    origin:sender];
 
+#pragma mark - LogBaseViewController
+
+
+- (void)logsChanged {
+    [super logsChanged];
+    dispatch_async(dispatch_get_main_queue(),^{
+        [self.tableview reloadData];
+        self.eventCountLabel.text = [NSString stringWithFormat:@"%lu Events", (unsigned long)self.logs.count];
+    });
+    
 }
 
 - (void)updateDateLabel {
+    [super updateDateLabel];
     dispatch_async(dispatch_get_main_queue(),^{
-        _dateLabel.text = [NSString stringWithFormat:@"%@-%@", [_dateLabelFormatter  stringFromDate:_fromDate], [_dateLabelFormatter  stringFromDate:_toDate]];
+        _dateLabel.text = [NSString stringWithFormat:@"%@-%@", [self.dateLabelFormatter  stringFromDate:self.fromDate], [self.dateLabelFormatter  stringFromDate:self.toDate]];
     });
 }
 
-- (void)filterLogList {
-    self.logs = [[[SDKManager sharedManager] sensorsData] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Event*  _Nullable log, NSDictionary<NSString *,id> * _Nullable bindings) {
-        
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:(log.timestamp / 1000.0)];
-        
-        if([date compare: _fromDate] == NSOrderedDescending &&  [date compare:_toDate] == NSOrderedAscending) {
-            return true;
-        }
-        return false;
-    }]];
-
-    [self updateDateLabel];
+- (void)updateViewWithSensorData {
+    [super updateViewWithSensorData];
+    [self filterLogList];
 }
 
 @end

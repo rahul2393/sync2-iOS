@@ -44,6 +44,7 @@
 		75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */; };
 		75E352952116B80400471D39 /* LogMapDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E352942116B80400471D39 /* LogMapDataViewController.m */; };
 		75E352982116D62800471D39 /* LogInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E352972116D62800471D39 /* LogInformationViewController.m */; };
+		75E68A4A212E962500797E27 /* LogBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E68A49212E962500797E27 /* LogBaseViewController.m */; };
 		997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */; };
 		E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */; };
 		E90371441EE89B1E0033DED0 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E90371431EE89B1E0033DED0 /* Account.m */; };
@@ -226,6 +227,8 @@
 		75E352942116B80400471D39 /* LogMapDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogMapDataViewController.m; sourceTree = "<group>"; };
 		75E352962116D62800471D39 /* LogInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInformationViewController.h; sourceTree = "<group>"; };
 		75E352972116D62800471D39 /* LogInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInformationViewController.m; sourceTree = "<group>"; };
+		75E68A48212E960A00797E27 /* LogBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogBaseViewController.h; sourceTree = "<group>"; };
+		75E68A49212E962500797E27 /* LogBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogBaseViewController.m; sourceTree = "<group>"; };
 		894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6011B6B43DBF0AC7C6C0493 /* Pods-Sync2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2/Pods-Sync2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -551,6 +554,8 @@
 				75502A772109DAD700BFCA2A /* LogListViewController.m */,
 				75502A7F210A5DC800BFCA2A /* LogMapViewController.h */,
 				75502A80210A5DC800BFCA2A /* LogMapViewController.m */,
+				75E68A48212E960A00797E27 /* LogBaseViewController.h */,
+				75E68A49212E962500797E27 /* LogBaseViewController.m */,
 				75E352962116D62800471D39 /* LogInformationViewController.h */,
 				75E352972116D62800471D39 /* LogInformationViewController.m */,
 				75E352932116B80400471D39 /* LogMapDataViewController.h */,
@@ -1603,6 +1608,7 @@
 				75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */,
 				E9B76D5F200D4F5F0095030C /* DataChannelSelectionViewController.m in Sources */,
 				E9FC99FB204E0BE20060B81D /* EnvironmentSelectionViewController.m in Sources */,
+				75E68A4A212E962500797E27 /* LogBaseViewController.m in Sources */,
 				753CB71921070B8100C11223 /* WelcomeNotificationTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

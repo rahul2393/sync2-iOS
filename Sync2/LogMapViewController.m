@@ -18,16 +18,10 @@
 
 @interface LogMapViewController ()
 @property (nonatomic, strong) LogMapDataViewController* vc;
-@property (nonatomic) NSArray* logs;
 @property (nonatomic, readwrite) NSInteger currentIndex;
-@property NSDateFormatter *dateLabelFormatter;
-@property NSDate* fromDate;
-@property NSDate* toDate;
 @property GMSMarker* marker;
 @property GMUHeatmapTileLayer* heatmapLayer;
 -(void) handleShowPrevNextButtons;
--(void) updateDateLabel;
--(void) filterLogList;
 -(void) showEmptyView;
 -(void) showLogsView;
 -(void) createHeatMap;
@@ -45,17 +39,6 @@
     self.heatmapLayer.map = self.mapView;
     self.heatmapLayer.opacity = 1.0;
     
-    // Setting initial `from` as today's 12am and `to` date as current time.
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
-    _fromDate = [calendar dateBySettingHour:0 minute:0 second:0 ofDate:[NSDate date] options:0];
-    _toDate = [NSDate date];
-    
-    _dateLabelFormatter = [[NSDateFormatter alloc] init];
-    [_dateLabelFormatter setDateFormat:@"MMM dd, h:mm a"];
-    [self updateDateLabel];
-    
-    
-    [self filterLogList];
     self.currentIndex = 0;
     
     // Setting view constraints
@@ -72,28 +55,15 @@
         default:
             break;
     }
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(updateViewWithSensorData)
-                                                 name:@"sensorDataUpdated"
-                                               object:nil];
-}
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)setLogs:(NSArray *)logs {
-    
-    if (logs.count == 0) {
-        [self showEmptyView];
-        return;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"LogMapSegueIdentifier"]) {
+        _vc = [segue destinationViewController];
+        _vc.event = [[SDKManager sharedManager] sensorsData].lastObject;
+        _vc.buttonLabelText = kLogsButtonLabel;
+        _vc.delegate = self;
     }
-    [self showLogsView];
-    
-    _logs = logs;
-    
-    [self createHeatMap];
 }
 
 - (void)setCurrentIndex:(NSInteger)currentIndex {
@@ -141,76 +111,6 @@
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"LogMapSegueIdentifier"]) {
-        _vc = [segue destinationViewController];
-        _vc.event = [[SDKManager sharedManager] sensorsData].lastObject;
-        _vc.buttonLabelText = kLogsButtonLabel;
-        _vc.delegate = self;
-    }
-}
-
-- (IBAction)showNextMap:(id)sender {
-    if (self.logs.count > self.currentIndex) {
-        self.currentIndex += 1;
-    }    
-}
-
-- (IBAction)showPrevMap:(id)sender {
-    self.currentIndex -= 1;
-}
-
-- (IBAction)datePickerTapped:(id)sender {
-    __block NSDate *localFromDate = nil;
-    
-    [ActionSheetDatePicker showPickerWithTitle:@"From" datePickerMode:UIDatePickerModeDateAndTime selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
-        localFromDate = selectedDate;
-        [ActionSheetDatePicker showPickerWithTitle:@"To" datePickerMode:UIDatePickerModeDateAndTime selectedDate:selectedDate minimumDate:selectedDate maximumDate:[NSDate distantFuture] doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
-            _fromDate = localFromDate;
-            _toDate = selectedDate;
-            [self filterLogList];
-            self.currentIndex = 0;
-        } cancelBlock:^(ActionSheetDatePicker *picker) {
-            
-        }
-        origin:sender];
-    } cancelBlock:^(ActionSheetDatePicker *picker) {
-        
-    }
-    origin:sender];
-}
-
-- (void)updateDateLabel {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        _dateTimePickerLabel.text = [NSString stringWithFormat:@"%@-%@", [_dateLabelFormatter  stringFromDate:_fromDate], [_dateLabelFormatter  stringFromDate:_toDate]];
-    });
-}
-
-- (void)filterLogList {
-    
-    self.logs = [[[SDKManager sharedManager] sensorsData] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Event*  _Nullable log, NSDictionary<NSString *,id> * _Nullable bindings) {
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:(log.timestamp / 1000.0)];
-        
-        if([date compare: _fromDate] != NSOrderedAscending &&  [date compare:_toDate] != NSOrderedDescending) {
-            return true;
-        }
-        return false;
-    }]];
-    
-    [self updateDateLabel];
-}
-
-- (void)updateViewWithSensorData {
-    [self filterLogList];
-    Event *recentLog = [[SDKManager sharedManager] sensorsData].firstObject;
-    
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:(recentLog.timestamp / 1000.0)];
-    
-    if([date compare: _fromDate] == NSOrderedDescending &&  [date compare:_toDate] == NSOrderedAscending  &&  self.logs.count > (self.currentIndex+1)) {
-        self.currentIndex += 1;
-    }
-}
-
 - (void)showEmptyView {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.noLogsView setHidden:NO];
@@ -243,6 +143,24 @@
 
 }
 
+#pragma mark - IBAction
+
+- (IBAction)showNextMap:(id)sender {
+    if (self.logs.count > self.currentIndex) {
+        self.currentIndex += 1;
+    }
+}
+
+- (IBAction)showPrevMap:(id)sender {
+    self.currentIndex -= 1;
+}
+
+- (IBAction)datePickerTapped:(id)sender {
+    [self datesSelected:sender];
+}
+
+#pragma mark - LogMapDataDelegate
+
 - (void)logsButtonTapped {
     UIPasteboard *board = UIPasteboard.generalPasteboard;
 
@@ -252,6 +170,39 @@
     }
     eventsString = [eventsString stringByAppendingString:@"]"];
     board.string = eventsString;
+}
+
+#pragma mark - LogBaseViewController
+
+- (void)logsChanged {
+    [super logsChanged];
+    if (self.logs.count == 0) {
+        [self showEmptyView];
+        return;
+    }
+    
+    [self showLogsView];
+    
+    [self createHeatMap];
+}
+
+- (void)updateDateLabel {
+    [super updateDateLabel];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.dateTimePickerLabel.text = [NSString stringWithFormat:@"%@-%@", [self.dateLabelFormatter  stringFromDate:self.fromDate], [self.dateLabelFormatter  stringFromDate:self.toDate]];
+    });
+}
+
+- (void)updateViewWithSensorData {
+    [super updateViewWithSensorData];
+    [self filterLogList];
+    Event *recentLog = [[SDKManager sharedManager] sensorsData].firstObject;
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:(recentLog.timestamp / 1000.0)];
+    
+    if([date compare: self.fromDate] == NSOrderedDescending &&  [date compare:self.toDate] == NSOrderedAscending  &&  self.logs.count > (self.currentIndex+1)) {
+        self.currentIndex += 1;
+    }
 }
 
 @end
