@@ -18,6 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, readwrite) BOOL checkBoxSelected;
+@property (nonatomic, strong) NSArray *environments;
+
 @end
 
 @implementation LoginViewController
@@ -30,18 +32,38 @@
     self.apiURLField.delegate = self;
     self.ingressAPIURLField.delegate = self;
     
+    self.urlsDropdown.delegate = self;
+    self.urlsDropdown.dataSource = self;
+    
     self.checkBoxSelected = false;
+    
+    Environment *staging = [[Environment alloc] init];
+    staging.name = @"Staging";
+    staging.senseURL = @"http://sense-api-staging.sixgill.run";
+    staging.ingressURL = @"http://sense-ingress-api-staging.sixgill.run";
+    
+    Environment *prod = [[Environment alloc] init];
+    prod.name = @"Production";
+    prod.senseURL = @"https://sense-api.sixgill.com";
+    prod.ingressURL = @"https://sense-ingress-api.sixgill.com";
+    
+    Environment *dev = [[Environment alloc] init];
+    dev.name = @"Production";
+    dev.senseURL = @"https://sense-api-staging.dev.sixgill.io";
+    dev.ingressURL = @"https://sense-ingress-api-staging.dev.sixgill.io";
+    
+    self.environments = @[staging, prod, dev];
     
 //    self.emailAddressField.text = @"ritik.rishu@hotcocoasoftware.com";
 //    self.passwordField.text = @"password123";
-    self.emailAddressField.text = @"cvalera@sixgill.com";
-    self.passwordField.text = @"super1234";
+//    self.emailAddressField.text = @"cvalera@sixgill.com";
+//    self.passwordField.text = @"super1234";
+    
+    self.selectedURLLabel.text = [[EnvironmentManager sharedManager] selectedEnvironment];
     
     [self registerForKeyboardNotifications];
     
-    [self.loginButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
-    [self.loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.loginButton.enabled = YES;
+    [self.activityIndicator setHidden:YES];
 }
 
 - (void)dealloc {
@@ -56,17 +78,23 @@
     
     if (checkBoxSelected) {
         self.viewHeightConstraint.constant = 164;
-        self.scrollableViewHeightConstraint.constant = 770;
+        self.scrollableViewHeightConstraint.constant = 839;
+        self.URLDropdownHeight.constant = 0;
+        [self.selectedURLLabel setHidden:YES];
     } else {
         self.viewHeightConstraint.constant = 0;
-        self.scrollableViewHeightConstraint.constant = 606;
+        self.URLDropdownHeight.constant = 44;
+        self.scrollableViewHeightConstraint.constant = 675;
+        [self.selectedURLLabel setHidden:NO];
     }
 }
 
 
 -(void) attemptLogin{
     
-    self.loginButton.enabled = NO;
+    [self.loginButton setHidden:YES];
+    [self.activityIndicator setHidden:NO];
+    [self.activityIndicator startAnimating];
     
     [[SettingsManager sharedManager] logout];
     
@@ -91,13 +119,18 @@
             dispatch_async(dispatch_get_main_queue(),^{
                 [self.invalidLoginView setHidden:NO];
                 self.passwordField.text = @"";
-                self.loginButton.enabled = YES;
+                [self.loginButton setHidden:NO];
+                [self.activityIndicator setHidden:YES];
+                [self.activityIndicator stopAnimating];
             });
         }else{
             // Login was good.
             dispatch_async(dispatch_get_main_queue(),^{
                 [self performSegueWithIdentifier:@"showTabController" sender:self];
-                self.loginButton.enabled = YES;
+                [self.loginButton setHidden:NO];
+                [self.activityIndicator setHidden:YES];
+                [self.activityIndicator stopAnimating];
+                
             });
         }
     }];
@@ -164,4 +197,33 @@
 - (IBAction)customURLButtonTapped:(id)sender {
     self.checkBoxSelected = !self.checkBoxSelected;
 }
+
+#pragma mark - MKDropdownMenu
+
+- (NSInteger)numberOfComponentsInDropdownMenu:(MKDropdownMenu *)dropdownMenu {
+    return 1;
+}
+
+- (NSInteger)dropdownMenu:(MKDropdownMenu *)dropdownMenu numberOfRowsInComponent:(NSInteger)component {
+    return self.environments.count;
+}
+
+- (NSString *)dropdownMenu:(MKDropdownMenu *)dropdownMenu titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    Environment *env = self.environments[row];
+    
+    return env.senseURL;
+}
+
+- (void)dropdownMenu:(MKDropdownMenu *)dropdownMenu didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    Environment *env = self.environments[row];
+    self.selectedURLLabel.text = env.senseURL;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [dropdownMenu closeAllComponentsAnimated:YES];
+    });
+    
+    [SGSDK setIngressURL:env.ingressURL];
+    [[EnvironmentManager sharedManager] setSelectedEnvironment:env.senseURL];
+}
+
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface LoginViewController : UIViewController
+#import "MKDropdownMenu.h"
+@interface LoginViewController : UIViewController <MKDropdownMenuDataSource, MKDropdownMenuDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *invalidLoginView;
 @property (weak, nonatomic) IBOutlet UITextField *emailAddressField;
@@ -18,6 +19,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *customURLButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollableViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet MKDropdownMenu *urlsDropdown;
+@property (weak, nonatomic) IBOutlet UILabel *selectedURLLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *URLDropdownHeight;
 
 - (IBAction)loginButtonTapped:(id)sender;
 

@@ -856,7 +856,7 @@ You can now proceed to Login.</string>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ec-WT-RS9">
-                                        <rect key="frame" x="50" y="587" width="275.66666666666669" height="46"/>
+                                        <rect key="frame" x="50" y="656" width="275.66666666666669" height="46"/>
                                         <color key="backgroundColor" red="0.0" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="TGV-xy-AOG"/>
@@ -875,7 +875,7 @@ You can now proceed to Login.</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2y-eM-hRS">
-                                        <rect key="frame" x="130" y="709" width="116" height="44"/>
+                                        <rect key="frame" x="130" y="778" width="116" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="66n-kT-ttd"/>
                                         </constraints>
@@ -887,8 +887,24 @@ You can now proceed to Login.</string>
                                             <action selector="ForgotPasswordTapped:" destination="oH9-Ao-Hwe" eventType="touchUpInside" id="Cfb-J4-owG"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WC-vm-aAf">
+                                        <rect key="frame" x="49.999999999999986" y="385.66666666666669" width="255.66666666666663" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Vqv-ZN-Maj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9GM-Bv-8wE" customClass="MKDropdownMenu">
+                                        <rect key="frame" x="67" y="325" width="240" height="128"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="DU2-NH-2fA"/>
+                                        </constraints>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-VF-0E2">
-                                        <rect key="frame" x="90.000000000000014" y="374" width="195.33333333333337" height="44"/>
+                                        <rect key="frame" x="90.000000000000014" y="443" width="195.33333333333337" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13N-xp-dUa">
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -913,7 +929,7 @@ You can now proceed to Login.</string>
                                         </constraints>
                                     </stackView>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gte-8r-g6k">
-                                        <rect key="frame" x="0.0" y="423" width="375" height="164"/>
+                                        <rect key="frame" x="0.0" y="492" width="375" height="164"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API SENSEURL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbS-Qm-2L5">
                                                 <rect key="frame" x="0.0" y="15" width="375" height="19"/>
@@ -998,8 +1014,12 @@ You can now proceed to Login.</string>
                                             <constraint firstAttribute="trailing" secondItem="slH-lY-BOj" secondAttribute="trailing" id="zZG-vN-Y7Z"/>
                                         </constraints>
                                     </view>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mgU-ce-sN2">
+                                        <rect key="frame" x="169" y="660.66666666666663" width="37" height="37"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="mgU-ce-sN2" firstAttribute="centerY" secondItem="4Ec-WT-RS9" secondAttribute="centerY" id="20f-ML-6Pj"/>
                                     <constraint firstItem="gVR-tA-QQg" firstAttribute="leading" secondItem="Ov3-Xa-p0a" secondAttribute="leadingMargin" id="4RQ-Ku-Vgx"/>
                                     <constraint firstItem="fvQ-Pj-SN8" firstAttribute="trailing" secondItem="cGA-DR-CHo" secondAttribute="trailing" id="5Cc-XG-L3t"/>
                                     <constraint firstItem="4Ec-WT-RS9" firstAttribute="trailing" secondItem="dKk-DY-i10" secondAttribute="trailing" id="67d-YK-0Lm"/>
@@ -1007,17 +1027,22 @@ You can now proceed to Login.</string>
                                     <constraint firstItem="fvQ-Pj-SN8" firstAttribute="leading" secondItem="cGA-DR-CHo" secondAttribute="leading" id="6TM-r0-I8n"/>
                                     <constraint firstItem="G2y-eM-hRS" firstAttribute="top" secondItem="4Ec-WT-RS9" secondAttribute="bottom" constant="76" id="6rc-KJ-FKx"/>
                                     <constraint firstItem="aHE-v1-poH" firstAttribute="top" secondItem="gVR-tA-QQg" secondAttribute="bottom" constant="8" id="7Cw-IC-g42"/>
+                                    <constraint firstItem="9GM-Bv-8wE" firstAttribute="top" secondItem="dKk-DY-i10" secondAttribute="bottom" constant="25" id="7FN-uO-3ZA"/>
                                     <constraint firstItem="b8L-A2-5wD" firstAttribute="top" secondItem="seU-7n-pzp" secondAttribute="bottom" constant="23" id="7IC-pX-L6V"/>
+                                    <constraint firstItem="mgU-ce-sN2" firstAttribute="centerX" secondItem="4Ec-WT-RS9" secondAttribute="centerX" id="8cJ-bU-Prn"/>
                                     <constraint firstItem="cGA-DR-CHo" firstAttribute="leading" secondItem="Ov3-Xa-p0a" secondAttribute="leading" constant="50" id="9J1-Ab-cHh"/>
-                                    <constraint firstItem="ndL-VF-0E2" firstAttribute="top" secondItem="dKk-DY-i10" secondAttribute="bottom" constant="25" id="9Us-DJ-khY"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="gVR-tA-QQg" secondAttribute="trailing" id="9kq-gW-BJe"/>
+                                    <constraint firstItem="5WC-vm-aAf" firstAttribute="trailing" secondItem="9GM-Bv-8wE" secondAttribute="trailing" constant="-20" id="AW4-9j-eax"/>
+                                    <constraint firstItem="9GM-Bv-8wE" firstAttribute="leading" secondItem="dKk-DY-i10" secondAttribute="leading" id="Fz7-J4-TNH"/>
                                     <constraint firstItem="Hnu-i4-SzT" firstAttribute="top" secondItem="Ov3-Xa-p0a" secondAttribute="top" id="I3H-Dg-6K8"/>
                                     <constraint firstItem="gte-8r-g6k" firstAttribute="top" secondItem="ndL-VF-0E2" secondAttribute="bottom" constant="5" id="IZh-2h-Ilv"/>
                                     <constraint firstItem="b8L-A2-5wD" firstAttribute="leading" secondItem="Ov3-Xa-p0a" secondAttribute="leadingMargin" id="JEg-5Y-8AI"/>
+                                    <constraint firstItem="5WC-vm-aAf" firstAttribute="centerY" secondItem="9GM-Bv-8wE" secondAttribute="centerY" id="N7e-24-mzF"/>
                                     <constraint firstAttribute="trailing" secondItem="cGA-DR-CHo" secondAttribute="trailing" constant="50" id="O0o-Bb-6B7"/>
                                     <constraint firstItem="cGA-DR-CHo" firstAttribute="trailing" secondItem="aHE-v1-poH" secondAttribute="trailing" id="PrD-j9-msT"/>
                                     <constraint firstItem="dKk-DY-i10" firstAttribute="trailing" secondItem="aHE-v1-poH" secondAttribute="trailing" id="QzO-wP-ozv"/>
                                     <constraint firstItem="Hnu-i4-SzT" firstAttribute="leading" secondItem="Ov3-Xa-p0a" secondAttribute="leading" id="UHx-4s-hAR"/>
+                                    <constraint firstItem="5WC-vm-aAf" firstAttribute="leading" secondItem="9GM-Bv-8wE" secondAttribute="leading" id="UfI-XF-qQT"/>
                                     <constraint firstItem="dKk-DY-i10" firstAttribute="top" secondItem="aHE-v1-poH" secondAttribute="bottom" constant="4" id="Uq0-fw-Zl1"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="seU-7n-pzp" secondAttribute="trailing" id="Vih-KV-9Kc"/>
                                     <constraint firstItem="cGA-DR-CHo" firstAttribute="leading" secondItem="aHE-v1-poH" secondAttribute="leading" id="W6Y-5T-nTQ"/>
@@ -1029,8 +1054,10 @@ You can now proceed to Login.</string>
                                     <constraint firstItem="fvQ-Pj-SN8" firstAttribute="top" secondItem="cGA-DR-CHo" secondAttribute="bottom" constant="4" id="ghP-V8-EgK"/>
                                     <constraint firstItem="ndL-VF-0E2" firstAttribute="centerX" secondItem="Ov3-Xa-p0a" secondAttribute="centerX" id="hGN-Ac-xa8"/>
                                     <constraint firstItem="seU-7n-pzp" firstAttribute="top" secondItem="wfr-HE-fm0" secondAttribute="bottom" constant="43" id="k1A-9D-iPL"/>
+                                    <constraint firstItem="9GM-Bv-8wE" firstAttribute="trailing" secondItem="dKk-DY-i10" secondAttribute="trailing" id="kB8-eb-N6g"/>
                                     <constraint firstItem="dKk-DY-i10" firstAttribute="leading" secondItem="aHE-v1-poH" secondAttribute="leading" id="mal-bK-5Z4"/>
                                     <constraint firstItem="cGA-DR-CHo" firstAttribute="centerX" secondItem="Ov3-Xa-p0a" secondAttribute="centerX" id="sd9-OI-OrG"/>
+                                    <constraint firstItem="ndL-VF-0E2" firstAttribute="top" secondItem="9GM-Bv-8wE" secondAttribute="bottom" constant="25" id="uWk-yP-IJZ"/>
                                     <constraint firstItem="G2y-eM-hRS" firstAttribute="centerX" secondItem="Ov3-Xa-p0a" secondAttribute="centerX" id="ugj-ae-YCc"/>
                                     <constraint firstItem="gVR-tA-QQg" firstAttribute="top" secondItem="fvQ-Pj-SN8" secondAttribute="bottom" constant="25" id="vDe-JU-WwP"/>
                                     <constraint firstItem="4Ec-WT-RS9" firstAttribute="top" secondItem="gte-8r-g6k" secondAttribute="bottom" id="wCS-UK-ZfM"/>
@@ -1093,6 +1120,8 @@ You can now proceed to Login.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="URLDropdownHeight" destination="DU2-NH-2fA" id="VJN-0t-y4c"/>
+                        <outlet property="activityIndicator" destination="mgU-ce-sN2" id="jur-cy-GR9"/>
                         <outlet property="apiURLField" destination="lvY-cT-DIp" id="GVj-T7-Cnw"/>
                         <outlet property="customURLButton" destination="13N-xp-dUa" id="67u-D3-PGo"/>
                         <outlet property="emailAddressField" destination="cGA-DR-CHo" id="Qrv-gt-WQg"/>
@@ -1102,6 +1131,8 @@ You can now proceed to Login.</string>
                         <outlet property="passwordField" destination="aHE-v1-poH" id="0fe-Hc-vAw"/>
                         <outlet property="scrollView" destination="Ov3-Xa-p0a" id="hUB-DE-hRc"/>
                         <outlet property="scrollableViewHeightConstraint" destination="F8l-Ep-Fhr" id="zC8-ZO-XOu"/>
+                        <outlet property="selectedURLLabel" destination="5WC-vm-aAf" id="fNB-k0-pLj"/>
+                        <outlet property="urlsDropdown" destination="9GM-Bv-8wE" id="JEE-Qp-rd5"/>
                         <outlet property="viewHeightConstraint" destination="Zms-ux-tzC" id="M8B-cB-mhj"/>
                         <segue destination="MOx-o9-HDz" kind="show" identifier="showTabController" id="dKW-jL-B8K"/>
                     </connections>
@@ -1139,7 +1170,7 @@ You can now proceed to Login.</string>
                         <viewControllerLayoutGuide type="bottom" id="xoT-SY-iVU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5aJ-6E-ccx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hty-Eq-4VU">
@@ -1198,7 +1229,7 @@ You can now proceed to Login.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lRu-Wa-Ali">
-                                <rect key="frame" x="10" y="293" width="355" height="353"/>
+                                <rect key="frame" x="10" y="293" width="355" height="402"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -1214,7 +1245,7 @@ You can now proceed to Login.</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yI-df-ybp">
-                                <rect key="frame" x="10" y="661" width="355" height="44"/>
+                                <rect key="frame" x="10" y="710" width="355" height="44"/>
                                 <color key="backgroundColor" red="0.12692853808403015" green="0.31156018376350403" blue="0.74908894300460815" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration" identifier="select-channel-button" label="Select Channel">
                                     <bool key="isElement" value="NO"/>
@@ -1236,8 +1267,34 @@ You can now proceed to Login.</string>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEv-GE-DmP">
-                                <rect key="frame" x="0.0" y="278" width="375" height="383"/>
+                                <rect key="frame" x="0.0" y="278" width="375" height="432"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PO1-Sc-CZU">
+                                <rect key="frame" x="9.6666666666666572" y="293" width="355" height="402"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rules-empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="cXX-1r-F0j">
+                                        <rect key="frame" x="140.33333333333334" y="50" width="75" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="f5m-Ks-IXH"/>
+                                            <constraint firstAttribute="height" constant="80" id="quN-SM-0KS"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No active data channel of type iOS exist in this account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htd-U1-JZF">
+                                        <rect key="frame" x="20" y="166" width="314.33333333333331" height="38.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.60999999999999999" green="0.60999999999999999" blue="0.60999999999999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Htd-U1-JZF" firstAttribute="top" secondItem="cXX-1r-F0j" secondAttribute="bottom" constant="36" id="6Na-gb-eFo"/>
+                                    <constraint firstItem="cXX-1r-F0j" firstAttribute="top" secondItem="PO1-Sc-CZU" secondAttribute="top" constant="50" id="MtY-gB-RKK"/>
+                                    <constraint firstItem="Htd-U1-JZF" firstAttribute="leading" secondItem="PO1-Sc-CZU" secondAttribute="leading" constant="20" id="NgV-h1-mtC"/>
+                                    <constraint firstItem="Htd-U1-JZF" firstAttribute="centerX" secondItem="PO1-Sc-CZU" secondAttribute="centerX" id="Z1n-n1-KfN"/>
+                                    <constraint firstItem="cXX-1r-F0j" firstAttribute="centerX" secondItem="PO1-Sc-CZU" secondAttribute="centerX" id="kHa-qz-nM4"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -1250,16 +1307,21 @@ You can now proceed to Login.</string>
                             <constraint firstItem="xoT-SY-iVU" firstAttribute="top" secondItem="9yI-df-ybp" secondAttribute="bottom" constant="24" id="Gdk-qR-Zaq"/>
                             <constraint firstItem="hty-Eq-4VU" firstAttribute="leading" secondItem="5aJ-6E-ccx" secondAttribute="leading" constant="10" id="T2k-wC-fAi"/>
                             <constraint firstAttribute="trailing" secondItem="lRu-Wa-Ali" secondAttribute="trailing" constant="10" id="TzQ-lE-LFf"/>
+                            <constraint firstItem="PO1-Sc-CZU" firstAttribute="width" secondItem="lRu-Wa-Ali" secondAttribute="width" id="W0e-hI-5Se"/>
                             <constraint firstItem="lRu-Wa-Ali" firstAttribute="leading" secondItem="5aJ-6E-ccx" secondAttribute="leading" constant="10" id="Zb4-ym-9dM"/>
                             <constraint firstItem="9yI-df-ybp" firstAttribute="leading" secondItem="5aJ-6E-ccx" secondAttribute="leading" constant="10" id="ay6-iE-y58"/>
+                            <constraint firstItem="PO1-Sc-CZU" firstAttribute="centerX" secondItem="lRu-Wa-Ali" secondAttribute="centerX" id="goM-Hc-MRd"/>
                             <constraint firstItem="lRu-Wa-Ali" firstAttribute="centerY" secondItem="JEv-GE-DmP" secondAttribute="centerY" id="ipg-A8-vef"/>
                             <constraint firstItem="hty-Eq-4VU" firstAttribute="top" secondItem="LPK-ZM-5Xp" secondAttribute="bottom" constant="10" id="lHc-KX-8HF"/>
+                            <constraint firstItem="PO1-Sc-CZU" firstAttribute="height" secondItem="lRu-Wa-Ali" secondAttribute="height" id="plZ-bV-On3"/>
                             <constraint firstItem="JEv-GE-DmP" firstAttribute="bottom" secondItem="9yI-df-ybp" secondAttribute="top" id="poD-qk-1ev"/>
                             <constraint firstItem="JEv-GE-DmP" firstAttribute="top" secondItem="hty-Eq-4VU" secondAttribute="bottom" id="v62-ts-egT"/>
+                            <constraint firstItem="PO1-Sc-CZU" firstAttribute="centerY" secondItem="lRu-Wa-Ali" secondAttribute="centerY" id="wQ6-y0-dR6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Data Channel to Use" id="JXu-uD-eIC"/>
                     <connections>
+                        <outlet property="noChannelView" destination="PO1-Sc-CZU" id="FnR-EU-Muk"/>
                         <outlet property="selectChannelButton" destination="9yI-df-ybp" id="BGC-tQ-vbI"/>
                         <outlet property="tableView" destination="lRu-Wa-Ali" id="Yvg-Wv-gYJ"/>
                     </connections>
@@ -1283,12 +1345,12 @@ You can now proceed to Login.</string>
                     <connections>
                         <segue destination="nZx-4k-yIp" kind="presentation" identifier="showDataChannelSelection" id="bdL-UT-Onr"/>
                         <segue destination="GG5-PT-2eE" kind="presentation" identifier="showProjectSelection" id="tiO-Cx-fFe"/>
-                        <segue destination="5P7-yC-Z8k" kind="show" identifier="logoutSegue" id="Xep-ZI-SYY"/>
                         <segue destination="k3B-Al-8Ut" kind="relationship" relationship="viewControllers" id="LjP-7p-sKc"/>
                         <segue destination="myb-OP-fNK" kind="relationship" relationship="viewControllers" id="qNG-dY-FlY"/>
                         <segue destination="pji-3k-kYe" kind="relationship" relationship="viewControllers" id="w7q-1m-dbb"/>
                         <segue destination="ti7-xg-rMP" kind="relationship" relationship="viewControllers" id="jBg-I0-tSH"/>
                         <segue destination="amc-nY-38N" kind="relationship" relationship="viewControllers" id="4Fn-di-4V7"/>
+                        <segue destination="oH9-Ao-Hwe" kind="show" identifier="logoutSegue" id="oDz-uZ-zzx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8d-Lw-iXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1679,7 +1741,7 @@ Let us know what you would like to see:</string>
                                                             <rect key="frame" x="0.0" y="28" width="335" height="38"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lv-xe-yKM" id="5ET-8I-o9t">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="37.666666666666664"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-yQ-dY7">
@@ -2903,7 +2965,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                         <viewControllerLayoutGuide type="bottom" id="dW8-0e-yOx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="agB-wX-HQ7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ir-Qq-HDZ">
@@ -2955,7 +3017,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-7S-yj0" userLabel="table">
-                                <rect key="frame" x="10" y="313" width="355" height="333"/>
+                                <rect key="frame" x="10" y="313" width="355" height="382"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -2971,7 +3033,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZX-1b-EJD" userLabel="select-project-button">
-                                <rect key="frame" x="10" y="661" width="355" height="44"/>
+                                <rect key="frame" x="10" y="710" width="355" height="44"/>
                                 <color key="backgroundColor" red="0.12692853809999999" green="0.3115601838" blue="0.74908894299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration" identifier="select-project-button" label="Select Project">
                                     <bool key="isElement" value="NO"/>
@@ -2993,8 +3055,34 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lA-6p-rgy">
-                                <rect key="frame" x="0.0" y="298" width="375" height="363"/>
+                                <rect key="frame" x="0.0" y="298" width="375" height="412"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyh-ad-fzn">
+                                <rect key="frame" x="10" y="313" width="355" height="382"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rules-empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="smC-oK-eS9">
+                                        <rect key="frame" x="140.33333333333334" y="50" width="75" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="Vtn-sY-frG"/>
+                                            <constraint firstAttribute="height" constant="80" id="lli-vC-wLl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No active data project exist in this account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a4-6M-gHc">
+                                        <rect key="frame" x="20" y="166" width="314.33333333333331" height="19.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.60999999999999999" green="0.60999999999999999" blue="0.60999999999999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="0a4-6M-gHc" firstAttribute="centerX" secondItem="Nyh-ad-fzn" secondAttribute="centerX" id="3DQ-cK-Zbn"/>
+                                    <constraint firstItem="0a4-6M-gHc" firstAttribute="leading" secondItem="Nyh-ad-fzn" secondAttribute="leading" constant="20" id="EvH-Tw-xlC"/>
+                                    <constraint firstItem="smC-oK-eS9" firstAttribute="centerX" secondItem="Nyh-ad-fzn" secondAttribute="centerX" id="G32-dA-t2w"/>
+                                    <constraint firstItem="smC-oK-eS9" firstAttribute="top" secondItem="Nyh-ad-fzn" secondAttribute="top" constant="50" id="kfo-qA-iJG"/>
+                                    <constraint firstItem="0a4-6M-gHc" firstAttribute="top" secondItem="smC-oK-eS9" secondAttribute="bottom" constant="36" id="lPb-V8-zN9"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -3003,8 +3091,11 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                             <constraint firstItem="3lA-6p-rgy" firstAttribute="leading" secondItem="agB-wX-HQ7" secondAttribute="leading" id="4A3-kD-sie"/>
                             <constraint firstItem="RpG-7S-yj0" firstAttribute="height" secondItem="3lA-6p-rgy" secondAttribute="height" constant="-30" id="5Lt-Yb-tLH"/>
                             <constraint firstAttribute="trailing" secondItem="RpG-7S-yj0" secondAttribute="trailing" constant="10" id="9sv-KX-ifj"/>
+                            <constraint firstItem="Nyh-ad-fzn" firstAttribute="width" secondItem="RpG-7S-yj0" secondAttribute="width" id="EKJ-SI-rj2"/>
                             <constraint firstAttribute="trailing" secondItem="3lA-6p-rgy" secondAttribute="trailing" id="HFW-zJ-dl5"/>
                             <constraint firstItem="4Ir-Qq-HDZ" firstAttribute="top" secondItem="sxg-6U-6uV" secondAttribute="bottom" constant="10" id="RtL-3p-obL"/>
+                            <constraint firstItem="Nyh-ad-fzn" firstAttribute="height" secondItem="RpG-7S-yj0" secondAttribute="height" id="V9f-b3-acJ"/>
+                            <constraint firstItem="Nyh-ad-fzn" firstAttribute="centerX" secondItem="RpG-7S-yj0" secondAttribute="centerX" id="Zz5-5V-TB8"/>
                             <constraint firstItem="RpG-7S-yj0" firstAttribute="centerY" secondItem="3lA-6p-rgy" secondAttribute="centerY" id="bG6-2V-Eme"/>
                             <constraint firstItem="RpG-7S-yj0" firstAttribute="leading" secondItem="agB-wX-HQ7" secondAttribute="leading" constant="10" id="e4B-Bt-JzA"/>
                             <constraint firstItem="eil-CR-Abz" firstAttribute="centerX" secondItem="agB-wX-HQ7" secondAttribute="centerX" id="fQY-KV-6e2"/>
@@ -3015,10 +3106,12 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                             <constraint firstAttribute="trailing" secondItem="4Ir-Qq-HDZ" secondAttribute="trailing" constant="10" id="s4q-7A-Kcf"/>
                             <constraint firstItem="3lA-6p-rgy" firstAttribute="top" secondItem="4Ir-Qq-HDZ" secondAttribute="bottom" id="vlw-vj-kCW"/>
                             <constraint firstItem="dW8-0e-yOx" firstAttribute="top" secondItem="FZX-1b-EJD" secondAttribute="bottom" constant="24" id="wAe-VQ-36r"/>
+                            <constraint firstItem="Nyh-ad-fzn" firstAttribute="centerY" secondItem="RpG-7S-yj0" secondAttribute="centerY" id="zh8-Vb-1SV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Project to Use" id="G4w-z3-O0h"/>
                     <connections>
+                        <outlet property="noProjectView" destination="Nyh-ad-fzn" id="9Ux-vk-gH6"/>
                         <outlet property="selectProjectButton" destination="FZX-1b-EJD" id="2ab-PJ-0pE"/>
                         <outlet property="tableView" destination="RpG-7S-yj0" id="jdh-32-CcU"/>
                     </connections>
@@ -5956,10 +6049,10 @@ revised: 5/9/2016</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mI5-qK-Wad"/>
-        <segue reference="sfn-Bk-AGt"/>
+        <segue reference="tiO-Cx-fFe"/>
         <segue reference="dKW-jL-B8K"/>
-        <segue reference="X8u-Xy-liR"/>
-        <segue reference="tam-M8-If5"/>
+        <segue reference="bdL-UT-Onr"/>
+        <segue reference="oDz-uZ-zzx"/>
         <segue reference="06h-aU-o4p"/>
     </inferredMetricsTieBreakers>
 </document>
