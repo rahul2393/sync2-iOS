@@ -43,6 +43,45 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.4)
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
+  - MaterialComponents/AnimationTiming (59.1.0)
+  - MaterialComponents/Buttons (59.1.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/Shapes
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Ink (59.1.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/OverlayWindow (59.1.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Application (59.1.0)
+  - MaterialComponents/private/KeyboardWatcher (59.1.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (59.1.0)
+  - MaterialComponents/private/Overlay (59.1.0)
+  - MaterialComponents/private/Shapes (59.1.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/ShadowElevations (59.1.0)
+  - MaterialComponents/ShadowLayer (59.1.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Snackbar (59.1.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/Typography
+  - MaterialComponents/Typography (59.1.0):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (1.0.4)
+  - MDFTextAccessibility (1.2.0)
+  - MKDropdownMenu (1.4)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -57,6 +96,8 @@ DEPENDENCIES:
   - Google-Maps-iOS-Utils
   - GoogleMaps
   - GooglePlaces
+  - MaterialComponents/Snackbar
+  - MKDropdownMenu
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -71,6 +112,10 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - GoogleToolboxForMac
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
+    - MKDropdownMenu
     - nanopb
 
 SPEC CHECKSUMS:
@@ -85,8 +130,12 @@ SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  MaterialComponents: a4edbc1c4a005a4a989328ad2940f03365e84e73
+  MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
+  MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
+  MKDropdownMenu: 269df4a41d21a1db684ce8bc709befe419fc5bae
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 24dbe52b63025a9bcca193d7640ec3512679bb42
+PODFILE CHECKSUM: 377a6dff5cfd98ce7754feffbe6e3e33f901c09f
 
 COCOAPODS: 1.5.3
