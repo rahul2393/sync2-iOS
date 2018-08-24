@@ -11,22 +11,18 @@
 #import "SDKManager.h"
 #import "ActionSheetPicker.h"
 
+#define KEY_FROMDATE @"fromDate"
+
+#define KEY_TODATE @"toDate"
+
+
 @implementation LogBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Setting initial `from` as today's 12am and `to` date as current time.
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
-    _fromDate = [calendar dateBySettingHour:0 minute:0 second:0 ofDate:[NSDate date] options:0];
-    _toDate = [NSDate date];
-    
     _dateLabelFormatter = [[NSDateFormatter alloc] init];
     [_dateLabelFormatter setDateFormat:@"MMM dd, h:mm a"];
-    
-    [self filterLogList];
-    
-    [self updateDateLabel];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateViewWithSensorData)
@@ -35,8 +31,12 @@
     
 }
 
-- (void)dealloc
-{
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self filterLogList];
+}
+
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -45,13 +45,49 @@
     [self logsChanged];
 }
 
+- (void)setFromDate:(NSDate *)fromDate {
+    [[NSUserDefaults standardUserDefaults] setObject:fromDate forKey:KEY_FROMDATE];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSDate *)fromDate {
+    NSDate *fromDate = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_FROMDATE];
+    if (!fromDate) {
+//        Setting initial `from` as today's 12am
+        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+        NSDate *date = [calendar dateBySettingHour:0 minute:0 second:0 ofDate:[NSDate date] options:0];
+        [[NSUserDefaults standardUserDefaults] setObject:date forKey:KEY_FROMDATE];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        return date;
+    }
+    return fromDate;
+}
+
+- (void)setToDate:(NSDate *)toDate {
+    [[NSUserDefaults standardUserDefaults] setObject:toDate forKey:KEY_TODATE];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSDate *)toDate {
+    NSDate *toDate = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_TODATE];
+    if (!toDate) {
+//        Setting initial `to` as current time.
+        NSDate *date = [NSDate date];
+        [[NSUserDefaults standardUserDefaults] setObject:date forKey:KEY_TODATE];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
+        return date;
+    }
+    return toDate;
+}
 
 - (void)filterLogList {
     self.logs = [[[SDKManager sharedManager] sensorsData] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Event*  _Nullable log, NSDictionary<NSString *,id> * _Nullable bindings) {
         
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:(log.timestamp / 1000.0)];
         
-        if([date compare: _fromDate] == NSOrderedDescending &&  [date compare:_toDate] == NSOrderedAscending) {
+        if([date compare: self.fromDate] == NSOrderedDescending &&  [date compare:self.toDate] == NSOrderedAscending) {
             return true;
         }
         return false;
@@ -60,7 +96,8 @@
     [self updateDateLabel];
 }
 
-- (void)datesSelected:(id)sender {
+
+- (void)datesSelected:(id)sender onSuccessHandler:(void (^)())onSuccessBlock {
     __block NSDate *localFromDate = nil;
     
     [ActionSheetDatePicker showPickerWithTitle:@"From" datePickerMode:UIDatePickerModeDateAndTime selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
@@ -69,14 +106,16 @@
             self.fromDate = localFromDate;
             self.toDate = selectedDate;
             [self filterLogList];
+            if (onSuccessBlock != nil) {
+                onSuccessBlock();
+            }
+            
         } cancelBlock:^(ActionSheetDatePicker *picker) {
             
-        }
-                                            origin:sender];
+        } origin:sender];
     } cancelBlock:^(ActionSheetDatePicker *picker) {
         
-    }
-                                        origin:sender];
+    } origin:sender];
 }
 
 # pragma mark - Methods to be overridden

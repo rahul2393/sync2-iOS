@@ -10,13 +10,13 @@
 
 @interface LogBaseViewController: UIViewController
 
-@property NSDate *fromDate;
-@property NSDate *toDate;
+@property (nonatomic) NSDate *fromDate;
+@property (nonatomic) NSDate *toDate;
 @property (nonatomic) NSArray *logs;
 @property NSDateFormatter *dateLabelFormatter;
 
 -(void) filterLogList;
--(void) datesSelected:(id)sender;
+-(void) datesSelected:(id)sender onSuccessHandler:(void (^)())onSuccessBlock;
 
 -(void) logsChanged;
 -(void) updateDateLabel;

@@ -70,7 +70,7 @@
 #pragma mark - IBAction
 
 - (IBAction)selectDateTapped:(id)sender {
-    [self datesSelected:sender];
+    [self datesSelected:sender onSuccessHandler:nil];
 }
 
 

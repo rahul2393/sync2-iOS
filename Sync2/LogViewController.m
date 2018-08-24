@@ -27,7 +27,12 @@
     return self;
 }
 
-
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear: animated];
+    
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"fromDate"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"toDate"];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

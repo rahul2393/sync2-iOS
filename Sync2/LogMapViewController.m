@@ -130,6 +130,10 @@
 - (void)createHeatMap {
     NSMutableArray *list = [[NSMutableArray alloc] init];
     
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.heatmapLayer.map = nil;
+    });
+    
     for(Event *event in self.logs) {
         CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:event.locationsArray[0].latitude longitude: event.locationsArray[0].longitude];
         GMUWeightedLatLng* coords = [[GMUWeightedLatLng alloc] initWithCoordinate:currentLocation.coordinate intensity:1.0];
@@ -156,7 +160,11 @@
 }
 
 - (IBAction)datePickerTapped:(id)sender {
-    [self datesSelected:sender];
+    [self datesSelected:sender onSuccessHandler:^{
+        if (self.logs.count > 0) {
+            self.currentIndex = 0;
+        }
+    }];
 }
 
 #pragma mark - LogMapDataDelegate
@@ -184,6 +192,7 @@
     [self showLogsView];
     
     [self createHeatMap];
+    self.currentIndex = 0;
 }
 
 - (void)updateDateLabel {
@@ -200,8 +209,12 @@
     
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:(recentLog.timestamp / 1000.0)];
     
-    if([date compare: self.fromDate] == NSOrderedDescending &&  [date compare:self.toDate] == NSOrderedAscending  &&  self.logs.count > (self.currentIndex+1)) {
-        self.currentIndex += 1;
+    if([date compare: self.fromDate] == NSOrderedDescending &&  [date compare:self.toDate] == NSOrderedAscending) {
+        if (self.logs.count == (self.currentIndex +1) ) {
+            self.currentIndex = 0;
+        } else if (self.logs.count > (self.currentIndex+1)) {
+            self.currentIndex += 1;
+        }
     }
 }
 
