@@ -11,6 +11,7 @@
 @interface DataChannelSelectionViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *selectChannelButton;
+@property (weak, nonatomic) IBOutlet UIView *noChannelView;
 
 @property (nonatomic, strong) NSArray *channels;
 @property (nonatomic, readwrite) BOOL useDummy;

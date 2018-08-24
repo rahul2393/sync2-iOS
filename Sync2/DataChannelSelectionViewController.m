@@ -7,10 +7,10 @@
 //
 
 #import "DataChannelSelectionViewController.h"
-#import "DummyChannelData.h"
 #import "DataChannel.h"
 #import "SettingsManager.h"
 #import "ProjectSelectionTableViewCell.h"
+#import "MaterialSnackbar.h"
 
 @interface DataChannelSelectionViewController ()
 
@@ -29,14 +29,39 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"ProjectSelectionTableViewCell" bundle:nil] forCellReuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
     
     if (!self.channels) {
+        self.channels = [NSArray array];
+    }
+    
+    [self filterIOSChannels:self.channels];
+    
+    if (self.channels.count == 0) {
+        [self.tableView setHidden:YES];
+        [self.noChannelView setHidden:NO];
+        [self.selectChannelButton setHidden:YES];
         
-        self.useDummy = NO;
         
-        if (self.useDummy) {
-            self.channels = [DummyChannelData channelTitles];
-        }else{
-            self.channels = [NSArray array];
-        }
+        MDCSnackbarMessage *message = [[MDCSnackbarMessage alloc] init];
+        message.text = @"Select Another Account";
+        [message setDuration:10];
+        
+        MDCSnackbarMessageAction *action = [[MDCSnackbarMessageAction alloc] init];
+        void (^actionHandler)() = ^() {
+            [[SettingsManager sharedManager] logout];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        };
+        action.handler = actionHandler;
+        
+        action.title = @"GO TO LOGIN";
+        message.action = action;
+        [MDCSnackbarManager showMessage:message];
+        [MDCSnackbarManager setButtonTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        
+        [NSTimer scheduledTimerWithTimeInterval: 10 target: self
+                                       selector: @selector(handleTimer:) userInfo: message repeats: YES];
+    } else {
+        [self.tableView setHidden:NO];
+        [self.noChannelView setHidden:YES];
+        [self.selectChannelButton setHidden:NO];
     }
     
     [self.selectChannelButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
@@ -44,31 +69,28 @@
     self.selectedChannelIx = -1;
     [self setButtonEnabled:NO];
     
-    if (!self.useDummy) {
-        [self filterIOSChannels:self.channels];
+    DataChannel *selectedChannel = [[SettingsManager sharedManager] selectedDataChannel];
+    if (selectedChannel) {
         
-        DataChannel *selectedChannel = [[SettingsManager sharedManager] selectedDataChannel];
-        if (selectedChannel) {
-            
-            NSUInteger selectedIndex = [self.channels indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                if ([[(DataChannel *)obj objectId] isEqualToString:selectedChannel.objectId]) {
-                    *stop = YES;
-                    return YES;
-                }
-                return NO;
-            }];
-
-            if (selectedIndex != NSNotFound) {
-                self.channelSelected = YES;
-                self.selectedChannelIx = selectedIndex;
-                [self setButtonEnabled:YES];
-                
-                UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelTapped)];
-                cancelItem.tintColor = [UIColor whiteColor];
-                self.navigationItem.leftBarButtonItem = cancelItem;
+        NSUInteger selectedIndex = [self.channels indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([[(DataChannel *)obj objectId] isEqualToString:selectedChannel.objectId]) {
+                *stop = YES;
+                return YES;
             }
+            return NO;
+        }];
+
+        if (selectedIndex != NSNotFound) {
+            self.channelSelected = YES;
+            self.selectedChannelIx = selectedIndex;
+            [self setButtonEnabled:YES];
+            
+            UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelTapped)];
+            cancelItem.tintColor = [UIColor whiteColor];
+            self.navigationItem.leftBarButtonItem = cancelItem;
         }
     }
+    
 }
 
 - (void)filterIOSChannels:(NSArray *)channels {
@@ -94,6 +116,10 @@
     }
 }
 
+- (void)handleTimer:(NSTimer*)theTimer {
+    [MDCSnackbarManager showMessage:(MDCSnackbarMessage*)[theTimer userInfo]];
+}
+
 #pragma mark - Table view data source
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -107,14 +133,10 @@
         cell = [[ProjectSelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
     }
     
-    if (self.useDummy) {
-        cell.channelName.text = self.channels[indexPath.row];
-        cell.platformName.text = @"IOS";
-    }else {
-        DataChannel *dc = self.channels[indexPath.row];
-        cell.channelName.text = dc.name;
-        cell.platformName.text = dc.type;
-    }
+    DataChannel *dc = self.channels[indexPath.row];
+    cell.channelName.text = dc.name;
+    cell.platformName.text = dc.type;
+    
     cell.cellSelectedImage.image = (self.selectedChannelIx == indexPath.row  &&  self.channelSelected) ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
     
     return cell;

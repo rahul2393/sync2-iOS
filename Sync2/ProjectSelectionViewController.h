@@ -11,6 +11,7 @@
 @interface ProjectSelectionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *selectProjectButton;
+@property (weak, nonatomic) IBOutlet UIView *noProjectView;
 
 @property (nonatomic, strong) NSArray *projects;
 

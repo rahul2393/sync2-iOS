@@ -11,6 +11,7 @@
 #import "Project.h"
 #import "SettingsManager.h"
 #import "ProjectSelectionTableViewCell.h"
+#import "MaterialSnackbar.h"
 
 @import SixgillSDK;
 
@@ -42,6 +43,38 @@
         }
     }
     
+    if (self.projects.count == 0) {
+        [self.tableView setHidden:YES];
+        [self.noProjectView setHidden:NO];
+        [self.selectProjectButton setHidden:YES];
+        
+        MDCSnackbarMessage *message = [[MDCSnackbarMessage alloc] init];
+        message.text = @"Select Another Account";
+        [message setDuration:10];
+        
+        MDCSnackbarMessageAction *action = [[MDCSnackbarMessageAction alloc] init];
+        void (^actionHandler)() = ^() {
+            [[SettingsManager sharedManager] logout];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        };
+        action.handler = actionHandler;
+        
+        action.title = @"GO TO LOGIN";
+        message.action = action;
+        [MDCSnackbarManager showMessage:message];
+        [MDCSnackbarManager setButtonTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        
+
+        [NSTimer scheduledTimerWithTimeInterval: 10 target: self
+                                       selector: @selector(handleTimer:) userInfo: message repeats: YES];
+
+        
+    } else {
+        [self.tableView setHidden:NO];
+        [self.noProjectView setHidden:YES];
+        [self.selectProjectButton setHidden:NO];
+    }
+    
     self.title = @"Select Project to Use";
     
     [self.selectProjectButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
@@ -71,6 +104,10 @@
             }
         }
     }
+}
+
+- (void)handleTimer:(NSTimer*)theTimer {
+    [MDCSnackbarManager showMessage:(MDCSnackbarMessage*)[theTimer userInfo]];
 }
 
 - (void)cancelTapped {
