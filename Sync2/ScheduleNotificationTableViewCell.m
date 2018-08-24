@@ -30,8 +30,7 @@
     [ActionSheetDatePicker showPickerWithTitle:@"Pick Date and Time" datePickerMode:UIDatePickerModeDateAndTime selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
     } cancelBlock:^(ActionSheetDatePicker *picker) {
         
-    }
-                                        origin:sender];
+    } origin:sender];
 
 }
 @end
