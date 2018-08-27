@@ -20,14 +20,6 @@
     
 }
 
-
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    if ([[SettingsManager sharedManager] currentAccountEmail]) {
-        [self performSegueWithIdentifier:@"alreadySignedIn" sender:self];
-    }
-}
-
 - (IBAction)haveAccountTapped:(id)sender {
     [self performSegueWithIdentifier:@"showPermissionRequests" sender:self];
 }
