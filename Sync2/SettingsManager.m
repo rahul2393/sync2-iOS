@@ -10,6 +10,7 @@
 #import "SenseAPI.h"
 #import "TextNotification.h"
 #import "SDKManager.h"
+#import "BaseNotification.h"
 
 #define KEY_HASONBOARDED @"hasOnboarded"
 
@@ -34,6 +35,16 @@
 #define KEY_SelectedProject @"selectedProject"
 #define KEY_SelectedDataChannel @"selectedDataChannel"
 
+#define SG_PUSH_CMD_FIELD @"data"
+
+#define SG_PUSH_TYPE @"type"
+
+
+#define SG_CMD_UPDATE_CONFIG @"UPDATE_CONFIG"
+#define SG_CMD_SEND_SENSOR_DATA @"SEND_SENSOR_DATA"
+#define SG_CMD_NOTIFY @"NOTIFY"
+
+
 @implementation SettingsManager
 
 + (id)sharedManager {
@@ -51,7 +62,6 @@
     }
     return self;
 }
-
 
 -(NSString *) currentAccountEmail{
     return [[NSUserDefaults standardUserDefaults] objectForKey:KEY_AccountEmail];
@@ -84,16 +94,48 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-
 - (void)saveRemoteNotificationPayload:(NSDictionary *)payload {
-    TextNotification *textNotification = [[TextNotification alloc] initWithPayload:payload];
     
-    if (textNotification != nil) {
-        NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-        [savedNotifications insertObject:textNotification atIndex:0];
-        [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:savedNotifications] forKey:KEY_Notifications];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+    if (!payload[SG_PUSH_CMD_FIELD]) {
+        return;
     }
+    
+    NSDictionary *data = payload[SG_PUSH_CMD_FIELD];
+    if (!data[SG_PUSH_TYPE]) {
+        return;
+    }
+    
+    NSString *type = data[SG_PUSH_TYPE];
+    
+    NSArray *notificationTypes = @[@"information", @"action", @"feedback", @"survey", @"schedule", @"event"];
+    
+    NSInteger idx = [notificationTypes indexOfObject:type];
+    
+    BaseNotification *baseNotification = [[BaseNotification alloc] initWithPayload:payload];
+    
+//    switch (idx) {
+//        case 0:
+//            break;
+//        case 1:
+//            break;
+//        case 2:
+//            break;
+//        case 3:
+//            break;
+//        case 4:
+//            break;
+//        case 5:
+//            break;
+//    }
+    
+//    TextNotification *textNotification = [[TextNotification alloc] initWithPayload:payload];
+//    
+//    if (textNotification != nil) {
+//        NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+//        [savedNotifications insertObject:textNotification atIndex:0];
+//        [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:savedNotifications] forKey:KEY_Notifications];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//    }
 }
 
 - (NSArray *)savedRemoteNotificationPayloads {
