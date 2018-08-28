@@ -21,14 +21,17 @@
 @import GooglePlaces;
 @import Firebase;
 @import Fabric;
+@import UserNotifications;
 
-@interface AppDelegate ()
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    UNUserNotificationCenter.currentNotificationCenter.delegate = self;
     
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
@@ -47,6 +50,11 @@
     [FIRApp configure];
     [Fabric.sharedSDK setDebug:YES];
     return YES;
+}
+
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    completionHandler(UNNotificationPresentationOptionAlert);
 }
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
