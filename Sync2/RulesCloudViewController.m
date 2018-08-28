@@ -98,7 +98,7 @@
     cell.detailLabel.text = rule.ruledescription;
     cell.actionCountLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)rule.actions.count];
     cell.conditionCountLabel.text = @"1";
-    cell.statusImageView.image = [UIImage imageNamed: @"rules-green-circle"];
+    cell.statusImageView.image = rule.enabled ? [UIImage imageNamed: @"rules-green-circle"] : [UIImage imageNamed: @"rules-red-circle"];
     
     return cell;
 }
