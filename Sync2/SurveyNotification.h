@@ -9,19 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "BaseNotification.h"
 
+
+@interface SurveyOption: NSObject
+
+@property (nonatomic, strong) NSString *text;
+@property (nonatomic, readwrite) int optionId;
+
+@end;
+
 @interface SurveyNotification : BaseNotification
 
 @property (nonatomic, strong) NSString *buttonText;
 @property (nonatomic, strong) NSString *submitUrl;
 @property (nonatomic, strong) NSArray* options;
 @end
-
-//    "options": [{
-//        "id" : 0,
-//        "text" : "Black Coffee"
-//    },
-//    {
-//        "id" : 1,
-//        "text" : "Coldbrew Coffee"
-//    }],
-//

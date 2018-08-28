@@ -10,7 +10,7 @@
 
 @implementation Action
 
-- (instancetype)init: (NSString *)text actionId:(int *)actionId type:(NSString *)type
+- (instancetype)init: (NSString *)text actionId:(int)actionId type:(NSString *)type
 {
     self = [super init];
     if (self) {
@@ -38,10 +38,13 @@
         }
         
         if (dataDictionary[@"actions"]) {
+            self.actions = @[];
+            NSMutableArray *mutableArray = [self.actions mutableCopy];
             for (id object in dataDictionary[@"actions"]) {
-                Action *action = [[Action alloc] init:object[@"text"] actionId:[object[@"actionId"] integerValue] type:object[@"type"]];
-//                self.actions
+                Action *action = [[Action alloc] init:object[@"text"] actionId:[object[@"actionId"] intValue] type:object[@"type"]];
+                [mutableArray addObject:action];
             }
+            self.actions = [mutableArray copy];
         } else {
             self.actions = @[];
         }
@@ -52,25 +55,24 @@
             self.submitUrl = @"";
         }
     }
-    
+
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [super encodeWithCoder:encoder];
     [encoder encodeObject:self.actionTitle forKey:@"actionTitle"];
-    
+    [encoder encodeObject:self.actions forKey:@"actions"];
     [encoder encodeObject:self.submitUrl forKey:@"submitUrl"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super initWithCoder:decoder]) {
         self.actionTitle = [decoder decodeObjectForKey:@"actionTitle"];
-        
+        self.actions = [decoder decodeObjectForKey:@"actions"];
         self.submitUrl = [decoder decodeObjectForKey:@"submitUrl"];
     }
     return self;
 }
 
 @end
-//    "actionId" : 786,

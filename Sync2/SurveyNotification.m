@@ -8,6 +8,20 @@
 
 #import "SurveyNotification.h"
 
+@implementation SurveyOption
+
+- (instancetype)init: (NSString *)text optionId:(int)optionId
+{
+    self = [super init];
+    if (self) {
+        _text = text;
+        _optionId = optionId;
+    }
+    return self;
+}
+
+@end
+
 @implementation SurveyNotification
 
 - (instancetype)initWithPayload:(NSDictionary *)payload {
@@ -29,7 +43,13 @@
         }
         
         if (dataDictionary[@"options"]) {
-            self.options = dataDictionary[@"options"];
+            self.options = @[];
+            NSMutableArray *mutableArray = [self.options mutableCopy];
+            for(id object in dataDictionary[@"options"]) {
+                SurveyOption *option = [[SurveyOption alloc] init:object[@"text"] optionId:[object[@"id"] intValue]];
+                [mutableArray addObject:option];
+            }
+            self.options = [mutableArray copy];
         } else {
             self.options = @[];
         }
@@ -42,26 +62,17 @@
     [super encodeWithCoder:encoder];
     [encoder encodeObject:self.buttonText forKey:@"buttonText"];
     [encoder encodeObject:self.submitUrl forKey:@"submitUrl"];
-    
+    [encoder encodeObject:self.options forKey:@"options"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super initWithCoder:decoder]) {
         self.buttonText = [decoder decodeObjectForKey:@"buttonText"];
         self.submitUrl = [decoder decodeObjectForKey:@"submitUrl"];
-        
+        self.options = [decoder decodeObjectForKey:@"options"];
     }
     return self;
 }
 
 
 @end
-    "options": [{
-        "id" : 0,
-        "text" : "Black Coffee"
-    },
-    {
-        "id" : 1,
-        "text" : "Coldbrew Coffee"
-    }],
-

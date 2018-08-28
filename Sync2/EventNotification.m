@@ -53,7 +53,7 @@
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
-    if (self = [super init]) {
+    if (self = [super initWithCoder:decoder]) {
         self.addressTitle = [decoder decodeObjectForKey:@"addressTitle"];
         self.address = [decoder decodeObjectForKey:@"address"];
         self.latitude = [decoder decodeObjectForKey:@"latitude"];

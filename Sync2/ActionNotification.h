@@ -12,7 +12,7 @@
 @interface Action: NSObject
 
 @property (nonatomic, strong) NSString *text;
-@property (nonatomic, readwrite) int *actionId;
+@property (nonatomic, readwrite) int actionId;
 @property (nonatomic, strong) NSString *type;
 
 @end;
