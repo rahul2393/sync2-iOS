@@ -15,27 +15,26 @@
     self = [super initWithPayload:payload];
     
     if (self) {
-        NSDictionary *dataDictionary = payload[@"data"];
-        if (dataDictionary[@"addressTitle"]) {
-            self.addressTitle = dataDictionary[@"addressTitle"];
+        if (payload[@"addressTitle"]) {
+            self.addressTitle = payload[@"addressTitle"];
         } else {
             self.addressTitle = @"";
         }
         
-        if (dataDictionary[@"address"]) {
-            self.address = dataDictionary[@"address"];
+        if (payload[@"address"]) {
+            self.address = payload[@"address"];
         } else {
             self.address = @"";
         }
         
-        if (dataDictionary[@"latitude"]) {
-            self.latitude = dataDictionary[@"latitude"];
+        if (payload[@"latitude"]) {
+            self.latitude = payload[@"latitude"];
         } else {
             self.latitude = 0;
         }
         
-        if (dataDictionary[@"longitude"]) {
-            self.longitude = dataDictionary[@"longitude"];
+        if (payload[@"longitude"]) {
+            self.longitude = payload[@"longitude"];
         } else {
             self.longitude = 0;
         }

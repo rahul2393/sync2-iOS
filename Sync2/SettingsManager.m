@@ -10,7 +10,12 @@
 #import "SenseAPI.h"
 #import "TextNotification.h"
 #import "SDKManager.h"
-#import "BaseNotification.h"
+#import "InformationNotification.h"
+#import "ActionNotification.h"
+#import "FeedbackNotification.h"
+#import "SurveyNotification.h"
+#import "ScheduleNotification.h"
+#import "EventNotification.h"
 
 #define KEY_HASONBOARDED @"hasOnboarded"
 
@@ -111,31 +116,62 @@
     
     NSInteger idx = [notificationTypes indexOfObject:type];
     
-    BaseNotification *baseNotification = [[BaseNotification alloc] initWithPayload:payload];
-    
-//    switch (idx) {
-//        case 0:
-//            break;
-//        case 1:
-//            break;
-//        case 2:
-//            break;
-//        case 3:
-//            break;
-//        case 4:
-//            break;
-//        case 5:
-//            break;
-//    }
-    
-//    TextNotification *textNotification = [[TextNotification alloc] initWithPayload:payload];
-//    
-//    if (textNotification != nil) {
-//        NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-//        [savedNotifications insertObject:textNotification atIndex:0];
-//        [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:savedNotifications] forKey:KEY_Notifications];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//    }
+    switch (idx) {
+        case 0: {
+            InformationNotification *informationNotification = [[InformationNotification alloc] initWithPayload:data];
+            if (informationNotification != nil) {
+                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+                [savedNotifications insertObject:informationNotification atIndex:0];
+                [self addRemoteNotificationPayloads:savedNotifications];
+            }
+            break;
+        }
+        case 1: {
+            ActionNotification *actionNotification = [[ActionNotification alloc] initWithPayload:data];
+            if (actionNotification != nil) {
+                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+                [savedNotifications insertObject:actionNotification atIndex:0];
+                [self addRemoteNotificationPayloads:savedNotifications];
+            }
+            break;
+        }
+        case 2: {
+            FeedbackNotification *feedbackNotification = [[FeedbackNotification alloc] initWithPayload:data];
+            if (feedbackNotification != nil) {
+                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+                [savedNotifications insertObject:feedbackNotification atIndex:0];
+                [self addRemoteNotificationPayloads:savedNotifications];
+            }
+            break;
+        }
+        case 3: {
+            SurveyNotification *surveyNotification = [[SurveyNotification alloc] initWithPayload:data];
+            if (surveyNotification != nil) {
+                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+                [savedNotifications insertObject:surveyNotification atIndex:0];
+                [self addRemoteNotificationPayloads:savedNotifications];
+            }
+            break;
+        }
+        case 4: {
+            ScheduleNotification *scheduleNotification = [[ScheduleNotification alloc] initWithPayload:data];
+            if (scheduleNotification != nil) {
+                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+                [savedNotifications insertObject:scheduleNotification atIndex:0];
+                [self addRemoteNotificationPayloads:savedNotifications];
+            }
+            break;
+        }
+        case 5: {
+            EventNotification *eventNotification = [[EventNotification alloc] initWithPayload:data];
+            if (eventNotification != nil) {
+                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+                [savedNotifications insertObject:eventNotification atIndex:0];
+                [self addRemoteNotificationPayloads:savedNotifications];
+            }
+            break;
+        }
+    }
 }
 
 - (NSArray *)savedRemoteNotificationPayloads {
@@ -150,6 +186,10 @@
     } else {
         return [NSArray array];
     }
+}
+-(void) addRemoteNotificationPayloads: (NSMutableArray *) savedNotifications{
+    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:savedNotifications] forKey:KEY_Notifications];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(void) logout{

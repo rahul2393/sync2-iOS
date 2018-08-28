@@ -29,23 +29,22 @@
     self = [super initWithPayload:payload];
     
     if (self) {
-        NSDictionary *dataDictionary = payload[@"data"];
-        if (dataDictionary[@"buttonText"]) {
-            self.buttonText = dataDictionary[@"buttonText"];
+        if (payload[@"buttonText"]) {
+            self.buttonText = payload[@"buttonText"];
         } else {
             self.buttonText = @"";
         }
         
-        if (dataDictionary[@"submitUrl"]) {
-            self.submitUrl = dataDictionary[@"submitUrl"];
+        if (payload[@"submitUrl"]) {
+            self.submitUrl = payload[@"submitUrl"];
         } else {
             self.submitUrl = @"";
         }
         
-        if (dataDictionary[@"options"]) {
+        if (payload[@"options"]) {
             self.options = @[];
             NSMutableArray *mutableArray = [self.options mutableCopy];
-            for(id object in dataDictionary[@"options"]) {
+            for(id object in payload[@"options"]) {
                 SurveyOption *option = [[SurveyOption alloc] init:object[@"text"] optionId:[object[@"id"] intValue]];
                 [mutableArray addObject:option];
             }

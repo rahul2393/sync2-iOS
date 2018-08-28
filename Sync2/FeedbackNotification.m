@@ -15,21 +15,20 @@
     self = [super initWithPayload:payload];
     
     if (self) {
-        NSDictionary *dataDictionary = payload[@"data"];
-        if (dataDictionary[@"commentHint"]) {
-            self.commentHint = dataDictionary[@"commentHint"];
+        if (payload[@"commentHint"]) {
+            self.commentHint = payload[@"commentHint"];
         } else {
             self.commentHint = @"";
         }
         
-        if (dataDictionary[@"buttonText"]) {
-            self.buttonText = dataDictionary[@"buttonText"];
+        if (payload[@"buttonText"]) {
+            self.buttonText = payload[@"buttonText"];
         } else {
             self.buttonText = @"";
         }
         
-        if (dataDictionary[@"submitUrl"]) {
-            self.submitUrl = dataDictionary[@"submitUrl"];
+        if (payload[@"submitUrl"]) {
+            self.submitUrl = payload[@"submitUrl"];
         } else {
             self.submitUrl = @"";
         }

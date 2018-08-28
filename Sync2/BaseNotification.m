@@ -15,28 +15,26 @@
     self = [super init];
     
     if (self) {
-        NSDictionary *dataDictionary = payload[@"data"];
-        
-        if (dataDictionary[@"id"]) {
-            self.notificationId = [dataDictionary[@"id"] integerValue];
+        if (payload[@"id"]) {
+            self.notificationId = [payload[@"id"] integerValue];
         } else {
             self.notificationId = 0;
         }
         
-        if (dataDictionary[@"title"]) {
-            self.title = dataDictionary[@"title"];
+        if (payload[@"title"]) {
+            self.title = payload[@"title"];
         } else {
             self.title = @"";
         }
         
-        if (dataDictionary[@"body"]) {
-            self.body = dataDictionary[@"body"];
+        if (payload[@"body"]) {
+            self.body = payload[@"body"];
         } else {
             self.body = @"";
         }
         
-        if (dataDictionary[@"timestamp"]) {
-            self.timestamp = [dataDictionary[@"timestamp"] integerValue];
+        if (payload[@"timestamp"]) {
+            self.timestamp = [payload[@"timestamp"] integerValue];
         } else {
             self.timestamp = 0;
         }

@@ -30,17 +30,16 @@
     self = [super initWithPayload:payload];
     
     if (self) {
-        NSDictionary *dataDictionary = payload[@"data"];
-        if (dataDictionary[@"actionTitle"]) {
-            self.actionTitle = dataDictionary[@"actionTitle"];
+        if (payload[@"actionTitle"]) {
+            self.actionTitle = payload[@"actionTitle"];
         } else {
             self.actionTitle = @"";
         }
         
-        if (dataDictionary[@"actions"]) {
+        if (payload[@"actions"]) {
             self.actions = @[];
             NSMutableArray *mutableArray = [self.actions mutableCopy];
-            for (id object in dataDictionary[@"actions"]) {
+            for (id object in payload[@"actions"]) {
                 Action *action = [[Action alloc] init:object[@"text"] actionId:[object[@"actionId"] intValue] type:object[@"type"]];
                 [mutableArray addObject:action];
             }
@@ -49,8 +48,8 @@
             self.actions = @[];
         }
         
-        if (dataDictionary[@"submitUrl"]) {
-            self.submitUrl = dataDictionary[@"submitUrl"];
+        if (payload[@"submitUrl"]) {
+            self.submitUrl = payload[@"submitUrl"];
         } else {
             self.submitUrl = @"";
         }

@@ -15,27 +15,26 @@
     self = [super initWithPayload:payload];
     
     if (self) {
-        NSDictionary *dataDictionary = payload[@"data"];
-        if (dataDictionary[@"buttonText"]) {
-            self.buttonText = dataDictionary[@"buttonText"];
+        if (payload[@"buttonText"]) {
+            self.buttonText = payload[@"buttonText"];
         } else {
             self.buttonText = @"";
         }
         
-        if (dataDictionary[@"submitUrl"]) {
-            self.submitUrl = dataDictionary[@"submitUrl"];
+        if (payload[@"submitUrl"]) {
+            self.submitUrl = payload[@"submitUrl"];
         } else {
             self.submitUrl = @"";
         }
         
-        if (dataDictionary[@"startTimeStamp"]) {
-            self.startTimeStamp = [dataDictionary[@"startTimeStamp"] integerValue];
+        if (payload[@"startTimeStamp"]) {
+            self.startTimeStamp = [payload[@"startTimeStamp"] integerValue];
         } else {
             self.startTimeStamp = 0;
         }
 
-        if (dataDictionary[@"endTimeStamp"]) {
-            self.endTimeStamp = [dataDictionary[@"endTimeStamp"] integerValue];
+        if (payload[@"endTimeStamp"]) {
+            self.endTimeStamp = [payload[@"endTimeStamp"] integerValue];
         } else {
             self.endTimeStamp = 0;
         }
