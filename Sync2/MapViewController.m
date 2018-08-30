@@ -156,14 +156,20 @@
         
         for (Landmark *lm in self.landmarks) {
             if ([lm.geometryType isEqualToString:@"circle"]) {
-                MKCircle *c = [lm mkCircle];
-                [self.mapView addOverlay:c];
+                 MKCircle *c = [lm mkCircle];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.mapView addOverlay:c];
+                });
             }else if([lm.geometryType isEqualToString:@"rectangle"]){
                 MKPolygon *r = [lm mkMapRect];
-                [self.mapView addOverlay:r];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.mapView addOverlay:r];
+                });
             }else if([lm.geometryType isEqualToString:@"polygon"]){
                 MKPolygon *p = [lm mkPolygon];
-                [self.mapView addOverlay:p];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.mapView addOverlay:p];
+                });
             }
         }
     }

@@ -12,7 +12,6 @@
 #import "SenseAPI.h"
 #import "SettingsManager.h"
 #import "SDKManager.h"
-#import "Landmark.h"
 #import "WelcomeViewController.h"
 #define kMapsAPIKey @"AIzaSyB1cmT9dsqS4RophYmCuapFc1LzUk5tpA4"
 
