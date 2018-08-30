@@ -34,6 +34,7 @@
     UNUserNotificationCenter.currentNotificationCenter.delegate = self;
     
     [[UIApplication sharedApplication] registerForRemoteNotifications];
+    [self registerQuestionNotificationCategory];
     
     UINavigationBar.appearance.tintColor = [[UIColor alloc] initWithRed:0.439 green:0.796 blue:0.412 alpha:1];
     
@@ -52,6 +53,40 @@
     return YES;
 }
 
+
+-(void) registerQuestionNotificationCategory {
+    
+//    UNNotificationAction *acceptAction = [UNNotificationAction actionWithIdentifier:@"ACCEPT_ACTION" title:@"Accept" options:UNNotificationActionOptionAuthenticationRequired];
+//    UNNotificationAction *declineAction = [UNNotificationAction actionWithIdentifier:@"DECLINE_ACTION" title:@"Decline" options:UNNotificationActionOptionAuthenticationRequired];
+    
+//    UNNotificationCategory *category = [UNNotificationCategory categoryWithIdentifier:@"question" actions:@[acceptAction, declineAction] intentIdentifiers:@[] options:UNNotificationCategoryOptionCustomDismissAction];
+    
+    
+    UNNotificationCategory *informationCategory = [UNNotificationCategory categoryWithIdentifier:@"information" actions:@[] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
+    UNNotificationCategory *actionCategory = [UNNotificationCategory categoryWithIdentifier:@"action" actions:@[] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
+    UNNotificationCategory *feedbackCategory = [UNNotificationCategory categoryWithIdentifier:@"feedback" actions:@[] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
+    UNNotificationCategory *surveyCategory = [UNNotificationCategory categoryWithIdentifier:@"survey" actions:@[] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
+    UNNotificationCategory *scheduleCategory = [UNNotificationCategory categoryWithIdentifier:@"schedule" actions:@[] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
+    UNNotificationCategory *eventCategory = [UNNotificationCategory categoryWithIdentifier:@"event" actions:@[] intentIdentifiers:@[] options:UNNotificationCategoryOptionNone];
+    
+    NSSet *set = [[NSSet alloc] initWithObjects:informationCategory, actionCategory, feedbackCategory, surveyCategory, scheduleCategory, eventCategory, nil];
+    [[UNUserNotificationCenter currentNotificationCenter] setNotificationCategories:set];
+}
+
+//- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+//
+//    NSArray *notificationTypes = @[@"ACCEPT_ACTION", @"DECLINE_ACTION"];
+//    NSInteger idx = [notificationTypes indexOfObject:response.actionIdentifier];
+//
+//    switch (idx) {
+//        case 0: {
+//            break;
+//        }
+//        default:
+//            break;
+//    }
+//    completionHandler();
+//}
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
     completionHandler(UNNotificationPresentationOptionAlert);

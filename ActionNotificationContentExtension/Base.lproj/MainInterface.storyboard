@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="238"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joining our Halloween lunch?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5i-72-yLA">
+                                <rect key="frame" x="20" y="17" width="280" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-image" translatesAutoresizingMaskIntoConstraints="NO" id="xer-hh-Svc">
+                                <rect key="frame" x="20" y="46" width="280" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="TiM-HW-Z5X"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’re going to be hosting lunch on 1st floor common space at 1 PM on Tuesday 31st and would love for you to join us." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPS-Pa-DtD">
+                                <rect key="frame" x="20" y="56" width="280" height="50.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let us know if you are attending." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wo-He-A6m">
+                                <rect key="frame" x="20" y="118.5" width="280" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1t-6R-Dh7">
+                                <rect key="frame" x="20" y="149.5" width="120" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="oKh-0X-djw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Can't make it">
+                                    <color key="titleColor" red="1" green="0.11" blue="0.14999999999999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.11" blue="0.14999999999999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVl-HR-43i">
+                                <rect key="frame" x="180" y="149" width="120" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="lLF-OY-DDa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Yes, attending">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="October 31, 9:00 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg0-nG-1hC">
+                                <rect key="frame" x="20" y="206.5" width="280" height="17"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tVl-HR-43i" firstAttribute="width" secondItem="h1t-6R-Dh7" secondAttribute="width" id="1jb-eQ-4cH"/>
+                            <constraint firstItem="h1t-6R-Dh7" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="2zw-Qw-1If"/>
+                            <constraint firstItem="Xg0-nG-1hC" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="3sl-V0-JjK"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="Xg0-nG-1hC" secondAttribute="trailing" constant="20" id="658-sc-B7r"/>
+                            <constraint firstItem="cPS-Pa-DtD" firstAttribute="top" secondItem="xer-hh-Svc" secondAttribute="bottom" constant="8" id="9kl-LA-1cK"/>
+                            <constraint firstItem="Xg0-nG-1hC" firstAttribute="top" secondItem="h1t-6R-Dh7" secondAttribute="bottom" constant="12" id="GMV-Xw-gap"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="7Wo-He-A6m" secondAttribute="trailing" constant="20" id="LaL-wa-1Kr"/>
+                            <constraint firstItem="xer-hh-Svc" firstAttribute="top" secondItem="V5i-72-yLA" secondAttribute="bottom" constant="12" id="Pec-IA-ArF"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="xer-hh-Svc" secondAttribute="trailing" constant="20" id="TLX-cx-3d1"/>
+                            <constraint firstItem="xer-hh-Svc" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="WbJ-np-2Yt"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" secondItem="Xg0-nG-1hC" secondAttribute="bottom" constant="14.5" id="YKd-Ju-VUt"/>
+                            <constraint firstItem="h1t-6R-Dh7" firstAttribute="top" secondItem="7Wo-He-A6m" secondAttribute="bottom" constant="14" id="c2P-lO-TAN"/>
+                            <constraint firstItem="7Wo-He-A6m" firstAttribute="top" secondItem="cPS-Pa-DtD" secondAttribute="bottom" constant="12" id="cbZ-49-sFj"/>
+                            <constraint firstItem="tVl-HR-43i" firstAttribute="centerY" secondItem="h1t-6R-Dh7" secondAttribute="centerY" id="fkL-58-Hpe"/>
+                            <constraint firstItem="cPS-Pa-DtD" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="lCw-n9-H8U"/>
+                            <constraint firstItem="V5i-72-yLA" firstAttribute="top" secondItem="2BE-c3-nQJ" secondAttribute="top" constant="17" id="piR-SX-sw1"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="centerX" secondItem="h1t-6R-Dh7" secondAttribute="trailing" constant="20" id="qBI-OB-6Db"/>
+                            <constraint firstItem="V5i-72-yLA" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="qVK-ny-NPb"/>
+                            <constraint firstItem="7Wo-He-A6m" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="t1y-4I-0KV"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="tVl-HR-43i" secondAttribute="trailing" constant="20" id="tqh-QP-qC1"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="cPS-Pa-DtD" secondAttribute="trailing" constant="20" id="vqp-gk-07f"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="V5i-72-yLA" secondAttribute="trailing" constant="20" id="wiC-IT-KOc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="238"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="133.13343328335833"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="line-image" width="846" height="6"/>
+    </resources>
+</document>

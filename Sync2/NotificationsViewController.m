@@ -25,7 +25,6 @@
 
 @property (nonatomic, readwrite) BOOL useDummyData;
 @property (nonatomic, strong) NSArray *notifications;
-@property (nonatomic, readwrite) NSInteger SURVEY_OPTION_CELL_HEIGHT;
 
 @end
 

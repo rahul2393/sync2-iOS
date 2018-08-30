@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="378"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback needed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fls-4u-cWk">
+                                <rect key="frame" x="20" y="17" width="280" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-image" translatesAutoresizingMaskIntoConstraints="NO" id="RXf-b2-Oa9">
+                                <rect key="frame" x="20" y="46" width="280" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="W05-9Q-shk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlh-qG-gxA">
+                                <rect key="frame" x="24" y="86" width="272" height="75"/>
+                                <string key="text">We’ve seen you have been using our new Conference room C on 2nd floor.
+Can you share some of your thoughts on the room and any improvements you would like to see:</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pmp-Ge-EkB" customClass="GCPlaceholderTextView">
+                                <rect key="frame" x="29" y="196" width="267" height="127"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="126" id="BZC-Lv-LIf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecc-Ks-pbO">
+                                <rect key="frame" x="85" y="314" width="150" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Bxw-Uf-AIw"/>
+                                    <constraint firstAttribute="height" constant="44" id="kQK-If-b8f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Send Feedback">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="October 30, 9:25 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqd-cB-95d">
+                                <rect key="frame" x="16" y="361" width="243" height="17"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="RXf-b2-Oa9" firstAttribute="top" secondItem="fls-4u-cWk" secondAttribute="bottom" constant="12" id="0iL-oy-jpH"/>
+                            <constraint firstItem="Ecc-Ks-pbO" firstAttribute="top" secondItem="pmp-Ge-EkB" secondAttribute="bottom" constant="15" id="1Fk-hn-e9Z"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="fls-4u-cWk" secondAttribute="trailing" constant="20" id="2JW-xR-v1F"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="RXf-b2-Oa9" secondAttribute="trailing" constant="20" id="9eq-eT-jNe"/>
+                            <constraint firstItem="iqd-cB-95d" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="Agk-g3-pEY"/>
+                            <constraint firstItem="Qlh-qG-gxA" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="Gx2-Pa-9bw"/>
+                            <constraint firstItem="fls-4u-cWk" firstAttribute="top" secondItem="2BE-c3-nQJ" secondAttribute="top" constant="17" id="Ik6-Om-DoD"/>
+                            <constraint firstItem="Qlh-qG-gxA" firstAttribute="top" secondItem="RXf-b2-Oa9" secondAttribute="bottom" constant="8" id="LrX-xd-xFW"/>
+                            <constraint firstItem="RXf-b2-Oa9" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="Qc7-8n-een"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="Qlh-qG-gxA" secondAttribute="trailing" constant="20" id="QpL-Cs-X5A"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="iqd-cB-95d" secondAttribute="trailing" constant="20" id="S0d-ui-JrC"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="Ecc-Ks-pbO" secondAttribute="trailing" constant="19" id="Www-1K-1hQ"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="pmp-Ge-EkB" secondAttribute="trailing" constant="20" id="aAg-XL-oLZ"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" secondItem="iqd-cB-95d" secondAttribute="bottom" constant="16" id="b9E-mR-1qv"/>
+                            <constraint firstItem="pmp-Ge-EkB" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="lbd-dO-JOn"/>
+                            <constraint firstItem="fls-4u-cWk" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="nZt-bR-7Cf"/>
+                            <constraint firstItem="pmp-Ge-EkB" firstAttribute="top" secondItem="Qlh-qG-gxA" secondAttribute="bottom" constant="10" id="sIN-Ac-Ytu"/>
+                            <constraint firstItem="iqd-cB-95d" firstAttribute="top" secondItem="Ecc-Ks-pbO" secondAttribute="bottom" constant="10" id="tTH-sW-Of1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="378"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.19999999999999" y="133.13343328335833"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="line-image" width="846" height="6"/>
+    </resources>
+</document>

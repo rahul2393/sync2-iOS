@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuS-s1-0S1">
+                                <rect key="frame" x="20" y="17" width="280" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-image" translatesAutoresizingMaskIntoConstraints="NO" id="qqq-As-lF1">
+                                <rect key="frame" x="-20" y="46" width="360" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="1Lj-lB-ogJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N59-Lf-LrH">
+                                <rect key="frame" x="20" y="57" width="280" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiV-j7-A2X">
+                                <rect key="frame" x="20" y="89" width="280" height="17"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="qiV-j7-A2X" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="8o7-jW-y0f"/>
+                            <constraint firstItem="N59-Lf-LrH" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="A3J-a1-Cgi"/>
+                            <constraint firstItem="KuS-s1-0S1" firstAttribute="top" secondItem="2BE-c3-nQJ" secondAttribute="top" constant="17" id="B9t-eq-jbr"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="qiV-j7-A2X" secondAttribute="trailing" constant="20" id="CEg-M3-4Pc"/>
+                            <constraint firstItem="qqq-As-lF1" firstAttribute="trailing" secondItem="2BE-c3-nQJ" secondAttribute="trailing" constant="20" id="WNj-Zr-C14"/>
+                            <constraint firstItem="KuS-s1-0S1" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="20" id="Xra-IS-AUi"/>
+                            <constraint firstItem="qqq-As-lF1" firstAttribute="top" secondItem="KuS-s1-0S1" secondAttribute="bottom" constant="12" id="YPY-Bn-uCG"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="N59-Lf-LrH" secondAttribute="trailing" constant="20" id="Ywv-l7-kgs"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="leading" secondItem="qqq-As-lF1" secondAttribute="leading" constant="20" id="Zyg-gb-ez1"/>
+                            <constraint firstItem="qiV-j7-A2X" firstAttribute="top" secondItem="N59-Lf-LrH" secondAttribute="bottom" constant="15" id="diB-5f-W7X"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" secondItem="qiV-j7-A2X" secondAttribute="bottom" constant="15" id="nQR-Oo-JZI"/>
+                            <constraint firstItem="N59-Lf-LrH" firstAttribute="top" secondItem="qqq-As-lF1" secondAttribute="bottom" constant="9" id="pAZ-7M-Adl"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="KuS-s1-0S1" secondAttribute="trailing" constant="20" id="xQk-fD-bGe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="121"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="qiV-j7-A2X" id="AlA-Cn-uO2"/>
+                        <outlet property="detailLabel" destination="N59-Lf-LrH" id="tJY-RH-kT3"/>
+                        <outlet property="titleLabel" destination="KuS-s1-0S1" id="x36-w1-ECa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35.200000000000003" y="32.383808095952027"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="line-image" width="846" height="6"/>
+    </resources>
+</document>
