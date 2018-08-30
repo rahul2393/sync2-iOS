@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.mapview.delegate = self;
     // Do any required interface initialization here.
 }
 

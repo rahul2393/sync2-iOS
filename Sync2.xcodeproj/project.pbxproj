@@ -59,6 +59,7 @@
 		759E084821380570006EC75A /* OptionSurveyTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 75502A5021087DA600BFCA2A /* OptionSurveyTableViewCell.h */; };
 		759E084921380570006EC75A /* OptionSurveyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A5121087DA600BFCA2A /* OptionSurveyTableViewCell.m */; };
 		759E084B21380656006EC75A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759E084A21380656006EC75A /* Media.xcassets */; };
+		759E084D21380CCE006EC75A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759E084C21380CCE006EC75A /* MapKit.framework */; };
 		75D6E6F32137D9D500943793 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E962B3631EF2140800ECB920 /* UserNotifications.framework */; };
 		75D6E6F42137D9D500943793 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7573E2822135CCAD00B7E0AD /* UserNotificationsUI.framework */; };
 		75D6E6F82137D9D500943793 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D6E6F72137D9D500943793 /* NotificationViewController.m */; };
@@ -342,6 +343,7 @@
 		759926EA20FE2E5D0073693F /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		759926EB20FE2E790073693F /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		759E084A21380656006EC75A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		759E084C21380CCE006EC75A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		75D6E6F22137D9D500943793 /* ScheduleNotificationContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScheduleNotificationContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D6E6F62137D9D500943793 /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		75D6E6F72137D9D500943793 /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
@@ -592,6 +594,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759E084D21380CCE006EC75A /* MapKit.framework in Frameworks */,
 				75D6E7092137DBFC00943793 /* UserNotificationsUI.framework in Frameworks */,
 				75D6E7082137DBFC00943793 /* UserNotifications.framework in Frameworks */,
 			);
@@ -1230,6 +1233,7 @@
 		E962B3571EF20F1300ECB920 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				759E084C21380CCE006EC75A /* MapKit.framework */,
 				E962B36E1EF2F45000ECB920 /* CoreMotion.framework */,
 				E962B36C1EF2EEB300ECB920 /* AVFoundation.framework */,
 				E962B3631EF2140800ECB920 /* UserNotifications.framework */,
