@@ -56,6 +56,9 @@
 		7573E28E2135CCAD00B7E0AD /* InformationNotificationContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7573E2802135CCAD00B7E0AD /* InformationNotificationContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		75840431211F5931001AEF91 /* SetupCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75840430211F5931001AEF91 /* SetupCompleteViewController.m */; };
 		759926EC20FE2E790073693F /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759926EB20FE2E790073693F /* SplashViewController.m */; };
+		759E084821380570006EC75A /* OptionSurveyTableViewCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 75502A5021087DA600BFCA2A /* OptionSurveyTableViewCell.h */; };
+		759E084921380570006EC75A /* OptionSurveyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A5121087DA600BFCA2A /* OptionSurveyTableViewCell.m */; };
+		759E084B21380656006EC75A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 759E084A21380656006EC75A /* Media.xcassets */; };
 		75D6E6F32137D9D500943793 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E962B3631EF2140800ECB920 /* UserNotifications.framework */; };
 		75D6E6F42137D9D500943793 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7573E2822135CCAD00B7E0AD /* UserNotificationsUI.framework */; };
 		75D6E6F82137D9D500943793 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D6E6F72137D9D500943793 /* NotificationViewController.m */; };
@@ -338,6 +341,7 @@
 		75840430211F5931001AEF91 /* SetupCompleteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetupCompleteViewController.m; sourceTree = "<group>"; };
 		759926EA20FE2E5D0073693F /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		759926EB20FE2E790073693F /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		759E084A21380656006EC75A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		75D6E6F22137D9D500943793 /* ScheduleNotificationContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScheduleNotificationContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D6E6F62137D9D500943793 /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		75D6E6F72137D9D500943793 /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
@@ -671,6 +675,7 @@
 			children = (
 				751760432137B9A100B46861 /* NotificationViewController.h */,
 				751760442137B9A100B46861 /* NotificationViewController.m */,
+				759E084A21380656006EC75A /* Media.xcassets */,
 				751760462137B9A100B46861 /* MainInterface.storyboard */,
 				751760492137B9A100B46861 /* Info.plist */,
 			);
@@ -1972,6 +1977,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759E084B21380656006EC75A /* Media.xcassets in Resources */,
 				751760482137B9A100B46861 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2140,6 +2146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				759E084821380570006EC75A /* OptionSurveyTableViewCell.h in Sources */,
+				759E084921380570006EC75A /* OptionSurveyTableViewCell.m in Sources */,
 				751760452137B9A100B46861 /* NotificationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
