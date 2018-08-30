@@ -13,6 +13,8 @@
 #import "SettingsManager.h"
 #import "SDKManager.h"
 #import "WelcomeViewController.h"
+#import "MasterTabViewController.h"
+
 #define kMapsAPIKey @"AIzaSyB1cmT9dsqS4RophYmCuapFc1LzUk5tpA4"
 
 @import SixgillSDK;
@@ -76,6 +78,27 @@
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"PushReceived"
      object:self];
+    
+    if(application.applicationState == UIApplicationStateActive) {
+        
+        //app is currently active, can update badges count here
+        
+    } else if(application.applicationState == UIApplicationStateBackground){
+        
+        //app is in background, if content-available key of your notification is set to 1, poll to your backend to retrieve data and update your interface here
+        
+    } else if(application.applicationState == UIApplicationStateInactive){
+        
+        //app is transitioning from background to foreground (user taps notification), do what you need when user taps here
+        
+        self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        MasterTabViewController *masterController = [storyboard instantiateViewControllerWithIdentifier:@"MasterTabViewControllerIdentifier"];
+        masterController.selectedIndex = 1;
+        self.window.rootViewController = masterController;
+        [self.window makeKeyAndVisible];
+    }
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {

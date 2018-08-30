@@ -1333,7 +1333,7 @@ You can now proceed to Login.</string>
         <!--Master Tab View Controller-->
         <scene sceneID="LeW-bi-v0N">
             <objects>
-                <tabBarController id="MOx-o9-HDz" customClass="MasterTabViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MasterTabViewControllerIdentifier" id="MOx-o9-HDz" customClass="MasterTabViewController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dly-np-d4G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -3266,13 +3266,13 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 <rect key="frame" x="0.0" y="52.000000000000014" width="375" height="158.33333333333337"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sixgill-logo" translatesAutoresizingMaskIntoConstraints="NO" id="hSm-yW-laG">
-                                        <rect key="frame" x="107" y="20.333333333333329" width="162" height="47"/>
+                                        <rect key="frame" x="107" y="20.666666666666671" width="162" height="47"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hSm-yW-laG" secondAttribute="height" multiplier="179:52" id="gRt-kQ-qfV"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync 2.0 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="27" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nyf-Gv-zlj">
-                                        <rect key="frame" x="94.666666666666671" y="60.333333333333329" width="186.66666666666663" height="64"/>
+                                        <rect key="frame" x="94.666666666666671" y="60.666666666666671" width="186.66666666666663" height="63.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="53"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -3350,7 +3350,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="34" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZgG-mg-Rlv">
-                                <rect key="frame" x="48.666666666666657" y="258.33333333333331" width="278.33333333333337" height="201.66666666666669"/>
+                                <rect key="frame" x="49" y="258.33333333333331" width="278.33333333333331" height="201.66666666666669"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="67"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -6052,7 +6052,7 @@ revised: 5/9/2016</string>
         <segue reference="tiO-Cx-fFe"/>
         <segue reference="az3-hw-ZNG"/>
         <segue reference="bdL-UT-Onr"/>
-        <segue reference="tam-M8-If5"/>
+        <segue reference="oDz-uZ-zzx"/>
         <segue reference="CP3-Hb-LwB"/>
     </inferredMetricsTieBreakers>
 </document>
