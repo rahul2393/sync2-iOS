@@ -20,8 +20,6 @@
     
     self.title = @"Log Information";
     
-    [self.mapView setUserInteractionEnabled:NO];
-    
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:(self.event.timestamp / 1000.0)];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
