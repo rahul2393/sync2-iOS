@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>CustomNotificationContentExtension</string>
+	<string>InformationNotificationContentExtension</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -25,9 +25,9 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>UNNotificationExtensionUserInteractionEnabled</key>
-			<false/>
+			<true/>
 			<key>UNNotificationExtensionDefaultContentHidden</key>
-			<false/>
+			<true/>
 			<key>UNNotificationExtensionCategory</key>
 			<string>information</string>
 			<key>UNNotificationExtensionInitialContentSizeRatio</key>

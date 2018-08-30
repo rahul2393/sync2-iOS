@@ -16,13 +16,6 @@
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
-		<key>CustomNotificationContentExtension.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<true/>
-			<key>orderHint</key>
-			<integer>11</integer>
-		</dict>
 		<key>CustomNotificationServiceExtension.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -37,6 +30,13 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>15</integer>
+		</dict>
+		<key>InformationNotificationContentExtension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>ScheduleNotificationContentExtension 2.xcscheme</key>
 		<dict>

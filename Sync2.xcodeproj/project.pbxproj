@@ -53,7 +53,7 @@
 		7573E2832135CCAD00B7E0AD /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7573E2822135CCAD00B7E0AD /* UserNotificationsUI.framework */; };
 		7573E2872135CCAD00B7E0AD /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7573E2862135CCAD00B7E0AD /* NotificationViewController.m */; };
 		7573E28A2135CCAD00B7E0AD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7573E2882135CCAD00B7E0AD /* MainInterface.storyboard */; };
-		7573E28E2135CCAD00B7E0AD /* CustomNotificationContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7573E2802135CCAD00B7E0AD /* CustomNotificationContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7573E28E2135CCAD00B7E0AD /* InformationNotificationContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7573E2802135CCAD00B7E0AD /* InformationNotificationContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		75840431211F5931001AEF91 /* SetupCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75840430211F5931001AEF91 /* SetupCompleteViewController.m */; };
 		759926EC20FE2E790073693F /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759926EB20FE2E790073693F /* SplashViewController.m */; };
 		75D6E6F32137D9D500943793 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E962B3631EF2140800ECB920 /* UserNotifications.framework */; };
@@ -243,7 +243,7 @@
 				751760372136F0E000B46861 /* FeedbackNotificationContentExtension.appex in Embed App Extensions */,
 				75D6E6FF2137D9D500943793 /* ScheduleNotificationContentExtension.appex in Embed App Extensions */,
 				75D6E7142137DBFC00943793 /* EventNotificationContentExtension.appex in Embed App Extensions */,
-				7573E28E2135CCAD00B7E0AD /* CustomNotificationContentExtension.appex in Embed App Extensions */,
+				7573E28E2135CCAD00B7E0AD /* InformationNotificationContentExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,7 +328,7 @@
 		75511ABE2122FB0200D98E1A /* CopyLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyLabel.h; sourceTree = "<group>"; };
 		755F25A32111C55C0083E044 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		7573E2802135CCAD00B7E0AD /* CustomNotificationContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CustomNotificationContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7573E2802135CCAD00B7E0AD /* InformationNotificationContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InformationNotificationContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7573E2822135CCAD00B7E0AD /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		7573E2852135CCAD00B7E0AD /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		7573E2862135CCAD00B7E0AD /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
@@ -787,7 +787,7 @@
 			name = PlaceholderTextView;
 			sourceTree = "<group>";
 		};
-		7573E2842135CCAD00B7E0AD /* CustomNotificationContentExtension */ = {
+		7573E2842135CCAD00B7E0AD /* InformationNotificationContentExtension */ = {
 			isa = PBXGroup;
 			children = (
 				7573E2852135CCAD00B7E0AD /* NotificationViewController.h */,
@@ -795,7 +795,7 @@
 				7573E2882135CCAD00B7E0AD /* MainInterface.storyboard */,
 				7573E28B2135CCAD00B7E0AD /* Info.plist */,
 			);
-			path = CustomNotificationContentExtension;
+			path = InformationNotificationContentExtension;
 			sourceTree = "<group>";
 		};
 		7584042E211F5904001AEF91 /* Setup Complete */ = {
@@ -1301,7 +1301,7 @@
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
 				E9B30054206031A60034329C /* Sync2UITests */,
-				7573E2842135CCAD00B7E0AD /* CustomNotificationContentExtension */,
+				7573E2842135CCAD00B7E0AD /* InformationNotificationContentExtension */,
 				751760062136AC0F00B46861 /* CustomNotificationServiceExtension */,
 				751760182136E5BB00B46861 /* ActionNotificationContentExtension */,
 				7517602D2136F0E000B46861 /* FeedbackNotificationContentExtension */,
@@ -1320,7 +1320,7 @@
 				E9A3C2A31ED5FD1500A938CB /* Sync2.app */,
 				E9A3C2BC1ED5FD1500A938CB /* Sync2Tests.xctest */,
 				E9B30053206031A50034329C /* Sync2UITests.xctest */,
-				7573E2802135CCAD00B7E0AD /* CustomNotificationContentExtension.appex */,
+				7573E2802135CCAD00B7E0AD /* InformationNotificationContentExtension.appex */,
 				751760052136AC0F00B46861 /* CustomNotificationServiceExtension.appex */,
 				751760152136E5BB00B46861 /* ActionNotificationContentExtension.appex */,
 				7517602A2136F0DF00B46861 /* FeedbackNotificationContentExtension.appex */,
@@ -1727,9 +1727,9 @@
 			productReference = 7517603F2137B9A000B46861 /* SurveyNotificationContentExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		7573E27F2135CCAD00B7E0AD /* CustomNotificationContentExtension */ = {
+		7573E27F2135CCAD00B7E0AD /* InformationNotificationContentExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7573E28F2135CCAD00B7E0AD /* Build configuration list for PBXNativeTarget "CustomNotificationContentExtension" */;
+			buildConfigurationList = 7573E28F2135CCAD00B7E0AD /* Build configuration list for PBXNativeTarget "InformationNotificationContentExtension" */;
 			buildPhases = (
 				7573E27C2135CCAD00B7E0AD /* Sources */,
 				7573E27D2135CCAD00B7E0AD /* Frameworks */,
@@ -1739,9 +1739,9 @@
 			);
 			dependencies = (
 			);
-			name = CustomNotificationContentExtension;
+			name = InformationNotificationContentExtension;
 			productName = CustomNotificationContentExtension;
-			productReference = 7573E2802135CCAD00B7E0AD /* CustomNotificationContentExtension.appex */;
+			productReference = 7573E2802135CCAD00B7E0AD /* InformationNotificationContentExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		75D6E6F12137D9D500943793 /* ScheduleNotificationContentExtension */ = {
@@ -1933,7 +1933,7 @@
 				E9A3C2A21ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BB1ED5FD1500A938CB /* Sync2Tests */,
 				E9B30052206031A50034329C /* Sync2UITests */,
-				7573E27F2135CCAD00B7E0AD /* CustomNotificationContentExtension */,
+				7573E27F2135CCAD00B7E0AD /* InformationNotificationContentExtension */,
 				751760042136AC0F00B46861 /* CustomNotificationServiceExtension */,
 				751760142136E5BB00B46861 /* ActionNotificationContentExtension */,
 				751760292136F0DF00B46861 /* FeedbackNotificationContentExtension */,
@@ -2314,7 +2314,7 @@
 		};
 		7573E28D2135CCAD00B7E0AD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7573E27F2135CCAD00B7E0AD /* CustomNotificationContentExtension */;
+			target = 7573E27F2135CCAD00B7E0AD /* InformationNotificationContentExtension */;
 			targetProxy = 7573E28C2135CCAD00B7E0AD /* PBXContainerItemProxy */;
 		};
 		75D6E6FE2137D9D500943793 /* PBXTargetDependency */ = {
@@ -2658,12 +2658,12 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 37M84NL89E;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = CustomNotificationContentExtension/Info.plist;
+				INFOPLIST_FILE = InformationNotificationContentExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sixgill.sync.CustomNotificationContentExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sixgill.sync.InformationNotificationContentExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2688,12 +2688,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37M84NL89E;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = CustomNotificationContentExtension/Info.plist;
+				INFOPLIST_FILE = InformationNotificationContentExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sixgill.sync.CustomNotificationContentExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sixgill.sync.InformationNotificationContentExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3237,7 +3237,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7573E28F2135CCAD00B7E0AD /* Build configuration list for PBXNativeTarget "CustomNotificationContentExtension" */ = {
+		7573E28F2135CCAD00B7E0AD /* Build configuration list for PBXNativeTarget "InformationNotificationContentExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7573E2902135CCAD00B7E0AD /* Debug */,
