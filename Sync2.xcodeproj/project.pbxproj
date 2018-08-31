@@ -39,6 +39,10 @@
 		753CB72521070C1500C11223 /* ScheduleNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB72421070C1500C11223 /* ScheduleNotificationTableViewCell.m */; };
 		753CB72821070C2C00C11223 /* VisitNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB72721070C2C00C11223 /* VisitNotificationTableViewCell.m */; };
 		753CB72A210715E300C11223 /* ProjectSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 753CB729210715DC00C11223 /* ProjectSelectionTableViewCell.xib */; };
+		753EE71B21394E2300DB8D6D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753EE71A21394E2300DB8D6D /* Media.xcassets */; };
+		753EE71D21394E5000DB8D6D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753EE71C21394E5000DB8D6D /* Media.xcassets */; };
+		753EE71F21394E8800DB8D6D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753EE71E21394E8800DB8D6D /* Media.xcassets */; };
+		753EE72121394EC300DB8D6D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753EE72021394EC300DB8D6D /* Media.xcassets */; };
 		75502A4F210876D300BFCA2A /* GCPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A4D210876D300BFCA2A /* GCPlaceholderTextView.m */; };
 		75502A5221087DA600BFCA2A /* OptionSurveyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A5121087DA600BFCA2A /* OptionSurveyTableViewCell.m */; };
 		75502A7421099DA800BFCA2A /* CustomSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A7321099DA700BFCA2A /* CustomSegmentControl.m */; };
@@ -314,6 +318,10 @@
 		753CB72621070C2C00C11223 /* VisitNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitNotificationTableViewCell.h; sourceTree = "<group>"; };
 		753CB72721070C2C00C11223 /* VisitNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitNotificationTableViewCell.m; sourceTree = "<group>"; };
 		753CB729210715DC00C11223 /* ProjectSelectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectSelectionTableViewCell.xib; sourceTree = "<group>"; };
+		753EE71A21394E2300DB8D6D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		753EE71C21394E5000DB8D6D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		753EE71E21394E8800DB8D6D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		753EE72021394EC300DB8D6D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		75502A4D210876D300BFCA2A /* GCPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCPlaceholderTextView.m; sourceTree = "<group>"; };
 		75502A4E210876D300BFCA2A /* GCPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCPlaceholderTextView.h; sourceTree = "<group>"; };
 		75502A5021087DA600BFCA2A /* OptionSurveyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionSurveyTableViewCell.h; sourceTree = "<group>"; };
@@ -658,6 +666,7 @@
 				7517601A2136E5BB00B46861 /* NotificationViewController.m */,
 				7517601C2136E5BB00B46861 /* MainInterface.storyboard */,
 				7517601F2136E5BB00B46861 /* Info.plist */,
+				753EE71C21394E5000DB8D6D /* Media.xcassets */,
 			);
 			path = ActionNotificationContentExtension;
 			sourceTree = "<group>";
@@ -669,6 +678,7 @@
 				7517602F2136F0E000B46861 /* NotificationViewController.m */,
 				751760312136F0E000B46861 /* MainInterface.storyboard */,
 				751760342136F0E000B46861 /* Info.plist */,
+				753EE71E21394E8800DB8D6D /* Media.xcassets */,
 			);
 			path = FeedbackNotificationContentExtension;
 			sourceTree = "<group>";
@@ -802,6 +812,7 @@
 				7573E2862135CCAD00B7E0AD /* NotificationViewController.m */,
 				7573E2882135CCAD00B7E0AD /* MainInterface.storyboard */,
 				7573E28B2135CCAD00B7E0AD /* Info.plist */,
+				753EE71A21394E2300DB8D6D /* Media.xcassets */,
 			);
 			path = InformationNotificationContentExtension;
 			sourceTree = "<group>";
@@ -840,6 +851,7 @@
 			isa = PBXGroup;
 			children = (
 				75D6E70B2137DBFC00943793 /* NotificationViewController.h */,
+				753EE72021394EC300DB8D6D /* Media.xcassets */,
 				75D6E70C2137DBFC00943793 /* NotificationViewController.m */,
 				75D6E70E2137DBFC00943793 /* MainInterface.storyboard */,
 				75D6E7112137DBFC00943793 /* Info.plist */,
@@ -1965,6 +1977,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753EE71D21394E5000DB8D6D /* Media.xcassets in Resources */,
 				7517601E2136E5BB00B46861 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1973,6 +1986,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753EE71F21394E8800DB8D6D /* Media.xcassets in Resources */,
 				751760332136F0E000B46861 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1990,6 +2004,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753EE71B21394E2300DB8D6D /* Media.xcassets in Resources */,
 				7573E28A2135CCAD00B7E0AD /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2007,6 +2022,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753EE72121394EC300DB8D6D /* Media.xcassets in Resources */,
 				75D6E7102137DBFC00943793 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
