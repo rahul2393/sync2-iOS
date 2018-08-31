@@ -143,6 +143,7 @@ Let us know what you would like to see:</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="264"/>
                     <connections>
+                        <outlet property="button" destination="fLn-vr-7pk" id="nco-Mr-nNf"/>
                         <outlet property="dateLabel" destination="hsB-eY-y4r" id="8jJ-eQ-E8K"/>
                         <outlet property="detailLabel" destination="NFh-Wz-d00" id="qFN-GP-CCC"/>
                         <outlet property="tableView" destination="0al-DP-Rmz" id="GRl-Nb-GgG"/>

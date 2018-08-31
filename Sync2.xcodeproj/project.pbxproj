@@ -39,6 +39,8 @@
 		753CB72521070C1500C11223 /* ScheduleNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB72421070C1500C11223 /* ScheduleNotificationTableViewCell.m */; };
 		753CB72821070C2C00C11223 /* VisitNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB72721070C2C00C11223 /* VisitNotificationTableViewCell.m */; };
 		753CB72A210715E300C11223 /* ProjectSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 753CB729210715DC00C11223 /* ProjectSelectionTableViewCell.xib */; };
+		753EE718213938A400DB8D6D /* UIViewExtension.h in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70B21055FF600C11223 /* UIViewExtension.h */; };
+		753EE719213938A400DB8D6D /* UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70C2105600B00C11223 /* UIViewExtension.m */; };
 		753EE71B21394E2300DB8D6D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753EE71A21394E2300DB8D6D /* Media.xcassets */; };
 		753EE71D21394E5000DB8D6D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753EE71C21394E5000DB8D6D /* Media.xcassets */; };
 		753EE71F21394E8800DB8D6D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753EE71E21394E8800DB8D6D /* Media.xcassets */; };
@@ -2150,6 +2152,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753EE718213938A400DB8D6D /* UIViewExtension.h in Sources */,
+				753EE719213938A400DB8D6D /* UIViewExtension.m in Sources */,
 				7517601B2136E5BB00B46861 /* NotificationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

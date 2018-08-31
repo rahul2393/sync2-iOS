@@ -155,6 +155,12 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="294"/>
+                    <connections>
+                        <outlet property="button" destination="yoL-ti-Il6" id="UYy-3H-Hno"/>
+                        <outlet property="dateLabel" destination="W9c-D8-tnZ" id="ri0-jG-HZZ"/>
+                        <outlet property="detailLabel" destination="xLH-lp-LRl" id="eOj-i1-j2Q"/>
+                        <outlet property="titleLabel" destination="ZaC-xk-rFE" id="wbt-1G-1Gs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

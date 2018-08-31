@@ -11,9 +11,6 @@
 #import <UserNotificationsUI/UserNotificationsUI.h>
 
 @interface NotificationViewController () <UNNotificationContentExtension>
-
-@property IBOutlet UILabel *label;
-
 @end
 
 @implementation NotificationViewController
@@ -24,7 +21,15 @@
 }
 
 - (void)didReceiveNotification:(UNNotification *)notification {
-    self.label.text = notification.request.content.body;
+    NSDictionary *data = notification.request.content.userInfo[@"data"];
+    self.titleLabel.text = data[@"title"];
+    self.detailLabel.text = data[@"body"];
+    [self.button setTitle:data[@"buttonText"] forState:UIControlStateNormal];
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:([data[@"timestamp"] doubleValue] / 1000.0)];
+    NSDateFormatter *dateLabelFormatter = [[NSDateFormatter alloc] init];
+    [dateLabelFormatter setDateFormat:@"MMMM dd, h:mm a"];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [dateLabelFormatter  stringFromDate:date]];
 }
 
 @end

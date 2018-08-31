@@ -14,7 +14,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView; // cell height = 38
 - (IBAction)sendTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property NSArray *data;
+@property NSMutableArray *data;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIButton *button;
 
 @end

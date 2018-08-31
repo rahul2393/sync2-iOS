@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) void (^contentHandler)(UNNotificationContent *contentToDeliver);
 @property (nonatomic, strong) UNMutableNotificationContent *bestAttemptContent;
-
+@property (nonatomic, strong) NSArray *notifications;
 @end
 
 @implementation NotificationService
@@ -24,18 +24,10 @@
     // Modify the notification content here...
     
     NSDictionary *data = self.bestAttemptContent.userInfo[@"data"];
-    NSString *type = data[@"type"];
     
+    self.bestAttemptContent.categoryIdentifier = data[@"type"];
+    self.bestAttemptContent.title = [NSString stringWithFormat:@"%@", data[@"title"]];
     
-    self.bestAttemptContent.categoryIdentifier = type;
-    
-    
-    
-    
-    self.bestAttemptContent.title = [NSString stringWithFormat:@"%@ [modified]", self.bestAttemptContent.title];
-    
-    
-//    self.bestAttemptContent.userInfo = [];
     self.contentHandler(self.bestAttemptContent);
 }
 

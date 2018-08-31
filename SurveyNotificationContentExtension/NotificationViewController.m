@@ -34,7 +34,22 @@
 }
 
 - (void)didReceiveNotification:(UNNotification *)notification {
-    self.data = @[@"Black Coffee", @"Coldbrew Coffee", @"Espresso Coffee", @"Latte"];
+    
+    NSDictionary *data = notification.request.content.userInfo[@"data"];
+    self.titleLabel.text = data[@"title"];
+    self.detailLabel.text = data[@"body"];
+    [self.button setTitle:data[@"buttonText"] forState:UIControlStateNormal];
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:([data[@"timestamp"] doubleValue] / 1000.0)];
+    NSDateFormatter *dateLabelFormatter = [[NSDateFormatter alloc] init];
+    [dateLabelFormatter setDateFormat:@"MMMM dd, h:mm a"];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [dateLabelFormatter  stringFromDate:date]];
+    
+    self.data = [NSMutableArray new];
+    NSArray *options = data[@"options"];
+    for (id option in options) {
+        [self.data addObject:option[@"text"]];
+    }
     
     self.tableViewHeightConstraint.constant = self.data.count * SURVEY_OPTION_CELL_HEIGHT;
     [self.tableView reloadData];

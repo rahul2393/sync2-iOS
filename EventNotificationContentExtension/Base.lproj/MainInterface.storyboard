@@ -109,7 +109,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="520"/>
                     <connections>
+                        <outlet property="address" destination="krM-Bl-JHS" id="Lom-Ge-jaK"/>
+                        <outlet property="addressTitleLabel" destination="C17-Ns-TIo" id="IxD-Cr-Cj4"/>
+                        <outlet property="dateLabel" destination="LPf-8b-dIE" id="KkE-lu-UIw"/>
+                        <outlet property="detailLabel" destination="bUs-SO-L0J" id="gbN-iw-4Ug"/>
                         <outlet property="mapview" destination="iEF-5d-nHP" id="RhK-hR-9bp"/>
+                        <outlet property="titleLabel" destination="eaU-M6-7ad" id="a7y-Fa-DSP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

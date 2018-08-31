@@ -26,14 +26,13 @@
 }
 
 - (void)didReceiveNotification:(UNNotification *)notification {
-    
-//    self.label.text = notification.request.content.title;
-//    self.label.text = notification.request.content.body;
-    
-    self.titleLabel.text = @"Welcome back to WeWork Promenade";
-    self.detailLabel.text = @"We’re happy that you visited again and will be working in our space. For more information please visit Front desk or send us a message.";
-    self.dateLabel.text = @"November 9, 9:25 AM";
-
+    NSDictionary *data = notification.request.content.userInfo[@"data"];
+    self.titleLabel.text = data[@"title"];
+    self.detailLabel.text = data[@"body"];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:([data[@"timestamp"] doubleValue] / 1000.0)];
+    NSDateFormatter *dateLabelFormatter = [[NSDateFormatter alloc] init];
+    [dateLabelFormatter setDateFormat:@"MMMM dd, h:mm a"];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [dateLabelFormatter  stringFromDate:date]];
 }
 
 @end

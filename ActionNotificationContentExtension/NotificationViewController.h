@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface NotificationViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *actionLabel;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *actionButtons;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end

@@ -6048,11 +6048,11 @@ revised: 5/9/2016</string>
         <image name="welcome-screen-footer" width="165" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mI5-qK-Wad"/>
+        <segue reference="Zvf-Iq-LJc"/>
         <segue reference="tiO-Cx-fFe"/>
         <segue reference="az3-hw-ZNG"/>
         <segue reference="bdL-UT-Onr"/>
-        <segue reference="tam-M8-If5"/>
+        <segue reference="oDz-uZ-zzx"/>
         <segue reference="CP3-Hb-LwB"/>
     </inferredMetricsTieBreakers>
 </document>

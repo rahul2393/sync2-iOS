@@ -22,6 +22,16 @@
 }
 
 - (void)didReceiveNotification:(UNNotification *)notification {
+    NSDictionary *data = notification.request.content.userInfo[@"data"];
+    self.titleLabel.text = data[@"title"];
+    self.detailLabel.text = data[@"body"];
+    self.addressTitleLabel.text = data[@"addressTitle"];
+    self.address.text = data[@"address"];
+
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:([data[@"timestamp"] doubleValue] / 1000.0)];
+    NSDateFormatter *dateLabelFormatter = [[NSDateFormatter alloc] init];
+    [dateLabelFormatter setDateFormat:@"MMMM dd, h:mm a"];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [dateLabelFormatter  stringFromDate:date]];
 }
 
 @end
