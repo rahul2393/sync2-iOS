@@ -32,6 +32,10 @@
 		75511ABD2122FAF100D98E1A /* CopyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75511ABC2122FAF100D98E1A /* CopyLabel.m */; };
 		755F25A62111CA4C0083E044 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 755F25A32111C55C0083E044 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		756C2D5820F5FEE7008560FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */; };
+		75802C98213D5CD00068C856 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 75802C93213D5CCF0068C856 /* TFHpple.m */; };
+		75802C99213D5CD00068C856 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 75802C94213D5CCF0068C856 /* TFHppleElement.m */; };
+		75802C9A213D5CD00068C856 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 75802C96213D5CD00068C856 /* XPathQuery.m */; };
+		75802C9D213D5E0B0068C856 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 75802C9B213D5DF00068C856 /* libxml2.2.dylib */; };
 		75840431211F5931001AEF91 /* SetupCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75840430211F5931001AEF91 /* SetupCompleteViewController.m */; };
 		75843ADF213A554600D7BB8D /* NotificationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 75843ADE213A554600D7BB8D /* NotificationType.m */; };
 		759926EC20FE2E790073693F /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759926EB20FE2E790073693F /* SplashViewController.m */; };
@@ -212,6 +216,13 @@
 		75511ABE2122FB0200D98E1A /* CopyLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyLabel.h; sourceTree = "<group>"; };
 		755F25A32111C55C0083E044 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		75802C92213D5CCF0068C856 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		75802C93213D5CCF0068C856 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		75802C94213D5CCF0068C856 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		75802C95213D5CD00068C856 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		75802C96213D5CD00068C856 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		75802C97213D5CD00068C856 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		75802C9B213D5DF00068C856 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = ../../../../../../usr/lib/libxml2.2.dylib; sourceTree = "<group>"; };
 		7584042F211F5931001AEF91 /* SetupCompleteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetupCompleteViewController.h; sourceTree = "<group>"; };
 		75840430211F5931001AEF91 /* SetupCompleteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetupCompleteViewController.m; sourceTree = "<group>"; };
 		75843ADE213A554600D7BB8D /* NotificationType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationType.m; sourceTree = "<group>"; };
@@ -407,6 +418,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75802C9D213D5E0B0068C856 /* libxml2.2.dylib in Frameworks */,
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
@@ -554,6 +566,19 @@
 				75502A4D210876D300BFCA2A /* GCPlaceholderTextView.m */,
 			);
 			name = PlaceholderTextView;
+			sourceTree = "<group>";
+		};
+		75802C91213D5CA60068C856 /* HTML-Parser */ = {
+			isa = PBXGroup;
+			children = (
+				75802C92213D5CCF0068C856 /* TFHpple.h */,
+				75802C93213D5CCF0068C856 /* TFHpple.m */,
+				75802C97213D5CD00068C856 /* TFHppleElement.h */,
+				75802C94213D5CCF0068C856 /* TFHppleElement.m */,
+				75802C95213D5CD00068C856 /* XPathQuery.h */,
+				75802C96213D5CD00068C856 /* XPathQuery.m */,
+			);
+			name = "HTML-Parser";
 			sourceTree = "<group>";
 		};
 		7584042E211F5904001AEF91 /* Setup Complete */ = {
@@ -962,6 +987,7 @@
 		E962B3571EF20F1300ECB920 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75802C9B213D5DF00068C856 /* libxml2.2.dylib */,
 				E962B36E1EF2F45000ECB920 /* CoreMotion.framework */,
 				E962B36C1EF2EEB300ECB920 /* AVFoundation.framework */,
 				E962B3631EF2140800ECB920 /* UserNotifications.framework */,
@@ -1056,6 +1082,7 @@
 		E9A3C2A51ED5FD1500A938CB /* Sync2 */ = {
 			isa = PBXGroup;
 			children = (
+				75802C91213D5CA60068C856 /* HTML-Parser */,
 				E94738822081465800A49CC2 /* Sync2-Bridging-Header.h */,
 				E962B3701EF2F72500ECB920 /* Sync2.entitlements */,
 				E9A3C2E41ED77DAC00A938CB /* Model */,
@@ -1629,6 +1656,7 @@
 				E943D3EC2012CC0700882D09 /* DummyMapData.m in Sources */,
 				E962B34D1EF1F42A00ECB920 /* SwitchCell.m in Sources */,
 				E95F58321EE88258000562FC /* SettingsManager.m in Sources */,
+				75802C9A213D5CD00068C856 /* XPathQuery.m in Sources */,
 				E9A3C2AB1ED5FD1500A938CB /* AppDelegate.m in Sources */,
 				E9485EA920194DA800B553E2 /* DummyRulesData.m in Sources */,
 				75FDF1BD213414C60068D015 /* FeedbackNotification.m in Sources */,
@@ -1667,7 +1695,9 @@
 				E9CCF4C61EF1E78200BF96C6 /* QRCodeReader.m in Sources */,
 				E9B76D47200D35BB0095030C /* LogDayTableViewController.m in Sources */,
 				E9B76D4F200D4E580095030C /* SettingsTableViewController.m in Sources */,
+				75802C99213D5CD00068C856 /* TFHppleElement.m in Sources */,
 				75D71583210AF214007378D5 /* Device.m in Sources */,
+				75802C98213D5CD00068C856 /* TFHpple.m in Sources */,
 				E9518B5F2018026B001818CC /* DummyNotificationData.m in Sources */,
 				E9CCF4C71EF1E78200BF96C6 /* QRCodeReaderView.m in Sources */,
 				75FDF1C6213414EE0068D015 /* EventNotification.m in Sources */,
@@ -1877,6 +1907,28 @@
 					"$(PROJECT_DIR)/Sync2",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/ActionSheetPicker-3.0\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/Google-Maps-iOS-Utils\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleMaps\"",
+					"\"${PODS_ROOT}/Headers/Public/GooglePlaces\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleToolboxForMac\"",
+					"\"${PODS_ROOT}/Headers/Public/MDFInternationalization\"",
+					"\"${PODS_ROOT}/Headers/Public/MDFTextAccessibility\"",
+					"\"${PODS_ROOT}/Headers/Public/MKDropdownMenu\"",
+					"\"${PODS_ROOT}/Headers/Public/MaterialComponents\"",
+					"\"${PODS_ROOT}/Headers/Public/nanopb\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = Sync2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1907,6 +1959,28 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sync2",
 					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/ActionSheetPicker-3.0\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/Google-Maps-iOS-Utils\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleMaps\"",
+					"\"${PODS_ROOT}/Headers/Public/GooglePlaces\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleToolboxForMac\"",
+					"\"${PODS_ROOT}/Headers/Public/MDFInternationalization\"",
+					"\"${PODS_ROOT}/Headers/Public/MDFTextAccessibility\"",
+					"\"${PODS_ROOT}/Headers/Public/MKDropdownMenu\"",
+					"\"${PODS_ROOT}/Headers/Public/MaterialComponents\"",
+					"\"${PODS_ROOT}/Headers/Public/nanopb\"",
+					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = Sync2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
