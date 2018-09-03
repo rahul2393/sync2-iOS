@@ -35,6 +35,7 @@
 		75840431211F5931001AEF91 /* SetupCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75840430211F5931001AEF91 /* SetupCompleteViewController.m */; };
 		75843ADF213A554600D7BB8D /* NotificationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 75843ADE213A554600D7BB8D /* NotificationType.m */; };
 		759926EC20FE2E790073693F /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759926EB20FE2E790073693F /* SplashViewController.m */; };
+		75CD539E213D33DF006D8390 /* UITapGestureRecognizerExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CD539D213D33DF006D8390 /* UITapGestureRecognizerExtension.m */; };
 		75D71583210AF214007378D5 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71582210AF214007378D5 /* Device.m */; };
 		75D71587210B0D10007378D5 /* LogMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71586210B0D10007378D5 /* LogMapTableViewCell.m */; };
 		75D7158A210B41F8007378D5 /* RulesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71589210B41F8007378D5 /* RulesTableViewCell.m */; };
@@ -217,6 +218,8 @@
 		75843AE0213A556700D7BB8D /* NotificationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationType.h; sourceTree = "<group>"; };
 		759926EA20FE2E5D0073693F /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		759926EB20FE2E790073693F /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		75CD539C213D33C9006D8390 /* UITapGestureRecognizerExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITapGestureRecognizerExtension.h; sourceTree = "<group>"; };
+		75CD539D213D33DF006D8390 /* UITapGestureRecognizerExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITapGestureRecognizerExtension.m; sourceTree = "<group>"; };
 		75D71582210AF214007378D5 /* Device.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		75D71584210AF224007378D5 /* Device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		75D71585210B0D10007378D5 /* LogMapTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogMapTableViewCell.h; sourceTree = "<group>"; };
@@ -481,6 +484,8 @@
 				753CB70C2105600B00C11223 /* UIViewExtension.m */,
 				75D71582210AF214007378D5 /* Device.m */,
 				75D71584210AF224007378D5 /* Device.h */,
+				75CD539C213D33C9006D8390 /* UITapGestureRecognizerExtension.h */,
+				75CD539D213D33DF006D8390 /* UITapGestureRecognizerExtension.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1642,6 +1647,7 @@
 				75FDF1C9213415380068D015 /* BaseNotification.m in Sources */,
 				75FDF1C3213414E20068D015 /* ScheduleNotification.m in Sources */,
 				E95B9DC11F609481007943CA /* TextFieldTableViewCell.m in Sources */,
+				75CD539E213D33DF006D8390 /* UITapGestureRecognizerExtension.m in Sources */,
 				753CB72521070C1500C11223 /* ScheduleNotificationTableViewCell.m in Sources */,
 				75502A5221087DA600BFCA2A /* OptionSurveyTableViewCell.m in Sources */,
 				E9A3C2A81ED5FD1500A938CB /* main.m in Sources */,
