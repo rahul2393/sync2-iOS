@@ -8,6 +8,8 @@
 
 #import "SettingsManager.h"
 #import "SenseAPI.h"
+#import "NotificationType.h"
+
 #import "TextNotification.h"
 #import "SDKManager.h"
 #import "InformationNotification.h"
@@ -16,6 +18,7 @@
 #import "SurveyNotification.h"
 #import "ScheduleNotification.h"
 #import "EventNotification.h"
+
 
 #define KEY_HASONBOARDED @"hasOnboarded"
 
@@ -43,7 +46,6 @@
 #define SG_PUSH_CMD_FIELD @"data"
 
 #define SG_PUSH_TYPE @"type"
-
 
 #define SG_CMD_UPDATE_CONFIG @"UPDATE_CONFIG"
 #define SG_CMD_SEND_SENSOR_DATA @"SEND_SENSOR_DATA"
@@ -112,12 +114,10 @@
     
     NSString *type = data[SG_PUSH_TYPE];
     
-    NSArray *notificationTypes = @[@"information", @"action", @"feedback", @"survey", @"schedule", @"event"];
+    kNotificationType notificationType = [[[NotificationType alloc] init] notificationTypeFor:type];
     
-    NSInteger idx = [notificationTypes indexOfObject:type];
-    
-    switch (idx) {
-        case 0: {
+    switch (notificationType) {
+        case INFORMATION: {
             InformationNotification *informationNotification = [[InformationNotification alloc] initWithPayload:data];
             if (informationNotification != nil) {
                 NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
@@ -126,7 +126,7 @@
             }
             break;
         }
-        case 1: {
+        case ACTION_NOTIFICATION: {
             ActionNotification *actionNotification = [[ActionNotification alloc] initWithPayload:data];
             if (actionNotification != nil) {
                 NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
@@ -135,7 +135,7 @@
             }
             break;
         }
-        case 2: {
+        case FEEDBACK: {
             FeedbackNotification *feedbackNotification = [[FeedbackNotification alloc] initWithPayload:data];
             if (feedbackNotification != nil) {
                 NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
@@ -144,7 +144,7 @@
             }
             break;
         }
-        case 3: {
+        case SURVEY: {
             SurveyNotification *surveyNotification = [[SurveyNotification alloc] initWithPayload:data];
             if (surveyNotification != nil) {
                 NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
@@ -153,7 +153,7 @@
             }
             break;
         }
-        case 4: {
+        case SCHEDULE: {
             ScheduleNotification *scheduleNotification = [[ScheduleNotification alloc] initWithPayload:data];
             if (scheduleNotification != nil) {
                 NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
@@ -162,7 +162,7 @@
             }
             break;
         }
-        case 5: {
+        case EVENT: {
             EventNotification *eventNotification = [[EventNotification alloc] initWithPayload:data];
             if (eventNotification != nil) {
                 NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];

@@ -7,10 +7,8 @@
 //
 
 #import "NotificationsViewController.h"
-#import "DummyNotificationData.h"
-#import "TextViewTableViewCell.h"
-#import "TextNotification.h"
 #import "SettingsManager.h"
+#import "NotificationType.h"
 
 #import "WelcomeNotificationTableViewCell.h"
 #import "JoiningNotificationTableViewCell.h"
@@ -19,17 +17,19 @@
 #import "ScheduleNotificationTableViewCell.h"
 #import "VisitNotificationTableViewCell.h"
 
+#import "InformationNotification.h"
+#import "ActionNotification.h"
+#import "FeedbackNotification.h"
+#import "SurveyNotification.h"
+#import "ScheduleNotification.h"
+#import "EventNotification.h"
+
 @import UserNotifications;
 
 @interface NotificationsViewController ()
 
-@property (nonatomic, readwrite) BOOL useDummyData;
 @property (nonatomic, strong) NSArray *notifications;
-@property (nonatomic, readwrite) NSInteger SURVEY_OPTION_CELL_HEIGHT;
-
 @end
-
-#define SURVEY_OPTION_CELL_HEIGHT 38
 
 @implementation NotificationsViewController
 
@@ -42,8 +42,6 @@
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 200;
-    
-    self.useDummyData = YES;
     
     [self permissionChanged];
 }
@@ -64,11 +62,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    if (self.useDummyData) {
-        self.notifications = [DummyNotificationData notifications];
-    } else {
-        [self update];
-    }
+    [self update];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(update)
@@ -89,7 +83,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 6;
+    return self.notifications.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -97,51 +91,58 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.section) {
-        case 0: {
-            WelcomeNotificationTableViewCell *cell = (WelcomeNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"WelcomeNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-            TextNotification *tn = (TextNotification *) self.notifications[0];
-            cell.titleLabel.text = tn.title;
-            cell.detailLabel.text = tn.body;
-            cell.dateLabel.text = [tn displayableDate];
+    
+    BaseNotification *basenotification = (BaseNotification *) self.notifications[indexPath.section];
+    
+    kNotificationType notificationType = [[[NotificationType alloc] init] notificationTypeFor:basenotification.type];
 
+    switch (notificationType) {
+        case INFORMATION: {
+            WelcomeNotificationTableViewCell *cell = (WelcomeNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"WelcomeNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            
+            InformationNotification *info = (InformationNotification*) self.notifications[indexPath.section];
+            [cell configureCell:info];
+            
             return cell;
         }
-        case 1: {
+        case ACTION_NOTIFICATION: {
             JoiningNotificationTableViewCell *cell = (JoiningNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"JoiningNotificationTableViewCellIdentifier" forIndexPath:indexPath];
             
+            ActionNotification *an = (ActionNotification*) self.notifications[indexPath.section];
+            [cell configureCell:an];
+            
             return cell;
         }
-        case 2: {
+        case FEEDBACK: {
             FeedbackNotificationTableViewCell *cell = (FeedbackNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"FeedbackNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-            cell.feedbackTextView.placeholder = @"e.g. Needs another whiteboard";
+            FeedbackNotification *fn = (FeedbackNotification *) self.notifications[indexPath.section];
+            [cell configureCell:fn];
             
             return cell;
         }
-        case 3: {
+        case SURVEY: {
             SurveyNotificationTableViewCell *cell = (SurveyNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"SurveyNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-            NSArray *data = @[@"Black Coffee", @"Coldbrew Coffee", @"Espresso Coffee", @"Latte"];
-            cell.data = data;
-            cell.tableViewHeightConstraint.constant = data.count * SURVEY_OPTION_CELL_HEIGHT;
-            cell.tableView.backgroundColor = [UIColor redColor];
-            [cell.tableView reloadData];
+            SurveyNotification *sn = (SurveyNotification *) self.notifications[indexPath.section];
+            [cell configureCell:sn];
             
             return cell;
         }
-        case 4: {
+        case SCHEDULE: {
             ScheduleNotificationTableViewCell *cell = (ScheduleNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"ScheduleNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            ScheduleNotification *sn = (ScheduleNotification *) self.notifications[indexPath.section];
+            [cell configureCell:sn];
             
             return cell;
         }
-        case 5: {
+        case EVENT: {
             VisitNotificationTableViewCell *cell = (VisitNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"VisitNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            EventNotification *en = (EventNotification *) self.notifications[indexPath.section];
+            [cell configureCell:en];
             
             return cell;
-        }
-        default: {
-            return [[UITableViewCell alloc] init];
         }
     }
+    
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -174,18 +175,15 @@
                     self.noNotificationsView.hidden = true;
                     break;
                 case UNAuthorizationStatusAuthorized:
-                    self.tableView.hidden = false;
-                    self.noNotificationsView.hidden = true;
-                    self.permissionMissingView.hidden = true;
-//                    if ([[SettingsManager sharedManager] savedRemoteNotificationPayloads].count == 0) {
-//                        self.noNotificationsView.hidden = false;
-//                        self.tableView.hidden = true;
-//                        self.permissionMissingView.hidden = true;
-//                    } else {
-//                        self.tableView.hidden = false;
-//                        self.noNotificationsView.hidden = true;
-//                        self.permissionMissingView.hidden = true;
-//                    }
+                    if ([[SettingsManager sharedManager] savedRemoteNotificationPayloads].count == 0) {
+                        self.noNotificationsView.hidden = false;
+                        self.tableView.hidden = true;
+                        self.permissionMissingView.hidden = true;
+                    } else {
+                        self.tableView.hidden = false;
+                        self.noNotificationsView.hidden = true;
+                        self.permissionMissingView.hidden = true;
+                    }
                     break;
                 default:
                     break;
