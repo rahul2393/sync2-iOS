@@ -48,7 +48,7 @@
     [encoder encodeObject:self.addressTitle forKey:@"addressTitle"];
     [encoder encodeObject:self.address forKey:@"address"];
     [encoder encodeObject:self.latitude forKey:@"latitude"];
-    [encoder encodeObject:self.latitude forKey:@"longitude"];
+    [encoder encodeObject:self.longitude forKey:@"longitude"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
