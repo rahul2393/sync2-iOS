@@ -20,6 +20,20 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:self.text forKey:@"optionText"];
+    [encoder encodeInt:self.optionId forKey:@"optionId"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if (self = [super init]) {
+        self.text = [decoder decodeObjectForKey:@"optionText"];
+        self.optionId = [decoder decodeIntForKey:@"optionId"];
+    }
+    return self;
+}
+
+
 @end
 
 @implementation SurveyNotification

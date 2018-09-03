@@ -46,7 +46,7 @@
 
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super initWithCoder:decoder]) {
-        self.commentHint = [decoder decodeObjectForKey:@"actionTitle"];
+        self.commentHint = [decoder decodeObjectForKey:@"commentHint"];
         self.buttonText = [decoder decodeObjectForKey:@"buttonText"];
         self.submitUrl = [decoder decodeObjectForKey:@"submitUrl"];
     }

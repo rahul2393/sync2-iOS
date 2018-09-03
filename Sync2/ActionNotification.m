@@ -21,6 +21,22 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:self.text forKey:@"actionText"];
+    [encoder encodeInt:self.actionId forKey:@"actionId"];
+    [encoder encodeObject:self.type forKey:@"actionType"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if (self = [super init]) {
+        self.text = [decoder decodeObjectForKey:@"actionText"];
+        self.actionId = [decoder decodeIntForKey:@"actionId"];
+        self.type = [decoder decodeObjectForKey:@"actionType"];
+    }
+    return self;
+}
+
+
 @end
 
 @implementation ActionNotification
