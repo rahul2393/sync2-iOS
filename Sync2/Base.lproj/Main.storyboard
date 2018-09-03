@@ -1511,7 +1511,7 @@ You can now proceed to Login.</string>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="destructiveButtonTapped:" destination="Xox-Ys-HSJ" eventType="touchUpInside" id="yi1-FV-7w9"/>
+                                                        <action selector="firstButtonTapped:" destination="Xox-Ys-HSJ" eventType="touchUpInside" id="F75-Ug-rwr"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gW7-9c-mII">
@@ -1528,9 +1528,12 @@ You can now proceed to Login.</string>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="3"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="constructiveButtonTapped:" destination="Xox-Ys-HSJ" eventType="touchUpInside" id="Nbx-uc-cij"/>
+                                                        <action selector="secondButtonTapped:" destination="Xox-Ys-HSJ" eventType="touchUpInside" id="nK0-MQ-Gaz"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="October 31, 9:00 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq0-gi-gzk">
@@ -1574,10 +1577,12 @@ You can now proceed to Login.</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="actionLabel" destination="PJG-LY-57f" id="5El-Pw-ru9"/>
                                             <outlet property="dateLabel" destination="Sq0-gi-gzk" id="Nf0-4Y-pEc"/>
                                             <outlet property="detailLabel" destination="Dc0-Eg-dNa" id="GRi-HB-hYh"/>
-                                            <outlet property="questionLabel" destination="PJG-LY-57f" id="h9K-EU-RRs"/>
                                             <outlet property="titleLabel" destination="nhK-TN-Z4L" id="Wgk-mN-RQz"/>
+                                            <outletCollection property="actionButtons" destination="00Y-HZ-i4J" id="sod-Le-TxM"/>
+                                            <outletCollection property="actionButtons" destination="gW7-9c-mII" id="xR7-rN-rcf"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedbackNotificationTableViewCellIdentifier" rowHeight="378" id="MgI-ul-3qh" customClass="FeedbackNotificationTableViewCell">
@@ -1689,6 +1694,7 @@ Can you share some of your thoughts on the room and any improvements you would l
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="button" destination="P9P-cw-81a" id="dfw-yG-tcV"/>
                                             <outlet property="dateLabel" destination="E9H-8a-Kit" id="xpx-95-xVv"/>
                                             <outlet property="detailLabel" destination="A2C-aL-bmB" id="xKB-o4-J0s"/>
                                             <outlet property="feedbackTextView" destination="c2d-nK-mep" id="gNQ-UX-3f5"/>
@@ -1830,6 +1836,7 @@ Let us know what you would like to see:</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="button" destination="Udl-MJ-eDp" id="3Gr-nN-c7q"/>
                                             <outlet property="dateLabel" destination="bJH-yz-kne" id="9fH-hj-XHB"/>
                                             <outlet property="detailLabel" destination="Q7B-Or-aEI" id="eac-Zm-NzA"/>
                                             <outlet property="tableView" destination="oTm-nF-dJc" id="1Nu-9e-wtK"/>
@@ -1991,11 +1998,11 @@ Let us know what you would like to see:</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="button" destination="X0c-q1-6aj" id="56q-xZ-zzn"/>
                                             <outlet property="calendarDateLabel" destination="QRG-lK-6dt" id="OwY-0t-hQo"/>
                                             <outlet property="calendarDayTimeLabel" destination="fO7-7k-obr" id="EWm-ON-d9y"/>
                                             <outlet property="dateLabel" destination="IPJ-Dq-JXc" id="Lc5-5E-oX0"/>
                                             <outlet property="detailLabel" destination="VfT-0J-yla" id="mOk-3t-kk6"/>
-                                            <outlet property="subDetailLabel" destination="jWD-qa-NcN" id="9c3-Am-MaC"/>
                                             <outlet property="titleLabel" destination="izb-1z-c82" id="1I5-3Z-k06"/>
                                         </connections>
                                     </tableViewCell>
@@ -3350,7 +3357,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="34" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZgG-mg-Rlv">
-                                <rect key="frame" x="49" y="258.33333333333331" width="278.33333333333331" height="201.66666666666669"/>
+                                <rect key="frame" x="48.666666666666657" y="258.33333333333331" width="278.33333333333337" height="201.66666666666669"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="67"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -6041,7 +6048,7 @@ revised: 5/9/2016</string>
         <image name="notification-permission-missing" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
