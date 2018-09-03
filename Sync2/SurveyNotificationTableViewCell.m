@@ -9,8 +9,12 @@
 #import "SurveyNotificationTableViewCell.h"
 #import "OptionSurveyTableViewCell.h"
 
+#define SURVEY_OPTION_CELL_HEIGHT 38
+
 @interface SurveyNotificationTableViewCell ()
 
+@property (nonatomic, strong) NSString *submitURL;
+@property NSArray *data;
 @property (nonatomic, strong) NSMutableArray *radioButtonChecked;
 
 @end
@@ -22,13 +26,25 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.radioButtonChecked = [[NSMutableArray alloc] init];
-    
-    [self.radioButtonChecked addObject:[NSNumber numberWithBool:TRUE]];
-    [self.radioButtonChecked addObject:[NSNumber numberWithBool:FALSE]];
-    [self.radioButtonChecked addObject:[NSNumber numberWithBool:TRUE]];
-    [self.radioButtonChecked addObject:[NSNumber numberWithBool:FALSE]];
-
 }
+
+- (void)configureCell:(SurveyNotification *)notification {
+    self.titleLabel.text = notification.title;
+    self.detailLabel.text = notification.body;
+    self.dateLabel.text = [notification displayableDate];
+    
+    self.data = notification.options;
+    [self.button setTitle:notification.buttonText forState:UIControlStateNormal];
+    self.submitURL = notification.submitUrl;
+    
+    for (id _ in notification.options) {
+        [self.radioButtonChecked addObject:[NSNumber numberWithBool:FALSE]];
+    }
+    
+    self.tableViewHeightConstraint.constant = self.data.count * SURVEY_OPTION_CELL_HEIGHT;
+    [self.tableView reloadData];
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -37,11 +53,14 @@
 }
 
 - (IBAction)sendTapped:(id)sender {
+    
+    // use submitURL and send request
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     OptionSurveyTableViewCell *cell = (OptionSurveyTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"OptionSurveyTableViewCellIdentifier" forIndexPath:indexPath];
-    cell.optionValueLabel.text = self.data[indexPath.row];
+    SurveyOption *option = (SurveyOption *) self.data[indexPath.row];
+    cell.optionValueLabel.text = option.text;
     cell.selectedImageView.image = [[self.radioButtonChecked objectAtIndex:indexPath.row] boolValue] ? [UIImage imageNamed: @"radio-button-check"] : [UIImage imageNamed: @"radio-button-unselected"];
     return cell;
 }
@@ -59,6 +78,5 @@
     [[self.radioButtonChecked objectAtIndex:indexPath.row] boolValue] ? [self.radioButtonChecked replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:FALSE]] : [self.radioButtonChecked replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:TRUE]];
     [self.tableView reloadData];
 }
-
 
 @end

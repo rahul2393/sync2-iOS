@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GCPlaceholderTextView.h"
+#import "FeedbackNotification.h"
 
 @interface FeedbackNotificationTableViewCell : UITableViewCell<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -15,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet GCPlaceholderTextView *feedbackTextView;
 - (IBAction)sendFeedbackTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *button;
 
+-(void)configureCell:(FeedbackNotification *)notification;
 @end

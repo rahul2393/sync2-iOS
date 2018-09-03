@@ -7,15 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScheduleNotification.h"
 
 @interface ScheduleNotificationTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
-@property (weak, nonatomic) IBOutlet UILabel *subDetailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *calendarDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *calendarDayTimeLabel;
-- (IBAction)scheduleTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *button;
+
+- (IBAction)scheduleTapped:(id)sender;
+
 - (IBAction)datePickerTapped:(id)sender;
+
+-(void)configureCell:(ScheduleNotification *)notification;
 
 @end

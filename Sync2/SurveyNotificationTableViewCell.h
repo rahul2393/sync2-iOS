@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SurveyNotification.h"
 
 @interface SurveyNotificationTableViewCell : UITableViewCell <UITableViewDelegate, UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
-@property (weak, nonatomic) IBOutlet UITableView *tableView; // cell height = 38
-- (IBAction)sendTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *button;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView; // cell height = 38
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeightConstraint;
-@property NSArray *data;
+
+- (IBAction)sendTapped:(id)sender;
+
+-(void)configureCell:(SurveyNotification *)notification;
+
 @end

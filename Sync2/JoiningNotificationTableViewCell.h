@@ -7,13 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ActionNotification.h"
 
 @interface JoiningNotificationTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
-@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *actionLabel;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *actionButtons;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+- (IBAction)firstButtonTapped:(id)sender;
 
-- (IBAction)constructiveButtonTapped:(id)sender;
-- (IBAction)destructiveButtonTapped:(id)sender;
+- (IBAction)secondButtonTapped:(id)sender;
+
+-(void)configureCell:(ActionNotification *)notification;
+
 @end

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InformationNotification.h"
 
 @interface WelcomeNotificationTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+-(void)configureCell:(InformationNotification *)notification;
 @end

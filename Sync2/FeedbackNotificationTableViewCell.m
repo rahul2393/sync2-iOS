@@ -8,6 +8,10 @@
 
 #import "FeedbackNotificationTableViewCell.h"
 
+@interface FeedbackNotificationTableViewCell ()
+@property (nonatomic, strong) NSString *submitURL;
+@end
+
 @implementation FeedbackNotificationTableViewCell
 
 - (void)awakeFromNib {
@@ -23,7 +27,18 @@
     // Configure the view for the selected state
 }
 
+- (void)configureCell:(FeedbackNotification *)notification {
+    self.titleLabel.text = notification.title;
+    self.detailLabel.text = notification.body;
+    self.dateLabel.text = [notification displayableDate];
+    
+    self.feedbackTextView.placeholder = notification.commentHint;
+    [self.button setTitle:notification.buttonText forState:UIControlStateNormal];
+    self.submitURL = notification.submitUrl;
+}
+
 - (IBAction)sendFeedbackTapped:(id)sender {
+    // use submit url and send request
 }
 
 #pragma mark - UITextViewDelegate methods
@@ -37,3 +52,5 @@
 }
 
 @end
+
+//cell.feedbackTextView.placeholder = @"e.g. Needs another whiteboard";

@@ -21,4 +21,10 @@
     // Configure the view for the selected state
 }
 
+- (void)configureCell:(InformationNotification *)notification {
+    self.titleLabel.text = notification.title;
+    self.detailLabel.text = notification.body;
+    self.dateLabel.text = [notification displayableDate];
+}
+
 @end
