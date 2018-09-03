@@ -12,8 +12,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
     self.mapView.delegate = self;
-    // Initialization code
+    [self.mapView setUserInteractionEnabled:NO];
 }
 
 - (void)configureCell:(EventNotification *)notification {
@@ -25,10 +26,14 @@
     self.address1Label.text = notification.addressTitle;
     self.address2Label.text = notification.address;
     
-//    @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-//
-//    "latitude" : 34.0161307,
-//    "longitude": -118.4939754,
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake([notification.latitude doubleValue], [notification.longitude doubleValue]);
+    [self.mapView setCenterCoordinate:location animated:YES];
+    MKCoordinateRegion  zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
+    [self.mapView setRegion:zoomRegion animated:YES];
+    
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = location;
+    [self.mapView addAnnotation:point];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
