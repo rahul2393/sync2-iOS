@@ -12,6 +12,10 @@
 #import "Device.h"
 #import <GMUHeatmapTileLayer.h>
 #import "SDKManager.h"
+#import "SenseAPI.h"
+#import "Landmark.h"
+#import "SettingsManager.h"
+
 @import SixgillSDK;
 
 #define kLogsButtonLabel @"Copy All Logs"
@@ -21,6 +25,7 @@
 @property (nonatomic, readwrite) NSInteger currentIndex;
 @property GMSMarker* marker;
 @property GMUHeatmapTileLayer* heatmapLayer;
+@property (nonatomic, strong) NSArray *landmarks;
 -(void) handleShowPrevNextButtons;
 -(void) showEmptyView;
 -(void) showLogsView;
@@ -57,6 +62,8 @@
         default:
             break;
     }
+    
+    [self loadLandmarks];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -147,6 +154,7 @@
         self.heatmapLayer.map = self.mapView;
     });
 
+    [self drawLandmarks];
 }
 
 #pragma mark - IBAction
@@ -216,6 +224,40 @@
             self.currentIndex = 0;
         } else if (self.logs.count > (self.currentIndex+1)) {
             self.currentIndex += 1;
+        }
+    }
+}
+
+- (void) loadLandmarks{
+    Project *currentProject = [[SettingsManager sharedManager] selectedProject];
+    if (!currentProject || !currentProject.objectId || [currentProject.objectId isEqualToString:@""]) {
+        return;
+    }
+    [[SenseAPI sharedManager] GetLandmarksForProject:currentProject.objectId WithCompletion:^(NSArray *landmarks, NSError * _Nullable error) {
+        self.landmarks = landmarks;
+        
+        [self drawLandmarks];
+    }];
+}
+
+-(void) drawLandmarks{
+
+    for (Landmark *lm in self.landmarks) {
+        if ([lm.geometryType isEqualToString:@"circle"]) {
+            GMSCircle *p = [lm googleMkCircle];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                p.map = self.mapView;
+            });
+        }else if([lm.geometryType isEqualToString:@"rectangle"]){
+            GMSPolygon *p = [lm googleMkRect];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                p.map = self.mapView;
+            });
+        }else if([lm.geometryType isEqualToString:@"polygon"]){
+            GMSPolygon *p = [lm googleMkPolygon];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                p.map = self.mapView;
+            });
         }
     }
 }

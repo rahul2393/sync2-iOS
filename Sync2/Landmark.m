@@ -60,6 +60,27 @@
     return self;
 }
 
+- (GMSPolygon *)googleMkPolygon {
+    
+    if (![self.geometryType isEqualToString:@"polygon"]) {
+        return nil;
+    }
+    
+    GMSMutablePath *rect = [GMSMutablePath path];
+    for (NSDictionary *coordSet in self.polyPts) {
+        NSNumber *latNum = (NSNumber *)coordSet[@"lat"];
+        NSNumber *lonNum = (NSNumber *)coordSet[@"lon"];
+        [rect addCoordinate:CLLocationCoordinate2DMake(latNum.doubleValue, lonNum.doubleValue)];
+    }
+
+    // Create the polygon, and assign it to the map.
+    GMSPolygon *polygon = [GMSPolygon polygonWithPath:rect];
+    polygon.fillColor = [UIColor colorWithRed:1 green:0.63 blue:0.60 alpha:0.4];
+    polygon.strokeColor = [UIColor redColor];
+    polygon.strokeWidth = 1;
+    return polygon;
+}
+
 -(MKPolygon *)mkPolygon{
     if (![self.geometryType isEqualToString:@"polygon"]) {
         return nil;
@@ -76,11 +97,48 @@
     return poly;
 }
 
+- (GMSCircle *)googleMkCircle {
+    NSNumber *latNum = (NSNumber *)_center[@"lat"];
+    NSNumber *lonNum = (NSNumber *)_center[@"lon"];
+    CLLocationCoordinate2D circleCenter = CLLocationCoordinate2DMake(latNum.doubleValue, lonNum.doubleValue);
+    GMSCircle *circ = [GMSCircle circleWithPosition:circleCenter
+                                             radius:self.radius.doubleValue];
+    
+    circ.fillColor = [UIColor colorWithRed:1 green:0.63 blue:0.60 alpha:0.4];
+    circ.strokeColor = [UIColor redColor];
+    circ.strokeWidth = 1;
+    return circ;
+}
+
+
 -(MKCircle *)mkCircle{
     NSNumber *latNum = (NSNumber *)_center[@"lat"];
     NSNumber *lonNum = (NSNumber *)_center[@"lon"];
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(latNum.doubleValue, lonNum.doubleValue);
     return [MKCircle circleWithCenterCoordinate:coord radius:self.radius.doubleValue];
+}
+
+- (GMSPolygon *)googleMkRect {
+    
+    NSNumber *nwLatNum = (NSNumber *)self.nwPoint[@"lat"];
+    NSNumber *nwLonNum = (NSNumber *)self.nwPoint[@"lon"];
+    
+    NSNumber *seLatNum = (NSNumber *)self.sePoint[@"lat"];
+    NSNumber *seLonNum = (NSNumber *)self.sePoint[@"lon"];
+    
+    GMSMutablePath *rect = [GMSMutablePath path];
+    
+    [rect addCoordinate:CLLocationCoordinate2DMake(nwLatNum.doubleValue, nwLonNum.doubleValue)];
+    [rect addCoordinate:CLLocationCoordinate2DMake(nwLatNum.doubleValue, seLonNum.doubleValue)];
+    [rect addCoordinate:CLLocationCoordinate2DMake(seLatNum.doubleValue, seLonNum.doubleValue)];
+    [rect addCoordinate:CLLocationCoordinate2DMake(seLatNum.doubleValue, nwLonNum.doubleValue)];
+    
+    // Create the polygon, and assign it to the map.
+    GMSPolygon *polygon = [GMSPolygon polygonWithPath:rect];
+    polygon.fillColor = [UIColor colorWithRed:1 green:0.63 blue:0.60 alpha:0.4];
+    polygon.strokeColor = [UIColor redColor];
+    polygon.strokeWidth = 1;
+    return polygon;
 }
 
 -(MKPolygon *)mkMapRect{

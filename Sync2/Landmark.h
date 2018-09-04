@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @import MapKit;
+@import GoogleMaps;
 @interface Landmark : NSObject
 
 @property (nonatomic, strong) NSString *address;
@@ -35,6 +36,10 @@
 -(MKPolygon *)mkPolygon;
 -(MKCircle *)mkCircle;
 -(MKPolygon *)mkMapRect;
+
+-(GMSPolygon *) googleMkPolygon;
+-(GMSCircle *) googleMkCircle;
+-(GMSPolygon *) googleMkRect;
 
 - (instancetype)initWithData:(NSDictionary *)data;
 
