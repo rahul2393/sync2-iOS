@@ -26,7 +26,7 @@
     
     self.titleLabel.text = data[@"title"];
     self.detailLabel.text = data[@"body"];
-    self.detailLabel.text = data[@"actionTitle"];
+    self.actionLabel.text = data[@"actionTitle"];
     
     NSArray *actions = data[@"actions"];
     
