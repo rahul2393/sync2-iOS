@@ -17,6 +17,7 @@
 @property (nonatomic, readwrite) NSInteger selectedChannelIx;
 @property (nonatomic, readwrite) BOOL channelSelected;
 -(void) filterIOSChannels: (NSArray*) channels;
+@property (nonatomic, readwrite) NSTimer *timer;
 @end
 
 @implementation DataChannelSelectionViewController
@@ -48,6 +49,8 @@
         void (^actionHandler)() = ^() {
             [[SettingsManager sharedManager] logout];
             [self dismissViewControllerAnimated:YES completion:nil];
+            [self.timer invalidate];
+            self.timer = nil;
         };
         action.handler = actionHandler;
         
@@ -55,9 +58,10 @@
         message.action = action;
         [MDCSnackbarManager showMessage:message];
         [MDCSnackbarManager setButtonTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        
-        [NSTimer scheduledTimerWithTimeInterval: 10 target: self
+
+        self.timer = [NSTimer scheduledTimerWithTimeInterval: 10 target: self
                                        selector: @selector(handleTimer:) userInfo: message repeats: YES];
+        
     } else {
         [self.tableView setHidden:NO];
         [self.noChannelView setHidden:YES];

@@ -19,6 +19,7 @@
 @property (nonatomic, readwrite) BOOL useDummy;
 @property (nonatomic, readwrite) BOOL projectSelected;
 @property (nonatomic, readwrite) NSInteger selectedIx;
+@property (nonatomic, readwrite) NSTimer *timer;
 @end
 
 @implementation ProjectSelectionViewController
@@ -56,6 +57,8 @@
         void (^actionHandler)() = ^() {
             [[SettingsManager sharedManager] logout];
             [self dismissViewControllerAnimated:YES completion:nil];
+            [self.timer invalidate];
+            self.timer = nil;
         };
         action.handler = actionHandler;
         
@@ -65,7 +68,7 @@
         [MDCSnackbarManager setButtonTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         
 
-        [NSTimer scheduledTimerWithTimeInterval: 10 target: self
+        self.timer = [NSTimer scheduledTimerWithTimeInterval: 10 target: self
                                        selector: @selector(handleTimer:) userInfo: message repeats: YES];
 
         
