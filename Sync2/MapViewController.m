@@ -178,14 +178,22 @@
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
     
     if ([overlay isKindOfClass:[MKPolygon class]]) {
+        
         MKPolygon *polygon = (MKPolygon *)overlay;
         MKPolygonRenderer *renderer = [[MKPolygonRenderer alloc] initWithPolygon:polygon];
-        renderer.fillColor = [[UIColor blueColor] colorWithAlphaComponent:0.4];
+        renderer.fillColor = [[UIColor alloc] initWithRed:1 green:0.63 blue:0.60 alpha:0.4];
+        renderer.strokeColor = [UIColor redColor];
+        renderer.lineWidth = 1;
+        
         return renderer;
-    }else if([overlay isKindOfClass:[MKCircle class]]){
+    } else if([overlay isKindOfClass:[MKCircle class]]){
+        
         MKCircle *c = (MKCircle *)overlay;
         MKCircleRenderer *r = [[MKCircleRenderer alloc]initWithCircle:c];
-        r.fillColor = [[UIColor blueColor] colorWithAlphaComponent:0.4];
+        r.fillColor = [[UIColor alloc] initWithRed:1 green:0.63 blue:0.60 alpha:0.4];
+        r.strokeColor = [UIColor redColor];
+        r.lineWidth = 1;
+        
         return r;
     }
     
