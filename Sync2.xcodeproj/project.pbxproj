@@ -32,6 +32,8 @@
 		75511ABD2122FAF100D98E1A /* CopyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75511ABC2122FAF100D98E1A /* CopyLabel.m */; };
 		755F25A62111CA4C0083E044 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 755F25A32111C55C0083E044 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		756B21C9213E7A420089F731 /* SnackbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 756B21C8213E7A420089F731 /* SnackbarView.m */; };
+		756B21CC213E86730089F731 /* ZoomControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756B21CB213E86730089F731 /* ZoomControlView.xib */; };
+		756B21D0213E895A0089F731 /* ZoomControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 756B21CF213E895A0089F731 /* ZoomControlView.m */; };
 		756C2D5820F5FEE7008560FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */; };
 		75802C98213D5CD00068C856 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 75802C93213D5CCF0068C856 /* TFHpple.m */; };
 		75802C99213D5CD00068C856 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 75802C94213D5CCF0068C856 /* TFHppleElement.m */; };
@@ -218,6 +220,9 @@
 		755F25A32111C55C0083E044 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		756B21C8213E7A420089F731 /* SnackbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnackbarView.m; sourceTree = "<group>"; };
 		756B21CA213E7A5A0089F731 /* SnackbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnackbarView.h; sourceTree = "<group>"; };
+		756B21CB213E86730089F731 /* ZoomControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZoomControlView.xib; sourceTree = "<group>"; };
+		756B21CE213E895A0089F731 /* ZoomControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZoomControlView.h; sourceTree = "<group>"; };
+		756B21CF213E895A0089F731 /* ZoomControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoomControlView.m; sourceTree = "<group>"; };
 		756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		75802C92213D5CCF0068C856 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		75802C93213D5CCF0068C856 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
@@ -480,6 +485,7 @@
 		753CB711210641C400C11223 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				756B21CD213E890E0089F731 /* ZoomControl */,
 				756B21C7213E7A190089F731 /* Snackbar */,
 				75502A4C210876BE00BFCA2A /* PlaceholderTextView */,
 				75502A4B210876B000BFCA2A /* GradientView */,
@@ -520,6 +526,7 @@
 			children = (
 				753CB729210715DC00C11223 /* ProjectSelectionTableViewCell.xib */,
 				E9A3C2AF1ED5FD1500A938CB /* Main.storyboard */,
+				756B21CB213E86730089F731 /* ZoomControlView.xib */,
 			);
 			name = "Storyboard and Xibs";
 			sourceTree = "<group>";
@@ -579,6 +586,15 @@
 				756B21C8213E7A420089F731 /* SnackbarView.m */,
 			);
 			name = Snackbar;
+			sourceTree = "<group>";
+		};
+		756B21CD213E890E0089F731 /* ZoomControl */ = {
+			isa = PBXGroup;
+			children = (
+				756B21CE213E895A0089F731 /* ZoomControlView.h */,
+				756B21CF213E895A0089F731 /* ZoomControlView.m */,
+			);
+			name = ZoomControl;
 			sourceTree = "<group>";
 		};
 		75802C91213D5CA60068C856 /* HTML-Parser */ = {
@@ -1552,6 +1568,7 @@
 				E9A3C2B31ED5FD1500A938CB /* Assets.xcassets in Resources */,
 				E9A3C2DF1ED6101100A938CB /* Lato-LightItalic.ttf in Resources */,
 				E9A3C2DC1ED6101100A938CB /* Lato-HairlineItalic.ttf in Resources */,
+				756B21CC213E86730089F731 /* ZoomControlView.xib in Resources */,
 				E9A3C2DA1ED6101100A938CB /* Lato-BoldItalic.ttf in Resources */,
 				E9A3C2E01ED6101100A938CB /* Lato-Regular.ttf in Resources */,
 				E9A3C2DB1ED6101100A938CB /* Lato-Hairline.ttf in Resources */,
@@ -1709,6 +1726,7 @@
 				E9B76D47200D35BB0095030C /* LogDayTableViewController.m in Sources */,
 				E9B76D4F200D4E580095030C /* SettingsTableViewController.m in Sources */,
 				75802C99213D5CD00068C856 /* TFHppleElement.m in Sources */,
+				756B21D0213E895A0089F731 /* ZoomControlView.m in Sources */,
 				75D71583210AF214007378D5 /* Device.m in Sources */,
 				756B21C9213E7A420089F731 /* SnackbarView.m in Sources */,
 				75802C98213D5CD00068C856 /* TFHpple.m in Sources */,

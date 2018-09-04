@@ -2972,7 +2972,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                         <viewControllerLayoutGuide type="bottom" id="dW8-0e-yOx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="agB-wX-HQ7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ir-Qq-HDZ">
@@ -3024,7 +3024,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-7S-yj0" userLabel="table">
-                                <rect key="frame" x="10" y="313" width="355" height="382"/>
+                                <rect key="frame" x="10" y="313" width="355" height="333"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -3040,7 +3040,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZX-1b-EJD" userLabel="select-project-button">
-                                <rect key="frame" x="10" y="710" width="355" height="44"/>
+                                <rect key="frame" x="10" y="661" width="355" height="44"/>
                                 <color key="backgroundColor" red="0.12692853809999999" green="0.3115601838" blue="0.74908894299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration" identifier="select-project-button" label="Select Project">
                                     <bool key="isElement" value="NO"/>
@@ -3062,11 +3062,11 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lA-6p-rgy">
-                                <rect key="frame" x="0.0" y="298" width="375" height="412"/>
+                                <rect key="frame" x="0.0" y="298" width="375" height="363"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyh-ad-fzn">
-                                <rect key="frame" x="10" y="313" width="355" height="382"/>
+                                <rect key="frame" x="10" y="313" width="355" height="333"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rules-empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="smC-oK-eS9">
                                         <rect key="frame" x="140.33333333333334" y="50" width="75" height="80"/>
@@ -3357,7 +3357,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="34" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZgG-mg-Rlv">
-                                <rect key="frame" x="48.666666666666657" y="258.33333333333331" width="278.33333333333337" height="201.66666666666669"/>
+                                <rect key="frame" x="49" y="258.33333333333331" width="278.33333333333331" height="201.66666666666669"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="67"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -4238,6 +4238,14 @@ Permission</string>
                                                             <constraint firstAttribute="height" constant="400" id="sG9-0x-GRD"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G9t-Hv-GsW" userLabel="Zoom Controls" customClass="ZoomControlView">
+                                                        <rect key="frame" x="30" y="185" width="240" height="128"/>
+                                                        <color key="backgroundColor" red="0.96280924479166663" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="87" id="3ed-qW-rWC"/>
+                                                            <constraint firstAttribute="width" constant="44" id="GJN-LO-3wR"/>
+                                                        </constraints>
+                                                    </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAv-s4-7Gf">
                                                         <rect key="frame" x="2" y="452.66666666666663" width="22" height="44"/>
                                                         <constraints>
@@ -4273,6 +4281,7 @@ Permission</string>
                                                     <constraint firstItem="eBS-gi-M0q" firstAttribute="leading" secondItem="ao5-iR-Bax" secondAttribute="leading" id="32K-5Q-5du"/>
                                                     <constraint firstAttribute="height" constant="498" id="3rv-By-ckb"/>
                                                     <constraint firstAttribute="bottom" secondItem="iNO-4I-ken" secondAttribute="bottom" constant="15" id="EjS-DY-Yei"/>
+                                                    <constraint firstItem="G9t-Hv-GsW" firstAttribute="bottom" secondItem="eBS-gi-M0q" secondAttribute="bottom" constant="-20" id="IFH-82-0on"/>
                                                     <constraint firstItem="eBS-gi-M0q" firstAttribute="top" secondItem="ao5-iR-Bax" secondAttribute="top" constant="49" id="Lww-Ty-IQ9"/>
                                                     <constraint firstItem="iNO-4I-ken" firstAttribute="centerX" secondItem="ao5-iR-Bax" secondAttribute="centerX" id="XVk-ew-eCe"/>
                                                     <constraint firstItem="bAv-s4-7Gf" firstAttribute="leading" secondItem="ao5-iR-Bax" secondAttribute="leading" constant="2" id="kEX-Bd-XRM"/>
@@ -4283,6 +4292,7 @@ Permission</string>
                                                     <constraint firstAttribute="trailing" secondItem="wKb-9k-2cH" secondAttribute="trailing" constant="2" id="urF-z0-OwT"/>
                                                     <constraint firstItem="4f2-Uh-i5c" firstAttribute="centerY" secondItem="A7V-v9-4Pl" secondAttribute="centerY" id="wNp-fC-ASS"/>
                                                     <constraint firstItem="wKb-9k-2cH" firstAttribute="centerY" secondItem="iNO-4I-ken" secondAttribute="centerY" id="yAm-cd-EK4"/>
+                                                    <constraint firstItem="G9t-Hv-GsW" firstAttribute="trailing" secondItem="eBS-gi-M0q" secondAttribute="trailing" constant="-20" id="zGe-8e-Df1"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -4352,6 +4362,7 @@ Permission</string>
                         <outlet property="prevMapButton" destination="bAv-s4-7Gf" id="Ls2-UT-CIg"/>
                         <outlet property="tableView" destination="3wz-1i-jDv" id="HdN-3O-pRo"/>
                         <outlet property="viewHeightConstraint" destination="bWX-HR-TQq" id="ehZ-1o-as9"/>
+                        <outlet property="zoomControls" destination="G9t-Hv-GsW" id="5CC-LZ-Y0O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbd-Ep-ePx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -6048,18 +6059,18 @@ revised: 5/9/2016</string>
         <image name="notification-permission-missing" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="165" height="120"/>
+        <image name="sixgill-logo" width="325" height="95"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
         <image name="welcome-screen-footer" width="165" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mI5-qK-Wad"/>
-        <segue reference="tiO-Cx-fFe"/>
+        <segue reference="Zvf-Iq-LJc"/>
+        <segue reference="sfn-Bk-AGt"/>
         <segue reference="az3-hw-ZNG"/>
         <segue reference="bdL-UT-Onr"/>
-        <segue reference="oDz-uZ-zzx"/>
-        <segue reference="CP3-Hb-LwB"/>
+        <segue reference="tam-M8-If5"/>
+        <segue reference="06h-aU-o4p"/>
     </inferredMetricsTieBreakers>
 </document>

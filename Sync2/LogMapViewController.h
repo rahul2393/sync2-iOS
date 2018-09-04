@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LogBaseViewController.h"
 #import "LogMapDataViewController.h"
+#import "ZoomControlView.h"
 
 @import GoogleMaps;
 
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *mapDisplayView;
 @property (weak, nonatomic) IBOutlet UIView *mapDataView;
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+@property (weak, nonatomic) IBOutlet ZoomControlView *zoomControls;
 
 - (IBAction)datePickerTapped:(id)sender;
 - (IBAction)showPrevMap:(id)sender;

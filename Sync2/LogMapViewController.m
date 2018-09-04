@@ -35,6 +35,8 @@
     self.marker = [[GMSMarker alloc] init];
     [self.mapView setUserInteractionEnabled:NO];
     
+    self.zoomControls.mapView = self.mapView;
+    
     self.heatmapLayer = [[GMUHeatmapTileLayer alloc] init];
     self.heatmapLayer.map = self.mapView;
     self.heatmapLayer.opacity = 1.0;
