@@ -11,6 +11,7 @@
 #import "SettingsManager.h"
 #import "ProjectSelectionTableViewCell.h"
 #import "MaterialSnackbar.h"
+#import "SnackbarView.h"
 
 @interface DataChannelSelectionViewController ()
 
@@ -21,6 +22,7 @@
 @end
 
 @implementation DataChannelSelectionViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -40,27 +42,7 @@
         [self.noChannelView setHidden:NO];
         [self.selectChannelButton setHidden:YES];
         
-        
-        MDCSnackbarMessage *message = [[MDCSnackbarMessage alloc] init];
-        message.text = @"Select Another Account";
-        [message setDuration:10];
-        
-        MDCSnackbarMessageAction *action = [[MDCSnackbarMessageAction alloc] init];
-        void (^actionHandler)() = ^() {
-            [[SettingsManager sharedManager] logout];
-            [self dismissViewControllerAnimated:YES completion:nil];
-            [self.timer invalidate];
-            self.timer = nil;
-        };
-        action.handler = actionHandler;
-        
-        action.title = @"GO TO LOGIN";
-        message.action = action;
-        [MDCSnackbarManager showMessage:message];
-        [MDCSnackbarManager setButtonTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-
-        self.timer = [NSTimer scheduledTimerWithTimeInterval: 10 target: self
-                                       selector: @selector(handleTimer:) userInfo: message repeats: YES];
+        [self showSnackBar];
         
     } else {
         [self.tableView setHidden:NO];
@@ -179,5 +161,20 @@
     [self dismissScreen];
 }
 
+#pragma mark - Snackbar View
+
+-(void) showSnackBar {
+    
+    SnackbarView *snackbar = [[SnackbarView alloc] init];
+    MDCSnackbarMessage *message = [snackbar showSnackbar:@"Select Another Account" actionTitle:@"GO TO LOGIN" actionHandler:^{
+        [[SettingsManager sharedManager] logout];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.timer invalidate];
+        self.timer = nil;
+    }];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval: 10 target: self
+                                                selector: @selector(handleTimer:) userInfo: message repeats: YES];
+}
 
 @end

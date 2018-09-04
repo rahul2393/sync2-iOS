@@ -31,6 +31,7 @@
 		75502A81210A5DC800BFCA2A /* LogMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A80210A5DC800BFCA2A /* LogMapViewController.m */; };
 		75511ABD2122FAF100D98E1A /* CopyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75511ABC2122FAF100D98E1A /* CopyLabel.m */; };
 		755F25A62111CA4C0083E044 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 755F25A32111C55C0083E044 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		756B21C9213E7A420089F731 /* SnackbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 756B21C8213E7A420089F731 /* SnackbarView.m */; };
 		756C2D5820F5FEE7008560FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */; };
 		75802C98213D5CD00068C856 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 75802C93213D5CCF0068C856 /* TFHpple.m */; };
 		75802C99213D5CD00068C856 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 75802C94213D5CCF0068C856 /* TFHppleElement.m */; };
@@ -215,6 +216,8 @@
 		75511ABC2122FAF100D98E1A /* CopyLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyLabel.m; sourceTree = "<group>"; };
 		75511ABE2122FB0200D98E1A /* CopyLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyLabel.h; sourceTree = "<group>"; };
 		755F25A32111C55C0083E044 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
+		756B21C8213E7A420089F731 /* SnackbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnackbarView.m; sourceTree = "<group>"; };
+		756B21CA213E7A5A0089F731 /* SnackbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnackbarView.h; sourceTree = "<group>"; };
 		756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		75802C92213D5CCF0068C856 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
 		75802C93213D5CCF0068C856 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
@@ -477,6 +480,7 @@
 		753CB711210641C400C11223 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				756B21C7213E7A190089F731 /* Snackbar */,
 				75502A4C210876BE00BFCA2A /* PlaceholderTextView */,
 				75502A4B210876B000BFCA2A /* GradientView */,
 				75502A7321099DA700BFCA2A /* CustomSegmentControl.m */,
@@ -566,6 +570,15 @@
 				75502A4D210876D300BFCA2A /* GCPlaceholderTextView.m */,
 			);
 			name = PlaceholderTextView;
+			sourceTree = "<group>";
+		};
+		756B21C7213E7A190089F731 /* Snackbar */ = {
+			isa = PBXGroup;
+			children = (
+				756B21CA213E7A5A0089F731 /* SnackbarView.h */,
+				756B21C8213E7A420089F731 /* SnackbarView.m */,
+			);
+			name = Snackbar;
 			sourceTree = "<group>";
 		};
 		75802C91213D5CA60068C856 /* HTML-Parser */ = {
@@ -1697,6 +1710,7 @@
 				E9B76D4F200D4E580095030C /* SettingsTableViewController.m in Sources */,
 				75802C99213D5CD00068C856 /* TFHppleElement.m in Sources */,
 				75D71583210AF214007378D5 /* Device.m in Sources */,
+				756B21C9213E7A420089F731 /* SnackbarView.m in Sources */,
 				75802C98213D5CD00068C856 /* TFHpple.m in Sources */,
 				E9518B5F2018026B001818CC /* DummyNotificationData.m in Sources */,
 				E9CCF4C71EF1E78200BF96C6 /* QRCodeReaderView.m in Sources */,
