@@ -49,6 +49,9 @@
 
 -(void) setHasAcceptedAgreement:(BOOL)hasAcceptedAgreement;
 
+-(NSInteger) onBoardingIdx;
+
+-(void) setOnBoardingIdx: (NSInteger) boardingIdx;
 
 // Deprecated
 -(void) addAccount:(Account *)account;

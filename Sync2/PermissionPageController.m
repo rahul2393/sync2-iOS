@@ -27,6 +27,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (![[SettingsManager sharedManager] onBoardingIdx]) {
+        [[SettingsManager sharedManager] setOnBoardingIdx:0];
+    }
+    
+    self.index = [[SettingsManager sharedManager] onBoardingIdx];
+    
 //    WelcomeViewController *welcomeVC = (WelcomeViewController *)[self ViewControllerFromStoryboard:@"welcomeView"];
 //    welcomeVC.parentPageViewController = self;
     
@@ -56,7 +63,7 @@
                           setupCompleteVC];
     
     if (self.viewControllers.count == 0) {
-        [self setViewControllers:@[self.vcDataSource[0]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+        [self setViewControllers:@[self.vcDataSource[self.index]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     }
 }
 
@@ -64,6 +71,7 @@
     
     if (self.index+1 < self.vcDataSource.count) {
         self.index++;
+        [[SettingsManager sharedManager] setOnBoardingIdx:self.index];
     }else{
         [[SettingsManager sharedManager] setHasOnboarded:YES];
         return;

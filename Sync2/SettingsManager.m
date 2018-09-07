@@ -22,6 +22,8 @@
 
 #define KEY_HASONBOARDED @"hasOnboarded"
 
+#define KEY_ONBOARDINGIDX @"onBoardingIdx"
+
 #define KEY_HASACCEPTEDAGREEMENT @"hasAcceptedAgreement"
 
 #define KEY_ACCOUNTS @"accountsList"
@@ -265,6 +267,15 @@
 
 -(void) setHasOnboarded:(BOOL)hasOnboarded{
     [[NSUserDefaults standardUserDefaults] setBool:hasOnboarded forKey:KEY_HASONBOARDED];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSInteger)onBoardingIdx {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:KEY_ONBOARDINGIDX];
+}
+
+- (void)setOnBoardingIdx:(NSInteger)boardingIdx {
+    [[NSUserDefaults standardUserDefaults] setInteger:boardingIdx forKey:KEY_ONBOARDINGIDX];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
