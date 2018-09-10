@@ -61,6 +61,7 @@
 		75FDF1C3213414E20068D015 /* ScheduleNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1C2213414E20068D015 /* ScheduleNotification.m */; };
 		75FDF1C6213414EE0068D015 /* EventNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1C5213414EE0068D015 /* EventNotification.m */; };
 		75FDF1C9213415380068D015 /* BaseNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1C8213415380068D015 /* BaseNotification.m */; };
+		75FFDB70214393E300D9D039 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FFDB6F214393E300D9D039 /* HealthKit.framework */; };
 		997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */; };
 		E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */; };
 		E90371441EE89B1E0033DED0 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E90371431EE89B1E0033DED0 /* Account.m */; };
@@ -275,6 +276,7 @@
 		75FDF1C5213414EE0068D015 /* EventNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventNotification.m; sourceTree = "<group>"; };
 		75FDF1C7213415380068D015 /* BaseNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNotification.h; sourceTree = "<group>"; };
 		75FDF1C8213415380068D015 /* BaseNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNotification.m; sourceTree = "<group>"; };
+		75FFDB6F214393E300D9D039 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6011B6B43DBF0AC7C6C0493 /* Pods-Sync2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2/Pods-Sync2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
+				75FFDB70214393E300D9D039 /* HealthKit.framework in Frameworks */,
 				E962B3621EF213ED00ECB920 /* CoreLocation.framework in Frameworks */,
 				58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */,
 			);
@@ -1016,6 +1019,7 @@
 		E962B3571EF20F1300ECB920 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75FFDB6F214393E300D9D039 /* HealthKit.framework */,
 				75802C9B213D5DF00068C856 /* libxml2.2.dylib */,
 				E962B36E1EF2F45000ECB920 /* CoreMotion.framework */,
 				E962B36C1EF2EEB300ECB920 /* AVFoundation.framework */,

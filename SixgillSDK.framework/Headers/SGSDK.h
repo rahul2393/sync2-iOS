@@ -42,6 +42,7 @@
 +(void) forceSensorUpdate;
 
 +(void) requestAlwaysPermission;
++(void) requestHealthKitPermission;
 
 +(void) setMotionActivityEnabled:(BOOL)enabled;
 +(BOOL) motionActivityEnabled;
