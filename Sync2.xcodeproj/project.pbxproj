@@ -42,6 +42,7 @@
 		75840431211F5931001AEF91 /* SetupCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75840430211F5931001AEF91 /* SetupCompleteViewController.m */; };
 		75843ADF213A554600D7BB8D /* NotificationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 75843ADE213A554600D7BB8D /* NotificationType.m */; };
 		759926EC20FE2E790073693F /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759926EB20FE2E790073693F /* SplashViewController.m */; };
+		75C37D0E21466A0D00C91F8E /* HealthPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C37D0D21466A0D00C91F8E /* HealthPermissionViewController.m */; };
 		75CD539E213D33DF006D8390 /* UITapGestureRecognizerExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CD539D213D33DF006D8390 /* UITapGestureRecognizerExtension.m */; };
 		75D71583210AF214007378D5 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71582210AF214007378D5 /* Device.m */; };
 		75D71587210B0D10007378D5 /* LogMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71586210B0D10007378D5 /* LogMapTableViewCell.m */; };
@@ -238,6 +239,8 @@
 		75843AE0213A556700D7BB8D /* NotificationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationType.h; sourceTree = "<group>"; };
 		759926EA20FE2E5D0073693F /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		759926EB20FE2E790073693F /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		75C37D0C21466A0D00C91F8E /* HealthPermissionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthPermissionViewController.h; sourceTree = "<group>"; };
+		75C37D0D21466A0D00C91F8E /* HealthPermissionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthPermissionViewController.m; sourceTree = "<group>"; };
 		75CD539C213D33C9006D8390 /* UITapGestureRecognizerExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITapGestureRecognizerExtension.h; sourceTree = "<group>"; };
 		75CD539D213D33DF006D8390 /* UITapGestureRecognizerExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITapGestureRecognizerExtension.m; sourceTree = "<group>"; };
 		75D71582210AF214007378D5 /* Device.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
@@ -631,6 +634,15 @@
 			name = Splash;
 			sourceTree = "<group>";
 		};
+		75C37D0B214669E500C91F8E /* Health Permission */ = {
+			isa = PBXGroup;
+			children = (
+				75C37D0C21466A0D00C91F8E /* HealthPermissionViewController.h */,
+				75C37D0D21466A0D00C91F8E /* HealthPermissionViewController.m */,
+			);
+			name = "Health Permission";
+			sourceTree = "<group>";
+		};
 		75FDF1AF213413F80068D015 /* InformationNotification */ = {
 			isa = PBXGroup;
 			children = (
@@ -790,6 +802,7 @@
 		E9352475201FC947008D4F19 /* Permission Views */ = {
 			isa = PBXGroup;
 			children = (
+				75C37D0B214669E500C91F8E /* Health Permission */,
 				7584042E211F5904001AEF91 /* Setup Complete */,
 				E9352476201FC9EB008D4F19 /* Setup Info */,
 				E95F582B1EE61E94000562FC /* Push Permission */,
@@ -1779,6 +1792,7 @@
 				75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */,
 				E9B76D5F200D4F5F0095030C /* DataChannelSelectionViewController.m in Sources */,
 				E9FC99FB204E0BE20060B81D /* EnvironmentSelectionViewController.m in Sources */,
+				75C37D0E21466A0D00C91F8E /* HealthPermissionViewController.m in Sources */,
 				75E68A4A212E962500797E27 /* LogBaseViewController.m in Sources */,
 				753CB71921070B8100C11223 /* WelcomeNotificationTableViewCell.m in Sources */,
 			);
