@@ -38,7 +38,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 8;
+    return 9;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -94,6 +94,16 @@
         }
         case 7: {
             cell.nameLabel.text = @"Geofences";
+            break;
+        }
+        case 8: {
+            cell.nameLabel.text = @"Steps Count";
+            if (_event != nil) {
+                NSDictionary *attributes = _event.attributes;
+                if ([attributes objectForKey:@"STEPS"]) {
+                    cell.valueLabel.text = attributes[@"STEPS"];
+                }
+            }
             break;
         }
         default:
