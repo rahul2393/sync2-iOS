@@ -38,7 +38,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 9;
+    return 12;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -102,6 +102,37 @@
                 NSDictionary *attributes = _event.attributes;
                 if ([attributes objectForKey:@"STEPS"]) {
                     cell.valueLabel.text = attributes[@"STEPS"];
+                }
+            }
+            break;
+        }
+        case 9: {
+            cell.nameLabel.text = @"Distance";
+            if (_event != nil) {
+                NSDictionary *attributes = _event.attributes;
+                if ([attributes objectForKey:@"DISTANCE"]) {
+                    CGFloat distance = [attributes[@"DISTANCE"] floatValue];
+                    cell.valueLabel.text = [NSString stringWithFormat:@"%.02f meters", distance];
+                }
+            }
+            break;
+        }
+        case 10: {
+            cell.nameLabel.text = @"Floors Ascended";
+            if (_event != nil) {
+                NSDictionary *attributes = _event.attributes;
+                if ([attributes objectForKey:@"FLOORS-ASCENDED"]) {
+                    cell.valueLabel.text = attributes[@"FLOORS-ASCENDED"];
+                }
+            }
+            break;
+        }
+        case 11: {
+            cell.nameLabel.text = @"Floors Descended";
+            if (_event != nil) {
+                NSDictionary *attributes = _event.attributes;
+                if ([attributes objectForKey:@"FLOORS-DESCENDED"]) {
+                    cell.valueLabel.text = attributes[@"FLOORS-DESCENDED"];
                 }
             }
             break;

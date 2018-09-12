@@ -51,14 +51,14 @@
     // Setting view constraints
     switch (UIDevice.currentDevice.screenType) {
         case iPhoneX:
-            self.viewHeightConstraint.constant = 1321;
+            self.viewHeightConstraint.constant = 1517;
             break;
         case iPhones_6Plus_6sPlus_7Plus_8Plus:
-            self.viewHeightConstraint.constant = 1261;
+            self.viewHeightConstraint.constant = 1457;
             break;
         case iPhones_6_6s_7_8:
         case iPhones_5_5s_5c_SE:
-            self.viewHeightConstraint.constant = 1260;
+            self.viewHeightConstraint.constant = 1456;
         default:
             break;
     }
