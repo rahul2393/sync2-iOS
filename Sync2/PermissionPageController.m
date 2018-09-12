@@ -10,7 +10,6 @@
 #import "WelcomeViewController.h"
 #import "LocationPermissionViewController.h"
 #import "MotionPermissionViewController.h"
-#import "HealthPermissionViewController.h"
 #import "CameraPermissionViewController.h"
 #import "PushPermissionViewController.h"
 #import "SetupInfoViewController.h"
@@ -47,9 +46,6 @@
     MotionPermissionViewController *motionVC = (MotionPermissionViewController *)[self ViewControllerFromStoryboard:@"motionActivityView"];
     motionVC.parentPageViewController = self;
     
-    HealthPermissionViewController *healthVC = (HealthPermissionViewController *)[self ViewControllerFromStoryboard:@"healthView"];
-    healthVC.parentPageViewController = self;
-    
     //CameraPermissionViewController *cameraVC = (CameraPermissionViewController *)[self ViewControllerFromStoryboard:@"cameraAccessView"];
     //cameraVC.parentPageViewController = self;
     
@@ -63,7 +59,6 @@
     self.vcDataSource = @[setupInfoVC,
                           locationVC,
                           motionVC,
-                          healthVC,
                           pushVC,
                           setupCompleteVC];
     
