@@ -90,6 +90,9 @@
         }
         case 6: {
             cell.nameLabel.text = @"Beacons-In-Range";
+            if (_event != nil) {
+                cell.valueLabel.text = [NSString stringWithFormat: @"%lu", (unsigned long)_event.ibeaconsArray.count];;
+            }
             break;
         }
         case 7: {

@@ -32,16 +32,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Sync2/MasterTabViewController.m"
-            timestampString = "558441595.174019"
+            filePath = "Sync2/SenseAPI.m"
+            timestampString = "558452858.579217"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "-sensorUpdateSentWithData:"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
+            landmarkName = "-GetLandmarksForProject:WithCompletion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -54,8 +54,8 @@
     
     self.environments = @[staging, prod, dev];
     
-//    self.emailAddressField.text = @"ritik.rishu@hotcocoasoftware.com";
-//    self.passwordField.text = @"password123";
+    self.emailAddressField.text = @"ritik.rishu@hotcocoasoftware.com";
+    self.passwordField.text = @"password123";
 //    self.emailAddressField.text = @"cvalera@sixgill.com";
 //    self.passwordField.text = @"super1234";
     
