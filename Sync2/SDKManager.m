@@ -95,7 +95,7 @@
 
 -(void) startSDKWithAPIKey:(NSString *)apiKey{
     [SGSDK initWithAPIKey:apiKey onSuccessHandler:^{
-        [SGSDK enable:^{
+        [SGSDK enable:true onSuccessHandler:^{
             [SGSDK setMotionActivityEnabled:YES];
             //        [SGSDK requestAlwaysPermission];
         } onFailureHandler:^(NSString *msg) {
