@@ -23,6 +23,8 @@
 
 +(instancetype)sharedInstance;
 
+-(void)startWithAPIKey:(NSString *)apiKey;
+-(void)startWithAPIKey:(NSString *)apiKey andConfig:(SGSDKConfigManager *)config;
 -(void)startWithAPIKey:(NSString *)apiKey andConfig:(SGSDKConfigManager *)config andSuccessHandler:(nullable void (^)())successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
 
 +(void) enable;
