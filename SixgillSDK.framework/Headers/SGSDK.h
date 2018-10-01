@@ -12,17 +12,21 @@
 #import "SGLogDelegate.h"
 #import "EventQueuePolicy.h"
 #import "SGIoTDevice.h"
+#import "SGSDKConfigManager.h"
 /**
  `SGSDK` is the wrapper class that exists for the purpose of abstracting away implemenation details and providing a clean API to the user.
  **/
 
 @interface SGSDK : NSObject
 
-+(void) initWithAPIKey:(NSString *)apiKey;
-+(void) initWithAPIKey:(NSString *)apiKey onSuccessHandler:(void (^)())onSuccessBlock onFailureHandler:(void (^)(NSString *))onFailureBlock;
+@property(nonatomic, readwrite) SGSDKConfigManager *config;
 
-+(void) enable:(BOOL)sendDataEnable;
-+(void) enable:(BOOL)sendDataEnable onSuccessHandler:(void (^)())onSuccessBlock onFailureHandler:(void (^)(NSString *))onFailureBlock;
++(instancetype)sharedInstance;
+
+-(void)startWithAPIKey:(NSString *)apiKey andConfig:(SGSDKConfigManager *)config andSuccessHandler:(nullable void (^)())successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
+
++(void) enable;
++(void) enableWithSuccessHandler: (void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
 +(void) disable;
 
 +(NSString *)deviceId;
@@ -56,11 +60,6 @@
 +(void) showTestLocalNotification;
 
 // Configs
-
-+(void) setBluetoothCollectionSpan:(NSInteger)collectionSpan;
-+(void) setLocationCollectionSpan:(NSInteger)collectionSpan;
-+(void) setLocationCollectionCachePolicy:(EventQueuePolicy)locationCachePolicy;
-
 
 +(void) registerForLogUpdates:(id<SGLogDelegateProtocol>)delegate;
 
