@@ -12,7 +12,8 @@
 
 @property(nonatomic, readwrite) BOOL shouldSendDataToServer;
 @property(nonatomic, readwrite) NSString *ingressURL;
+@property(nonatomic, readwrite) NSString *phoneNumber;
 
-- (instancetype)initWithIngressURL:(NSString *)url andShouldSendDataToServer:(BOOL)shouldSendDataToServer;
+- (instancetype)initWithIngressURL:(NSString *)url shouldSendDataToServer:(BOOL)shouldSendDataToServer phoneNumber:(NSString *)number;
 
 @end

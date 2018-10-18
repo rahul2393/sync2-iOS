@@ -94,8 +94,9 @@
 }
 
 -(void) startSDKWithAPIKey:(NSString *)apiKey{
+//    SGSDKConfigManager *config = [[SGSDKConfigManager alloc] initWithIngressURL:@"https://sense-ingress-api.sixgill.com" shouldSendDataToServer:true phoneNumber:@""];
     
-    SGSDKConfigManager *config = [[SGSDKConfigManager alloc] initWithIngressURL:@"" andShouldSendDataToServer:true];
+    SGSDKConfigManager *config = [[SGSDKConfigManager alloc] initWithIngressURL:@"https://sense-ingress-api.sixgill.com" shouldSendDataToServer:true phoneNumber:@"1234"];
     
     [[SGSDK sharedInstance] startWithAPIKey:apiKey andConfig:config andSuccessHandler:^{
         

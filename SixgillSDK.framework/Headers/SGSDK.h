@@ -78,5 +78,7 @@
 +(void) registerIoTDeviceName:(NSString *)deviceName;
 +(void) sendIoTDevice:(SGIoTDevice *)device data:(NSDictionary *)data;
 
+#pragma mark - Core Data
++(void) saveCoreDataContext;
 
 @end
