@@ -14,7 +14,7 @@
 #import "SettingsManager.h"
 #import "SDKManager.h"
 #import "AppDelegate.h"
-#import "Rule.h"
+#import "SGRule.h"
 
 @implementation SenseAPI
 
@@ -445,7 +445,7 @@
         if(responseDict[@"data"]){
             NSArray *ruleObjects = (NSArray *)responseDict[@"data"];
             for (NSDictionary *rule in ruleObjects) {
-                Rule *p = [[Rule alloc] initWithData:rule];
+                SGRule *p = [[SGRule alloc] initWithData:rule];
                 [toReturn addObject:p];
             }
         }

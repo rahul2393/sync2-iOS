@@ -92,6 +92,10 @@
 		<data>
 		AzFRRyleovYhThHDXg8zxfzL9tY=
 		</data>
+		<key>Headers/Ingress.pbobjc.h</key>
+		<data>
+		MBEVreRek6112w6klWByya+AQUo=
+		</data>
 		<key>Headers/SGIoTDevice.h</key>
 		<data>
 		JtMUFmJvsnZ5bqjEFrtAu/0zkgo=
@@ -138,7 +142,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		u5bp0PQ/TBehHSvAMqYNQuKBaj8=
+		GmocWahAOuTlKK6lR9f1YmYWw5o=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -459,6 +463,17 @@
 			<key>hash2</key>
 			<data>
 			OWUYUCtnQgb1/xobN5lIQQU8UDpLihLm6ZLtPI8xZsc=
+			</data>
+		</dict>
+		<key>Headers/Ingress.pbobjc.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MBEVreRek6112w6klWByya+AQUo=
+			</data>
+			<key>hash2</key>
+			<data>
+			uni5yCw1FSQljujKhORWJyke6CUEXRNIn3/NCf2Wi1k=
 			</data>
 		</dict>
 		<key>Headers/SGIoTDevice.h</key>

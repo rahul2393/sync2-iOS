@@ -1,5 +1,5 @@
 //
-//  Rule.h
+//  SGRule.h
 //  Sync2
 //
 //  Created by Ricky Kirkendall on 1/24/18.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Rule : NSObject
+@interface SGRule : NSObject
 
 
 @property (nonatomic, strong) NSString *objectId;

@@ -35,6 +35,7 @@ CF_EXTERN_C_BEGIN
 @class Power;
 @class Property;
 @class Push;
+@class Rule;
 @class Wifi;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -312,6 +313,7 @@ typedef GPB_ENUM(Event_FieldNumber) {
 typedef GPB_ENUM(RegistrationRequest_FieldNumber) {
   RegistrationRequest_FieldNumber_ApiKey = 1,
   RegistrationRequest_FieldNumber_Properties = 2,
+  RegistrationRequest_FieldNumber_Aliases = 3,
 };
 
 @interface RegistrationRequest : GPBMessage
@@ -322,6 +324,10 @@ typedef GPB_ENUM(RegistrationRequest_FieldNumber) {
 /** Test to see if @c properties has been set. */
 @property(nonatomic, readwrite) BOOL hasProperties;
 
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *aliases;
+/** The number of items in @c aliases without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger aliases_Count;
+
 @end
 
 #pragma mark - RegistrationResponse
@@ -329,7 +335,7 @@ typedef GPB_ENUM(RegistrationRequest_FieldNumber) {
 typedef GPB_ENUM(RegistrationResponse_FieldNumber) {
   RegistrationResponse_FieldNumber_Token = 1,
   RegistrationResponse_FieldNumber_DeviceId = 2,
-  RegistrationResponse_FieldNumber_AccountId = 3,
+  RegistrationResponse_FieldNumber_OrganizationId = 3,
 };
 
 @interface RegistrationResponse : GPBMessage
@@ -338,7 +344,7 @@ typedef GPB_ENUM(RegistrationResponse_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *accountId;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *organizationId;
 
 @end
 
@@ -371,6 +377,44 @@ typedef GPB_ENUM(IBeaconsResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<IBeaconListItem*> *ibeaconsArray;
 /** The number of items in @c ibeaconsArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger ibeaconsArray_Count;
+
+@end
+
+#pragma mark - Rule
+
+typedef GPB_ENUM(Rule_FieldNumber) {
+  Rule_FieldNumber_Id_p = 1,
+  Rule_FieldNumber_Name = 2,
+  Rule_FieldNumber_Description_p = 3,
+  Rule_FieldNumber_ProjectId = 4,
+  Rule_FieldNumber_ConditionsAndActions = 5,
+};
+
+@interface Rule : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *projectId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *conditionsAndActions;
+
+@end
+
+#pragma mark - RulesResponse
+
+typedef GPB_ENUM(RulesResponse_FieldNumber) {
+  RulesResponse_FieldNumber_RulesArray = 1,
+};
+
+@interface RulesResponse : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Rule*> *rulesArray;
+/** The number of items in @c rulesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger rulesArray_Count;
 
 @end
 
