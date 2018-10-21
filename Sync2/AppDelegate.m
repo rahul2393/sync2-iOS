@@ -53,6 +53,10 @@
     return YES;
 }
 
+- (void)applicationWillTerminate:(UIApplication *)application {
+    [SGSDK saveCoreDataContext];
+}
+
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
     completionHandler(UNNotificationPresentationOptionAlert);
