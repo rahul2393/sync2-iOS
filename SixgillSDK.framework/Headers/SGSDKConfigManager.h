@@ -12,8 +12,8 @@
 
 @property(nonatomic, readwrite) BOOL shouldSendDataToServer;
 @property(nonatomic, readwrite) NSString *ingressURL;
-@property(nonatomic, readwrite) NSString *phoneNumber;
+@property(nonatomic, readwrite) NSMutableDictionary<NSString *, NSString*> *aliases;
 
-- (instancetype)initWithIngressURL:(NSString *)url shouldSendDataToServer:(BOOL)shouldSendDataToServer phoneNumber:(NSString *)number;
+- (instancetype)initWithIngressURL:(NSString *)url shouldSendDataToServer:(BOOL)shouldSendDataToServer aliases:(NSMutableDictionary<NSString *, NSString*>*)aliases;
 
 @end
