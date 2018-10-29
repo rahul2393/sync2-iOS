@@ -161,7 +161,7 @@
     
     NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/setOrganization"]]
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/set-organization"]]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];
@@ -228,7 +228,7 @@
                                @"Connection": @"keep-alive" };
     
     NSString *channelId = [[[SettingsManager sharedManager] selectedDataChannel] objectId];
-    NSString *fmt = [NSString stringWithFormat:@"/v2/channels/%@/apiKeys", channelId];
+    NSString *fmt = [NSString stringWithFormat:@"/v2/channels/%@/api-keys", channelId];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:fmt]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     
@@ -304,7 +304,7 @@
                                @"Accept": @"application/json",
                                @"Connection": @"keep-alive" };
     
-    NSString *url = [NSString stringWithFormat:@"%@/%@/landmarks", [self urlForEndPoint:@"/v2/projects"],projectId];
+    NSString *url = [NSString stringWithFormat:@"%@/v2/landmarks/search?projectId=%@", [self urlForEndPoint:@"/v2/projects"],projectId];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -339,7 +339,8 @@
                                @"Accept": @"application/json",
                                @"Connection": @"keep-alive" };
     
-    NSString *url = [NSString stringWithFormat:@"%@/%@/rules", [self urlForEndPoint:@"/v2/projects"],projectId];
+    NSString *url = [NSString stringWithFormat:@"%@/v2/rules?projectId=%@", [self urlForEndPoint:@"/v2/projects"],projectId];
+//    NSString *url = [NSString stringWithFormat:@"%@/%@/rules", [self urlForEndPoint:@"/v2/projects"],projectId];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy

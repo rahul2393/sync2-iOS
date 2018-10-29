@@ -12,7 +12,6 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *objectId;
-@property (nonatomic, readwrite) BOOL enabled;
 
 - (instancetype)initWithData:(NSDictionary *)data;
 

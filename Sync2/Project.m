@@ -25,14 +25,6 @@
         }else{
             self.name = @"";
         }
-        if (data[@"enabled"]) {
-            NSNumber *enabledN = data[@"enabled"];
-            if (enabledN.integerValue == 0) {
-                self.enabled = NO;
-            }else{
-                self.enabled = YES;
-            }
-        }
     }
     return self;
 }
@@ -44,8 +36,7 @@
     }
     
     return @{@"name":self.name,
-             @"id":self.objectId,
-             @"enabled":[NSNumber numberWithBool:self.enabled]};
+             @"id":self.objectId};
 }
 
 @end

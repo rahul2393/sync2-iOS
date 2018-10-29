@@ -39,8 +39,8 @@
     
     Environment *staging = [[Environment alloc] init];
     staging.name = @"Staging";
-    staging.senseURL = @"http://sense-api-staging.sixgill.run";
-    staging.ingressURL = @"http://sense-ingress-api-staging.sixgill.run";
+    staging.senseURL = @"https://sense-api-node.staging.sixgill.io";
+    staging.ingressURL = @"https://edge-ingress.staging.sixgill.io";
     
     Environment *prod = [[Environment alloc] init];
     prod.name = @"Production";
@@ -54,10 +54,10 @@
     
     self.environments = @[staging, prod, dev];
     
-//    self.emailAddressField.text = @"ritik.rishu@hotcocoasoftware.com";
-//    self.passwordField.text = @"password123";
-    self.emailAddressField.text = @"cvalera@sixgill.com";
-    self.passwordField.text = @"super1234";
+    self.emailAddressField.text = @"ritik.rishu@hotcocoasoftware.com";
+    self.passwordField.text = @"password123";
+//    self.emailAddressField.text = @"cvalera@sixgill.com";
+//    self.passwordField.text = @"super1234";
     
     self.selectedURLLabel.text = [[EnvironmentManager sharedManager] selectedEnvironment];
     

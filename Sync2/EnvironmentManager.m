@@ -48,8 +48,8 @@
         
         Environment *staging = [[Environment alloc] init];
         staging.name = @"Staging";
-        staging.senseURL = @"http://sense-api-staging.sixgill.run";
-        staging.ingressURL = @"http://sense-ingress-api-staging.sixgill.run";
+        staging.senseURL = @"https://sense-api-node.staging.sixgill.io";
+        staging.ingressURL = @"https://edge-ingress.staging.sixgill.io";
         
         Environment *prod = [[Environment alloc] init];
         prod.name = @"Production";
