@@ -97,7 +97,9 @@
 
     NSMutableDictionary<NSString*, NSString*> *aliases = [[NSMutableDictionary alloc] init];
     [aliases setValue:@"1234" forKey:@"PHONE_NUMBER"];
-    SGSDKConfigManager *config = [[SGSDKConfigManager alloc] initWithIngressURL:@"https://edge-ingress.staging.sixgill.io" shouldSendDataToServer:true aliases:aliases];
+    
+    SGSDKConfigManager *config = [[SGSDKConfigManager alloc] init];
+    config.aliases = aliases;
 
     [[SGSDK sharedInstance] startWithAPIKey:apiKey andConfig:config andSuccessHandler:^{
         
