@@ -1508,7 +1508,7 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 37M84NL89E;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.AccessWiFi = {
 								enabled = 1;
@@ -1937,7 +1937,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Sync2/Sync2.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 37M84NL89E;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1974,7 +1974,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixgill.sync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b1fda6dc-6a52-4378-83d7-41d0eadcd0b0";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Sanchit Mittal Prov Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sync2/Sync2-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1990,9 +1990,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Sync2/Sync2.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 37M84NL89E;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sync2",
