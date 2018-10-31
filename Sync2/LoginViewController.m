@@ -105,7 +105,7 @@
     
     if (self.checkBoxSelected) {
         if (![self.ingressAPIURLField.text isEqualToString:@""]) {
-            [SGSDK setIngressURL:self.ingressAPIURLField.text];
+            [[[SGSDK sharedInstance] config] setIngressURL:self.ingressAPIURLField.text];
         }
         
         if (![self.apiURLField.text isEqualToString:@""]) {
@@ -222,7 +222,7 @@
         [dropdownMenu closeAllComponentsAnimated:YES];
     });
     
-    [SGSDK setIngressURL:env.ingressURL];
+    [[[SGSDK sharedInstance] config] setIngressURL:env.ingressURL];
     [[EnvironmentManager sharedManager] setSelectedEnvironment:env.senseURL];
 }
 
