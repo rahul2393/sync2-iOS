@@ -301,16 +301,21 @@
 -(void) GetLandmarksForProject:(NSString *_Nonnull)projectId WithCompletion:(void ( ^ _Nullable )(NSArray *landmarks, NSError * _Nullable error))completed{
     
     NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
-                               @"Accept": @"application/json",
-                               @"Connection": @"keep-alive" };
+                               @"Content-Type": @"application/json" };
     
-    NSString *url = [NSString stringWithFormat:@"%@/v2/landmarks/search?projectId=%@", [self urlForEndPoint:@"/v2/projects"],projectId];
+    NSDictionary *parameters = @{ @"projectId": projectId,
+                                  @"limit": @20,
+                                  @"offset": @0};
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/landmarks/search"]]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
-    [request setHTTPMethod:@"GET"];
+    
+    [request setHTTPMethod:@"POST"];
     [request setAllHTTPHeaderFields:headers];
+    [request setHTTPBody:postData];
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request

@@ -160,7 +160,7 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.mapView addOverlay:c];
                 });
-            }else if([lm.geometryType isEqualToString:@"rectangle"]){
+            }else if([lm.geometryType isEqualToString:@"envelope"]){
                 MKPolygon *r = [lm mkMapRect];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.mapView addOverlay:r];
