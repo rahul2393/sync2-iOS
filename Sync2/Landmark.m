@@ -41,19 +41,57 @@
         }else{
             self.type = @"";
         }
+        if (data[@"organizationId"]) {
+            self.organizationId = data[@"organizationId"];
+        }else{
+            self.organizationId = @"";
+        }
+        if (data[@"updatedAt"]) {
+            NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+            [dateFormat setDateFormat:@"yyyyMMdd"];
+            self.updatedAt = [dateFormat dateFromString:data[@"updatedAt"]];
+        }
         
-        if (data[@"model"]) {
-            NSDictionary *model = data[@"model"];
+        if (data[@"createdAt"]) {
+            NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+            [dateFormat setDateFormat:@"yyyyMMdd"];
+            self.createdAt = [dateFormat dateFromString:data[@"createdAt"]];
+        }
+        
+        if (data[@"shape"]) {
+            
+            NSDictionary *model = data[@"shape"];
             self.geometryType = model[@"type"];
             
+            NSArray *coordinate = model[@"coordinates"];
+            
             if ([self.geometryType isEqualToString:@"circle"]) {
-                self.center = model[@"geometry"][@"center"];
-                self.radius = model[@"geometry"][@"radius"];
-            }else if ([self.geometryType isEqualToString:@"rectangle"]){
-                self.sePoint = model[@"geometry"][@"se"];
-                self.nwPoint = model[@"geometry"][@"nw"];
-            }else if([self.geometryType isEqualToString:@"polygon"]){
-                self.polyPts = model[@"geometry"][@"points"];
+                
+                NSMutableDictionary *centerDict = [[NSMutableDictionary alloc]initWithCapacity:2];
+                [centerDict setValue:coordinate[0] forKey:@"lon"];
+                [centerDict setValue:coordinate[1] forKey:@"lat"];
+                
+                self.center = centerDict;
+
+                self.radius = model[@"radius"];
+                
+            } else if ([self.geometryType isEqualToString:@"envelope"]){
+                
+                NSArray *coordinate = model[@"coordinates"];
+                NSMutableDictionary *seDict = [[NSMutableDictionary alloc]initWithCapacity:2];
+                [seDict setValue:coordinate[0][0] forKey:@"lon"];
+                [seDict setValue:coordinate[0][1] forKey:@"lat"];
+                
+                NSMutableDictionary *nwDict = [[NSMutableDictionary alloc]initWithCapacity:2];
+                [nwDict setValue:coordinate[1][0] forKey:@"lon"];
+                [nwDict setValue:coordinate[1][1] forKey:@"lat"];
+                
+                self.sePoint = seDict;
+                self.nwPoint = nwDict;
+                
+            } else if ([self.geometryType isEqualToString:@"polygon"]){
+                
+                self.polyPts = coordinate.firstObject;
             }
         }
     }
@@ -67,9 +105,9 @@
     }
     
     GMSMutablePath *rect = [GMSMutablePath path];
-    for (NSDictionary *coordSet in self.polyPts) {
-        NSNumber *latNum = (NSNumber *)coordSet[@"lat"];
-        NSNumber *lonNum = (NSNumber *)coordSet[@"lon"];
+    for (NSArray *coordSet in self.polyPts) {
+        NSNumber *latNum = (NSNumber *)coordSet[1];
+        NSNumber *lonNum = (NSNumber *)coordSet[0];
         [rect addCoordinate:CLLocationCoordinate2DMake(latNum.doubleValue, lonNum.doubleValue)];
     }
 
@@ -87,9 +125,9 @@
     }
     CLLocationCoordinate2D geofenceArray[self.polyPts.count];
     NSInteger ptCount = 0;
-    for (NSDictionary *coordSet in self.polyPts) {
-        NSNumber *latNum = (NSNumber *)coordSet[@"lat"];
-        NSNumber *lonNum = (NSNumber *)coordSet[@"lon"];
+    for (NSArray *coordSet in self.polyPts) {
+        NSNumber *latNum = (NSNumber *)coordSet[1];
+        NSNumber *lonNum = (NSNumber *)coordSet[0];
         geofenceArray[ptCount] = CLLocationCoordinate2DMake(latNum.doubleValue, lonNum.doubleValue);
         ptCount++;
     }

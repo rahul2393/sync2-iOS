@@ -11,12 +11,15 @@
 @import GoogleMaps;
 @interface Landmark : NSObject
 
-@property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSString *objectId;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSString *projectId;
 @property (nonatomic, strong) NSString *type; // "geometry"
 @property (nonatomic, strong) NSString *geometryType;
+@property (nonatomic, strong) NSString *organizationId;
+@property (nonatomic, strong) NSDate *updatedAt;
+@property (nonatomic, strong) NSDate *createdAt;
 
 // Circle
 @property (nonatomic, strong) NSNumber *radius;
