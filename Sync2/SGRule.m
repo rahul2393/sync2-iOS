@@ -58,7 +58,14 @@
         }
         
         if (data[@"actions"]) {
-            self.actions = data[@"actions"];
+            
+            NSMutableArray<SGRuleAction *> *actions = [[NSMutableArray alloc] init];
+            for (NSDictionary *a in data[@"actions"]) {
+                SGRuleAction *action = [[SGRuleAction alloc] initWithData:a];
+                [actions addObject:action];
+            }
+            
+            self.actions = actions;
         } else {
             self.actions = @[];
         }
@@ -70,8 +77,8 @@
         }
         
         if (data[@"conditionsObject"]) {
-            NSMutableArray<SGRuleCondition *> *condtions = data[@"conditionsObject"];
-            for (NSDictionary *c in condtions) {
+            NSMutableArray<SGRuleCondition *> *condtions = [[NSMutableArray alloc] init];
+            for (NSDictionary *c in data[@"conditionsObject"]) {
                 SGRuleCondition *condition = [[SGRuleCondition alloc] initWithData:c];
                 [condtions addObject:condition];
             }
@@ -96,7 +103,12 @@
         }
         
         if (data[@"enabled"]) {
-            self.enabled = data[@"enabled"];
+            NSNumber *enabledN = data[@"enabled"];
+            if (enabledN.integerValue == 0) {
+                self.enabled = NO;
+            } else {
+                self.enabled = YES;
+            }
         }
         
         if (data[@"channelIds"]) {

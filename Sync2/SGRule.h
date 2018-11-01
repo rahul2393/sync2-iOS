@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SGRuleCondition.h"
+#import "SGRuleAction.h"
 
 @interface SGRule : NSObject
 
@@ -18,7 +19,7 @@
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSArray *tags;
 @property (nonatomic, strong) NSString *ruledescription;
-@property (nonatomic, strong) NSArray *actions;
+@property (nonatomic, strong) NSArray<SGRuleAction *> *actions;
 @property (nonatomic, strong) NSString *conditions;
 @property (nonatomic, strong) NSArray<SGRuleCondition *> *conditionsObject;
 @property (nonatomic, strong) NSDate *createdAt;
@@ -31,7 +32,3 @@
 - (instancetype)initWithData:(NSDictionary *)data;
 
 @end
-
-
-
-                        

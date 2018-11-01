@@ -20,6 +20,7 @@
 
 @property (nonatomic, strong) NSArray *rules;
 @property (nonatomic, readwrite) Project *currentProject;
+@property (nonatomic, readwrite) long conditionsCount;
 @end
 
 @implementation RulesCloudViewController
@@ -33,6 +34,8 @@
     
     [self.tableView setHidden:YES];
     [self.emptyView setHidden:NO];
+    
+    self.conditionsCount = 0;
     
     _currentProject = [[SettingsManager sharedManager] selectedProject];
     
@@ -97,7 +100,11 @@
     cell.titleLabel.text = rule.name;
     cell.detailLabel.text = rule.ruledescription;
     cell.actionCountLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)rule.actions.count];
-    cell.conditionCountLabel.text = @"1";
+    
+    self.conditionsCount = 0;
+    [self findConditionsCount:rule.conditionsObject];
+    cell.conditionCountLabel.text = [NSString stringWithFormat:@"%ld", self.conditionsCount];
+    
     cell.statusImageView.image = rule.enabled ? [UIImage imageNamed: @"rules-green-circle"] : [UIImage imageNamed: @"rules-red-circle"];
     
     return cell;
@@ -118,5 +125,18 @@
     vc.currentPage = 1;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+
+-(void) findConditionsCount:(NSArray<SGRuleCondition *> *)ruleConditions {
+    
+    for (SGRuleCondition *rc in ruleConditions) {
+        if (rc.items.count == 0) {
+            self.conditionsCount += 1;
+        } else {
+            [self findConditionsCount:rc.items];
+        }
+    }
+}
+
 
 @end

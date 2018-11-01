@@ -55,6 +55,7 @@
 		75E352982116D62800471D39 /* LogInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E352972116D62800471D39 /* LogInformationViewController.m */; };
 		75E68A4A212E962500797E27 /* LogBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E68A49212E962500797E27 /* LogBaseViewController.m */; };
 		75F45D5C218AEC080077B9F0 /* SGRuleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F45D5B218AEC080077B9F0 /* SGRuleCondition.m */; };
+		75F55758218B20B000208229 /* SGRuleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F55757218B20B000208229 /* SGRuleAction.m */; };
 		75FDF1B72134149E0068D015 /* InformationNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1B62134149E0068D015 /* InformationNotification.m */; };
 		75FDF1BA213414AF0068D015 /* ActionNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1B9213414AF0068D015 /* ActionNotification.m */; };
 		75FDF1BD213414C60068D015 /* FeedbackNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1BC213414C60068D015 /* FeedbackNotification.m */; };
@@ -264,6 +265,8 @@
 		75E68A49212E962500797E27 /* LogBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogBaseViewController.m; sourceTree = "<group>"; };
 		75F45D5A218AEC080077B9F0 /* SGRuleCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGRuleCondition.h; sourceTree = "<group>"; };
 		75F45D5B218AEC080077B9F0 /* SGRuleCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGRuleCondition.m; sourceTree = "<group>"; };
+		75F55756218B20B000208229 /* SGRuleAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGRuleAction.h; sourceTree = "<group>"; };
+		75F55757218B20B000208229 /* SGRuleAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGRuleAction.m; sourceTree = "<group>"; };
 		75FDF1B52134149E0068D015 /* InformationNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InformationNotification.h; sourceTree = "<group>"; };
 		75FDF1B62134149E0068D015 /* InformationNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InformationNotification.m; sourceTree = "<group>"; };
 		75FDF1B8213414AF0068D015 /* ActionNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionNotification.h; sourceTree = "<group>"; };
@@ -885,6 +888,8 @@
 			isa = PBXGroup;
 			children = (
 				E9485EAB20194DB600B553E2 /* SGRule.h */,
+				75F55756218B20B000208229 /* SGRuleAction.h */,
+				75F55757218B20B000208229 /* SGRuleAction.m */,
 				75F45D5A218AEC080077B9F0 /* SGRuleCondition.h */,
 				75F45D5B218AEC080077B9F0 /* SGRuleCondition.m */,
 				E9485EAC20194DB600B553E2 /* SGRule.m */,
@@ -1778,6 +1783,7 @@
 				E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */,
 				E9F29C152050B8EB0024E3B5 /* Environment.m in Sources */,
 				75502A7B210A155200BFCA2A /* RulesEdgeViewController.m in Sources */,
+				75F55758218B20B000208229 /* SGRuleAction.m in Sources */,
 				753CB72221070BFD00C11223 /* SurveyNotificationTableViewCell.m in Sources */,
 				E962B3511EF1FB2600ECB920 /* LogViewController.m in Sources */,
 				75502A7E210A162D00BFCA2A /* RulesViewController.m in Sources */,
