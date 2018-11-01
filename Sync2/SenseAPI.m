@@ -344,8 +344,7 @@
                                @"Accept": @"application/json",
                                @"Connection": @"keep-alive" };
     
-    NSString *url = [NSString stringWithFormat:@"%@/v2/rules?projectId=%@", [self urlForEndPoint:@"/v2/projects"],projectId];
-//    NSString *url = [NSString stringWithFormat:@"%@/%@/rules", [self urlForEndPoint:@"/v2/projects"],projectId];
+    NSString *url = [NSString stringWithFormat:@"%@?projectId=%@",[self urlForEndPoint:@"/v2/rules"] , projectId];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy

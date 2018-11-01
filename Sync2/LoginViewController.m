@@ -47,17 +47,12 @@
     prod.senseURL = @"https://sense-api.sixgill.com";
     prod.ingressURL = @"https://sense-ingress-api.sixgill.com";
     
-    Environment *dev = [[Environment alloc] init];
-    dev.name = @"Production";
-    dev.senseURL = @"https://sense-api-staging.dev.sixgill.io";
-    dev.ingressURL = @"https://sense-ingress-api-staging.dev.sixgill.io";
+    self.environments = @[staging, prod];
     
-    self.environments = @[staging, prod, dev];
-    
-    self.emailAddressField.text = @"ritik.rishu@hotcocoasoftware.com";
-    self.passwordField.text = @"password123";
-//    self.emailAddressField.text = @"cvalera@sixgill.com";
-//    self.passwordField.text = @"super1234";
+//    self.emailAddressField.text = @"ritik.rishu@hotcocoasoftware.com";
+//    self.passwordField.text = @"password123";
+    self.emailAddressField.text = @"cvalera@sixgill.com";
+    self.passwordField.text = @"super1234";
     
     self.selectedURLLabel.text = [[EnvironmentManager sharedManager] selectedEnvironment];
     

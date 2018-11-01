@@ -7,40 +7,31 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SGRuleCondition.h"
 
 @interface SGRule : NSObject
 
-
 @property (nonatomic, strong) NSString *objectId;
+@property (nonatomic, strong) NSString *projectId;
+@property (nonatomic, strong) NSString *organizationId;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSArray *tags;
 @property (nonatomic, strong) NSString *ruledescription;
-@property (nonatomic, readwrite) BOOL enabled;
-@property (nonatomic, strong) NSDictionary *logicalCondition;
 @property (nonatomic, strong) NSArray *actions;
+@property (nonatomic, strong) NSString *conditions;
+@property (nonatomic, strong) NSArray<SGRuleCondition *> *conditionsObject;
+@property (nonatomic, strong) NSDate *createdAt;
+@property (nonatomic, strong) NSDate *updatedAt;
+@property (nonatomic, strong) NSString *generator;
+@property (nonatomic, readwrite) BOOL enabled;
+@property (nonatomic, strong) NSArray *channelIds;
 
-// logicalCondition
-@property (nonatomic, strong) NSArray *logicalConditionAnd;
-
-// logicalCondition and
-//@property (nonatomic, strong) NSArray *logicalConditionAndsda;
-
-
-// actions
-@property (nonatomic, strong) NSString *actionId;
-@property (nonatomic, strong) NSString *actionType;
-@property (nonatomic, strong) NSString *actionsuccessfullyExecutedAt;
-@property (nonatomic, strong) NSString *actiondeviceId;
-@property (nonatomic, strong) NSString *actionsubject;
-@property (nonatomic, strong) NSString *actionMessage;
-@property (nonatomic, strong) NSString *actionURL;
-@property (nonatomic, strong) NSString *actionMethod;
-@property (nonatomic, strong) NSDictionary *actionRecipients;
-
-// actions recipients
-@property (nonatomic, strong) NSArray *actionRecipientsEmails;
-
-@property (nonatomic, readwrite) BOOL isActive;
 
 - (instancetype)initWithData:(NSDictionary *)data;
 
 @end
+
+
+
+                        
