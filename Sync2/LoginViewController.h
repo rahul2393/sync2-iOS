@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIView *invalidLoginView;
 @property (weak, nonatomic) IBOutlet UITextField *emailAddressField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *apiURLField;
 @property (weak, nonatomic) IBOutlet UITextField *ingressAPIURLField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
