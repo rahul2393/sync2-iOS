@@ -29,8 +29,7 @@
     
     self.emailAddressField.delegate = self;
     self.passwordField.delegate = self;
-    self.apiURLField.delegate = self;
-    self.ingressAPIURLField.delegate = self;
+    self.phoneNumberField.delegate = self;
     
     self.urlsDropdown.delegate = self;
     self.urlsDropdown.dataSource = self;
@@ -51,8 +50,9 @@
     
 //    self.emailAddressField.text = @"ritik.rishu@hotcocoasoftware.com";
 //    self.passwordField.text = @"password123";
-//    self.emailAddressField.text = @"cvalera@sixgill.com";
-//    self.passwordField.text = @"super1234";
+    self.emailAddressField.text = @"cvalera@sixgill.com";
+    self.passwordField.text = @"super1234";
+    self.phoneNumberField.text = @"1234";
     
     self.selectedURLLabel.text = [[EnvironmentManager sharedManager] selectedEnvironment];
     
@@ -73,14 +73,18 @@
     
     if (checkBoxSelected) {
         self.viewHeightConstraint.constant = 164;
-        self.scrollableViewHeightConstraint.constant = 839;
+        self.scrollableViewHeightConstraint.constant = 870;
         self.URLDropdownHeight.constant = 0;
         [self.selectedURLLabel setHidden:YES];
+        self.apiURLField.delegate = self;
+        self.ingressAPIURLField.delegate = self;
     } else {
         self.viewHeightConstraint.constant = 0;
         self.URLDropdownHeight.constant = 44;
-        self.scrollableViewHeightConstraint.constant = 675;
+        self.scrollableViewHeightConstraint.constant = 750;
         [self.selectedURLLabel setHidden:NO];
+        self.apiURLField.delegate = nil;
+        self.ingressAPIURLField.delegate = nil;
     }
 }
 
@@ -95,6 +99,7 @@
     
     [self.emailAddressField resignFirstResponder];
     [self.passwordField resignFirstResponder];
+    [self.phoneNumberField resignFirstResponder];
     [self.apiURLField resignFirstResponder];
     [self.ingressAPIURLField resignFirstResponder];
     
@@ -121,6 +126,10 @@
         }else{
             // Login was good.
             dispatch_async(dispatch_get_main_queue(),^{
+                
+                [[NSUserDefaults standardUserDefaults] setObject:self.phoneNumberField.text forKey:kPhoneNumber];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+
                 [self performSegueWithIdentifier:@"showTabController" sender:self];
                 [self.loginButton setHidden:NO];
                 [self.activityIndicator setHidden:YES];

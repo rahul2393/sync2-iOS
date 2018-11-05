@@ -95,12 +95,15 @@
 
 -(void) startSDKWithAPIKey:(NSString *)apiKey{
 
-    NSMutableDictionary<NSString*, NSString*> *aliases = [[NSMutableDictionary alloc] init];
-    [aliases setValue:@"1234" forKey:@"PHONE_NUMBER"];
-    
     SGSDKConfigManager *config = [[SGSDKConfigManager alloc] init];
-    config.aliases = aliases;
-
+    
+    NSString *phoneNumber = [[NSUserDefaults standardUserDefaults] stringForKey:kPhoneNumber];
+    if (phoneNumber) {
+        NSMutableDictionary<NSString*, NSString*> *aliases = [[NSMutableDictionary alloc] init];
+        [aliases setValue:phoneNumber forKey:@"phone_number"];
+        config.aliases = aliases;
+    }
+    
     [[SGSDK sharedInstance] startWithAPIKey:apiKey andConfig:config andSuccessHandler:^{
         
         [SGSDK enableWithSuccessHandler:^{

@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <SixgillSDK/SixgillSDK.h>
 #import <Crashlytics/Crashlytics.h>
+
+#define kPhoneNumber @"kPhoneNumber"
+
 @interface SDKManager : NSObject<SGLogDelegateProtocol>
 
 + (id)sharedManager;
