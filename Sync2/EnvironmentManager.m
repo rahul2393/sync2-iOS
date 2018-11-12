@@ -11,6 +11,7 @@
 #import "SDKManager.h"
 
 #define kEnvironmentSenseURL @"kEnvironmentSenseURL"
+#define kEnvironmentIngressURL @"kEnvironmentIngressURL"
 
 @implementation EnvironmentManager
 
@@ -23,8 +24,8 @@
     return sharedMyManager;
 }
 
-- (void)setSelectedEnvironment:(NSString *)senseURL {
 
+- (void)setSelectedSenseURL:(NSString *)senseURL {
     [[NSUserDefaults standardUserDefaults] setObject:senseURL forKey:kEnvironmentSenseURL];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -32,31 +33,46 @@
     [[SettingsManager sharedManager] logout];
 }
 
-- (NSString *)selectedEnvironment {
+- (NSString *)selectedSenseURL {
     
     NSString *senseURL = [[NSUserDefaults standardUserDefaults] stringForKey:kEnvironmentSenseURL];
     if (senseURL) {
         return senseURL;
     }
-    Environment *env = self.environments[1];
+    Environment *env = self.environments[0];
     [[SDKManager sharedManager] setIngressUrl:env.ingressURL];
     return env.senseURL;
 }
 
+- (void)setSelectedIngressURL:(NSString *)ingressURL {
+    [[NSUserDefaults standardUserDefaults] setObject:ingressURL forKey:kEnvironmentIngressURL];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSString *)selectedIngressURL {
+    NSString *ingressURL = [[NSUserDefaults standardUserDefaults] stringForKey:kEnvironmentIngressURL];
+    if (ingressURL) {
+        return ingressURL;
+    }
+    Environment *env = self.environments[0];
+    [[SDKManager sharedManager] setIngressUrl:env.ingressURL];
+    return env.ingressURL;
+}
+
 - (id)init {
     if (self = [super init]) {
-        
-        Environment *staging = [[Environment alloc] init];
-        staging.name = @"Staging";
-        staging.senseURL = @"https://sense-api-node.staging.sixgill.io";
-        staging.ingressURL = @"https://edge-ingress.staging.sixgill.io";
         
         Environment *prod = [[Environment alloc] init];
         prod.name = @"Production";
         prod.senseURL = @"https://sense-api.sixgill.com";
         prod.ingressURL = @"https://sense-ingress-api.sixgill.com";
         
-        self.environments = @[staging, prod];
+        Environment *staging = [[Environment alloc] init];
+        staging.name = @"Staging";
+        staging.senseURL = @"https://sense-api-node.staging.sixgill.io";
+        staging.ingressURL = @"https://edge-ingress.staging.sixgill.io";
+        
+        self.environments = @[prod, staging];
         
     }
     return self;

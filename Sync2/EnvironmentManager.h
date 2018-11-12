@@ -14,7 +14,10 @@
 
 @property (nonatomic, strong) NSArray *environments;
 
--(NSString*) selectedEnvironment;
--(void) setSelectedEnvironment:(NSString*)senseURL;
+-(NSString*) selectedSenseURL;
+-(void) setSelectedSenseURL:(NSString*)senseURL;
+
+-(NSString*) selectedIngressURL;
+-(void) setSelectedIngressURL:(NSString*)ingressURL;
 
 @end

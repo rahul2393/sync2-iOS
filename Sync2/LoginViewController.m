@@ -18,7 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, readwrite) BOOL checkBoxSelected;
-@property (nonatomic, strong) NSArray *environments;
 
 @end
 
@@ -36,25 +35,16 @@
     
     self.checkBoxSelected = false;
     
-    Environment *staging = [[Environment alloc] init];
-    staging.name = @"Staging";
-    staging.senseURL = @"https://sense-api-node.staging.sixgill.io";
-    staging.ingressURL = @"https://edge-ingress.staging.sixgill.io";
-    
-    Environment *prod = [[Environment alloc] init];
-    prod.name = @"Production";
-    prod.senseURL = @"https://sense-api.sixgill.com";
-    prod.ingressURL = @"https://sense-ingress-api.sixgill.com";
-    
-    self.environments = @[staging, prod];
-    
 //    self.emailAddressField.text = @"ritik.rishu@hotcocoasoftware.com";
 //    self.passwordField.text = @"password123";
     self.emailAddressField.text = @"cvalera@sixgill.com";
     self.passwordField.text = @"super1234";
     self.phoneNumberField.text = @"1234";
     
-    self.selectedURLLabel.text = [[EnvironmentManager sharedManager] selectedEnvironment];
+    Environment *env = [[EnvironmentManager sharedManager] environments][0];
+    self.selectedURLLabel.text = env.senseURL;
+    [[EnvironmentManager sharedManager] setSelectedSenseURL:env.senseURL];
+    [[EnvironmentManager sharedManager] setSelectedIngressURL:env.ingressURL];
     
     [self registerForKeyboardNotifications];
     
@@ -85,6 +75,10 @@
         [self.selectedURLLabel setHidden:NO];
         self.apiURLField.delegate = nil;
         self.ingressAPIURLField.delegate = nil;
+        
+        Environment *env = [[EnvironmentManager sharedManager] environments][0];
+        [[EnvironmentManager sharedManager] setSelectedSenseURL:env.senseURL];
+        [[EnvironmentManager sharedManager] setSelectedIngressURL:env.ingressURL];
     }
 }
 
@@ -103,13 +97,15 @@
     [self.apiURLField resignFirstResponder];
     [self.ingressAPIURLField resignFirstResponder];
     
+    [self.invalidLoginView setHidden:YES];
+    
     if (self.checkBoxSelected) {
         if (![self.ingressAPIURLField.text isEqualToString:@""]) {
-            [[[SGSDK sharedInstance] config] setIngressURL:self.ingressAPIURLField.text];
+            [[EnvironmentManager sharedManager] setSelectedIngressURL:self.ingressAPIURLField.text];
         }
         
         if (![self.apiURLField.text isEqualToString:@""]) {
-            [[EnvironmentManager sharedManager] setSelectedEnvironment:self.apiURLField.text];
+            [[EnvironmentManager sharedManager] setSelectedSenseURL:self.apiURLField.text];
         }
     }
     
@@ -209,25 +205,25 @@
 }
 
 - (NSInteger)dropdownMenu:(MKDropdownMenu *)dropdownMenu numberOfRowsInComponent:(NSInteger)component {
-    return self.environments.count;
+    return [[[EnvironmentManager sharedManager] environments] count];
 }
 
 - (NSString *)dropdownMenu:(MKDropdownMenu *)dropdownMenu titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    Environment *env = self.environments[row];
+    Environment *env = [[EnvironmentManager sharedManager] environments][row];
     
     return env.senseURL;
 }
 
 - (void)dropdownMenu:(MKDropdownMenu *)dropdownMenu didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    Environment *env = self.environments[row];
+    Environment *env = [[EnvironmentManager sharedManager] environments][row];
     self.selectedURLLabel.text = env.senseURL;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [dropdownMenu closeAllComponentsAnimated:YES];
     });
     
-    [[[SGSDK sharedInstance] config] setIngressURL:env.ingressURL];
-    [[EnvironmentManager sharedManager] setSelectedEnvironment:env.senseURL];
+    [[EnvironmentManager sharedManager] setSelectedSenseURL:env.senseURL];
+    [[EnvironmentManager sharedManager] setSelectedIngressURL:env.ingressURL];
 }
 
 @end

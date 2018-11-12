@@ -20,7 +20,7 @@
 
 + (NSString *) serverAddress{
     
-    return [[EnvironmentManager sharedManager] selectedEnvironment];
+    return [[EnvironmentManager sharedManager] selectedSenseURL];
 }
 
 + (id)sharedManager {
