@@ -19,8 +19,10 @@ target 'Sync2' do
     pod 'ActionSheetPicker-3.0'
     pod 'MKDropdownMenu'
     pod 'MaterialComponents/Snackbar'
+    pod 'TTGSnackbar'
 
-#    pod 'SixgillSDK'
+
+    pod 'SixgillSDK'
 
   target 'Sync2Tests' do
     inherit! :search_paths

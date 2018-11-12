@@ -1,5 +1,11 @@
 PODS:
   - ActionSheetPicker-3.0 (2.3.0)
+  - CocoaLumberjack (3.4.2):
+    - CocoaLumberjack/Default (= 3.4.2)
+    - CocoaLumberjack/Extensions (= 3.4.2)
+  - CocoaLumberjack/Default (3.4.2)
+  - CocoaLumberjack/Extensions (3.4.2):
+    - CocoaLumberjack/Default
   - Crashlytics (3.10.5):
     - Fabric (~> 1.7.9)
   - Fabric (1.7.9)
@@ -87,6 +93,9 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SixgillSDK (1.2.6):
+    - CocoaLumberjack
+  - TTGSnackbar (1.7.5)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
@@ -98,10 +107,13 @@ DEPENDENCIES:
   - GooglePlaces
   - MaterialComponents/Snackbar
   - MKDropdownMenu
+  - SixgillSDK
+  - TTGSnackbar
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ActionSheetPicker-3.0
+    - CocoaLumberjack
     - Crashlytics
     - Fabric
     - Firebase
@@ -117,9 +129,13 @@ SPEC REPOS:
     - MDFTextAccessibility
     - MKDropdownMenu
     - nanopb
+    - TTGSnackbar
+  https://github.com/sixgill/SixgillPodSpecs.git:
+    - SixgillSDK
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
+  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   Crashlytics: 7f2e38d302d9da96475b3d64d86fb29e31a542b7
   Fabric: a2917d3895e4c1569b9c3170de7320ea1b1e6661
   Firebase: 355bd535bfdacaa82a7fe8d9784115edefd6fc03
@@ -135,7 +151,9 @@ SPEC CHECKSUMS:
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   MKDropdownMenu: 269df4a41d21a1db684ce8bc709befe419fc5bae
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  SixgillSDK: 7c7fc457fb52d8d0a6e09458fcadb5d2e5fd32ea
+  TTGSnackbar: 2cf4e7b6ffbe5cddf248a73f3ee952b71bee8ea3
 
-PODFILE CHECKSUM: 377a6dff5cfd98ce7754feffbe6e3e33f901c09f
+PODFILE CHECKSUM: 9d9eb09bdb966480512c41262cba6dfd6bede58c
 
 COCOAPODS: 1.5.3
