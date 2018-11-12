@@ -30,7 +30,6 @@
 		75502A7E210A162D00BFCA2A /* RulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A7D210A162D00BFCA2A /* RulesViewController.m */; };
 		75502A81210A5DC800BFCA2A /* LogMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A80210A5DC800BFCA2A /* LogMapViewController.m */; };
 		75511ABD2122FAF100D98E1A /* CopyLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 75511ABC2122FAF100D98E1A /* CopyLabel.m */; };
-		755F25A62111CA4C0083E044 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 755F25A32111C55C0083E044 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		756B21C9213E7A420089F731 /* SnackbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 756B21C8213E7A420089F731 /* SnackbarView.m */; };
 		756B21CC213E86730089F731 /* ZoomControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756B21CB213E86730089F731 /* ZoomControlView.xib */; };
 		756B21D0213E895A0089F731 /* ZoomControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 756B21CF213E895A0089F731 /* ZoomControlView.m */; };
@@ -166,7 +165,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				755F25A62111CA4C0083E044 /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +217,6 @@
 		75502A80210A5DC800BFCA2A /* LogMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogMapViewController.m; sourceTree = "<group>"; };
 		75511ABC2122FAF100D98E1A /* CopyLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyLabel.m; sourceTree = "<group>"; };
 		75511ABE2122FB0200D98E1A /* CopyLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyLabel.h; sourceTree = "<group>"; };
-		755F25A32111C55C0083E044 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		756B21C8213E7A420089F731 /* SnackbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnackbarView.m; sourceTree = "<group>"; };
 		756B21CA213E7A5A0089F731 /* SnackbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SnackbarView.h; sourceTree = "<group>"; };
 		756B21CB213E86730089F731 /* ZoomControlView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZoomControlView.xib; sourceTree = "<group>"; };
@@ -1097,7 +1094,6 @@
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
-				755F25A32111C55C0083E044 /* SixgillSDK.framework */,
 				756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */,
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
@@ -1458,6 +1454,7 @@
 				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
 				E9FB148A207D828600A00EFF /* Embed Frameworks */,
 				756C2D5920F60012008560FF /* ShellScript */,
+				A64F0AD5409951C6792622F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1659,6 +1656,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A64F0AD5409951C6792622F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh",
+				"${PODS_ROOT}/SixgillSDK/SixgillSDK/SixgillSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SixgillSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F9857E0285B6AEDE068EA46F /* [CP] Check Pods Manifest.lock */ = {
