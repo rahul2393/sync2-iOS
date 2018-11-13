@@ -1,1 +1,0 @@
-../../../MaterialComponents/components/private/Shapes/src/MDCShapedShadowLayer.h

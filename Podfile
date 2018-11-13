@@ -18,9 +18,7 @@ target 'Sync2' do
     pod 'Crashlytics', '~> 3.10.4'
     pod 'ActionSheetPicker-3.0'
     pod 'MKDropdownMenu'
-    pod 'MaterialComponents/Snackbar'
     pod 'TTGSnackbar'
-
 
     pod 'SixgillSDK'
 
