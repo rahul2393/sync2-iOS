@@ -36,23 +36,11 @@
     
     [self filterIOSChannels:self.channels];
     
-    if (self.channels.count == 0) {
-        [self.tableView setHidden:YES];
-        [self.noChannelView setHidden:NO];
-        [self.selectChannelButton setHidden:YES];
-        
-        [self showSnackBar];
-        
-    } else {
-        [self.tableView setHidden:NO];
-        [self.noChannelView setHidden:YES];
-        [self.selectChannelButton setHidden:NO];
-    }
-    
     [self.selectChannelButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
     [self.selectChannelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.selectedChannelIx = -1;
     [self setButtonEnabled:NO];
+    [self.loadingView setHidden:YES];
     
     DataChannel *selectedChannel = [[SettingsManager sharedManager] selectedDataChannel];
     if (selectedChannel) {
@@ -76,6 +64,23 @@
         }
     }
     
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if (self.channels.count == 0) {
+        [self.tableView setHidden:YES];
+        [self.noChannelView setHidden:NO];
+        [self.selectChannelButton setHidden:YES];
+        
+        [self showSnackBar];
+        
+    } else {
+        [self.tableView setHidden:NO];
+        [self.noChannelView setHidden:YES];
+        [self.selectChannelButton setHidden:NO];
+    }
 }
 
 - (void)filterIOSChannels:(NSArray *)channels {

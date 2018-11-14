@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *selectChannelButton;
 @property (weak, nonatomic) IBOutlet UIView *noChannelView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingView;
 
 @property (nonatomic, strong) NSArray *channels;
 @property (nonatomic, readwrite) BOOL useDummy;
