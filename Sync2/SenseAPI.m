@@ -97,8 +97,9 @@
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
-                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
-                                                            return;
+                                                        if (httpResponse.statusCode == 401) {
+                                                            NSError *err = [NSError errorWithDomain:@"iOS app generated" code:httpResponse.statusCode userInfo:@{ NSLocalizedDescriptionKey:@"Invalid username password" }];
+                                                            completed(err);
                                                         }
                                                         
                                                         SGToken *token = [[SGToken alloc]initWithData:data];
@@ -252,9 +253,13 @@
                                                         APIKey *k = [apiKeys firstObject];
                                                         [[SDKManager sharedManager] setCurrentAPIKey:k.apiKey];
                                                         [[SDKManager sharedManager] stopSDK];
-                                                        [[SDKManager sharedManager] startSDKWithAPIKey:k.apiKey];
                                                         
-                                                        completed(nil, nil);
+                                                        [[SDKManager sharedManager] startSDKWithAPIKey:k.apiKey andSuccessHandler:^{
+                                                            completed(nil, nil);
+                                                        } andFailureHandler:^(NSString *failureMessage) {
+                                                            NSError *err = [NSError errorWithDomain:@"iOS app generated" code:httpResponse.statusCode userInfo:@{NSLocalizedDescriptionKey:failureMessage}];
+                                                            completed(nil, err);
+                                                        }];
                                                     }
                                                 }];
     [dataTask resume];
