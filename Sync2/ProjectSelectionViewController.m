@@ -13,6 +13,8 @@
 #import "ProjectSelectionTableViewCell.h"
 #import "SnackbarView.h"
 
+#import "SDKManager.h"
+
 @import SixgillSDK;
 
 @interface ProjectSelectionViewController ()

@@ -11,6 +11,7 @@
 #import "SettingsManager.h"
 #import "ProjectSelectionTableViewCell.h"
 #import "SnackbarView.h"
+#import "SDKManager.h"
 
 @interface DataChannelSelectionViewController ()
 
@@ -148,11 +149,24 @@
 
 - (IBAction)selectChannelButtonTapped:(id)sender {
     
-    [[SettingsManager sharedManager] selectDataChannel:self.channels[self.selectedChannelIx]];
-    
     NSLog(@"Button tapped");
+    [self.loadingView setHidden:NO];
+    [self.loadingView startAnimating];
+    [self.selectChannelButton setHidden:YES];
     
-    [self dismissScreen];
+    [[SettingsManager sharedManager] selectDataChannel:self.channels[self.selectedChannelIx] withSuccessHandler:^(NSArray *apiKeys, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self.selectChannelButton setHidden:NO];
+            [self.loadingView setHidden:YES];
+            [self.loadingView stopAnimating];
+            [self dismissScreen];
+        });
+    } withFailureHandler:^{
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self.loadingView setHidden:YES];
+            [self.loadingView stopAnimating];
+        });
+    }];
 }
 
 #pragma mark - Snackbar View

@@ -20,7 +20,7 @@
 - (NSString *) currentAPIKey;
 - (void) setCurrentAPIKey:(NSString *) apiKey;
 
--(void) startSDKWithAPIKey:(NSString *)apiKey;
+-(void) startSDKWithAPIKey:(NSString *)apiKey andSuccessHandler:(nullable void (^)())successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;;
 -(void) stopSDK;
 
 -(void) setSensorDataDelegate:(id<SensorUpdateDelegate>)delegate;

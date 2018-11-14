@@ -234,17 +234,21 @@
     return dc;
 }
 
--(void) selectDataChannel:(DataChannel *) dataChannel{
+- (void)selectDataChannel:(DataChannel *)dataChannel withSuccessHandler:(void (^)(NSArray *, NSError * _Nullable))successBlock withFailureHandler:(void (^)())failureBlock{
+    
     [[NSUserDefaults standardUserDefaults] setObject:[dataChannel toDictionary] forKey:KEY_SelectedDataChannel];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [[SenseAPI sharedManager]GetAPIKeys:^(NSArray *apiKeys, NSError * _Nullable error) {
-        
+    [[SenseAPI sharedManager] GetAPIKeys:^(NSArray *apiKeys, NSError * _Nullable error) {
+        if (error) {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannel];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            failureBlock();
+        } else {
+            successBlock(apiKeys, error);
+        }
     }];
 }
-
-
-
 
 -(BOOL) mapShowLast5Pts{
     return [[NSUserDefaults standardUserDefaults] boolForKey:KEY_MAP_SHOWLAST5PTS];

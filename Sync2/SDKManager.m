@@ -7,6 +7,10 @@
 //
 
 #import "SDKManager.h"
+#import "EnvironmentManager.h"
+#import "SettingsManager.h"
+#import "AppDelegate.h"
+#import "SnackbarView.h"
 
 #define KEY_API @"currentAPIKey"
 #define Sensors_Data_Key @"sensorsDataKey"
@@ -93,9 +97,11 @@
    [SGSDK requestAlwaysPermission];
 }
 
--(void) startSDKWithAPIKey:(NSString *)apiKey{
-
+- (void)startSDKWithAPIKey:(NSString *)apiKey andSuccessHandler:(void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock{
+    
     SGSDKConfigManager *config = [[SGSDKConfigManager alloc] init];
+    
+    config.ingressURL = [[EnvironmentManager sharedManager] selectedIngressURL];
     
     NSString *phoneNumber = [[NSUserDefaults standardUserDefaults] stringForKey:kPhoneNumber];
     if (phoneNumber) {
@@ -107,7 +113,7 @@
     [[SGSDK sharedInstance] startWithAPIKey:apiKey andConfig:config andSuccessHandler:^{
         
         [SGSDK enableWithSuccessHandler:^{
-            
+            successBlock();
             [SGSDK setMotionActivityEnabled:YES];
             //            [SGSDK requestAlwaysPermission];
             
@@ -116,6 +122,18 @@
         }];
         
     } andFailureHandler:^(NSString *msg) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            failureBlock(msg);
+            
+            [SnackbarView showSnackbar:@"Change API Configuration" actionText:@"GO TO LOGIN" actionHandler:^{
+                [[SettingsManager sharedManager] logout];
+                [[SDKManager sharedManager] stopSDK];
+                AppDelegate *appDel = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                [appDel.window.rootViewController.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+            }];
+            
+        });
         
     }];
     

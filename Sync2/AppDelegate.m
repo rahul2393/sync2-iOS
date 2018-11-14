@@ -42,7 +42,7 @@
     NSString *a = [[SDKManager sharedManager] currentAPIKey];
     
     if (e && a) {
-        [[SDKManager sharedManager] startSDKWithAPIKey: [[SDKManager sharedManager] currentAPIKey]];
+        [[SDKManager sharedManager] startSDKWithAPIKey:[[SDKManager sharedManager] currentAPIKey] andSuccessHandler:^{} andFailureHandler:^(NSString *failureMessage) {}];
     }
     
     [GMSServices provideAPIKey:kMapsAPIKey];

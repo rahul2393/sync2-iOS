@@ -31,7 +31,7 @@
 -(void) selectProject:(Project *)project;
 
 -(DataChannel *) selectedDataChannel;
--(void) selectDataChannel:(DataChannel *) dataChannel;
+-(void) selectDataChannel:(DataChannel *)dataChannel withSuccessHandler:(void ( ^ _Nullable )(NSArray * apiKeys, NSError * _Nullable error))successBlock withFailureHandler:(void ( ^ _Nullable )())failureBlock;
 
 - (NSArray*)savedRemoteNotificationPayloads;
 - (void)saveRemoteNotificationPayload:(NSDictionary *)payload;
