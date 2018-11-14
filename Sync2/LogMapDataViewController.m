@@ -72,7 +72,7 @@
         case 3: {
             cell.nameLabel.text = @"Cadence";
             if (_event != nil) {
-                cell.valueLabel.text = [NSString stringWithFormat: @"%lld seconds", _event.configurations.cadence];;
+                cell.valueLabel.text = [NSString stringWithFormat: @"%lld seconds", (_event.configurations.cadence/1000)];;
             }
             break;
         }
