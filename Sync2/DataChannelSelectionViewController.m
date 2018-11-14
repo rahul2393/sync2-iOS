@@ -10,7 +10,6 @@
 #import "DataChannel.h"
 #import "SettingsManager.h"
 #import "ProjectSelectionTableViewCell.h"
-#import "MaterialSnackbar.h"
 #import "SnackbarView.h"
 
 @interface DataChannelSelectionViewController ()
@@ -18,7 +17,6 @@
 @property (nonatomic, readwrite) NSInteger selectedChannelIx;
 @property (nonatomic, readwrite) BOOL channelSelected;
 -(void) filterIOSChannels: (NSArray*) channels;
-@property (nonatomic, readwrite) NSTimer *timer;
 @end
 
 @implementation DataChannelSelectionViewController
@@ -102,10 +100,6 @@
     }
 }
 
-- (void)handleTimer:(NSTimer*)theTimer {
-    [MDCSnackbarManager showMessage:(MDCSnackbarMessage*)[theTimer userInfo]];
-}
-
 #pragma mark - Table view data source
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -165,16 +159,11 @@
 
 -(void) showSnackBar {
     
-    SnackbarView *snackbar = [[SnackbarView alloc] init];
-    MDCSnackbarMessage *message = [snackbar showSnackbar:@"Select Another Account" actionTitle:@"GO TO LOGIN" actionHandler:^{
+    [SnackbarView showSnackbar:@"Select Another Account" actionText:@"GO TO LOGIN" actionHandler:^{
         [[SettingsManager sharedManager] logout];
+        [[SDKManager sharedManager] stopSDK];
         [self dismissViewControllerAnimated:YES completion:nil];
-        [self.timer invalidate];
-        self.timer = nil;
     }];
-    
-    self.timer = [NSTimer scheduledTimerWithTimeInterval: 10 target: self
-                                                selector: @selector(handleTimer:) userInfo: message repeats: YES];
 }
 
 @end

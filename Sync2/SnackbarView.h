@@ -6,10 +6,10 @@
 //  Copyright © 2018 Sixgill. All rights reserved.
 //
 
-#import "MaterialSnackbar.h"
+#import <UIKit/UIKit.h>
 
 @interface SnackbarView : NSObject 
 
-- (MDCSnackbarMessage *)showSnackbar:(NSString *)messageText actionTitle:(NSString *)actionTitle actionHandler:(void (^)())onActionHandler;
++(void)showSnackbar:(NSString *)messageText actionText:(NSString *)actionText actionHandler:(void (^)())onActionHandler;
 
 @end

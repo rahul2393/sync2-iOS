@@ -8,23 +8,24 @@
 
 #import "SnackbarView.h"
 
+@import TTGSnackbar;
+
 @implementation SnackbarView
 
-- (MDCSnackbarMessage *)showSnackbar:(NSString *)messageText actionTitle:(NSString *)actionTitle actionHandler:(void (^)())onActionHandler {
++(void)showSnackbar:(NSString *)messageText actionText:(NSString *)actionText actionHandler:(void (^)())onActionHandler{
     
-    MDCSnackbarMessage *message = [[MDCSnackbarMessage alloc] init];
-    message.text = messageText;
-    [message setDuration:10];
+    TTGSnackbar *snackbar =  [[TTGSnackbar alloc] initWithMessage:messageText duration:TTGSnackbarDurationForever];
+    [snackbar setActionText:actionText];
+    snackbar.actionTextColor = [UIColor redColor];
     
-    MDCSnackbarMessageAction *action = [[MDCSnackbarMessageAction alloc] init];
-
-    action.handler = onActionHandler;
-    
-    action.title = actionTitle;
-    message.action = action;
-    [MDCSnackbarManager showMessage:message];
-    [MDCSnackbarManager setButtonTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    
-    return message;
+    [snackbar setActionBlock:^(TTGSnackbar *bar) {
+        
+        onActionHandler();
+        
+        [bar dismiss];
+        
+    }];
+    [snackbar show];
 }
+
 @end

@@ -11,7 +11,6 @@
 #import "Project.h"
 #import "SettingsManager.h"
 #import "ProjectSelectionTableViewCell.h"
-#import "MaterialSnackbar.h"
 #import "SnackbarView.h"
 
 @import SixgillSDK;
@@ -20,7 +19,6 @@
 @property (nonatomic, readwrite) BOOL useDummy;
 @property (nonatomic, readwrite) BOOL projectSelected;
 @property (nonatomic, readwrite) NSInteger selectedIx;
-@property (nonatomic, readwrite) NSTimer *timer;
 @end
 
 @implementation ProjectSelectionViewController
@@ -89,8 +87,6 @@
     }
 }
 
-- (void)handleTimer:(NSTimer*)theTimer {
-    [MDCSnackbarManager showMessage:(MDCSnackbarMessage*)[theTimer userInfo]];
 }
 
 - (void)cancelTapped {
@@ -177,16 +173,12 @@
 #pragma mark - Snackbar View
 
 -(void) showSnackBar {
-    SnackbarView *snackbar = [[SnackbarView alloc] init];
-    MDCSnackbarMessage *message = [snackbar showSnackbar:@"Select Another Account" actionTitle:@"GO TO LOGIN" actionHandler:^{
-        [[SettingsManager sharedManager] logout];
-        [self dismissViewControllerAnimated:YES completion:nil];
-        [self.timer invalidate];
-        self.timer = nil;
-    }];
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval: 10 target: self
-                                                selector: @selector(handleTimer:) userInfo: message repeats: YES];
+    [SnackbarView showSnackbar:@"Select Another Account" actionText:@"GO TO LOGIN" actionHandler:^{
+        [[SettingsManager sharedManager] logout];
+        [[SDKManager sharedManager] stopSDK];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
 @end

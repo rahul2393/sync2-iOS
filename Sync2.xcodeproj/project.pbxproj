@@ -1454,7 +1454,7 @@
 				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
 				E9FB148A207D828600A00EFF /* Embed Frameworks */,
 				756C2D5920F60012008560FF /* ShellScript */,
-				A64F0AD5409951C6792622F1 /* [CP] Embed Pods Frameworks */,
+				2A060E4D932DAC6F8F5EA25E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1607,6 +1607,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2A060E4D932DAC6F8F5EA25E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh",
+				"${PODS_ROOT}/SixgillSDK/SixgillSDK/SixgillSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SixgillSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1656,24 +1674,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A64F0AD5409951C6792622F1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh",
-				"${PODS_ROOT}/SixgillSDK/SixgillSDK/SixgillSDK.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SixgillSDK.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F9857E0285B6AEDE068EA46F /* [CP] Check Pods Manifest.lock */ = {
