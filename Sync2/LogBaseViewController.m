@@ -72,8 +72,9 @@
 - (NSDate *)toDate {
     NSDate *toDate = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_TODATE];
     if (!toDate) {
-//        Setting initial `to` as current time.
-        NSDate *date = [NSDate date];
+//        Setting initial `to` as today's 11:59:59 pm
+        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+        NSDate *date = [calendar dateBySettingHour:23 minute:59 second:59 ofDate:[NSDate date] options:0];
         [[NSUserDefaults standardUserDefaults] setObject:date forKey:KEY_TODATE];
         [[NSUserDefaults standardUserDefaults] synchronize];
 
