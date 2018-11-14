@@ -45,19 +45,6 @@
         }
     }
     
-    if (self.projects.count == 0) {
-        [self.tableView setHidden:YES];
-        [self.noProjectView setHidden:NO];
-        [self.selectProjectButton setHidden:YES];
-        
-        [self showSnackBar];
-        
-    } else {
-        [self.tableView setHidden:NO];
-        [self.noProjectView setHidden:YES];
-        [self.selectProjectButton setHidden:NO];
-    }
-    
     self.title = @"Select Project to Use";
     
     [self.selectProjectButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
@@ -89,6 +76,21 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if (self.projects.count == 0) {
+        [self.tableView setHidden:YES];
+        [self.noProjectView setHidden:NO];
+        [self.selectProjectButton setHidden:YES];
+        
+        [self showSnackBar];
+        
+    } else {
+        [self.tableView setHidden:NO];
+        [self.noProjectView setHidden:YES];
+        [self.selectProjectButton setHidden:NO];
+    }
 }
 
 - (void)cancelTapped {
