@@ -11,10 +11,6 @@
 
 @interface SGProviderManager : SGSensorManager<TaskManager>
 
-// Singleton
-
-+(id) sharedInstance;
-
 // Task Manager Protocol
 -(void) performTaskWithEventToken:(SGEventToken *)eventToken;
 

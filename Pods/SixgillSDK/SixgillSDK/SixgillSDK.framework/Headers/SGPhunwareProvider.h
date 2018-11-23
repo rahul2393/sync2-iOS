@@ -16,14 +16,8 @@
 
 @interface SGPhunwareProvider : SGProviderManager
 
+- (instancetype)initWithApplicationId:(NSString *)applicationId accessKey:(NSString *)accessKey signatureKey:(NSString *)signatureKey buildingId:(NSInteger)buildingId;
+
 @property (strong, nonatomic)  PWManagedLocationManager *phunwareManager;
-
-@property (strong, nonatomic) NSString *applicationId;
-
-@property (strong, nonatomic) NSString *accessKey;
-
-@property (strong, nonatomic) NSString *signatureKey;
-
-@property (nonatomic, readwrite) NSInteger buildingId;
 
 @end
