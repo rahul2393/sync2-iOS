@@ -112,6 +112,9 @@
     
     [[SGSDK sharedInstance] startWithAPIKey:apiKey andConfig:config andSuccessHandler:^{
         
+        SGPhunwareProvider *phunwareProvider = [[SGPhunwareProvider alloc] initWithApplicationId:@"2182" accessKey:@"ffdb2c886b2a02c35a139c61b71ab64ddb6eee67" signatureKey:@"056fe5ef873c5804e9f0676f9d5b58fa295d48e0" buildingId:81601];
+        [[SGSDK sharedInstance] setProviderManager:phunwareProvider];
+        
         [SGSDK enableWithSuccessHandler:^{
             successBlock();
             [SGSDK setMotionActivityEnabled:YES];
