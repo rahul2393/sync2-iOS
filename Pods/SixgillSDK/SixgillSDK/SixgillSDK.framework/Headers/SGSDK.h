@@ -13,6 +13,9 @@
 #import "EventQueuePolicy.h"
 #import "SGIoTDevice.h"
 #import "SGSDKConfigManager.h"
+
+#import "SGProviderManager.h"
+#import "SGPhunwareProvider.h"
 /**
  `SGSDK` is the wrapper class that exists for the purpose of abstracting away implemenation details and providing a clean API to the user.
  **/
@@ -20,6 +23,8 @@
 @interface SGSDK : NSObject
 
 @property(nonatomic, readwrite) SGSDKConfigManager *config;
+
+@property(nonatomic, readwrite) SGProviderManager *providerManager;
 
 +(instancetype)sharedInstance;
 

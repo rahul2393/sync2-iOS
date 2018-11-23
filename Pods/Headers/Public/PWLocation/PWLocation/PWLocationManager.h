@@ -1,0 +1,1 @@
+../../../../PWLocation/Framework/PWLocation.framework/Headers/PWLocationManager.h

@@ -96,6 +96,10 @@
 		<data>
 		MBEVreRek6112w6klWByya+AQUo=
 		</data>
+		<key>Headers/SGEventToken.h</key>
+		<data>
+		a2G4Jmve1GlO3AUoFpgxDcy137A=
+		</data>
 		<key>Headers/SGIoTDevice.h</key>
 		<data>
 		JtMUFmJvsnZ5bqjEFrtAu/0zkgo=
@@ -104,13 +108,25 @@
 		<data>
 		+SKa4cNUtaV2LxfweSsORmCNLlc=
 		</data>
+		<key>Headers/SGPhunwareProvider.h</key>
+		<data>
+		+FYcupc68lvXM6xYehmqiD+fnAM=
+		</data>
+		<key>Headers/SGProviderManager.h</key>
+		<data>
+		Cn0vy8hnMUILkQ818uoI36Qreps=
+		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
-		JJH7nMVTKMq2aGCfdN0IXkySloo=
+		flOc4fw6KESntTS/2MuFI/PmF3w=
 		</data>
 		<key>Headers/SGSDKConfigManager.h</key>
 		<data>
 		4d4YQz6lh9a4MjwQMidK/talVr4=
+		</data>
+		<key>Headers/SGSensorManager.h</key>
+		<data>
+		FDvOcXvzMiB0wyAI7Q+7VkOQCTM=
 		</data>
 		<key>Headers/SensorUpdateDelegate.h</key>
 		<data>
@@ -142,7 +158,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		u5bp0PQ/TBehHSvAMqYNQuKBaj8=
+		2dH1ko6gvIij6jf7Pl58SMOrUZg=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -162,11 +178,11 @@
 		</data>
 		<key>SixgillSDK.momd/SDK-Store.mom</key>
 		<data>
-		+SOTnfDXtJDSzpaUbN+859U5TUs=
+		Sv+U2Zxp7L8DFvAUeuqNKTOUWQw=
 		</data>
 		<key>SixgillSDK.momd/VersionInfo.plist</key>
 		<data>
-		8Kn9StLaVDb4kDmPJUgEhoRSPzY=
+		Qg4I8+q5Pz/uvunxK7mO2RlJ0fA=
 		</data>
 		<key>any.proto</key>
 		<data>
@@ -476,6 +492,17 @@
 			uni5yCw1FSQljujKhORWJyke6CUEXRNIn3/NCf2Wi1k=
 			</data>
 		</dict>
+		<key>Headers/SGEventToken.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			a2G4Jmve1GlO3AUoFpgxDcy137A=
+			</data>
+			<key>hash2</key>
+			<data>
+			jd4TZ9xLfn6HwPUXiT/CrR5X+a36vaPD+0sOw05p4mQ=
+			</data>
+		</dict>
 		<key>Headers/SGIoTDevice.h</key>
 		<dict>
 			<key>hash</key>
@@ -498,15 +525,37 @@
 			Z5d/IXXUzMAuMX8xEpxkaVI3/drKHG6xuabFUeEstgI=
 			</data>
 		</dict>
+		<key>Headers/SGPhunwareProvider.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+FYcupc68lvXM6xYehmqiD+fnAM=
+			</data>
+			<key>hash2</key>
+			<data>
+			eyJPs4PejiPNEFqZ0l2WO2GRVPNKVedfoEGbzbotgB8=
+			</data>
+		</dict>
+		<key>Headers/SGProviderManager.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Cn0vy8hnMUILkQ818uoI36Qreps=
+			</data>
+			<key>hash2</key>
+			<data>
+			EfQ5Q4pVf/ahAeegeawG1PpyYFuT7ySXpTPmJzMXNho=
+			</data>
+		</dict>
 		<key>Headers/SGSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JJH7nMVTKMq2aGCfdN0IXkySloo=
+			flOc4fw6KESntTS/2MuFI/PmF3w=
 			</data>
 			<key>hash2</key>
 			<data>
-			jyqFtf6Gte68L+DGDmda15gUA1VRKDJBzpGpB23B+Mg=
+			XD5W4qIFG+z/iQdfeX1N47ytjlI/PZYQsRwdSCACHb8=
 			</data>
 		</dict>
 		<key>Headers/SGSDKConfigManager.h</key>
@@ -518,6 +567,17 @@
 			<key>hash2</key>
 			<data>
 			zAnntyGm2fkOrFUKSMXttO3TEyBDn9Jg6VjYKQ2ehnQ=
+			</data>
+		</dict>
+		<key>Headers/SGSensorManager.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			FDvOcXvzMiB0wyAI7Q+7VkOQCTM=
+			</data>
+			<key>hash2</key>
+			<data>
+			H45379sGoDeAcZjDnV3gmvCj7/N9Q/lDApUogXaLCo4=
 			</data>
 		</dict>
 		<key>Headers/SensorUpdateDelegate.h</key>
@@ -645,22 +705,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+SOTnfDXtJDSzpaUbN+859U5TUs=
+			Sv+U2Zxp7L8DFvAUeuqNKTOUWQw=
 			</data>
 			<key>hash2</key>
 			<data>
-			B4an4BKZ6x0hdhFJyXlbKcsnELXyTX77n4Bp79O6aYI=
+			MMgXCnreyh+AnTNqE4cIQ/fzemmB9kME9C+vYYk/H2Q=
 			</data>
 		</dict>
 		<key>SixgillSDK.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8Kn9StLaVDb4kDmPJUgEhoRSPzY=
+			Qg4I8+q5Pz/uvunxK7mO2RlJ0fA=
 			</data>
 			<key>hash2</key>
 			<data>
-			W27HdoqFwh+/7CyvB/lc3cHfqXusTuUi3CuVlMYVLMg=
+			iw8qkbh9LTEqGHc4pKi7uWuUDnt7agMwEFovXNmOvUs=
 			</data>
 		</dict>
 		<key>any.proto</key>

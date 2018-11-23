@@ -1454,7 +1454,7 @@
 				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
 				E9FB148A207D828600A00EFF /* Embed Frameworks */,
 				756C2D5920F60012008560FF /* ShellScript */,
-				2A060E4D932DAC6F8F5EA25E /* [CP] Embed Pods Frameworks */,
+				0024D28633D288D43E602A5E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1607,17 +1607,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2A060E4D932DAC6F8F5EA25E /* [CP] Embed Pods Frameworks */ = {
+		0024D28633D288D43E602A5E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh",
+				"${PODS_ROOT}/MistSDK/Framework/MistSDK.framework",
+				"${PODS_ROOT}/PWCore/Framework/PWCore.framework",
+				"${PODS_ROOT}/PWLocation/Framework/PWLocation.framework",
 				"${PODS_ROOT}/SixgillSDK/SixgillSDK/SixgillSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MistSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SixgillSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
