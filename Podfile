@@ -20,7 +20,8 @@ target 'Sync2' do
     pod 'MKDropdownMenu'
     pod 'TTGSnackbar'
     
-    pod 'SixgillSDK', '~> 1.3.0-beta.12'
+#    pod 'SixgillSDK', '1.3.0-beta.12'
+    pod 'SixgillSDK', '~> 1.3.0-beta.18'
 #    pod 'SixgillSDK'
 
   target 'Sync2Tests' do

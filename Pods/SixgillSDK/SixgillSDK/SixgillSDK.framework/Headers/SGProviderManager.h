@@ -11,7 +11,9 @@
 
 @interface SGProviderManager : SGSensorManager<TaskManager>
 
-// Task Manager Protocol
 -(void) performTaskWithEventToken:(SGEventToken *)eventToken;
+
+-(void)stopSensors;
+
 
 @end

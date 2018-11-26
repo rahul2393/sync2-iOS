@@ -20,8 +20,6 @@
 
 @property (copy, nonatomic) void (^backgroundFetchHandler)(UIBackgroundFetchResult result);
 
--(void) sendDataForEventToken;
-
 -(NSString *) token;
 
 -(BOOL) matchesExactly:(SGEventToken *)token;
