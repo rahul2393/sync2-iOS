@@ -8,6 +8,7 @@
 
 #import "WelcomeViewController.h"
 #import "SettingsManager.h"
+#import "WebViewController.h"
 @interface WelcomeViewController ()
 
 @end
@@ -27,9 +28,17 @@
 
 - (IBAction)createNewAccountTapped:(id)sender {
     
-    [self performSegueWithIdentifier:@"goToSignupView" sender:self];
+    WebViewController *webVC = [[WebViewController alloc] init];
+    webVC.titleString = @"Sign Up";
+    webVC.urlString = @"https://www.sixgill.com/sign-up-dev/";
     
-    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.sixgill.com"]];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:webVC];
+    [navController.navigationBar setBarTintColor:[[UIColor alloc] initWithRed:2.0/255.0 green:44.0/255.0 blue:106.0/255.0 alpha:1]];
+    NSDictionary *attributes=[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName , nil];
+    navController.navigationBar.titleTextAttributes = attributes;
+    
+    [self presentViewController:navController animated:true completion:nil];
+    
 }
 
 
