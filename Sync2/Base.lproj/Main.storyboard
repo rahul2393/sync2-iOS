@@ -4348,7 +4348,7 @@ Permission</string>
                                                 <rect key="frame" x="0.0" y="597" width="320" height="680"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="680" id="v7v-wf-sXb"/>
+                                                    <constraint firstAttribute="height" constant="778" id="v7v-wf-sXb"/>
                                                 </constraints>
                                                 <connections>
                                                     <segue destination="bYQ-d0-h7J" kind="embed" identifier="LogMapSegueIdentifier" id="Zvf-Iq-LJc"/>
@@ -4370,7 +4370,7 @@ Permission</string>
                                             <constraint firstItem="DPf-Af-eKt" firstAttribute="leading" secondItem="zSP-5F-dHf" secondAttribute="leading" id="ZQ1-n2-lWh"/>
                                             <constraint firstAttribute="trailing" secondItem="ao5-iR-Bax" secondAttribute="trailing" constant="10" id="ZRo-J0-v7Y"/>
                                             <constraint firstAttribute="trailing" secondItem="DPf-Af-eKt" secondAttribute="trailing" id="bUa-0c-pbT"/>
-                                            <constraint firstAttribute="height" constant="1456" id="bWX-HR-TQq"/>
+                                            <constraint firstAttribute="height" constant="1554" id="bWX-HR-TQq"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -4489,7 +4489,7 @@ Permission</string>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4D9-5A-OnE">
                                                 <rect key="frame" x="0.0" y="411" width="320" height="680"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="680" id="a2H-DV-Zia"/>
+                                                    <constraint firstAttribute="height" constant="778" id="a2H-DV-Zia"/>
                                                 </constraints>
                                                 <connections>
                                                     <segue destination="bYQ-d0-h7J" kind="embed" identifier="LogInformationSegueIdentifier" id="mI5-qK-Wad"/>
@@ -4502,7 +4502,7 @@ Permission</string>
                                             <constraint firstItem="4D9-5A-OnE" firstAttribute="leading" secondItem="ufC-YJ-cm6" secondAttribute="leading" id="UsH-tx-8X9"/>
                                             <constraint firstItem="yVS-O8-4Vl" firstAttribute="leading" secondItem="ufC-YJ-cm6" secondAttribute="leading" constant="10" id="XXc-NY-r9d"/>
                                             <constraint firstAttribute="trailing" secondItem="4D9-5A-OnE" secondAttribute="trailing" id="YWx-55-y70"/>
-                                            <constraint firstAttribute="height" constant="1148" id="aJS-wF-ig5"/>
+                                            <constraint firstAttribute="height" constant="1246" id="aJS-wF-ig5"/>
                                             <constraint firstItem="4D9-5A-OnE" firstAttribute="top" secondItem="yVS-O8-4Vl" secondAttribute="bottom" constant="20" id="cNp-Ud-lBU"/>
                                             <constraint firstAttribute="bottom" secondItem="4D9-5A-OnE" secondAttribute="bottom" constant="57" id="k3W-zl-URl"/>
                                             <constraint firstItem="KJo-9L-7ao" firstAttribute="leading" secondItem="ufC-YJ-cm6" secondAttribute="leading" constant="20" id="mM9-hp-9Us"/>
@@ -5971,10 +5971,10 @@ revised: 5/9/2016</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3wz-1i-jDv">
-                                <rect key="frame" x="10" y="29" width="300" height="588"/>
+                                <rect key="frame" x="10" y="29" width="300" height="686"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="588" id="Z3B-lx-I10"/>
+                                    <constraint firstAttribute="height" constant="686" id="Z3B-lx-I10"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LogMapTableViewCellIdentifier" id="LST-MZ-5u1" customClass="LogMapTableViewCell">
@@ -6021,7 +6021,7 @@ revised: 5/9/2016</string>
                                 </userDefinedRuntimeAttributes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mab-WC-6jy">
-                                <rect key="frame" x="47" y="636" width="226" height="44"/>
+                                <rect key="frame" x="47" y="734" width="226" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9uv-JR-eEC"/>

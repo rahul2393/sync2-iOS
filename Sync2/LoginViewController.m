@@ -37,8 +37,10 @@
     
 //    self.emailAddressField.text = @"ritik.rishu@hotcocoasoftware.com";
 //    self.passwordField.text = @"password123";
-    self.emailAddressField.text = @"cvalera@sixgill.com";
-    self.passwordField.text = @"super1234";
+//        self.emailAddressField.text = @"sanchit.mittal@hotcocoasoftware.com";
+//        self.passwordField.text = @"password123";
+//    self.emailAddressField.text = @"cvalera@sixgill.com";
+//    self.passwordField.text = @"super1234";
     self.phoneNumberField.text = @"1234";
     
     Environment *env = [[EnvironmentManager sharedManager] environments][0];

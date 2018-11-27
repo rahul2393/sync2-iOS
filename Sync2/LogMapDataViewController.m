@@ -38,7 +38,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 12;
+    return 14;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -136,6 +136,26 @@
                 NSDictionary *attributes = _event.attributes;
                 if ([attributes objectForKey:@"FLOORS-DESCENDED"]) {
                     cell.valueLabel.text = attributes[@"FLOORS-DESCENDED"];
+                }
+            }
+            break;
+        }
+        case 12: {
+            cell.nameLabel.text = @"Floor Level";
+            if (_event != nil) {
+                NSDictionary *attributes = _event.attributes;
+                if ([attributes objectForKey:@"floorLevel"]) {
+                    cell.valueLabel.text = attributes[@"floorLevel"];
+                }
+            }
+            break;
+        }
+        case 13: {
+            cell.nameLabel.text = @"Provider Type";
+            if (_event != nil) {
+                NSDictionary *attributes = _event.attributes;
+                if ([attributes objectForKey:@"type"]) {
+                    cell.valueLabel.text = attributes[@"type"];
                 }
             }
             break;
