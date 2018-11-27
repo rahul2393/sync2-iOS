@@ -143,12 +143,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${PODS_ROOT}/IndoorAtlas/indooratlas-ios-sdk/IndoorAtlas.framework"
   install_framework "${PODS_ROOT}/MistSDK/Framework/MistSDK.framework"
   install_framework "${PODS_ROOT}/PWCore/Framework/PWCore.framework"
   install_framework "${PODS_ROOT}/PWLocation/Framework/PWLocation.framework"
   install_framework "${PODS_ROOT}/SixgillSDK/SixgillSDK/SixgillSDK.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${PODS_ROOT}/IndoorAtlas/indooratlas-ios-sdk/IndoorAtlas.framework"
   install_framework "${PODS_ROOT}/MistSDK/Framework/MistSDK.framework"
   install_framework "${PODS_ROOT}/PWCore/Framework/PWCore.framework"
   install_framework "${PODS_ROOT}/PWLocation/Framework/PWLocation.framework"

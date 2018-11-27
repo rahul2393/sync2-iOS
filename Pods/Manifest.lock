@@ -91,6 +91,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.3.6):
     - GoogleUtilities/Logger
+  - IndoorAtlas (2.8.4)
   - MistSDK (1.1.2)
   - MKDropdownMenu (1.4)
   - nanopb (0.3.901):
@@ -107,8 +108,9 @@ PODS:
     - PWCore (>= 3.6.0)
     - SSZipArchive
     - TMCache
-  - SixgillSDK (1.3.0-beta.18):
+  - SixgillSDK (1.3.0-beta.26):
     - CocoaLumberjack
+    - IndoorAtlas
     - PWLocation
   - SSZipArchive (2.1.4)
   - TMCache (2.1.0)
@@ -123,7 +125,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - MKDropdownMenu
-  - SixgillSDK (~> 1.3.0-beta.18)
+  - SixgillSDK (~> 1.3.0-beta.26)
   - TTGSnackbar
 
 SPEC REPOS:
@@ -142,6 +144,7 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - GoogleUtilities
+    - IndoorAtlas
     - MistSDK
     - MKDropdownMenu
     - nanopb
@@ -168,16 +171,17 @@ SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
+  IndoorAtlas: 397f5e9fe1daffe99d73d3ed5f29c1ac635e2e90
   MistSDK: 160b962f45887a752fa5894d6c616bf60c9beeb9
   MKDropdownMenu: 269df4a41d21a1db684ce8bc709befe419fc5bae
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PWCore: d27796bf877e9b5ecafec86d6036d42dbe8c6ec1
   PWLocation: 91834017600487f28fcc4a224be8083377363b22
-  SixgillSDK: f34daa9be1976c3cb919166646aa1d0c0019c553
+  SixgillSDK: 28adb74724b7682d0716cc51bf8aa6f1343efce4
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed
   TTGSnackbar: 2cf4e7b6ffbe5cddf248a73f3ee952b71bee8ea3
 
-PODFILE CHECKSUM: 5d25be2afcde5748f416f2d831721743f56bd18b
+PODFILE CHECKSUM: fa0762cf36c415225ae83b2072c7013b16d786bc
 
 COCOAPODS: 1.5.3

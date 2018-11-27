@@ -809,6 +809,16 @@ third-party archives.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>IndoorAtlas Ltd.</string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>IndoorAtlas</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>The MIT License (MIT)
 
 Copyright (c) 2016 Max Konovalov

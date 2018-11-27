@@ -96,6 +96,10 @@
 		<data>
 		MBEVreRek6112w6klWByya+AQUo=
 		</data>
+		<key>Headers/SGAtlasProvider.h</key>
+		<data>
+		cgSy9LqupSIIvHRnaiZKIX8zfxE=
+		</data>
 		<key>Headers/SGEventToken.h</key>
 		<data>
 		11gH04jGVuVKgGMp4wURFrlSOhA=
@@ -118,7 +122,7 @@
 		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
-		flOc4fw6KESntTS/2MuFI/PmF3w=
+		WxFfVrhZ+plC2lF/7Wa/eDMMT+I=
 		</data>
 		<key>Headers/SGSDKConfigManager.h</key>
 		<data>
@@ -492,6 +496,17 @@
 			uni5yCw1FSQljujKhORWJyke6CUEXRNIn3/NCf2Wi1k=
 			</data>
 		</dict>
+		<key>Headers/SGAtlasProvider.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			cgSy9LqupSIIvHRnaiZKIX8zfxE=
+			</data>
+			<key>hash2</key>
+			<data>
+			9NNC5BlnrsMA05lg0MWjY7gtCHrauvTc802QMvoSQv8=
+			</data>
+		</dict>
 		<key>Headers/SGEventToken.h</key>
 		<dict>
 			<key>hash</key>
@@ -551,11 +566,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			flOc4fw6KESntTS/2MuFI/PmF3w=
+			WxFfVrhZ+plC2lF/7Wa/eDMMT+I=
 			</data>
 			<key>hash2</key>
 			<data>
-			XD5W4qIFG+z/iQdfeX1N47ytjlI/PZYQsRwdSCACHb8=
+			Bqh2vndULVEt3MSjD3qvOfuBarIMnNsKOLIsOJ6xPik=
 			</data>
 		</dict>
 		<key>Headers/SGSDKConfigManager.h</key>

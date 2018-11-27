@@ -712,6 +712,10 @@ Copyright 2018 Google
    limitations under the License.
 
 
+## IndoorAtlas
+
+IndoorAtlas Ltd.
+
 ## MKDropdownMenu
 
 The MIT License (MIT)
