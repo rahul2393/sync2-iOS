@@ -634,6 +634,15 @@
 			name = Splash;
 			sourceTree = "<group>";
 		};
+		75F4C98621AD58B7009596E1 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				7575705C21AD39AD00B8A3BB /* WebViewController.h */,
+				7575705D21AD39AD00B8A3BB /* WebViewController.m */,
+			);
+			name = WebView;
+			sourceTree = "<group>";
+		};
 		75FDF1AF213413F80068D015 /* InformationNotification */ = {
 			isa = PBXGroup;
 			children = (
@@ -764,6 +773,7 @@
 		E9128184201008700003072B /* Old */ = {
 			isa = PBXGroup;
 			children = (
+				E94738812081462D00A49CC2 /* Signup Web */,
 				E9D0A3641F32587E00E7776C /* Map View */,
 				E9CCF4B91EF1E78200BF96C6 /* QRCodeReaderViewController */,
 				E90371451EE8B5E60033DED0 /* Wifi-Beacon List */,
@@ -870,9 +880,7 @@
 		E94738812081462D00A49CC2 /* Signup Web */ = {
 			isa = PBXGroup;
 			children = (
-				7575705C21AD39AD00B8A3BB /* WebViewController.h */,
 				75F4C98421AD52EF009596E1 /* SignupWebVC.swift */,
-				7575705D21AD39AD00B8A3BB /* WebViewController.m */,
 			);
 			name = "Signup Web";
 			sourceTree = "<group>";
@@ -1051,8 +1059,8 @@
 		E966682820082707006911C3 /* UI Update */ = {
 			isa = PBXGroup;
 			children = (
+				75F4C98621AD58B7009596E1 /* WebView */,
 				759926E920FE2E190073693F /* Splash */,
-				E94738812081462D00A49CC2 /* Signup Web */,
 				E9B76D5C200D4F4F0095030C /* Data Channel Selection */,
 				75202263206107D5007FD829 /* End-User License Agreement */,
 				E9FC99F8204E0BAC0060B81D /* Environment Selection */,
