@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *ingressURL;
 @property (nonatomic, strong) NSString *senseURL;
+@property (nonatomic, strong) NSString *forgotPasswordURL;
 @property (nonatomic, strong) NSString *name;
 
 @end
