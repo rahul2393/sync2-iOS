@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSArray *coords;
 @property (nonatomic, strong) NSArray *landmarks;
 
-@property (nonatomic, readwrite) BOOL showLast5Locs;
+//@property (nonatomic, readwrite) BOOL showLast5Locs;
 @property (nonatomic, readwrite) BOOL showGeo;
 @property (nonatomic, readwrite) BOOL useDummyData;
 
@@ -66,14 +66,14 @@
     [super viewWillAppear:animated];
     
     _showGeo = [[SettingsManager sharedManager] mapShowGeofences];
-    _showLast5Locs = [[SettingsManager sharedManager] mapShowLast5Pts];
+//    _showLast5Locs = [[SettingsManager sharedManager] mapShowLast5Pts];
     
     [self.mapView removeOverlays:self.mapView.overlays];
     [self.mapView removeAnnotations:self.mapView.annotations];
     
-    if (_showLast5Locs) {
-        [self drawMapMarkers];
-    }
+//    if (_showLast5Locs) {
+//        [self drawMapMarkers];
+//    }
     
     if (_showGeo) {
         [self loadLandmarks];
@@ -111,24 +111,24 @@
 //
 }
 
--(void) drawMapMarkers{
-    NSArray *locations = [SGSDK sensorUpdateHistory:10];
-    
-    for (NSDictionary *d in locations) {
-        NSNumber *lan = d[@"lat"];
-        NSNumber *lon = d[@"lon"];
-        float laf = lan.floatValue;
-        float lof = lon.floatValue;
-        
-        if (laf == 0.0 && lof == 0.0) {
-            continue;
-        }
-        
-        MKPointAnnotation *p = [[MKPointAnnotation alloc] init];
-        p.coordinate = CLLocationCoordinate2DMake(laf, lof);
-        [self.mapView addAnnotation:p];
-    }
-}
+//-(void) drawMapMarkers{
+//    NSArray *locations = [SGSDK sensorUpdateHistory:10];
+//
+//    for (NSDictionary *d in locations) {
+//        NSNumber *lan = d[@"lat"];
+//        NSNumber *lon = d[@"lon"];
+//        float laf = lan.floatValue;
+//        float lof = lon.floatValue;
+//
+//        if (laf == 0.0 && lof == 0.0) {
+//            continue;
+//        }
+//
+//        MKPointAnnotation *p = [[MKPointAnnotation alloc] init];
+//        p.coordinate = CLLocationCoordinate2DMake(laf, lof);
+//        [self.mapView addAnnotation:p];
+//    }
+//}
 
 
 

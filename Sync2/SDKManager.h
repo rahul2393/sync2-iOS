@@ -25,8 +25,8 @@
 
 -(void) setSensorDataDelegate:(id<SensorUpdateDelegate>)delegate;
 
--(NSString *) logs;
--(void) clearLogs;
+//-(NSString *) logs;
+//-(void) clearLogs;
 
 -(void)SGReachLog:(NSString *)logMsg;
 
