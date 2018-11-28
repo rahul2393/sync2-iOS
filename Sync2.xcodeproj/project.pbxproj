@@ -1467,7 +1467,7 @@
 				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
 				E9FB148A207D828600A00EFF /* Embed Frameworks */,
 				756C2D5920F60012008560FF /* ShellScript */,
-				41D981C32F284F81DCE5C484 /* [CP] Embed Pods Frameworks */,
+				72C88572B800C8D30112C8D2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1640,7 +1640,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		41D981C32F284F81DCE5C484 /* [CP] Embed Pods Frameworks */ = {
+		72C88572B800C8D30112C8D2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
