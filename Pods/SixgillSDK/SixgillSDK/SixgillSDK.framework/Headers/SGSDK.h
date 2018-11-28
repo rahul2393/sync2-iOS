@@ -29,15 +29,12 @@
 
 +(void) enable;
 +(void) enableWithSuccessHandler: (void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
+
 +(void) disable;
 
 +(NSString *)deviceId;
 
 +(void) setIngressURL:(NSString *)urlString;
-
-// Last 2 Days worth of logs
-+(NSString *) logs;
-+(void) clearLogs;
 
 +(void) didReceivePushNotificationPayload:(NSDictionary *)payload
                     withCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
@@ -52,31 +49,9 @@
 +(void) setMotionActivityEnabled:(BOOL)enabled;
 +(BOOL) motionActivityEnabled;
 
-#pragma mark - IoT
-+(SGIoTDevice *) registerIoTDevice:(NSString *)deviceName
-                  andChannelAPIKey:(NSString *)channelAPIKey
-                           sensors:(NSArray *)sensors;
-
-// deprecated
-
-+(void) showTestLocalNotification;
-
 // Configs
 
-+(void) registerForLogUpdates:(id<SGLogDelegateProtocol>)delegate;
-
 +(void) registerForSensorUpdates:(id<SensorUpdateDelegate>)delegate;
-
-+(NSArray *) sensorUpdateHistory:(NSUInteger)capacity;
-
-
-+(UIViewController *) inboxViewController;
-
-
-#pragma mark - IoT
-+(NSArray *) registeredIoTDevices;
-+(void) registerIoTDeviceName:(NSString *)deviceName;
-+(void) sendIoTDevice:(SGIoTDevice *)device data:(NSDictionary *)data;
 
 #pragma mark - Core Data
 +(void) saveCoreDataContext;

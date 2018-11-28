@@ -471,6 +471,10 @@ third-party archives.
    limitations under the License.
 
 
+## GoogleAppMeasurement
+
+Copyright 2018 Google
+
 ## GoogleMaps
 
 Copyright 2018 Google
@@ -479,7 +483,7 @@ Copyright 2018 Google
 
 Copyright 2018 Google
 
-## GoogleToolboxForMac
+## GoogleUtilities
 
 
                                  Apache License
