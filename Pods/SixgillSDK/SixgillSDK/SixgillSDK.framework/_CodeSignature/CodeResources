@@ -116,13 +116,17 @@
 		<data>
 		Sr/W6fLOA51xEc7or6RwOeqDBUI=
 		</data>
+		<key>Headers/SGProviderDelegate.h</key>
+		<data>
+		n8dgNWuRoPFZQnfHBBThILZKCQI=
+		</data>
 		<key>Headers/SGProviderManager.h</key>
 		<data>
-		wr3QTWCQAlOFnYj7S5hKjd6p07c=
+		fg/QZE/Gju/fp1xxk+XTdj/LVI0=
 		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
-		WxFfVrhZ+plC2lF/7Wa/eDMMT+I=
+		dMTQ0+LHXHICQ2UtQzwVnyeG4mQ=
 		</data>
 		<key>Headers/SGSDKConfigManager.h</key>
 		<data>
@@ -551,26 +555,37 @@
 			kgF4RU0jDF8n29OpnFGhZXms58TEtOqXDkN3MomlIEU=
 			</data>
 		</dict>
+		<key>Headers/SGProviderDelegate.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			n8dgNWuRoPFZQnfHBBThILZKCQI=
+			</data>
+			<key>hash2</key>
+			<data>
+			qH43iGSJKakW6EDpJXMTeXlYjiWVQIq9iUooxqhfNT4=
+			</data>
+		</dict>
 		<key>Headers/SGProviderManager.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wr3QTWCQAlOFnYj7S5hKjd6p07c=
+			fg/QZE/Gju/fp1xxk+XTdj/LVI0=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZKCLeguZtM6lCU5RxcQoecRHEA+VSpLvetRJbECSfA0=
+			nJx00x0uCjM0Z5WzDznMPoC1o23nmccoaf6n734LMVc=
 			</data>
 		</dict>
 		<key>Headers/SGSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WxFfVrhZ+plC2lF/7Wa/eDMMT+I=
+			dMTQ0+LHXHICQ2UtQzwVnyeG4mQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			Bqh2vndULVEt3MSjD3qvOfuBarIMnNsKOLIsOJ6xPik=
+			9kw0yhv2D+OrnAGfLo3w7+Phpx6AhDWPYEPpiOM4gW4=
 			</data>
 		</dict>
 		<key>Headers/SGSDKConfigManager.h</key>
