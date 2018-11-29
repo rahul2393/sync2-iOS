@@ -82,7 +82,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - SixgillSDK (1.2.12):
+  - SixgillSDK (1.2.13):
     - CocoaLumberjack
   - TTGSnackbar (1.7.5)
 
@@ -135,7 +135,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
   MKDropdownMenu: 269df4a41d21a1db684ce8bc709befe419fc5bae
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  SixgillSDK: 9bb1c7ee9519e228eeb1ec98cd4d399e6dd3d6f6
+  SixgillSDK: 47323c4f965aa36c4086d270ac53b3f8aecc2542
   TTGSnackbar: 2cf4e7b6ffbe5cddf248a73f3ee952b71bee8ea3
 
 PODFILE CHECKSUM: f37f3892a1c04aa668c31a32633029ab006e644e
