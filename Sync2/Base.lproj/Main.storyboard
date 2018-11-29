@@ -2690,18 +2690,26 @@ Permission Missing</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </mapView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opA-10-pip">
+                                        <rect key="frame" x="10" y="72" width="355" height="559"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="wZf-uv-HVs" secondAttribute="bottom" constant="10" id="4dj-co-yDm"/>
                                     <constraint firstAttribute="trailing" secondItem="wZf-uv-HVs" secondAttribute="trailing" constant="10" id="DAA-qf-wJ0"/>
+                                    <constraint firstItem="opA-10-pip" firstAttribute="height" secondItem="wZf-uv-HVs" secondAttribute="height" id="MdK-7Y-7IM"/>
                                     <constraint firstItem="wZf-uv-HVs" firstAttribute="top" secondItem="glT-tP-kic" secondAttribute="bottom" constant="12" id="U1V-Nk-bZZ"/>
                                     <constraint firstItem="6vP-Mv-nyH" firstAttribute="top" secondItem="NPL-vw-5Mz" secondAttribute="top" constant="11" id="fdp-r0-D5n"/>
                                     <constraint firstAttribute="trailing" secondItem="6vP-Mv-nyH" secondAttribute="trailing" constant="10" id="gKO-Dw-04I"/>
                                     <constraint firstItem="glT-tP-kic" firstAttribute="leading" secondItem="NPL-vw-5Mz" secondAttribute="leading" constant="10" id="hGj-cl-eOm"/>
+                                    <constraint firstItem="opA-10-pip" firstAttribute="width" secondItem="wZf-uv-HVs" secondAttribute="width" id="sYx-Mg-8Sq"/>
                                     <constraint firstItem="wZf-uv-HVs" firstAttribute="leading" secondItem="NPL-vw-5Mz" secondAttribute="leading" constant="10" id="tkW-zQ-Jyc"/>
                                     <constraint firstItem="glT-tP-kic" firstAttribute="top" secondItem="NPL-vw-5Mz" secondAttribute="top" constant="11" id="vHs-rd-Kfg"/>
                                     <constraint firstItem="6vP-Mv-nyH" firstAttribute="leading" secondItem="glT-tP-kic" secondAttribute="trailing" constant="12" id="vos-hD-RBm"/>
+                                    <constraint firstItem="opA-10-pip" firstAttribute="centerY" secondItem="wZf-uv-HVs" secondAttribute="centerY" id="w3V-LA-XeS"/>
+                                    <constraint firstItem="opA-10-pip" firstAttribute="centerX" secondItem="wZf-uv-HVs" secondAttribute="centerX" id="wGf-IH-SgF"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1A-f9-nrI">
@@ -2803,6 +2811,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                         <outlet property="mapSettingsButton" destination="h5K-2y-mVX" id="spd-r6-jDB"/>
                         <outlet property="mapView" destination="wZf-uv-HVs" id="6Rt-u4-geF"/>
                         <outlet property="permissionMissingView" destination="d1A-f9-nrI" id="L8R-mW-s9G"/>
+                        <outlet property="providerMapView" destination="opA-10-pip" id="oNH-bs-ChU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7p-jI-A3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4180,7 +4189,7 @@ Permission</string>
                                 <rect key="frame" x="0.0" y="44" width="320" height="1183"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zSP-5F-dHf">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1456"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1554"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eK-RW-Qpz">
                                                 <rect key="frame" x="10" y="13" width="300" height="49"/>
@@ -4345,7 +4354,7 @@ Permission</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPf-Af-eKt">
-                                                <rect key="frame" x="0.0" y="597" width="320" height="680"/>
+                                                <rect key="frame" x="0.0" y="597" width="320" height="778"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="778" id="v7v-wf-sXb"/>
@@ -4426,7 +4435,7 @@ Permission</string>
                                 <rect key="frame" x="0.0" y="44" width="320" height="874"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufC-YJ-cm6">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1148"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1246"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJo-9L-7ao">
                                                 <rect key="frame" x="19.999999999999996" y="13" width="55.666666666666657" height="21"/>
@@ -4487,7 +4496,7 @@ Permission</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4D9-5A-OnE">
-                                                <rect key="frame" x="0.0" y="411" width="320" height="680"/>
+                                                <rect key="frame" x="0.0" y="411" width="320" height="778"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="778" id="a2H-DV-Zia"/>
                                                 </constraints>
@@ -5961,7 +5970,7 @@ revised: 5/9/2016</string>
                         <viewControllerLayoutGuide type="bottom" id="OVv-ER-hXh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yQh-0P-F5m">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="680"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="778"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWe-4n-ECY">

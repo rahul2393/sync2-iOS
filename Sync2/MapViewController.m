@@ -21,6 +21,10 @@
 @property (nonatomic, readwrite) BOOL showGeo;
 @property (nonatomic, readwrite) BOOL useDummyData;
 
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIView *circle;
+@property (nonatomic, strong) UIView *accuracyCircle;
+
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @end
 
@@ -48,6 +52,26 @@
     
     self.title = @"Map";
     
+    
+    [[[SGSDK sharedInstance] providerManager] loadMapFor:@"e7b2e27c-681e-46d5-862a-1f4564237197" parentView:self.view completionHandler:^(UIImageView *imageView, UIView *circle, UIView *accuracy) {
+        [self.mapView setHidden:YES];
+        self.imageView = imageView;
+        self.circle = circle;
+        self.accuracyCircle = accuracy;
+        [[SGSDK sharedInstance] providerManager].providerDelegate = self;
+    }];
+}
+
+- (void)locationUpdates:(CGPoint)point size:(CGFloat)size {
+    
+    [UIView animateWithDuration:(self.circle.hidden ? 0.0f : 0.35f) animations:^{
+        self.circle.center = point;
+        self.accuracyCircle.center = point;
+        self.accuracyCircle.transform = CGAffineTransformMakeScale(size, size);
+        [self.view bringSubviewToFront:self.circle];
+    }];
+    self.accuracyCircle.hidden = NO;
+    self.circle.hidden = NO;
 }
 
 - (void) loadLandmarks{
