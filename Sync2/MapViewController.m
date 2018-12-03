@@ -70,7 +70,7 @@
 }
 
 - (void)didEnterRegion:(NSString *)floorPlanId floorPlanName:(NSString *)name {
-    [[[SGSDK sharedInstance] providerManager] loadMapFor:floorPlanId parentView:self.view completionHandler:^(UIImageView *imageView, UIView *circle, UIView *accuracy) {
+    [[[SGSDK sharedInstance] providerManager] loadMapFor:floorPlanId parentView:self.providerMapView completionHandler:^(UIImageView *imageView, UIView *circle, UIView *accuracy) {
         [self.mapView setHidden:YES];
         [self.providerMapView setHidden:NO];
         self.imageView = imageView;
@@ -80,8 +80,8 @@
 }
 
 - (void)didExitRegion {
-    [self.mapView setHidden:NO];
     [self.providerMapView setHidden:YES];
+    [self.mapView setHidden:NO];
 }
 
 - (void) loadLandmarks{
