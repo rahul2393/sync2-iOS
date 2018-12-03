@@ -126,11 +126,7 @@
 		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
-<<<<<<< HEAD
 		KjR0pZP+h1uNseGaSUUvGkzVqao=
-=======
-		XwUVNZZwiFw8LUzg3I3BpMd8i2I=
->>>>>>> origin/sync2-ui-changes
 		</data>
 		<key>Headers/SGSDKConfigManager.h</key>
 		<data>
@@ -190,19 +186,11 @@
 		</data>
 		<key>SixgillSDK.momd/SDK-Store.mom</key>
 		<data>
-<<<<<<< HEAD
 		Ac7uBdQcONQa406FxKIBYJGNHtg=
 		</data>
 		<key>SixgillSDK.momd/VersionInfo.plist</key>
 		<data>
 		0t1OmuKAj+qjY0ImQ/JJIoinJnc=
-=======
-		6WuKM3+AAxImWAX1i2KbsAYDjVQ=
-		</data>
-		<key>SixgillSDK.momd/VersionInfo.plist</key>
-		<data>
-		gOG52+GgqLl72tze//6IqI/hoQU=
->>>>>>> origin/sync2-ui-changes
 		</data>
 		<key>any.proto</key>
 		<data>
@@ -593,19 +581,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-<<<<<<< HEAD
 			KjR0pZP+h1uNseGaSUUvGkzVqao=
 			</data>
 			<key>hash2</key>
 			<data>
 			ncd6hWgYwaUrz5CMYYJVMfbtOtA2Z5A+rItw+BX96CA=
-=======
-			XwUVNZZwiFw8LUzg3I3BpMd8i2I=
-			</data>
-			<key>hash2</key>
-			<data>
-			gbfgjuH3LntKpHIOxrScVyjJXkFsCowYZg4V0hyyumk=
->>>>>>> origin/sync2-ui-changes
 			</data>
 		</dict>
 		<key>Headers/SGSDKConfigManager.h</key>
@@ -755,38 +735,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-<<<<<<< HEAD
 			Ac7uBdQcONQa406FxKIBYJGNHtg=
 			</data>
 			<key>hash2</key>
 			<data>
 			6qf6N6csgjd6AO0MLQI5RrrAEMpxcOQQ8ltbMBi7LjU=
-=======
-			6WuKM3+AAxImWAX1i2KbsAYDjVQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			li0fYcqz0meQoOs6F3Cu0eO/uWfzYs1bUo7MQ6RYyWA=
->>>>>>> origin/sync2-ui-changes
 			</data>
 		</dict>
 		<key>SixgillSDK.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-<<<<<<< HEAD
 			0t1OmuKAj+qjY0ImQ/JJIoinJnc=
 			</data>
 			<key>hash2</key>
 			<data>
 			XRvAqm8LNnoqgTG+4PdqtE3Rw2kYsEbw18ub/fEb38M=
-=======
-			gOG52+GgqLl72tze//6IqI/hoQU=
-			</data>
-			<key>hash2</key>
-			<data>
-			cp9y1dijVFghuA22i3TYl78LyMxPNmZMi9bB83GUWbY=
->>>>>>> origin/sync2-ui-changes
 			</data>
 		</dict>
 		<key>any.proto</key>
