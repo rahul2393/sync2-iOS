@@ -35,6 +35,9 @@
     [self.mapView setShowsUserLocation:YES];
     self.locationManager = [[CLLocationManager alloc] init];
     
+    [self.providerMapView setHidden:YES];
+    [[SGSDK sharedInstance] providerManager].providerDelegate = self;
+    
     self.locationManager.delegate = self;
     
     self.useDummyData = NO;
@@ -51,27 +54,34 @@
     }
     
     self.title = @"Map";
-    
-    
-    [[[SGSDK sharedInstance] providerManager] loadMapFor:@"e7b2e27c-681e-46d5-862a-1f4564237197" parentView:self.view completionHandler:^(UIImageView *imageView, UIView *circle, UIView *accuracy) {
-        [self.mapView setHidden:YES];
-        self.imageView = imageView;
-        self.circle = circle;
-        self.accuracyCircle = accuracy;
-        [[SGSDK sharedInstance] providerManager].providerDelegate = self;
-    }];
 }
 
 - (void)locationUpdates:(CGPoint)point size:(CGFloat)size {
-    
-    [UIView animateWithDuration:(self.circle.hidden ? 0.0f : 0.35f) animations:^{
-        self.circle.center = point;
-        self.accuracyCircle.center = point;
-        self.accuracyCircle.transform = CGAffineTransformMakeScale(size, size);
-        [self.view bringSubviewToFront:self.circle];
+    if (self.circle) {
+        [UIView animateWithDuration:(self.circle.hidden ? 0.0f : 0.35f) animations:^{
+            self.circle.center = point;
+            self.accuracyCircle.center = point;
+            self.accuracyCircle.transform = CGAffineTransformMakeScale(size, size);
+            [self.view bringSubviewToFront:self.circle];
+        }];
+        self.accuracyCircle.hidden = NO;
+        self.circle.hidden = NO;
+    }
+}
+
+- (void)didEnterRegion:(NSString *)floorPlanId floorPlanName:(NSString *)name {
+    [[[SGSDK sharedInstance] providerManager] loadMapFor:floorPlanId parentView:self.view completionHandler:^(UIImageView *imageView, UIView *circle, UIView *accuracy) {
+        [self.mapView setHidden:YES];
+        [self.providerMapView setHidden:NO];
+        self.imageView = imageView;
+        self.circle = circle;
+        self.accuracyCircle = accuracy;
     }];
-    self.accuracyCircle.hidden = NO;
-    self.circle.hidden = NO;
+}
+
+- (void)didExitRegion {
+    [self.mapView setHidden:NO];
+    [self.providerMapView setHidden:YES];
 }
 
 - (void) loadLandmarks{

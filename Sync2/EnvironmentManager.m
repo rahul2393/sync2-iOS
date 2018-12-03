@@ -72,7 +72,12 @@
         staging.senseURL = @"https://sense-api-node.staging.sixgill.io";
         staging.ingressURL = @"https://edge-ingress.staging.sixgill.io";
         
-        self.environments = @[prod, staging];
+        Environment *rahulLocal = [[Environment alloc] init];
+        rahulLocal.name = @"Staging";
+        rahulLocal.senseURL = @"http://50abd0bf.ngrok.io";
+        rahulLocal.ingressURL = @"http://c65e1db6.ngrok.io";
+        
+        self.environments = @[prod, staging, rahulLocal];
         
     }
     return self;
