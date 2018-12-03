@@ -230,7 +230,10 @@
                 break;
             }
             case 5: {
-                cell.keyLabel.text = @"Software Version";
+                cell.keyLabel.text = @"Build Version";
+                NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+                NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+                cell.valueLabel.text = [NSString stringWithFormat:@"%@ (%@)", version, build];
                 break;
             }
             default:
