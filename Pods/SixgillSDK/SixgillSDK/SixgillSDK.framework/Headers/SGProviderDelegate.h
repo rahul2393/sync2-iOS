@@ -11,6 +11,10 @@
 
 @protocol SGProviderDelegate
 
+-(void) didEnterRegion:(NSString *)floorPlanId floorPlanName:(NSString *)name;
+
+-(void) didExitRegion;
+
 -(void)locationUpdates:(CGPoint)point size:(CGFloat)size;
 
 @end

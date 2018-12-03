@@ -118,7 +118,7 @@
 		</data>
 		<key>Headers/SGProviderDelegate.h</key>
 		<data>
-		n8dgNWuRoPFZQnfHBBThILZKCQI=
+		/C6LKr83//7Tko15eJ5T7gABVJY=
 		</data>
 		<key>Headers/SGProviderManager.h</key>
 		<data>
@@ -126,7 +126,7 @@
 		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
-		dMTQ0+LHXHICQ2UtQzwVnyeG4mQ=
+		KjR0pZP+h1uNseGaSUUvGkzVqao=
 		</data>
 		<key>Headers/SGSDKConfigManager.h</key>
 		<data>
@@ -559,11 +559,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			n8dgNWuRoPFZQnfHBBThILZKCQI=
+			/C6LKr83//7Tko15eJ5T7gABVJY=
 			</data>
 			<key>hash2</key>
 			<data>
-			qH43iGSJKakW6EDpJXMTeXlYjiWVQIq9iUooxqhfNT4=
+			Jr8I2GalSa0/cMLhc8I+ZOxDu9vGT3BxaXwtCU2wU94=
 			</data>
 		</dict>
 		<key>Headers/SGProviderManager.h</key>
@@ -581,11 +581,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dMTQ0+LHXHICQ2UtQzwVnyeG4mQ=
+			KjR0pZP+h1uNseGaSUUvGkzVqao=
 			</data>
 			<key>hash2</key>
 			<data>
-			9kw0yhv2D+OrnAGfLo3w7+Phpx6AhDWPYEPpiOM4gW4=
+			ncd6hWgYwaUrz5CMYYJVMfbtOtA2Z5A+rItw+BX96CA=
 			</data>
 		</dict>
 		<key>Headers/SGSDKConfigManager.h</key>

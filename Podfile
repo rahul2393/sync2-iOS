@@ -21,7 +21,7 @@ target 'Sync2' do
     pod 'TTGSnackbar'
     
 #    pod 'SixgillSDK', '1.3.0-beta.12'
-    pod 'SixgillSDK', '~> 1.3.0-beta.28'
+    pod 'SixgillSDK', '~> 1.3.0-beta.39'
 #    pod 'SixgillSDK'
 
   target 'Sync2Tests' do
