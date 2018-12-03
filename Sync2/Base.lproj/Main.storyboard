@@ -2626,7 +2626,6 @@ Permission Missing</string>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="chooseMapTapped:" destination="M6G-YW-ApW" eventType="touchUpInside" id="VcK-fD-Dbw"/>
-                                                    <segue destination="xHe-oy-Xez" kind="show" id="ghf-UB-Ufj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -5858,7 +5857,7 @@ revised: 5/9/2016</string>
         <!--Choose Map View Controller-->
         <scene sceneID="aQs-rg-Bm3">
             <objects>
-                <viewController id="xHe-oy-Xez" customClass="ChooseMapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseMapViewControllerIdentifier" id="xHe-oy-Xez" customClass="ChooseMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jbv-wl-aUr"/>
                         <viewControllerLayoutGuide type="bottom" id="BBe-la-mZD"/>

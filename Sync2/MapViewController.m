@@ -11,6 +11,7 @@
 #import "SettingsManager.h"
 #import "SenseAPI.h"
 #import "Landmark.h"
+#import "ChooseMapViewController.h"
 @import SixgillSDK;
 @interface MapViewController ()
 
@@ -25,6 +26,9 @@
 @property (nonatomic, strong) UIView *circle;
 @property (nonatomic, strong) UIView *accuracyCircle;
 
+@property (nonatomic, strong) NSMutableArray <NSString *> *floorMapNames;
+@property (nonatomic, strong) NSMutableArray <NSString *> *floorMapIds;
+
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @end
 
@@ -35,6 +39,8 @@
     [self.mapView setShowsUserLocation:YES];
     self.locationManager = [[CLLocationManager alloc] init];
     
+    self.floorMapIds = [NSMutableArray new];
+    self.floorMapNames = [NSMutableArray new];
     self.locationManager.delegate = self;
     
     self.useDummyData = NO;
@@ -54,6 +60,17 @@
     
     
     [[[SGSDK sharedInstance] providerManager] loadMapFor:@"e7b2e27c-681e-46d5-862a-1f4564237197" parentView:self.view completionHandler:^(UIImageView *imageView, UIView *circle, UIView *accuracy) {
+- (void)drawMapForId:(NSString *)mapID {
+//    if (![mapID  isEqual: @""]) {
+//        [[[SGSDK sharedInstance] providerManager] loadMapFor:mapID parentView:self.view completionHandler:^(UIImageView *imageView, UIView *circle, UIView *accuracy) {
+//            [self.mapView setHidden:YES];
+//            self.imageView = imageView;
+//            self.circle = circle;
+//            self.accuracyCircle = accuracy;
+//            [[SGSDK sharedInstance] providerManager].providerDelegate = self;
+//        }];
+//    }
+}
         [self.mapView setHidden:YES];
         self.imageView = imageView;
         self.circle = circle;
@@ -81,7 +98,6 @@
     }
     [[SenseAPI sharedManager] GetLandmarksForProject:currentProject.objectId WithCompletion:^(NSArray *landmarks, NSError * _Nullable error) {
         self.landmarks = landmarks;
-        
         [self drawLandmarks];
     }];        
 }
@@ -132,7 +148,6 @@
     [self.mapView setRegion:zoomRegion animated:YES];
     
 //    self.coordinateLabel.text = [NSString stringWithFormat:@"%f, %f",location.latitude, location.longitude];
-//
 }
 
 -(void) drawMapMarkers{
@@ -235,6 +250,13 @@
 }
 
 - (IBAction)chooseMapTapped:(id)sender {
+//    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//
+//    ChooseMapViewController *chooseMapVC = [storyboard instantiateViewControllerWithIdentifier:@"ChooseMapViewControllerIdentifier"];
+//    chooseMapVC.floorMapNames = self.floorMapNames;
+//    chooseMapVC.floorMapIds = self.floorMapIds;
+//    chooseMapVC.mapViewDelegate = self;
+//    [self.navigationController pushViewController:chooseMapVC animated:YES];
 }
 
 - (IBAction)openDeviceSettings:(id)sender {

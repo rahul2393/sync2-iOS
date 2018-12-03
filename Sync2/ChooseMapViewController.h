@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapViewController.h"
 
 @interface ChooseMapViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *selectMapButton;
+
+@property (nonatomic, strong) NSMutableArray <NSString *> *floorMapNames;
+@property (nonatomic, strong) NSMutableArray <NSString *> *floorMapIds;
+@property (nonatomic, weak) id<MapViewDelegate> mapViewDelegate;
 @end

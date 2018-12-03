@@ -42,7 +42,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.floorMapNames.count + 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,22 +56,12 @@
     if (cell == nil) {
         cell = [[ChooseMapTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ChooseMapTableViewCellIdentifier"];
     }
-    switch (indexPath.row) {
-        case 0: {
-            cell.nameLabel.text = @"World Map";
-            break;
-        }
-        case 1: {
-            cell.nameLabel.text = @"Office: Floor 1";
-            break;
-        }
-        case 2: {
-            cell.nameLabel.text = @"Office: Floor 2";
-            break;
-        }
-        default:
-            break;
+    if (indexPath.row == 0) {
+        cell.nameLabel.text = @"World Map";
+    } else {
+        cell.nameLabel.text = self.floorMapNames[indexPath.row + 1];
     }
+    
     cell.selectedImage.image = (self.selectedChannelIx == indexPath.row) ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
     
     return cell;
@@ -90,6 +80,11 @@
 
 -(void) setButtonEnabled:(BOOL)enabled{
     self.selectMapButton.enabled = enabled;
+    if (self.selectedChannelIx == 0) {
+        [self.mapViewDelegate drawMapForId:@""];
+    } else {
+        [self.mapViewDelegate drawMapForId:self.floorMapIds[self.selectedChannelIx + 1]];
+    }
 }
 
 @end

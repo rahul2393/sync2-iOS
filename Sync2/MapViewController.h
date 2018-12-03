@@ -11,7 +11,12 @@
 @import MapKit;
 @import SixgillSDK;
 
-@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, SGProviderDelegate>
+@protocol MapViewDelegate
+-(void) drawMapForId:(NSString *)mapID;
+@end
+
+
+@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, SGProviderDelegate, MapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIView *providerMapView;
 
