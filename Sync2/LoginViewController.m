@@ -13,12 +13,13 @@
 #import "SDKManager.h"
 #import "DataChannelSelectionViewController.h"
 #import "ProjectSelectionViewController.h"
+#import "WebViewController.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, readwrite) BOOL checkBoxSelected;
-
+@property (nonatomic, readwrite) NSString *forgotPasswordURL;
 @end
 
 @implementation LoginViewController
@@ -47,6 +48,7 @@
     
     Environment *env = [[EnvironmentManager sharedManager] environments][0];
     self.selectedURLLabel.text = env.senseURL;
+    self.forgotPasswordURL = env.forgotPasswordURL;
     [[EnvironmentManager sharedManager] setSelectedSenseURL:env.senseURL];
     [[EnvironmentManager sharedManager] setSelectedIngressURL:env.ingressURL];
     
@@ -196,6 +198,18 @@
 }
 
 - (IBAction)ForgotPasswordTapped:(id)sender {
+    
+    WebViewController *webVC = [[WebViewController alloc] init];
+    webVC.titleString = @"Forgot Password";
+    webVC.urlString = self.forgotPasswordURL;
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:webVC];
+    [navController.navigationBar setBarTintColor:[[UIColor alloc] initWithRed:2.0/255.0 green:44.0/255.0 blue:106.0/255.0 alpha:1]];
+    NSDictionary *attributes=[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName , nil];
+    navController.navigationBar.titleTextAttributes = attributes;
+    
+    [self presentViewController:navController animated:true completion:nil];
+
 }
 
 - (IBAction)customURLButtonTapped:(id)sender {
@@ -221,6 +235,7 @@
 - (void)dropdownMenu:(MKDropdownMenu *)dropdownMenu didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     Environment *env = [[EnvironmentManager sharedManager] environments][row];
     self.selectedURLLabel.text = env.senseURL;
+    self.forgotPasswordURL = env.forgotPasswordURL;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [dropdownMenu closeAllComponentsAnimated:YES];

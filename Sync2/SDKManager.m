@@ -150,13 +150,13 @@
     CLSLog(@"%@",logMsg);
 }
 
--(void) clearLogs{
-    [SGSDK clearLogs];
-}
-
--(NSString *) logs{
-    return [SGSDK logs];
-}
+//-(void) clearLogs{
+//    [SGSDK clearLogs];
+//}
+//
+//-(NSString *) logs{
+//    return [SGSDK logs];
+//}
 
 -(void) stopSDK{
     [SGSDK disable];

@@ -66,11 +66,13 @@
         prod.name = @"Production";
         prod.senseURL = @"https://sense-api.sixgill.com";
         prod.ingressURL = @"https://sense-ingress-api.sixgill.com";
+        prod.forgotPasswordURL = @"https://dash.sixgill.com/request-password";
         
         Environment *staging = [[Environment alloc] init];
         staging.name = @"Staging";
         staging.senseURL = @"https://sense-api-node.staging.sixgill.io";
         staging.ingressURL = @"https://edge-ingress.staging.sixgill.io";
+        staging.forgotPasswordURL = @"https://dashboard.staging.sixgill.io/request-password";
         
         Environment *rahulLocal = [[Environment alloc] init];
         rahulLocal.name = @"Staging";

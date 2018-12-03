@@ -17,26 +17,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="h7N-br-QQa">
-            <objects>
-                <navigationController id="Ql4-PW-vcG" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Le-Uo-gmk">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0062943333760000003" green="0.17320993539999999" blue="0.4145198464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="oKn-1F-Kmu" kind="relationship" relationship="rootViewController" id="Qfy-Iq-g1t"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="peT-uY-jJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1569" y="-2257"/>
-        </scene>
         <!--Permission Page Controller-->
         <scene sceneID="b3W-mL-Ogb">
             <objects>
@@ -44,25 +24,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyH-0y-7H9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-555" y="-276"/>
-        </scene>
-        <!--Signup WebVC-->
-        <scene sceneID="u4c-Eg-9jL">
-            <objects>
-                <viewController id="oKn-1F-Kmu" customClass="SignupWebVC" customModule="Sync2" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5X3-Km-JuG"/>
-                        <viewControllerLayoutGuide type="bottom" id="DcA-B7-CJM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7uu-S2-gPU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="T3s-Ci-hP2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XF0-2N-u89" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1569" y="-2164"/>
         </scene>
         <!--Splash View Controller-->
         <scene sceneID="9UX-5F-mbR">
@@ -284,9 +245,6 @@
                             <constraint firstItem="swq-6c-cFF" firstAttribute="top" secondItem="wW6-3L-K9a" secondAttribute="bottom" id="x1C-oF-2O7"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="Ql4-PW-vcG" kind="show" identifier="goToSignupView" id="iXE-p4-Tk7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHJ-B3-1Gx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1788,7 +1746,7 @@ Let us know what you would like to see:</string>
                                                             <rect key="frame" x="0.0" y="28" width="335" height="38"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lv-xe-yKM" id="5ET-8I-o9t">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="37.666666666666664"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-yQ-dY7">

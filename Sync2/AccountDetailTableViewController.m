@@ -226,7 +226,7 @@
 -(void) activateAccount{
     // should not still be getting called
     [[SDKManager sharedManager] stopSDK];
-    [[SDKManager sharedManager] clearLogs];
+//    [[SDKManager sharedManager] clearLogs];
     [[SDKManager sharedManager] startSDKWithAPIKey:self.accountObject.apiKey andSuccessHandler:^{} andFailureHandler:^(NSString *failureMessage) {}];
     [[SDKManager sharedManager] setSensorDataDelegate:self];
     [[SettingsManager sharedManager] setActiveAccountId:self.accountObject.accountId];
