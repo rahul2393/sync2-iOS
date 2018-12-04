@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */; };
+		75045EE921B66AEC0011283F /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75045EE821B66AEC0011283F /* SixgillSDK.framework */; };
+		75045EEA21B66AF90011283F /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75045EE821B66AEC0011283F /* SixgillSDK.framework */; };
+		75045EEB21B66AF90011283F /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75045EE821B66AEC0011283F /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		751C4A76210F0B530040E717 /* RulesInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A75210F0B530040E717 /* RulesInformationViewController.m */; };
 		751C4A79210F0FB20040E717 /* RulesInformationEdgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A78210F0FB10040E717 /* RulesInformationEdgeViewController.m */; };
 		751C4A7C210F0FC50040E717 /* RulesInformationCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A7B210F0FC50040E717 /* RulesInformationCloudViewController.m */; };
@@ -166,6 +169,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				75045EEB21B66AF90011283F /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +179,7 @@
 /* Begin PBXFileReference section */
 		1DA5955D2EF0589B2AC4F739 /* Pods-Sync2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2DB0C3E88E97E1E5750C48B5 /* Pods-Sync2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		75045EE821B66AEC0011283F /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		751C4A74210F0B530040E717 /* RulesInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesInformationViewController.h; sourceTree = "<group>"; };
 		751C4A75210F0B530040E717 /* RulesInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesInformationViewController.m; sourceTree = "<group>"; };
 		751C4A77210F0FB10040E717 /* RulesInformationEdgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesInformationEdgeViewController.h; sourceTree = "<group>"; };
@@ -433,10 +438,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				75802C9D213D5E0B0068C856 /* libxml2.2.dylib in Frameworks */,
+				75045EE921B66AEC0011283F /* SixgillSDK.framework in Frameworks */,
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
 				E962B3621EF213ED00ECB920 /* CoreLocation.framework in Frameworks */,
+				75045EEA21B66AF90011283F /* SixgillSDK.framework in Frameworks */,
 				58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1107,6 +1114,7 @@
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
+				75045EE821B66AEC0011283F /* SixgillSDK.framework */,
 				756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */,
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
@@ -1467,7 +1475,6 @@
 				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
 				E9FB148A207D828600A00EFF /* Embed Frameworks */,
 				756C2D5920F60012008560FF /* ShellScript */,
-				1A223D94F148B3B27561B861 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1620,24 +1627,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1A223D94F148B3B27561B861 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh",
-				"${PODS_ROOT}/SixgillSDK/SixgillSDK/SixgillSDK.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SixgillSDK.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
