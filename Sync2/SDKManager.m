@@ -112,7 +112,8 @@
     
     [[SGSDK sharedInstance] startWithAPIKey:apiKey andConfig:config andSuccessHandler:^{
 //        SGAtlasProvider *atlasProvider = [[SGAtlasProvider alloc] initWithApiKey:@"660e9157-3c4c-41dd-872d-68c9729ba3bd" secretKey:@"yuy/dWyMTboHe4QUEMXEEKIh+KIXEzj5ArBOT7VlQPtSrAwq9EHCUVVy+VpKtsSPYakf9Llt+a/55oGqBbxc92j4RORGH9ewWqvv/SfAKWCl3i5fw32sWaBP0l24XQ=="];
-        SGAtlasProvider *atlasProvider = [[SGAtlasProvider alloc] initWithApiKey:@"660e9157-3c4c-41dd-872d-68c9729ba3bd" secretKey:@"yuy/dWyMTboHe4QUEMXEEKIh+KIXEzj5ArBOT7VlQPtSrAwq9EHCUVVy+VpKtsSPYakf9Llt+a/55oGqBbxc92j4RORGH9ewWqvv/SfAKWCl3i5fw32sWaBP0l24XQ=="];
+//        SGAtlasProvider *atlasProvider = [[SGAtlasProvider alloc] initWithApiKey:@"660e9157-3c4c-41dd-872d-68c9729ba3bd" secretKey:@"yuy/dWyMTboHe4QUEMXEEKIh+KIXEzj5ArBOT7VlQPtSrAwq9EHCUVVy+VpKtsSPYakf9Llt+a/55oGqBbxc92j4RORGH9ewWqvv/SfAKWCl3i5fw32sWaBP0l24XQ=="];
+        SGAtlasProvider *atlasProvider = [[SGAtlasProvider alloc] initWithApiKey:@"112762bb-6ee5-4807-8c61-c8f8939561f3" secretKey:@"sC0oXa+7R8CuckNCwXOZ481fsk2Y7IpPQPUmeakockKijfWHT23d8nl7s3VkHlWTnnqEbgPhUXka84nsEfnKk0dalm47NHaGuwgqDr0XgAe88z68nqLRIyn0Rs8+Wg=="];
         
         [[SGSDK sharedInstance] setProviderManager:atlasProvider];
         
