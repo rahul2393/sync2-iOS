@@ -26,6 +26,9 @@
 @property (nonatomic, strong) UIView *accuracyCircle;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) IAFloorPlan *floorplan;
+@property (nonatomic, strong) NSData *imageData;
+
 @end
 
 @implementation MapViewController
@@ -36,7 +39,8 @@
     self.locationManager = [[CLLocationManager alloc] init];
     
     [self.providerMapView setHidden:YES];
-    [[SGSDK sharedInstance] providerManager].providerDelegate = self;
+    [[[SGSDK sharedInstance] providerManager] setProviderDelegate:self];
+//    [[SGSDK sharedInstance] providerManager].providerDelegate = self;
     
     self.locationManager.delegate = self;
     
@@ -56,27 +60,82 @@
     self.title = @"Map";
 }
 
-- (void)locationUpdates:(CGPoint)point size:(CGFloat)size {
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[SGSDK sharedInstance] providerManager].providerDelegate = nil;
+}
+
+- (void)locationUpdates:(CGPoint)point {
+    
     if (self.circle) {
         [UIView animateWithDuration:(self.circle.hidden ? 0.0f : 0.35f) animations:^{
             self.circle.center = point;
             self.accuracyCircle.center = point;
+            CGFloat size = 2 * [self.floorplan meterToPixelConversion];
+            
+//            IALocation *loc = [locations lastObject];
+//            CGPoint point = [self.floorPlan coordinateToPoint:loc.location.coordinate];
+//            [self.providerDelegate locationUpdates:point];
+
+            
+            
             self.accuracyCircle.transform = CGAffineTransformMakeScale(size, size);
             [self.view bringSubviewToFront:self.circle];
         }];
         self.accuracyCircle.hidden = NO;
         self.circle.hidden = NO;
     }
+    
+    
+    //            CGFloat size = loc.location.horizontalAccuracy * [self.floorPlan meterToPixelConversion];
+    //            [self.providerDelegate locationUpdates:point size:size];
 }
 
-- (void)didEnterRegion:(NSString *)floorPlanId floorPlanName:(NSString *)name {
-    [[[SGSDK sharedInstance] providerManager] loadMapFor:floorPlanId parentView:self.providerMapView completionHandler:^(UIImageView *imageView, UIView *circle, UIView *accuracy) {
-        [self.mapView setHidden:YES];
-        [self.providerMapView setHidden:NO];
-        self.imageView = imageView;
-        self.circle = circle;
-        self.accuracyCircle = accuracy;
-    }];
+- (void)didEnterRegionWithFloorMap:(IAFloorPlan *)floorplan andImage:(NSData *)imageData {
+    
+    self.floorplan = floorplan;
+    self.imageData = imageData;
+    
+    double width = floorplan.width;
+    double height = floorplan.height;
+    float size = floorplan.meterToPixelConversion;
+    UIImage *image = [[UIImage alloc] initWithData:imageData];
+    float scale = fmin(1.0, fmin(self.providerMapView.bounds.size.width / width, self.providerMapView.bounds.size.height / height));
+    CGAffineTransform t = CGAffineTransformMakeScale(scale, scale);
+    
+    UIImageView *imageView = [UIImageView new];
+    [self.providerMapView addSubview:imageView];
+    imageView.frame = self.providerMapView.frame;
+    
+    imageView.transform = CGAffineTransformIdentity;
+    imageView.image = image;
+    imageView.frame = CGRectMake(0, 0, width, height);
+    imageView.transform = t;
+    imageView.center = self.providerMapView.center;
+    imageView.backgroundColor = [UIColor whiteColor];
+    
+    UIView *circle = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
+    circle.backgroundColor = [UIColor colorWithRed:0.08627 green:0.5059 blue:0.9843 alpha:1.0];
+    circle.layer.cornerRadius = circle.frame.size.width / 2;
+    circle.layer.borderColor = [[UIColor colorWithRed:1 green:1 blue:1 alpha:1] CGColor];
+    circle.layer.borderWidth = 0.1;
+    circle.hidden = YES;
+    [imageView addSubview:circle];
+    
+    circle.transform = CGAffineTransformMakeScale(size, size);
+    
+    UIView *accuracyCircle = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
+    accuracyCircle.backgroundColor = [UIColor colorWithRed:0.08627 green:0.5059 blue:0.9843 alpha:0.4];
+    accuracyCircle.layer.cornerRadius = accuracyCircle.frame.size.width / 2;
+    accuracyCircle.hidden = YES;
+    [imageView addSubview:accuracyCircle];
+    
+    [self.mapView setHidden:YES];
+    [self.providerMapView setHidden:NO];
+    self.imageView = imageView;
+    self.circle = circle;
+    self.accuracyCircle = accuracyCircle;
+
 }
 
 - (void)didExitRegion {

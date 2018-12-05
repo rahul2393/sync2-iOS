@@ -9,13 +9,15 @@
 #ifndef SGProviderDelegate_h
 #define SGProviderDelegate_h
 
+@import IndoorAtlas;
+
 @protocol SGProviderDelegate
 
--(void) didEnterRegion:(NSString *)floorPlanId floorPlanName:(NSString *)name;
+-(void) didEnterRegionWithFloorMap:(IAFloorPlan *)floorplan andImage:(NSData *)imageData;
 
 -(void) didExitRegion;
 
--(void)locationUpdates:(CGPoint)point size:(CGFloat)size;
+-(void)locationUpdates:(CGPoint)point;
 
 @end
 

@@ -18,6 +18,4 @@
 
 -(void)stopSensors;
 
--(void) loadMapFor:(NSString *)floorPlanId parentView:(UIView *)view completionHandler:(void (^)(UIImageView *, UIView *, UIView *)) completionBlock;
-
 @end
