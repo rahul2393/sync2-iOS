@@ -385,9 +385,10 @@ typedef GPB_ENUM(IBeaconsResponse_FieldNumber) {
 typedef GPB_ENUM(Rule_FieldNumber) {
   Rule_FieldNumber_Id_p = 1,
   Rule_FieldNumber_Name = 2,
-  Rule_FieldNumber_Description_p = 3,
-  Rule_FieldNumber_ProjectId = 4,
-  Rule_FieldNumber_ConditionsAndActions = 5,
+  Rule_FieldNumber_Enabled = 3,
+  Rule_FieldNumber_Conditions = 4,
+  Rule_FieldNumber_ThrottleInSeconds = 5,
+  Rule_FieldNumber_ActionsJson = 6,
 };
 
 @interface Rule : GPBMessage
@@ -396,11 +397,13 @@ typedef GPB_ENUM(Rule_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
+@property(nonatomic, readwrite) BOOL enabled;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *projectId;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *conditions;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *conditionsAndActions;
+@property(nonatomic, readwrite) int64_t throttleInSeconds;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *actionsJson;
 
 @end
 
