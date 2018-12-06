@@ -39,8 +39,6 @@
     self.locationManager = [[CLLocationManager alloc] init];
     
     [self.providerMapView setHidden:YES];
-    [[[SGSDK sharedInstance] providerManager] setProviderDelegate:self];
-//    [[SGSDK sharedInstance] providerManager].providerDelegate = self;
     
     self.locationManager.delegate = self;
     
@@ -65,19 +63,14 @@
     [[SGSDK sharedInstance] providerManager].providerDelegate = nil;
 }
 
-- (void)locationUpdates:(CGPoint)point {
-    
+- (void)didUpdateLocation:(CLLocation *)location {
     if (self.circle) {
         [UIView animateWithDuration:(self.circle.hidden ? 0.0f : 0.35f) animations:^{
+            CGPoint point = [self.floorplan coordinateToPoint:location.coordinate];
             self.circle.center = point;
             self.accuracyCircle.center = point;
-            CGFloat size = 2 * [self.floorplan meterToPixelConversion];
             
-//            IALocation *loc = [locations lastObject];
-//            CGPoint point = [self.floorPlan coordinateToPoint:loc.location.coordinate];
-//            [self.providerDelegate locationUpdates:point];
-
-            
+            CGFloat size = location.horizontalAccuracy * [self.floorplan meterToPixelConversion];
             
             self.accuracyCircle.transform = CGAffineTransformMakeScale(size, size);
             [self.view bringSubviewToFront:self.circle];
@@ -85,10 +78,6 @@
         self.accuracyCircle.hidden = NO;
         self.circle.hidden = NO;
     }
-    
-    
-    //            CGFloat size = loc.location.horizontalAccuracy * [self.floorPlan meterToPixelConversion];
-    //            [self.providerDelegate locationUpdates:point size:size];
 }
 
 - (void)didEnterRegionWithFloorMap:(IAFloorPlan *)floorplan andImage:(NSData *)imageData {
@@ -157,6 +146,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    [[SGSDK sharedInstance] providerManager].providerDelegate = self;
     
     _showGeo = [[SettingsManager sharedManager] mapShowGeofences];
 //    _showLast5Locs = [[SettingsManager sharedManager] mapShowLast5Pts];

@@ -17,7 +17,7 @@
 
 -(void) didExitRegion;
 
--(void)locationUpdates:(CGPoint)point;
+-(void)didUpdateLocation:(CLLocation *)location;
 
 @end
 

@@ -108,7 +108,7 @@ PODS:
     - PWCore (>= 3.6.0)
     - SSZipArchive
     - TMCache
-  - SixgillSDK (1.3.0-beta.46):
+  - SixgillSDK (1.3.0-beta.47):
     - CocoaLumberjack
     - IndoorAtlas
     - PWLocation
@@ -125,7 +125,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - MKDropdownMenu
-  - SixgillSDK (~> 1.3.0-beta.46)
+  - SixgillSDK (~> 1.3.0-beta.47)
   - TTGSnackbar
 
 SPEC REPOS:
@@ -177,11 +177,11 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PWCore: d27796bf877e9b5ecafec86d6036d42dbe8c6ec1
   PWLocation: 91834017600487f28fcc4a224be8083377363b22
-  SixgillSDK: f29b0730464dd44419e658751cd92533ed9a9999
+  SixgillSDK: e8fee95894ba7b83d24866806da6d300096a1580
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed
   TTGSnackbar: 2cf4e7b6ffbe5cddf248a73f3ee952b71bee8ea3
 
-PODFILE CHECKSUM: e7396112277bd3a8cbc070121937d3bafba9882c
+PODFILE CHECKSUM: d766f0a066bfd21b330b47a9766f87475b895e59
 
 COCOAPODS: 1.5.3
