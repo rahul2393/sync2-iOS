@@ -21,13 +21,12 @@
 @property (nonatomic, readwrite) BOOL showGeo;
 @property (nonatomic, readwrite) BOOL useDummyData;
 
-@property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) UIView *circle;
-@property (nonatomic, strong) UIView *accuracyCircle;
+@property (nonatomic, strong) IAFloorPlan *floorplan;
+@property (nonatomic, strong) UIImageView *providerMapImageView;
+@property (nonatomic, strong) UIView *providerMapBlueDot;
+@property (nonatomic, strong) UIView *providerMapAccuracy;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) IAFloorPlan *floorplan;
-@property (nonatomic, strong) NSData *imageData;
 
 @end
 
@@ -58,78 +57,36 @@
     self.title = @"Map";
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [[SGSDK sharedInstance] providerManager].providerDelegate = self;
+    
+    _showGeo = [[SettingsManager sharedManager] mapShowGeofences];
+    //    _showLast5Locs = [[SettingsManager sharedManager] mapShowLast5Pts];
+    
+    [self.mapView removeOverlays:self.mapView.overlays];
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    
+    //    if (_showLast5Locs) {
+    //        [self drawMapMarkers];
+    //    }
+    
+    if (_showGeo) {
+        [self loadLandmarks];
+    }
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self zoomInOnLastCoord];
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [[SGSDK sharedInstance] providerManager].providerDelegate = nil;
-}
-
-- (void)didUpdateLocation:(CLLocation *)location {
-    if (self.circle) {
-        [UIView animateWithDuration:(self.circle.hidden ? 0.0f : 0.35f) animations:^{
-            CGPoint point = [self.floorplan coordinateToPoint:location.coordinate];
-            self.circle.center = point;
-            self.accuracyCircle.center = point;
-            
-            CGFloat size = location.horizontalAccuracy * [self.floorplan meterToPixelConversion];
-            
-            self.accuracyCircle.transform = CGAffineTransformMakeScale(size, size);
-            [self.view bringSubviewToFront:self.circle];
-        }];
-        self.accuracyCircle.hidden = NO;
-        self.circle.hidden = NO;
-    }
-}
-
-- (void)didEnterRegionWithFloorMap:(IAFloorPlan *)floorplan andImage:(NSData *)imageData {
-    
-    self.floorplan = floorplan;
-    self.imageData = imageData;
-    
-    double width = floorplan.width;
-    double height = floorplan.height;
-    float size = floorplan.meterToPixelConversion;
-    UIImage *image = [[UIImage alloc] initWithData:imageData];
-    float scale = fmin(1.0, fmin(self.providerMapView.bounds.size.width / width, self.providerMapView.bounds.size.height / height));
-    CGAffineTransform t = CGAffineTransformMakeScale(scale, scale);
-    
-    UIImageView *imageView = [UIImageView new];
-    [self.providerMapView addSubview:imageView];
-    imageView.frame = self.providerMapView.frame;
-    
-    imageView.transform = CGAffineTransformIdentity;
-    imageView.image = image;
-    imageView.frame = CGRectMake(0, 0, width, height);
-    imageView.transform = t;
-    imageView.center = self.providerMapView.center;
-    imageView.backgroundColor = [UIColor whiteColor];
-    
-    UIView *circle = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
-    circle.backgroundColor = [UIColor colorWithRed:0.08627 green:0.5059 blue:0.9843 alpha:1.0];
-    circle.layer.cornerRadius = circle.frame.size.width / 2;
-    circle.layer.borderColor = [[UIColor colorWithRed:1 green:1 blue:1 alpha:1] CGColor];
-    circle.layer.borderWidth = 0.1;
-    circle.hidden = YES;
-    [imageView addSubview:circle];
-    
-    circle.transform = CGAffineTransformMakeScale(size, size);
-    
-    UIView *accuracyCircle = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
-    accuracyCircle.backgroundColor = [UIColor colorWithRed:0.08627 green:0.5059 blue:0.9843 alpha:0.4];
-    accuracyCircle.layer.cornerRadius = accuracyCircle.frame.size.width / 2;
-    accuracyCircle.hidden = YES;
-    [imageView addSubview:accuracyCircle];
-    
-    [self.mapView setHidden:YES];
-    [self.providerMapView setHidden:NO];
-    self.imageView = imageView;
-    self.circle = circle;
-    self.accuracyCircle = accuracyCircle;
-
-}
-
-- (void)didExitRegion {
-    [self.providerMapView setHidden:YES];
-    [self.mapView setHidden:NO];
+    [[self.providerMapView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
 - (void) loadLandmarks{
@@ -142,32 +99,6 @@
         
         [self drawLandmarks];
     }];        
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-    [[SGSDK sharedInstance] providerManager].providerDelegate = self;
-    
-    _showGeo = [[SettingsManager sharedManager] mapShowGeofences];
-//    _showLast5Locs = [[SettingsManager sharedManager] mapShowLast5Pts];
-    
-    [self.mapView removeOverlays:self.mapView.overlays];
-    [self.mapView removeAnnotations:self.mapView.annotations];
-    
-//    if (_showLast5Locs) {
-//        [self drawMapMarkers];
-//    }
-    
-    if (_showGeo) {
-        [self loadLandmarks];
-    }
-    
-}
-
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self zoomInOnLastCoord];
 }
 
 -(void) zoomInOnLastCoord{
@@ -290,6 +221,7 @@
 //    self.coordinateLabel.text = [NSString stringWithFormat:@"%f, %f",view.annotation.coordinate.latitude, view.annotation.coordinate.longitude];
 }
 
+#pragma mark - IBAction Methods
 
 - (IBAction)mapSettingsTapped:(id)sender {
 }
@@ -317,6 +249,110 @@
             break;
         default:
             break;
+    }
+}
+
+#pragma mark - SGProviderDelegate methods
+
+- (void)didEnterRegionWithFloorMap:(IAFloorPlan *)floorplan andImage:(NSData *)imageData {
+    
+    self.floorplan = floorplan;
+    
+    double width = floorplan.width;
+    double height = floorplan.height;
+    float size = floorplan.meterToPixelConversion;
+    UIImage *image = [[UIImage alloc] initWithData:imageData];
+    float scale = fmin(1.0, fmin(self.providerMapView.bounds.size.width / width, self.providerMapView.bounds.size.height / height));
+    CGAffineTransform t = CGAffineTransformMakeScale(scale, scale);
+    
+    UIImageView *providerMapImageView = [UIImageView new];
+    [self.providerMapView addSubview:providerMapImageView];
+    providerMapImageView.frame = self.providerMapView.frame;
+    
+    providerMapImageView.transform = CGAffineTransformIdentity;
+    providerMapImageView.image = image;
+    providerMapImageView.frame = CGRectMake(0, 0, width, height);
+    providerMapImageView.transform = t;
+    providerMapImageView.center = self.providerMapView.center;
+    providerMapImageView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
+    
+    UIView *providerMapAccuracy = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
+    providerMapAccuracy.backgroundColor = [UIColor colorWithRed:0.08627 green:0.5059 blue:0.9843 alpha:0.4];
+    providerMapAccuracy.layer.cornerRadius = providerMapAccuracy.frame.size.width / 2;
+    providerMapAccuracy.hidden = YES;
+    [providerMapImageView addSubview:providerMapAccuracy];
+    
+    [self.mapView setHidden:YES];
+    [self.providerMapView setHidden:NO];
+    self.providerMapImageView = providerMapImageView;
+    
+    UIView *providerMapBlueDot = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
+    providerMapBlueDot.backgroundColor = [UIColor whiteColor];
+    providerMapBlueDot.layer.cornerRadius = providerMapBlueDot.frame.size.width / 2;
+    providerMapBlueDot.layer.borderColor = [[UIColor colorWithRed:1 green:1 blue:1 alpha:1] CGColor];
+    providerMapBlueDot.layer.borderWidth = 0.1;
+    providerMapBlueDot.hidden = YES;
+    [providerMapImageView addSubview:providerMapBlueDot];
+    
+    providerMapBlueDot.transform = CGAffineTransformMakeScale(size, size);
+    
+    [self.providerMapImageView setUserInteractionEnabled:YES];
+    UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGesture:)];
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
+    [self.providerMapImageView addGestureRecognizer:pinchGesture];
+    [self.providerMapImageView addGestureRecognizer:panGesture];
+    
+    self.providerMapBlueDot = providerMapBlueDot;
+    self.providerMapAccuracy = providerMapAccuracy;
+    
+}
+
+- (void)didExitRegion {
+    [[self.providerMapView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.providerMapView setHidden:YES];
+    [self.mapView setHidden:NO];
+}
+
+- (void)didUpdateLocation:(CLLocation *)location {
+    [UIView animateWithDuration:(self.providerMapBlueDot.hidden ? 0.0f : 0.35f) animations:^{
+        CGPoint point = [self.floorplan coordinateToPoint:location.coordinate];
+        self.providerMapBlueDot.center = point;
+        self.providerMapAccuracy.center = point;
+        
+        CGFloat size = location.horizontalAccuracy * [self.floorplan meterToPixelConversion];
+        
+        self.providerMapAccuracy.transform = CGAffineTransformMakeScale(size, size);
+        [self.view bringSubviewToFront:self.providerMapBlueDot];
+    }];
+    self.providerMapAccuracy.hidden = NO;
+    self.providerMapBlueDot.hidden = NO;
+}
+
+#pragma mark - Gesture Recognizers
+
+-(void) pinchGesture:(UIPinchGestureRecognizer *)sender {
+    sender.view.transform = CGAffineTransformScale(sender.view.transform, sender.scale, sender.scale);
+    sender.scale = 1.0;
+}
+
+-(void) panGesture:(UIPanGestureRecognizer *)sender {
+    CGPoint translation = [sender translationInView:self.providerMapImageView];
+    self.providerMapImageView.center = CGPointMake(self.providerMapImageView.center.x + translation.x, self.providerMapImageView.center.y + translation.y);
+    [sender setTranslation:CGPointZero inView:self.providerMapImageView];
+    
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        CGPoint velocity = [sender velocityInView:self.providerMapImageView];
+        double magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y));
+        double slideMultiplier = magnitude / 200;
+        
+        double slideFactor = 0.1 * slideMultiplier;
+        CGPoint finalPoint = CGPointMake(sender.view.center.x + (velocity.x * slideFactor), sender.view.center.y + (velocity.y * slideFactor));
+        finalPoint.x = MIN(MAX(finalPoint.x, 0), self.providerMapImageView.bounds.size.width);
+        finalPoint.y = MIN(MAX(finalPoint.y, 0), self.providerMapImageView.bounds.size.height);
+        
+        [UIView animateWithDuration:slideFactor * 2 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            sender.view.center = finalPoint;
+        } completion:nil];
     }
 }
 
