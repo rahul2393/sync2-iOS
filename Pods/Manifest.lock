@@ -1,11 +1,5 @@
 PODS:
   - ActionSheetPicker-3.0 (2.3.0)
-  - CocoaLumberjack (3.4.2):
-    - CocoaLumberjack/Default (= 3.4.2)
-    - CocoaLumberjack/Extensions (= 3.4.2)
-  - CocoaLumberjack/Default (3.4.2)
-  - CocoaLumberjack/Extensions (3.4.2):
-    - CocoaLumberjack/Default
   - Crashlytics (3.10.9):
     - Fabric (~> 1.7.13)
   - Fabric (1.7.13)
@@ -82,8 +76,6 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - SixgillSDK (1.2.13):
-    - CocoaLumberjack
   - TTGSnackbar (1.7.5)
 
 DEPENDENCIES:
@@ -95,13 +87,11 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - MKDropdownMenu
-  - SixgillSDK
   - TTGSnackbar
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ActionSheetPicker-3.0
-    - CocoaLumberjack
     - Crashlytics
     - Fabric
     - Firebase
@@ -116,12 +106,9 @@ SPEC REPOS:
     - MKDropdownMenu
     - nanopb
     - TTGSnackbar
-  https://github.com/sixgill/SixgillPodSpecs.git:
-    - SixgillSDK
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
-  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   Crashlytics: 55e24fc23989680285a21cb1146578d9d18e432c
   Fabric: 25d0963b691fc97be566392243ff0ecef5a68338
   Firebase: 6df9a6114bc9f106a98fe83d5438d4d9833c2019
@@ -135,9 +122,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
   MKDropdownMenu: 269df4a41d21a1db684ce8bc709befe419fc5bae
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  SixgillSDK: 47323c4f965aa36c4086d270ac53b3f8aecc2542
   TTGSnackbar: 2cf4e7b6ffbe5cddf248a73f3ee952b71bee8ea3
 
-PODFILE CHECKSUM: f37f3892a1c04aa668c31a32633029ab006e644e
+PODFILE CHECKSUM: 8b959e46bab1715d58a3eed1ad3d87c3be8f185d
 
 COCOAPODS: 1.5.3
