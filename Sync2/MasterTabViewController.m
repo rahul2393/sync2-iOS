@@ -98,7 +98,6 @@
 - (void)sensorUpdateSentWithData:(Event *)sensorData {
     [[SDKManager sharedManager] setSensorsData:sensorData];
     
-//    size_t size = [sensorData serializedSize];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"sensorDataUpdated" object:self];
     
