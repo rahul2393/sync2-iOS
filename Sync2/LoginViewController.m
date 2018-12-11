@@ -47,6 +47,8 @@
 //    self.emailAddressField.text = @"abhay@hotcocoasoftware.com";
 //    self.passwordField.text = @"password123";
     self.phoneNumberField.text = @"1234";
+    self.emailAddressField.text = @"user1.org1.sixgill@gmail.com";
+    self.passwordField.text = @"Classic1";
     
     Environment *env = [[EnvironmentManager sharedManager] environments][0];
     self.selectedURLLabel.text = env.senseURL;
