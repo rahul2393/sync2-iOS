@@ -1,0 +1,6 @@
+framework module SixgillSDK {
+  umbrella header "SixgillSDK.h"
+
+  export *
+  module * { export * }
+}
