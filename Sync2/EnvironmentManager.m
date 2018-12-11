@@ -76,8 +76,8 @@
         
         Environment *vibhavLocal = [[Environment alloc] init];
         vibhavLocal.name = @"Vibhav Local";
-        vibhavLocal.senseURL = @"http://192.168.0.116:5005";
-        vibhavLocal.ingressURL = @"http://192.168.0.116:5000";
+        vibhavLocal.senseURL = @"http://192.168.1.21:5005";
+        vibhavLocal.ingressURL = @"http://192.168.1.21:5000";
         vibhavLocal.forgotPasswordURL = @"https://dashboard.staging.sixgill.io/request-password";
         
         self.environments = @[prod, staging, vibhavLocal];
