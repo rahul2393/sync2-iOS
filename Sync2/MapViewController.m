@@ -260,7 +260,9 @@
     
     double width = floorplan.width;
     double height = floorplan.height;
-    float size = floorplan.meterToPixelConversion;
+    float blueDotSize = 20;// floorplan.meterToPixelConversion;
+    float accuracyCircleSize = 30;
+    
     UIImage *image = [[UIImage alloc] initWithData:imageData];
     float scale = fmin(1.0, fmin(self.providerMapView.bounds.size.width / width, self.providerMapView.bounds.size.height / height));
     CGAffineTransform t = CGAffineTransformMakeScale(scale, scale);
@@ -277,7 +279,7 @@
     providerMapImageView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
     
     UIView *providerMapAccuracy = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
-    providerMapAccuracy.backgroundColor = [UIColor colorWithRed:0.08627 green:0.5059 blue:0.9843 alpha:0.4];
+    providerMapAccuracy.backgroundColor = [UIColor whiteColor];
     providerMapAccuracy.layer.cornerRadius = providerMapAccuracy.frame.size.width / 2;
     providerMapAccuracy.hidden = YES;
     [providerMapImageView addSubview:providerMapAccuracy];
@@ -287,14 +289,15 @@
     self.providerMapImageView = providerMapImageView;
     
     UIView *providerMapBlueDot = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
-    providerMapBlueDot.backgroundColor = [UIColor whiteColor];
+    providerMapBlueDot.backgroundColor =  [UIColor colorWithRed:0 green:0.3176 blue:0.7764 alpha:1];
     providerMapBlueDot.layer.cornerRadius = providerMapBlueDot.frame.size.width / 2;
     providerMapBlueDot.layer.borderColor = [[UIColor colorWithRed:1 green:1 blue:1 alpha:1] CGColor];
     providerMapBlueDot.layer.borderWidth = 0.1;
     providerMapBlueDot.hidden = YES;
     [providerMapImageView addSubview:providerMapBlueDot];
     
-    providerMapBlueDot.transform = CGAffineTransformMakeScale(size, size);
+    providerMapBlueDot.transform = CGAffineTransformMakeScale(blueDotSize, blueDotSize);
+    providerMapAccuracy.transform = CGAffineTransformMakeScale(accuracyCircleSize, accuracyCircleSize);
     
     [self.providerMapImageView setUserInteractionEnabled:YES];
     UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGesture:)];
@@ -319,9 +322,9 @@
         self.providerMapBlueDot.center = point;
         self.providerMapAccuracy.center = point;
         
-        CGFloat size = location.horizontalAccuracy * [self.floorplan meterToPixelConversion];
+//        CGFloat size = location.horizontalAccuracy * [self.floorplan meterToPixelConversion];
+//        self.providerMapAccuracy.transform = CGAffineTransformMakeScale(size, size);
         
-        self.providerMapAccuracy.transform = CGAffineTransformMakeScale(size, size);
         [self.view bringSubviewToFront:self.providerMapBlueDot];
     }];
     self.providerMapAccuracy.hidden = NO;

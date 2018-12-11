@@ -111,14 +111,14 @@
     }
     
     [[SGSDK sharedInstance] startWithAPIKey:apiKey andConfig:config andSuccessHandler:^{
-//        SGAtlasProvider *atlasProvider = [[SGAtlasProvider alloc] initWithApiKey:@"660e9157-3c4c-41dd-872d-68c9729ba3bd" secretKey:@"yuy/dWyMTboHe4QUEMXEEKIh+KIXEzj5ArBOT7VlQPtSrAwq9EHCUVVy+VpKtsSPYakf9Llt+a/55oGqBbxc92j4RORGH9ewWqvv/SfAKWCl3i5fw32sWaBP0l24XQ=="];
+        SGAtlasProvider *atlasProvider = [[SGAtlasProvider alloc] initWithApiKey:@"660e9157-3c4c-41dd-872d-68c9729ba3bd" secretKey:@"yuy/dWyMTboHe4QUEMXEEKIh+KIXEzj5ArBOT7VlQPtSrAwq9EHCUVVy+VpKtsSPYakf9Llt+a/55oGqBbxc92j4RORGH9ewWqvv/SfAKWCl3i5fw32sWaBP0l24XQ=="];
 //        SGAtlasProvider *atlasProvider = [[SGAtlasProvider alloc] initWithApiKey:@"660e9157-3c4c-41dd-872d-68c9729ba3bd" secretKey:@"yuy/dWyMTboHe4QUEMXEEKIh+KIXEzj5ArBOT7VlQPtSrAwq9EHCUVVy+VpKtsSPYakf9Llt+a/55oGqBbxc92j4RORGH9ewWqvv/SfAKWCl3i5fw32sWaBP0l24XQ=="];
 //        SGAtlasProvider *atlasProvider = [[SGAtlasProvider alloc] initWithApiKey:@"a3fcc122-e011-4843-bcb5-4a525252e767" secretKey:@"9V/KOZHqirydQ9pbjW/apTltLedM85poaJtcA0FzKX/ROtOIpKlYa0iNTEb/CWb2Dxbuw7qNz9E8p1X7yNW7uzxuOdTPs7sg+PSYVMzuvZ/bPnSh2wIAU2jKe+DaJw=="];
         
-//        [[SGSDK sharedInstance] setProviderManager:atlasProvider];
+        [[SGSDK sharedInstance] setProviderManager:atlasProvider];
         
-        SGPhunwareProvider *phunwareProvider = [[SGPhunwareProvider alloc] initWithApplicationId:@"2182" accessKey:@"ffdb2c886b2a02c35a139c61b71ab64ddb6eee67" signatureKey:@"056fe5ef873c5804e9f0676f9d5b58fa295d48e0" buildingId:81601];
-        [[SGSDK sharedInstance] setProviderManager:phunwareProvider];
+//        SGPhunwareProvider *phunwareProvider = [[SGPhunwareProvider alloc] initWithApplicationId:@"2182" accessKey:@"ffdb2c886b2a02c35a139c61b71ab64ddb6eee67" signatureKey:@"056fe5ef873c5804e9f0676f9d5b58fa295d48e0" buildingId:81601];
+//        [[SGSDK sharedInstance] setProviderManager:phunwareProvider];
         
         [SGSDK enableWithSuccessHandler:^{
             successBlock();
