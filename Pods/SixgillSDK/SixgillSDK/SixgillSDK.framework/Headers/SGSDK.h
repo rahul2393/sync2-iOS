@@ -15,7 +15,6 @@
 #import "SGSDKConfigManager.h"
 
 #import "SGProviderManager.h"
-#import "SGPhunwareProvider.h"
 #import "SGAtlasProvider.h"
 #import "SGProviderDelegate.h"
 /**

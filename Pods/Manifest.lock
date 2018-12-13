@@ -1,20 +1,5 @@
 PODS:
   - ActionSheetPicker-3.0 (2.3.0)
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
-    - AFNetworking/NSURLSession
   - CocoaLumberjack (3.4.2):
     - CocoaLumberjack/Default (= 3.4.2)
     - CocoaLumberjack/Extensions (= 3.4.2)
@@ -92,28 +77,15 @@ PODS:
   - GoogleUtilities/UserDefaults (5.3.6):
     - GoogleUtilities/Logger
   - IndoorAtlas (2.8.4)
-  - MistSDK (1.1.2)
   - MKDropdownMenu (1.4)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - PWCore (3.6.0):
-    - AFNetworking
-    - SSZipArchive
-    - TMCache
-  - PWLocation (3.5.0):
-    - MistSDK (= 1.1.2)
-    - PWCore (>= 3.6.0)
-    - SSZipArchive
-    - TMCache
-  - SixgillSDK (1.3.0-beta.50):
+  - SixgillSDK (1.3.0-beta.51):
     - CocoaLumberjack
     - IndoorAtlas
-    - PWLocation
-  - SSZipArchive (2.1.4)
-  - TMCache (2.1.0)
   - TTGSnackbar (1.7.5)
 
 DEPENDENCIES:
@@ -125,13 +97,12 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - MKDropdownMenu
-  - SixgillSDK (~> 1.3.0-beta.50)
+  - SixgillSDK (~> 1.3.0-beta.51)
   - TTGSnackbar
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ActionSheetPicker-3.0
-    - AFNetworking
     - CocoaLumberjack
     - Crashlytics
     - Fabric
@@ -145,20 +116,14 @@ SPEC REPOS:
     - GooglePlaces
     - GoogleUtilities
     - IndoorAtlas
-    - MistSDK
     - MKDropdownMenu
     - nanopb
-    - PWCore
-    - PWLocation
-    - SSZipArchive
-    - TMCache
     - TTGSnackbar
   https://github.com/sixgill/SixgillPodSpecs.git:
     - SixgillSDK
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   Crashlytics: 55e24fc23989680285a21cb1146578d9d18e432c
   Fabric: 25d0963b691fc97be566392243ff0ecef5a68338
@@ -172,16 +137,11 @@ SPEC CHECKSUMS:
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
   IndoorAtlas: 397f5e9fe1daffe99d73d3ed5f29c1ac635e2e90
-  MistSDK: 160b962f45887a752fa5894d6c616bf60c9beeb9
   MKDropdownMenu: 269df4a41d21a1db684ce8bc709befe419fc5bae
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  PWCore: d27796bf877e9b5ecafec86d6036d42dbe8c6ec1
-  PWLocation: 91834017600487f28fcc4a224be8083377363b22
-  SixgillSDK: a01e545ec63c8ba65fca701e4cdfda7dada2acbe
-  SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
-  TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed
+  SixgillSDK: 8ae9b06c7e4e6bc7fbbdc05b3c23550e27effa33
   TTGSnackbar: 2cf4e7b6ffbe5cddf248a73f3ee952b71bee8ea3
 
-PODFILE CHECKSUM: 03a564685ee1da673a481b5c43476cc334dbb4ac
+PODFILE CHECKSUM: 637a1676555651d3f6c13c1796ca6bfa9b7355fc
 
 COCOAPODS: 1.5.3
