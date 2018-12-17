@@ -56,4 +56,6 @@
 #pragma mark - Core Data
 +(void) saveCoreDataContext;
 
++(void)getRulesOfType:(NSString *)type andSuccessHandler:(nullable void (^)(NSMutableArray<Rule*> *))successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
+
 @end
