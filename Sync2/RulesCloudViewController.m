@@ -14,11 +14,13 @@
 #import "SGRule.h"
 #import "Device.h"
 
+@import SixgillSDK;
+
 #define kCloudRulesStore @"kCloudRulesStore"
 
 @interface RulesCloudViewController ()
 
-@property (nonatomic, strong) NSArray *rules;
+@property (nonatomic, strong) NSMutableArray<Rule *> *rules;
 @property (nonatomic, readwrite) Project *currentProject;
 @property (nonatomic, readwrite) long conditionsCount;
 @end
@@ -63,8 +65,7 @@
         return;
     }
     
-    [[SenseAPI sharedManager] GetRulesForProject:_currentProject.objectId WithCompletion:^(NSArray *rules, NSError * _Nullable error) {
-        
+    [SGSDK getRulesOfType:@"cloud" andSuccessHandler:^(NSMutableArray<Rule *> *rules) {
         self.rules = rules;
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -77,6 +78,8 @@
                 [self.tableView reloadData];
             }
         });
+    } andFailureHandler:^(NSString *errorMsg) {
+        
     }];
     
     
@@ -96,13 +99,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RulesTableViewCell *cell = (RulesTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"RulesTableViewCellIdentifier" forIndexPath:indexPath];
     
-    SGRule *rule = self.rules[indexPath.section];
+    Rule *rule = self.rules[indexPath.section];
     cell.titleLabel.text = rule.name;
-    cell.detailLabel.text = rule.ruledescription;
+//    cell.detailLabel.text = rule.ruledescription;
     cell.actionCountLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)rule.actions.count];
     
     self.conditionsCount = 0;
-    [self findConditionsCount:rule.conditionsObject];
+//    [self findConditionsCount:rule.conditionsObject];
     cell.conditionCountLabel.text = [NSString stringWithFormat:@"%ld", self.conditionsCount];
     
     cell.statusImageView.image = rule.enabled ? [UIImage imageNamed: @"rules-green-circle"] : [UIImage imageNamed: @"rules-red-circle"];
