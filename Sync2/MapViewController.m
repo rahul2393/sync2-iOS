@@ -311,8 +311,12 @@
 }
 
 - (void)didExitRegion {
+    self.floorplan = nil;
     [[self.providerMapView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.providerMapView setHidden:YES];
+    self.providerMapImageView = nil;
+    self.providerMapBlueDot = nil;
+    self.providerMapAccuracy = nil;
     [self.mapView setHidden:NO];
 }
 
@@ -336,6 +340,9 @@
 -(void) pinchGesture:(UIPinchGestureRecognizer *)sender {
     sender.view.transform = CGAffineTransformScale(sender.view.transform, sender.scale, sender.scale);
     sender.scale = 1.0;
+    
+    self.providerMapAccuracy.transform = CGAffineTransformInvert(self.providerMapAccuracy.transform);
+    self.providerMapBlueDot.transform = CGAffineTransformInvert(self.providerMapBlueDot.transform);
 }
 
 -(void) panGesture:(UIPanGestureRecognizer *)sender {

@@ -701,7 +701,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sync2/MapViewController.m"
-            timestampString = "566311815.961875"
+            timestampString = "566727810.354148"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "259"
@@ -713,7 +713,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sync2/MasterTabViewController.m"
@@ -729,7 +729,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
@@ -739,6 +739,85 @@
             startingLineNumber = "349"
             endingLineNumber = "349"
             landmarkName = "-createLocationEventfrom:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGAtlasProvider.m"
+            timestampString = "566727810.363369"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-indoorLocationManager:didEnterRegion:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SGAtlasProvider indoorLocationManager:didEnterRegion:]"
+                  moduleName = "SixgillSDK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sanchitmittal/HCS/Projects/sixgill-new/ios-sdk-objc/SixgillSDK/SixgillSDK/SGAtlasProvider.m"
+                  timestampString = "566727811.126907"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__56-[SGAtlasProvider indoorLocationManager:didEnterRegion:]_block_invoke"
+                  moduleName = "SixgillSDK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sanchitmittal/HCS/Projects/sixgill-new/ios-sdk-objc/SixgillSDK/SixgillSDK/SGAtlasProvider.m"
+                  timestampString = "566727811.13159"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.78"
+                  moduleName = "SixgillSDK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sanchitmittal/HCS/Projects/sixgill-new/ios-sdk-objc/SixgillSDK/SixgillSDK/SGAtlasProvider.m"
+                  timestampString = "566727811.136147"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGAtlasProvider.m"
+            timestampString = "566727810.3635989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-indoorLocationManager:didExitRegion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
