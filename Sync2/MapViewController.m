@@ -268,7 +268,6 @@
     CGAffineTransform t = CGAffineTransformMakeScale(scale, scale);
     
     UIImageView *providerMapImageView = [UIImageView new];
-    [self.providerMapView addSubview:providerMapImageView];
     providerMapImageView.frame = self.providerMapView.frame;
     
     providerMapImageView.transform = CGAffineTransformIdentity;
@@ -287,6 +286,7 @@
     [self.mapView setHidden:YES];
     [self.providerMapView setHidden:NO];
     self.providerMapImageView = providerMapImageView;
+    [self.providerMapView addSubview:self.providerMapImageView];
     
     UIView *providerMapBlueDot = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
     providerMapBlueDot.backgroundColor =  [UIColor colorWithRed:0 green:0.3176 blue:0.7764 alpha:1];
@@ -340,9 +340,6 @@
 -(void) pinchGesture:(UIPinchGestureRecognizer *)sender {
     sender.view.transform = CGAffineTransformScale(sender.view.transform, sender.scale, sender.scale);
     sender.scale = 1.0;
-    
-    self.providerMapAccuracy.transform = CGAffineTransformInvert(self.providerMapAccuracy.transform);
-    self.providerMapBlueDot.transform = CGAffineTransformInvert(self.providerMapBlueDot.transform);
 }
 
 -(void) panGesture:(UIPanGestureRecognizer *)sender {
