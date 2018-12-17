@@ -9,7 +9,7 @@
 #import "SenseAPI.h"
 #import "Project.h"
 #import "DataChannel.h"
-#import "Landmark.h"
+#import "ProjectLandmark.h"
 #import "APIKey.h"
 #import "SettingsManager.h"
 #import "SDKManager.h"
@@ -430,7 +430,7 @@
         if(responseDict[@"data"]){
             NSArray *landmarkObjects = (NSArray *)responseDict[@"data"];
             for (NSDictionary *lmo in landmarkObjects) {
-                Landmark *p = [[Landmark alloc] initWithData:lmo];
+                ProjectLandmark *p = [[ProjectLandmark alloc] initWithData:lmo];
                 [toReturn addObject:p];
             }
         }
