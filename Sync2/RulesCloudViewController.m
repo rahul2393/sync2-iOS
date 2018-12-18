@@ -102,7 +102,7 @@
     Rule *rule = self.rules[indexPath.section];
     cell.titleLabel.text = rule.name;
 //    cell.detailLabel.text = rule.ruledescription;
-    cell.actionCountLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)rule.actions.count];
+//    cell.actionCountLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)rule.actions.count];
     
     self.conditionsCount = 0;
 //    [self findConditionsCount:rule.conditionsObject];

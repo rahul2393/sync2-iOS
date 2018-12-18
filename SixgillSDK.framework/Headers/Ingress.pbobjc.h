@@ -457,10 +457,19 @@ typedef GPB_ENUM(IBeaconsResponse_FieldNumber) {
 typedef GPB_ENUM(Rule_FieldNumber) {
   Rule_FieldNumber_Id_p = 1,
   Rule_FieldNumber_Name = 2,
-  Rule_FieldNumber_Enabled = 3,
-  Rule_FieldNumber_Conditions = 4,
-  Rule_FieldNumber_ThrottleInSeconds = 5,
-  Rule_FieldNumber_ActionsJson = 6,
+  Rule_FieldNumber_Type = 3,
+  Rule_FieldNumber_Enabled = 4,
+  Rule_FieldNumber_Conditions = 5,
+  Rule_FieldNumber_ConditionObject = 6,
+  Rule_FieldNumber_ActionsJson = 7,
+  Rule_FieldNumber_Description_p = 8,
+  Rule_FieldNumber_CreatedAt = 9,
+  Rule_FieldNumber_UpdatedAt = 10,
+  Rule_FieldNumber_Generator = 11,
+  Rule_FieldNumber_OrganizationId = 12,
+  Rule_FieldNumber_ChannelIdsArray = 13,
+  Rule_FieldNumber_ProjectId = 14,
+  Rule_FieldNumber_TagsArray = 15,
 };
 
 @interface Rule : GPBMessage
@@ -469,13 +478,35 @@ typedef GPB_ENUM(Rule_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
+@property(nonatomic, readwrite, copy, null_resettable) NSString *type;
+
 @property(nonatomic, readwrite) BOOL enabled;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *conditions;
 
-@property(nonatomic, readwrite) int64_t throttleInSeconds;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *conditionObject;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSData *actionsJson;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *actionsJson;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
+
+@property(nonatomic, readwrite) int64_t createdAt;
+
+@property(nonatomic, readwrite) int64_t updatedAt;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *generator;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *organizationId;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *channelIdsArray;
+/** The number of items in @c channelIdsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger channelIdsArray_Count;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *projectId;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *tagsArray;
+/** The number of items in @c tagsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger tagsArray_Count;
 
 @end
 
