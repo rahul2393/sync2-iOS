@@ -303,7 +303,7 @@
 - (void)didUpdateLocation:(CLLocation *)location {
     [UIView animateWithDuration:(self.providerMapBlueDot.hidden ? 0.0f : 0.35f) animations:^{
         CGPoint point = [self.floorplan coordinateToPoint:location.coordinate];
-        self.providerMapBlueDot.center = point;
+        self.providerMapBlueDot.center = CGPointMake(point.x * self.scrollView.zoomScale, point.y * self.scrollView.zoomScale);
         
         [self.view bringSubviewToFront:self.providerMapBlueDot];
         self.initialBlueDotFrame = self.providerMapBlueDot.frame;
