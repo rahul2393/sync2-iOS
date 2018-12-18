@@ -268,11 +268,9 @@
     UIImage *image = [[UIImage alloc] initWithData:imageData];
     
     self.providerMapImageView = [UIImageView new];
-
-    
     self.providerMapImageView.image = image;
     [self.providerMapImageView sizeToFit];
-    self.providerMapImageView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
+    self.providerMapImageView.backgroundColor = [UIColor whiteColor];
     self.scrollView.contentSize = self.providerMapImageView.frame.size;
     
     [self.mapView setHidden:YES];
@@ -286,7 +284,6 @@
     self.providerMapBlueDot.layer.borderWidth = 0.2;
     self.providerMapBlueDot.hidden = YES;
     [self.scrollView addSubview:self.providerMapBlueDot];
-//    self.initialButtonFrame = self.providerMapBlueDot.frame;
     
     self.providerMapBlueDot.transform = CGAffineTransformMakeScale(blueDotSize, blueDotSize);
 }
@@ -310,6 +307,8 @@
     }];
     self.providerMapBlueDot.hidden = NO;
 }
+
+#pragma mark - UIScrollViewDelegate methods
     
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     return self.providerMapImageView;
