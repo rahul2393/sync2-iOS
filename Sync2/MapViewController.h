@@ -11,10 +11,10 @@
 @import MapKit;
 @import SixgillSDK;
 
-@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, SGProviderDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, SGProviderDelegate, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UIView *providerMapView;
-
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+    
 @property (weak, nonatomic) IBOutlet UIButton *mapSettingsButton;
 
 - (IBAction)mapSettingsTapped:(id)sender;

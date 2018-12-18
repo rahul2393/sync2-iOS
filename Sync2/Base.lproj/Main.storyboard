@@ -2648,23 +2648,22 @@ Permission Missing</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </mapView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opA-10-pip">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yec-nw-wFK">
+                                        <rect key="frame" x="10" y="72" width="355" height="559"/>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="wZf-uv-HVs" secondAttribute="bottom" constant="10" id="4dj-co-yDm"/>
+                                    <constraint firstItem="yec-nw-wFK" firstAttribute="leading" secondItem="NPL-vw-5Mz" secondAttribute="leading" constant="10" id="9hl-0Z-LM5"/>
                                     <constraint firstAttribute="trailing" secondItem="wZf-uv-HVs" secondAttribute="trailing" constant="10" id="DAA-qf-wJ0"/>
-                                    <constraint firstItem="opA-10-pip" firstAttribute="leading" secondItem="NPL-vw-5Mz" secondAttribute="leading" id="DIo-i9-5v2"/>
+                                    <constraint firstAttribute="bottom" secondItem="yec-nw-wFK" secondAttribute="bottom" constant="10" id="NAD-kN-eJU"/>
                                     <constraint firstItem="wZf-uv-HVs" firstAttribute="top" secondItem="glT-tP-kic" secondAttribute="bottom" constant="12" id="U1V-Nk-bZZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="opA-10-pip" secondAttribute="bottom" id="dYG-gb-qYN"/>
+                                    <constraint firstItem="yec-nw-wFK" firstAttribute="top" secondItem="glT-tP-kic" secondAttribute="bottom" constant="12" id="ZOQ-DY-coq"/>
                                     <constraint firstItem="6vP-Mv-nyH" firstAttribute="top" secondItem="NPL-vw-5Mz" secondAttribute="top" constant="11" id="fdp-r0-D5n"/>
                                     <constraint firstAttribute="trailing" secondItem="6vP-Mv-nyH" secondAttribute="trailing" constant="10" id="gKO-Dw-04I"/>
                                     <constraint firstItem="glT-tP-kic" firstAttribute="leading" secondItem="NPL-vw-5Mz" secondAttribute="leading" constant="10" id="hGj-cl-eOm"/>
-                                    <constraint firstItem="opA-10-pip" firstAttribute="top" secondItem="NPL-vw-5Mz" secondAttribute="top" id="kIm-FU-9jY"/>
-                                    <constraint firstAttribute="trailing" secondItem="opA-10-pip" secondAttribute="trailing" id="qkw-Hk-TFO"/>
+                                    <constraint firstAttribute="trailing" secondItem="yec-nw-wFK" secondAttribute="trailing" constant="10" id="lGt-5E-MQq"/>
                                     <constraint firstItem="wZf-uv-HVs" firstAttribute="leading" secondItem="NPL-vw-5Mz" secondAttribute="leading" constant="10" id="tkW-zQ-Jyc"/>
                                     <constraint firstItem="glT-tP-kic" firstAttribute="top" secondItem="NPL-vw-5Mz" secondAttribute="top" constant="11" id="vHs-rd-Kfg"/>
                                     <constraint firstItem="6vP-Mv-nyH" firstAttribute="leading" secondItem="glT-tP-kic" secondAttribute="trailing" constant="12" id="vos-hD-RBm"/>
@@ -2769,7 +2768,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                         <outlet property="mapSettingsButton" destination="h5K-2y-mVX" id="spd-r6-jDB"/>
                         <outlet property="mapView" destination="wZf-uv-HVs" id="6Rt-u4-geF"/>
                         <outlet property="permissionMissingView" destination="d1A-f9-nrI" id="L8R-mW-s9G"/>
-                        <outlet property="providerMapView" destination="opA-10-pip" id="oNH-bs-ChU"/>
+                        <outlet property="scrollView" destination="yec-nw-wFK" id="Zsc-u5-KHc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7p-jI-A3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -6067,7 +6066,7 @@ revised: 5/9/2016</string>
         <image name="notification-permission-missing" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="165" height="120"/>
+        <image name="sixgill-logo" width="325" height="95"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
