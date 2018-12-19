@@ -15,7 +15,6 @@
 -(void) GetLandmarksForProject:(NSString *_Nonnull)projectId WithCompletion:(void ( ^ _Nullable )(NSArray *landmarks, NSError * _Nullable error))completed;
 -(void) GetDataChannelsWithCompletion:(void ( ^ _Nullable )(NSArray *dataChannels, NSError * _Nullable error))completed;
 -(void) GetProjectsWithCompletion:(void ( ^ _Nullable )(NSArray * projects, NSError * _Nullable error))completed;
--(void) GetRulesForProject:(NSString *_Nonnull)projectId WithCompletion:(void ( ^ _Nullable )(NSArray *rules, NSError * _Nullable error))completed;
 -(void) LoginWithEmail:(NSString *_Nonnull)email andPassword:(NSString *_Nonnull)password
         withCompletion:(void ( ^ _Nullable )(NSError * _Nullable error))completed;
 
