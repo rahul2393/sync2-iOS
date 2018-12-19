@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@import SixgillSDK;
 #import "CustomSegmentControlViewController.h"
 
 @interface RulesInformationViewController : CustomSegmentControlViewController
+
+@property (strong, nonatomic) SGRule *rule;
 
 @end

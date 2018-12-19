@@ -123,6 +123,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     RulesInformationViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RulesInformationViewControllerIdentifier"];
+    vc.rule = self.rules[indexPath.section];
     vc.currentPage = 1;
     [self.navigationController pushViewController:vc animated:YES];
 }
