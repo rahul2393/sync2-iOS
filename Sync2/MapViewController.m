@@ -295,6 +295,7 @@
     self.providerMapImageView = nil;
     self.providerMapBlueDot = nil;
     [self.mapView setHidden:NO];
+    [self.mapView setShowsUserLocation:YES];
 }
 
 - (void)didUpdateLocation:(CLLocation *)location {
