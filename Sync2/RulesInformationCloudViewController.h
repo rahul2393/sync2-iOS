@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@import SixgillSDK;
 
 @interface RulesInformationCloudViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *statusImageView;
@@ -16,4 +17,5 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeightConstraint;
 
+@property (strong, nonatomic) SGRule *rule;
 @end

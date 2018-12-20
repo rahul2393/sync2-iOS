@@ -35,9 +35,11 @@
     self.viewControllers = [[NSMutableArray alloc] init];
     
     RulesInformationEdgeViewController *rulesInfoEdgeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RulesInformationEdgeViewControllerIdentifier"];
+    rulesInfoEdgeVC.rule = self.rule;
     [self.viewControllers addObject:rulesInfoEdgeVC];
     
     RulesInformationCloudViewController *rulesInfoCloudVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RulesInformationCloudViewControllerIdentifier"];
+    rulesInfoCloudVC.rule = self.rule;
     [self.viewControllers addObject:rulesInfoCloudVC];
     
     [super viewDidLoad];
