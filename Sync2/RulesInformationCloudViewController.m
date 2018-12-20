@@ -36,6 +36,10 @@
             break;
     }
     
+    self.titleLabel.text = self.rule.name;
+    self.detailLabel.text = self.rule.ruledescription;
+    self.statusImageView.image = self.rule.enabled ? [UIImage imageNamed: @"rules-green-circle"] : [UIImage imageNamed: @"rules-red-circle"];
+
     [self.tableView reloadData];
 }
 
@@ -94,7 +98,7 @@
         case 3:
             return 1;
         case 4:
-            return 2;
+            return self.rule.tags.count;
         default:
             return 0;
     }
@@ -113,7 +117,7 @@
         case 0: {
             switch (indexPath.row) {
                 case 0: {
-                    cell.textLabel.text = @"Enter Area";
+                    cell.textLabel.text = self.rule.conditionsObject.firstObject.type;
                     cell.detailTextLabel.text = @"Type";
                     break;
                 }
@@ -136,22 +140,22 @@
         case 1: {
             switch (indexPath.row) {
                 case 0: {
-                    cell.textLabel.text = @"Send Notification";
+                    cell.textLabel.text = self.rule.actions.firstObject.type;
                     cell.detailTextLabel.text = @"Type";
                     break;
                 }
                 case 1: {
-                    cell.textLabel.text = @"Welcome to WeWork";
+                    cell.textLabel.text = self.rule.actions.firstObject.subject;
                     cell.detailTextLabel.text = @"Subject";
                     break;
                 }
                 case 2: {
-                    cell.textLabel.text = @"Have a great day at the office!";
+                    cell.textLabel.text = self.rule.actions.firstObject.message;
                     cell.detailTextLabel.text = @"Message";
                     break;
                 }
                 case 3: {
-                    cell.textLabel.text = @"All Devices";
+                    cell.textLabel.text = [NSString stringWithFormat:@"%lu devices", self.rule.actions.firstObject.emails.count];
                     cell.detailTextLabel.text = @"Recipient";
                     break;
                 }
@@ -183,20 +187,8 @@
             break;
         }
         case 4: {
-            switch (indexPath.row) {
-                case 0: {
-                    cell.textLabel.text = @"promotions";
-                    cell.detailTextLabel.text = @"";
-                    break;
-                }
-                case 1: {
-                    cell.textLabel.text = @"messages";
-                    cell.detailTextLabel.text = @"";
-                    break;
-                }
-                default:
-                    break;
-            }
+            cell.textLabel.text = self.rule.tags[indexPath.row];
+            cell.detailTextLabel.text = @"";
             break;
         }
         default:
