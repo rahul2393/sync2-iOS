@@ -7,6 +7,7 @@
 //
 
 #import "CameraViewController.h"
+@import SixgillSDK;
 
 @interface CameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -41,7 +42,11 @@
 
 - (IBAction)uploadImage:(UIButton *)sender {
     // TODO: Call SDK method to upload image
-    
+//    [SGSDK uploadImageForHailer:self.imageView.image andSuccessHandler:^{
+//        
+//    } andFailureHandler:^(NSString *failureMsg) {
+//        
+//    }];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
