@@ -13,7 +13,7 @@
 #import <GMUHeatmapTileLayer.h>
 #import "SDKManager.h"
 #import "SenseAPI.h"
-#import "Landmark.h"
+#import "ProjectLandmark.h"
 #import "SettingsManager.h"
 
 @import SixgillSDK;
@@ -242,7 +242,7 @@
 
 -(void) drawLandmarks{
 
-    for (Landmark *lm in self.landmarks) {
+    for (ProjectLandmark *lm in self.landmarks) {
         if ([lm.geometryType isEqualToString:@"circle"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 GMSCircle *p = [lm googleMkCircle];

@@ -1,14 +1,14 @@
 //
-//  Landmark.m
+//  ProjectLandmark.m
 //  Sync2
 //
 //  Created by Ricky Kirkendall on 1/30/18.
 //  Copyright © 2018 Sixgill. All rights reserved.
 //
 
-#import "Landmark.h"
+#import "ProjectLandmark.h"
 
-@implementation Landmark
+@implementation ProjectLandmark
 
 - (instancetype)initWithData:(NSDictionary *)data
 {

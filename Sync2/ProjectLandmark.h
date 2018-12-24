@@ -1,5 +1,5 @@
 //
-//  Landmark.h
+//  ProjectLandmark.h
 //  Sync2
 //
 //  Created by Ricky Kirkendall on 1/30/18.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 @import MapKit;
 @import GoogleMaps;
-@interface Landmark : NSObject
+@interface ProjectLandmark : NSObject
 
 @property (nonatomic, strong) NSString *objectId;
 @property (nonatomic, strong) NSString *name;
