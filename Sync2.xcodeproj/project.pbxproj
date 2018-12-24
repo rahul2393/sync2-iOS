@@ -43,6 +43,9 @@
 		75843ADF213A554600D7BB8D /* NotificationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 75843ADE213A554600D7BB8D /* NotificationType.m */; };
 		759926EC20FE2E790073693F /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759926EB20FE2E790073693F /* SplashViewController.m */; };
 		75B5952D21D0D16100497064 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B5952C21D0D16100497064 /* CameraViewController.m */; };
+		75B5952F21D0ED4300497064 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B5952E21D0ED4300497064 /* SixgillSDK.framework */; };
+		75B5953021D0ED4B00497064 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B5952E21D0ED4300497064 /* SixgillSDK.framework */; };
+		75B5953121D0ED4B00497064 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75B5952E21D0ED4300497064 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75CD539E213D33DF006D8390 /* UITapGestureRecognizerExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CD539D213D33DF006D8390 /* UITapGestureRecognizerExtension.m */; };
 		75D71583210AF214007378D5 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71582210AF214007378D5 /* Device.m */; };
 		75D71587210B0D10007378D5 /* LogMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71586210B0D10007378D5 /* LogMapTableViewCell.m */; };
@@ -167,6 +170,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				75B5953121D0ED4B00497064 /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +246,7 @@
 		759926EB20FE2E790073693F /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		75B5952B21D0D16100497064 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		75B5952C21D0D16100497064 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		75B5952E21D0ED4300497064 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		75CD539C213D33C9006D8390 /* UITapGestureRecognizerExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITapGestureRecognizerExtension.h; sourceTree = "<group>"; };
 		75CD539D213D33DF006D8390 /* UITapGestureRecognizerExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITapGestureRecognizerExtension.m; sourceTree = "<group>"; };
 		75D71582210AF214007378D5 /* Device.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
@@ -436,10 +441,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				75802C9D213D5E0B0068C856 /* libxml2.2.dylib in Frameworks */,
+				75B5952F21D0ED4300497064 /* SixgillSDK.framework in Frameworks */,
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
 				E962B3621EF213ED00ECB920 /* CoreLocation.framework in Frameworks */,
+				75B5953021D0ED4B00497064 /* SixgillSDK.framework in Frameworks */,
 				58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1120,6 +1127,7 @@
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
+				75B5952E21D0ED4300497064 /* SixgillSDK.framework */,
 				756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */,
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
