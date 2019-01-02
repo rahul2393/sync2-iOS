@@ -4050,12 +4050,9 @@ Permission</string>
                                     <action selector="triggerRuleTapped:" destination="rkl-oC-fdS" eventType="touchUpInside" id="azG-rz-kw1"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="aNj-7U-ToP">
-                                <rect key="frame" x="10" y="221" width="355" height="548.33333333333326"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="aNj-7U-ToP">
+                                <rect key="frame" x="10" y="219.66666666666666" width="355" height="398.33333333333337"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="548.33333333333326" id="A02-xg-k8j"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RulesInformationCellIdentifier" textLabel="gaO-6d-igN" detailTextLabel="zuI-0S-RWt" style="IBUITableViewCellStyleValue1" id="ITb-Ws-KCD">
                                         <rect key="frame" x="0.0" y="55.333333333333343" width="355" height="44"/>
@@ -4065,7 +4062,7 @@ Permission</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gaO-6d-igN">
-                                                    <rect key="frame" x="15" y="11.999999999999998" width="33.333333333333336" height="20.333333333333332"/>
+                                                    <rect key="frame" x="35" y="11.999999999999998" width="33.333333333333336" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -4101,6 +4098,7 @@ Permission</string>
                         <constraints>
                             <constraint firstItem="dj2-4z-bZF" firstAttribute="top" secondItem="66q-9Q-yo2" secondAttribute="bottom" constant="12" id="14a-0p-9wJ"/>
                             <constraint firstItem="aNj-7U-ToP" firstAttribute="top" secondItem="lTj-ja-7Se" secondAttribute="bottom" id="2fG-RP-8zS"/>
+                            <constraint firstItem="EkM-X9-5RN" firstAttribute="top" secondItem="aNj-7U-ToP" secondAttribute="bottom" constant="160" id="BsV-t6-wai"/>
                             <constraint firstItem="lTj-ja-7Se" firstAttribute="top" secondItem="dj2-4z-bZF" secondAttribute="bottom" constant="15" id="Lwq-BX-ABj"/>
                             <constraint firstAttribute="trailing" secondItem="lTj-ja-7Se" secondAttribute="trailing" constant="10" id="VE9-FI-4cS"/>
                             <constraint firstItem="lTj-ja-7Se" firstAttribute="leading" secondItem="PRh-CV-PGO" secondAttribute="leading" constant="10" id="Vzt-wg-xXk"/>
@@ -4114,7 +4112,6 @@ Permission</string>
                         <outlet property="detailLabel" destination="dWk-If-Jc7" id="FHz-Hq-I6h"/>
                         <outlet property="statusImageView" destination="kn9-Ly-Zbq" id="Vyt-nn-UgI"/>
                         <outlet property="tableView" destination="aNj-7U-ToP" id="Amj-s7-yAy"/>
-                        <outlet property="tableViewHeightConstraint" destination="A02-xg-k8j" id="AaK-YF-51D"/>
                         <outlet property="titleLabel" destination="Ryk-bc-7nZ" id="CrV-vg-x2L"/>
                     </connections>
                 </viewController>
@@ -6058,7 +6055,7 @@ revised: 5/9/2016</string>
         <image name="notification-permission-missing" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="165" height="120"/>
+        <image name="sixgill-logo" width="325" height="95"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>

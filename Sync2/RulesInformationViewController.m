@@ -40,6 +40,7 @@
     
     RulesInformationCloudViewController *rulesInfoCloudVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RulesInformationCloudViewControllerIdentifier"];
     rulesInfoCloudVC.rule = self.rule;
+    
     [self.viewControllers addObject:rulesInfoCloudVC];
     
     [super viewDidLoad];

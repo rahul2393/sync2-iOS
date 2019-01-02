@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 - (IBAction)triggerRuleTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeightConstraint;
 
 @property (strong, nonatomic) SGRule *rule;
 @end

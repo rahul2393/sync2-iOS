@@ -20,22 +20,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
-    switch (UIDevice.currentDevice.screenType) {
-        case iPhoneX:
-        case iPhones_6Plus_6sPlus_7Plus_8Plus:
-            self.tableViewHeightConstraint.constant = 406;
-            break;
-        case iPhones_6_6s_7_8:
-            self.tableViewHeightConstraint.constant = 317;
-            break;
-        case iPhones_5_5s_5c_SE:
-            self.tableViewHeightConstraint.constant = 218;
-            break;
-        default:
-            break;
-    }
-    
+        
     self.titleLabel.text = self.rule.name;
     self.detailLabel.text = self.rule.ruledescription;
     self.statusImageView.image = self.rule.enabled ? [UIImage imageNamed: @"rules-green-circle"] : [UIImage imageNamed: @"rules-red-circle"];
@@ -105,10 +90,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RulesInformationCellIdentifier" forIndexPath:indexPath];
+    
+    static NSString *cellIdentifier = @"RulesInformationCellIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"RulesInformationCellIdentifier"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
     cell.accessoryType = UITableViewCellAccessoryNone;
