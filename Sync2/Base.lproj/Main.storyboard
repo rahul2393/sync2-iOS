@@ -4054,7 +4054,7 @@ Permission</string>
                                 <rect key="frame" x="10" y="219.66666666666666" width="355" height="398.33333333333337"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RulesInformationCellIdentifier" textLabel="gaO-6d-igN" detailTextLabel="zuI-0S-RWt" style="IBUITableViewCellStyleValue1" id="ITb-Ws-KCD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="20" reuseIdentifier="RulesInformationCellIdentifier" textLabel="gaO-6d-igN" detailTextLabel="zuI-0S-RWt" style="IBUITableViewCellStyleValue1" id="ITb-Ws-KCD">
                                         <rect key="frame" x="0.0" y="55.333333333333343" width="355" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ITb-Ws-KCD" id="J8R-7e-Ff6">

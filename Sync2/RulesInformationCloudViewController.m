@@ -100,6 +100,7 @@
     }
     
     cell.accessoryType = UITableViewCellAccessoryNone;
+    [cell setIndentationLevel:0];
     
     switch (indexPath.section) {
         case 0: {
@@ -113,11 +114,13 @@
                     cell.textLabel.text = @"WeWork Office";
                     cell.detailTextLabel.text = @"Landmark";
                     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    [cell setIndentationLevel:1];
                     break;
                 }
                 case 2: {
                     cell.textLabel.text = @"Instant";
                     cell.detailTextLabel.text = @"Dwell Time";
+                    [cell setIndentationLevel:2];
                     break;
                 }
                 default:
