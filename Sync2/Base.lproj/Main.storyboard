@@ -1746,7 +1746,7 @@ Let us know what you would like to see:</string>
                                                             <rect key="frame" x="0.0" y="28" width="335" height="38"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lv-xe-yKM" id="5ET-8I-o9t">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="37.666666666666664"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-yQ-dY7">
@@ -4054,7 +4054,7 @@ Permission</string>
                                 <rect key="frame" x="10" y="219.66666666666666" width="355" height="398.33333333333337"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="20" reuseIdentifier="RulesInformationCellIdentifier" textLabel="gaO-6d-igN" detailTextLabel="zuI-0S-RWt" style="IBUITableViewCellStyleValue1" id="ITb-Ws-KCD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RulesInformationCellIdentifier" textLabel="gaO-6d-igN" detailTextLabel="zuI-0S-RWt" style="IBUITableViewCellStyleValue1" id="ITb-Ws-KCD">
                                         <rect key="frame" x="0.0" y="55.333333333333343" width="355" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ITb-Ws-KCD" id="J8R-7e-Ff6">
@@ -4062,7 +4062,7 @@ Permission</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gaO-6d-igN">
-                                                    <rect key="frame" x="35" y="11.999999999999998" width="33.333333333333336" height="20.333333333333332"/>
+                                                    <rect key="frame" x="15" y="11.999999999999998" width="33.333333333333336" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -6055,7 +6055,7 @@ revised: 5/9/2016</string>
         <image name="notification-permission-missing" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>

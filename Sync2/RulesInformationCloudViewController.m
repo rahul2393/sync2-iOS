@@ -50,12 +50,9 @@
             label.text = @"Rule Action";
             break;
         case 2:
-            label.text = @"Schedule";
-            break;
-        case 3:
             label.text = @"Triggering Behavior";
             break;
-        case 4:
+        case 3:
             label.text = @"Tags";
             break;
         default:
@@ -72,7 +69,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 5;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -82,10 +79,8 @@
         case 1:
             return self.rule.actions.count * 4;
         case 2:
-            return 2;
-        case 3:
             return 1;
-        case 4:
+        case 3:
             return self.rule.tags.count;
         default:
             return 0;
@@ -103,13 +98,13 @@
     }
     
     cell.accessoryType = UITableViewCellAccessoryNone;
-    [cell setIndentationLevel:1];
+//    [cell setIndentationLevel:1];
     
     switch (indexPath.section) {
         case 0: {
             cell.textLabel.text = self.conditionsArray[indexPath.row].value;
             cell.detailTextLabel.text = self.conditionsArray[indexPath.row].key;
-//            [cell setIndentationLevel:self.conditionsArray[indexPath.row].indentationLevel];
+//            [cell setIndentationLevel:self.conditionsArray[indexPath.row].indentationLevel];  // change indentationWidth from srorybord currently it's 0 set as 10 or 20
 //            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             break;
         }
@@ -140,28 +135,11 @@
             break;
         }
         case 2: {
-            switch (indexPath.row) {
-                case 0: {
-                    cell.textLabel.text = @"9:00 AM, January 1, 2017";
-                    cell.detailTextLabel.text = @"Start";
-                    break;
-                }
-                case 1: {
-                    cell.textLabel.text = @"-";
-                    cell.detailTextLabel.text = @"End";
-                    break;
-                }
-                default:
-                    break;
-            }
-            break;
-        }
-        case 3: {
             cell.textLabel.text = @"9:00 AM, January 1, 2017";
             cell.detailTextLabel.text = @"Trigger";
             break;
         }
-        case 4: {
+        case 3: {
             cell.textLabel.text = self.rule.tags[indexPath.row];
             cell.detailTextLabel.text = @"";
             break;
@@ -192,6 +170,30 @@
                 rC1.value = ruleCondition.timezone;
                 rC1.indentationLevel = level;
                 [self.conditionsArray addObject:rC1];
+                
+                RuleCondition *rC2 = [[RuleCondition alloc] init];
+                rC2.key = @"From Date";
+                rC2.value = ruleCondition.scheduleFromDate;
+                rC2.indentationLevel = level;
+                [self.conditionsArray addObject:rC2];
+                
+                RuleCondition *rC3 = [[RuleCondition alloc] init];
+                rC3.key = @"To Date";
+                rC3.value = ruleCondition.scheduleToDate;
+                rC3.indentationLevel = level;
+                [self.conditionsArray addObject:rC3];
+                
+                RuleCondition *rC4 = [[RuleCondition alloc] init];
+                rC4.key = @"From Minutes Of Day";
+                rC4.value = [ruleCondition.scheduleFromMinutes stringValue];
+                rC4.indentationLevel = level;
+                [self.conditionsArray addObject:rC4];
+                
+                RuleCondition *rC5 = [[RuleCondition alloc] init];
+                rC5.key = @"From Minutes Of Day";
+                rC5.value = [ruleCondition.scheduleToMinutes stringValue];
+                rC5.indentationLevel = level;
+                [self.conditionsArray addObject:rC5];
                 
             } else if ([ruleCondition.type isEqualToString:@"landmark"]) {
                 
