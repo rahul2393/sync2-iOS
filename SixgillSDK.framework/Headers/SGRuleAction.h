@@ -13,7 +13,7 @@
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, strong) NSString *subject;
 @property (nonatomic, strong) NSString *type;
-@property (nonatomic, strong) NSArray *emails;
+@property (nonatomic, strong) NSArray *recipients;
 
 - (instancetype)initWithData:(NSDictionary *)data;
 
