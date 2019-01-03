@@ -29,6 +29,14 @@
 @property (nonatomic, strong) NSNumber *value;
 @property (nonatomic, strong) NSString *operator;
 
+@property (nonatomic, strong) NSString *scheduleToDate;
+@property (nonatomic, strong) NSString *scheduleFromDate;
+
+@property (nonatomic, strong) NSArray<NSNumber *> *weekDays;
+
+@property (nonatomic, strong) NSNumber *scheduleToMinutes;
+@property (nonatomic, strong) NSNumber *scheduleFromMinutes;
+
 - (instancetype)initWithData:(NSDictionary *)data;
 
 
