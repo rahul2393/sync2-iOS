@@ -29,12 +29,13 @@ CF_EXTERN_C_BEGIN
 
 @class Activity;
 @class Configuration;
-@class Event;
 @class IBeacon;
+@class IBeaconListItem;
 @class Location;
 @class Power;
 @class Property;
 @class Push;
+@class Rule;
 @class Wifi;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -347,31 +348,73 @@ typedef GPB_ENUM(RegistrationResponse_FieldNumber) {
 
 @end
 
+#pragma mark - IBeaconListItem
+
+typedef GPB_ENUM(IBeaconListItem_FieldNumber) {
+  IBeaconListItem_FieldNumber_Uuid = 1,
+  IBeaconListItem_FieldNumber_Major = 2,
+  IBeaconListItem_FieldNumber_Minor = 3,
+};
+
+@interface IBeaconListItem : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
+
+@property(nonatomic, readwrite) int64_t major;
+
+@property(nonatomic, readwrite) int64_t minor;
+
+@end
+
 #pragma mark - IBeaconsResponse
 
 typedef GPB_ENUM(IBeaconsResponse_FieldNumber) {
-  IBeaconsResponse_FieldNumber_UuidsArray = 1,
+  IBeaconsResponse_FieldNumber_IbeaconsArray = 1,
 };
 
 @interface IBeaconsResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *uuidsArray;
-/** The number of items in @c uuidsArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger uuidsArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<IBeaconListItem*> *ibeaconsArray;
+/** The number of items in @c ibeaconsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger ibeaconsArray_Count;
 
 @end
 
-#pragma mark - MobileEvents
+#pragma mark - Rule
 
-typedef GPB_ENUM(MobileEvents_FieldNumber) {
-  MobileEvents_FieldNumber_EventsArray = 1,
+typedef GPB_ENUM(Rule_FieldNumber) {
+  Rule_FieldNumber_Id_p = 1,
+  Rule_FieldNumber_Name = 2,
+  Rule_FieldNumber_Description_p = 3,
+  Rule_FieldNumber_ProjectId = 4,
+  Rule_FieldNumber_ConditionsAndActions = 5,
 };
 
-@interface MobileEvents : GPBMessage
+@interface Rule : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Event*> *eventsArray;
-/** The number of items in @c eventsArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger eventsArray_Count;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *projectId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *conditionsAndActions;
+
+@end
+
+#pragma mark - RulesResponse
+
+typedef GPB_ENUM(RulesResponse_FieldNumber) {
+  RulesResponse_FieldNumber_RulesArray = 1,
+};
+
+@interface RulesResponse : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Rule*> *rulesArray;
+/** The number of items in @c rulesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger rulesArray_Count;
 
 @end
 
