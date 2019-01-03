@@ -12,6 +12,7 @@
 
 @interface RulesInformationCloudViewController ()
 @property (nonatomic, retain) NSMutableArray<RuleCondition *> *conditionsArray;
+@property (nonatomic, retain) NSArray<NSString *> *weekDays;
 @end
 
 @implementation RulesInformationCloudViewController
@@ -27,6 +28,7 @@
     self.statusImageView.image = self.rule.enabled ? [UIImage imageNamed: @"rules-green-circle"] : [UIImage imageNamed: @"rules-red-circle"];
 
     self.conditionsArray = [NSMutableArray new];
+    self.weekDays = [NSArray arrayWithObjects:@"Sunday", @"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday", nil];
     [self makeConditionsObject:self.rule.conditionsObject andIndendation:1];
     [self.tableView reloadData];
 }
@@ -172,28 +174,42 @@
                 [self.conditionsArray addObject:rC1];
                 
                 RuleCondition *rC2 = [[RuleCondition alloc] init];
-                rC2.key = @"From Date";
-                rC2.value = ruleCondition.scheduleFromDate;
+                rC2.key = @"Start Date";
+                
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+                
+                rC2.value = [dateFormatter stringFromDate:ruleCondition.scheduleFromDate];
                 rC2.indentationLevel = level;
                 [self.conditionsArray addObject:rC2];
                 
                 RuleCondition *rC3 = [[RuleCondition alloc] init];
-                rC3.key = @"To Date";
-                rC3.value = ruleCondition.scheduleToDate;
+                rC3.key = @"End Date";
+                rC3.value = [dateFormatter stringFromDate:ruleCondition.scheduleToDate];
                 rC3.indentationLevel = level;
                 [self.conditionsArray addObject:rC3];
                 
                 RuleCondition *rC4 = [[RuleCondition alloc] init];
-                rC4.key = @"From Minutes Of Day";
-                rC4.value = [ruleCondition.scheduleFromMinutes stringValue];
+                rC4.key = @"Weekdays";
+                NSString *output = [NSString new];
+                for (NSNumber *day in ruleCondition.weekDays) {
+                    output = [output stringByAppendingFormat:@"%@ ",[self.weekDays objectAtIndex:[day integerValue]]];
+                }
+                rC4.value = output;
                 rC4.indentationLevel = level;
                 [self.conditionsArray addObject:rC4];
                 
                 RuleCondition *rC5 = [[RuleCondition alloc] init];
-                rC5.key = @"From Minutes Of Day";
-                rC5.value = [ruleCondition.scheduleToMinutes stringValue];
+                rC5.key = @"Start Hour";
+                rC5.value = [NSString stringWithFormat:@"%02d:%02d", [ruleCondition.scheduleFromMinutes intValue]/60, [ruleCondition.scheduleFromMinutes intValue]%60];
                 rC5.indentationLevel = level;
                 [self.conditionsArray addObject:rC5];
+                
+                RuleCondition *rC6 = [[RuleCondition alloc] init];
+                rC6.key = @"End Hour";
+                rC6.value = [NSString stringWithFormat:@"%02d:%02d", [ruleCondition.scheduleToMinutes intValue]/60, [ruleCondition.scheduleToMinutes intValue]%60];
+                rC6.indentationLevel = level;
+                [self.conditionsArray addObject:rC6];
                 
             } else if ([ruleCondition.type isEqualToString:@"landmark"]) {
                 

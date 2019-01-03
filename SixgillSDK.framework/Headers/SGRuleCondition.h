@@ -29,8 +29,8 @@
 @property (nonatomic, strong) NSNumber *value;
 @property (nonatomic, strong) NSString *operator;
 
-@property (nonatomic, strong) NSString *scheduleToDate;
-@property (nonatomic, strong) NSString *scheduleFromDate;
+@property (nonatomic, strong) NSDate *scheduleToDate;
+@property (nonatomic, strong) NSDate *scheduleFromDate;
 
 @property (nonatomic, strong) NSArray<NSNumber *> *weekDays;
 
