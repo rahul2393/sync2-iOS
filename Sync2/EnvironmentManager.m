@@ -74,13 +74,7 @@
         staging.ingressURL = @"https://edge-ingress.staging.sixgill.io";
         staging.forgotPasswordURL = @"https://dashboard.staging.sixgill.io/request-password";
         
-        Environment *abhayLocal = [[Environment alloc] init];
-        abhayLocal.name = @"Abhay Local";
-        abhayLocal.senseURL = @"http://192.168.1.5:5005";
-        abhayLocal.ingressURL = @"http://192.168.1.5:5000";
-        abhayLocal.forgotPasswordURL = @"https://dashboard.staging.sixgill.io/request-password";
-        
-        self.environments = @[prod, staging, abhayLocal];
+        self.environments = @[prod, staging];
         
     }
     return self;
