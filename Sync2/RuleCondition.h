@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface RuleCondition : NSObject
 
-@end
+@property (nonatomic, strong) NSString *key;
+@property (nonatomic, strong) NSString *value;
+@property (nonatomic, readwrite) NSInteger indentationLevel;
 
-NS_ASSUME_NONNULL_END
+@end

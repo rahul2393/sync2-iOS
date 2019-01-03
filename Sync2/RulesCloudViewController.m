@@ -36,8 +36,6 @@
     [self.tableView setHidden:YES];
     [self.emptyView setHidden:NO];
     
-    self.conditionsCount = 0;
-    
     _currentProject = [[SettingsManager sharedManager] selectedProject];
     
     // Setting tableview constraints

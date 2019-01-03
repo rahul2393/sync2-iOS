@@ -8,9 +8,10 @@
 
 #import "RulesInformationCloudViewController.h"
 #import "Device.h"
+#import "RuleCondition.h"
 
 @interface RulesInformationCloudViewController ()
-
+@property (nonatomic, retain) NSMutableArray<RuleCondition *> *conditionsArray;
 @end
 
 @implementation RulesInformationCloudViewController
@@ -25,6 +26,8 @@
     self.detailLabel.text = self.rule.ruledescription;
     self.statusImageView.image = self.rule.enabled ? [UIImage imageNamed: @"rules-green-circle"] : [UIImage imageNamed: @"rules-red-circle"];
 
+    self.conditionsArray = [NSMutableArray new];
+    [self makeConditionsObject:self.rule.conditionsObject andIndendation:1];
     [self.tableView reloadData];
 }
 
@@ -75,9 +78,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return 3;
+            return self.conditionsArray.count;
         case 1:
-            return 4;
+            return self.rule.actions.count * 4;
         case 2:
             return 2;
         case 3:
@@ -100,58 +103,39 @@
     }
     
     cell.accessoryType = UITableViewCellAccessoryNone;
-    [cell setIndentationLevel:0];
+    [cell setIndentationLevel:1];
     
     switch (indexPath.section) {
         case 0: {
-            switch (indexPath.row) {
-                case 0: {
-                    cell.textLabel.text = self.rule.conditionsObject.firstObject.type;
-                    cell.detailTextLabel.text = @"Type";
-                    break;
-                }
-                case 1: {
-                    cell.textLabel.text = @"WeWork Office";
-                    cell.detailTextLabel.text = @"Landmark";
-                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                    [cell setIndentationLevel:1];
-                    break;
-                }
-                case 2: {
-                    cell.textLabel.text = @"Instant";
-                    cell.detailTextLabel.text = @"Dwell Time";
-                    [cell setIndentationLevel:2];
-                    break;
-                }
-                default:
-                    break;
-            }
+            cell.textLabel.text = self.conditionsArray[indexPath.row].value;
+            cell.detailTextLabel.text = self.conditionsArray[indexPath.row].key;
+//            [cell setIndentationLevel:self.conditionsArray[indexPath.row].indentationLevel];
+//            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             break;
         }
         case 1: {
-            switch (indexPath.row) {
+            NSInteger idx = indexPath.row / 4;
+            switch (indexPath.row % 4) {
                 case 0: {
-                    cell.textLabel.text = self.rule.actions.firstObject.type;
+                    cell.textLabel.text = self.rule.actions[idx].type;
                     cell.detailTextLabel.text = @"Type";
                     break;
                 }
                 case 1: {
-                    cell.textLabel.text = self.rule.actions.firstObject.subject;
+                    cell.textLabel.text = self.rule.actions[idx].subject;
                     cell.detailTextLabel.text = @"Subject";
                     break;
                 }
                 case 2: {
-                    cell.textLabel.text = self.rule.actions.firstObject.message;
+                    cell.textLabel.text = self.rule.actions[idx].message;
                     cell.detailTextLabel.text = @"Message";
                     break;
                 }
                 case 3: {
-                    cell.textLabel.text = [NSString stringWithFormat:@"%lu devices", self.rule.actions.firstObject.emails.count];
-                    cell.detailTextLabel.text = @"Recipient";
+                    cell.textLabel.text = [NSString stringWithFormat:@"%lu devices", self.rule.actions[idx].recipients.count];
+                    cell.detailTextLabel.text = @"Recipients";
                     break;
                 }
-                default:
-                    break;
             }
             break;
         }
@@ -187,6 +171,79 @@
     }
     
     return cell;
+}
+
+-(void) makeConditionsObject:(NSArray<SGRuleCondition *> *)ruleConditions andIndendation:(NSInteger )level {
+    
+    for (SGRuleCondition *ruleCondition in ruleConditions) {
+        
+        if (ruleCondition.items.count == 0) {
+            
+            RuleCondition *rC = [[RuleCondition alloc] init];
+            rC.key = @"Type";
+            rC.value = ruleCondition.type;
+            rC.indentationLevel = level;
+            [self.conditionsArray addObject:rC];
+            
+            if ([ruleCondition.type isEqualToString:@"schedule"]) {
+                
+                RuleCondition *rC1 = [[RuleCondition alloc] init];
+                rC1.key = @"Timezone";
+                rC1.value = ruleCondition.timezone;
+                rC1.indentationLevel = level;
+                [self.conditionsArray addObject:rC1];
+                
+            } else if ([ruleCondition.type isEqualToString:@"landmark"]) {
+                
+                RuleCondition *rC1 = [[RuleCondition alloc] init];
+                rC1.indentationLevel = level;
+                rC1.key = @"Landmark Id";
+                rC1.value = ruleCondition.ids.firstObject;
+                [self.conditionsArray addObject:rC1];
+                
+                RuleCondition *rC2 = [[RuleCondition alloc] init];
+                rC2.key = @"Trigger";
+                rC2.value = ruleCondition.trigger;
+                rC2.indentationLevel = level;
+                [self.conditionsArray addObject:rC2];
+                
+                RuleCondition *rC3 = [[RuleCondition alloc] init];
+                rC3.key = @"Attribute";
+                rC3.value = ruleCondition.attribute;
+                rC3.indentationLevel = level;
+                [self.conditionsArray addObject:rC3];
+                
+            } else if ([ruleCondition.type isEqualToString:@"attribute"]) {
+                
+                RuleCondition *rC1 = [[RuleCondition alloc] init];
+                rC1.key = @"Attribute";
+                rC1.value = ruleCondition.attribute;
+                rC1.indentationLevel = level;
+                [self.conditionsArray addObject:rC1];
+                
+                RuleCondition *rC2 = [[RuleCondition alloc] init];
+                rC2.key = @"Operator";
+                rC2.value = ruleCondition.operator;
+                rC2.indentationLevel = level;
+                [self.conditionsArray addObject:rC2];
+                
+                RuleCondition *rC3 = [[RuleCondition alloc] init];
+                rC3.key = @"Value";
+                rC3.value = [ruleCondition.value stringValue];
+                rC3.indentationLevel = level;
+                [self.conditionsArray addObject:rC3];
+                
+            }
+        } else {
+            RuleCondition *rC = [[RuleCondition alloc] init];
+            rC.key = @"Operator";
+            rC.value = ruleCondition.type;
+            rC.indentationLevel = level;
+            [self.conditionsArray addObject:rC];
+            [self makeConditionsObject:ruleCondition.items andIndendation:level+1];
+            
+        }
+    }
 }
 
 @end
