@@ -76,7 +76,7 @@
 		E9128183200FDD1F0003072B /* TextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9128182200FDD1F0003072B /* TextViewTableViewCell.m */; };
 		E9128187201008BA0003072B /* SenseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E9128186201008BA0003072B /* SenseAPI.m */; };
 		E912818B20100B310003072B /* DummyChannelData.m in Sources */ = {isa = PBXBuildFile; fileRef = E912818A20100B310003072B /* DummyChannelData.m */; };
-		E928BB2E20210C1A0002C59E /* Landmark.m in Sources */ = {isa = PBXBuildFile; fileRef = E928BB2D20210C1A0002C59E /* Landmark.m */; };
+		E928BB2E20210C1A0002C59E /* ProjectLandmark.m in Sources */ = {isa = PBXBuildFile; fileRef = E928BB2D20210C1A0002C59E /* ProjectLandmark.m */; };
 		E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9352478201FC9FE008D4F19 /* SetupInfoViewController.m */; };
 		E9352481201FD301008D4F19 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9352480201FD301008D4F19 /* LoginViewController.m */; };
 		E9352485201FF050008D4F19 /* SGToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E9352484201FF050008D4F19 /* SGToken.m */; };
@@ -306,8 +306,8 @@
 		E9128186201008BA0003072B /* SenseAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenseAPI.m; sourceTree = "<group>"; };
 		E912818920100B310003072B /* DummyChannelData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummyChannelData.h; sourceTree = "<group>"; };
 		E912818A20100B310003072B /* DummyChannelData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyChannelData.m; sourceTree = "<group>"; };
-		E928BB2C20210C1A0002C59E /* Landmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Landmark.h; sourceTree = "<group>"; };
-		E928BB2D20210C1A0002C59E /* Landmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Landmark.m; sourceTree = "<group>"; };
+		E928BB2C20210C1A0002C59E /* ProjectLandmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectLandmark.h; sourceTree = "<group>"; };
+		E928BB2D20210C1A0002C59E /* ProjectLandmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectLandmark.m; sourceTree = "<group>"; };
 		E9352477201FC9FE008D4F19 /* SetupInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetupInfoViewController.h; sourceTree = "<group>"; };
 		E9352478201FC9FE008D4F19 /* SetupInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetupInfoViewController.m; sourceTree = "<group>"; };
 		E935247F201FD301008D4F19 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -801,8 +801,8 @@
 		E928BB2B20210BED0002C59E /* Landmark */ = {
 			isa = PBXGroup;
 			children = (
-				E928BB2C20210C1A0002C59E /* Landmark.h */,
-				E928BB2D20210C1A0002C59E /* Landmark.m */,
+				E928BB2C20210C1A0002C59E /* ProjectLandmark.h */,
+				E928BB2D20210C1A0002C59E /* ProjectLandmark.m */,
 			);
 			name = Landmark;
 			sourceTree = "<group>";
@@ -1714,7 +1714,7 @@
 				75FDF1B72134149E0068D015 /* InformationNotification.m in Sources */,
 				75E352952116B80400471D39 /* LogMapDataViewController.m in Sources */,
 				E9518B572017EFA6001818CC /* DataChannel.m in Sources */,
-				E928BB2E20210C1A0002C59E /* Landmark.m in Sources */,
+				E928BB2E20210C1A0002C59E /* ProjectLandmark.m in Sources */,
 				75502A782109DAD700BFCA2A /* LogListViewController.m in Sources */,
 				E943D3EC2012CC0700882D09 /* DummyMapData.m in Sources */,
 				E962B34D1EF1F42A00ECB920 /* SwitchCell.m in Sources */,
