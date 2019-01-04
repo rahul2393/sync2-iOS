@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGSendLocationEvent.m"
-            timestampString = "568283722.3443511"
+            timestampString = "565701818.54951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
@@ -34,7 +34,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGHealthKitManager.m"
-            timestampString = "568283722.346058"
+            timestampString = "565686976.139744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -50,7 +50,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGSDKConfigManager.m"
-            timestampString = "563207700.332244"
+            timestampString = "566144873.960511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -66,7 +66,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
-            timestampString = "566230393.839236"
+            timestampString = "566145863.07617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "186"
@@ -82,7 +82,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sync2/SenseAPI.m"
-            timestampString = "568283722.347623"
+            timestampString = "566139290.752429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "258"
@@ -98,7 +98,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sync2/SenseAPI.m"
-            timestampString = "568283722.3486"
+            timestampString = "566139290.7531739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "260"
@@ -130,11 +130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGSDK.m"
-            timestampString = "566230393.840987"
+            timestampString = "566220913.596079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "-startWithAPIKey:andConfig:andSuccessHandler:andFailureHandler:"
             landmarkType = "7">
          </BreakpointContent>
@@ -146,11 +146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGSDK.m"
-            timestampString = "566230393.841458"
+            timestampString = "566220913.5984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "-startWithAPIKey:andConfig:andSuccessHandler:andFailureHandler:"
             landmarkType = "7">
          </BreakpointContent>
@@ -162,11 +162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGSDK.m"
-            timestampString = "566230393.841555"
+            timestampString = "566220913.598538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "+disable"
             landmarkType = "7">
          </BreakpointContent>
@@ -194,11 +194,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGSDK.m"
-            timestampString = "566230393.84168"
+            timestampString = "566220913.598689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "-startWithAPIKey:andConfig:andSuccessHandler:andFailureHandler:"
             landmarkType = "7">
             <Locations>
@@ -257,7 +257,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
-            timestampString = "566230393.841807"
+            timestampString = "566145863.077364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "257"
@@ -352,7 +352,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGSendLocationEvent.m"
-            timestampString = "568283722.3492351"
+            timestampString = "565701818.552622"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -383,28 +383,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Sync2/MasterTabViewController.m"
-            timestampString = "568282965.3092771"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "-sensorUpdateSentWithData:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGEventScheduler.m"
-            timestampString = "566230393.842613"
+            timestampString = "566145863.078083"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "-reloadEventCadences"
             landmarkType = "7">
          </BreakpointContent>
@@ -432,11 +416,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGEventScheduler.m"
-            timestampString = "566230393.843092"
+            timestampString = "566145863.078449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "-startAllCadences"
             landmarkType = "7">
          </BreakpointContent>
@@ -448,7 +432,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGConfigurationStoreManager.m"
-            timestampString = "565686976.144539"
+            timestampString = "566145863.078552"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
@@ -464,7 +448,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGConfigurationStoreManager.m"
-            timestampString = "565686976.145219"
+            timestampString = "566145863.078824"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -480,13 +464,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGEventScheduler.m"
-            timestampString = "566230393.843218"
+            timestampString = "566145863.078908"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "-createNewEventInDBForToken:"
-            landmarkType = "7">
+            startingLineNumber = "221"
+            endingLineNumber = "221">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -496,11 +478,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGEventScheduler.m"
-            timestampString = "566230393.8433"
+            timestampString = "566145863.078968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "-createNewEventInDBForToken:"
             landmarkType = "7">
             <Locations>
@@ -559,12 +541,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGEventScheduler.m"
-            timestampString = "566230393.843407"
+            timestampString = "566145863.079049"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "-triggerPullLandmarksFromTimer"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-executePullDeviceConfigEventWithCompletionHandler:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -575,28 +557,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
-            timestampString = "566230393.843568"
+            timestampString = "566145863.079105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "407"
-            endingLineNumber = "407"
-            landmarkName = "-getNotificationsFromOffset:andLimit:withDelay:withCompletion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
-            timestampString = "566230393.844142"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "425"
-            endingLineNumber = "425"
-            landmarkName = "-getNotificationsFromOffset:andLimit:withDelay:withCompletion:"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
+            landmarkName = "-createErrorForStatusCode:description:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -607,11 +573,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGEventScheduler.m"
-            timestampString = "566230393.844716"
+            timestampString = "566145863.079659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "-createNewEventInDBForToken:"
             landmarkType = "7">
          </BreakpointContent>
@@ -623,11 +589,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGEventScheduler.m"
-            timestampString = "566230393.84484"
+            timestampString = "566145863.079739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "-executePushEvent:andCompletionHandler:"
             landmarkType = "7">
          </BreakpointContent>
@@ -639,108 +605,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGEventScheduler.m"
-            timestampString = "566230393.844979"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "-executeSendLocationEventWithCompletionHandler:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
-            timestampString = "565701818.554709"
+            timestampString = "566145863.079809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "166"
             endingLineNumber = "166"
-            landmarkName = "SGDatabaseManager"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
-            timestampString = "565701818.572472"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "-deleteEventForEventToken:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
-            timestampString = "565701818.572984"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "-deleteEventForEventToken:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
-            timestampString = "566230393.845203"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
-            landmarkName = "-getBeaconsWithDelay:withCompletion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
-            timestampString = "566230393.8457299"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "324"
-            endingLineNumber = "324"
-            landmarkName = "-getBeaconsWithDelay:withCompletion:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
-            timestampString = "568281905.715433"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "294"
-            endingLineNumber = "294"
-            landmarkName = "-getBeaconsWithDelay:withCompletion:"
+            landmarkName = "-triggerSendLocationEventFromTimer"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -751,43 +621,360 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sync2/NotificationsViewController.m"
-            timestampString = "568283722.350117"
+            timestampString = "565865644.427091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
             endingLineNumber = "63"
             landmarkName = "-viewWillAppear:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sync2/NotificationsViewController.m"
+            timestampString = "565865644.427326"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
+            timestampString = "566144288.8485709"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "365"
+            endingLineNumber = "365">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
+            timestampString = "566144288.848855"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "-deleteEventForEventToken:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
+            timestampString = "566144288.848924"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "-deleteEventForEventToken:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
+            timestampString = "566144288.848985"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "-createLocationEventfrom:"
+            landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__45-[NotificationsViewController viewDidAppear:]_block_invoke"
-                  moduleName = "Sync2"
+                  symbolName = "-[SGDatabaseManager createLocationEventfrom:]"
+                  moduleName = "SixgillSDK"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sanchitmittal/HCS/Projects/sixgill-new/sync2-iOS/Sync2/NotificationsViewController.m"
-                  timestampString = "568283722.565608"
+                  urlString = "file:///Users/sanchitmittal/HCS/Projects/sixgill-new/ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
+                  timestampString = "566137907.932318"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "56">
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "196">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__45-[NotificationsViewController viewDidAppear:]_block_invoke_2"
-                  moduleName = "Sync2"
+                  symbolName = "-[SGDatabaseManager createLocationEventfrom:]"
+                  moduleName = "SixgillSDK"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sanchitmittal/HCS/Projects/sixgill-new/sync2-iOS/Sync2/NotificationsViewController.m"
-                  timestampString = "568283722.5688649"
+                  urlString = "file:///Users/sanchitmittal/HCS/Projects/sixgill-new/ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
+                  timestampString = "566137907.937758"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "56">
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "212">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
+            timestampString = "566144288.849046"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "-createLocationEventfrom:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SGDatabaseManager createLocationEventfrom:]"
+                  moduleName = "SixgillSDK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sanchitmittal/HCS/Projects/sixgill-new/ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
+                  timestampString = "566137980.242946"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "1860">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SGDatabaseManager createLocationEventfrom:]"
+                  moduleName = "SixgillSDK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sanchitmittal/HCS/Projects/sixgill-new/ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
+                  timestampString = "566137980.246889"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "1876">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
+            timestampString = "566144288.849105"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "-createLocationEventfrom:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGDatabaseManager.m"
+            timestampString = "566144288.849169"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
+            landmarkName = "-createDeviceEventFrom:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sync2/SenseAPI.m"
+            timestampString = "566139290.754514"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-GetOrganizationsIds:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sync2/SenseAPI.m"
+            timestampString = "566139328.362807"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "-SetOrgId:withCompletion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sync2/MasterTabViewController.m"
+            timestampString = "566143696.286664"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-sensorUpdateSentWithData:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
+            timestampString = "566145863.080657"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
+            landmarkName = "-getBeaconsWithDelay:withCompletion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
+            timestampString = "566145863.081163"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "408"
+            endingLineNumber = "408"
+            landmarkName = "-sendEvent:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGEventScheduler.m"
+            timestampString = "566145863.082168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-startAllCadences"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
+            timestampString = "566145914.162768"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "414"
+            endingLineNumber = "414"
+            landmarkName = "-sendEvent:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SGIngressService sendEvent:]"
+                  moduleName = "SixgillSDK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sanchitmittal/HCS/Projects/sixgill-new/ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
+                  timestampString = "566145914.176664"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "414"
+                  endingLineNumber = "414"
+                  offsetFromSymbolStart = "644">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__30-[SGIngressService sendEvent:]_block_invoke"
+                  moduleName = "SixgillSDK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sanchitmittal/HCS/Projects/sixgill-new/ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
+                  timestampString = "566145914.1797431"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "415"
+                  endingLineNumber = "415"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.338"
+                  moduleName = "SixgillSDK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sanchitmittal/HCS/Projects/sixgill-new/ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
+                  timestampString = "566145914.183615"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "414"
+                  endingLineNumber = "414"
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -798,13 +985,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Sync2/NotificationsViewController.m"
-            timestampString = "568283722.351336"
+            filePath = "../ios-sdk-objc/SixgillSDK/SixgillSDK/SGIngressService.m"
+            timestampString = "566145969.77051"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
+            landmarkName = "-postEvent:delay:withCompletion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

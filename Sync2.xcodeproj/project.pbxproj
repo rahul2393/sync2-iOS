@@ -56,6 +56,9 @@
 		75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */; };
 		75E352952116B80400471D39 /* LogMapDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E352942116B80400471D39 /* LogMapDataViewController.m */; };
 		75E352982116D62800471D39 /* LogInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E352972116D62800471D39 /* LogInformationViewController.m */; };
+		75E48B2521BE9FFA00AB485D /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; };
+		75E48B2621BEA00100AB485D /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; };
+		75E48B2721BEA00100AB485D /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75E68A4A212E962500797E27 /* LogBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E68A49212E962500797E27 /* LogBaseViewController.m */; };
 		75EB34BF21BA7C0B009FD912 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */; };
 		75EB34C021BA7C1A009FD912 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */; };
@@ -172,7 +175,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				75EB34C121BA7C1A009FD912 /* SixgillSDK.framework in Embed Frameworks */,
+				75E48B2721BEA00100AB485D /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +272,7 @@
 		75E352942116B80400471D39 /* LogMapDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogMapDataViewController.m; sourceTree = "<group>"; };
 		75E352962116D62800471D39 /* LogInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInformationViewController.h; sourceTree = "<group>"; };
 		75E352972116D62800471D39 /* LogInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInformationViewController.m; sourceTree = "<group>"; };
+		75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		75E68A48212E960A00797E27 /* LogBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogBaseViewController.h; sourceTree = "<group>"; };
 		75E68A49212E962500797E27 /* LogBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogBaseViewController.m; sourceTree = "<group>"; };
 		75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
@@ -442,12 +446,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				75802C9D213D5E0B0068C856 /* libxml2.2.dylib in Frameworks */,
-				75EB34BF21BA7C0B009FD912 /* SixgillSDK.framework in Frameworks */,
+				75E48B2521BE9FFA00AB485D /* SixgillSDK.framework in Frameworks */,
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
 				E962B3621EF213ED00ECB920 /* CoreLocation.framework in Frameworks */,
-				75EB34C021BA7C1A009FD912 /* SixgillSDK.framework in Frameworks */,
+				75E48B2621BEA00100AB485D /* SixgillSDK.framework in Frameworks */,
 				58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1118,7 +1122,7 @@
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
-				75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */,
+				75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */,
 				756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */,
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
