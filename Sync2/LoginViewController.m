@@ -38,8 +38,8 @@
     
 //    self.emailAddressField.text = @"ritik.rishu@hotcocoasoftware.com";
 //    self.passwordField.text = @"password123";
-//    self.emailAddressField.text = @"sanchit.mittal@hotcocoasoftware.com";
-//    self.passwordField.text = @"password123";
+    self.emailAddressField.text = @"sanchit.mittal@hotcocoasoftware.com";
+    self.passwordField.text = @"password123";
 //    self.emailAddressField.text = @"rahulyadavsep92@gmail.com";
 //    self.passwordField.text = @"change123*";
 //    self.emailAddressField.text = @"cvalera@sixgill.com";
