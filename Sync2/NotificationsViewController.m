@@ -25,6 +25,7 @@
 #import "EventNotification.h"
 
 @import UserNotifications;
+@import SixgillSDK;
 
 @interface NotificationsViewController ()
 
@@ -57,6 +58,13 @@
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes: UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
     
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    
+    [SGSDK showNotificationsFromOffset:[NSNumber numberWithInt:0] andLimit:[NSNumber numberWithInt:20] andSuccessHandler:^(NSArray<Notification *> *notifications) {
+        
+    } andFailureHandler:^(NSString *failureMsg) {
+        
+    }];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{

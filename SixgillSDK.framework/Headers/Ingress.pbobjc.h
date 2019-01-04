@@ -32,10 +32,10 @@ CF_EXTERN_C_BEGIN
 @class IBeacon;
 @class IBeaconListItem;
 @class Location;
+@class Notification;
 @class Power;
 @class Property;
 @class Push;
-@class Rule;
 @class Wifi;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -380,41 +380,38 @@ typedef GPB_ENUM(IBeaconsResponse_FieldNumber) {
 
 @end
 
-#pragma mark - Rule
+#pragma mark - Notification
 
-typedef GPB_ENUM(Rule_FieldNumber) {
-  Rule_FieldNumber_Id_p = 1,
-  Rule_FieldNumber_Name = 2,
-  Rule_FieldNumber_Description_p = 3,
-  Rule_FieldNumber_ProjectId = 4,
-  Rule_FieldNumber_ConditionsAndActions = 5,
+typedef GPB_ENUM(Notification_FieldNumber) {
+  Notification_FieldNumber_Id_p = 1,
+  Notification_FieldNumber_Timestamp = 2,
+  Notification_FieldNumber_DeviceId = 3,
+  Notification_FieldNumber_Message = 4,
 };
 
-@interface Rule : GPBMessage
+@interface Notification : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *timestamp;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *projectId;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *conditionsAndActions;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *message;
 
 @end
 
-#pragma mark - RulesResponse
+#pragma mark - NotificationResponse
 
-typedef GPB_ENUM(RulesResponse_FieldNumber) {
-  RulesResponse_FieldNumber_RulesArray = 1,
+typedef GPB_ENUM(NotificationResponse_FieldNumber) {
+  NotificationResponse_FieldNumber_NotificationsArray = 1,
 };
 
-@interface RulesResponse : GPBMessage
+@interface NotificationResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Rule*> *rulesArray;
-/** The number of items in @c rulesArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger rulesArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Notification*> *notificationsArray;
+/** The number of items in @c notificationsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger notificationsArray_Count;
 
 @end
 

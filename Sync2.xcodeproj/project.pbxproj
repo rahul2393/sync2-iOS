@@ -34,6 +34,9 @@
 		756B21CC213E86730089F731 /* ZoomControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 756B21CB213E86730089F731 /* ZoomControlView.xib */; };
 		756B21D0213E895A0089F731 /* ZoomControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 756B21CF213E895A0089F731 /* ZoomControlView.m */; };
 		756C2D5820F5FEE7008560FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */; };
+		75750A8221BA60960069B7CF /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75750A8121BA60960069B7CF /* SixgillSDK.framework */; };
+		75750A8321BA60A00069B7CF /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75750A8121BA60960069B7CF /* SixgillSDK.framework */; };
+		75750A8421BA60A00069B7CF /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75750A8121BA60960069B7CF /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7575705E21AD39AD00B8A3BB /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7575705D21AD39AD00B8A3BB /* WebViewController.m */; };
 		75802C98213D5CD00068C856 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 75802C93213D5CCF0068C856 /* TFHpple.m */; };
 		75802C99213D5CD00068C856 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 75802C94213D5CCF0068C856 /* TFHppleElement.m */; };
@@ -228,6 +231,7 @@
 		756B21CE213E895A0089F731 /* ZoomControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZoomControlView.h; sourceTree = "<group>"; };
 		756B21CF213E895A0089F731 /* ZoomControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoomControlView.m; sourceTree = "<group>"; };
 		756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		75750A8121BA60960069B7CF /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		7575705C21AD39AD00B8A3BB /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		7575705D21AD39AD00B8A3BB /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		75802C92213D5CCF0068C856 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
