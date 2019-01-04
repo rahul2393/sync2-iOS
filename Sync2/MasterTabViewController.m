@@ -105,15 +105,3 @@
 
 
 @end
-
-// size_t size = [aMsg serializedSize];
-// NSMutableData *foo = [NSMutableData dataWithCapacity:size + sizeof(size)];
-// [foo writeSize:size];
-// [foo appendData:[aMsg data]];
-//
-//
-// NSData *data = [aMsg data];
-// NSUInteger size = [aMsg length];
-// NSMutableData *foo = [NSMutableData dataWithCapacity:size + sizeof(size)];
-// [foo writeSize:size];
-// [foo appendData:data];
