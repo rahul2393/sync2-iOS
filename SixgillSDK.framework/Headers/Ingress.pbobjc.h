@@ -30,11 +30,8 @@ CF_EXTERN_C_BEGIN
 @class Activity;
 @class Configuration;
 @class Event;
-<<<<<<< HEAD:SixgillSDK.framework/Headers/Ingress.pbobjc.h
-=======
 @class GatewayRegistrationRequest_SystemInfo;
 @class GatewaySyncResponse_Deleted;
->>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/Headers/Ingress.pbobjc.h
 @class IBeacon;
 @class Landmark;
 @class Location;
@@ -42,11 +39,8 @@ CF_EXTERN_C_BEGIN
 @class Power;
 @class Property;
 @class Push;
-<<<<<<< HEAD:SixgillSDK.framework/Headers/Ingress.pbobjc.h
-=======
 @class Rule;
 @class RuleXChannel;
->>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/Headers/Ingress.pbobjc.h
 @class Wifi;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -439,12 +433,8 @@ typedef GPB_ENUM(IBeaconsResponse_FieldNumber) {
 
 @end
 
-#pragma mark - MobileEvents
+#pragma mark - Rule
 
-<<<<<<< HEAD:SixgillSDK.framework/Headers/Ingress.pbobjc.h
-typedef GPB_ENUM(MobileEvents_FieldNumber) {
-  MobileEvents_FieldNumber_EventsArray = 1,
-=======
 typedef GPB_ENUM(Rule_FieldNumber) {
   Rule_FieldNumber_Id_p = 1,
   Rule_FieldNumber_Name = 2,
@@ -461,16 +451,10 @@ typedef GPB_ENUM(Rule_FieldNumber) {
   Rule_FieldNumber_ChannelIdsArray = 13,
   Rule_FieldNumber_ProjectId = 14,
   Rule_FieldNumber_TagsArray = 15,
->>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/Headers/Ingress.pbobjc.h
 };
 
-@interface MobileEvents : GPBMessage
+@interface Rule : GPBMessage
 
-<<<<<<< HEAD:SixgillSDK.framework/Headers/Ingress.pbobjc.h
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Event*> *eventsArray;
-/** The number of items in @c eventsArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger eventsArray_Count;
-=======
 @property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
@@ -518,7 +502,6 @@ typedef GPB_ENUM(RulesResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Rule*> *rulesArray;
 /** The number of items in @c rulesArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger rulesArray_Count;
->>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/Headers/Ingress.pbobjc.h
 
 @end
 

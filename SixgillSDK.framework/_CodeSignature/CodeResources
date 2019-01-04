@@ -94,11 +94,7 @@
 		</data>
 		<key>Headers/Ingress.pbobjc.h</key>
 		<data>
-<<<<<<< HEAD:SixgillSDK.framework/_CodeSignature/CodeResources
-		//x30sS5/sUEvr3+ry42dn3b9y4=
-=======
 		m6Wv1h8x8zNRMD17PKBjDF6La64=
->>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/_CodeSignature/CodeResources
 		</data>
 		<key>Headers/SGIoTDevice.h</key>
 		<data>
@@ -473,19 +469,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-<<<<<<< HEAD:SixgillSDK.framework/_CodeSignature/CodeResources
-			//x30sS5/sUEvr3+ry42dn3b9y4=
-			</data>
-			<key>hash2</key>
-			<data>
-			3GXZ93aidXa2ESW01GD7F1EaKu9L/x0G/O1/hH3z92o=
-=======
 			m6Wv1h8x8zNRMD17PKBjDF6La64=
 			</data>
 			<key>hash2</key>
 			<data>
 			VZA1milhKXJl199F1ritRM6nXaE/gc11hMFvPeFyYdw=
->>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/_CodeSignature/CodeResources
 			</data>
 		</dict>
 		<key>Headers/SGIoTDevice.h</key>
