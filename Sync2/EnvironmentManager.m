@@ -74,13 +74,7 @@
         staging.ingressURL = @"https://edge-ingress.staging.sixgill.io";
         staging.forgotPasswordURL = @"https://dashboard.staging.sixgill.io/request-password";
         
-        Environment *vibhavLocal = [[Environment alloc] init];
-        vibhavLocal.name = @"Vibhav Local";
-        vibhavLocal.senseURL = @"http://192.168.1.21:5005";
-        vibhavLocal.ingressURL = @"http://192.168.1.21:5000";
-        vibhavLocal.forgotPasswordURL = @"https://dashboard.staging.sixgill.io/request-password";
-        
-        self.environments = @[prod, staging, vibhavLocal];
+        self.environments = @[prod, staging];
         
     }
     return self;

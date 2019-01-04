@@ -30,15 +30,47 @@ CF_EXTERN_C_BEGIN
 @class Activity;
 @class Configuration;
 @class Event;
+<<<<<<< HEAD:SixgillSDK.framework/Headers/Ingress.pbobjc.h
+=======
+@class GatewayRegistrationRequest_SystemInfo;
+@class GatewaySyncResponse_Deleted;
+>>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/Headers/Ingress.pbobjc.h
 @class IBeacon;
-@class IBeaconListItem;
+@class Landmark;
 @class Location;
+@class Notification;
 @class Power;
 @class Property;
 @class Push;
+<<<<<<< HEAD:SixgillSDK.framework/Headers/Ingress.pbobjc.h
+=======
+@class Rule;
+@class RuleXChannel;
+>>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/Headers/Ingress.pbobjc.h
 @class Wifi;
 
 NS_ASSUME_NONNULL_BEGIN
+
+#pragma mark - Enum GenericEvent_Source
+
+typedef GPB_ENUM(GenericEvent_Source) {
+  /**
+   * Value used if any message's field encounters a value that is not defined
+   * by this enum. The message will also have C functions to get/set the rawValue
+   * of the field.
+   **/
+  GenericEvent_Source_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  GenericEvent_Source_Mobile = 0,
+  GenericEvent_Source_Iot = 1,
+};
+
+GPBEnumDescriptor *GenericEvent_Source_EnumDescriptor(void);
+
+/**
+ * Checks to see if the given value is defined by the enum or was not known at
+ * the time this source was generated.
+ **/
+BOOL GenericEvent_Source_IsValidValue(int32_t value);
 
 #pragma mark - IngressRoot
 
@@ -308,6 +340,51 @@ typedef GPB_ENUM(Event_FieldNumber) {
 
 @end
 
+#pragma mark - GenericEvent
+
+typedef GPB_ENUM(GenericEvent_FieldNumber) {
+  GenericEvent_FieldNumber_Id_p = 1,
+  GenericEvent_FieldNumber_OrganizationId = 2,
+  GenericEvent_FieldNumber_ChannelId = 3,
+  GenericEvent_FieldNumber_DeviceId = 4,
+  GenericEvent_FieldNumber_ServerRecievedAt = 5,
+  GenericEvent_FieldNumber_ClientSentAt = 6,
+  GenericEvent_FieldNumber_Source = 7,
+  GenericEvent_FieldNumber_Payload = 8,
+};
+
+@interface GenericEvent : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *organizationId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *channelId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
+
+@property(nonatomic, readwrite) int64_t serverRecievedAt;
+
+@property(nonatomic, readwrite) int64_t clientSentAt;
+
+@property(nonatomic, readwrite) GenericEvent_Source source;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *payload;
+
+@end
+
+/**
+ * Fetches the raw value of a @c GenericEvent's @c source property, even
+ * if the value was not defined by the enum at the time the code was generated.
+ **/
+int32_t GenericEvent_Source_RawValue(GenericEvent *message);
+/**
+ * Sets the raw value of an @c GenericEvent's @c source property, allowing
+ * it to be set to a value that was not defined by the enum at the time the code
+ * was generated.
+ **/
+void SetGenericEvent_Source_RawValue(GenericEvent *message, int32_t value);
+
 #pragma mark - RegistrationRequest
 
 typedef GPB_ENUM(RegistrationRequest_FieldNumber) {
@@ -348,35 +425,305 @@ typedef GPB_ENUM(RegistrationResponse_FieldNumber) {
 
 @end
 
-#pragma mark - IBeaconListItem
-
-typedef GPB_ENUM(IBeaconListItem_FieldNumber) {
-  IBeaconListItem_FieldNumber_Uuid = 1,
-  IBeaconListItem_FieldNumber_Major = 2,
-  IBeaconListItem_FieldNumber_Minor = 3,
-};
-
-@interface IBeaconListItem : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
-
-@property(nonatomic, readwrite) int64_t major;
-
-@property(nonatomic, readwrite) int64_t minor;
-
-@end
-
 #pragma mark - IBeaconsResponse
 
 typedef GPB_ENUM(IBeaconsResponse_FieldNumber) {
-  IBeaconsResponse_FieldNumber_IbeaconsArray = 1,
+  IBeaconsResponse_FieldNumber_UuidsArray = 1,
 };
 
 @interface IBeaconsResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<IBeaconListItem*> *ibeaconsArray;
-/** The number of items in @c ibeaconsArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger ibeaconsArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *uuidsArray;
+/** The number of items in @c uuidsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger uuidsArray_Count;
+
+@end
+
+#pragma mark - MobileEvents
+
+<<<<<<< HEAD:SixgillSDK.framework/Headers/Ingress.pbobjc.h
+typedef GPB_ENUM(MobileEvents_FieldNumber) {
+  MobileEvents_FieldNumber_EventsArray = 1,
+=======
+typedef GPB_ENUM(Rule_FieldNumber) {
+  Rule_FieldNumber_Id_p = 1,
+  Rule_FieldNumber_Name = 2,
+  Rule_FieldNumber_Type = 3,
+  Rule_FieldNumber_Enabled = 4,
+  Rule_FieldNumber_Conditions = 5,
+  Rule_FieldNumber_ConditionObject = 6,
+  Rule_FieldNumber_ActionsJson = 7,
+  Rule_FieldNumber_Description_p = 8,
+  Rule_FieldNumber_CreatedAt = 9,
+  Rule_FieldNumber_UpdatedAt = 10,
+  Rule_FieldNumber_Generator = 11,
+  Rule_FieldNumber_OrganizationId = 12,
+  Rule_FieldNumber_ChannelIdsArray = 13,
+  Rule_FieldNumber_ProjectId = 14,
+  Rule_FieldNumber_TagsArray = 15,
+>>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/Headers/Ingress.pbobjc.h
+};
+
+@interface MobileEvents : GPBMessage
+
+<<<<<<< HEAD:SixgillSDK.framework/Headers/Ingress.pbobjc.h
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Event*> *eventsArray;
+/** The number of items in @c eventsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger eventsArray_Count;
+=======
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *type;
+
+@property(nonatomic, readwrite) BOOL enabled;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *conditions;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *conditionObject;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *actionsJson;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
+
+@property(nonatomic, readwrite) int64_t createdAt;
+
+@property(nonatomic, readwrite) int64_t updatedAt;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *generator;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *organizationId;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *channelIdsArray;
+/** The number of items in @c channelIdsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger channelIdsArray_Count;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *projectId;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *tagsArray;
+/** The number of items in @c tagsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger tagsArray_Count;
+
+@end
+
+#pragma mark - RulesResponse
+
+typedef GPB_ENUM(RulesResponse_FieldNumber) {
+  RulesResponse_FieldNumber_RulesArray = 1,
+};
+
+@interface RulesResponse : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Rule*> *rulesArray;
+/** The number of items in @c rulesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger rulesArray_Count;
+>>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/Headers/Ingress.pbobjc.h
+
+@end
+
+#pragma mark - GatewayRegistrationRequest
+
+typedef GPB_ENUM(GatewayRegistrationRequest_FieldNumber) {
+  GatewayRegistrationRequest_FieldNumber_ApiKey = 1,
+  GatewayRegistrationRequest_FieldNumber_MachineId = 2,
+  GatewayRegistrationRequest_FieldNumber_SystemInfo = 3,
+};
+
+@interface GatewayRegistrationRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *apiKey;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *machineId;
+
+@property(nonatomic, readwrite, strong, null_resettable) GatewayRegistrationRequest_SystemInfo *systemInfo;
+/** Test to see if @c systemInfo has been set. */
+@property(nonatomic, readwrite) BOOL hasSystemInfo;
+
+@end
+
+#pragma mark - GatewayRegistrationRequest_SystemInfo
+
+typedef GPB_ENUM(GatewayRegistrationRequest_SystemInfo_FieldNumber) {
+  GatewayRegistrationRequest_SystemInfo_FieldNumber_Os = 1,
+  GatewayRegistrationRequest_SystemInfo_FieldNumber_Arch = 2,
+  GatewayRegistrationRequest_SystemInfo_FieldNumber_Cpu = 3,
+  GatewayRegistrationRequest_SystemInfo_FieldNumber_Gpu = 4,
+  GatewayRegistrationRequest_SystemInfo_FieldNumber_Memory = 5,
+  GatewayRegistrationRequest_SystemInfo_FieldNumber_Storage = 6,
+  GatewayRegistrationRequest_SystemInfo_FieldNumber_Make = 7,
+};
+
+@interface GatewayRegistrationRequest_SystemInfo : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *os;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *arch;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *cpu;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *gpu;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *memory;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *storage;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *make;
+
+@end
+
+#pragma mark - GatewayRegistrationResponse
+
+typedef GPB_ENUM(GatewayRegistrationResponse_FieldNumber) {
+  GatewayRegistrationResponse_FieldNumber_Token = 1,
+};
+
+@interface GatewayRegistrationResponse : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
+
+@end
+
+#pragma mark - GatewaySyncRequest
+
+typedef GPB_ENUM(GatewaySyncRequest_FieldNumber) {
+  GatewaySyncRequest_FieldNumber_LastSyncedAt = 1,
+};
+
+@interface GatewaySyncRequest : GPBMessage
+
+@property(nonatomic, readwrite) int64_t lastSyncedAt;
+
+@end
+
+#pragma mark - RuleXChannel
+
+typedef GPB_ENUM(RuleXChannel_FieldNumber) {
+  RuleXChannel_FieldNumber_RuleId = 1,
+  RuleXChannel_FieldNumber_ChannelId = 2,
+};
+
+@interface RuleXChannel : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *ruleId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *channelId;
+
+@end
+
+#pragma mark - Landmark
+
+typedef GPB_ENUM(Landmark_FieldNumber) {
+  Landmark_FieldNumber_Id_p = 1,
+  Landmark_FieldNumber_Type = 2,
+  Landmark_FieldNumber_Shape = 3,
+};
+
+@interface Landmark : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *type;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *shape;
+
+@end
+
+#pragma mark - GatewaySyncResponse
+
+typedef GPB_ENUM(GatewaySyncResponse_FieldNumber) {
+  GatewaySyncResponse_FieldNumber_RulesArray = 1,
+  GatewaySyncResponse_FieldNumber_RuleXChannelArray = 2,
+  GatewaySyncResponse_FieldNumber_LandmarksArray = 3,
+  GatewaySyncResponse_FieldNumber_Deleted = 4,
+};
+
+@interface GatewaySyncResponse : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Rule*> *rulesArray;
+/** The number of items in @c rulesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger rulesArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<RuleXChannel*> *ruleXChannelArray;
+/** The number of items in @c ruleXChannelArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger ruleXChannelArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Landmark*> *landmarksArray;
+/** The number of items in @c landmarksArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger landmarksArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) GatewaySyncResponse_Deleted *deleted;
+/** Test to see if @c deleted has been set. */
+@property(nonatomic, readwrite) BOOL hasDeleted;
+
+@end
+
+#pragma mark - GatewaySyncResponse_Deleted
+
+typedef GPB_ENUM(GatewaySyncResponse_Deleted_FieldNumber) {
+  GatewaySyncResponse_Deleted_FieldNumber_LandmarksArray = 1,
+  GatewaySyncResponse_Deleted_FieldNumber_RulesArray = 2,
+};
+
+@interface GatewaySyncResponse_Deleted : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *landmarksArray;
+/** The number of items in @c landmarksArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger landmarksArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *rulesArray;
+/** The number of items in @c rulesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger rulesArray_Count;
+
+@end
+
+#pragma mark - MqttEventRequest
+
+typedef GPB_ENUM(MqttEventRequest_FieldNumber) {
+  MqttEventRequest_FieldNumber_Token = 1,
+  MqttEventRequest_FieldNumber_Event = 2,
+};
+
+@interface MqttEventRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *event;
+
+@end
+
+#pragma mark - Notification
+
+typedef GPB_ENUM(Notification_FieldNumber) {
+  Notification_FieldNumber_Id_p = 1,
+  Notification_FieldNumber_Timestamp = 2,
+  Notification_FieldNumber_DeviceId = 3,
+  Notification_FieldNumber_Message = 4,
+};
+
+@interface Notification : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *timestamp;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *message;
+
+@end
+
+#pragma mark - NotificationResponse
+
+typedef GPB_ENUM(NotificationResponse_FieldNumber) {
+  NotificationResponse_FieldNumber_NotificationsArray = 1,
+};
+
+@interface NotificationResponse : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Notification*> *notificationsArray;
+/** The number of items in @c notificationsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger notificationsArray_Count;
 
 @end
 
