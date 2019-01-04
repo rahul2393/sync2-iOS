@@ -10,7 +10,7 @@
 #import "DummyMapData.h"
 #import "SettingsManager.h"
 #import "SenseAPI.h"
-#import "Landmark.h"
+#import "ProjectLandmark.h"
 @import SixgillSDK;
 @interface MapViewController ()
 
@@ -154,7 +154,7 @@
         
     }else{
         
-        for (Landmark *lm in self.landmarks) {
+        for (ProjectLandmark *lm in self.landmarks) {
             if ([lm.geometryType isEqualToString:@"circle"]) {
                  MKCircle *c = [lm mkCircle];
                 dispatch_async(dispatch_get_main_queue(), ^{
