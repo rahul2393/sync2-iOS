@@ -75,7 +75,6 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
-    [self saveRemoteNotificationPayload:userInfo];
     [SGSDK didReceivePushNotificationPayload:userInfo withCompletionHandler:completionHandler];
     
     //PushReceived

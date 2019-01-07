@@ -42,9 +42,6 @@
 		75840431211F5931001AEF91 /* SetupCompleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75840430211F5931001AEF91 /* SetupCompleteViewController.m */; };
 		75843ADF213A554600D7BB8D /* NotificationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 75843ADE213A554600D7BB8D /* NotificationType.m */; };
 		759926EC20FE2E790073693F /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759926EB20FE2E790073693F /* SplashViewController.m */; };
-		75C138B521BFDD2700E28FBA /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C138B421BFDD2700E28FBA /* SixgillSDK.framework */; };
-		75C138B621BFDD3000E28FBA /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C138B421BFDD2700E28FBA /* SixgillSDK.framework */; };
-		75C138B721BFDD3000E28FBA /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75C138B421BFDD2700E28FBA /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75CD539E213D33DF006D8390 /* UITapGestureRecognizerExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CD539D213D33DF006D8390 /* UITapGestureRecognizerExtension.m */; };
 		75D71583210AF214007378D5 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71582210AF214007378D5 /* Device.m */; };
 		75D71587210B0D10007378D5 /* LogMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71586210B0D10007378D5 /* LogMapTableViewCell.m */; };
@@ -60,6 +57,7 @@
 		75E48B2621BEA00100AB485D /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; };
 		75E48B2721BEA00100AB485D /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75E68A4A212E962500797E27 /* LogBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E68A49212E962500797E27 /* LogBaseViewController.m */; };
+		75E8BFD721E352D40001F4A5 /* DefaultNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */; };
 		75EFB19521DCEAD700852D64 /* RuleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EFB19421DCEAD700852D64 /* RuleCondition.m */; };
 		75EB34BF21BA7C0B009FD912 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */; };
 		75EB34C021BA7C1A009FD912 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */; };
@@ -248,7 +246,6 @@
 		75843AE0213A556700D7BB8D /* NotificationType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationType.h; sourceTree = "<group>"; };
 		759926EA20FE2E5D0073693F /* SplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		759926EB20FE2E790073693F /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
-		75C138B421BFDD2700E28FBA /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		75CD539C213D33C9006D8390 /* UITapGestureRecognizerExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITapGestureRecognizerExtension.h; sourceTree = "<group>"; };
 		75CD539D213D33DF006D8390 /* UITapGestureRecognizerExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITapGestureRecognizerExtension.m; sourceTree = "<group>"; };
 		75D71582210AF214007378D5 /* Device.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
@@ -274,6 +271,8 @@
 		75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		75E68A48212E960A00797E27 /* LogBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogBaseViewController.h; sourceTree = "<group>"; };
 		75E68A49212E962500797E27 /* LogBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogBaseViewController.m; sourceTree = "<group>"; };
+		75E8BFD521E352D40001F4A5 /* DefaultNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultNotificationTableViewCell.h; sourceTree = "<group>"; };
+		75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefaultNotificationTableViewCell.m; sourceTree = "<group>"; };
 		75EFB19321DCEAD700852D64 /* RuleCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuleCondition.h; sourceTree = "<group>"; };
 		75EFB19421DCEAD700852D64 /* RuleCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuleCondition.m; sourceTree = "<group>"; };
 		75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
@@ -572,6 +571,8 @@
 				753CB72321070C1500C11223 /* ScheduleNotificationTableViewCell.h */,
 				753CB72421070C1500C11223 /* ScheduleNotificationTableViewCell.m */,
 				753CB72621070C2C00C11223 /* VisitNotificationTableViewCell.h */,
+				75E8BFD521E352D40001F4A5 /* DefaultNotificationTableViewCell.h */,
+				75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */,
 				753CB72721070C2C00C11223 /* VisitNotificationTableViewCell.m */,
 				75502A5021087DA600BFCA2A /* OptionSurveyTableViewCell.h */,
 				75502A5121087DA600BFCA2A /* OptionSurveyTableViewCell.m */,
@@ -1752,6 +1753,7 @@
 				753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */,
 				75FDF1BA213414AF0068D015 /* ActionNotification.m in Sources */,
 				E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */,
+				75E8BFD721E352D40001F4A5 /* DefaultNotificationTableViewCell.m in Sources */,
 				E9CCF4C81EF1E78200BF96C6 /* QRCodeReaderViewController.m in Sources */,
 				E966682B20082743006911C3 /* MasterTabViewController.m in Sources */,
 				E9F0A29420240B41007B7711 /* APIKey.m in Sources */,
