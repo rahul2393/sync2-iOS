@@ -43,6 +43,8 @@
 +(void) setPushToken:(NSString *)pushToken;
 +(NSString *) storedPushToken;
 
++(void) showNotificationsFromOffset:(NSNumber *)offset andLimit:(NSNumber *)limit andSuccessHandler:(void (^)(NSArray<Notification*> *))successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
+
 +(void) forceSensorUpdate;
 
 +(void) requestAlwaysPermission;
