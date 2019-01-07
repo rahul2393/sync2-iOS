@@ -11,14 +11,15 @@
 #import "RulesInformationViewController.h"
 #import "SenseAPI.h"
 #import "SettingsManager.h"
-#import "SGRule.h"
 #import "Device.h"
+
+@import SixgillSDK;
 
 #define kCloudRulesStore @"kCloudRulesStore"
 
 @interface RulesCloudViewController ()
 
-@property (nonatomic, strong) NSArray *rules;
+@property (nonatomic, strong) NSArray<SGRule *> *rules;
 @property (nonatomic, readwrite) Project *currentProject;
 @property (nonatomic, readwrite) long conditionsCount;
 @end
@@ -34,8 +35,6 @@
     
     [self.tableView setHidden:YES];
     [self.emptyView setHidden:NO];
-    
-    self.conditionsCount = 0;
     
     _currentProject = [[SettingsManager sharedManager] selectedProject];
     
@@ -63,8 +62,7 @@
         return;
     }
     
-    [[SenseAPI sharedManager] GetRulesForProject:_currentProject.objectId WithCompletion:^(NSArray *rules, NSError * _Nullable error) {
-        
+    [SGSDK getRulesOfType:@"cloud" andSuccessHandler:^(NSMutableArray<SGRule *> *rules) {
         self.rules = rules;
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -77,8 +75,9 @@
                 [self.tableView reloadData];
             }
         });
+    } andFailureHandler:^(NSString *errorMsg) {
+        
     }];
-    
     
 }
 
@@ -122,6 +121,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     RulesInformationViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RulesInformationViewControllerIdentifier"];
+    vc.rule = self.rules[indexPath.section];
     vc.currentPage = 1;
     [self.navigationController pushViewController:vc animated:YES];
 }

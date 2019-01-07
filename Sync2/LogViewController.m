@@ -8,6 +8,10 @@
 
 #import "LogViewController.h"
 #import <CoreMotion/CoreMotion.h>
+
+#import "LogListViewController.h"
+#import "LogMapViewController.h"
+
 @interface LogViewController ()
 @end
 
@@ -22,7 +26,6 @@
         self.selectorTextColor = [UIColor colorWithRed:0.3 green:0.86 blue:0.35 alpha:1];
         self.currentPage = 0;
         
-        self.viewControllerIdentifiers = [NSArray arrayWithObjects:@"LogListViewControllerIdentifier", @"LogMapViewControllerIdentifier", nil];
     }
     return self;
 }
@@ -35,6 +38,15 @@
 }
 
 - (void)viewDidLoad {
+    
+    self.viewControllers = [[NSMutableArray alloc] init];
+    
+    LogListViewController *logListVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LogListViewControllerIdentifier"];
+    [self.viewControllers addObject:logListVC];
+    
+    LogMapViewController *logMapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LogMapViewControllerIdentifier"];
+    [self.viewControllers addObject:logMapVC];
+    
     [super viewDidLoad];
     
     CMMotionActivityManager* motionActivityManager = [[CMMotionActivityManager alloc]init];

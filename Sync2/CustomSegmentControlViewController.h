@@ -10,7 +10,7 @@
 
 @interface CustomSegmentControlViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate>
 
-@property (nonatomic, readwrite) NSArray *viewControllerIdentifiers;
+@property (nonatomic, readwrite) NSMutableArray *viewControllers;
 @property (nonatomic, readwrite) NSInteger currentPage;
 @property (nonatomic, readwrite) NSString* commaSeperatedButtonTitles;
 @property (nonatomic, readwrite) UIColor* textColor;

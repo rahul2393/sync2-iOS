@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@import SixgillSDK;
 
 @interface RulesInformationEdgeViewController : UIViewController
+
+@property (strong, nonatomic) SGRule *rule;
 
 @end
