@@ -59,10 +59,6 @@
 		75E68A4A212E962500797E27 /* LogBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E68A49212E962500797E27 /* LogBaseViewController.m */; };
 		75E8BFD721E352D40001F4A5 /* DefaultNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */; };
 		75EFB19521DCEAD700852D64 /* RuleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EFB19421DCEAD700852D64 /* RuleCondition.m */; };
-		75EB34BF21BA7C0B009FD912 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */; };
-		75EB34C021BA7C1A009FD912 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */; };
-		75EB34C121BA7C1A009FD912 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		75F45D5C218AEC080077B9F0 /* SGRuleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F45D5B218AEC080077B9F0 /* SGRuleCondition.m */; };
 		75F4C98521AD52EF009596E1 /* SignupWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4C98421AD52EF009596E1 /* SignupWebVC.swift */; };
 		75FDF1B72134149E0068D015 /* InformationNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1B62134149E0068D015 /* InformationNotification.m */; };
 		75FDF1BA213414AF0068D015 /* ActionNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1B9213414AF0068D015 /* ActionNotification.m */; };
@@ -275,9 +271,6 @@
 		75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefaultNotificationTableViewCell.m; sourceTree = "<group>"; };
 		75EFB19321DCEAD700852D64 /* RuleCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuleCondition.h; sourceTree = "<group>"; };
 		75EFB19421DCEAD700852D64 /* RuleCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuleCondition.m; sourceTree = "<group>"; };
-		75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
-		75F45D5A218AEC080077B9F0 /* SGRuleCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGRuleCondition.h; sourceTree = "<group>"; };
-		75F45D5B218AEC080077B9F0 /* SGRuleCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGRuleCondition.m; sourceTree = "<group>"; };
 		75F4C98421AD52EF009596E1 /* SignupWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupWebVC.swift; sourceTree = "<group>"; };
 		75FDF1B52134149E0068D015 /* InformationNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InformationNotification.h; sourceTree = "<group>"; };
 		75FDF1B62134149E0068D015 /* InformationNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InformationNotification.m; sourceTree = "<group>"; };
