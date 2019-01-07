@@ -63,6 +63,7 @@
 		75EB34BF21BA7C0B009FD912 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */; };
 		75EB34C021BA7C1A009FD912 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */; };
 		75EB34C121BA7C1A009FD912 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		75E8BFD721E352D40001F4A5 /* DefaultNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */; };
 		75F45D5C218AEC080077B9F0 /* SGRuleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F45D5B218AEC080077B9F0 /* SGRuleCondition.m */; };
 		75F4C98521AD52EF009596E1 /* SignupWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4C98421AD52EF009596E1 /* SignupWebVC.swift */; };
 		75F55758218B20B000208229 /* SGRuleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F55757218B20B000208229 /* SGRuleAction.m */; };
@@ -276,6 +277,8 @@
 		75E68A48212E960A00797E27 /* LogBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogBaseViewController.h; sourceTree = "<group>"; };
 		75E68A49212E962500797E27 /* LogBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogBaseViewController.m; sourceTree = "<group>"; };
 		75EB34BE21BA7C0B009FD912 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
+		75E8BFD521E352D40001F4A5 /* DefaultNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultNotificationTableViewCell.h; sourceTree = "<group>"; };
+		75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefaultNotificationTableViewCell.m; sourceTree = "<group>"; };
 		75F45D5A218AEC080077B9F0 /* SGRuleCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGRuleCondition.h; sourceTree = "<group>"; };
 		75F45D5B218AEC080077B9F0 /* SGRuleCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGRuleCondition.m; sourceTree = "<group>"; };
 		75F4C98421AD52EF009596E1 /* SignupWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupWebVC.swift; sourceTree = "<group>"; };
@@ -575,6 +578,8 @@
 				753CB72321070C1500C11223 /* ScheduleNotificationTableViewCell.h */,
 				753CB72421070C1500C11223 /* ScheduleNotificationTableViewCell.m */,
 				753CB72621070C2C00C11223 /* VisitNotificationTableViewCell.h */,
+				75E8BFD521E352D40001F4A5 /* DefaultNotificationTableViewCell.h */,
+				75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */,
 				753CB72721070C2C00C11223 /* VisitNotificationTableViewCell.m */,
 				75502A5021087DA600BFCA2A /* OptionSurveyTableViewCell.h */,
 				75502A5121087DA600BFCA2A /* OptionSurveyTableViewCell.m */,
@@ -1759,6 +1764,7 @@
 				753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */,
 				75FDF1BA213414AF0068D015 /* ActionNotification.m in Sources */,
 				E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */,
+				75E8BFD721E352D40001F4A5 /* DefaultNotificationTableViewCell.m in Sources */,
 				E9CCF4C81EF1E78200BF96C6 /* QRCodeReaderViewController.m in Sources */,
 				E966682B20082743006911C3 /* MasterTabViewController.m in Sources */,
 				E9F0A29420240B41007B7711 /* APIKey.m in Sources */,
