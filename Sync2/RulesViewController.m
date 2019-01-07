@@ -8,6 +8,9 @@
 
 #import "RulesViewController.h"
 
+#import "RulesEdgeViewController.h"
+#import "RulesCloudViewController.h"
+
 @interface RulesViewController ()
 
 @end
@@ -23,9 +26,23 @@
         self.selectorTextColor = [UIColor colorWithRed:0.3 green:0.86 blue:0.35 alpha:1];
         self.currentPage = 0;
         
-        self.viewControllerIdentifiers = [NSArray arrayWithObjects:@"RulesEdgeViewControllerIdentifier", @"RulesCloudViewControllerIdentifier", nil];
+        
     }
     return self;
 }
+
+- (void)viewDidLoad{
+    
+    self.viewControllers = [[NSMutableArray alloc] init];
+    
+    RulesEdgeViewController *rulesEdgeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RulesEdgeViewControllerIdentifier"];
+    [self.viewControllers addObject:rulesEdgeVC];
+    
+    RulesCloudViewController *rulesCloudVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RulesCloudViewControllerIdentifier"];
+    [self.viewControllers addObject:rulesCloudVC];
+    
+    [super viewDidLoad];
+}
+
 
 @end

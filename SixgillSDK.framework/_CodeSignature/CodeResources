@@ -104,9 +104,21 @@
 		<data>
 		+SKa4cNUtaV2LxfweSsORmCNLlc=
 		</data>
+		<key>Headers/SGRule.h</key>
+		<data>
+		Zc0qrqH+fWG8m06WqI59kgqW2Xc=
+		</data>
+		<key>Headers/SGRuleAction.h</key>
+		<data>
+		XJmvkjqPy43k+Pk7tANyOWCmvxE=
+		</data>
+		<key>Headers/SGRuleCondition.h</key>
+		<data>
+		wuKd8J+SGc0po99i6CrsHY6mwlI=
+		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
-		uBY7scSWmbPqLjKB9igjaUszeB0=
+		9VrGj3p9CKehH07cLqLHqTFtyrk=
 		</data>
 		<key>Headers/SGSDKConfigManager.h</key>
 		<data>
@@ -498,15 +510,48 @@
 			Z5d/IXXUzMAuMX8xEpxkaVI3/drKHG6xuabFUeEstgI=
 			</data>
 		</dict>
+		<key>Headers/SGRule.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Zc0qrqH+fWG8m06WqI59kgqW2Xc=
+			</data>
+			<key>hash2</key>
+			<data>
+			OiqKLP2Oc/zuEI1Q2onYyb5ZUl+L4FnP6a0f8a5BzIY=
+			</data>
+		</dict>
+		<key>Headers/SGRuleAction.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			XJmvkjqPy43k+Pk7tANyOWCmvxE=
+			</data>
+			<key>hash2</key>
+			<data>
+			Gxcjq1XOMj/wITj/Nv4f+1T5/9elgWPnWjbbfrGWYew=
+			</data>
+		</dict>
+		<key>Headers/SGRuleCondition.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			wuKd8J+SGc0po99i6CrsHY6mwlI=
+			</data>
+			<key>hash2</key>
+			<data>
+			Gi45sjCC6FfdUQr6yY8AO9cbH4gmPRMSOkGGNafFIgE=
+			</data>
+		</dict>
 		<key>Headers/SGSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			uBY7scSWmbPqLjKB9igjaUszeB0=
+			9VrGj3p9CKehH07cLqLHqTFtyrk=
 			</data>
 			<key>hash2</key>
 			<data>
-			ihyNkUU+Npf0XJLGqDsFDIi771Aoh2WIwgrsMVDuXdc=
+			rrj2g9toSHroN08vI/+aID+RMkImXP7HE3iMYd602kE=
 			</data>
 		</dict>
 		<key>Headers/SGSDKConfigManager.h</key>

@@ -13,6 +13,7 @@
 #import "EventQueuePolicy.h"
 #import "SGIoTDevice.h"
 #import "SGSDKConfigManager.h"
+#import "SGRule.h"
 /**
  `SGSDK` is the wrapper class that exists for the purpose of abstracting away implemenation details and providing a clean API to the user.
  **/
@@ -57,5 +58,7 @@
 
 #pragma mark - Core Data
 +(void) saveCoreDataContext;
+
++(void)getRulesOfType:(NSString *)type andSuccessHandler:(nullable void (^)(NSMutableArray<SGRule*> *))successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
 
 @end

@@ -14,7 +14,6 @@
 #import "SettingsManager.h"
 #import "SDKManager.h"
 #import "AppDelegate.h"
-#import "SGRule.h"
 
 @implementation SenseAPI
 
@@ -341,41 +340,6 @@
     [dataTask resume];
 }
 
-# pragma mark - Get Rules
-
--(void) GetRulesForProject:(NSString *_Nonnull)projectId WithCompletion:(void ( ^ _Nullable )(NSArray *rules, NSError * _Nullable error))completed{
-    
-    NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
-                               @"Accept": @"application/json",
-                               @"Connection": @"keep-alive" };
-    
-    NSString *url = [NSString stringWithFormat:@"%@?projectId=%@",[self urlForEndPoint:@"/v2/rules"] , projectId];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:10.0];
-    [request setHTTPMethod:@"GET"];
-    [request setAllHTTPHeaderFields:headers];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    if (error) {
-                                                        NSLog(@"%@", error);
-                                                    } else {
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
-                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
-                                                            return;
-                                                        }
-                                                        
-                                                        NSArray *rules = [self rulesFromData:data];
-                                                        completed(rules, nil);
-                                                    }
-                                                }];
-    [dataTask resume];
-}
-
 # pragma mark -
 
 - (void)formatURLRequest:(NSURLRequest *)request{
@@ -431,31 +395,6 @@
             NSArray *landmarkObjects = (NSArray *)responseDict[@"data"];
             for (NSDictionary *lmo in landmarkObjects) {
                 ProjectLandmark *p = [[ProjectLandmark alloc] initWithData:lmo];
-                [toReturn addObject:p];
-            }
-        }
-    }
-    
-    
-    return toReturn;
-}
-
--(NSArray *) rulesFromData:(NSData *) data{
-    NSMutableArray *toReturn = [NSMutableArray array];
-    
-    NSError *error = nil;
-    id object = [NSJSONSerialization
-                 JSONObjectWithData:data
-                 options:0
-                 error:&error];
-    
-    
-    if ([object isKindOfClass:[NSDictionary class]]) {
-        NSDictionary *responseDict = (NSDictionary *)object;
-        if(responseDict[@"data"]){
-            NSArray *ruleObjects = (NSArray *)responseDict[@"data"];
-            for (NSDictionary *rule in ruleObjects) {
-                SGRule *p = [[SGRule alloc] initWithData:rule];
                 [toReturn addObject:p];
             }
         }
