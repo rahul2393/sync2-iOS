@@ -10,7 +10,7 @@
 @import SixgillSDK;
 
 @interface CameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-
+@property (nonatomic, readwrite) NSURL *imagePath;
 @end
 
 @implementation CameraViewController
@@ -42,17 +42,26 @@
 
 - (IBAction)uploadImage:(UIButton *)sender {
     // TODO: Call SDK method to upload image
-//    [SGSDK uploadImageForHailer:self.imageView.image andSuccessHandler:^{
-//        
-//    } andFailureHandler:^(NSString *failureMsg) {
-//        
-//    }];
+    if (self.imagePath) {
+        [SGSDK uploadFileFromURL:self.imagePath andSuccessHandler:^{
+            NSLog(@"Image upload successful");
+        } andFailureHandler:^(NSString *failureMsg) {
+            
+        }];
+    }
 }
 
 #pragma mark - UIImagePickerControllerDelegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info{
+    
+    NSFileManager *fileManager = NSFileManager.defaultManager;
+    NSURL *documentPath = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
+    self.imagePath = [documentPath URLByAppendingPathComponent:@"image.jpg"];
+    
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    NSData *imageData = UIImageJPEGRepresentation(chosenImage, 1.0f);
+    [imageData writeToURL:self.imagePath atomically:YES];
     self.imageView.image = chosenImage;
     
     [self hideEmptyView:YES];
