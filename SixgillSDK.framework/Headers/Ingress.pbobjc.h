@@ -33,7 +33,6 @@ CF_EXTERN_C_BEGIN
 @class GatewayRegistrationRequest_SystemInfo;
 @class GatewaySyncResponse_Deleted;
 @class IBeacon;
-@class IBeaconListItem;
 @class Landmark;
 @class Location;
 @class Notification;
@@ -420,35 +419,17 @@ typedef GPB_ENUM(RegistrationResponse_FieldNumber) {
 
 @end
 
-#pragma mark - IBeaconListItem
-
-typedef GPB_ENUM(IBeaconListItem_FieldNumber) {
-  IBeaconListItem_FieldNumber_Uuid = 1,
-  IBeaconListItem_FieldNumber_Major = 2,
-  IBeaconListItem_FieldNumber_Minor = 3,
-};
-
-@interface IBeaconListItem : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *uuid;
-
-@property(nonatomic, readwrite) int64_t major;
-
-@property(nonatomic, readwrite) int64_t minor;
-
-@end
-
 #pragma mark - IBeaconsResponse
 
 typedef GPB_ENUM(IBeaconsResponse_FieldNumber) {
-  IBeaconsResponse_FieldNumber_IbeaconsArray = 1,
+  IBeaconsResponse_FieldNumber_UuidsArray = 1,
 };
 
 @interface IBeaconsResponse : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<IBeaconListItem*> *ibeaconsArray;
-/** The number of items in @c ibeaconsArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger ibeaconsArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *uuidsArray;
+/** The number of items in @c uuidsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger uuidsArray_Count;
 
 @end
 
