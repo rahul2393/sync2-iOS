@@ -15,6 +15,14 @@
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSArray *recipients;
 
+
+@property (nonatomic, strong) NSString *url;
+@property (nonatomic, strong) NSString *body;
+@property (nonatomic, strong) NSString *method;
+@property (nonatomic, strong) NSString *password;
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSDictionary<NSString *, NSString *> *headers;
+
 - (instancetype)initWithData:(NSDictionary *)data;
 
 @end
