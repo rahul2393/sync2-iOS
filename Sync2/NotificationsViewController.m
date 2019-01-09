@@ -198,7 +198,7 @@
 }
 
 - (void) loadNotifications {
-    [SGSDK showNotificationsFromOffset:[NSNumber numberWithInt:0] andLimit:[NSNumber numberWithInt:20] andSuccessHandler:^(NSArray<Notification *> *notifications) {
+    [SGSDK showNotificationsFromOffset:0 andLimit:20 andSuccessHandler:^(NSArray<Notification *> *notifications) {
         if (notifications.count == 0) {
             self.tableView.hidden = true;
             self.noNotificationsView.hidden = false;

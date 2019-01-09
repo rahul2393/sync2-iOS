@@ -23,21 +23,21 @@
 
 - (void)configureCell:(Notification *)notification{
     
-    self.titleLabel.text = @"";
+    self.titleLabel.text = notification.subject;
     self.detailLabel.text = notification.message;
-    self.dateLabel.text = [self displayableDateFor:notification.timestamp];
+    
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)];
+    self.dateLabel.text = [self displayableDateFor:date];
 
 }
 
--(NSString *)displayableDateFor:(NSString *)timestamp{
+-(NSString *)displayableDateFor:(NSDate *)date{
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss.SSS Z zzz"];
-    NSDate *d = [dateFormatter dateFromString:timestamp];
-    
     [dateFormatter setDateFormat:@"MMMM dd, h:mm a"];
     
-    return [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:d]];
+    return [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:date]];
 }
 
 

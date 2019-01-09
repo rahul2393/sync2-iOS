@@ -681,16 +681,19 @@ typedef GPB_ENUM(Notification_FieldNumber) {
   Notification_FieldNumber_Id_p = 1,
   Notification_FieldNumber_Timestamp = 2,
   Notification_FieldNumber_DeviceId = 3,
-  Notification_FieldNumber_Message = 4,
+  Notification_FieldNumber_Subject = 4,
+  Notification_FieldNumber_Message = 5,
 };
 
 @interface Notification : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *timestamp;
+@property(nonatomic, readwrite) int64_t timestamp;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *subject;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *message;
 
