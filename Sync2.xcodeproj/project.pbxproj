@@ -58,7 +58,6 @@
 		75E48B2721BEA00100AB485D /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75E68A4A212E962500797E27 /* LogBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E68A49212E962500797E27 /* LogBaseViewController.m */; };
 		75E8BFD721E352D40001F4A5 /* DefaultNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */; };
-		75EFB19521DCEAD700852D64 /* RuleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EFB19421DCEAD700852D64 /* RuleCondition.m */; };
 		75F4C98521AD52EF009596E1 /* SignupWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4C98421AD52EF009596E1 /* SignupWebVC.swift */; };
 		75FDF1B72134149E0068D015 /* InformationNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1B62134149E0068D015 /* InformationNotification.m */; };
 		75FDF1BA213414AF0068D015 /* ActionNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1B9213414AF0068D015 /* ActionNotification.m */; };
@@ -269,8 +268,6 @@
 		75E68A49212E962500797E27 /* LogBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogBaseViewController.m; sourceTree = "<group>"; };
 		75E8BFD521E352D40001F4A5 /* DefaultNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultNotificationTableViewCell.h; sourceTree = "<group>"; };
 		75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefaultNotificationTableViewCell.m; sourceTree = "<group>"; };
-		75EFB19321DCEAD700852D64 /* RuleCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuleCondition.h; sourceTree = "<group>"; };
-		75EFB19421DCEAD700852D64 /* RuleCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuleCondition.m; sourceTree = "<group>"; };
 		75F4C98421AD52EF009596E1 /* SignupWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupWebVC.swift; sourceTree = "<group>"; };
 		75FDF1B52134149E0068D015 /* InformationNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InformationNotification.h; sourceTree = "<group>"; };
 		75FDF1B62134149E0068D015 /* InformationNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InformationNotification.m; sourceTree = "<group>"; };
@@ -1296,8 +1293,6 @@
 				75502A7C210A162D00BFCA2A /* RulesViewController.h */,
 				751C4A7A210F0FC50040E717 /* RulesInformationCloudViewController.h */,
 				751C4A7B210F0FC50040E717 /* RulesInformationCloudViewController.m */,
-				75EFB19321DCEAD700852D64 /* RuleCondition.h */,
-				75EFB19421DCEAD700852D64 /* RuleCondition.m */,
 				75502A7D210A162D00BFCA2A /* RulesViewController.m */,
 				75502A79210A155200BFCA2A /* RulesEdgeViewController.h */,
 				751C4A77210F0FB10040E717 /* RulesInformationEdgeViewController.h */,
@@ -1799,7 +1794,6 @@
 				E962B3511EF1FB2600ECB920 /* LogViewController.m in Sources */,
 				75502A7E210A162D00BFCA2A /* RulesViewController.m in Sources */,
 				75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */,
-				75EFB19521DCEAD700852D64 /* RuleCondition.m in Sources */,
 				E9B76D5F200D4F5F0095030C /* DataChannelSelectionViewController.m in Sources */,
 				E9FC99FB204E0BE20060B81D /* EnvironmentSelectionViewController.m in Sources */,
 				75E68A4A212E962500797E27 /* LogBaseViewController.m in Sources */,
