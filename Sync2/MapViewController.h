@@ -11,7 +11,7 @@
 @import MapKit;
 @import SixgillSDK;
 
-@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, SGProviderDelegate, UIScrollViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, SGAtlasDelegate, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
     
