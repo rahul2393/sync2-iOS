@@ -16,7 +16,7 @@
 
 #import "SGProviderManager.h"
 #import "SGAtlasProvider.h"
-#import "SGProviderDelegate.h"
+#import "SGAtlasDelegate.h"
 /**
  `SGSDK` is the wrapper class that exists for the purpose of abstracting away implemenation details and providing a clean API to the user.
  **/

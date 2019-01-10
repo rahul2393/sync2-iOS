@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "SGSensorManager.h"
-#import "SGProviderDelegate.h"
+#import "SGAtlasDelegate.h"
 
 @interface SGProviderManager : SGSensorManager<TaskManager>
 
-@property (nonatomic, weak) id<SGProviderDelegate> providerDelegate;
+@property (nonatomic, weak) id<SGAtlasDelegate> providerDelegate;
 
 -(void) performTaskWithEventToken:(SGEventToken *)eventToken;
 

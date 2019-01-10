@@ -96,6 +96,10 @@
 		<data>
 		MBEVreRek6112w6klWByya+AQUo=
 		</data>
+		<key>Headers/SGAtlasDelegate.h</key>
+		<data>
+		vcUn3cdQr9026uNVGdCsZVqdLjM=
+		</data>
 		<key>Headers/SGAtlasProvider.h</key>
 		<data>
 		cgSy9LqupSIIvHRnaiZKIX8zfxE=
@@ -112,17 +116,13 @@
 		<data>
 		+SKa4cNUtaV2LxfweSsORmCNLlc=
 		</data>
-		<key>Headers/SGProviderDelegate.h</key>
-		<data>
-		qsuvcNz3CgyGvnkMu8NgiebbWyE=
-		</data>
 		<key>Headers/SGProviderManager.h</key>
 		<data>
-		zIv7Y+ywxsGTliTq8AsKnkP3jUg=
+		sm2NKcYqHki2mn+YMpat/FiVwRs=
 		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
-		0Qib5iAbYs8oJteqVPITpDKUKjw=
+		NQV9oK3iX/Ol3RCBusAlv2zgRok=
 		</data>
 		<key>Headers/SGSDKConfigManager.h</key>
 		<data>
@@ -496,6 +496,17 @@
 			uni5yCw1FSQljujKhORWJyke6CUEXRNIn3/NCf2Wi1k=
 			</data>
 		</dict>
+		<key>Headers/SGAtlasDelegate.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			vcUn3cdQr9026uNVGdCsZVqdLjM=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZjQtkBiJE+aiUdCjf8lcFWfoMW98D6AHTvM5tajHWSA=
+			</data>
+		</dict>
 		<key>Headers/SGAtlasProvider.h</key>
 		<dict>
 			<key>hash</key>
@@ -540,37 +551,26 @@
 			Z5d/IXXUzMAuMX8xEpxkaVI3/drKHG6xuabFUeEstgI=
 			</data>
 		</dict>
-		<key>Headers/SGProviderDelegate.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			qsuvcNz3CgyGvnkMu8NgiebbWyE=
-			</data>
-			<key>hash2</key>
-			<data>
-			NxhSXapbmOz5WFEB6jMU+Vszng+pMtsHa+yhginQQ5E=
-			</data>
-		</dict>
 		<key>Headers/SGProviderManager.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zIv7Y+ywxsGTliTq8AsKnkP3jUg=
+			sm2NKcYqHki2mn+YMpat/FiVwRs=
 			</data>
 			<key>hash2</key>
 			<data>
-			6/U4MPLJMEqxj676GOA88O/XQkbX36hxI/4jpTl0Gtg=
+			cO1kmJ2/66tiKgCJTKsfuKwrgqTY+r1cO4S/uV58XZM=
 			</data>
 		</dict>
 		<key>Headers/SGSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0Qib5iAbYs8oJteqVPITpDKUKjw=
+			NQV9oK3iX/Ol3RCBusAlv2zgRok=
 			</data>
 			<key>hash2</key>
 			<data>
-			emmXdi5WRzmcL/tkMJ8UIzGTWS4llRkHw3YWjfIg8rY=
+			Jc35KSi2ukiIxJpJN79TIZmwDCj7DG85TsobDRnYmW4=
 			</data>
 		</dict>
 		<key>Headers/SGSDKConfigManager.h</key>
