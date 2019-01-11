@@ -1746,7 +1746,7 @@ Let us know what you would like to see:</string>
                                                             <rect key="frame" x="0.0" y="28" width="335" height="38"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lv-xe-yKM" id="5ET-8I-o9t">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="37.666666666666664"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-yQ-dY7">
@@ -3333,6 +3333,10 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HTv-5h-54C">
+                                <rect key="frame" x="169" y="346" width="37" height="37"/>
+                                <color key="color" red="0.60999999999999999" green="0.60999999999999999" blue="0.60999999999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMz-Uu-Ya0">
                                 <rect key="frame" x="20" y="589" width="335" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.32156862745098036" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -3380,11 +3384,13 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                             <constraint firstAttribute="trailing" secondItem="BAy-4S-szW" secondAttribute="trailing" constant="20" id="I0S-hX-GwO"/>
                             <constraint firstItem="DtT-Tk-tNb" firstAttribute="height" secondItem="BAy-4S-szW" secondAttribute="height" id="Nfm-ky-u1r"/>
                             <constraint firstAttribute="trailing" secondItem="OMz-Uu-Ya0" secondAttribute="trailing" constant="20" id="Oc8-7G-XMO"/>
+                            <constraint firstItem="HTv-5h-54C" firstAttribute="centerY" secondItem="khe-O4-puk" secondAttribute="centerY" id="RB1-Dk-D9E"/>
                             <constraint firstItem="OMz-Uu-Ya0" firstAttribute="top" secondItem="BAy-4S-szW" secondAttribute="bottom" constant="20" id="T7f-kb-R5S"/>
                             <constraint firstItem="BCO-pe-KkB" firstAttribute="top" secondItem="OMz-Uu-Ya0" secondAttribute="bottom" constant="20" id="Ub2-5Z-ZM2"/>
                             <constraint firstItem="DtT-Tk-tNb" firstAttribute="centerX" secondItem="BAy-4S-szW" secondAttribute="centerX" id="Ubd-hv-hzM"/>
                             <constraint firstItem="BAy-4S-szW" firstAttribute="top" secondItem="gDp-vO-R9k" secondAttribute="bottom" constant="20" id="sMx-cp-REn"/>
                             <constraint firstItem="BAy-4S-szW" firstAttribute="leading" secondItem="khe-O4-puk" secondAttribute="leading" constant="20" id="sVC-o8-VfM"/>
+                            <constraint firstItem="HTv-5h-54C" firstAttribute="centerX" secondItem="khe-O4-puk" secondAttribute="centerX" id="tfF-jZ-Sur"/>
                             <constraint firstItem="bxB-Lx-GoI" firstAttribute="top" secondItem="BCO-pe-KkB" secondAttribute="bottom" constant="20" id="uxg-Qd-JhG"/>
                         </constraints>
                     </view>
@@ -3392,6 +3398,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                         <outlet property="captureButton" destination="OMz-Uu-Ya0" id="2Tc-Bx-0MT"/>
                         <outlet property="emptyView" destination="DtT-Tk-tNb" id="75t-jk-EYe"/>
                         <outlet property="imageView" destination="BAy-4S-szW" id="CHv-e7-qXA"/>
+                        <outlet property="loadingView" destination="HTv-5h-54C" id="x9N-s7-Tvf"/>
                         <outlet property="uploadButton" destination="BCO-pe-KkB" id="CBn-ie-Ldd"/>
                     </connections>
                 </viewController>

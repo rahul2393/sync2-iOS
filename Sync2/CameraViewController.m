@@ -11,6 +11,7 @@
 #import <ULID/ULID.h>
 
 @interface CameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingView;
 @property (nonatomic, readwrite) NSURL *imagePath;
 @end
 
@@ -23,6 +24,7 @@
     [self.uploadButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     self.title = @"Hailer Integration";
+    [self.loadingView setHidden:YES];
     
     [self hideEmptyView:NO];
     
@@ -44,10 +46,39 @@
 - (IBAction)uploadImage:(UIButton *)sender {
     // TODO: Call SDK method to upload image
     if (self.imagePath) {
+        
+        [self.loadingView setHidden:NO];
+        [self.loadingView startAnimating];
+        
         [SGSDK uploadFileFromURL:self.imagePath andSuccessHandler:^{
-            NSLog(@"Image upload successful");
+            
+            [self.loadingView setHidden:YES];
+            [self.loadingView stopAnimating];
+            
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Success"
+                                                                           message:@"Image upload successful"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+
         } andFailureHandler:^(NSString *failureMsg) {
             
+            [self.loadingView setHidden:YES];
+            [self.loadingView stopAnimating];
+            
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                           message:@"Try again"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction * action) {}];
+            
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
         }];
     }
 }
