@@ -8,6 +8,7 @@
 
 #import "CameraViewController.h"
 @import SixgillSDK;
+#import <ULID/ULID.h>
 
 @interface CameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, readwrite) NSURL *imagePath;
@@ -57,7 +58,8 @@
     
     NSFileManager *fileManager = NSFileManager.defaultManager;
     NSURL *documentPath = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
-    self.imagePath = [documentPath URLByAppendingPathComponent:@"image.jpg"];
+    NSString *imageName = [NSString stringWithFormat:@"%@.jpg", [[ULID new] ulidString]];
+    self.imagePath = [documentPath URLByAppendingPathComponent:imageName];
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     NSData *imageData = UIImageJPEGRepresentation(chosenImage, 1.0f);

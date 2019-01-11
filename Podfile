@@ -19,6 +19,8 @@ target 'Sync2' do
     pod 'ActionSheetPicker-3.0'
     pod 'MKDropdownMenu'
     pod 'TTGSnackbar'
+    pod 'ULID'
+
 
 #    pod 'SixgillSDK'
 
