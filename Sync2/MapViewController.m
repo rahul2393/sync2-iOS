@@ -298,7 +298,8 @@
     [self.mapView setShowsUserLocation:YES];
 }
 
-- (void)didUpdateLocationTo:(CGPoint)point{
+- (void)didUpdateLocation:(IALocation *)location andPoint:(CGPoint)point{
+    
     [UIView animateWithDuration:(self.providerMapBlueDot.hidden ? 0.0f : 0.35f) animations:^{
         self.providerMapBlueDot.center = CGPointMake(point.x * self.scrollView.zoomScale, point.y * self.scrollView.zoomScale);
         

@@ -14,6 +14,6 @@
 
 -(void) didExitRegion;
 
--(void) didUpdateLocationTo:(CGPoint)point;
+-(void) didUpdateLocation:(IALocation *)location andPoint:(CGPoint)point;
 
 @end
