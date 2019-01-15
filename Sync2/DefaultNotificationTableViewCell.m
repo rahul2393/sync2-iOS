@@ -26,8 +26,7 @@
     self.titleLabel.text = notification.subject;
     self.detailLabel.text = notification.message;
     
-    
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:notification.timestamp];
     self.dateLabel.text = [self displayableDateFor:date];
 
 }

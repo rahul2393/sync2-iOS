@@ -31,6 +31,7 @@ CF_EXTERN_C_BEGIN
 @class Configuration;
 @class Event;
 @class GatewayRegistrationRequest_SystemInfo;
+@class GatewaySyncRequest_Summary;
 @class GatewaySyncResponse_Deleted;
 @class IBeacon;
 @class Landmark;
@@ -571,11 +572,40 @@ typedef GPB_ENUM(GatewayRegistrationResponse_FieldNumber) {
 
 typedef GPB_ENUM(GatewaySyncRequest_FieldNumber) {
   GatewaySyncRequest_FieldNumber_LastSyncedAt = 1,
+  GatewaySyncRequest_FieldNumber_TotalDeviceRegistration = 2,
+  GatewaySyncRequest_FieldNumber_DevicesArray = 3,
 };
 
 @interface GatewaySyncRequest : GPBMessage
 
 @property(nonatomic, readwrite) int64_t lastSyncedAt;
+
+@property(nonatomic, readwrite) int64_t totalDeviceRegistration;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<GatewaySyncRequest_Summary*> *devicesArray;
+/** The number of items in @c devicesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger devicesArray_Count;
+
+@end
+
+#pragma mark - GatewaySyncRequest_Summary
+
+typedef GPB_ENUM(GatewaySyncRequest_Summary_FieldNumber) {
+  GatewaySyncRequest_Summary_FieldNumber_Id_p = 1,
+  GatewaySyncRequest_Summary_FieldNumber_TotalEvents = 2,
+  GatewaySyncRequest_Summary_FieldNumber_SuccessfulEvents = 3,
+  GatewaySyncRequest_Summary_FieldNumber_ActionExecuted = 4,
+};
+
+@interface GatewaySyncRequest_Summary : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite) int64_t totalEvents;
+
+@property(nonatomic, readwrite) int64_t successfulEvents;
+
+@property(nonatomic, readwrite) int64_t actionExecuted;
 
 @end
 
@@ -646,6 +676,7 @@ typedef GPB_ENUM(GatewaySyncResponse_FieldNumber) {
 typedef GPB_ENUM(GatewaySyncResponse_Deleted_FieldNumber) {
   GatewaySyncResponse_Deleted_FieldNumber_LandmarksArray = 1,
   GatewaySyncResponse_Deleted_FieldNumber_RulesArray = 2,
+  GatewaySyncResponse_Deleted_FieldNumber_ChannelsArray = 3,
 };
 
 @interface GatewaySyncResponse_Deleted : GPBMessage
@@ -657,6 +688,10 @@ typedef GPB_ENUM(GatewaySyncResponse_Deleted_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *rulesArray;
 /** The number of items in @c rulesArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger rulesArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *channelsArray;
+/** The number of items in @c channelsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger channelsArray_Count;
 
 @end
 
