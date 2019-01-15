@@ -2570,29 +2570,19 @@ Permission Missing</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fep-hh-Isy">
-                                                <rect key="frame" x="250" y="2.6666666666666714" width="44" height="44"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="Wz4-Sb-E1O">
+                                                <rect key="frame" x="268" y="20.666666666666671" width="16" height="8"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="PII-fa-4iY"/>
-                                                    <constraint firstAttribute="width" constant="44" id="ZrV-eM-2YD"/>
+                                                    <constraint firstAttribute="height" constant="8" id="D0l-mt-SrP"/>
+                                                    <constraint firstAttribute="width" constant="16" id="g3r-cH-m4S"/>
                                                 </constraints>
-                                                <state key="normal" image="arrow-down"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="chooseMapTapped:" destination="M6G-YW-ApW" eventType="touchUpInside" id="VcK-fD-Dbw"/>
-                                                    <segue destination="xHe-oy-Xez" kind="show" id="ghf-UB-Ufj"/>
-                                                </connections>
-                                            </button>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="fep-hh-Isy" secondAttribute="trailing" id="A17-cC-NS2"/>
-                                            <constraint firstItem="fep-hh-Isy" firstAttribute="centerY" secondItem="glT-tP-kic" secondAttribute="centerY" id="cD8-UP-wl0"/>
+                                            <constraint firstItem="Wz4-Sb-E1O" firstAttribute="centerY" secondItem="glT-tP-kic" secondAttribute="centerY" id="S8K-KH-HO6"/>
                                             <constraint firstItem="XLv-6r-IzO" firstAttribute="leading" secondItem="glT-tP-kic" secondAttribute="leading" constant="15" id="dEV-Lt-D5g"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wz4-Sb-E1O" secondAttribute="trailing" constant="10" id="k0b-NT-ITl"/>
                                             <constraint firstAttribute="height" constant="49" id="nhy-0R-jnw"/>
                                             <constraint firstItem="XLv-6r-IzO" firstAttribute="centerY" secondItem="glT-tP-kic" secondAttribute="centerY" id="yZZ-6n-DTT"/>
                                         </constraints>
@@ -2765,6 +2755,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                     </view>
                     <navigationItem key="navigationItem" id="A95-Fs-dqN"/>
                     <connections>
+                        <outlet property="chooseMapView" destination="glT-tP-kic" id="c5P-ul-982"/>
                         <outlet property="mapSettingsButton" destination="h5K-2y-mVX" id="spd-r6-jDB"/>
                         <outlet property="mapView" destination="wZf-uv-HVs" id="6Rt-u4-geF"/>
                         <outlet property="permissionMissingView" destination="d1A-f9-nrI" id="L8R-mW-s9G"/>
@@ -4784,7 +4775,7 @@ Permission</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="xGA-78-6Yv">
-                                <rect key="frame" x="152" y="673.33333333333337" width="71" height="118.66666666666663"/>
+                                <rect key="frame" x="152" y="669.66666666666663" width="71" height="122.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="Eje-Uw-JmE"/>
                                 </constraints>
@@ -4802,16 +4793,16 @@ Permission</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync uses push notifications to send messages to your device and update application data in the background." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uKc-SM-XfZ">
-                                <rect key="frame" x="46" y="494.33333333333331" width="288" height="68.666666666666686"/>
+                                <rect key="frame" x="46" y="494.33333333333331" width="288" height="66.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pC-XX-tvW" userLabel="ButtonView" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="59.333333333333343" y="582.33333333333337" width="256.33333333333326" height="45.333333333333371"/>
+                                <rect key="frame" x="64" y="580.33333333333337" width="247" height="43.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-Uq-bWr">
-                                        <rect key="frame" x="7.9999999999999858" y="0.0" width="240.33333333333331" height="45.333333333333336"/>
+                                        <rect key="frame" x="8" y="0.0" width="231" height="43.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="Enable Push Notifications">
                                             <color key="titleColor" red="0.97734551270000003" green="0.99518093240000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4831,7 +4822,7 @@ Permission</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzp-Ot-NF2">
-                                <rect key="frame" x="316" y="713.33333333333337" width="42" height="39"/>
+                                <rect key="frame" x="316" y="711.33333333333337" width="42" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.96002744500000003" green="0.96092273399999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -5815,17 +5806,17 @@ revised: 5/9/2016</string>
         <!--Choose Map View Controller-->
         <scene sceneID="aQs-rg-Bm3">
             <objects>
-                <viewController id="xHe-oy-Xez" customClass="ChooseMapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseMapViewControllerIdentifier" id="xHe-oy-Xez" customClass="ChooseMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jbv-wl-aUr"/>
                         <viewControllerLayoutGuide type="bottom" id="BBe-la-mZD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yy2-fP-JsG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zvG-yj-hTe">
-                                <rect key="frame" x="10" y="98" width="355" height="621"/>
+                                <rect key="frame" x="10" y="54" width="355" height="714"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="K86-NW-tis">
                                     <rect key="frame" x="0.0" y="77" width="355" height="59"/>
@@ -5846,6 +5837,9 @@ revised: 5/9/2016</string>
                                                     <real key="value" value="3"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="selectMapTapped:" destination="xHe-oy-Xez" eventType="touchUpInside" id="8l2-3I-hyR"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
