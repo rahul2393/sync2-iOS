@@ -2365,7 +2365,7 @@ Permission Missing</string>
                                             <constraint firstAttribute="width" secondItem="af7-sD-Psh" secondAttribute="height" multiplier="15:16" id="qW9-Wv-oYO"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No rules exist in this project." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="rTf-4f-gJ8">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No rules exist for this channel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="rTf-4f-gJ8">
                                         <rect key="frame" x="68" y="291.66666666666669" width="239" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="is8-yH-N5s"/>
@@ -3826,7 +3826,7 @@ Permission</string>
                                             <constraint firstAttribute="width" secondItem="61a-cD-0cc" secondAttribute="height" multiplier="15:16" id="h5w-xA-dnw"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No rules exist in this project." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Gap-l6-Xp3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No rules exist for this channel." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Gap-l6-Xp3">
                                         <rect key="frame" x="68" y="291.66666666666669" width="239" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="s47-vw-Ngv"/>
