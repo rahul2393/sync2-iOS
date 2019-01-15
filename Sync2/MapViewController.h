@@ -21,5 +21,8 @@
 - (IBAction)chooseMapTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *permissionMissingView;
 - (IBAction)openDeviceSettings:(id)sender;
+@protocol MapViewDelegate
+
+-(void) showWorldMap:(BOOL)yesOrNo;
 
 @end
