@@ -11,8 +11,9 @@
 #import "SettingsManager.h"
 #import "SenseAPI.h"
 #import "Landmark.h"
-@import SixgillSDK;
-@interface MapViewController ()
+#import "ChooseMapViewController.h"
+
+@interface MapViewController () <MapViewDelegate>
 
 @property (nonatomic, strong) NSArray *coords;
 @property (nonatomic, strong) NSArray *landmarks;
@@ -25,6 +26,7 @@
 @property (nonatomic, strong) UIImageView *providerMapImageView;
 @property (nonatomic, strong) UIView *providerMapBlueDot;
 @property (nonatomic, readwrite) CGRect initialBlueDotFrame;
+@property (nonatomic, readwrite) BOOL shouldShowWorldMap;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
@@ -47,6 +49,7 @@
     self.locationManager.delegate = self;
     
     self.useDummyData = NO;
+    self.shouldShowWorldMap = YES;
     
     if (!self.coords) {
         self.coords = [DummyMapData coords];
@@ -60,6 +63,10 @@
     }
     
     self.title = @"Map";
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(chooseMapViewTapped:)];
+    [self.chooseMapView addGestureRecognizer:tapGesture];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -231,7 +238,13 @@
 - (IBAction)mapSettingsTapped:(id)sender {
 }
 
-- (IBAction)chooseMapTapped:(id)sender {
+//The event handling method
+- (void)chooseMapViewTapped:(UITapGestureRecognizer *)recognizer{
+    ChooseMapViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ChooseMapViewControllerIdentifier"];
+    vc.floorplan = self.floorplan;
+    vc.mapViewDelegate = self;
+    vc.selectedChannelIx = self.shouldShowWorldMap ? 0 : 1;
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 - (IBAction)openDeviceSettings:(id)sender {
@@ -263,29 +276,31 @@
     
     self.floorplan = floorplan;
     
-    float blueDotSize = 20;
-    
-    UIImage *image = [[UIImage alloc] initWithData:imageData];
-    
-    self.providerMapImageView = [UIImageView new];
-    self.providerMapImageView.image = image;
-    [self.providerMapImageView sizeToFit];
-    self.providerMapImageView.backgroundColor = [UIColor whiteColor];
-    self.scrollView.contentSize = self.providerMapImageView.frame.size;
-    
-    [self.mapView setHidden:YES];
-    [self.scrollView setHidden:NO];
-    [self.scrollView addSubview:self.providerMapImageView];
-    
-    self.providerMapBlueDot = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1.0, 1.0)];
-    self.providerMapBlueDot.backgroundColor =  [UIColor colorWithRed:0 green:0.3176 blue:0.7764 alpha:1];
-    self.providerMapBlueDot.layer.cornerRadius = self.providerMapBlueDot.frame.size.width / 2;
-    self.providerMapBlueDot.layer.borderColor = [[UIColor whiteColor] CGColor];
-    self.providerMapBlueDot.layer.borderWidth = 0.2;
-    self.providerMapBlueDot.hidden = YES;
-    [self.scrollView addSubview:self.providerMapBlueDot];
-    
-    self.providerMapBlueDot.transform = CGAffineTransformMakeScale(blueDotSize, blueDotSize);
+    if (!self.shouldShowWorldMap) {
+        float blueDotSize = 20;
+        
+        UIImage *image = [[UIImage alloc] initWithData:imageData];
+        
+        self.providerMapImageView = [UIImageView new];
+        self.providerMapImageView.image = image;
+        [self.providerMapImageView sizeToFit];
+        self.providerMapImageView.backgroundColor = [UIColor whiteColor];
+        self.scrollView.contentSize = self.providerMapImageView.frame.size;
+        
+        [self.mapView setHidden:YES];
+        [self.scrollView setHidden:NO];
+        [self.scrollView addSubview:self.providerMapImageView];
+        
+        self.providerMapBlueDot = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1.0, 1.0)];
+        self.providerMapBlueDot.backgroundColor =  [UIColor colorWithRed:0 green:0.3176 blue:0.7764 alpha:1];
+        self.providerMapBlueDot.layer.cornerRadius = self.providerMapBlueDot.frame.size.width / 2;
+        self.providerMapBlueDot.layer.borderColor = [[UIColor whiteColor] CGColor];
+        self.providerMapBlueDot.layer.borderWidth = 0.2;
+        self.providerMapBlueDot.hidden = YES;
+        [self.scrollView addSubview:self.providerMapBlueDot];
+        
+        self.providerMapBlueDot.transform = CGAffineTransformMakeScale(blueDotSize, blueDotSize);
+    }
 }
 
 - (void)didExitRegion {
@@ -300,13 +315,15 @@
 
 - (void)didUpdateLocation:(IALocation *)location andPoint:(CGPoint)point{
     
-    [UIView animateWithDuration:(self.providerMapBlueDot.hidden ? 0.0f : 0.35f) animations:^{
-        self.providerMapBlueDot.center = CGPointMake(point.x * self.scrollView.zoomScale, point.y * self.scrollView.zoomScale);
-        
-        [self.view bringSubviewToFront:self.providerMapBlueDot];
-        self.initialBlueDotFrame = self.providerMapBlueDot.frame;
-    }];
-    self.providerMapBlueDot.hidden = NO;
+    if (!self.shouldShowWorldMap) {
+        [UIView animateWithDuration:(self.providerMapBlueDot.hidden ? 0.0f : 0.35f) animations:^{
+            self.providerMapBlueDot.center = CGPointMake(point.x * self.scrollView.zoomScale, point.y * self.scrollView.zoomScale);
+            
+            [self.view bringSubviewToFront:self.providerMapBlueDot];
+            self.initialBlueDotFrame = self.providerMapBlueDot.frame;
+        }];
+        self.providerMapBlueDot.hidden = NO;
+    }
 }
 
 #pragma mark - UIScrollViewDelegate methods
@@ -317,6 +334,10 @@
     
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView{
     self.providerMapBlueDot.frame = CGRectMake((self.initialBlueDotFrame.origin.x * self.scrollView.zoomScale), (self.initialBlueDotFrame.origin.y * self.scrollView.zoomScale), self.providerMapBlueDot.frame.size.width, self.providerMapBlueDot.frame.size.height);
+}
+
+- (void)showWorldMap:(BOOL)yesOrNo{
+    self.shouldShowWorldMap = yesOrNo;
 }
 
 @end

@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapViewController.h"
 
 @interface ChooseMapViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *selectMapButton;
+
+@property (nonatomic, strong) IAFloorPlan *floorplan;
+@property (nonatomic, weak) id<MapViewDelegate> mapViewDelegate;
+@property (nonatomic, readwrite) NSInteger selectedChannelIx;
 @end

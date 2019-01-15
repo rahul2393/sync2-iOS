@@ -18,9 +18,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *mapSettingsButton;
 
 - (IBAction)mapSettingsTapped:(id)sender;
-- (IBAction)chooseMapTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *permissionMissingView;
 - (IBAction)openDeviceSettings:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *chooseMapView;
+
+@end
+
 @protocol MapViewDelegate
 
 -(void) showWorldMap:(BOOL)yesOrNo;
