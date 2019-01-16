@@ -19,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.captureAndUploadButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
+    [self.captureAndUploadButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+
     self.title = @"Hailer Integration";
     [self.progressView setHidden:YES];
     
@@ -29,8 +32,7 @@
 
 #pragma mark - IBActions
 
-- (IBAction)uploadImage:(UIButton *)sender {
-    
+- (IBAction)captureAndUploadImage:(UIButton *)sender {
     if (!self.imagePath) {
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
@@ -44,13 +46,15 @@
         
         [self.progressView setHidden:NO];
         self.progressView.progress = 0;
+        [self.captureAndUploadButton setEnabled:NO];
         
         [SGSDK uploadFileFromURL:self.imagePath andUploadProgressHandler:^(NSProgress *uploadProgress) {
             self.progressView.progress = uploadProgress.fractionCompleted;
         } andSuccessHandler:^{
             
             [self.progressView setHidden:YES];
-            
+            [self.captureAndUploadButton setEnabled:YES];
+            [self.captureAndUploadButton setTitle:@"Capture Image" forState:UIControlStateNormal];
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Success"
                                                                            message:@"Image upload successful"
                                                                     preferredStyle:UIAlertControllerStyleAlert];
@@ -61,9 +65,12 @@
             [alert addAction:defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
 
+            
         } andFailureHandler:^(NSString *failureMsg) {
             
             [self.progressView setHidden:YES];
+            [self.captureAndUploadButton setEnabled:YES];
+            [self.captureAndUploadButton setTitle:@"Upload Image" forState:UIControlStateNormal];
             
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                            message:@"Try again"
@@ -108,9 +115,9 @@
     [self.emptyView setHidden:yesOrNo];
     [self.imageView setHidden:!yesOrNo];
     if (yesOrNo) {
-        [self.uploadButton setTitle:@"Capture Image" forState:UIControlStateNormal];
+        [self.captureAndUploadButton setTitle:@"Upload Image" forState:UIControlStateNormal];
     } else {
-        [self.uploadButton setTitle:@"Upload Image" forState:UIControlStateNormal];
+        [self.captureAndUploadButton setTitle:@"Capture Image" forState:UIControlStateNormal];
     }
 }
 

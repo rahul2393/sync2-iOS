@@ -1746,7 +1746,7 @@ Let us know what you would like to see:</string>
                                                             <rect key="frame" x="0.0" y="28" width="335" height="38"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lv-xe-yKM" id="5ET-8I-o9t">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="37.666666666666664"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-yQ-dY7">
@@ -3333,12 +3333,17 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="saY-ZW-QzD">
-                                <rect key="frame" x="20" y="619" width="335" height="21"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="saY-ZW-QzD">
+                                <rect key="frame" x="20" y="619" width="335" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Ude-Cn-t90"/>
                                 </constraints>
                                 <color key="progressTintColor" red="0.26379736586366653" green="1" blue="0.26998429755521836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCO-pe-KkB">
                                 <rect key="frame" x="20" y="659" width="335" height="50"/>
@@ -3355,7 +3360,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="uploadImage:" destination="hjw-Rj-3sL" eventType="touchUpInside" id="TkQ-kj-Nff"/>
+                                    <action selector="captureAndUploadImage:" destination="hjw-Rj-3sL" eventType="touchUpInside" id="BFB-Bs-9Az"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -3378,10 +3383,10 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="captureAndUploadButton" destination="BCO-pe-KkB" id="4RU-yE-QBu"/>
                         <outlet property="emptyView" destination="DtT-Tk-tNb" id="75t-jk-EYe"/>
                         <outlet property="imageView" destination="BAy-4S-szW" id="CHv-e7-qXA"/>
                         <outlet property="progressView" destination="saY-ZW-QzD" id="ZlI-pk-DB6"/>
-                        <outlet property="uploadButton" destination="BCO-pe-KkB" id="CBn-ie-Ldd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jpx-JK-ax1" userLabel="First Responder" sceneMemberID="firstResponder"/>
