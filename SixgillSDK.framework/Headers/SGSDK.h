@@ -57,6 +57,6 @@
 +(void) saveCoreDataContext;
 
 // Hailer Integration
-+(void) uploadFileFromURL:(NSURL *)filePath andSuccessHandler:(void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
++(void) uploadFileFromURL:(NSURL *)filePath andUploadProgressHandler:(nullable void (^)(NSProgress *uploadProgress))uploadProgressBlock andSuccessHandler:(void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
 
 @end

@@ -50,7 +50,9 @@
         [self.loadingView setHidden:NO];
         [self.loadingView startAnimating];
         
-        [SGSDK uploadFileFromURL:self.imagePath andSuccessHandler:^{
+        [SGSDK uploadFileFromURL:self.imagePath andUploadProgressHandler:^(NSProgress *uploadProgress) {
+            NSLog(@"Upload file progress is %f", uploadProgress.fractionCompleted);
+        } andSuccessHandler:^{
             
             [self.loadingView setHidden:YES];
             [self.loadingView stopAnimating];
