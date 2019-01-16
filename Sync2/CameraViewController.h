@@ -13,10 +13,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIView *emptyView;
-@property (weak, nonatomic) IBOutlet UIButton *captureButton;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 @property (weak, nonatomic) IBOutlet UIButton *uploadButton;
 
-- (IBAction)captureImage:(UIButton *)sender;
 - (IBAction)uploadImage:(UIButton *)sender;
 
 @end

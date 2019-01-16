@@ -11,7 +11,6 @@
 #import <ULID/ULID.h>
 
 @interface CameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingView;
 @property (nonatomic, readwrite) NSURL *imagePath;
 @end
 
@@ -20,11 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.uploadButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
-    [self.uploadButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
     self.title = @"Hailer Integration";
-    [self.loadingView setHidden:YES];
+    [self.progressView setHidden:YES];
     
     [self hideEmptyView:NO];
     
@@ -33,29 +29,27 @@
 
 #pragma mark - IBActions
 
-- (IBAction)captureImage:(UIButton *)sender {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    
-    [self presentViewController:picker animated:YES completion:NULL];
-
-}
-
 - (IBAction)uploadImage:(UIButton *)sender {
-    // TODO: Call SDK method to upload image
-    if (self.imagePath) {
+    
+    if (!self.imagePath) {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
         
-        [self.loadingView setHidden:NO];
-        [self.loadingView startAnimating];
+        [self presentViewController:picker animated:YES completion:NULL];
+        
+    } else {
+        // TODO: Call SDK method to upload image
+        
+        [self.progressView setHidden:NO];
+        self.progressView.progress = 0;
         
         [SGSDK uploadFileFromURL:self.imagePath andUploadProgressHandler:^(NSProgress *uploadProgress) {
-            NSLog(@"Upload file progress is %f", uploadProgress.fractionCompleted);
+            self.progressView.progress = uploadProgress.fractionCompleted;
         } andSuccessHandler:^{
             
-            [self.loadingView setHidden:YES];
-            [self.loadingView stopAnimating];
+            [self.progressView setHidden:YES];
             
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Success"
                                                                            message:@"Image upload successful"
@@ -69,8 +63,7 @@
 
         } andFailureHandler:^(NSString *failureMsg) {
             
-            [self.loadingView setHidden:YES];
-            [self.loadingView stopAnimating];
+            [self.progressView setHidden:YES];
             
             UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                            message:@"Try again"
@@ -114,7 +107,11 @@
 -(void) hideEmptyView:(BOOL) yesOrNo{
     [self.emptyView setHidden:yesOrNo];
     [self.imageView setHidden:!yesOrNo];
-    [self.uploadButton setEnabled:yesOrNo];
+    if (yesOrNo) {
+        [self.uploadButton setTitle:@"Capture Image" forState:UIControlStateNormal];
+    } else {
+        [self.uploadButton setTitle:@"Upload Image" forState:UIControlStateNormal];
+    }
 }
 
 -(void) checkForCameraPermission{
