@@ -48,7 +48,7 @@
 
 - (void)logsButtonTapped {
     UIPasteboard *board = UIPasteboard.generalPasteboard;
-    board.string = [NSString stringWithFormat:@"%@", self.event];
+    board.string = [self.event description];
 }
 
 @end

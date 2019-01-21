@@ -10,7 +10,6 @@
 #import "LogInformationViewController.h"
 
 #import "Device.h"
-#import "SDKManager.h"
 
 @import SixgillSDK;
 
@@ -63,7 +62,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     LogInformationViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LogInformationViewControllerIdentifier"];
-    vc.event = self.logs[indexPath.row];
+    vc.event = [self.logs[indexPath.row] copy];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
