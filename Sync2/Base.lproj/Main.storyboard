@@ -3798,7 +3798,14 @@ Permission</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Log" id="2Ca-Vl-I9z"/>
+                    <navigationItem key="navigationItem" title="Log" id="2Ca-Vl-I9z">
+                        <barButtonItem key="rightBarButtonItem" title="Force Update" id="maS-xC-KRp">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="forceUpdateTapped:" destination="tNf-pZ-lIn" id="va1-RD-lYM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjf-Jw-kss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -5816,7 +5823,7 @@ revised: 5/9/2016</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jzP-BS-D1u">
-                                <rect key="frame" x="10" y="173" width="355" height="440"/>
+                                <rect key="frame" x="10" y="174" width="355" height="440"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="440" id="aiY-s2-Uhr"/>
@@ -5853,10 +5860,10 @@ revised: 5/9/2016</string>
                         <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="jzP-BS-D1u" secondAttribute="trailing" constant="10" id="2wa-bh-U0L"/>
-                            <constraint firstItem="jzP-BS-D1u" firstAttribute="top" secondItem="JRU-wc-LAq" secondAttribute="bottom" constant="19" id="Hgp-Mi-WlH"/>
                             <constraint firstAttribute="trailing" secondItem="JRU-wc-LAq" secondAttribute="trailing" constant="10" id="a6i-Nq-QP6"/>
                             <constraint firstItem="jzP-BS-D1u" firstAttribute="leading" secondItem="21S-Rh-Puk" secondAttribute="leading" constant="10" id="diY-1u-czp"/>
                             <constraint firstItem="JRU-wc-LAq" firstAttribute="top" secondItem="0tX-5q-Slc" secondAttribute="bottom" constant="10" id="jiu-pA-d5s"/>
+                            <constraint firstItem="jzP-BS-D1u" firstAttribute="top" secondItem="JRU-wc-LAq" secondAttribute="bottom" constant="20" id="uOD-oi-hQb"/>
                             <constraint firstItem="JRU-wc-LAq" firstAttribute="leading" secondItem="21S-Rh-Puk" secondAttribute="leading" constant="10" id="v7a-8p-IVa"/>
                         </constraints>
                     </view>
@@ -5869,7 +5876,7 @@ revised: 5/9/2016</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAZ-rv-Zb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9770" y="1878"/>
+            <point key="canvasLocation" x="9768.7999999999993" y="1877.5862068965519"/>
         </scene>
         <!--Choose Map View Controller-->
         <scene sceneID="aQs-rg-Bm3">
@@ -6125,7 +6132,7 @@ revised: 5/9/2016</string>
         <image name="notification-permission-missing" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="165" height="120"/>
+        <image name="sixgill-logo" width="325" height="95"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>

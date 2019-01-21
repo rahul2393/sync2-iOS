@@ -12,6 +12,8 @@
 #import "LogListViewController.h"
 #import "LogMapViewController.h"
 
+#import "SDKManager.h"
+
 @interface LogViewController ()
 @end
 
@@ -54,6 +56,9 @@
         
     }];
 
+}
+- (IBAction)forceUpdateTapped:(UIBarButtonItem *)sender {
+    [[SDKManager sharedManager] forceUpdate];
 }
 
 @end
