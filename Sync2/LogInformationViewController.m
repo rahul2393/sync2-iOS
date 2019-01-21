@@ -8,6 +8,7 @@
 
 #import "LogInformationViewController.h"
 #import "LogMapDataViewController.h"
+#import "UIView+Toast.h"
 
 @interface LogInformationViewController ()
 
@@ -49,6 +50,7 @@
 - (void)logsButtonTapped {
     UIPasteboard *board = UIPasteboard.generalPasteboard;
     board.string = [self.event description];
+    [self.view makeToast:@"Log Copied"];
 }
 
 @end

@@ -15,6 +15,7 @@
 #import "SenseAPI.h"
 #import "ProjectLandmark.h"
 #import "SettingsManager.h"
+#import "UIView+Toast.h"
 
 @import SixgillSDK;
 
@@ -188,6 +189,8 @@
     }
     eventsString = [eventsString stringByAppendingString:@"]"];
     board.string = eventsString;
+    
+    [self.view makeToast:@"All Logs Copied" duration:3.0 position:CSToastPositionCenter];
 }
 
 #pragma mark - LogBaseViewController
