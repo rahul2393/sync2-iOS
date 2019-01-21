@@ -13,6 +13,7 @@
 		751C4A7C210F0FC50040E717 /* RulesInformationCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A7B210F0FC50040E717 /* RulesInformationCloudViewController.m */; };
 		7520226620610845007FD829 /* EULAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7520226520610845007FD829 /* EULAViewController.m */; };
 		7520226A2061099C007FD829 /* TOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752022692061099C007FD829 /* TOSViewController.m */; };
+		7531658821F5BD93005940EF /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531658721F5BD93005940EF /* UIView+Toast.m */; };
 		753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70C2105600B00C11223 /* UIViewExtension.m */; };
 		753CB7102105D07900C11223 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70F2105D07900C11223 /* GradientView.m */; };
 		753CB71921070B8100C11223 /* WelcomeNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB71821070B8100C11223 /* WelcomeNotificationTableViewCell.m */; };
@@ -187,6 +188,8 @@
 		7520226520610845007FD829 /* EULAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EULAViewController.m; sourceTree = "<group>"; };
 		7520226820610988007FD829 /* TOSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOSViewController.h; sourceTree = "<group>"; };
 		752022692061099C007FD829 /* TOSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOSViewController.m; sourceTree = "<group>"; };
+		7531658621F5BD93005940EF /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		7531658721F5BD93005940EF /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		753CB70B21055FF600C11223 /* UIViewExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewExtension.h; sourceTree = "<group>"; };
 		753CB70C2105600B00C11223 /* UIViewExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewExtension.m; sourceTree = "<group>"; };
 		753CB70E2105D06000C11223 /* GradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
@@ -489,9 +492,19 @@
 			name = "Terms of Service";
 			sourceTree = "<group>";
 		};
+		7531658221F5BC49005940EF /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				7531658621F5BD93005940EF /* UIView+Toast.h */,
+				7531658721F5BD93005940EF /* UIView+Toast.m */,
+			);
+			name = Toast;
+			sourceTree = "<group>";
+		};
 		753CB711210641C400C11223 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7531658221F5BC49005940EF /* Toast */,
 				756B21CD213E890E0089F731 /* ZoomControl */,
 				756B21C7213E7A190089F731 /* Snackbar */,
 				75502A4C210876BE00BFCA2A /* PlaceholderTextView */,
@@ -1769,6 +1782,7 @@
 				E95F582E1EE61EA3000562FC /* PushPermissionViewController.m in Sources */,
 				E9CCF4C51EF1E78200BF96C6 /* QRCameraSwitchButton.m in Sources */,
 				E9128187201008BA0003072B /* SenseAPI.m in Sources */,
+				7531658821F5BD93005940EF /* UIView+Toast.m in Sources */,
 				75D71590210C5A2C007378D5 /* SettingsTableViewCell.m in Sources */,
 				E9128183200FDD1F0003072B /* TextViewTableViewCell.m in Sources */,
 				75D7158A210B41F8007378D5 /* RulesTableViewCell.m in Sources */,
