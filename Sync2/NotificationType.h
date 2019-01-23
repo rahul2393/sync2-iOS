@@ -23,7 +23,7 @@ typedef enum {
     EVENT
 } kNotificationType;
 
-#define kNotificationTypeArray @"information", @"action", @"feedback", @"survey", @"schedule", @"event", nil
+#define kNotificationTypeArray @"push-information", @"push-action", @"push-feedback", @"push-survey", @"push-schedule", @"push-event", nil
 
 @interface NotificationType : NSObject
 
