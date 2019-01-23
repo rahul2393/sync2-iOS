@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SurveyNotification.h"
+
+@import SixgillSDK;
 
 @interface SurveyNotificationTableViewCell : UITableViewCell <UITableViewDelegate, UITableViewDataSource>
 
@@ -20,6 +21,6 @@
 
 - (IBAction)sendTapped:(id)sender;
 
--(void)configureCell:(SurveyNotification *)notification;
+-(void)configureCell:(Notification *)notification;
 
 @end

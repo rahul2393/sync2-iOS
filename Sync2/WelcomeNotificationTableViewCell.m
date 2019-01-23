@@ -33,7 +33,7 @@
     // Configure the view for the selected state
 }
 
-- (void)configureCell:(InformationNotification *)notification {
+- (void)configureCell:(Notification *)notification {
     self.titleLabel.text = notification.title;
     
     [self parseHTMLTags:notification.body];
@@ -46,7 +46,9 @@
     [attributedString setAttributes:linkAttributes range:linkRange];
     self.detailLabel.attributedText = attributedString;
     
-    self.dateLabel.text = [notification displayableDate];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMMM dd, h:mm a"];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)]]];
 }
 
 - (void)labelTapped:(UITapGestureRecognizer *)recognizer {

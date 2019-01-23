@@ -22,26 +22,30 @@
     
 }
 
-- (void)configureCell:(ActionNotification *)notification {
+- (void)configureCell:(Notification *)notification {
     self.titleLabel.text = notification.title;
     self.detailLabel.text = notification.body;
     self.actionLabel.text = notification.actionTitle;
-    self.dateLabel.text = [notification displayableDate];
-    self.submitURL = notification.submitUrl;
-    self.actions = notification.actions;
+
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMMM dd, h:mm a"];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)]]];
     
-    [notification.actions enumerateObjectsUsingBlock:^(Action* action, NSUInteger idx, BOOL *stop) {
+    self.submitURL = notification.submitURL;
+    self.actions = notification.actionsArray;
+    
+    [notification.actionsArray enumerateObjectsUsingBlock:^(Notification_Actions* action, NSUInteger idx, BOOL *stop) {
 
         UIButton * btn = [self.actionButtons objectAtIndex:idx];
         [btn setTitle:action.text forState:UIControlStateNormal];
 
-        if ([action.type isEqual: @"secondary"]) {
+        if ([action.actionType isEqual: @"secondary"]) {
 
             [btn setTitleColor:[UIColor colorWithRed:1.0 green:0.11 blue:0.15 alpha:1] forState:UIControlStateNormal];
             btn.backgroundColor = [UIColor clearColor];
             btn.borderColor = [UIColor colorWithRed:1.0 green:0.11 blue:0.15 alpha:1];
 
-        } else if ([action.type isEqual: @"primary"]) {
+        } else if ([action.actionType isEqual: @"primary"]) {
 
             [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             btn.backgroundColor = [UIColor colorWithRed:0 green:0.32 blue:0.78 alpha:1];

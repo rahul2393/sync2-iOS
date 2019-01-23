@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ActionNotification.h"
+
+@import SixgillSDK;
 
 @interface JoiningNotificationTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -19,6 +20,6 @@
 
 - (IBAction)secondButtonTapped:(id)sender;
 
--(void)configureCell:(ActionNotification *)notification;
+-(void)configureCell:(Notification *)notification;
 
 @end
