@@ -16,14 +16,6 @@
 #import "SurveyNotificationTableViewCell.h"
 #import "ScheduleNotificationTableViewCell.h"
 #import "VisitNotificationTableViewCell.h"
-#import "DefaultNotificationTableViewCell.h"
-
-#import "InformationNotification.h"
-#import "ActionNotification.h"
-#import "FeedbackNotification.h"
-#import "SurveyNotification.h"
-#import "ScheduleNotification.h"
-#import "EventNotification.h"
 
 @import UserNotifications;
 @import SixgillSDK;
@@ -90,64 +82,46 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    DefaultNotificationTableViewCell *cell = (DefaultNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"DefaultNotificationTableViewCellIdentifier" forIndexPath:indexPath];
     Notification *n = self.notifications[indexPath.section];
-    [cell configureCell:n];
+    kNotificationType notificationType = [[[NotificationType alloc] init] notificationTypeFor:n.type];
+    switch (notificationType) {
+        case INFORMATION: {
+            WelcomeNotificationTableViewCell *cell = (WelcomeNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"WelcomeNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            [cell configureCell:n];
 
-    return cell;
-    
-//    BaseNotification *basenotification = (BaseNotification *) self.notifications[indexPath.section];
-//
-//    kNotificationType notificationType = [[[NotificationType alloc] init] notificationTypeFor:basenotification.type];
-//
-//    switch (notificationType) {
-//        case INFORMATION: {
-//            WelcomeNotificationTableViewCell *cell = (WelcomeNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"WelcomeNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-//
-//            InformationNotification *info = (InformationNotification*) self.notifications[indexPath.section];
-//            [cell configureCell:info];
-//
-//            return cell;
-//        }
-//        case ACTION_NOTIFICATION: {
-//            JoiningNotificationTableViewCell *cell = (JoiningNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"JoiningNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-//
-//            ActionNotification *an = (ActionNotification*) self.notifications[indexPath.section];
-//            [cell configureCell:an];
-//
-//            return cell;
-//        }
-//        case FEEDBACK: {
-//            FeedbackNotificationTableViewCell *cell = (FeedbackNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"FeedbackNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-//            FeedbackNotification *fn = (FeedbackNotification *) self.notifications[indexPath.section];
-//            [cell configureCell:fn];
-//
-//            return cell;
-//        }
-//        case SURVEY: {
-//            SurveyNotificationTableViewCell *cell = (SurveyNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"SurveyNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-//            SurveyNotification *sn = (SurveyNotification *) self.notifications[indexPath.section];
-//            [cell configureCell:sn];
-//
-//            return cell;
-//        }
-//        case SCHEDULE: {
-//            ScheduleNotificationTableViewCell *cell = (ScheduleNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"ScheduleNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-//            ScheduleNotification *sn = (ScheduleNotification *) self.notifications[indexPath.section];
-//            [cell configureCell:sn];
-//
-//            return cell;
-//        }
-//        case EVENT: {
-//            VisitNotificationTableViewCell *cell = (VisitNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"VisitNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-//            EventNotification *en = (EventNotification *) self.notifications[indexPath.section];
-//            [cell configureCell:en];
-//
-//            return cell;
-//        }
-//    }
-    
+            return cell;
+        }
+        case ACTION_NOTIFICATION: {
+            JoiningNotificationTableViewCell *cell = (JoiningNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"JoiningNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            [cell configureCell:n];
+
+            return cell;
+        }
+        case FEEDBACK: {
+            FeedbackNotificationTableViewCell *cell = (FeedbackNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"FeedbackNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            [cell configureCell:n];
+
+            return cell;
+        }
+        case SURVEY: {
+            SurveyNotificationTableViewCell *cell = (SurveyNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"SurveyNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            [cell configureCell:n];
+
+            return cell;
+        }
+        case SCHEDULE: {
+            ScheduleNotificationTableViewCell *cell = (ScheduleNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"ScheduleNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            [cell configureCell:n];
+
+            return cell;
+        }
+        case EVENT: {
+            VisitNotificationTableViewCell *cell = (VisitNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"VisitNotificationTableViewCellIdentifier" forIndexPath:indexPath];
+            [cell configureCell:n];
+
+            return cell;
+        }
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {

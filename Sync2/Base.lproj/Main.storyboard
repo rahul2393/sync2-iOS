@@ -2114,76 +2114,6 @@ Let us know what you would like to see:</string>
                                             <outlet property="titleLabel" destination="Rnu-Xl-ex6" id="2jW-ot-Edd"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DefaultNotificationTableViewCellIdentifier" rowHeight="164" id="TfD-aU-X5u" customClass="DefaultNotificationTableViewCell">
-                                        <rect key="frame" x="0.0" y="1845" width="375" height="164"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TfD-aU-X5u" id="iqI-KG-d0D">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="163.66666666666666"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visit WeWork Santa Monica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJB-uB-O9C">
-                                                    <rect key="frame" x="20" y="17" width="335" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gc4-fK-1Ac">
-                                                    <rect key="frame" x="20" y="46" width="335" height="2"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="2" id="5ah-4r-0qI"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’re doing a promo in WeWork Santa Monica that is close by your location and would be happy if you check it out." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgm-ks-Ry9">
-                                                    <rect key="frame" x="20" y="56" width="335" height="50.333333333333343"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="October 20, 11:15 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyB-Sv-faW">
-                                                    <rect key="frame" x="20" y="126.33333333333331" width="335" height="17"/>
-                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="xgm-ks-Ry9" firstAttribute="leading" secondItem="iqI-KG-d0D" secondAttribute="leading" constant="20" id="1Mp-ze-25P"/>
-                                                <constraint firstAttribute="trailing" secondItem="xgm-ks-Ry9" secondAttribute="trailing" constant="20" id="1pJ-aE-Umt"/>
-                                                <constraint firstAttribute="trailing" secondItem="Gc4-fK-1Ac" secondAttribute="trailing" constant="20" id="9nu-1b-weZ"/>
-                                                <constraint firstItem="VyB-Sv-faW" firstAttribute="top" secondItem="xgm-ks-Ry9" secondAttribute="bottom" constant="20" id="INr-E0-Kbm"/>
-                                                <constraint firstItem="VyB-Sv-faW" firstAttribute="leading" secondItem="iqI-KG-d0D" secondAttribute="leading" constant="20" id="Mlc-K0-yxH"/>
-                                                <constraint firstItem="ZJB-uB-O9C" firstAttribute="leading" secondItem="iqI-KG-d0D" secondAttribute="leading" constant="20" id="N2h-7h-XO4"/>
-                                                <constraint firstAttribute="trailing" secondItem="VyB-Sv-faW" secondAttribute="trailing" constant="20" id="SwJ-8x-ijn"/>
-                                                <constraint firstItem="xgm-ks-Ry9" firstAttribute="top" secondItem="Gc4-fK-1Ac" secondAttribute="bottom" constant="8" id="ZW9-zn-Xuj"/>
-                                                <constraint firstAttribute="bottom" secondItem="VyB-Sv-faW" secondAttribute="bottom" constant="20.333333333333343" id="b7y-du-Dah"/>
-                                                <constraint firstItem="Gc4-fK-1Ac" firstAttribute="top" secondItem="ZJB-uB-O9C" secondAttribute="bottom" constant="12" id="m8W-gP-uZo"/>
-                                                <constraint firstAttribute="trailing" secondItem="ZJB-uB-O9C" secondAttribute="trailing" constant="20" id="mT4-lC-bF0"/>
-                                                <constraint firstItem="ZJB-uB-O9C" firstAttribute="top" secondItem="iqI-KG-d0D" secondAttribute="top" constant="17" id="uDH-fW-7Vs"/>
-                                                <constraint firstItem="Gc4-fK-1Ac" firstAttribute="leading" secondItem="iqI-KG-d0D" secondAttribute="leading" constant="20" id="xga-g3-ydt"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outlet property="dateLabel" destination="VyB-Sv-faW" id="Gvd-hL-3Rr"/>
-                                            <outlet property="detailLabel" destination="xgm-ks-Ry9" id="Dne-mC-TEM"/>
-                                            <outlet property="titleLabel" destination="ZJB-uB-O9C" id="w1c-FO-8FK"/>
-                                        </connections>
-                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PQ-1Z-ezt">
@@ -6141,7 +6071,7 @@ revised: 5/9/2016</string>
     <inferredMetricsTieBreakers>
         <segue reference="mI5-qK-Wad"/>
         <segue reference="sfn-Bk-AGt"/>
-        <segue reference="dKW-jL-B8K"/>
+        <segue reference="az3-hw-ZNG"/>
         <segue reference="X8u-Xy-liR"/>
         <segue reference="tam-M8-If5"/>
         <segue reference="06h-aU-o4p"/>
