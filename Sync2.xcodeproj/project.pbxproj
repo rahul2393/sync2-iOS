@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */; };
+		750220C421F8A155001FB953 /* TextNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 750220C221F8A154001FB953 /* TextNotification.m */; };
 		751C4A76210F0B530040E717 /* RulesInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A75210F0B530040E717 /* RulesInformationViewController.m */; };
 		751C4A79210F0FB20040E717 /* RulesInformationEdgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A78210F0FB10040E717 /* RulesInformationEdgeViewController.m */; };
 		751C4A7C210F0FC50040E717 /* RulesInformationCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A7B210F0FC50040E717 /* RulesInformationCloudViewController.m */; };
@@ -58,15 +59,7 @@
 		75E48B2621BEA00100AB485D /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; };
 		75E48B2721BEA00100AB485D /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75E68A4A212E962500797E27 /* LogBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E68A49212E962500797E27 /* LogBaseViewController.m */; };
-		75E8BFD721E352D40001F4A5 /* DefaultNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */; };
 		75F4C98521AD52EF009596E1 /* SignupWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4C98421AD52EF009596E1 /* SignupWebVC.swift */; };
-		75FDF1B72134149E0068D015 /* InformationNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1B62134149E0068D015 /* InformationNotification.m */; };
-		75FDF1BA213414AF0068D015 /* ActionNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1B9213414AF0068D015 /* ActionNotification.m */; };
-		75FDF1BD213414C60068D015 /* FeedbackNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1BC213414C60068D015 /* FeedbackNotification.m */; };
-		75FDF1C0213414D40068D015 /* SurveyNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1BF213414D40068D015 /* SurveyNotification.m */; };
-		75FDF1C3213414E20068D015 /* ScheduleNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1C2213414E20068D015 /* ScheduleNotification.m */; };
-		75FDF1C6213414EE0068D015 /* EventNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1C5213414EE0068D015 /* EventNotification.m */; };
-		75FDF1C9213415380068D015 /* BaseNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1C8213415380068D015 /* BaseNotification.m */; };
 		997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */; };
 		E90371401EE89ABE0033DED0 /* AccountDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E903713F1EE89ABE0033DED0 /* AccountDetailTableViewController.m */; };
 		E90371441EE89B1E0033DED0 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E90371431EE89B1E0033DED0 /* Account.m */; };
@@ -89,7 +82,6 @@
 		E9518B572017EFA6001818CC /* DataChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B562017EFA6001818CC /* DataChannel.m */; };
 		E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B5A2017F0C8001818CC /* DummySettingsData.m */; };
 		E9518B5F2018026B001818CC /* DummyNotificationData.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B5E2018026B001818CC /* DummyNotificationData.m */; };
-		E9518B64201802F9001818CC /* TextNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B63201802F9001818CC /* TextNotification.m */; };
 		E95B9DC11F609481007943CA /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E95B9DC01F609481007943CA /* TextFieldTableViewCell.m */; };
 		E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58251EE61E57000562FC /* MotionPermissionViewController.m */; };
 		E95F582A1EE61E7B000562FC /* CameraPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58291EE61E7B000562FC /* CameraPermissionViewController.m */; };
@@ -178,6 +170,8 @@
 /* Begin PBXFileReference section */
 		1DA5955D2EF0589B2AC4F739 /* Pods-Sync2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2DB0C3E88E97E1E5750C48B5 /* Pods-Sync2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		750220C221F8A154001FB953 /* TextNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextNotification.m; sourceTree = "<group>"; };
+		750220C321F8A154001FB953 /* TextNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextNotification.h; sourceTree = "<group>"; };
 		751C4A74210F0B530040E717 /* RulesInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesInformationViewController.h; sourceTree = "<group>"; };
 		751C4A75210F0B530040E717 /* RulesInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesInformationViewController.m; sourceTree = "<group>"; };
 		751C4A77210F0FB10040E717 /* RulesInformationEdgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesInformationEdgeViewController.h; sourceTree = "<group>"; };
@@ -269,23 +263,7 @@
 		75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		75E68A48212E960A00797E27 /* LogBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogBaseViewController.h; sourceTree = "<group>"; };
 		75E68A49212E962500797E27 /* LogBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogBaseViewController.m; sourceTree = "<group>"; };
-		75E8BFD521E352D40001F4A5 /* DefaultNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultNotificationTableViewCell.h; sourceTree = "<group>"; };
-		75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefaultNotificationTableViewCell.m; sourceTree = "<group>"; };
 		75F4C98421AD52EF009596E1 /* SignupWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupWebVC.swift; sourceTree = "<group>"; };
-		75FDF1B52134149E0068D015 /* InformationNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InformationNotification.h; sourceTree = "<group>"; };
-		75FDF1B62134149E0068D015 /* InformationNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InformationNotification.m; sourceTree = "<group>"; };
-		75FDF1B8213414AF0068D015 /* ActionNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionNotification.h; sourceTree = "<group>"; };
-		75FDF1B9213414AF0068D015 /* ActionNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionNotification.m; sourceTree = "<group>"; };
-		75FDF1BB213414C60068D015 /* FeedbackNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackNotification.h; sourceTree = "<group>"; };
-		75FDF1BC213414C60068D015 /* FeedbackNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackNotification.m; sourceTree = "<group>"; };
-		75FDF1BE213414D40068D015 /* SurveyNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SurveyNotification.h; sourceTree = "<group>"; };
-		75FDF1BF213414D40068D015 /* SurveyNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SurveyNotification.m; sourceTree = "<group>"; };
-		75FDF1C1213414E20068D015 /* ScheduleNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScheduleNotification.h; sourceTree = "<group>"; };
-		75FDF1C2213414E20068D015 /* ScheduleNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScheduleNotification.m; sourceTree = "<group>"; };
-		75FDF1C4213414EE0068D015 /* EventNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventNotification.h; sourceTree = "<group>"; };
-		75FDF1C5213414EE0068D015 /* EventNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventNotification.m; sourceTree = "<group>"; };
-		75FDF1C7213415380068D015 /* BaseNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNotification.h; sourceTree = "<group>"; };
-		75FDF1C8213415380068D015 /* BaseNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNotification.m; sourceTree = "<group>"; };
 		894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sync2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6011B6B43DBF0AC7C6C0493 /* Pods-Sync2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2/Pods-Sync2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -332,8 +310,6 @@
 		E9518B5A2017F0C8001818CC /* DummySettingsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummySettingsData.m; sourceTree = "<group>"; };
 		E9518B5D2018026B001818CC /* DummyNotificationData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummyNotificationData.h; sourceTree = "<group>"; };
 		E9518B5E2018026B001818CC /* DummyNotificationData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyNotificationData.m; sourceTree = "<group>"; };
-		E9518B62201802F9001818CC /* TextNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextNotification.h; sourceTree = "<group>"; };
-		E9518B63201802F9001818CC /* TextNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextNotification.m; sourceTree = "<group>"; };
 		E95B9DBF1F609481007943CA /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
 		E95B9DC01F609481007943CA /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
 		E95F58241EE61E57000562FC /* MotionPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionPermissionViewController.h; sourceTree = "<group>"; };
@@ -574,8 +550,6 @@
 				753CB72321070C1500C11223 /* ScheduleNotificationTableViewCell.h */,
 				753CB72421070C1500C11223 /* ScheduleNotificationTableViewCell.m */,
 				753CB72621070C2C00C11223 /* VisitNotificationTableViewCell.h */,
-				75E8BFD521E352D40001F4A5 /* DefaultNotificationTableViewCell.h */,
-				75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */,
 				753CB72721070C2C00C11223 /* VisitNotificationTableViewCell.m */,
 				75502A5021087DA600BFCA2A /* OptionSurveyTableViewCell.h */,
 				75502A5121087DA600BFCA2A /* OptionSurveyTableViewCell.m */,
@@ -657,60 +631,6 @@
 				7575705D21AD39AD00B8A3BB /* WebViewController.m */,
 			);
 			name = WebView;
-			sourceTree = "<group>";
-		};
-		75FDF1AF213413F80068D015 /* InformationNotification */ = {
-			isa = PBXGroup;
-			children = (
-				75FDF1B52134149E0068D015 /* InformationNotification.h */,
-				75FDF1B62134149E0068D015 /* InformationNotification.m */,
-			);
-			name = InformationNotification;
-			sourceTree = "<group>";
-		};
-		75FDF1B0213414140068D015 /* ActionNotification */ = {
-			isa = PBXGroup;
-			children = (
-				75FDF1B8213414AF0068D015 /* ActionNotification.h */,
-				75FDF1B9213414AF0068D015 /* ActionNotification.m */,
-			);
-			name = ActionNotification;
-			sourceTree = "<group>";
-		};
-		75FDF1B1213414270068D015 /* FeedbackNotification */ = {
-			isa = PBXGroup;
-			children = (
-				75FDF1BB213414C60068D015 /* FeedbackNotification.h */,
-				75FDF1BC213414C60068D015 /* FeedbackNotification.m */,
-			);
-			name = FeedbackNotification;
-			sourceTree = "<group>";
-		};
-		75FDF1B2213414340068D015 /* SurveyNotification */ = {
-			isa = PBXGroup;
-			children = (
-				75FDF1BE213414D40068D015 /* SurveyNotification.h */,
-				75FDF1BF213414D40068D015 /* SurveyNotification.m */,
-			);
-			name = SurveyNotification;
-			sourceTree = "<group>";
-		};
-		75FDF1B32134143E0068D015 /* ScheduleNotification */ = {
-			isa = PBXGroup;
-			children = (
-				75FDF1C1213414E20068D015 /* ScheduleNotification.h */,
-				75FDF1C2213414E20068D015 /* ScheduleNotification.m */,
-			);
-			name = ScheduleNotification;
-			sourceTree = "<group>";
-		};
-		75FDF1B4213414450068D015 /* EventNotification */ = {
-			isa = PBXGroup;
-			children = (
-				75FDF1C4213414EE0068D015 /* EventNotification.h */,
-				75FDF1C5213414EE0068D015 /* EventNotification.m */,
-			);
-			name = EventNotification;
 			sourceTree = "<group>";
 		};
 		E903713D1EE89AA90033DED0 /* Log Data */ = {
@@ -956,28 +876,12 @@
 		E9518B60201802D8001818CC /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				75FDF1AF213413F80068D015 /* InformationNotification */,
-				75FDF1B0213414140068D015 /* ActionNotification */,
-				75FDF1B1213414270068D015 /* FeedbackNotification */,
-				75FDF1B2213414340068D015 /* SurveyNotification */,
-				75FDF1B32134143E0068D015 /* ScheduleNotification */,
-				75FDF1B4213414450068D015 /* EventNotification */,
-				E9518B61201802E8001818CC /* TextNotification */,
-				75FDF1C7213415380068D015 /* BaseNotification.h */,
-				75FDF1C8213415380068D015 /* BaseNotification.m */,
+				750220C321F8A154001FB953 /* TextNotification.h */,
+				750220C221F8A154001FB953 /* TextNotification.m */,
 				75843ADE213A554600D7BB8D /* NotificationType.m */,
 				75843AE0213A556700D7BB8D /* NotificationType.h */,
 			);
 			name = Notifications;
-			sourceTree = "<group>";
-		};
-		E9518B61201802E8001818CC /* TextNotification */ = {
-			isa = PBXGroup;
-			children = (
-				E9518B62201802F9001818CC /* TextNotification.h */,
-				E9518B63201802F9001818CC /* TextNotification.m */,
-			);
-			name = TextNotification;
 			sourceTree = "<group>";
 		};
 		E95F58231EE61E14000562FC /* Motion Permission */ = {
@@ -1714,7 +1618,6 @@
 				75DABA39211043820040A170 /* CustomSegmentControlViewController.m in Sources */,
 				E90371481EE8B6110033DED0 /* ListTableViewController.m in Sources */,
 				E97A204D2023D10900FDB7B2 /* NotificationManager.m in Sources */,
-				75FDF1B72134149E0068D015 /* InformationNotification.m in Sources */,
 				75E352952116B80400471D39 /* LogMapDataViewController.m in Sources */,
 				E9518B572017EFA6001818CC /* DataChannel.m in Sources */,
 				E928BB2E20210C1A0002C59E /* ProjectLandmark.m in Sources */,
@@ -1725,7 +1628,6 @@
 				75802C9A213D5CD00068C856 /* XPathQuery.m in Sources */,
 				E9A3C2AB1ED5FD1500A938CB /* AppDelegate.m in Sources */,
 				E9485EA920194DA800B553E2 /* DummyRulesData.m in Sources */,
-				75FDF1BD213414C60068D015 /* FeedbackNotification.m in Sources */,
 				75E352982116D62800471D39 /* LogInformationViewController.m in Sources */,
 				75D71593210C899F007378D5 /* ChooseMapViewController.m in Sources */,
 				75D71587210B0D10007378D5 /* LogMapTableViewCell.m in Sources */,
@@ -1735,12 +1637,11 @@
 				E912818B20100B310003072B /* DummyChannelData.m in Sources */,
 				7575705E21AD39AD00B8A3BB /* WebViewController.m in Sources */,
 				75502A4F210876D300BFCA2A /* GCPlaceholderTextView.m in Sources */,
+				750220C421F8A155001FB953 /* TextNotification.m in Sources */,
 				751C4A7C210F0FC50040E717 /* RulesInformationCloudViewController.m in Sources */,
 				E9B76D5B200D4F450095030C /* ProjectSelectionViewController.m in Sources */,
 				E9A3C2EB1ED780CC00A938CB /* WelcomeViewController.m in Sources */,
 				753CB7102105D07900C11223 /* GradientView.m in Sources */,
-				75FDF1C9213415380068D015 /* BaseNotification.m in Sources */,
-				75FDF1C3213414E20068D015 /* ScheduleNotification.m in Sources */,
 				E95B9DC11F609481007943CA /* TextFieldTableViewCell.m in Sources */,
 				75CD539E213D33DF006D8390 /* UITapGestureRecognizerExtension.m in Sources */,
 				753CB72521070C1500C11223 /* ScheduleNotificationTableViewCell.m in Sources */,
@@ -1750,11 +1651,8 @@
 				753CB71C21070BD500C11223 /* JoiningNotificationTableViewCell.m in Sources */,
 				75502A81210A5DC800BFCA2A /* LogMapViewController.m in Sources */,
 				E98430BC20169E5A00F11887 /* MapSettingsViewController.m in Sources */,
-				E9518B64201802F9001818CC /* TextNotification.m in Sources */,
 				753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */,
-				75FDF1BA213414AF0068D015 /* ActionNotification.m in Sources */,
 				E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */,
-				75E8BFD721E352D40001F4A5 /* DefaultNotificationTableViewCell.m in Sources */,
 				E9CCF4C81EF1E78200BF96C6 /* QRCodeReaderViewController.m in Sources */,
 				E966682B20082743006911C3 /* MasterTabViewController.m in Sources */,
 				E9F0A29420240B41007B7711 /* APIKey.m in Sources */,
@@ -1769,7 +1667,6 @@
 				75802C98213D5CD00068C856 /* TFHpple.m in Sources */,
 				E9518B5F2018026B001818CC /* DummyNotificationData.m in Sources */,
 				E9CCF4C71EF1E78200BF96C6 /* QRCodeReaderView.m in Sources */,
-				75FDF1C6213414EE0068D015 /* EventNotification.m in Sources */,
 				75502A7421099DA800BFCA2A /* CustomSegmentControl.m in Sources */,
 				753CB72821070C2C00C11223 /* VisitNotificationTableViewCell.m in Sources */,
 				E9A3C2FA1EDBA08500A938CB /* AccountsTableViewController.m in Sources */,
@@ -1790,7 +1687,6 @@
 				7520226A2061099C007FD829 /* TOSViewController.m in Sources */,
 				751C4A76210F0B530040E717 /* RulesInformationViewController.m in Sources */,
 				E90371441EE89B1E0033DED0 /* Account.m in Sources */,
-				75FDF1C0213414D40068D015 /* SurveyNotification.m in Sources */,
 				75843ADF213A554600D7BB8D /* NotificationType.m in Sources */,
 				E943D3E82012C27800882D09 /* DummyProjectData.m in Sources */,
 				E9518B542017EF9E001818CC /* Project.m in Sources */,
