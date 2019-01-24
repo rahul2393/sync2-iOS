@@ -12,6 +12,7 @@
 @import SixgillSDK;
 
 @interface LogMapDataViewController ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeight;
 
 @end
 
@@ -21,6 +22,7 @@
     _event = event;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
+        self.tableViewHeight.constant = 49 * (12 + self.event.errorArray.count);
     });
 }
 
