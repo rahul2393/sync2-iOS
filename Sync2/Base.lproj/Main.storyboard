@@ -1746,7 +1746,7 @@ Let us know what you would like to see:</string>
                                                             <rect key="frame" x="0.0" y="28" width="335" height="38"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lv-xe-yKM" id="5ET-8I-o9t">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="37.666666666666664"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-yQ-dY7">
