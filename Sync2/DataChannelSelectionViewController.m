@@ -42,7 +42,12 @@
     [self setButtonEnabled:NO];
     [self.loadingView setHidden:YES];
     
-    DataChannel *selectedChannel = [[SettingsManager sharedManager] selectedDataChannel];
+    DataChannel *selectedChannel;
+    if (self.shouldFilterHailerType) {
+        selectedChannel = [[SettingsManager sharedManager] selectedHailerChannel];
+    } else {
+        selectedChannel = [[SettingsManager sharedManager] selectedDataChannel];
+    }
     if (selectedChannel) {
         
         NSUInteger selectedIndex = [self.channels indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -84,8 +89,13 @@
 }
 
 - (void)filterIOSChannels:(NSArray *)channels {
-    NSPredicate *iosPredicate = [NSPredicate predicateWithFormat:@"SELF.type MATCHES[cd] %@",@"IOS"];
-    self.channels = [self.channels filteredArrayUsingPredicate:iosPredicate];
+    if (self.shouldFilterHailerType) {
+        NSPredicate *iosPredicate = [NSPredicate predicateWithFormat:@"(SELF.type MATCHES[cd] %@) AND (SELF.name MATCHES[cd] %@) ",@"custom", @"Hailer Channel"];
+        self.channels = [self.channels filteredArrayUsingPredicate:iosPredicate];
+    } else {
+        NSPredicate *iosPredicate = [NSPredicate predicateWithFormat:@"SELF.type MATCHES[cd] %@",@"IOS"];
+        self.channels = [self.channels filteredArrayUsingPredicate:iosPredicate];
+    }
 }
 
 - (void)cancelTapped {
@@ -159,19 +169,35 @@
     [self.loadingView startAnimating];
     [self.selectChannelButton setHidden:YES];
     
-    [[SettingsManager sharedManager] selectDataChannel:self.channels[self.selectedChannelIx] withSuccessHandler:^(NSArray *apiKeys, NSError * _Nullable error) {
-        dispatch_async(dispatch_get_main_queue(),^{
-            [self.selectChannelButton setHidden:NO];
-            [self.loadingView setHidden:YES];
-            [self.loadingView stopAnimating];
-            [self dismissScreen];
-        });
-    } withFailureHandler:^{
-        dispatch_async(dispatch_get_main_queue(),^{
-            [self.loadingView setHidden:YES];
-            [self.loadingView stopAnimating];
-        });
-    }];
+    if (self.shouldFilterHailerType) {
+        [[SettingsManager sharedManager] selectHailerChannel:self.channels[self.selectedChannelIx] withSuccessHandler:^(NSArray *apiKeys, NSError * _Nullable error) {
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self.selectChannelButton setHidden:NO];
+                [self.loadingView setHidden:YES];
+                [self.loadingView stopAnimating];
+                [self dismissScreen];
+            });
+        } withFailureHandler:^{
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self.loadingView setHidden:YES];
+                [self.loadingView stopAnimating];
+            });
+        }];
+    } else {
+        [[SettingsManager sharedManager] selectDataChannel:self.channels[self.selectedChannelIx] withSuccessHandler:^(NSArray *apiKeys, NSError * _Nullable error) {
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self.selectChannelButton setHidden:NO];
+                [self.loadingView setHidden:YES];
+                [self.loadingView stopAnimating];
+                [self dismissScreen];
+            });
+        } withFailureHandler:^{
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self.loadingView setHidden:YES];
+                [self.loadingView stopAnimating];
+            });
+        }];
+    }
 }
 
 #pragma mark - Snackbar View

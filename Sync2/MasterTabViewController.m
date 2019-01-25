@@ -78,6 +78,7 @@
         UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
         DataChannelSelectionViewController *dcsvc = (DataChannelSelectionViewController *)nav.viewControllers[0];
         dcsvc.channels = self.dataChannels;
+        dcsvc.shouldFilterHailerType = false;
     }else if ([segue.identifier isEqualToString:@"showProjectSelection"]) {
         UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
         ProjectSelectionViewController *vc = (ProjectSelectionViewController *)nav.viewControllers[0];

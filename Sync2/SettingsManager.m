@@ -44,6 +44,7 @@
 
 #define KEY_SelectedProject @"selectedProject"
 #define KEY_SelectedDataChannel @"selectedDataChannel"
+#define KEY_SelectedHailerChannel @"selectedHailerChannel"
 
 #define SG_PUSH_CMD_FIELD @"data"
 
@@ -196,6 +197,7 @@
 
 -(void) logout{
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannel];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedHailerChannel];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_AccountEmail];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_UserToken];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_UserOrgToken];
@@ -239,9 +241,36 @@
     [[NSUserDefaults standardUserDefaults] setObject:[dataChannel toDictionary] forKey:KEY_SelectedDataChannel];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [[SenseAPI sharedManager] GetAPIKeys:^(NSArray *apiKeys, NSError * _Nullable error) {
+    [[SenseAPI sharedManager] GetAPIKeys:false withCompletion:^(NSArray *apiKeys, NSError * _Nullable error) {
         if (error) {
             [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannel];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            failureBlock();
+        } else {
+            successBlock(apiKeys, error);
+        }
+    }];
+}
+
+- (DataChannel *)selectedHailerChannel{
+    NSDictionary *d = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SelectedHailerChannel];
+    if(!d) {
+        return nil;
+    }
+    
+    DataChannel *dc = [[DataChannel alloc] initWithData:d];
+    
+    return dc;
+}
+
+- (void)selectHailerChannel:(DataChannel *)dataChannel withSuccessHandler:(void (^)(NSArray *, NSError * _Nullable))successBlock withFailureHandler:(void (^)())failureBlock{
+    
+    [[NSUserDefaults standardUserDefaults] setObject:[dataChannel toDictionary] forKey:KEY_SelectedHailerChannel];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[SenseAPI sharedManager] GetAPIKeys:true withCompletion:^(NSArray *apiKeys, NSError * _Nullable error) {
+        if (error) {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedHailerChannel];
             [[NSUserDefaults standardUserDefaults] synchronize];
             failureBlock();
         } else {

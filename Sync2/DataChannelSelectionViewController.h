@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIView *noChannelView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingView;
 
+@property (nonatomic, readwrite) BOOL shouldFilterHailerType;
+
 @property (nonatomic, strong) NSArray *channels;
 @property (nonatomic, readwrite) BOOL useDummy;
 

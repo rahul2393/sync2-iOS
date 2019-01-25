@@ -23,6 +23,7 @@
 @property (nonatomic, readwrite) BOOL useDummyData;
 @property (nonatomic, strong) NSArray *dataChannels;
 @property (nonatomic, strong) NSArray *projects;
+@property (nonatomic, readwrite) BOOL loadDataChannelsForHailerType;
 @property Event* log;
 @end
 
@@ -56,9 +57,10 @@
     }];
 }
 
--(void) loadDataChannels{
+-(void) loadDataChannelsForHailerType:(BOOL)loadDataChannelsForHailerType{
     [[SenseAPI sharedManager] GetDataChannelsWithCompletion:^(NSArray *dataChannels, NSError * _Nullable error) {
         self.dataChannels = dataChannels;
+        self.loadDataChannelsForHailerType = loadDataChannelsForHailerType;
         dispatch_async(dispatch_get_main_queue(),^{
             [self performSegueWithIdentifier:@"dataChannelSelection" sender:self];
         });
@@ -104,6 +106,7 @@
         UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
         DataChannelSelectionViewController *dcsvc = (DataChannelSelectionViewController *)nav.viewControllers[0];
         dcsvc.channels = self.dataChannels;
+        dcsvc.shouldFilterHailerType = self.loadDataChannelsForHailerType;
     }else if ([segue.identifier isEqualToString:@"projectSelection"]) {
         UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
         ProjectSelectionViewController *vc = (ProjectSelectionViewController *)nav.viewControllers[0];
@@ -137,7 +140,7 @@
 
     switch (section) {
         case 0:
-            return 4;
+            return 5;
         default:
             return 6;
     }
@@ -193,6 +196,21 @@
                 break;
             }
             case 3:{
+                cell.keyLabel.text = @"Hailer Channel";
+                if (self.useDummyData) {
+                    cell.valueLabel.text = [[DummySettingsData dataChannel] name];
+                }else{
+                    DataChannel *selected = [[SettingsManager sharedManager] selectedHailerChannel];
+                    NSString *t = @"";
+                    if (selected) {
+                        t = selected.name;
+                    }
+                    cell.valueLabel.text = t;
+                }
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                break;
+            }
+            case 4:{
                 cell.keyLabel.text = @"API URL";
                 cell.valueLabel.text = [SenseAPI serverAddress];
                 break;
@@ -255,9 +273,12 @@
                 
             case 2:
                 // Open channel selection view
-                [self loadDataChannels];
+                [self loadDataChannelsForHailerType:false];
                 break;
-                
+            case 3:
+                // Open channel selection view
+                [self loadDataChannelsForHailerType:true];
+                break;
             default:
                 break;
         }
@@ -272,6 +293,13 @@
     [[SettingsManager sharedManager] logout];
     [[SDKManager sharedManager] stopSDK];
     [self dismissModal];
+}
+- (IBAction)hailerIntegrationTapped:(UIButton *)sender {
+    if (![[SettingsManager sharedManager] selectedHailerChannel]) {
+//        channel selection
+    } else if (![[SettingsManager sharedManager] selectedProject]) {
+//        show upload page
+    }
 }
 
 - (IBAction)logoutTapped:(id)sender {

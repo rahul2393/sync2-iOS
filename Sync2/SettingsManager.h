@@ -33,6 +33,9 @@
 -(DataChannel *) selectedDataChannel;
 -(void) selectDataChannel:(DataChannel *)dataChannel withSuccessHandler:(void ( ^ _Nullable )(NSArray * apiKeys, NSError * _Nullable error))successBlock withFailureHandler:(void ( ^ _Nullable )())failureBlock;
 
+-(DataChannel *) selectedHailerChannel;
+-(void) selectHailerChannel:(DataChannel *)dataChannel withSuccessHandler:(void ( ^ _Nullable )(NSArray * apiKeys, NSError * _Nullable error))successBlock withFailureHandler:(void ( ^ _Nullable )())failureBlock;
+
 - (NSArray*)savedRemoteNotificationPayloads;
 - (void)saveRemoteNotificationPayload:(NSDictionary *)payload;
     

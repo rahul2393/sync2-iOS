@@ -222,13 +222,17 @@
     [dataTask resume];
 }
 
--(void) GetAPIKeys:(void ( ^ _Nullable )(NSArray * apiKeys, NSError * _Nullable error))completed{
+- (void)GetAPIKeys:(BOOL)isChannelHailerType withCompletion:(void (^)(NSArray *, NSError * _Nullable))completed{
     
     NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
                                @"Accept": @"application/json",
                                @"Connection": @"keep-alive" };
-    
-    NSString *channelId = [[[SettingsManager sharedManager] selectedDataChannel] objectId];
+    NSString *channelId;
+    if (isChannelHailerType) {
+        channelId = [[[SettingsManager sharedManager] selectedHailerChannel] objectId];
+    } else {
+        channelId = [[[SettingsManager sharedManager] selectedDataChannel] objectId];
+    }
     NSString *fmt = [NSString stringWithFormat:@"/v2/channels/%@/api-keys", channelId];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:fmt]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
@@ -251,15 +255,17 @@
                                                         
                                                         NSArray *apiKeys = [self apiKeysFomData:data];
                                                         APIKey *k = [apiKeys firstObject];
-                                                        [[SDKManager sharedManager] setCurrentAPIKey:k.apiKey];
-                                                        [[SDKManager sharedManager] stopSDK];
+                                                        if (!isChannelHailerType) {
+                                                            [[SDKManager sharedManager] setCurrentAPIKey:k.apiKey];
+                                                            [[SDKManager sharedManager] stopSDK];
                                                         
-                                                        [[SDKManager sharedManager] startSDKWithAPIKey:k.apiKey andSuccessHandler:^{
-                                                            completed(nil, nil);
-                                                        } andFailureHandler:^(NSString *failureMessage) {
-                                                            NSError *err = [NSError errorWithDomain:@"iOS app generated" code:httpResponse.statusCode userInfo:@{NSLocalizedDescriptionKey:failureMessage}];
-                                                            completed(nil, err);
-                                                        }];
+                                                            [[SDKManager sharedManager] startSDKWithAPIKey:k.apiKey andSuccessHandler:^{
+                                                                completed(nil, nil);
+                                                            } andFailureHandler:^(NSString *failureMessage) {
+                                                                NSError *err = [NSError errorWithDomain:@"iOS app generated" code:httpResponse.statusCode userInfo:@{NSLocalizedDescriptionKey:failureMessage}];
+                                                                completed(nil, err);
+                                                            }];
+                                                        }
                                                     }
                                                 }];
     [dataTask resume];
