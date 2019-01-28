@@ -294,13 +294,6 @@
     [[SDKManager sharedManager] stopSDK];
     [self dismissModal];
 }
-- (IBAction)hailerIntegrationTapped:(UIButton *)sender {
-    if (![[SettingsManager sharedManager] selectedHailerChannel]) {
-//        channel selection
-    } else if (![[SettingsManager sharedManager] selectedProject]) {
-//        show upload page
-    }
-}
 
 - (IBAction)logoutTapped:(id)sender {
     
