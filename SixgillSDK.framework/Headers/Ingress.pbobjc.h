@@ -29,6 +29,7 @@ CF_EXTERN_C_BEGIN
 
 @class Activity;
 @class Configuration;
+@class Error;
 @class Event;
 @class GatewayRegistrationRequest_SystemInfo;
 @class GatewaySyncRequest_Summary;
@@ -278,6 +279,21 @@ typedef GPB_ENUM(Push_FieldNumber) {
 
 @end
 
+#pragma mark - Error
+
+typedef GPB_ENUM(Error_FieldNumber) {
+  Error_FieldNumber_ErrorCode = 1,
+  Error_FieldNumber_ErrorMessage = 2,
+};
+
+@interface Error : GPBMessage
+
+@property(nonatomic, readwrite) int32_t errorCode;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *errorMessage;
+
+@end
+
 #pragma mark - Event
 
 typedef GPB_ENUM(Event_FieldNumber) {
@@ -291,6 +307,7 @@ typedef GPB_ENUM(Event_FieldNumber) {
   Event_FieldNumber_Properties = 8,
   Event_FieldNumber_Push = 9,
   Event_FieldNumber_Attributes = 10,
+  Event_FieldNumber_ErrorArray = 11,
 };
 
 @interface Event : GPBMessage
@@ -332,6 +349,10 @@ typedef GPB_ENUM(Event_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *attributes;
 /** The number of items in @c attributes without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger attributes_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Error*> *errorArray;
+/** The number of items in @c errorArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger errorArray_Count;
 
 @end
 

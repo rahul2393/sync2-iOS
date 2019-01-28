@@ -32,6 +32,11 @@
 
 +(void) disable;
 
+-(void)registerForHailerWithAPIKey:(NSString *)apiKey;
+-(void)registerForHailerWithAPIKey:(NSString *)apiKey andSuccessHandler:(nullable void (^)())successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
+-(void)unregisterForHailer;
+
+
 +(NSString *)deviceId;
 
 +(void) setIngressURL:(NSString *)urlString;
@@ -58,5 +63,6 @@
 
 // Hailer Integration
 +(void) uploadFileFromURL:(NSURL *)filePath andUploadProgressHandler:(nullable void (^)(NSProgress *uploadProgress))uploadProgressBlock andSuccessHandler:(void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
++(void) makehailerIncidentWithFilePath:(NSURL *)filePath andCustomer:(NSString *)customer andDescription:(NSString *)description andUploadProgressHandler:(nullable void (^)(NSProgress *uploadProgress))uploadProgressBlock andSuccessHandler:(void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
 
 @end

@@ -94,7 +94,7 @@
 		</data>
 		<key>Headers/Ingress.pbobjc.h</key>
 		<data>
-		RWJiG45LluLmrP8V9MqD3BpRItk=
+		Wc/Zt6ArPG7Od5efPArbllvXWds=
 		</data>
 		<key>Headers/SGIoTDevice.h</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
-		CVAIWnMYLE3+CFnIJRS0f783Fmw=
+		lG7R8LWoDmP06fHY5h8U/OuvsGo=
 		</data>
 		<key>Headers/SGSDKConfigManager.h</key>
 		<data>
@@ -469,11 +469,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RWJiG45LluLmrP8V9MqD3BpRItk=
+			Wc/Zt6ArPG7Od5efPArbllvXWds=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZNE/KB1f0f7vODkNNGiKBCoMWcArbhXQVkSvNVyg8ss=
+			VGhViQ8iM/tVmaN6GF9flAObneWsSlE6qxgFUaTWr5U=
 			</data>
 		</dict>
 		<key>Headers/SGIoTDevice.h</key>
@@ -502,11 +502,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CVAIWnMYLE3+CFnIJRS0f783Fmw=
+			lG7R8LWoDmP06fHY5h8U/OuvsGo=
 			</data>
 			<key>hash2</key>
 			<data>
-			WSWAq3wVmx2FmTLahz37VAhaUeCyRjd/LBcL3CiBV08=
+			uoh7qyQW4S1pBFLNdZ29DY03vtGRdVnw6f+xHABUk+0=
 			</data>
 		</dict>
 		<key>Headers/SGSDKConfigManager.h</key>
