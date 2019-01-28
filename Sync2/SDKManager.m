@@ -139,6 +139,25 @@
     
 }
 
+- (void)registerForHailerWithAPIKey:(NSString *)apiKey andSuccessHandler:(void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock{
+    [[SGSDK sharedInstance] registerForHailerWithAPIKey:apiKey andSuccessHandler:^{
+        successBlock();
+    } andFailureHandler:^(NSString *msg) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            failureBlock(msg);
+            
+            [SnackbarView showSnackbar:@"Change API Configuration" actionText:@"GO TO LOGIN" actionHandler:^{
+                [[SettingsManager sharedManager] logout];
+                [[SDKManager sharedManager] stopSDK];
+                AppDelegate *appDel = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                [appDel.window.rootViewController.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+            }];
+            
+        });
+    }];
+}
+
 -(void)SGReachLog:(NSString *)logMsg{
     CLSLog(@"%@",logMsg);
 }
@@ -153,6 +172,10 @@
 
 -(void) stopSDK{
     [SGSDK disable];
+}
+
+- (void)unregisterForHailer{
+    [[SGSDK sharedInstance] unregisterForHailer];
 }
 
 -(void) setSensorDataDelegate:(id<SensorUpdateDelegate>)delegate{

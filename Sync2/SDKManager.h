@@ -23,6 +23,9 @@
 -(void) startSDKWithAPIKey:(NSString *)apiKey andSuccessHandler:(nullable void (^)())successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;;
 -(void) stopSDK;
 
+-(void) registerForHailerWithAPIKey:(NSString *)apiKey andSuccessHandler:(nullable void (^)())successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;;
+-(void) unregisterForHailer;
+
 -(void) setSensorDataDelegate:(id<SensorUpdateDelegate>)delegate;
 
 //-(NSString *) logs;
