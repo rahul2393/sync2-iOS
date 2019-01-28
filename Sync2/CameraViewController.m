@@ -6,12 +6,18 @@
 //  Copyright © 2018 Sixgill. All rights reserved.
 //
 
-#import "CameraViewController.h"
 @import SixgillSDK;
+
 #import <ULID/ULID.h>
+
+#import "CameraViewController.h"
+#import "SettingsManager.h"
+#import "SenseAPI.h"
+#import "DataChannelSelectionViewController.h"
 
 @interface CameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, readwrite) NSURL *imagePath;
+@property (nonatomic, strong) NSArray *dataChannels;
 @end
 
 @implementation CameraViewController
@@ -28,6 +34,28 @@
     [self hideEmptyView:NO];
     
     [self checkForCameraPermission];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if (![[SettingsManager sharedManager] selectedHailerChannel]) {
+        [[SenseAPI sharedManager] GetDataChannelsWithCompletion:^(NSArray *dataChannels, NSError * _Nullable error) {
+            self.dataChannels = dataChannels;
+            
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self performSegueWithIdentifier:@"showHailerChannelSelection" sender:self];
+            });
+            
+        }];
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
+        DataChannelSelectionViewController *dcsvc = (DataChannelSelectionViewController *)nav.viewControllers[0];
+        dcsvc.channels = self.dataChannels;
+        dcsvc.shouldFilterHailerType = true;
 }
 
 #pragma mark - IBActions
