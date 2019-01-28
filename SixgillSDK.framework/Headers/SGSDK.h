@@ -24,6 +24,8 @@
 
 +(instancetype)sharedInstance;
 
++(void) requestAlwaysPermission;
+
 -(void)startWithAPIKey:(NSString *)apiKey;
 -(void)startWithAPIKey:(NSString *)apiKey andConfig:(SGSDKConfigManager *)config;
 -(void)startWithAPIKey:(NSString *)apiKey andConfig:(SGSDKConfigManager *)config andSuccessHandler:(nullable void (^)())successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
@@ -31,11 +33,10 @@
 +(void) enable;
 +(void) enableWithSuccessHandler: (void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
 
++(void) setMotionActivityEnabled:(BOOL)enabled;
++(BOOL) motionActivityEnabled;
+
 +(void) disable;
-
-+(NSString *)deviceId;
-
-+(void) setIngressURL:(NSString *)urlString;
 
 +(void) didReceivePushNotificationPayload:(NSDictionary *)payload
                     withCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
@@ -43,22 +44,19 @@
 +(void) setPushToken:(NSString *)pushToken;
 +(NSString *) storedPushToken;
 
-+(void) showNotificationsFromOffset:(NSInteger *)offset andLimit:(NSInteger *)limit andSuccessHandler:(void (^)(NSArray<Notification*> *))successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
++(NSString *)deviceId;
 
-+(void) forceSensorUpdate;
-
-+(void) requestAlwaysPermission;
-
-+(void) setMotionActivityEnabled:(BOOL)enabled;
-+(BOOL) motionActivityEnabled;
-
-// Configs
++(void) setIngressURL:(NSString *)urlString;
 
 +(void) registerForSensorUpdates:(id<SensorUpdateDelegate>)delegate;
 
-#pragma mark - Core Data
-+(void) saveCoreDataContext;
++(void) forceSensorUpdate;
 
 +(void)getRulesOfType:(NSString *)type andSuccessHandler:(nullable void (^)(NSMutableArray<SGRule*> *))successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
+
++(void) showNotificationsFromOffset:(NSInteger *)offset andLimit:(NSInteger *)limit andSuccessHandler:(void (^)(NSArray<Notification*> *))successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
+
+#pragma mark - Core Data
++(void) saveCoreDataContext;
 
 @end
