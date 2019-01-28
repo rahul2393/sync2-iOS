@@ -76,10 +76,9 @@
         self.progressView.progress = 0;
         [self.captureAndUploadButton setEnabled:NO];
         
-        [SGSDK uploadFileFromURL:self.imagePath andUploadProgressHandler:^(NSProgress *uploadProgress) {
+        [SGSDK makehailerIncidentWithFilePath:self.imagePath andCustomer:@"test customer" andDescription:@"test description" andUploadProgressHandler:^(NSProgress *uploadProgress) {
             self.progressView.progress = uploadProgress.fractionCompleted;
         } andSuccessHandler:^{
-            
             [self.progressView setHidden:YES];
             [self.captureAndUploadButton setEnabled:YES];
             [self.captureAndUploadButton setTitle:@"Capture Image" forState:UIControlStateNormal];
@@ -92,7 +91,6 @@
             
             [alert addAction:defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
-
             
         } andFailureHandler:^(NSString *failureMsg) {
             
