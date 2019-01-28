@@ -265,6 +265,13 @@
                                                                 NSError *err = [NSError errorWithDomain:@"iOS app generated" code:httpResponse.statusCode userInfo:@{NSLocalizedDescriptionKey:failureMessage}];
                                                                 completed(nil, err);
                                                             }];
+                                                        } else {
+                                                            [[SDKManager sharedManager] registerForHailerWithAPIKey:k.apiKey andSuccessHandler:^{
+                                                                completed(nil, nil);
+                                                            } andFailureHandler:^(NSString *failureMessage) {
+                                                                NSError *err = [NSError errorWithDomain:@"iOS app generated" code:httpResponse.statusCode userInfo:@{NSLocalizedDescriptionKey:failureMessage}];
+                                                                completed(nil, err);
+                                                            }];
                                                         }
                                                     }
                                                 }];
