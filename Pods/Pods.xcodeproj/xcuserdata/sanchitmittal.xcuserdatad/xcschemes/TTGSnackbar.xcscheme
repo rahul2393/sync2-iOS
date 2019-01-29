@@ -14,11 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-<<<<<<< HEAD
                BlueprintIdentifier = "F4647352870ED43DE130753D715D7E09"
-=======
-               BlueprintIdentifier = "585450E1B9A8A640FC1B96D209AB40B1"
->>>>>>> origin/sync2-ui-changes
                BlueprintName = "TTGSnackbar"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libTTGSnackbar.a">
