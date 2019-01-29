@@ -118,11 +118,7 @@
 		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
-<<<<<<< HEAD:SixgillSDK.framework/_CodeSignature/CodeResources
-		lG7R8LWoDmP06fHY5h8U/OuvsGo=
-=======
-		WcMPafaFDjoGaMZi2EuxBHpY8R0=
->>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/_CodeSignature/CodeResources
+		zPGclr67G1ysm5Xr52t7694RQ0I=
 		</data>
 		<key>Headers/SGSDKConfigManager.h</key>
 		<data>
@@ -551,19 +547,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-<<<<<<< HEAD:SixgillSDK.framework/_CodeSignature/CodeResources
-			lG7R8LWoDmP06fHY5h8U/OuvsGo=
+			zPGclr67G1ysm5Xr52t7694RQ0I=
 			</data>
 			<key>hash2</key>
 			<data>
-			uoh7qyQW4S1pBFLNdZ29DY03vtGRdVnw6f+xHABUk+0=
-=======
-			WcMPafaFDjoGaMZi2EuxBHpY8R0=
-			</data>
-			<key>hash2</key>
-			<data>
-			Me6Pn9i0AD0fWFHjarDZj+4ncIuRx6JlLBbSLq1nbtU=
->>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/_CodeSignature/CodeResources
+			itklNFq1m1pZrYbTe2xrAbW2AL7k9YsgMCCdLt1Mm7w=
 			</data>
 		</dict>
 		<key>Headers/SGSDKConfigManager.h</key>

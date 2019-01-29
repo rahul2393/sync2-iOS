@@ -33,7 +33,6 @@
 +(void) enable;
 +(void) enableWithSuccessHandler: (void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
 
-<<<<<<< HEAD:SixgillSDK.framework/Headers/SGSDK.h
 +(void) disable;
 
 -(void)registerForHailerWithAPIKey:(NSString *)apiKey;
@@ -42,20 +41,15 @@
 
 
 +(NSString *)deviceId;
-=======
+
 +(void) setMotionActivityEnabled:(BOOL)enabled;
 +(BOOL) motionActivityEnabled;
->>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/Headers/SGSDK.h
-
-+(void) disable;
 
 +(void) didReceivePushNotificationPayload:(NSDictionary *)payload
                     withCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
 
 +(void) setPushToken:(NSString *)pushToken;
 +(NSString *) storedPushToken;
-
-+(NSString *)deviceId;
 
 +(void) setIngressURL:(NSString *)urlString;
 
