@@ -784,6 +784,7 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+<<<<<<< HEAD
 			<string>The MIT License (MIT)
 
 Copyright (c) 2015 zekunyan
@@ -816,6 +817,8 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+=======
+>>>>>>> origin/sync2-ui-changes
 			<string>The MIT License (MIT)
 
 Copyright (c) 2017 Whitesmith

@@ -15,6 +15,7 @@
 #import "SenseAPI.h"
 #import "ProjectLandmark.h"
 #import "SettingsManager.h"
+#import "UIView+Toast.h"
 
 @import SixgillSDK;
 
@@ -69,7 +70,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"LogMapSegueIdentifier"]) {
         _vc = [segue destinationViewController];
-        _vc.event = [[SDKManager sharedManager] sensorsData].lastObject;
+        _vc.event = [[[SDKManager sharedManager] sensorsData].lastObject copy];
         _vc.buttonLabelText = kLogsButtonLabel;
         _vc.delegate = self;
     }
@@ -79,7 +80,7 @@
     _currentIndex = currentIndex;
     
     Event *currentEvent = self.logs[self.currentIndex];
-    _vc.event = currentEvent;
+    _vc.event = [currentEvent copy];
     _vc.buttonLabelText = kLogsButtonLabel;
     _vc.delegate = self;
     
@@ -188,6 +189,8 @@
     }
     eventsString = [eventsString stringByAppendingString:@"]"];
     board.string = eventsString;
+    
+    [self.view makeToast:@"All Logs Copied" duration:3.0 position:CSToastPositionCenter];
 }
 
 #pragma mark - LogBaseViewController

@@ -10,7 +10,6 @@
 #import "CustomSegmentControl.h"
 
 @interface CustomSegmentControlViewController ()
-@property (nonatomic, readwrite) NSMutableArray *viewControllers;
 @property (nonatomic,strong) UIPageViewController* pageController;
 @property (nonatomic, strong) CustomSegmentControl *segmentView;
 
@@ -22,12 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.viewControllers = [[NSMutableArray alloc] init];
-    
-    for (NSString* identifier in self.viewControllerIdentifiers) {
-        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
-        [self.viewControllers addObject:vc];
-    }
     
     // Create segment view
     self.segmentView = [[CustomSegmentControl alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 51)];

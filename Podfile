@@ -21,7 +21,6 @@ target 'Sync2' do
     pod 'TTGSnackbar'
     pod 'ULID'
 
-
 #    pod 'SixgillSDK'
 
   target 'Sync2Tests' do

@@ -8,6 +8,9 @@
 
 #import "RulesInformationViewController.h"
 
+#import "RulesInformationEdgeViewController.h"
+#import "RulesInformationCloudViewController.h"
+
 @interface RulesInformationViewController ()
 
 @end
@@ -22,20 +25,27 @@
         self.selectorColor = [UIColor colorWithRed:0.3 green:0.86 blue:0.35 alpha:1];
         self.selectorTextColor = [UIColor colorWithRed:0.3 green:0.86 blue:0.35 alpha:1];
         self.currentPage = 0;
-        
-        self.viewControllerIdentifiers = [NSArray arrayWithObjects:@"RulesInformationEdgeViewControllerIdentifier", @"RulesInformationCloudViewControllerIdentifier", nil];
     }
     return self;
 }
 
 
 - (void)viewDidLoad {
+    
+    self.viewControllers = [[NSMutableArray alloc] init];
+    
+    RulesInformationEdgeViewController *rulesInfoEdgeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RulesInformationEdgeViewControllerIdentifier"];
+    rulesInfoEdgeVC.rule = self.rule;
+    [self.viewControllers addObject:rulesInfoEdgeVC];
+    
+    RulesInformationCloudViewController *rulesInfoCloudVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RulesInformationCloudViewControllerIdentifier"];
+    rulesInfoCloudVC.rule = self.rule;
+    
+    [self.viewControllers addObject:rulesInfoCloudVC];
+    
     [super viewDidLoad];
     
     self.title = @"Rule Information";
-    
-//    self.segmentView.selectedSegmentIndex = self.currentPage;
-    
     
 }
 @end

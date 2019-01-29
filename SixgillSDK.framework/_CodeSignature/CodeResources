@@ -104,9 +104,25 @@
 		<data>
 		+SKa4cNUtaV2LxfweSsORmCNLlc=
 		</data>
+		<key>Headers/SGRule.h</key>
+		<data>
+		Zc0qrqH+fWG8m06WqI59kgqW2Xc=
+		</data>
+		<key>Headers/SGRuleAction.h</key>
+		<data>
+		fOcryIsWJXYFD27mF0TXPZTwCcg=
+		</data>
+		<key>Headers/SGRuleCondition.h</key>
+		<data>
+		wuKd8J+SGc0po99i6CrsHY6mwlI=
+		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
+<<<<<<< HEAD:SixgillSDK.framework/_CodeSignature/CodeResources
 		lG7R8LWoDmP06fHY5h8U/OuvsGo=
+=======
+		WcMPafaFDjoGaMZi2EuxBHpY8R0=
+>>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/_CodeSignature/CodeResources
 		</data>
 		<key>Headers/SGSDKConfigManager.h</key>
 		<data>
@@ -162,11 +178,11 @@
 		</data>
 		<key>SixgillSDK.momd/SDK-Store.mom</key>
 		<data>
-		6WuKM3+AAxImWAX1i2KbsAYDjVQ=
+		guN+IS2enBxreX+uq4Fl+fNygZw=
 		</data>
 		<key>SixgillSDK.momd/VersionInfo.plist</key>
 		<data>
-		gOG52+GgqLl72tze//6IqI/hoQU=
+		AlAqpnoumlDDzyMAJmraFip95gI=
 		</data>
 		<key>any.proto</key>
 		<data>
@@ -498,15 +514,56 @@
 			Z5d/IXXUzMAuMX8xEpxkaVI3/drKHG6xuabFUeEstgI=
 			</data>
 		</dict>
+		<key>Headers/SGRule.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Zc0qrqH+fWG8m06WqI59kgqW2Xc=
+			</data>
+			<key>hash2</key>
+			<data>
+			OiqKLP2Oc/zuEI1Q2onYyb5ZUl+L4FnP6a0f8a5BzIY=
+			</data>
+		</dict>
+		<key>Headers/SGRuleAction.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			fOcryIsWJXYFD27mF0TXPZTwCcg=
+			</data>
+			<key>hash2</key>
+			<data>
+			taR1+04CRCHmgfnZPvz4zRTVwmJKbh2dhotrRzoXYT8=
+			</data>
+		</dict>
+		<key>Headers/SGRuleCondition.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			wuKd8J+SGc0po99i6CrsHY6mwlI=
+			</data>
+			<key>hash2</key>
+			<data>
+			Gi45sjCC6FfdUQr6yY8AO9cbH4gmPRMSOkGGNafFIgE=
+			</data>
+		</dict>
 		<key>Headers/SGSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
+<<<<<<< HEAD:SixgillSDK.framework/_CodeSignature/CodeResources
 			lG7R8LWoDmP06fHY5h8U/OuvsGo=
 			</data>
 			<key>hash2</key>
 			<data>
 			uoh7qyQW4S1pBFLNdZ29DY03vtGRdVnw6f+xHABUk+0=
+=======
+			WcMPafaFDjoGaMZi2EuxBHpY8R0=
+			</data>
+			<key>hash2</key>
+			<data>
+			Me6Pn9i0AD0fWFHjarDZj+4ncIuRx6JlLBbSLq1nbtU=
+>>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/_CodeSignature/CodeResources
 			</data>
 		</dict>
 		<key>Headers/SGSDKConfigManager.h</key>
@@ -645,22 +702,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6WuKM3+AAxImWAX1i2KbsAYDjVQ=
+			guN+IS2enBxreX+uq4Fl+fNygZw=
 			</data>
 			<key>hash2</key>
 			<data>
-			li0fYcqz0meQoOs6F3Cu0eO/uWfzYs1bUo7MQ6RYyWA=
+			olq96/F0DygJRAXt/molGM7RMdvTdLW+NJklg9za2Es=
 			</data>
 		</dict>
 		<key>SixgillSDK.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gOG52+GgqLl72tze//6IqI/hoQU=
+			AlAqpnoumlDDzyMAJmraFip95gI=
 			</data>
 			<key>hash2</key>
 			<data>
-			cp9y1dijVFghuA22i3TYl78LyMxPNmZMi9bB83GUWbY=
+			Z0ZkAkJj1O+xEAGNAWo83I/kQWvlVYV/rdpbwKK/dTE=
 			</data>
 		</dict>
 		<key>any.proto</key>

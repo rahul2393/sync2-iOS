@@ -13,6 +13,7 @@
 		751C4A7C210F0FC50040E717 /* RulesInformationCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A7B210F0FC50040E717 /* RulesInformationCloudViewController.m */; };
 		7520226620610845007FD829 /* EULAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7520226520610845007FD829 /* EULAViewController.m */; };
 		7520226A2061099C007FD829 /* TOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752022692061099C007FD829 /* TOSViewController.m */; };
+		7531658821F5BD93005940EF /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531658721F5BD93005940EF /* UIView+Toast.m */; };
 		753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70C2105600B00C11223 /* UIViewExtension.m */; };
 		753CB7102105D07900C11223 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70F2105D07900C11223 /* GradientView.m */; };
 		753CB71921070B8100C11223 /* WelcomeNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB71821070B8100C11223 /* WelcomeNotificationTableViewCell.m */; };
@@ -57,10 +58,12 @@
 		75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */; };
 		75E352952116B80400471D39 /* LogMapDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E352942116B80400471D39 /* LogMapDataViewController.m */; };
 		75E352982116D62800471D39 /* LogInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E352972116D62800471D39 /* LogInformationViewController.m */; };
+		75E48B2521BE9FFA00AB485D /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; };
+		75E48B2621BEA00100AB485D /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; };
+		75E48B2721BEA00100AB485D /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75E68A4A212E962500797E27 /* LogBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E68A49212E962500797E27 /* LogBaseViewController.m */; };
-		75F45D5C218AEC080077B9F0 /* SGRuleCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F45D5B218AEC080077B9F0 /* SGRuleCondition.m */; };
+		75E8BFD721E352D40001F4A5 /* DefaultNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */; };
 		75F4C98521AD52EF009596E1 /* SignupWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4C98421AD52EF009596E1 /* SignupWebVC.swift */; };
-		75F55758218B20B000208229 /* SGRuleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F55757218B20B000208229 /* SGRuleAction.m */; };
 		75FDF1B72134149E0068D015 /* InformationNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1B62134149E0068D015 /* InformationNotification.m */; };
 		75FDF1BA213414AF0068D015 /* ActionNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1B9213414AF0068D015 /* ActionNotification.m */; };
 		75FDF1BD213414C60068D015 /* FeedbackNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FDF1BC213414C60068D015 /* FeedbackNotification.m */; };
@@ -86,7 +89,6 @@
 		E943D3E82012C27800882D09 /* DummyProjectData.m in Sources */ = {isa = PBXBuildFile; fileRef = E943D3E72012C27800882D09 /* DummyProjectData.m */; };
 		E943D3EC2012CC0700882D09 /* DummyMapData.m in Sources */ = {isa = PBXBuildFile; fileRef = E943D3EB2012CC0700882D09 /* DummyMapData.m */; };
 		E9485EA920194DA800B553E2 /* DummyRulesData.m in Sources */ = {isa = PBXBuildFile; fileRef = E9485EA820194DA800B553E2 /* DummyRulesData.m */; };
-		E9485EAD20194DB600B553E2 /* SGRule.m in Sources */ = {isa = PBXBuildFile; fileRef = E9485EAC20194DB600B553E2 /* SGRule.m */; };
 		E9518B542017EF9E001818CC /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B532017EF9E001818CC /* Project.m */; };
 		E9518B572017EFA6001818CC /* DataChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B562017EFA6001818CC /* DataChannel.m */; };
 		E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B5A2017F0C8001818CC /* DummySettingsData.m */; };
@@ -190,6 +192,8 @@
 		7520226520610845007FD829 /* EULAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EULAViewController.m; sourceTree = "<group>"; };
 		7520226820610988007FD829 /* TOSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOSViewController.h; sourceTree = "<group>"; };
 		752022692061099C007FD829 /* TOSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOSViewController.m; sourceTree = "<group>"; };
+		7531658621F5BD93005940EF /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		7531658721F5BD93005940EF /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		753CB70B21055FF600C11223 /* UIViewExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewExtension.h; sourceTree = "<group>"; };
 		753CB70C2105600B00C11223 /* UIViewExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewExtension.m; sourceTree = "<group>"; };
 		753CB70E2105D06000C11223 /* GradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
@@ -269,13 +273,12 @@
 		75E352942116B80400471D39 /* LogMapDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogMapDataViewController.m; sourceTree = "<group>"; };
 		75E352962116D62800471D39 /* LogInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInformationViewController.h; sourceTree = "<group>"; };
 		75E352972116D62800471D39 /* LogInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInformationViewController.m; sourceTree = "<group>"; };
+		75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		75E68A48212E960A00797E27 /* LogBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogBaseViewController.h; sourceTree = "<group>"; };
 		75E68A49212E962500797E27 /* LogBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogBaseViewController.m; sourceTree = "<group>"; };
-		75F45D5A218AEC080077B9F0 /* SGRuleCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGRuleCondition.h; sourceTree = "<group>"; };
-		75F45D5B218AEC080077B9F0 /* SGRuleCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGRuleCondition.m; sourceTree = "<group>"; };
+		75E8BFD521E352D40001F4A5 /* DefaultNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultNotificationTableViewCell.h; sourceTree = "<group>"; };
+		75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefaultNotificationTableViewCell.m; sourceTree = "<group>"; };
 		75F4C98421AD52EF009596E1 /* SignupWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupWebVC.swift; sourceTree = "<group>"; };
-		75F55756218B20B000208229 /* SGRuleAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGRuleAction.h; sourceTree = "<group>"; };
-		75F55757218B20B000208229 /* SGRuleAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGRuleAction.m; sourceTree = "<group>"; };
 		75FDF1B52134149E0068D015 /* InformationNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InformationNotification.h; sourceTree = "<group>"; };
 		75FDF1B62134149E0068D015 /* InformationNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InformationNotification.m; sourceTree = "<group>"; };
 		75FDF1B8213414AF0068D015 /* ActionNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionNotification.h; sourceTree = "<group>"; };
@@ -328,8 +331,6 @@
 		E94738822081465800A49CC2 /* Sync2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sync2-Bridging-Header.h"; sourceTree = "<group>"; };
 		E9485EA720194DA800B553E2 /* DummyRulesData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummyRulesData.h; sourceTree = "<group>"; };
 		E9485EA820194DA800B553E2 /* DummyRulesData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyRulesData.m; sourceTree = "<group>"; };
-		E9485EAB20194DB600B553E2 /* SGRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGRule.h; sourceTree = "<group>"; };
-		E9485EAC20194DB600B553E2 /* SGRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGRule.m; sourceTree = "<group>"; };
 		E9518B522017EF9E001818CC /* Project.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		E9518B532017EF9E001818CC /* Project.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		E9518B552017EFA6001818CC /* DataChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataChannel.h; sourceTree = "<group>"; };
@@ -498,9 +499,19 @@
 			name = "Terms of Service";
 			sourceTree = "<group>";
 		};
+		7531658221F5BC49005940EF /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				7531658621F5BD93005940EF /* UIView+Toast.h */,
+				7531658721F5BD93005940EF /* UIView+Toast.m */,
+			);
+			name = Toast;
+			sourceTree = "<group>";
+		};
 		753CB711210641C400C11223 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7531658221F5BC49005940EF /* Toast */,
 				756B21CD213E890E0089F731 /* ZoomControl */,
 				756B21C7213E7A190089F731 /* Snackbar */,
 				75502A4C210876BE00BFCA2A /* PlaceholderTextView */,
@@ -570,6 +581,8 @@
 				753CB72321070C1500C11223 /* ScheduleNotificationTableViewCell.h */,
 				753CB72421070C1500C11223 /* ScheduleNotificationTableViewCell.m */,
 				753CB72621070C2C00C11223 /* VisitNotificationTableViewCell.h */,
+				75E8BFD521E352D40001F4A5 /* DefaultNotificationTableViewCell.h */,
+				75E8BFD621E352D40001F4A5 /* DefaultNotificationTableViewCell.m */,
 				753CB72721070C2C00C11223 /* VisitNotificationTableViewCell.m */,
 				75502A5021087DA600BFCA2A /* OptionSurveyTableViewCell.h */,
 				75502A5121087DA600BFCA2A /* OptionSurveyTableViewCell.m */,
@@ -916,12 +929,6 @@
 		E9485EAA20194DAE00B553E2 /* Rules */ = {
 			isa = PBXGroup;
 			children = (
-				E9485EAB20194DB600B553E2 /* SGRule.h */,
-				75F55756218B20B000208229 /* SGRuleAction.h */,
-				75F55757218B20B000208229 /* SGRuleAction.m */,
-				75F45D5A218AEC080077B9F0 /* SGRuleCondition.h */,
-				75F45D5B218AEC080077B9F0 /* SGRuleCondition.m */,
-				E9485EAC20194DB600B553E2 /* SGRule.m */,
 			);
 			name = Rules;
 			sourceTree = "<group>";
@@ -1764,6 +1771,7 @@
 				753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */,
 				75FDF1BA213414AF0068D015 /* ActionNotification.m in Sources */,
 				E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */,
+				75E8BFD721E352D40001F4A5 /* DefaultNotificationTableViewCell.m in Sources */,
 				E9CCF4C81EF1E78200BF96C6 /* QRCodeReaderViewController.m in Sources */,
 				E966682B20082743006911C3 /* MasterTabViewController.m in Sources */,
 				E9F0A29420240B41007B7711 /* APIKey.m in Sources */,
@@ -1779,7 +1787,6 @@
 				E9518B5F2018026B001818CC /* DummyNotificationData.m in Sources */,
 				E9CCF4C71EF1E78200BF96C6 /* QRCodeReaderView.m in Sources */,
 				75FDF1C6213414EE0068D015 /* EventNotification.m in Sources */,
-				75F45D5C218AEC080077B9F0 /* SGRuleCondition.m in Sources */,
 				75502A7421099DA800BFCA2A /* CustomSegmentControl.m in Sources */,
 				753CB72821070C2C00C11223 /* VisitNotificationTableViewCell.m in Sources */,
 				E9A3C2FA1EDBA08500A938CB /* AccountsTableViewController.m in Sources */,
@@ -1792,6 +1799,7 @@
 				E95F582E1EE61EA3000562FC /* PushPermissionViewController.m in Sources */,
 				E9CCF4C51EF1E78200BF96C6 /* QRCameraSwitchButton.m in Sources */,
 				E9128187201008BA0003072B /* SenseAPI.m in Sources */,
+				7531658821F5BD93005940EF /* UIView+Toast.m in Sources */,
 				75D71590210C5A2C007378D5 /* SettingsTableViewCell.m in Sources */,
 				E9128183200FDD1F0003072B /* TextViewTableViewCell.m in Sources */,
 				75D7158A210B41F8007378D5 /* RulesTableViewCell.m in Sources */,
@@ -1806,7 +1814,6 @@
 				E9B76D3B200D31940095030C /* MapViewController.m in Sources */,
 				E9D0A3671F3258CA00E7776C /* MapMarkerViewController.m in Sources */,
 				E9CCF4C91EF1E78200BF96C6 /* QRToggleTorchButton.m in Sources */,
-				E9485EAD20194DB600B553E2 /* SGRule.m in Sources */,
 				E93C3F0A1EDDEEE300F27619 /* LocationPermissionViewController.m in Sources */,
 				E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */,
 				7520226620610845007FD829 /* EULAViewController.m in Sources */,
@@ -1814,7 +1821,6 @@
 				E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */,
 				E9F29C152050B8EB0024E3B5 /* Environment.m in Sources */,
 				75502A7B210A155200BFCA2A /* RulesEdgeViewController.m in Sources */,
-				75F55758218B20B000208229 /* SGRuleAction.m in Sources */,
 				753CB72221070BFD00C11223 /* SurveyNotificationTableViewCell.m in Sources */,
 				E962B3511EF1FB2600ECB920 /* LogViewController.m in Sources */,
 				75502A7E210A162D00BFCA2A /* RulesViewController.m in Sources */,

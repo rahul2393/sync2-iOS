@@ -1,12 +1,13 @@
 //
 //  SGRule.h
-//  Sync2
+//  SixgillSDK
 //
-//  Created by Ricky Kirkendall on 1/24/18.
-//  Copyright © 2018 Sixgill. All rights reserved.
+//  Created by Ricky Kirkendall on 12/12/17.
+//  Copyright © 2017 Sixgill. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "Ingress.pbobjc.h"
 #import "SGRuleCondition.h"
 #import "SGRuleAction.h"
 
@@ -22,13 +23,12 @@
 @property (nonatomic, strong) NSArray<SGRuleAction *> *actions;
 @property (nonatomic, strong) NSString *conditions;
 @property (nonatomic, strong) NSArray<SGRuleCondition *> *conditionsObject;
-@property (nonatomic, strong) NSDate *createdAt;
-@property (nonatomic, strong) NSDate *updatedAt;
+@property (nonatomic, readwrite) int64_t createdAt;
+@property (nonatomic, readwrite) int64_t updatedAt;
 @property (nonatomic, strong) NSString *generator;
 @property (nonatomic, readwrite) BOOL enabled;
 @property (nonatomic, strong) NSArray *channelIds;
 
-
-- (instancetype)initWithData:(NSDictionary *)data;
+- (instancetype)initWithIngressRule:(Rule *)rule;
 
 @end

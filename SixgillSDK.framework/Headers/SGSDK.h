@@ -13,6 +13,7 @@
 #import "EventQueuePolicy.h"
 #import "SGIoTDevice.h"
 #import "SGSDKConfigManager.h"
+#import "SGRule.h"
 /**
  `SGSDK` is the wrapper class that exists for the purpose of abstracting away implemenation details and providing a clean API to the user.
  **/
@@ -23,6 +24,8 @@
 
 +(instancetype)sharedInstance;
 
++(void) requestAlwaysPermission;
+
 -(void)startWithAPIKey:(NSString *)apiKey;
 -(void)startWithAPIKey:(NSString *)apiKey andConfig:(SGSDKConfigManager *)config;
 -(void)startWithAPIKey:(NSString *)apiKey andConfig:(SGSDKConfigManager *)config andSuccessHandler:(nullable void (^)())successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
@@ -30,6 +33,7 @@
 +(void) enable;
 +(void) enableWithSuccessHandler: (void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
 
+<<<<<<< HEAD:SixgillSDK.framework/Headers/SGSDK.h
 +(void) disable;
 
 -(void)registerForHailerWithAPIKey:(NSString *)apiKey;
@@ -38,8 +42,12 @@
 
 
 +(NSString *)deviceId;
+=======
++(void) setMotionActivityEnabled:(BOOL)enabled;
++(BOOL) motionActivityEnabled;
+>>>>>>> origin/sync2-ui-changes:SixgillSDK.framework/Headers/SGSDK.h
 
-+(void) setIngressURL:(NSString *)urlString;
++(void) disable;
 
 +(void) didReceivePushNotificationPayload:(NSDictionary *)payload
                     withCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
@@ -47,16 +55,17 @@
 +(void) setPushToken:(NSString *)pushToken;
 +(NSString *) storedPushToken;
 
-+(void) forceSensorUpdate;
++(NSString *)deviceId;
 
-+(void) requestAlwaysPermission;
-
-+(void) setMotionActivityEnabled:(BOOL)enabled;
-+(BOOL) motionActivityEnabled;
-
-// Configs
++(void) setIngressURL:(NSString *)urlString;
 
 +(void) registerForSensorUpdates:(id<SensorUpdateDelegate>)delegate;
+
++(void) forceSensorUpdate;
+
++(void)getRulesOfType:(NSString *)type andSuccessHandler:(nullable void (^)(NSMutableArray<SGRule*> *))successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
+
++(void) showNotificationsFromOffset:(NSInteger *)offset andLimit:(NSInteger *)limit andSuccessHandler:(void (^)(NSArray<Notification*> *))successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
 
 #pragma mark - Core Data
 +(void) saveCoreDataContext;

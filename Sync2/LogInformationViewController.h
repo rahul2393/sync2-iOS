@@ -15,5 +15,5 @@
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 
 @property (weak, nonatomic) IBOutlet UILabel *dateTImeLabel;
-@property (weak, nonatomic) Event *event;
+@property (strong, nonatomic) Event *event;
 @end
