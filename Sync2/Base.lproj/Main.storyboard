@@ -3550,10 +3550,16 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                     <constraint firstItem="v2k-Ii-uXk" firstAttribute="leading" secondItem="JmD-0h-px2" secondAttribute="leading" id="XDt-Xh-DVV"/>
                                 </constraints>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="QSr-dm-HOO">
+                                <rect key="frame" x="169" y="516" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="bxB-Lx-GoI" firstAttribute="top" secondItem="JmD-0h-px2" secondAttribute="bottom" id="2hs-xK-PTS"/>
+                            <constraint firstItem="QSr-dm-HOO" firstAttribute="centerY" secondItem="khe-O4-puk" secondAttribute="centerY" id="SOk-nv-uNL"/>
+                            <constraint firstItem="QSr-dm-HOO" firstAttribute="centerX" secondItem="khe-O4-puk" secondAttribute="centerX" id="Sas-AO-pi5"/>
                             <constraint firstItem="JmD-0h-px2" firstAttribute="leading" secondItem="khe-O4-puk" secondAttribute="leading" id="WCM-e7-6QW"/>
                             <constraint firstItem="v2k-Ii-uXk" firstAttribute="width" secondItem="khe-O4-puk" secondAttribute="width" id="gmQ-BO-LnU"/>
                             <constraint firstAttribute="trailing" secondItem="JmD-0h-px2" secondAttribute="trailing" id="oKZ-Hs-T74"/>
@@ -3564,6 +3570,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="1152"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="QSr-dm-HOO" id="uTS-Xe-XZv"/>
                         <outlet property="createActivity" destination="BCO-pe-KkB" id="XWA-pY-4mY"/>
                         <outlet property="customerTextField" destination="jb1-g6-k7H" id="lVO-lT-umr"/>
                         <outlet property="descriptionTextField" destination="Bsx-bn-CsR" id="VHH-5d-2pf"/>
@@ -6398,7 +6405,7 @@ revised: 5/9/2016</string>
         <image name="notification-permission-missing" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="165" height="120"/>
+        <image name="sixgill-logo" width="325" height="95"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>

@@ -27,6 +27,7 @@
     
     self.title = @"Hailer Integration";
     [self.progressView setHidden:YES];
+    [self.activityIndicator setHidden:YES];
     
     [self hideEmptyView:NO];
     
@@ -91,17 +92,31 @@
     [self.progressView setHidden:NO];
     self.progressView.progress = 0;
     
+    [self.activityIndicator setHidden:NO];
+    [self.activityIndicator startAnimating];
+    
     [SGSDK makehailerIncidentWithFilePath:self.imagePath andCustomer:self.customerTextField.text andDescription:self.descriptionTextField.text andUploadProgressHandler:^(NSProgress *uploadProgress) {
         self.progressView.progress = uploadProgress.fractionCompleted;
-        if (uploadProgress.fractionCompleted == 1) {
-            [self showAlertWithTitle:@"Success" andMessage:@"Image upload successful"];
-        }
     } andSuccessHandler:^{
+        
+        [self.activityIndicator setHidden:YES];
+        [self.activityIndicator stopAnimating];
+        
         [self.progressView setHidden:YES];
-        [self dismissViewControllerAnimated:true completion:nil];
-        [self showAlertWithTitle:@"Success" andMessage:@"Activity created successful"];
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Success" message:@"Activity created successful" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController popViewControllerAnimated:true];
+        }]];
+        [self presentViewController:alertController animated:true completion:nil];
+        
+        
         
     } andFailureHandler:^(NSString *failureMsg) {
+        
+        [self.activityIndicator setHidden:YES];
+        [self.activityIndicator stopAnimating];
+        
         [self.progressView setHidden:YES];
         [self showAlertWithTitle:@"Error" andMessage:@"Try Again"];
     }];

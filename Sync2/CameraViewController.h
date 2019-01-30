@@ -12,6 +12,7 @@
 @interface CameraViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIView *mainView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (weak, nonatomic) IBOutlet UITextField *customerTextField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextField;
