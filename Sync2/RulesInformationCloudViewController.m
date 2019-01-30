@@ -120,29 +120,6 @@
         case 1: {
             cell.textLabel.text = self.actionsArray[indexPath.row].key;
             cell.detailTextLabel.text = self.actionsArray[indexPath.row].value;
-//            NSInteger idx = indexPath.row / 4;
-//            switch (indexPath.row % 4) {
-//                case 0: {
-//                    cell.textLabel.text = self.rule.actions[idx].type;
-//                    cell.detailTextLabel.text = @"Type";
-//                    break;
-//                }
-//                case 1: {
-//                    cell.textLabel.text = self.rule.actions[idx].subject;
-//                    cell.detailTextLabel.text = @"Subject";
-//                    break;
-//                }
-//                case 2: {
-//                    cell.textLabel.text = self.rule.actions[idx].message;
-//                    cell.detailTextLabel.text = @"Message";
-//                    break;
-//                }
-//                case 3: {
-//                    cell.textLabel.text = [NSString stringWithFormat:@"%lu devices", self.rule.actions[idx].recipients.count];
-//                    cell.detailTextLabel.text = @"Recipients";
-//                    break;
-//                }
-//            }
             break;
         }
         case 2: {

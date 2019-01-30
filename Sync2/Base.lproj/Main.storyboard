@@ -2949,13 +2949,13 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="48.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0W-sY-vnJ" customClass="CopyLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0W-sY-vnJ">
                                                     <rect key="frame" x="20" y="16" width="6.6666666666666679" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged-in E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cit-HX-5Sy">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged-in E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cit-HX-5Sy" customClass="CopyLabel">
                                                     <rect key="frame" x="231.66666666666666" y="16" width="111.33333333333334" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -2981,8 +2981,8 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="keyLabel" destination="Cit-HX-5Sy" id="bML-y6-4rl"/>
-                                            <outlet property="valueLabel" destination="k0W-sY-vnJ" id="XpB-Yp-Maa"/>
+                                            <outlet property="keyLabel" destination="k0W-sY-vnJ" id="8TH-c8-m0i"/>
+                                            <outlet property="valueLabel" destination="Cit-HX-5Sy" id="dPY-js-VbW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
