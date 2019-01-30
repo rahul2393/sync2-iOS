@@ -111,15 +111,15 @@
     
     switch (indexPath.section) {
         case 0: {
-            cell.textLabel.text = self.conditionsArray[indexPath.row].value;
-            cell.detailTextLabel.text = self.conditionsArray[indexPath.row].key;
+            cell.textLabel.text = self.conditionsArray[indexPath.row].key;
+            cell.detailTextLabel.text = self.conditionsArray[indexPath.row].value;
 //            [cell setIndentationLevel:self.conditionsArray[indexPath.row].indentationLevel];  // change indentationWidth from srorybord currently it's 0 set as 10 or 20
 //            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             break;
         }
         case 1: {
-            cell.textLabel.text = self.actionsArray[indexPath.row].value;
-            cell.detailTextLabel.text = self.actionsArray[indexPath.row].key;
+            cell.textLabel.text = self.actionsArray[indexPath.row].key;
+            cell.detailTextLabel.text = self.actionsArray[indexPath.row].value;
 //            NSInteger idx = indexPath.row / 4;
 //            switch (indexPath.row % 4) {
 //                case 0: {
@@ -146,13 +146,13 @@
             break;
         }
         case 2: {
-            cell.textLabel.text = @"9:00 AM, January 1, 2017";
-            cell.detailTextLabel.text = @"Trigger";
+            cell.textLabel.text = @"Trigger";
+            cell.detailTextLabel.text = @"9:00 AM, January 1, 2017";
             break;
         }
         case 3: {
-            cell.textLabel.text = self.rule.tags[indexPath.row];
-            cell.detailTextLabel.text = @"";
+            cell.detailTextLabel.text = self.rule.tags[indexPath.row];
+            cell.textLabel.text = @"";
             break;
         }
         default:
