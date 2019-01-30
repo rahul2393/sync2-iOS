@@ -17,6 +17,7 @@
 -(void) GetProjectsWithCompletion:(void ( ^ _Nullable )(NSArray * projects, NSError * _Nullable error))completed;
 -(void) LoginWithEmail:(NSString *_Nonnull)email andPassword:(NSString *_Nonnull)password
         withCompletion:(void ( ^ _Nullable )(NSError * _Nullable error))completed;
+-(void) GetOrganizationsWithCompletion:(void ( ^ _Nullable )(NSArray *orgs, NSError * _Nullable error))completed;
 
 -(void) GetAPIKeys:(void ( ^ _Nullable )(NSArray * apiKeys, NSError * _Nullable error))completed;
 

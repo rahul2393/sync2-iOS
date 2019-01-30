@@ -14,6 +14,7 @@
 		7520226620610845007FD829 /* EULAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7520226520610845007FD829 /* EULAViewController.m */; };
 		7520226A2061099C007FD829 /* TOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752022692061099C007FD829 /* TOSViewController.m */; };
 		7531658821F5BD93005940EF /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531658721F5BD93005940EF /* UIView+Toast.m */; };
+		753B0CBD2201C34300F21657 /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B0CBC2201C34300F21657 /* Organization.m */; };
 		753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70C2105600B00C11223 /* UIViewExtension.m */; };
 		753CB7102105D07900C11223 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70F2105D07900C11223 /* GradientView.m */; };
 		753CB71921070B8100C11223 /* WelcomeNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB71821070B8100C11223 /* WelcomeNotificationTableViewCell.m */; };
@@ -190,6 +191,8 @@
 		752022692061099C007FD829 /* TOSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOSViewController.m; sourceTree = "<group>"; };
 		7531658621F5BD93005940EF /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		7531658721F5BD93005940EF /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		753B0CBB2201C34300F21657 /* Organization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Organization.h; sourceTree = "<group>"; };
+		753B0CBC2201C34300F21657 /* Organization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Organization.m; sourceTree = "<group>"; };
 		753CB70B21055FF600C11223 /* UIViewExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewExtension.h; sourceTree = "<group>"; };
 		753CB70C2105600B00C11223 /* UIViewExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewExtension.m; sourceTree = "<group>"; };
 		753CB70E2105D06000C11223 /* GradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
@@ -499,6 +502,15 @@
 				7531658721F5BD93005940EF /* UIView+Toast.m */,
 			);
 			name = Toast;
+			sourceTree = "<group>";
+		};
+		753B0CBA2201C31600F21657 /* Organization */ = {
+			isa = PBXGroup;
+			children = (
+				753B0CBB2201C34300F21657 /* Organization.h */,
+				753B0CBC2201C34300F21657 /* Organization.m */,
+			);
+			name = Organization;
 			sourceTree = "<group>";
 		};
 		753CB711210641C400C11223 /* Views */ = {
@@ -1224,6 +1236,7 @@
 		E9A3C2E41ED77DAC00A938CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				753B0CBA2201C31600F21657 /* Organization */,
 				E9F29C162051BB0F0024E3B5 /* Environment Manager */,
 				E9F29C122050B8A60024E3B5 /* Environment */,
 				E9F0A29120240B2F007B7711 /* API Key */,
@@ -1749,6 +1762,7 @@
 				E9352485201FF050008D4F19 /* SGToken.m in Sources */,
 				753CB71C21070BD500C11223 /* JoiningNotificationTableViewCell.m in Sources */,
 				75502A81210A5DC800BFCA2A /* LogMapViewController.m in Sources */,
+				753B0CBD2201C34300F21657 /* Organization.m in Sources */,
 				E98430BC20169E5A00F11887 /* MapSettingsViewController.m in Sources */,
 				E9518B64201802F9001818CC /* TextNotification.m in Sources */,
 				753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */,

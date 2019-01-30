@@ -82,12 +82,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sync2/SenseAPI.m"
-            timestampString = "567337491.1951981"
+            timestampString = "570540619.613873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "258"
             endingLineNumber = "258"
-            landmarkName = "-GetAPIKeys:"
+            landmarkName = "-GetProjectsWithCompletion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -98,7 +98,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sync2/SenseAPI.m"
-            timestampString = "567337491.201358"
+            timestampString = "570540619.6236269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "260"
@@ -1039,6 +1039,22 @@
             startingLineNumber = "78"
             endingLineNumber = "78"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sync2/SenseAPI.m"
+            timestampString = "570540619.630427"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "373"
+            endingLineNumber = "373"
+            landmarkName = "-GetLandmarksForProject:WithCompletion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

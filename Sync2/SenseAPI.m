@@ -7,6 +7,7 @@
 //
 
 #import "SenseAPI.h"
+#import "Organization.h"
 #import "Project.h"
 #import "DataChannel.h"
 #import "ProjectLandmark.h"
@@ -183,6 +184,39 @@
                                                         
                                                         self.userOrgToken = [[SGToken alloc]initWithData:data];
                                                         completed(nil);
+                                                    }
+                                                }];
+    [dataTask resume];
+}
+
+# pragma mark - Get Organizations
+
+- (void)GetOrganizationsWithCompletion:(void (^)(NSArray *, NSError * _Nullable))completed{
+    
+    NSDictionary *headers = @{ @"Authorization": [self bearerToken],
+                               @"Accept": @"application/json",
+                               @"Connection": @"keep-alive" };
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/organizations"]]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
+                                                            return;
+                                                        }
+                                                        
+                                                        NSArray *orgs = [self organizationIdsFromData:data];
+                                                        completed(orgs, nil);
                                                     }
                                                 }];
     [dataTask resume];
@@ -371,6 +405,7 @@
             NSArray *orgs = (NSArray *)responseDict[@"data"];
             for (NSDictionary *org in orgs) {
                 NSString *orgID = org[@"id"];
+                NSString *orgName = org[@"name"];
                 [toReturn addObject:orgID];
             }
         }
