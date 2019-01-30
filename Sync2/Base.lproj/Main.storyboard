@@ -4108,27 +4108,8 @@ Permission</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTj-ja-7Se">
-                                <rect key="frame" x="10" y="175.66666666666666" width="355" height="44"/>
-                                <color key="backgroundColor" red="0.0" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="lMc-Pa-uhd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Trigger Rule">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="triggerRuleTapped:" destination="rkl-oC-fdS" eventType="touchUpInside" id="azG-rz-kw1"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="aNj-7U-ToP">
-                                <rect key="frame" x="10" y="219.66666666666666" width="355" height="398.33333333333337"/>
+                                <rect key="frame" x="10" y="175.66666666666666" width="355" height="442.33333333333337"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RulesInformationCellIdentifier" textLabel="gaO-6d-igN" detailTextLabel="zuI-0S-RWt" style="IBUITableViewCellStyleValue1" id="ITb-Ws-KCD">
@@ -4174,11 +4155,8 @@ Permission</string>
                         <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dj2-4z-bZF" firstAttribute="top" secondItem="66q-9Q-yo2" secondAttribute="bottom" constant="12" id="14a-0p-9wJ"/>
-                            <constraint firstItem="aNj-7U-ToP" firstAttribute="top" secondItem="lTj-ja-7Se" secondAttribute="bottom" id="2fG-RP-8zS"/>
                             <constraint firstItem="EkM-X9-5RN" firstAttribute="top" secondItem="aNj-7U-ToP" secondAttribute="bottom" constant="160" id="BsV-t6-wai"/>
-                            <constraint firstItem="lTj-ja-7Se" firstAttribute="top" secondItem="dj2-4z-bZF" secondAttribute="bottom" constant="15" id="Lwq-BX-ABj"/>
-                            <constraint firstAttribute="trailing" secondItem="lTj-ja-7Se" secondAttribute="trailing" constant="10" id="VE9-FI-4cS"/>
-                            <constraint firstItem="lTj-ja-7Se" firstAttribute="leading" secondItem="PRh-CV-PGO" secondAttribute="leading" constant="10" id="Vzt-wg-xXk"/>
+                            <constraint firstItem="aNj-7U-ToP" firstAttribute="top" secondItem="dj2-4z-bZF" secondAttribute="bottom" constant="15" id="HgF-Rh-aAu"/>
                             <constraint firstAttribute="trailing" secondItem="dj2-4z-bZF" secondAttribute="trailing" constant="10" id="cTx-Dt-mkl"/>
                             <constraint firstItem="aNj-7U-ToP" firstAttribute="leading" secondItem="PRh-CV-PGO" secondAttribute="leading" constant="10" id="ijZ-9t-fgS"/>
                             <constraint firstItem="dj2-4z-bZF" firstAttribute="leading" secondItem="PRh-CV-PGO" secondAttribute="leading" constant="10" id="keh-iV-UZf"/>

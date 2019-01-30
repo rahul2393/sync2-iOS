@@ -44,10 +44,6 @@
     [self.tableView reloadData];
 }
 
-- (IBAction)triggerRuleTapped:(id)sender {
-}
-
-
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *labelView = [[UIView alloc]initWithFrame:CGRectMake(10, 4, tableView.frame.size.width-20, 43)];
     labelView.backgroundColor = [UIColor clearColor];
