@@ -25,9 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.captureAndUploadButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
-    [self.captureAndUploadButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-
     self.title = @"Hailer Integration";
     [self.progressView setHidden:YES];
     
@@ -60,55 +57,54 @@
 
 #pragma mark - IBActions
 
-- (IBAction)captureAndUploadImage:(UIButton *)sender {
+- (IBAction)browseImageTapped:(UIButton *)sender {
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (IBAction)captureImageTapped:(UIButton *)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (IBAction)createActivityTapped:(UIButton *)sender {
     if (!self.imagePath) {
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-        picker.delegate = self;
-        picker.allowsEditing = YES;
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        
-        [self presentViewController:picker animated:YES completion:NULL];
-        
-    } else {
-        // TODO: Call SDK method to upload image
-        
-        [self.progressView setHidden:NO];
-        self.progressView.progress = 0;
-        [self.captureAndUploadButton setEnabled:NO];
-        
-        [SGSDK makehailerIncidentWithFilePath:self.imagePath andCustomer:@"test customer" andDescription:@"test description" andUploadProgressHandler:^(NSProgress *uploadProgress) {
-            self.progressView.progress = uploadProgress.fractionCompleted;
-        } andSuccessHandler:^{
-            [self.progressView setHidden:YES];
-            [self.captureAndUploadButton setEnabled:YES];
-            [self.captureAndUploadButton setTitle:@"Capture Image" forState:UIControlStateNormal];
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Success"
-                                                                           message:@"Image upload successful"
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-            
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
-            
-        } andFailureHandler:^(NSString *failureMsg) {
-            
-            [self.progressView setHidden:YES];
-            [self.captureAndUploadButton setEnabled:YES];
-            [self.captureAndUploadButton setTitle:@"Upload Image" forState:UIControlStateNormal];
-            
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                           message:@"Try again"
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-            
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
-        }];
+        [self showAlertWithTitle:@"Error" andMessage:@"Select an image first"];
+        return;
+    } else if ([self.customerTextField.text isEqualToString:@""]) {
+        [self showAlertWithTitle:@"Error" andMessage:@"Customer cannot be empty"];
+        return;
+    } else if ([self.descriptionTextField.text isEqualToString:@""]) {
+        [self showAlertWithTitle:@"Error" andMessage:@"Description cannot be empty"];
+        return;
     }
+    
+    [self.progressView setHidden:NO];
+    self.progressView.progress = 0;
+    
+    [SGSDK makehailerIncidentWithFilePath:self.imagePath andCustomer:self.customerTextField.text andDescription:self.descriptionTextField.text andUploadProgressHandler:^(NSProgress *uploadProgress) {
+        self.progressView.progress = uploadProgress.fractionCompleted;
+        if (uploadProgress.fractionCompleted == 1) {
+            [self showAlertWithTitle:@"Success" andMessage:@"Image upload successful"];
+        }
+    } andSuccessHandler:^{
+        [self.progressView setHidden:YES];
+        [self dismissViewControllerAnimated:true completion:nil];
+        [self showAlertWithTitle:@"Success" andMessage:@"Activity created successful"];
+        
+    } andFailureHandler:^(NSString *failureMsg) {
+        [self.progressView setHidden:YES];
+        [self showAlertWithTitle:@"Error" andMessage:@"Try Again"];
+    }];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -140,11 +136,6 @@
 -(void) hideEmptyView:(BOOL) yesOrNo{
     [self.emptyView setHidden:yesOrNo];
     [self.imageView setHidden:!yesOrNo];
-    if (yesOrNo) {
-        [self.captureAndUploadButton setTitle:@"Upload Image" forState:UIControlStateNormal];
-    } else {
-        [self.captureAndUploadButton setTitle:@"Capture Image" forState:UIControlStateNormal];
-    }
 }
 
 -(void) checkForCameraPermission{
@@ -167,4 +158,9 @@
     }
 }
 
+-(void) showAlertWithTitle:(NSString *)title andMessage:(NSString *)message {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:alertController animated:true completion:nil];
+}
 @end

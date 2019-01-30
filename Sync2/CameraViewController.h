@@ -11,11 +11,17 @@
 
 @interface CameraViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *mainView;
+
+@property (weak, nonatomic) IBOutlet UITextField *customerTextField;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIView *emptyView;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
-@property (weak, nonatomic) IBOutlet UIButton *captureAndUploadButton;
+@property (weak, nonatomic) IBOutlet UIButton *createActivity;
 
-- (IBAction)captureAndUploadImage:(UIButton *)sender;
+- (IBAction)browseImageTapped:(UIButton *)sender;
+- (IBAction)captureImageTapped:(UIButton *)sender;
+- (IBAction)createActivityTapped:(UIButton *)sender;
 
 @end
