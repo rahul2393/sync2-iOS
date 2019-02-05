@@ -29,6 +29,7 @@ CF_EXTERN_C_BEGIN
 
 @class Activity;
 @class Configuration;
+@class Error;
 @class Event;
 @class GatewayRegistrationRequest_SystemInfo;
 @class GatewaySyncRequest_Summary;
@@ -280,6 +281,21 @@ typedef GPB_ENUM(Push_FieldNumber) {
 
 @end
 
+#pragma mark - Error
+
+typedef GPB_ENUM(Error_FieldNumber) {
+  Error_FieldNumber_ErrorCode = 1,
+  Error_FieldNumber_ErrorMessage = 2,
+};
+
+@interface Error : GPBMessage
+
+@property(nonatomic, readwrite) int32_t errorCode;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *errorMessage;
+
+@end
+
 #pragma mark - Event
 
 typedef GPB_ENUM(Event_FieldNumber) {
@@ -293,6 +309,7 @@ typedef GPB_ENUM(Event_FieldNumber) {
   Event_FieldNumber_Properties = 8,
   Event_FieldNumber_Push = 9,
   Event_FieldNumber_Attributes = 10,
+  Event_FieldNumber_ErrorArray = 11,
 };
 
 @interface Event : GPBMessage
@@ -334,6 +351,10 @@ typedef GPB_ENUM(Event_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *attributes;
 /** The number of items in @c attributes without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger attributes_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Error*> *errorArray;
+/** The number of items in @c errorArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger errorArray_Count;
 
 @end
 
@@ -716,38 +737,44 @@ typedef GPB_ENUM(MqttEventRequest_FieldNumber) {
 
 typedef GPB_ENUM(Notification_FieldNumber) {
   Notification_FieldNumber_Id_p = 1,
-  Notification_FieldNumber_Type = 2,
-  Notification_FieldNumber_Title = 3,
-  Notification_FieldNumber_Body = 4,
-  Notification_FieldNumber_Timestamp = 5,
-  Notification_FieldNumber_DeviceId = 6,
-  Notification_FieldNumber_ActionTitle = 7,
-  Notification_FieldNumber_SubmitURL = 9,
-  Notification_FieldNumber_CommentHint = 10,
-  Notification_FieldNumber_ButtonText = 11,
-  Notification_FieldNumber_StartTimestamp = 12,
-  Notification_FieldNumber_EndTimestamp = 13,
-  Notification_FieldNumber_Latitude = 14,
-  Notification_FieldNumber_Longitude = 15,
-  Notification_FieldNumber_Address = 16,
-  Notification_FieldNumber_AddressTitle = 17,
-  Notification_FieldNumber_ActionsArray = 18,
-  Notification_FieldNumber_OptionsArray = 19,
+  Notification_FieldNumber_Timestamp = 2,
+  Notification_FieldNumber_DeviceId = 3,
+  Notification_FieldNumber_Subject = 4,
+  Notification_FieldNumber_Message = 5,
+  Notification_FieldNumber_Type = 6,
+  Notification_FieldNumber_Title = 7,
+  Notification_FieldNumber_Body = 8,
+  Notification_FieldNumber_ActionTitle = 9,
+  Notification_FieldNumber_SubmitURL = 10,
+  Notification_FieldNumber_CommentHint = 11,
+  Notification_FieldNumber_ButtonText = 12,
+  Notification_FieldNumber_StartTimestamp = 13,
+  Notification_FieldNumber_EndTimestamp = 14,
+  Notification_FieldNumber_Latitude = 15,
+  Notification_FieldNumber_Longitude = 16,
+  Notification_FieldNumber_Address = 17,
+  Notification_FieldNumber_AddressTitle = 18,
+  Notification_FieldNumber_ActionsArray = 19,
+  Notification_FieldNumber_OptionsArray = 20,
 };
 
 @interface Notification : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
+@property(nonatomic, readwrite) int64_t timestamp;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *subject;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *message;
+
 @property(nonatomic, readwrite, copy, null_resettable) NSString *type;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *title;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *body;
-
-@property(nonatomic, readwrite) int64_t timestamp;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *actionTitle;
 
