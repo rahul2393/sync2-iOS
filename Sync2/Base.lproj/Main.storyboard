@@ -1746,7 +1746,7 @@ Let us know what you would like to see:</string>
                                                             <rect key="frame" x="0.0" y="28" width="335" height="38"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7lv-xe-yKM" id="5ET-8I-o9t">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="37.666666666666664"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IIA-yQ-dY7">
@@ -2114,6 +2114,66 @@ Let us know what you would like to see:</string>
                                             <outlet property="titleLabel" destination="Rnu-Xl-ex6" id="2jW-ot-Edd"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DefaultNotificationTableViewCellIdentifier" rowHeight="90" id="rp1-ig-ebQ" customClass="DefaultNotificationTableViewCell">
+                                        <rect key="frame" x="0.0" y="1845" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rp1-ig-ebQ" id="KK9-CR-ytm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2c-JF-70P">
+                                                    <rect key="frame" x="20" y="17" width="335" height="17"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-image" translatesAutoresizingMaskIntoConstraints="NO" id="hjK-2i-k8m">
+                                                    <rect key="frame" x="20" y="46" width="335" height="2"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="l9B-UM-Wjh"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hc-FB-QhY">
+                                                    <rect key="frame" x="20" y="57" width="335" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="hjK-2i-k8m" secondAttribute="trailing" constant="20" id="0Mu-UI-Yfn"/>
+                                                <constraint firstItem="0hc-FB-QhY" firstAttribute="leading" secondItem="KK9-CR-ytm" secondAttribute="leading" constant="20" id="6ov-ka-Xe0"/>
+                                                <constraint firstAttribute="trailing" secondItem="P2c-JF-70P" secondAttribute="trailing" constant="20" id="6pc-5w-Pdg"/>
+                                                <constraint firstItem="P2c-JF-70P" firstAttribute="leading" secondItem="KK9-CR-ytm" secondAttribute="leading" constant="20" id="Lgq-Mo-kRI"/>
+                                                <constraint firstItem="hjK-2i-k8m" firstAttribute="leading" secondItem="KK9-CR-ytm" secondAttribute="leading" constant="20" id="Qvc-nw-oao"/>
+                                                <constraint firstItem="hjK-2i-k8m" firstAttribute="top" secondItem="P2c-JF-70P" secondAttribute="bottom" constant="12" id="TMq-iH-5Nb"/>
+                                                <constraint firstAttribute="trailing" secondItem="0hc-FB-QhY" secondAttribute="trailing" constant="20" id="YFe-aq-ZqG"/>
+                                                <constraint firstAttribute="bottom" secondItem="0hc-FB-QhY" secondAttribute="bottom" constant="15.666666666666671" id="edD-H3-XVq"/>
+                                                <constraint firstItem="P2c-JF-70P" firstAttribute="top" secondItem="KK9-CR-ytm" secondAttribute="top" constant="17" id="fDt-Rd-sRS"/>
+                                                <constraint firstItem="0hc-FB-QhY" firstAttribute="top" secondItem="hjK-2i-k8m" secondAttribute="bottom" constant="9" id="suf-mY-UMM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="detailLabel" destination="0hc-FB-QhY" id="kIG-XG-Nk1"/>
+                                            <outlet property="titleLabel" destination="P2c-JF-70P" id="fHd-Lo-Yx4"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PQ-1Z-ezt">
@@ -2146,86 +2206,6 @@ Notifications yet.</string>
                                     <constraint firstItem="Xrg-pP-QPa" firstAttribute="centerX" secondItem="6PQ-1Z-ezt" secondAttribute="centerX" id="K5q-3Q-Z80"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z11-pA-Du6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tot-RH-xQw">
-                                        <rect key="frame" x="20" y="104" width="335" height="433"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notification-permission-missing" translatesAutoresizingMaskIntoConstraints="NO" id="d9T-HE-EZH">
-                                                <rect key="frame" x="127.66666666666666" y="30" width="80" height="80"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="TIU-J7-xbN"/>
-                                                    <constraint firstAttribute="height" constant="80" id="hvu-kN-viA"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2j-GU-uKY">
-                                                <rect key="frame" x="68" y="131" width="199" height="57.333333333333343"/>
-                                                <string key="text">Push Notifications
-Permission Missing</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wq-hM-sSy">
-                                                <rect key="frame" x="10" y="209.33333333333334" width="315" height="100.33333333333334"/>
-                                                <string key="text">Sync uses push notifications to send messages to your device and update application data in the background.  You need to enable Push Notifications in your Device Settings for Sync app.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrW-lK-IyZ">
-                                                <rect key="frame" x="27" y="359" width="281" height="44"/>
-                                                <color key="backgroundColor" red="0.0" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="p21-wJ-9sC"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <state key="normal" title="Open Device Settings">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="3"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="openDeviceSettings:" destination="fs6-bm-7OI" eventType="touchUpInside" id="FGx-Gq-kOb"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.91000000000000003" blue="0.93999999999999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="z2j-GU-uKY" firstAttribute="top" secondItem="d9T-HE-EZH" secondAttribute="bottom" constant="21" id="5DL-sB-3b2"/>
-                                            <constraint firstItem="DrW-lK-IyZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Wq-hM-sSy" secondAttribute="bottom" constant="21" id="76f-g7-yYc"/>
-                                            <constraint firstItem="DrW-lK-IyZ" firstAttribute="leading" secondItem="tot-RH-xQw" secondAttribute="leading" constant="27" id="Biy-Hr-5Ko"/>
-                                            <constraint firstItem="6Wq-hM-sSy" firstAttribute="leading" secondItem="tot-RH-xQw" secondAttribute="leading" constant="10" id="Cvg-DS-YQ9"/>
-                                            <constraint firstItem="6Wq-hM-sSy" firstAttribute="top" secondItem="z2j-GU-uKY" secondAttribute="bottom" constant="21" id="N5C-2P-kdF"/>
-                                            <constraint firstAttribute="height" constant="433" id="S9f-79-hte"/>
-                                            <constraint firstItem="z2j-GU-uKY" firstAttribute="centerX" secondItem="tot-RH-xQw" secondAttribute="centerX" id="VjP-rx-U25"/>
-                                            <constraint firstItem="d9T-HE-EZH" firstAttribute="top" secondItem="tot-RH-xQw" secondAttribute="top" constant="30" id="VoT-cO-Rd2"/>
-                                            <constraint firstItem="DrW-lK-IyZ" firstAttribute="centerX" secondItem="tot-RH-xQw" secondAttribute="centerX" id="mPS-PJ-ysb"/>
-                                            <constraint firstItem="d9T-HE-EZH" firstAttribute="centerX" secondItem="tot-RH-xQw" secondAttribute="centerX" id="nDk-fZ-9Pk"/>
-                                            <constraint firstAttribute="bottom" secondItem="DrW-lK-IyZ" secondAttribute="bottom" constant="30" id="nSG-KQ-wLa"/>
-                                            <constraint firstItem="6Wq-hM-sSy" firstAttribute="centerX" secondItem="tot-RH-xQw" secondAttribute="centerX" id="ntE-jU-o8v"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="tot-RH-xQw" firstAttribute="centerY" secondItem="Z11-pA-Du6" secondAttribute="centerY" id="IYU-aM-XeA"/>
-                                    <constraint firstItem="tot-RH-xQw" firstAttribute="leading" secondItem="Z11-pA-Du6" secondAttribute="leading" constant="20" id="Nut-Mj-k4d"/>
-                                    <constraint firstAttribute="trailing" secondItem="tot-RH-xQw" secondAttribute="trailing" constant="20" id="zc7-sl-abx"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -2234,25 +2214,20 @@ Permission Missing</string>
                             <constraint firstItem="mai-qN-Rfp" firstAttribute="top" secondItem="kyZ-qP-GC0" secondAttribute="bottom" id="9OR-hw-dko"/>
                             <constraint firstItem="mai-qN-Rfp" firstAttribute="top" secondItem="6PQ-1Z-ezt" secondAttribute="bottom" id="B7f-s4-8wX"/>
                             <constraint firstItem="6PQ-1Z-ezt" firstAttribute="top" secondItem="B7l-XI-2vA" secondAttribute="bottom" id="F79-5e-3hW"/>
-                            <constraint firstItem="Z11-pA-Du6" firstAttribute="top" secondItem="B7l-XI-2vA" secondAttribute="bottom" id="FwB-Ri-EcR"/>
                             <constraint firstItem="6PQ-1Z-ezt" firstAttribute="leading" secondItem="caM-SX-w4N" secondAttribute="leading" id="IqQ-QX-Buv"/>
-                            <constraint firstAttribute="trailing" secondItem="Z11-pA-Du6" secondAttribute="trailing" id="JwL-35-li1"/>
-                            <constraint firstItem="mai-qN-Rfp" firstAttribute="top" secondItem="Z11-pA-Du6" secondAttribute="bottom" id="XdO-8l-72T"/>
                             <constraint firstAttribute="trailing" secondItem="6PQ-1Z-ezt" secondAttribute="trailing" id="cTW-WZ-woh"/>
-                            <constraint firstItem="Z11-pA-Du6" firstAttribute="leading" secondItem="caM-SX-w4N" secondAttribute="leading" id="oDL-Oh-tOX"/>
                             <constraint firstItem="kyZ-qP-GC0" firstAttribute="leading" secondItem="caM-SX-w4N" secondAttribute="leading" id="ury-52-5GB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Notification" id="yfj-Wx-Igd"/>
                     <connections>
                         <outlet property="noNotificationsView" destination="6PQ-1Z-ezt" id="gST-Ch-icN"/>
-                        <outlet property="permissionMissingView" destination="Z11-pA-Du6" id="qMo-4R-L0x"/>
                         <outlet property="tableView" destination="kyZ-qP-GC0" id="p3Q-vc-iQz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9U-dz-V02" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8040" y="-660"/>
+            <point key="canvasLocation" x="8039.1999999999998" y="-660.59113300492618"/>
         </scene>
         <!--Rules-->
         <scene sceneID="J2Q-g8-28x">
@@ -6059,10 +6034,9 @@ revised: 5/9/2016</string>
         <image name="map-blue" width="24" height="24"/>
         <image name="map-icon" width="78" height="72"/>
         <image name="no-notification" width="80" height="80"/>
-        <image name="notification-permission-missing" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>

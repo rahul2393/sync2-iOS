@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D03816FF72873E2FF7D5C5B /* libPods-Sync2.a */; };
 		750220C421F8A155001FB953 /* TextNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 750220C221F8A154001FB953 /* TextNotification.m */; };
+		75143F3B2209CAD900617D33 /* DefaultNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75143F3A2209CAD900617D33 /* DefaultNotificationTableViewCell.m */; };
 		751C4A76210F0B530040E717 /* RulesInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A75210F0B530040E717 /* RulesInformationViewController.m */; };
 		751C4A79210F0FB20040E717 /* RulesInformationEdgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A78210F0FB10040E717 /* RulesInformationEdgeViewController.m */; };
 		751C4A7C210F0FC50040E717 /* RulesInformationCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751C4A7B210F0FC50040E717 /* RulesInformationCloudViewController.m */; };
@@ -172,6 +173,8 @@
 		2DB0C3E88E97E1E5750C48B5 /* Pods-Sync2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sync2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sync2Tests/Pods-Sync2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		750220C221F8A154001FB953 /* TextNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextNotification.m; sourceTree = "<group>"; };
 		750220C321F8A154001FB953 /* TextNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextNotification.h; sourceTree = "<group>"; };
+		75143F392209CAD900617D33 /* DefaultNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefaultNotificationTableViewCell.h; sourceTree = "<group>"; };
+		75143F3A2209CAD900617D33 /* DefaultNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DefaultNotificationTableViewCell.m; sourceTree = "<group>"; };
 		751C4A74210F0B530040E717 /* RulesInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesInformationViewController.h; sourceTree = "<group>"; };
 		751C4A75210F0B530040E717 /* RulesInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RulesInformationViewController.m; sourceTree = "<group>"; };
 		751C4A77210F0FB10040E717 /* RulesInformationEdgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RulesInformationEdgeViewController.h; sourceTree = "<group>"; };
@@ -541,6 +544,8 @@
 			children = (
 				753CB71721070B8100C11223 /* WelcomeNotificationTableViewCell.h */,
 				753CB71821070B8100C11223 /* WelcomeNotificationTableViewCell.m */,
+				75143F392209CAD900617D33 /* DefaultNotificationTableViewCell.h */,
+				75143F3A2209CAD900617D33 /* DefaultNotificationTableViewCell.m */,
 				753CB71A21070BD500C11223 /* JoiningNotificationTableViewCell.h */,
 				753CB71B21070BD500C11223 /* JoiningNotificationTableViewCell.m */,
 				753CB71D21070BE900C11223 /* FeedbackNotificationTableViewCell.h */,
@@ -1613,6 +1618,7 @@
 				E962B3561EF1FDC400ECB920 /* SDKManager.m in Sources */,
 				E95F582A1EE61E7B000562FC /* CameraPermissionViewController.m in Sources */,
 				E9B76D43200D32580095030C /* RulesCloudViewController.m in Sources */,
+				75143F3B2209CAD900617D33 /* DefaultNotificationTableViewCell.m in Sources */,
 				E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */,
 				E9352481201FD301008D4F19 /* LoginViewController.m in Sources */,
 				75DABA39211043820040A170 /* CustomSegmentControlViewController.m in Sources */,
