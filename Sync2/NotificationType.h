@@ -15,6 +15,7 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
+    PUSH,
     INFORMATION,
     ACTION_NOTIFICATION,
     FEEDBACK,
@@ -23,7 +24,7 @@ typedef enum {
     EVENT
 } kNotificationType;
 
-#define kNotificationTypeArray @"push-information", @"push-action", @"push-feedback", @"push-survey", @"push-schedule", @"push-event", nil
+#define kNotificationTypeArray @"push", @"push-information", @"push-action", @"push-feedback", @"push-survey", @"push-schedule", @"push-event", nil
 
 @interface NotificationType : NSObject
 
