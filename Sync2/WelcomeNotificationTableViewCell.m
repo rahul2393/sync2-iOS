@@ -21,6 +21,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    self.pTagContent = @"";
+    self.aTagContent = @"";
+    self.aTagURL = @"";
+    
     // Initialization code
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTapped:)];
     [self.detailLabel addGestureRecognizer:tapGestureRecognizer];
@@ -70,14 +74,20 @@
     
     NSString *pTagXpathQueryString = @"/html/body/p";
     NSArray *pTagArray = [tutorialsParser searchWithXPathQuery:pTagXpathQueryString];
-    TFHppleElement *pTagElement = pTagArray[0];
-    self.pTagContent = pTagElement.content;
     
-    // set aTagContent and aTagURL
-    
-    TFHppleElement *aTagContentElement = pTagElement.children[1];
-    self.aTagContent = aTagContentElement.content;
-    self.aTagURL = aTagContentElement.attributes[@"href"];
+    if (pTagArray.count > 0) {
+        TFHppleElement *pTagElement = pTagArray[0];
+        self.pTagContent = pTagElement.content;
+        
+        // set aTagContent and aTagURL
+        if (pTagElement.children.count > 1) {
+            TFHppleElement *aTagContentElement = pTagElement.children[1];
+            self.aTagContent = aTagContentElement.content;
+            if (aTagContentElement.attributes[@"href"]) {
+                self.aTagURL = aTagContentElement.attributes[@"href"];
+            }
+        }
+    }
 }
 
 @end
