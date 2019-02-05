@@ -104,7 +104,7 @@
         
         [self.progressView setHidden:YES];
         
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Success" message:@"Activity created successful" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Success" message:@"Activity created successfully" preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self.navigationController popViewControllerAnimated:true];
         }]];
