@@ -39,6 +39,15 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    [SGSDK getLocationWithCompletionHandler:^(Location * _Nullable location, Error * _Nullable error) {
+        if (location) {
+            NSLog(@"Test 1 got location %@", location);
+        } else {
+            NSLog(@"Test 1 got failure messgae %@", error.description);
+        }
+    }];
+    
     self.log = [[SDKManager sharedManager] sensorsData].lastObject;
     [self.tableView reloadData];
 }
