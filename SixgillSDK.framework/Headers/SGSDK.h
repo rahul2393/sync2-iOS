@@ -52,6 +52,8 @@
 
 +(void) forceSensorUpdate;
 
++(void) getLocationWithCompletionHandler:(nullable void (^)(Location * _Nullable, Error * _Nullable))completed;
+
 +(void)getRulesOfType:(NSString *)type andSuccessHandler:(nullable void (^)(NSMutableArray<SGRule*> *))successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
 
 +(void) showNotificationsFromOffset:(NSInteger *)offset andLimit:(NSInteger *)limit andSuccessHandler:(void (^)(NSArray<Notification*> *))successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
