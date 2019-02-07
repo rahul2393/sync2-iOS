@@ -8,7 +8,6 @@
 
 #import "SenseAPI.h"
 #import "Organization.h"
-#import "Project.h"
 #import "DataChannel.h"
 #import "ProjectLandmark.h"
 #import "APIKey.h"
@@ -186,39 +185,6 @@
     [dataTask resume];
 }
 
-# pragma mark - Get Projects
-
--(void) GetProjectsWithCompletion:(void ( ^ _Nullable )(NSArray * projects, NSError * _Nullable error))completed{
-    
-    NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
-                               @"Accept": @"application/json",
-                               @"Connection": @"keep-alive" };
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/projects"]]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:10.0];
-    [request setHTTPMethod:@"GET"];
-    [request setAllHTTPHeaderFields:headers];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    if (error) {
-                                                        NSLog(@"%@", error);
-                                                    } else {
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
-                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
-                                                            return;
-                                                        }
-                                                        
-                                                        NSArray *projects = [self projectsFromData:data];
-                                                        completed(projects, nil);
-                                                    }
-                                                }];
-    [dataTask resume];
-}
-
 -(void) GetAPIKeys:(void ( ^ _Nullable )(NSArray * apiKeys, NSError * _Nullable error))completed{
     
     NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
@@ -300,13 +266,12 @@
 
 # pragma mark - Get Landmarks
 
--(void) GetLandmarksForProject:(NSString *_Nonnull)projectId WithCompletion:(void ( ^ _Nullable )(NSArray *landmarks, NSError * _Nullable error))completed{
+- (void)GetLandmarksWithCompletion:(void (^)(NSArray *, NSError * _Nullable))completed{
     
     NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
                                @"Content-Type": @"application/json" };
     
-    NSDictionary *parameters = @{ @"projectId": projectId,
-                                  @"limit": @20,
+    NSDictionary *parameters = @{ @"limit": @20,
                                   @"offset": @0};
     
     NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
@@ -441,35 +406,10 @@
     if ([object isKindOfClass:[NSDictionary class]]) {
         NSDictionary *responseDict = (NSDictionary *)object;
         if(responseDict[@"data"]){
-            NSArray *projectObjects = (NSArray *)responseDict[@"data"];
-            for (NSDictionary *projectObject in projectObjects) {
-                DataChannel *p = [[DataChannel alloc] initWithData:projectObject];
-                [toReturn addObject:p];
-            }
-        }
-    }
-    
-    
-    return toReturn;
-}
-
--(NSArray *) projectsFromData:(NSData *) data{
-    NSMutableArray *toReturn = [NSMutableArray array];
-    
-    NSError *error = nil;
-    id object = [NSJSONSerialization
-                 JSONObjectWithData:data
-                 options:0
-                 error:&error];
-    
-    
-    if ([object isKindOfClass:[NSDictionary class]]) {
-        NSDictionary *responseDict = (NSDictionary *)object;
-        if(responseDict[@"data"]){
-            NSArray *projectObjects = (NSArray *)responseDict[@"data"];
-            for (NSDictionary *projectObject in projectObjects) {
-                Project *p = [[Project alloc] initWithData:projectObject];
-                [toReturn addObject:p];
+            NSArray *channelObjects = (NSArray *)responseDict[@"data"];
+            for (NSDictionary *channelObject in channelObjects) {
+                DataChannel *c = [[DataChannel alloc] initWithData:channelObject];
+                [toReturn addObject:c];
             }
         }
     }

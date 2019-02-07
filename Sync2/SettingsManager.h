@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Account.h"
-#import "Project.h"
 #import "Organization.h"
 #import "DataChannel.h"
 #import "SGToken.h"
@@ -27,9 +26,6 @@
 
 - (SGToken *)currentUserOrgToken;
 - (void)setCurrentUserOrgToken:(SGToken *)userOrgToken;
-
--(Project *) selectedProject;
--(void) selectProject:(Project *)project;
 
 -(Organization *) selectedOrganization;
 -(void) selectOrganization:(Organization *)org withCompletionHandler:(void ( ^ _Nullable )(NSError * _Nullable error))completionBlock;

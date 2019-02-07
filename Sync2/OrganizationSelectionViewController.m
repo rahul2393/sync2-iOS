@@ -9,7 +9,7 @@
 #import "OrganizationSelectionViewController.h"
 #import "Organization.h"
 #import "SettingsManager.h"
-#import "ProjectSelectionTableViewCell.h"
+#import "SelectionTableViewCell.h"
 #import "SnackbarView.h"
 #import "SDKManager.h"
 
@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"ProjectSelectionTableViewCell" bundle:nil] forCellReuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"SelectionTableViewCell" bundle:nil] forCellReuseIdentifier:@"SelectionTableViewCellIdentifier"];
     
     if (!self.organizations) {
         self.organizations = [NSArray new];
@@ -96,10 +96,10 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    ProjectSelectionTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
+    SelectionTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"SelectionTableViewCellIdentifier"];
     
     if (cell == nil) {
-        cell = [[ProjectSelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
+        cell = [[SelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SelectionTableViewCellIdentifier"];
     }
     
     Organization *o = self.organizations[indexPath.row];

@@ -43,7 +43,6 @@
 #define KEY_Notifications @"notifications"
 
 #define KEY_SelectedOrganization @"selectedOrganization"
-#define KEY_SelectedProject @"selectedProject"
 #define KEY_SelectedDataChannel @"selectedDataChannel"
 
 #define SG_PUSH_CMD_FIELD @"data"
@@ -201,28 +200,11 @@
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_AccountEmail];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_UserToken];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_UserOrgToken];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedProject];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_ACTIVEACCOUNTID];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_Notifications];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [[SDKManager sharedManager] clearSensorsData];
-}
-
--(Project *) selectedProject{
-    NSDictionary *d = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SelectedProject];
-    if (!d) {
-        return nil;
-    }
-    
-    Project *p = [[Project alloc]initWithData:d];
-    
-    return p;
-}
-
--(void) selectProject:(Project *)project{
-    [[NSUserDefaults standardUserDefaults] setObject:[project toDictionary] forKey:KEY_SelectedProject];
-    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (Organization *)selectedOrganization{

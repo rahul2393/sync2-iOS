@@ -11,7 +11,6 @@
 #import "SenseAPI.h"
 #import "OrganizationSelectionViewController.h"
 #import "DataChannelSelectionViewController.h"
-#import "ProjectSelectionViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "SDKManager.h"
 
@@ -19,7 +18,6 @@
 @interface MasterTabViewController ()
 
 @property (nonatomic, strong) NSArray *dataChannels;
-@property (nonatomic, strong) NSArray *projects;
 @property (nonatomic, strong) NSArray *organizations;
 
 @end
@@ -61,8 +59,6 @@
         [self loadOrganizations];
     }else if (![[SettingsManager sharedManager] selectedDataChannel]) {
         [self loadDataChannels];
-    }else if (![[SettingsManager sharedManager] selectedProject]) {
-        [self loadProjects];
     }
 }
 
@@ -82,25 +78,11 @@
         UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
         DataChannelSelectionViewController *dcsvc = (DataChannelSelectionViewController *)nav.viewControllers[0];
         dcsvc.channels = self.dataChannels;
-    }else if ([segue.identifier isEqualToString:@"showProjectSelection"]) {
-        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
-        ProjectSelectionViewController *vc = (ProjectSelectionViewController *)nav.viewControllers[0];
-        vc.projects = self.projects;
     }else if ([segue.identifier isEqualToString:@"showOrganizationSelection"]) {
         UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
         OrganizationSelectionViewController *vc = (OrganizationSelectionViewController *)nav.viewControllers[0];
         vc.organizations = self.organizations;
     }
-}
-
--(void) loadProjects{
-    [[SenseAPI sharedManager] GetProjectsWithCompletion:^(NSArray *projects, NSError * _Nullable error) {
-        self.projects = projects;
-        dispatch_async(dispatch_get_main_queue(),^{
-            [self performSegueWithIdentifier:@"showProjectSelection" sender:self];
-        });
-        
-    }];
 }
 
 -(void) loadOrganizations{

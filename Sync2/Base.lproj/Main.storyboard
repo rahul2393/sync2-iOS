@@ -1343,7 +1343,6 @@ You can now proceed to Login.</string>
                     </tabBar>
                     <connections>
                         <segue destination="nZx-4k-yIp" kind="presentation" identifier="showDataChannelSelection" id="bdL-UT-Onr"/>
-                        <segue destination="GG5-PT-2eE" kind="presentation" identifier="showProjectSelection" id="tiO-Cx-fFe"/>
                         <segue destination="k3B-Al-8Ut" kind="relationship" relationship="viewControllers" id="LjP-7p-sKc"/>
                         <segue destination="myb-OP-fNK" kind="relationship" relationship="viewControllers" id="qNG-dY-FlY"/>
                         <segue destination="pji-3k-kYe" kind="relationship" relationship="viewControllers" id="w7q-1m-dbb"/>
@@ -3006,196 +3005,11 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                     <connections>
                         <outlet property="tableView" destination="yAz-B7-Fes" id="V1Y-Uq-adl"/>
                         <segue destination="nZx-4k-yIp" kind="show" identifier="dataChannelSelection" id="X8u-Xy-liR"/>
-                        <segue destination="GG5-PT-2eE" kind="show" identifier="projectSelection" id="sfn-Bk-AGt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H22-hf-Irn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8145" y="2716"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="xHq-DH-kIG">
-            <objects>
-                <navigationController id="GG5-PT-2eE" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kc4-UN-CmJ">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0062943333760000003" green="0.17320993539999999" blue="0.4145198464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="V7K-OI-iyV" kind="relationship" relationship="rootViewController" id="KTb-bQ-GTg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EXV-BS-KCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="9324" y="-2750"/>
-        </scene>
-        <!--Select Project to Use-->
-        <scene sceneID="wY9-4F-diD">
-            <objects>
-                <viewController id="V7K-OI-iyV" customClass="ProjectSelectionViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sxg-6U-6uV"/>
-                        <viewControllerLayoutGuide type="bottom" id="dW8-0e-yOx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="agB-wX-HQ7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ir-Qq-HDZ">
-                                <rect key="frame" x="10" y="98" width="355" height="200"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Projects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dc5-4U-cKt">
-                                        <rect key="frame" x="20" y="17" width="320" height="19.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-image" translatesAutoresizingMaskIntoConstraints="NO" id="fuV-8u-vhM">
-                                        <rect key="frame" x="20" y="47.666666666666657" width="315" height="1"/>
-                                        <color key="backgroundColor" red="0.094049341980000006" green="0.02848093212" blue="0.025658469650000001" alpha="0.1573202055" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <bool key="isElement" value="YES"/>
-                                        </accessibility>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="0HL-MN-MCn"/>
-                                        </constraints>
-                                    </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eil-CR-Abz">
-                                        <rect key="frame" x="10" y="56.666666666666657" width="335" height="131.33333333333334"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">You can manage and create projects within Sixgill Sense. Each project has their own Landmarks and Rules within it and one or many data channels.  We recommend selecting a Project that you want to test rules or Landmarks from.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="eil-CR-Abz" firstAttribute="top" secondItem="fuV-8u-vhM" secondAttribute="bottom" constant="8" id="1Yv-IJ-Cun"/>
-                                    <constraint firstAttribute="trailing" secondItem="Dc5-4U-cKt" secondAttribute="trailing" constant="15" id="Ehk-Ul-JLR"/>
-                                    <constraint firstAttribute="height" constant="200" id="IkL-rF-T7N"/>
-                                    <constraint firstItem="Dc5-4U-cKt" firstAttribute="top" secondItem="4Ir-Qq-HDZ" secondAttribute="top" constant="17" id="L19-gg-Nay"/>
-                                    <constraint firstAttribute="bottom" secondItem="eil-CR-Abz" secondAttribute="bottom" constant="12" id="Tus-aq-k8O"/>
-                                    <constraint firstAttribute="trailing" secondItem="fuV-8u-vhM" secondAttribute="trailing" constant="20" id="jRp-J2-Ikp"/>
-                                    <constraint firstItem="Dc5-4U-cKt" firstAttribute="leading" secondItem="4Ir-Qq-HDZ" secondAttribute="leading" constant="20" id="osG-KK-gW4"/>
-                                    <constraint firstItem="fuV-8u-vhM" firstAttribute="top" secondItem="Dc5-4U-cKt" secondAttribute="bottom" constant="11" id="vKn-kL-wPU"/>
-                                    <constraint firstItem="fuV-8u-vhM" firstAttribute="leading" secondItem="4Ir-Qq-HDZ" secondAttribute="leading" constant="20" id="zqq-St-NHd"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-7S-yj0" userLabel="table">
-                                <rect key="frame" x="10" y="313" width="355" height="382"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="dataSource" destination="V7K-OI-iyV" id="vDr-Mw-9sr"/>
-                                    <outlet property="delegate" destination="V7K-OI-iyV" id="GGB-gX-1ao"/>
-                                </connections>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZX-1b-EJD" userLabel="select-project-button">
-                                <rect key="frame" x="10" y="710" width="355" height="44"/>
-                                <color key="backgroundColor" red="0.12692853809999999" green="0.3115601838" blue="0.74908894299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <accessibility key="accessibilityConfiguration" identifier="select-project-button" label="Select Project">
-                                    <bool key="isElement" value="NO"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="9AT-NX-naa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Select Project">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="selectProjectButtonTapped:" destination="V7K-OI-iyV" eventType="touchUpInside" id="889-B8-kIB"/>
-                                </connections>
-                            </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lA-6p-rgy">
-                                <rect key="frame" x="0.0" y="298" width="375" height="412"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyh-ad-fzn">
-                                <rect key="frame" x="10" y="313" width="355" height="382"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rules-empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="smC-oK-eS9">
-                                        <rect key="frame" x="140" y="50" width="75" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="Vtn-sY-frG"/>
-                                            <constraint firstAttribute="height" constant="80" id="lli-vC-wLl"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No active data project exist in this account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a4-6M-gHc">
-                                        <rect key="frame" x="20" y="166" width="315" height="19.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" red="0.60999999999999999" green="0.60999999999999999" blue="0.60999999999999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="0a4-6M-gHc" firstAttribute="centerX" secondItem="Nyh-ad-fzn" secondAttribute="centerX" id="3DQ-cK-Zbn"/>
-                                    <constraint firstItem="0a4-6M-gHc" firstAttribute="leading" secondItem="Nyh-ad-fzn" secondAttribute="leading" constant="20" id="EvH-Tw-xlC"/>
-                                    <constraint firstItem="smC-oK-eS9" firstAttribute="centerX" secondItem="Nyh-ad-fzn" secondAttribute="centerX" id="G32-dA-t2w"/>
-                                    <constraint firstItem="smC-oK-eS9" firstAttribute="top" secondItem="Nyh-ad-fzn" secondAttribute="top" constant="50" id="kfo-qA-iJG"/>
-                                    <constraint firstItem="0a4-6M-gHc" firstAttribute="top" secondItem="smC-oK-eS9" secondAttribute="bottom" constant="36" id="lPb-V8-zN9"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="eil-CR-Abz" firstAttribute="leading" secondItem="agB-wX-HQ7" secondAttribute="leading" constant="20" id="0yx-OD-akx"/>
-                            <constraint firstItem="3lA-6p-rgy" firstAttribute="leading" secondItem="agB-wX-HQ7" secondAttribute="leading" id="4A3-kD-sie"/>
-                            <constraint firstItem="RpG-7S-yj0" firstAttribute="height" secondItem="3lA-6p-rgy" secondAttribute="height" constant="-30" id="5Lt-Yb-tLH"/>
-                            <constraint firstAttribute="trailing" secondItem="RpG-7S-yj0" secondAttribute="trailing" constant="10" id="9sv-KX-ifj"/>
-                            <constraint firstItem="Nyh-ad-fzn" firstAttribute="width" secondItem="RpG-7S-yj0" secondAttribute="width" id="EKJ-SI-rj2"/>
-                            <constraint firstAttribute="trailing" secondItem="3lA-6p-rgy" secondAttribute="trailing" id="HFW-zJ-dl5"/>
-                            <constraint firstItem="4Ir-Qq-HDZ" firstAttribute="top" secondItem="sxg-6U-6uV" secondAttribute="bottom" constant="10" id="RtL-3p-obL"/>
-                            <constraint firstItem="Nyh-ad-fzn" firstAttribute="height" secondItem="RpG-7S-yj0" secondAttribute="height" id="V9f-b3-acJ"/>
-                            <constraint firstItem="Nyh-ad-fzn" firstAttribute="centerX" secondItem="RpG-7S-yj0" secondAttribute="centerX" id="Zz5-5V-TB8"/>
-                            <constraint firstItem="RpG-7S-yj0" firstAttribute="centerY" secondItem="3lA-6p-rgy" secondAttribute="centerY" id="bG6-2V-Eme"/>
-                            <constraint firstItem="RpG-7S-yj0" firstAttribute="leading" secondItem="agB-wX-HQ7" secondAttribute="leading" constant="10" id="e4B-Bt-JzA"/>
-                            <constraint firstItem="eil-CR-Abz" firstAttribute="centerX" secondItem="agB-wX-HQ7" secondAttribute="centerX" id="fQY-KV-6e2"/>
-                            <constraint firstItem="FZX-1b-EJD" firstAttribute="leading" secondItem="agB-wX-HQ7" secondAttribute="leading" constant="10" id="fQm-9O-OOi"/>
-                            <constraint firstAttribute="trailing" secondItem="FZX-1b-EJD" secondAttribute="trailing" constant="10" id="muA-hO-ac7"/>
-                            <constraint firstItem="FZX-1b-EJD" firstAttribute="top" secondItem="3lA-6p-rgy" secondAttribute="bottom" id="ne9-fD-IAN"/>
-                            <constraint firstItem="4Ir-Qq-HDZ" firstAttribute="leading" secondItem="agB-wX-HQ7" secondAttribute="leading" constant="10" id="qfb-Bd-VS4"/>
-                            <constraint firstAttribute="trailing" secondItem="4Ir-Qq-HDZ" secondAttribute="trailing" constant="10" id="s4q-7A-Kcf"/>
-                            <constraint firstItem="3lA-6p-rgy" firstAttribute="top" secondItem="4Ir-Qq-HDZ" secondAttribute="bottom" id="vlw-vj-kCW"/>
-                            <constraint firstItem="dW8-0e-yOx" firstAttribute="top" secondItem="FZX-1b-EJD" secondAttribute="bottom" constant="24" id="wAe-VQ-36r"/>
-                            <constraint firstItem="Nyh-ad-fzn" firstAttribute="centerY" secondItem="RpG-7S-yj0" secondAttribute="centerY" id="zh8-Vb-1SV"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Select Project to Use" id="G4w-z3-O0h"/>
-                    <connections>
-                        <outlet property="noProjectView" destination="Nyh-ad-fzn" id="9Ux-vk-gH6"/>
-                        <outlet property="selectProjectButton" destination="FZX-1b-EJD" id="2ab-PJ-0pE"/>
-                        <outlet property="tableView" destination="RpG-7S-yj0" id="jdh-32-CcU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dCf-lm-sLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="9324" y="-2571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0gc-ei-Cgi">
@@ -6173,7 +5987,7 @@ revised: 5/9/2016</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fS1-78-aql" userLabel="select-organization-button">
                                 <rect key="frame" x="10" y="710" width="355" height="44"/>
                                 <color key="backgroundColor" red="0.12692853809999999" green="0.3115601838" blue="0.74908894299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <accessibility key="accessibilityConfiguration" identifier="select-project-button" label="Select Project">
+                                <accessibility key="accessibilityConfiguration" identifier="select-organization-button" label="Select Organization">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
                                 <constraints>
@@ -6315,7 +6129,6 @@ revised: 5/9/2016</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mI5-qK-Wad"/>
-        <segue reference="tiO-Cx-fFe"/>
         <segue reference="dKW-jL-B8K"/>
         <segue reference="bdL-UT-Onr"/>
         <segue reference="oDz-uZ-zzx"/>

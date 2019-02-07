@@ -12,7 +12,6 @@
 #import "SenseAPI.h"
 #import "SDKManager.h"
 #import "DataChannelSelectionViewController.h"
-#import "ProjectSelectionViewController.h"
 #import "WebViewController.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
