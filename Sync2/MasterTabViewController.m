@@ -9,6 +9,7 @@
 #import "MasterTabViewController.h"
 #import "SettingsManager.h"
 #import "SenseAPI.h"
+#import "OrganizationSelectionViewController.h"
 #import "DataChannelSelectionViewController.h"
 #import "ProjectSelectionViewController.h"
 #import <CoreLocation/CoreLocation.h>
@@ -19,6 +20,7 @@
 
 @property (nonatomic, strong) NSArray *dataChannels;
 @property (nonatomic, strong) NSArray *projects;
+@property (nonatomic, strong) NSArray *organizations;
 
 @end
 
@@ -55,7 +57,9 @@
     if (![[SettingsManager sharedManager] currentAccountEmail]) {
         return;
     }
-    if (![[SettingsManager sharedManager] selectedDataChannel]) {
+    if (![[SettingsManager sharedManager] selectedOrganization]) {
+        [self loadOrganizations];
+    }else if (![[SettingsManager sharedManager] selectedDataChannel]) {
         [self loadDataChannels];
     }else if (![[SettingsManager sharedManager] selectedProject]) {
         [self loadProjects];
@@ -82,6 +86,10 @@
         UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
         ProjectSelectionViewController *vc = (ProjectSelectionViewController *)nav.viewControllers[0];
         vc.projects = self.projects;
+    }else if ([segue.identifier isEqualToString:@"showOrganizationSelection"]) {
+        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
+        OrganizationSelectionViewController *vc = (OrganizationSelectionViewController *)nav.viewControllers[0];
+        vc.organizations = self.organizations;
     }
 }
 
@@ -92,6 +100,15 @@
             [self performSegueWithIdentifier:@"showProjectSelection" sender:self];
         });
         
+    }];
+}
+
+-(void) loadOrganizations{
+    [[SenseAPI sharedManager] GetOrganizationsWithCompletion:^(NSArray *orgs, NSError * _Nullable error) {
+        self.organizations = orgs;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSegueWithIdentifier:@"showOrganizationSelection" sender:self];
+        });
     }];
 }
 
