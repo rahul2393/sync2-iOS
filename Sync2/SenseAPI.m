@@ -110,79 +110,6 @@
                                                         }
                                                         self.userToken = token;
                                                         [[SettingsManager sharedManager] setCurrentAccountEmail:email];
-                                                        [self GetOrganizationsIds:^(NSArray *orgIds, NSError * _Nullable error) {
-                                                            [self SetOrgId:orgIds[0] withCompletion:^(NSError * _Nullable error) {
-                                                                completed(nil);
-                                                            }];
-                                                        }];
-                                                    }
-                                                }];
-    [dataTask resume];
-}
-
-# pragma mark - Get Organizations
-
-// This is janky as hell.
-
--(void) GetOrganizationsIds:(void ( ^ _Nullable )(NSArray *orgIds, NSError * _Nullable error))completed{
-    NSDictionary *headers = @{ @"Authorization": [self bearerToken],
-                               @"Accept": @"application/json",
-                               @"Connection": @"keep-alive" };
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/organizations"]]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:10.0];
-    [request setHTTPMethod:@"GET"];
-    [request setAllHTTPHeaderFields:headers];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    if (error) {
-                                                        NSLog(@"%@", error);
-                                                    } else {
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
-                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
-                                                            return;
-                                                        }
-                                                        
-                                                        NSArray *orgIds = [self organizationIdsFromData:data];
-                                                        completed(orgIds, nil);
-                                                    }
-                                                }];
-    [dataTask resume];
-}
-
--(void) SetOrgId:(NSString *_Nonnull)orgId withCompletion:(void ( ^ _Nullable )(NSError * _Nullable error))completed{
-    
-    NSDictionary *headers = @{ @"Content-Type": @"application/json",
-                               @"Authorization": [self bearerToken] };
-    NSDictionary *parameters = @{ @"organizationId": orgId };
-    
-    NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/set-organization"]]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:10.0];
-    [request setHTTPMethod:@"POST"];
-    [request setAllHTTPHeaderFields:headers];
-    [request setHTTPBody:postData];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    if (error) {
-                                                        NSLog(@"%@", error);
-                                                        completed(error);
-                                                    } else {
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
-                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
-                                                            return;
-                                                        }
-                                                        
-                                                        self.userOrgToken = [[SGToken alloc]initWithData:data];
                                                         completed(nil);
                                                     }
                                                 }];
@@ -215,8 +142,45 @@
                                                             return;
                                                         }
                                                         
-                                                        NSArray *orgs = [self organizationIdsFromData:data];
+                                                        NSArray *orgs = [self organizationsFromData:data];
                                                         completed(orgs, nil);
+                                                    }
+                                                }];
+    [dataTask resume];
+}
+
+# pragma mark - Set Organization
+
+-(void) SetOrgId:(NSString *_Nonnull)orgId withCompletion:(void ( ^ _Nullable )(NSError * _Nullable error))completed{
+    
+    NSDictionary *headers = @{ @"Content-Type": @"application/json",
+                               @"Authorization": [self bearerToken] };
+    NSDictionary *parameters = @{ @"organizationId": orgId };
+    
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/set-organization"]]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"POST"];
+    [request setAllHTTPHeaderFields:headers];
+    [request setHTTPBody:postData];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                        completed(error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
+                                                            return;
+                                                        }
+                                                        
+                                                        self.userOrgToken = [[SGToken alloc]initWithData:data];
+                                                        completed(nil);
                                                     }
                                                 }];
     [dataTask resume];
@@ -389,7 +353,7 @@
     printf("%s", [message UTF8String]);
 }
 
--(NSArray *) organizationIdsFromData:(NSData *)data{
+-(NSArray *) organizationsFromData:(NSData *)data{
     NSMutableArray *toReturn = [NSMutableArray array];
     
     NSError *error = nil;
@@ -403,10 +367,9 @@
         NSDictionary *responseDict = (NSDictionary *)object;
         if(responseDict[@"data"]){
             NSArray *orgs = (NSArray *)responseDict[@"data"];
-            for (NSDictionary *org in orgs) {
-                NSString *orgID = org[@"id"];
-                NSString *orgName = org[@"name"];
-                [toReturn addObject:orgID];
+            for (NSDictionary *orgObject in orgs) {
+                Organization *o = [[Organization alloc] initWithData:orgObject];
+                [toReturn addObject:o];
             }
         }
     }
