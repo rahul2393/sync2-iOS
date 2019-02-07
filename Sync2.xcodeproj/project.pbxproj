@@ -14,6 +14,7 @@
 		7520226620610845007FD829 /* EULAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7520226520610845007FD829 /* EULAViewController.m */; };
 		7520226A2061099C007FD829 /* TOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752022692061099C007FD829 /* TOSViewController.m */; };
 		7531658821F5BD93005940EF /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531658721F5BD93005940EF /* UIView+Toast.m */; };
+		7536010B220C160900669093 /* OrganizationSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7536010A220C160900669093 /* OrganizationSelectionViewController.m */; };
 		753B0CBD2201C34300F21657 /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B0CBC2201C34300F21657 /* Organization.m */; };
 		753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70C2105600B00C11223 /* UIViewExtension.m */; };
 		753CB7102105D07900C11223 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70F2105D07900C11223 /* GradientView.m */; };
@@ -191,6 +192,8 @@
 		752022692061099C007FD829 /* TOSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOSViewController.m; sourceTree = "<group>"; };
 		7531658621F5BD93005940EF /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		7531658721F5BD93005940EF /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		75360109220C160900669093 /* OrganizationSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrganizationSelectionViewController.h; sourceTree = "<group>"; };
+		7536010A220C160900669093 /* OrganizationSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrganizationSelectionViewController.m; sourceTree = "<group>"; };
 		753B0CBB2201C34300F21657 /* Organization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Organization.h; sourceTree = "<group>"; };
 		753B0CBC2201C34300F21657 /* Organization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Organization.m; sourceTree = "<group>"; };
 		753CB70B21055FF600C11223 /* UIViewExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewExtension.h; sourceTree = "<group>"; };
@@ -502,6 +505,15 @@
 				7531658721F5BD93005940EF /* UIView+Toast.m */,
 			);
 			name = Toast;
+			sourceTree = "<group>";
+		};
+		75360108220C15D600669093 /* Organization Selection */ = {
+			isa = PBXGroup;
+			children = (
+				75360109220C160900669093 /* OrganizationSelectionViewController.h */,
+				7536010A220C160900669093 /* OrganizationSelectionViewController.m */,
+			);
+			name = "Organization Selection";
 			sourceTree = "<group>";
 		};
 		753B0CBA2201C31600F21657 /* Organization */ = {
@@ -1081,6 +1093,7 @@
 		E966682820082707006911C3 /* UI Update */ = {
 			isa = PBXGroup;
 			children = (
+				75360108220C15D600669093 /* Organization Selection */,
 				75F4C98621AD58B7009596E1 /* WebView */,
 				759926E920FE2E190073693F /* Splash */,
 				E9B76D5C200D4F4F0095030C /* Data Channel Selection */,
@@ -1765,6 +1778,7 @@
 				753B0CBD2201C34300F21657 /* Organization.m in Sources */,
 				E98430BC20169E5A00F11887 /* MapSettingsViewController.m in Sources */,
 				E9518B64201802F9001818CC /* TextNotification.m in Sources */,
+				7536010B220C160900669093 /* OrganizationSelectionViewController.m in Sources */,
 				753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */,
 				75FDF1BA213414AF0068D015 /* ActionNotification.m in Sources */,
 				E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */,

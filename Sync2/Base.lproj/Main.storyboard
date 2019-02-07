@@ -1158,7 +1158,7 @@ You can now proceed to Login.</string>
                         <viewControllerLayoutGuide type="bottom" id="xoT-SY-iVU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5aJ-6E-ccx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hty-Eq-4VU">
@@ -1217,7 +1217,7 @@ You can now proceed to Login.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lRu-Wa-Ali">
-                                <rect key="frame" x="10" y="293" width="355" height="353"/>
+                                <rect key="frame" x="10" y="293" width="355" height="402"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -1233,7 +1233,7 @@ You can now proceed to Login.</string>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yI-df-ybp">
-                                <rect key="frame" x="10" y="661" width="355" height="44"/>
+                                <rect key="frame" x="10" y="710" width="355" height="44"/>
                                 <color key="backgroundColor" red="0.12692853808403015" green="0.31156018376350403" blue="0.74908894300460815" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration" identifier="select-channel-button" label="Select Channel">
                                     <bool key="isElement" value="NO"/>
@@ -1255,11 +1255,11 @@ You can now proceed to Login.</string>
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEv-GE-DmP">
-                                <rect key="frame" x="0.0" y="278" width="375" height="383"/>
+                                <rect key="frame" x="0.0" y="278" width="375" height="432"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PO1-Sc-CZU">
-                                <rect key="frame" x="10" y="293" width="355" height="353"/>
+                                <rect key="frame" x="10" y="293" width="355" height="402"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rules-empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="cXX-1r-F0j">
                                         <rect key="frame" x="140" y="50" width="75" height="80"/>
@@ -1285,7 +1285,7 @@ You can now proceed to Login.</string>
                                 </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="I31-nB-6gt">
-                                <rect key="frame" x="165.66666666666666" y="661" width="44" height="44"/>
+                                <rect key="frame" x="165.66666666666666" y="710" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="I31-nB-6gt" secondAttribute="height" multiplier="1:1" id="PgU-qq-dSN"/>
                                 </constraints>
@@ -1350,6 +1350,7 @@ You can now proceed to Login.</string>
                         <segue destination="ti7-xg-rMP" kind="relationship" relationship="viewControllers" id="jBg-I0-tSH"/>
                         <segue destination="amc-nY-38N" kind="relationship" relationship="viewControllers" id="4Fn-di-4V7"/>
                         <segue destination="oH9-Ao-Hwe" kind="show" identifier="logoutSegue" id="oDz-uZ-zzx"/>
+                        <segue destination="yex-TT-jEB" kind="presentation" identifier="showOrganizationSelection" id="uQF-fT-8tM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8d-Lw-iXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3041,7 +3042,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                         <viewControllerLayoutGuide type="bottom" id="dW8-0e-yOx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="agB-wX-HQ7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ir-Qq-HDZ">
@@ -3093,7 +3094,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-7S-yj0" userLabel="table">
-                                <rect key="frame" x="10" y="313" width="355" height="333"/>
+                                <rect key="frame" x="10" y="313" width="355" height="382"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -3109,7 +3110,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZX-1b-EJD" userLabel="select-project-button">
-                                <rect key="frame" x="10" y="661" width="355" height="44"/>
+                                <rect key="frame" x="10" y="710" width="355" height="44"/>
                                 <color key="backgroundColor" red="0.12692853809999999" green="0.3115601838" blue="0.74908894299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration" identifier="select-project-button" label="Select Project">
                                     <bool key="isElement" value="NO"/>
@@ -3131,11 +3132,11 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lA-6p-rgy">
-                                <rect key="frame" x="0.0" y="298" width="375" height="363"/>
+                                <rect key="frame" x="0.0" y="298" width="375" height="412"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyh-ad-fzn">
-                                <rect key="frame" x="10" y="313" width="355" height="333"/>
+                                <rect key="frame" x="10" y="313" width="355" height="382"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rules-empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="smC-oK-eS9">
                                         <rect key="frame" x="140" y="50" width="75" height="80"/>
@@ -6073,6 +6074,201 @@ revised: 5/9/2016</string>
             </objects>
             <point key="canvasLocation" x="10573" y="1431"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="brw-86-lU1">
+            <objects>
+                <navigationController id="yex-TT-jEB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a71-OQ-mqy">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0062943333760000003" green="0.17320993539999999" blue="0.4145198464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uLc-VK-6Mf" kind="relationship" relationship="rootViewController" id="dcn-ZZ-qds"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3q1-BK-2UD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10306" y="-2750"/>
+        </scene>
+        <!--Select Organization to Use-->
+        <scene sceneID="HPR-Yx-gIf">
+            <objects>
+                <viewController id="uLc-VK-6Mf" customClass="OrganizationSelectionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QL3-Yg-b3j"/>
+                        <viewControllerLayoutGuide type="bottom" id="LxR-EC-qmR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nxY-bR-NdW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eV-4Y-BUz">
+                                <rect key="frame" x="10" y="98" width="355" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Organization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bju-Kn-Mme">
+                                        <rect key="frame" x="20" y="17" width="320" height="19.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line-image" translatesAutoresizingMaskIntoConstraints="NO" id="LvD-Tq-YH5">
+                                        <rect key="frame" x="20" y="47.666666666666657" width="315" height="1"/>
+                                        <color key="backgroundColor" red="0.094049341980000006" green="0.02848093212" blue="0.025658469650000001" alpha="0.1573202055" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="mAA-Cn-kmp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfz-fz-rtz">
+                                        <rect key="frame" x="10" y="56.666666666666657" width="335" height="131.33333333333334"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">You can manage and create organizations within Sixgill Sense. An organization is essentially a way to control who can access your data and manipulate your devices.  We recommend selecting a Organization that you want to test for.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="LvD-Tq-YH5" secondAttribute="trailing" constant="20" id="6T9-KB-LdM"/>
+                                    <constraint firstAttribute="bottom" secondItem="tfz-fz-rtz" secondAttribute="bottom" constant="12" id="D4i-ON-DYm"/>
+                                    <constraint firstItem="tfz-fz-rtz" firstAttribute="top" secondItem="LvD-Tq-YH5" secondAttribute="bottom" constant="8" id="GL4-oz-tIC"/>
+                                    <constraint firstItem="LvD-Tq-YH5" firstAttribute="top" secondItem="bju-Kn-Mme" secondAttribute="bottom" constant="11" id="Gf1-mb-dH1"/>
+                                    <constraint firstItem="bju-Kn-Mme" firstAttribute="leading" secondItem="4eV-4Y-BUz" secondAttribute="leading" constant="20" id="Lrj-fC-4wG"/>
+                                    <constraint firstAttribute="trailing" secondItem="bju-Kn-Mme" secondAttribute="trailing" constant="15" id="Pvn-Mu-CMx"/>
+                                    <constraint firstAttribute="height" constant="200" id="Ron-x4-gUg"/>
+                                    <constraint firstItem="LvD-Tq-YH5" firstAttribute="leading" secondItem="4eV-4Y-BUz" secondAttribute="leading" constant="20" id="cC7-br-PBk"/>
+                                    <constraint firstItem="bju-Kn-Mme" firstAttribute="top" secondItem="4eV-4Y-BUz" secondAttribute="top" constant="17" id="dlH-gi-1YV"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rD1-Ri-8Cm" userLabel="table">
+                                <rect key="frame" x="10" y="313" width="355" height="382"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87" green="0.87" blue="0.87" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="uLc-VK-6Mf" id="H1k-2A-iUx"/>
+                                    <outlet property="delegate" destination="uLc-VK-6Mf" id="jIm-GA-RIg"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fS1-78-aql" userLabel="select-organization-button">
+                                <rect key="frame" x="10" y="710" width="355" height="44"/>
+                                <color key="backgroundColor" red="0.12692853809999999" green="0.3115601838" blue="0.74908894299999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="select-project-button" label="Select Project">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WVY-SM-OGo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Select Organization">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectOrganizationButtonTapped:" destination="uLc-VK-6Mf" eventType="touchUpInside" id="3BZ-6A-Zsh"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vGK-Dc-STs">
+                                <rect key="frame" x="165.66666666666666" y="710" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vGK-Dc-STs" secondAttribute="height" multiplier="1:1" id="IxZ-Sm-MXP"/>
+                                </constraints>
+                                <color key="color" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </activityIndicatorView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ws2-mB-9cA">
+                                <rect key="frame" x="0.0" y="298" width="375" height="412"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Xl-hD-Tq7">
+                                <rect key="frame" x="10" y="313" width="355" height="382"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rules-empty-state" translatesAutoresizingMaskIntoConstraints="NO" id="UZ2-bc-tOF">
+                                        <rect key="frame" x="140" y="50" width="75" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="9u2-th-7EO"/>
+                                            <constraint firstAttribute="width" constant="75" id="ozp-Pe-eSG"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No active organization exist in this account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pc0-x0-mWh">
+                                        <rect key="frame" x="20" y="166" width="315" height="19.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.60999999999999999" green="0.60999999999999999" blue="0.60999999999999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Pc0-x0-mWh" firstAttribute="top" secondItem="UZ2-bc-tOF" secondAttribute="bottom" constant="36" id="9Jb-Cq-the"/>
+                                    <constraint firstItem="UZ2-bc-tOF" firstAttribute="centerX" secondItem="9Xl-hD-Tq7" secondAttribute="centerX" id="Ehc-zo-QxT"/>
+                                    <constraint firstItem="Pc0-x0-mWh" firstAttribute="leading" secondItem="9Xl-hD-Tq7" secondAttribute="leading" constant="20" id="JVW-HN-u91"/>
+                                    <constraint firstItem="UZ2-bc-tOF" firstAttribute="top" secondItem="9Xl-hD-Tq7" secondAttribute="top" constant="50" id="nnT-yk-6bF"/>
+                                    <constraint firstItem="Pc0-x0-mWh" firstAttribute="centerX" secondItem="9Xl-hD-Tq7" secondAttribute="centerX" id="rdA-1S-YxV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94999999999999996" green="0.94999999999999996" blue="0.94999999999999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9Xl-hD-Tq7" firstAttribute="width" secondItem="rD1-Ri-8Cm" secondAttribute="width" id="2rU-Ea-OZR"/>
+                            <constraint firstAttribute="trailing" secondItem="4eV-4Y-BUz" secondAttribute="trailing" constant="10" id="41P-4N-ZBB"/>
+                            <constraint firstAttribute="trailing" secondItem="fS1-78-aql" secondAttribute="trailing" constant="10" id="FHb-Lv-A9K"/>
+                            <constraint firstItem="4eV-4Y-BUz" firstAttribute="top" secondItem="QL3-Yg-b3j" secondAttribute="bottom" constant="10" id="M3c-Tl-w6B"/>
+                            <constraint firstItem="4eV-4Y-BUz" firstAttribute="leading" secondItem="nxY-bR-NdW" secondAttribute="leading" constant="10" id="MzB-Gb-thc"/>
+                            <constraint firstItem="9Xl-hD-Tq7" firstAttribute="centerX" secondItem="rD1-Ri-8Cm" secondAttribute="centerX" id="Nl9-Yd-gnG"/>
+                            <constraint firstItem="rD1-Ri-8Cm" firstAttribute="centerY" secondItem="ws2-mB-9cA" secondAttribute="centerY" id="OM7-xa-zH3"/>
+                            <constraint firstItem="9Xl-hD-Tq7" firstAttribute="centerY" secondItem="rD1-Ri-8Cm" secondAttribute="centerY" id="Pib-Zl-Z93"/>
+                            <constraint firstItem="fS1-78-aql" firstAttribute="leading" secondItem="nxY-bR-NdW" secondAttribute="leading" constant="10" id="Shn-KS-4NE"/>
+                            <constraint firstItem="tfz-fz-rtz" firstAttribute="leading" secondItem="nxY-bR-NdW" secondAttribute="leading" constant="20" id="Wxv-bn-AAt"/>
+                            <constraint firstAttribute="trailing" secondItem="ws2-mB-9cA" secondAttribute="trailing" id="XYS-4m-9m2"/>
+                            <constraint firstItem="ws2-mB-9cA" firstAttribute="leading" secondItem="nxY-bR-NdW" secondAttribute="leading" id="YQO-Hm-8ts"/>
+                            <constraint firstItem="rD1-Ri-8Cm" firstAttribute="leading" secondItem="nxY-bR-NdW" secondAttribute="leading" constant="10" id="YYk-kB-9L7"/>
+                            <constraint firstItem="vGK-Dc-STs" firstAttribute="centerY" secondItem="fS1-78-aql" secondAttribute="centerY" id="ZrE-Jm-qHw"/>
+                            <constraint firstItem="ws2-mB-9cA" firstAttribute="top" secondItem="4eV-4Y-BUz" secondAttribute="bottom" id="eNy-sQ-Abh"/>
+                            <constraint firstItem="vGK-Dc-STs" firstAttribute="centerX" secondItem="fS1-78-aql" secondAttribute="centerX" id="f27-Jk-FNh"/>
+                            <constraint firstItem="vGK-Dc-STs" firstAttribute="height" secondItem="fS1-78-aql" secondAttribute="height" id="hH3-ck-e9A"/>
+                            <constraint firstAttribute="trailing" secondItem="rD1-Ri-8Cm" secondAttribute="trailing" constant="10" id="hfl-tk-4oh"/>
+                            <constraint firstItem="LxR-EC-qmR" firstAttribute="top" secondItem="fS1-78-aql" secondAttribute="bottom" constant="24" id="iAy-Li-v3H"/>
+                            <constraint firstItem="fS1-78-aql" firstAttribute="top" secondItem="ws2-mB-9cA" secondAttribute="bottom" id="lma-sl-h7V"/>
+                            <constraint firstItem="tfz-fz-rtz" firstAttribute="centerX" secondItem="nxY-bR-NdW" secondAttribute="centerX" id="n67-Cq-hWc"/>
+                            <constraint firstItem="9Xl-hD-Tq7" firstAttribute="height" secondItem="rD1-Ri-8Cm" secondAttribute="height" id="reS-bU-HQd"/>
+                            <constraint firstItem="rD1-Ri-8Cm" firstAttribute="height" secondItem="ws2-mB-9cA" secondAttribute="height" constant="-30" id="vtm-sy-kfV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select Organization to Use" id="rFS-6k-e8v"/>
+                    <connections>
+                        <outlet property="loadingView" destination="vGK-Dc-STs" id="0Xu-bh-peK"/>
+                        <outlet property="noOrganizationView" destination="9Xl-hD-Tq7" id="DyO-MI-VA3"/>
+                        <outlet property="selectOrganizationButton" destination="fS1-78-aql" id="OG4-bc-4kR"/>
+                        <outlet property="tableView" destination="rD1-Ri-8Cm" id="MXn-ae-tuJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ff9-jT-ojx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10306" y="-2557"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Camera" width="1200" height="1200"/>
@@ -6111,7 +6307,7 @@ revised: 5/9/2016</string>
         <image name="notification-permission-missing" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
@@ -6119,10 +6315,10 @@ revised: 5/9/2016</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mI5-qK-Wad"/>
-        <segue reference="sfn-Bk-AGt"/>
+        <segue reference="tiO-Cx-fFe"/>
         <segue reference="dKW-jL-B8K"/>
-        <segue reference="X8u-Xy-liR"/>
-        <segue reference="tam-M8-If5"/>
+        <segue reference="bdL-UT-Onr"/>
+        <segue reference="oDz-uZ-zzx"/>
         <segue reference="06h-aU-o4p"/>
     </inferredMetricsTieBreakers>
 </document>
