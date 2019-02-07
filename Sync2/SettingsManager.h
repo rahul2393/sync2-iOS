@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Account.h"
 #import "Project.h"
+#import "Organization.h"
 #import "DataChannel.h"
 #import "SGToken.h"
 @interface SettingsManager : NSObject
@@ -29,6 +30,9 @@
 
 -(Project *) selectedProject;
 -(void) selectProject:(Project *)project;
+
+-(Organization *) selectedOrganization;
+-(void) selectOrganization:(Organization *)org withCompletionHandler:(void ( ^ _Nullable )(NSError * _Nullable error))completionBlock;
 
 -(DataChannel *) selectedDataChannel;
 -(void) selectDataChannel:(DataChannel *)dataChannel withSuccessHandler:(void ( ^ _Nullable )(NSArray * apiKeys, NSError * _Nullable error))successBlock withFailureHandler:(void ( ^ _Nullable )())failureBlock;

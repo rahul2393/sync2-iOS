@@ -42,6 +42,7 @@
 
 #define KEY_Notifications @"notifications"
 
+#define KEY_SelectedOrganization @"selectedOrganization"
 #define KEY_SelectedProject @"selectedProject"
 #define KEY_SelectedDataChannel @"selectedDataChannel"
 
@@ -195,6 +196,7 @@
 }
 
 -(void) logout{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedOrganization];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannel];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_AccountEmail];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_UserToken];
@@ -221,6 +223,31 @@
 -(void) selectProject:(Project *)project{
     [[NSUserDefaults standardUserDefaults] setObject:[project toDictionary] forKey:KEY_SelectedProject];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (Organization *)selectedOrganization{
+    NSDictionary *d = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SelectedOrganization];
+    if (!d) {
+        return nil;
+    }
+    
+    Organization *o = [[Organization alloc] initWithData:d];
+    
+    return o;
+}
+
+- (void)selectOrganization:(Organization *)org withCompletionHandler:(void (^)(NSError * _Nullable))completionBlock{
+    [[NSUserDefaults standardUserDefaults] setObject:[org toDictionary] forKey:KEY_SelectedOrganization];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[SenseAPI sharedManager] SetOrgId:org.objectId withCompletion:^(NSError * _Nullable error) {
+        if (error) {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedOrganization];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+        }
+        completionBlock(error);
+    }];
 }
 
 -(DataChannel *) selectedDataChannel{
