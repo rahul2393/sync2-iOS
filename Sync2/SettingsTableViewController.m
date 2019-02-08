@@ -280,17 +280,15 @@
 }
 
 - (IBAction)forceLocationUpdateTapped:(UIButton *)sender {
-    [SGSDK getLocationWithCompletionHandler:^(Location * _Nullable location, Error * _Nullable error) {
-        if (location) {
-            NSString *locMessage = [NSString stringWithFormat:@"\nLatitude: %f\nLongtitude: %f\nAccuracy: %f", location.latitude, location.longitude, location.accuracy];
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Location Update" message:locMessage preferredStyle:UIAlertControllerStyleAlert];
-            [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-            [self presentViewController:alertController animated:true completion:nil];
-        } else {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:error.errorMessage preferredStyle:UIAlertControllerStyleAlert];
-            [alertController addAction:[UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:nil]];
-            [self presentViewController:alertController animated:true completion:nil];
-        }
+    [SGSDK getLocationWithSuccessHandler:^(Location *location) {
+        NSString *locMessage = [NSString stringWithFormat:@"\nLatitude: %f\nLongtitude: %f\nAccuracy: %f", location.latitude, location.longitude, location.accuracy];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Location Update" message:locMessage preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alertController animated:true completion:nil];
+    } andFailureHandler:^(Error *error) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:error.errorMessage preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alertController animated:true completion:nil];
     }];
 }
 

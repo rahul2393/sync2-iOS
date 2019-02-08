@@ -52,7 +52,7 @@
 
 +(void) forceSensorUpdate;
 
-+(void) getLocationWithCompletionHandler:(nullable void (^)(Location * _Nullable, Error * _Nullable))completed;
++(void) getLocationWithSuccessHandler:(nullable void (^)(Location *))successBlock andFailureHandler:(nullable void (^)(Error *))failureBlock;
 
 +(void)getRulesOfType:(NSString *)type andSuccessHandler:(nullable void (^)(NSMutableArray<SGRule*> *))successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
 
