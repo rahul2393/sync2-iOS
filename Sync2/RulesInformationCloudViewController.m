@@ -164,7 +164,11 @@
             
             RuleTableViewUtil *rC3 = [[RuleTableViewUtil alloc] init];
             rC3.key = @"Recipients";
-            rC3.value = [NSString stringWithFormat:@"%lu devices", ruleAction.recipients.count];
+            if (ruleAction.reflect) {
+                rC3.value = @"All devices";
+            } else {
+                rC3.value = [NSString stringWithFormat:@"%lu devices", ruleAction.recipients.count];
+            }
             rC3.indentationLevel = level;
             [self.actionsArray addObject:rC3];
             

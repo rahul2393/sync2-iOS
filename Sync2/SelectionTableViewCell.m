@@ -1,14 +1,14 @@
 //
-//  ProjectSelectionTableViewCell.m
+//  SelectionTableViewCell.m
 //  Sync2
 //
 //  Created by Sanchit Mittal on 20/07/18.
 //  Copyright © 2018 Sixgill. All rights reserved.
 //
 
-#import "ProjectSelectionTableViewCell.h"
+#import "SelectionTableViewCell.h"
 
-@implementation ProjectSelectionTableViewCell
+@implementation SelectionTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

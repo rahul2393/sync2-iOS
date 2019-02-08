@@ -7,12 +7,10 @@
 //
 
 #import "SettingsTableViewController.h"
-#import "DummySettingsData.h"
 #import "SettingsManager.h"
 #import "SenseAPI.h"
 #import "SDKManager.h"
 #import "DataChannelSelectionViewController.h"
-#import "ProjectSelectionViewController.h"
 #import "EnvironmentSelectionViewController.h"
 #import "EnvironmentManager.h"
 #import "SettingsTableViewCell.h"
@@ -20,9 +18,7 @@
 @import SixgillSDK;
 
 @interface SettingsTableViewController ()
-@property (nonatomic, readwrite) BOOL useDummyData;
 @property (nonatomic, strong) NSArray *dataChannels;
-@property (nonatomic, strong) NSArray *projects;
 @property Event* log;
 @end
 
@@ -30,8 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _useDummyData = NO;
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -46,15 +40,6 @@
 
 -(void) loadEnvironments{
     [self performSegueWithIdentifier:@"goToEnvironmentSelection" sender:self];
-}
-
--(void) loadProjects{
-    [[SenseAPI sharedManager] GetProjectsWithCompletion:^(NSArray *projects, NSError * _Nullable error) {
-        self.projects = projects;
-        dispatch_async(dispatch_get_main_queue(),^{
-            [self performSegueWithIdentifier:@"projectSelection" sender:self];
-        });
-    }];
 }
 
 -(void) loadDataChannels{
@@ -105,10 +90,6 @@
         UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
         DataChannelSelectionViewController *dcsvc = (DataChannelSelectionViewController *)nav.viewControllers[0];
         dcsvc.channels = self.dataChannels;
-    }else if ([segue.identifier isEqualToString:@"projectSelection"]) {
-        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
-        ProjectSelectionViewController *vc = (ProjectSelectionViewController *)nav.viewControllers[0];
-        vc.projects = self.projects;
     }
 //    else if([segue.identifier isEqualToString:@"goToEnvironmentSelection"]){
 //        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
@@ -138,7 +119,7 @@
 
     switch (section) {
         case 0:
-            return 4;
+            return 3;
         default:
             return 6;
     }
@@ -164,36 +145,17 @@
                 break;
             }
             case 1:{
-                cell.keyLabel.text = @"Project";
-                if (self.useDummyData) {
-                    cell.valueLabel.text = [[DummySettingsData project] name];
-                }else{
-                    Project *selected = [[SettingsManager sharedManager] selectedProject];
-                    NSString *t = @"";
-                    if (selected) {
-                        t = selected.name;
-                    }
-                    cell.valueLabel.text = t;
+                cell.keyLabel.text = @"Data Channel";
+                DataChannel *selected = [[SettingsManager sharedManager] selectedDataChannel];
+                NSString *t = @"";
+                if (selected) {
+                    t = selected.name;
                 }
+                cell.valueLabel.text = t;
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 break;
             }
             case 2:{
-                cell.keyLabel.text = @"Data Channel";
-                if (self.useDummyData) {
-                    cell.valueLabel.text = [[DummySettingsData dataChannel] name];
-                }else{
-                    DataChannel *selected = [[SettingsManager sharedManager] selectedDataChannel];
-                    NSString *t = @"";
-                    if (selected) {
-                        t = selected.name;
-                    }
-                    cell.valueLabel.text = t;
-                }
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                break;
-            }
-            case 3:{
                 cell.keyLabel.text = @"API URL";
                 cell.valueLabel.text = [SenseAPI serverAddress];
                 break;
@@ -250,15 +212,9 @@
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 1:
-                // Open project selection view
-                [self loadProjects];
-                break;
-                
-            case 2:
                 // Open channel selection view
                 [self loadDataChannels];
                 break;
-                
             default:
                 break;
         }

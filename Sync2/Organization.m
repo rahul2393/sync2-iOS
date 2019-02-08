@@ -1,17 +1,16 @@
 //
-//  Project.m
+//  Organization.m
 //  Sync2
 //
-//  Created by Ricky Kirkendall on 1/23/18.
-//  Copyright © 2018 Sixgill. All rights reserved.
+//  Created by Sanchit Mittal on 30/01/19.
+//  Copyright © 2019 Sixgill. All rights reserved.
 //
 
-#import "Project.h"
+#import "Organization.h"
 
-@implementation Project
+@implementation Organization
 
-- (instancetype)initWithData:(NSDictionary *)data
-{
+- (instancetype)initWithData:(NSDictionary *)data{
     self = [super init];
     if (self) {
         if (data[@"id"]) {
@@ -29,8 +28,7 @@
     return self;
 }
 
--(NSDictionary *) toDictionary{
-    
+- (NSDictionary *)toDictionary{
     if (!self.name || !self.objectId) {
         return nil;
     }
