@@ -40,14 +40,6 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [SGSDK getLocationWithCompletionHandler:^(Location * _Nullable location, Error * _Nullable error) {
-        if (location) {
-            NSLog(@"Test 1 got location %@", location);
-        } else {
-            NSLog(@"Test 1 got failure messgae %@", error.description);
-        }
-    }];
-    
     self.log = [[SDKManager sharedManager] sensorsData].lastObject;
     [self.tableView reloadData];
 }
@@ -281,6 +273,25 @@
     [[SettingsManager sharedManager] logout];
     [[SDKManager sharedManager] stopSDK];
     [self dismissModal];
+}
+
+- (IBAction)forceSensorUpdateTapped:(UIButton *)sender {
+    [SGSDK forceSensorUpdate];
+}
+
+- (IBAction)forceLocationUpdateTapped:(UIButton *)sender {
+    [SGSDK getLocationWithCompletionHandler:^(Location * _Nullable location, Error * _Nullable error) {
+        if (location) {
+            NSString *locMessage = [NSString stringWithFormat:@"\nLatitude: %f\nLongtitude: %f\nAccuracy: %f", location.latitude, location.longitude, location.accuracy];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Location Update" message:locMessage preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alertController animated:true completion:nil];
+        } else {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:error.errorMessage preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alertController animated:true completion:nil];
+        }
+    }];
 }
 
 - (IBAction)logoutTapped:(id)sender {

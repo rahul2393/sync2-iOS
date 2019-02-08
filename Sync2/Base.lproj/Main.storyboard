@@ -2924,23 +2924,81 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="yAz-B7-Fes">
                                 <rect key="frame" x="10" y="98" width="355" height="601"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mgh-0E-bhY">
-                                    <rect key="frame" x="0.0" y="122.33333333333334" width="355" height="44"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="Bqs-QP-wUy">
+                                    <rect key="frame" x="0.0" y="122.33333333333337" width="355" height="172"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.0" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                    <state key="normal" title="Logout">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="3"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="logoutTapped:" destination="U3l-dZ-02L" eventType="touchUpInside" id="RhD-Yb-vOY"/>
-                                    </connections>
-                                </button>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgh-0E-bhY">
+                                            <rect key="frame" x="0.0" y="10" width="355" height="44"/>
+                                            <color key="backgroundColor" red="0.0" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="HLd-r8-QZ1"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" title="Force Location Update">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="forceLocationUpdateTapped:" destination="U3l-dZ-02L" eventType="touchUpInside" id="Gv6-4e-629"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtS-3C-4fV">
+                                            <rect key="frame" x="0.0" y="64" width="355" height="44"/>
+                                            <color key="backgroundColor" red="0.0" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="zfH-9c-bXC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" title="Force Sensor Update">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="forceSensorUpdateTapped:" destination="U3l-dZ-02L" eventType="touchUpInside" id="lLO-Te-q4T"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPx-Nq-Yf8">
+                                            <rect key="frame" x="0.0" y="118" width="355" height="44"/>
+                                            <color key="backgroundColor" red="0.0" green="0.32000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="ZKN-by-xel"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <state key="normal" title="Logout">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="logoutTapped:" destination="U3l-dZ-02L" eventType="touchUpInside" id="yfV-EG-o2f"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="LtS-3C-4fV" firstAttribute="top" secondItem="Mgh-0E-bhY" secondAttribute="bottom" constant="10" id="2JL-y5-hbD"/>
+                                        <constraint firstAttribute="trailing" secondItem="jPx-Nq-Yf8" secondAttribute="trailing" id="CRC-bH-dfE"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mgh-0E-bhY" secondAttribute="trailing" id="FIn-SQ-srB"/>
+                                        <constraint firstItem="LtS-3C-4fV" firstAttribute="leading" secondItem="Mgh-0E-bhY" secondAttribute="leading" id="FUE-Vj-wkV"/>
+                                        <constraint firstItem="Mgh-0E-bhY" firstAttribute="leading" secondItem="Bqs-QP-wUy" secondAttribute="leading" id="Gxv-xU-Qe9"/>
+                                        <constraint firstItem="jPx-Nq-Yf8" firstAttribute="leading" secondItem="Bqs-QP-wUy" secondAttribute="leading" id="NV2-h5-Lws"/>
+                                        <constraint firstItem="Mgh-0E-bhY" firstAttribute="top" secondItem="Bqs-QP-wUy" secondAttribute="top" constant="10" id="ffO-iN-ViS"/>
+                                        <constraint firstItem="jPx-Nq-Yf8" firstAttribute="top" secondItem="LtS-3C-4fV" secondAttribute="bottom" constant="10" id="lf8-fY-LPC"/>
+                                        <constraint firstItem="LtS-3C-4fV" firstAttribute="trailing" secondItem="Mgh-0E-bhY" secondAttribute="trailing" id="wxF-Zw-W1M"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsTableViewCellIdentifier" rowHeight="49" id="9Cg-Qz-yRx" customClass="SettingsTableViewCell">
                                         <rect key="frame" x="0.0" y="55.333333333333343" width="355" height="49"/>
@@ -3010,7 +3068,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H22-hf-Irn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8145" y="2716"/>
+            <point key="canvasLocation" x="8144.8000000000002" y="2715.5172413793102"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xHq-DH-kIG">
@@ -3342,13 +3400,13 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 <rect key="frame" x="0.0" y="52" width="375" height="158"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sixgill-logo" translatesAutoresizingMaskIntoConstraints="NO" id="hSm-yW-laG">
-                                        <rect key="frame" x="106.33333333333333" y="19.666666666666675" width="162.33333333333337" height="47.333333333333343"/>
+                                        <rect key="frame" x="106.33333333333333" y="21.333333333333332" width="162.33333333333337" height="47.333333333333343"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hSm-yW-laG" secondAttribute="height" multiplier="179:52" id="gRt-kQ-qfV"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync 2.0 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="27" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nyf-Gv-zlj">
-                                        <rect key="frame" x="94" y="60" width="187" height="63.666666666666657"/>
+                                        <rect key="frame" x="94" y="61.666666666666671" width="187" height="62"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="53"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -3426,7 +3484,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="34" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZgG-mg-Rlv">
-                                <rect key="frame" x="48.333333333333343" y="258" width="278.33333333333326" height="202"/>
+                                <rect key="frame" x="49.333333333333343" y="258" width="276.66666666666663" height="202"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="67"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -3570,7 +3628,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="K2E-i5-xYO">
-                                <rect key="frame" x="152" y="673.33333333333337" width="71" height="118.66666666666663"/>
+                                <rect key="frame" x="152" y="669.66666666666663" width="71" height="122.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="Rbk-aq-6Yy"/>
                                 </constraints>
@@ -3588,16 +3646,16 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync uses location services to send updates at regular intervals to your Sixgill Sense applications." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6YR-4b-CMr">
-                                <rect key="frame" x="46" y="494.33333333333331" width="288" height="68.666666666666686"/>
+                                <rect key="frame" x="46" y="494.33333333333331" width="288" height="66.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEg-nB-QoI" userLabel="ButtonView" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="59.333333333333343" y="582.33333333333337" width="256.33333333333326" height="45.333333333333371"/>
+                                <rect key="frame" x="64" y="580.33333333333337" width="247" height="43.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahQ-GT-6oi">
-                                        <rect key="frame" x="7.9999999999999858" y="3" width="240.66666666666663" height="40.333333333333336"/>
+                                        <rect key="frame" x="8" y="3" width="231.33333333333334" height="38.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                         <state key="normal" title="Enable Location Services">
                                             <color key="titleColor" red="1" green="0.99667738632681413" blue="0.99541662505197637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3614,7 +3672,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JR-6O-0yK">
-                                <rect key="frame" x="316" y="713.33333333333337" width="42" height="39"/>
+                                <rect key="frame" x="316" y="711.33333333333337" width="42" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.96002744496972803" green="0.96092273402742812" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -3683,7 +3741,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="qu4-dO-E4P">
-                                <rect key="frame" x="152" y="673.33333333333337" width="71" height="118.66666666666663"/>
+                                <rect key="frame" x="152" y="669.66666666666663" width="71" height="122.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="pzT-09-nxT"/>
                                 </constraints>
@@ -3701,16 +3759,16 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync uses your motion and activity data to accurately inform your device about landmarks close to you." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fhW-ol-OVT">
-                                <rect key="frame" x="46" y="494.33333333333331" width="288" height="68.666666666666686"/>
+                                <rect key="frame" x="46" y="494.33333333333331" width="288" height="66.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGJ-c6-xxa" userLabel="ButtonView" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="59.333333333333343" y="582.33333333333337" width="256.33333333333326" height="45.333333333333371"/>
+                                <rect key="frame" x="64" y="580.33333333333337" width="247" height="43.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HvW-CT-jrD">
-                                        <rect key="frame" x="7.9999999999999858" y="3" width="240.66666666666663" height="40"/>
+                                        <rect key="frame" x="8" y="3" width="231.33333333333334" height="38.333333333333336"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                         <state key="normal" title="Enable Motion &amp; Activity">
                                             <color key="titleColor" red="1" green="0.99735923313859065" blue="0.98877749518109259" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3730,7 +3788,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsl-7A-tLn">
-                                <rect key="frame" x="316" y="713.33333333333337" width="42" height="39"/>
+                                <rect key="frame" x="316" y="711.33333333333337" width="42" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.96002744500000003" green="0.96092273399999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -4712,7 +4770,7 @@ Permission</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="tBR-ba-obt">
-                                <rect key="frame" x="152" y="673.33333333333337" width="71" height="118.66666666666663"/>
+                                <rect key="frame" x="152" y="669.66666666666663" width="71" height="122.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="Eba-Cy-ke1"/>
                                 </constraints>
@@ -4730,16 +4788,16 @@ Permission</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync uses your camera to scan QR codes that link to your Sixgill Sense applications." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SA3-wT-aTt">
-                                <rect key="frame" x="46" y="494.33333333333331" width="288" height="68.666666666666686"/>
+                                <rect key="frame" x="46" y="494.33333333333331" width="288" height="66.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ck0-45-zTp" userLabel="ButtonView" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="59.333333333333343" y="582.33333333333337" width="256.33333333333326" height="45.333333333333371"/>
+                                <rect key="frame" x="64" y="580.33333333333337" width="247" height="43.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrW-2z-nkS">
-                                        <rect key="frame" x="7.9999999999999858" y="0.0" width="240.33333333333331" height="45.333333333333336"/>
+                                        <rect key="frame" x="8" y="0.0" width="231" height="43.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                         <state key="normal" title="Enable Camera Access">
                                             <color key="titleColor" red="0.97734551272179171" green="0.99518093238860295" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4759,7 +4817,7 @@ Permission</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="374-Y2-OCY">
-                                <rect key="frame" x="316" y="713.33333333333337" width="42" height="39"/>
+                                <rect key="frame" x="316" y="711.33333333333337" width="42" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.96002744500000003" green="0.96092273399999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -4828,7 +4886,7 @@ Permission</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="xGA-78-6Yv">
-                                <rect key="frame" x="152" y="673.33333333333337" width="71" height="118.66666666666663"/>
+                                <rect key="frame" x="152" y="669.66666666666663" width="71" height="122.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="Eje-Uw-JmE"/>
                                 </constraints>
@@ -4846,16 +4904,16 @@ Permission</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync uses push notifications to send messages to your device and update application data in the background." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uKc-SM-XfZ">
-                                <rect key="frame" x="46" y="494.33333333333331" width="288" height="68.666666666666686"/>
+                                <rect key="frame" x="46" y="494.33333333333331" width="288" height="66.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="19"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pC-XX-tvW" userLabel="ButtonView" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="59.333333333333343" y="582.33333333333337" width="256.33333333333326" height="45.333333333333371"/>
+                                <rect key="frame" x="64" y="580.33333333333337" width="247" height="43.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1I-Uq-bWr">
-                                        <rect key="frame" x="7.9999999999999858" y="0.0" width="240.33333333333331" height="45.333333333333336"/>
+                                        <rect key="frame" x="8" y="0.0" width="231" height="43.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                         <state key="normal" title="Enable Push Notifications">
                                             <color key="titleColor" red="0.97734551270000003" green="0.99518093240000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4875,7 +4933,7 @@ Permission</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzp-Ot-NF2">
-                                <rect key="frame" x="316" y="713.33333333333337" width="42" height="39"/>
+                                <rect key="frame" x="316" y="711.33333333333337" width="42" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="0.96002744500000003" green="0.96092273399999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -6111,7 +6169,7 @@ revised: 5/9/2016</string>
         <image name="notification-permission-missing" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="325" height="95"/>
+        <image name="sixgill-logo" width="165" height="120"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
