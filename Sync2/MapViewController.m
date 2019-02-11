@@ -79,7 +79,9 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self zoomInOnLastCoord];
+    if ([self.permissionMissingView isHidden]) {
+        [self zoomInOnLastCoord];
+    }
 }
 
 -(void) zoomInOnLastCoord{
