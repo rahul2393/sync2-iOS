@@ -51,15 +51,11 @@
 }
 
 - (void) loadLandmarks{
-    Project *currentProject = [[SettingsManager sharedManager] selectedProject];
-    if (!currentProject || !currentProject.objectId || [currentProject.objectId isEqualToString:@""]) {
-        return;
-    }
-    [[SenseAPI sharedManager] GetLandmarksForProject:currentProject.objectId WithCompletion:^(NSArray *landmarks, NSError * _Nullable error) {
+    [[SenseAPI sharedManager] GetLandmarksWithCompletion:^(NSArray *landmarks, NSError * _Nullable error) {
         self.landmarks = landmarks;
         
         [self drawLandmarks];
-    }];        
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -83,7 +79,9 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self zoomInOnLastCoord];
+    if ([self.permissionMissingView isHidden]) {
+        [self zoomInOnLastCoord];
+    }
 }
 
 -(void) zoomInOnLastCoord{

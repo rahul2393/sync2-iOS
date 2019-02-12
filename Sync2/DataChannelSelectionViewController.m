@@ -9,7 +9,7 @@
 #import "DataChannelSelectionViewController.h"
 #import "DataChannel.h"
 #import "SettingsManager.h"
-#import "ProjectSelectionTableViewCell.h"
+#import "SelectionTableViewCell.h"
 #import "SnackbarView.h"
 #import "SDKManager.h"
 
@@ -28,7 +28,7 @@
     
     self.tableView.accessibilityIdentifier = @"channelTable";
     self.tableView.accessibilityLabel = @"channelTable";
-    [self.tableView registerNib:[UINib nibWithNibName:@"ProjectSelectionTableViewCell" bundle:nil] forCellReuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"SelectionTableViewCell" bundle:nil] forCellReuseIdentifier:@"SelectionTableViewCellIdentifier"];
     
     if (!self.channels) {
         self.channels = [NSArray array];
@@ -113,10 +113,10 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    ProjectSelectionTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
+    SelectionTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"SelectionTableViewCellIdentifier"];
     
     if (cell == nil) {
-        cell = [[ProjectSelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ProjectSelectionTableViewCellIdentifier"];
+        cell = [[SelectionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SelectionTableViewCellIdentifier"];
     }
     
     DataChannel *dc = self.channels[indexPath.row];

@@ -7,7 +7,7 @@
 //
 
 #import "SenseAPI.h"
-#import "Project.h"
+#import "Organization.h"
 #import "DataChannel.h"
 #import "ProjectLandmark.h"
 #import "APIKey.h"
@@ -109,11 +109,7 @@
                                                         }
                                                         self.userToken = token;
                                                         [[SettingsManager sharedManager] setCurrentAccountEmail:email];
-                                                        [self GetOrganizationsIds:^(NSArray *orgIds, NSError * _Nullable error) {
-                                                            [self SetOrgId:orgIds[0] withCompletion:^(NSError * _Nullable error) {
-                                                                completed(nil);
-                                                            }];
-                                                        }];
+                                                        completed(nil);
                                                     }
                                                 }];
     [dataTask resume];
@@ -121,9 +117,8 @@
 
 # pragma mark - Get Organizations
 
-// This is janky as hell.
-
--(void) GetOrganizationsIds:(void ( ^ _Nullable )(NSArray *orgIds, NSError * _Nullable error))completed{
+- (void)GetOrganizationsWithCompletion:(void (^)(NSArray *, NSError * _Nullable))completed{
+    
     NSDictionary *headers = @{ @"Authorization": [self bearerToken],
                                @"Accept": @"application/json",
                                @"Connection": @"keep-alive" };
@@ -146,12 +141,14 @@
                                                             return;
                                                         }
                                                         
-                                                        NSArray *orgIds = [self organizationIdsFromData:data];
-                                                        completed(orgIds, nil);
+                                                        NSArray *orgs = [self organizationsFromData:data];
+                                                        completed(orgs, nil);
                                                     }
                                                 }];
     [dataTask resume];
 }
+
+# pragma mark - Set Organization
 
 -(void) SetOrgId:(NSString *_Nonnull)orgId withCompletion:(void ( ^ _Nullable )(NSError * _Nullable error))completed{
     
@@ -183,39 +180,6 @@
                                                         
                                                         self.userOrgToken = [[SGToken alloc]initWithData:data];
                                                         completed(nil);
-                                                    }
-                                                }];
-    [dataTask resume];
-}
-
-# pragma mark - Get Projects
-
--(void) GetProjectsWithCompletion:(void ( ^ _Nullable )(NSArray * projects, NSError * _Nullable error))completed{
-    
-    NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
-                               @"Accept": @"application/json",
-                               @"Connection": @"keep-alive" };
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self urlForEndPoint:@"/v2/projects"]]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:10.0];
-    [request setHTTPMethod:@"GET"];
-    [request setAllHTTPHeaderFields:headers];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    if (error) {
-                                                        NSLog(@"%@", error);
-                                                    } else {
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
-                                                        if ([self checkForUnauthorizedStatus:httpResponse]) {
-                                                            return;
-                                                        }
-                                                        
-                                                        NSArray *projects = [self projectsFromData:data];
-                                                        completed(projects, nil);
                                                     }
                                                 }];
     [dataTask resume];
@@ -302,13 +266,12 @@
 
 # pragma mark - Get Landmarks
 
--(void) GetLandmarksForProject:(NSString *_Nonnull)projectId WithCompletion:(void ( ^ _Nullable )(NSArray *landmarks, NSError * _Nullable error))completed{
+- (void)GetLandmarksWithCompletion:(void (^)(NSArray *, NSError * _Nullable))completed{
     
     NSDictionary *headers = @{ @"Authorization": [self bearerOrgToken],
                                @"Content-Type": @"application/json" };
     
-    NSDictionary *parameters = @{ @"projectId": projectId,
-                                  @"limit": @20,
+    NSDictionary *parameters = @{ @"limit": @20,
                                   @"offset": @0};
     
     NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
@@ -355,7 +318,7 @@
     printf("%s", [message UTF8String]);
 }
 
--(NSArray *) organizationIdsFromData:(NSData *)data{
+-(NSArray *) organizationsFromData:(NSData *)data{
     NSMutableArray *toReturn = [NSMutableArray array];
     
     NSError *error = nil;
@@ -369,9 +332,9 @@
         NSDictionary *responseDict = (NSDictionary *)object;
         if(responseDict[@"data"]){
             NSArray *orgs = (NSArray *)responseDict[@"data"];
-            for (NSDictionary *org in orgs) {
-                NSString *orgID = org[@"id"];
-                [toReturn addObject:orgID];
+            for (NSDictionary *orgObject in orgs) {
+                Organization *o = [[Organization alloc] initWithData:orgObject];
+                [toReturn addObject:o];
             }
         }
     }
@@ -443,35 +406,10 @@
     if ([object isKindOfClass:[NSDictionary class]]) {
         NSDictionary *responseDict = (NSDictionary *)object;
         if(responseDict[@"data"]){
-            NSArray *projectObjects = (NSArray *)responseDict[@"data"];
-            for (NSDictionary *projectObject in projectObjects) {
-                DataChannel *p = [[DataChannel alloc] initWithData:projectObject];
-                [toReturn addObject:p];
-            }
-        }
-    }
-    
-    
-    return toReturn;
-}
-
--(NSArray *) projectsFromData:(NSData *) data{
-    NSMutableArray *toReturn = [NSMutableArray array];
-    
-    NSError *error = nil;
-    id object = [NSJSONSerialization
-                 JSONObjectWithData:data
-                 options:0
-                 error:&error];
-    
-    
-    if ([object isKindOfClass:[NSDictionary class]]) {
-        NSDictionary *responseDict = (NSDictionary *)object;
-        if(responseDict[@"data"]){
-            NSArray *projectObjects = (NSArray *)responseDict[@"data"];
-            for (NSDictionary *projectObject in projectObjects) {
-                Project *p = [[Project alloc] initWithData:projectObject];
-                [toReturn addObject:p];
+            NSArray *channelObjects = (NSArray *)responseDict[@"data"];
+            for (NSDictionary *channelObject in channelObjects) {
+                DataChannel *c = [[DataChannel alloc] initWithData:channelObject];
+                [toReturn addObject:c];
             }
         }
     }
