@@ -235,7 +235,7 @@
     [SGSDK forceSensorUpdate];
 }
 
-- (IBAction)forceLocationUpdateTapped:(UIButton *)sender {
+- (IBAction)onDemandLocationUpdateTapped:(UIButton *)sender {
     [SGSDK getLocationWithSuccessHandler:^(Location *location) {
         NSString *locMessage = [NSString stringWithFormat:@"\nLatitude: %f\nLongtitude: %f\nAccuracy: %f", location.latitude, location.longitude, location.accuracy];
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Location Update" message:locMessage preferredStyle:UIAlertControllerStyleAlert];

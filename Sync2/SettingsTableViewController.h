@@ -14,6 +14,6 @@
 - (IBAction)logoutTapped:(id)sender;
 -(void) logout;
 - (IBAction)forceSensorUpdateTapped:(UIButton *)sender;
-- (IBAction)forceLocationUpdateTapped:(UIButton *)sender;
+- (IBAction)onDemandLocationUpdateTapped:(UIButton *)sender;
 
 @end
