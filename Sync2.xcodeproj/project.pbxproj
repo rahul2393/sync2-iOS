@@ -55,6 +55,9 @@
 		75D71593210C899F007378D5 /* ChooseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71592210C899F007378D5 /* ChooseMapViewController.m */; };
 		75D71596210C8C0A007378D5 /* ChooseMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71595210C8C0A007378D5 /* ChooseMapTableViewCell.m */; };
 		75DABA39211043820040A170 /* CustomSegmentControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DABA38211043820040A170 /* CustomSegmentControlViewController.m */; };
+		75DBF0A42212B2360016D8F7 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DBF0A32212B2360016D8F7 /* SixgillSDK.framework */; };
+		75DBF0A52212B23C0016D8F7 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DBF0A32212B2360016D8F7 /* SixgillSDK.framework */; };
+		75DBF0A62212B23C0016D8F7 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75DBF0A32212B2360016D8F7 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75DE397B2101D3490006BA78 /* SelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE39792101D3490006BA78 /* SelectionTableViewCell.m */; };
 		75E352952116B80400471D39 /* LogMapDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E352942116B80400471D39 /* LogMapDataViewController.m */; };
 		75E352982116D62800471D39 /* LogInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E352972116D62800471D39 /* LogInformationViewController.m */; };
@@ -157,6 +160,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				75DBF0A62212B23C0016D8F7 /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +260,7 @@
 		75D71595210C8C0A007378D5 /* ChooseMapTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseMapTableViewCell.m; sourceTree = "<group>"; };
 		75DABA37211043820040A170 /* CustomSegmentControlViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSegmentControlViewController.h; sourceTree = "<group>"; };
 		75DABA38211043820040A170 /* CustomSegmentControlViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentControlViewController.m; sourceTree = "<group>"; };
+		75DBF0A32212B2360016D8F7 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		75DE39782101D3490006BA78 /* SelectionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionTableViewCell.h; sourceTree = "<group>"; };
 		75DE39792101D3490006BA78 /* SelectionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionTableViewCell.m; sourceTree = "<group>"; };
 		75E352932116B80400471D39 /* LogMapDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogMapDataViewController.h; sourceTree = "<group>"; };
@@ -406,10 +411,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				75802C9D213D5E0B0068C856 /* libxml2.2.dylib in Frameworks */,
+				75DBF0A42212B2360016D8F7 /* SixgillSDK.framework in Frameworks */,
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
 				E962B3621EF213ED00ECB920 /* CoreLocation.framework in Frameworks */,
+				75DBF0A52212B23C0016D8F7 /* SixgillSDK.framework in Frameworks */,
 				58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1017,6 +1024,7 @@
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
+				75DBF0A32212B2360016D8F7 /* SixgillSDK.framework */,
 				756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */,
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
@@ -1374,7 +1382,6 @@
 				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
 				E9FB148A207D828600A00EFF /* Embed Frameworks */,
 				756C2D5920F60012008560FF /* ShellScript */,
-				8927750AF6D9D187C7B52AFA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1578,24 +1585,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8927750AF6D9D187C7B52AFA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh",
-				"${PODS_ROOT}/SixgillSDK/SixgillSDK/SixgillSDK.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SixgillSDK.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F9857E0285B6AEDE068EA46F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1663,7 +1652,6 @@
 				75502A81210A5DC800BFCA2A /* LogMapViewController.m in Sources */,
 				753B0CBD2201C34300F21657 /* Organization.m in Sources */,
 				E98430BC20169E5A00F11887 /* MapSettingsViewController.m in Sources */,
-				E9518B64201802F9001818CC /* TextNotification.m in Sources */,
 				7536010B220C160900669093 /* OrganizationSelectionViewController.m in Sources */,
 				753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */,
 				E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */,

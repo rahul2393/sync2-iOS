@@ -20,7 +20,7 @@ target 'Sync2' do
     pod 'MKDropdownMenu'
     pod 'TTGSnackbar'
 
-    pod 'SixgillSDK', '~> 1.2.19'
+#    pod 'SixgillSDK', '~> 1.2.19'
 
   target 'Sync2Tests' do
     inherit! :search_paths
