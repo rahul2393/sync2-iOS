@@ -1,0 +1,1 @@
+../../../../SixgillSDK/SixgillSDK/SixgillSDK.framework/Headers/SGAtlasProvider.h

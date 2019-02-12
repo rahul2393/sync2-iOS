@@ -48,9 +48,6 @@
 		75843ADF213A554600D7BB8D /* NotificationType.m in Sources */ = {isa = PBXBuildFile; fileRef = 75843ADE213A554600D7BB8D /* NotificationType.m */; };
 		759926EC20FE2E790073693F /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 759926EB20FE2E790073693F /* SplashViewController.m */; };
 		75B5952D21D0D16100497064 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B5952C21D0D16100497064 /* CameraViewController.m */; };
-		75B5952F21D0ED4300497064 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B5952E21D0ED4300497064 /* SixgillSDK.framework */; };
-		75B5953021D0ED4B00497064 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B5952E21D0ED4300497064 /* SixgillSDK.framework */; };
-		75B5953121D0ED4B00497064 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75B5952E21D0ED4300497064 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75CD539E213D33DF006D8390 /* UITapGestureRecognizerExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CD539D213D33DF006D8390 /* UITapGestureRecognizerExtension.m */; };
 		75D71583210AF214007378D5 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71582210AF214007378D5 /* Device.m */; };
 		75D71587210B0D10007378D5 /* LogMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71586210B0D10007378D5 /* LogMapTableViewCell.m */; };
@@ -59,9 +56,6 @@
 		75D71593210C899F007378D5 /* ChooseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71592210C899F007378D5 /* ChooseMapViewController.m */; };
 		75D71596210C8C0A007378D5 /* ChooseMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71595210C8C0A007378D5 /* ChooseMapTableViewCell.m */; };
 		75DABA39211043820040A170 /* CustomSegmentControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DABA38211043820040A170 /* CustomSegmentControlViewController.m */; };
-		75DBF0A42212B2360016D8F7 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DBF0A32212B2360016D8F7 /* SixgillSDK.framework */; };
-		75DBF0A52212B23C0016D8F7 /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DBF0A32212B2360016D8F7 /* SixgillSDK.framework */; };
-		75DBF0A62212B23C0016D8F7 /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75DBF0A32212B2360016D8F7 /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75DE397B2101D3490006BA78 /* SelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE39792101D3490006BA78 /* SelectionTableViewCell.m */; };
 		75E352952116B80400471D39 /* LogMapDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E352942116B80400471D39 /* LogMapDataViewController.m */; };
 		75E352982116D62800471D39 /* LogInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E352972116D62800471D39 /* LogInformationViewController.m */; };
@@ -164,7 +158,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				75B5953121D0ED4B00497064 /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +243,6 @@
 		759926EB20FE2E790073693F /* SplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		75B5952B21D0D16100497064 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		75B5952C21D0D16100497064 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
-		75B5952E21D0ED4300497064 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		75CD539C213D33C9006D8390 /* UITapGestureRecognizerExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITapGestureRecognizerExtension.h; sourceTree = "<group>"; };
 		75CD539D213D33DF006D8390 /* UITapGestureRecognizerExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITapGestureRecognizerExtension.m; sourceTree = "<group>"; };
 		75D71582210AF214007378D5 /* Device.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
@@ -267,7 +259,6 @@
 		75D71595210C8C0A007378D5 /* ChooseMapTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseMapTableViewCell.m; sourceTree = "<group>"; };
 		75DABA37211043820040A170 /* CustomSegmentControlViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSegmentControlViewController.h; sourceTree = "<group>"; };
 		75DABA38211043820040A170 /* CustomSegmentControlViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentControlViewController.m; sourceTree = "<group>"; };
-		75DBF0A32212B2360016D8F7 /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		75DE39782101D3490006BA78 /* SelectionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionTableViewCell.h; sourceTree = "<group>"; };
 		75DE39792101D3490006BA78 /* SelectionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionTableViewCell.m; sourceTree = "<group>"; };
 		75E352932116B80400471D39 /* LogMapDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogMapDataViewController.h; sourceTree = "<group>"; };
@@ -418,12 +409,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				75802C9D213D5E0B0068C856 /* libxml2.2.dylib in Frameworks */,
-				75B5952F21D0ED4300497064 /* SixgillSDK.framework in Frameworks */,
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
 				E962B3621EF213ED00ECB920 /* CoreLocation.framework in Frameworks */,
-				75B5953021D0ED4B00497064 /* SixgillSDK.framework in Frameworks */,
 				58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1041,7 +1030,6 @@
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
-				75B5952E21D0ED4300497064 /* SixgillSDK.framework */,
 				756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */,
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
@@ -1399,6 +1387,7 @@
 				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
 				E9FB148A207D828600A00EFF /* Embed Frameworks */,
 				756C2D5920F60012008560FF /* ShellScript */,
+				A21D61051EB0E09047DA0F2E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1600,6 +1589,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A21D61051EB0E09047DA0F2E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh",
+				"${PODS_ROOT}/IndoorAtlas/indooratlas-ios-sdk/IndoorAtlas.framework",
+				"${PODS_ROOT}/SixgillSDK/SixgillSDK/SixgillSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IndoorAtlas.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SixgillSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F9857E0285B6AEDE068EA46F /* [CP] Check Pods Manifest.lock */ = {

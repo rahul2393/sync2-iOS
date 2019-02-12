@@ -1,5 +1,11 @@
 PODS:
   - ActionSheetPicker-3.0 (2.3.0)
+  - CocoaLumberjack (3.4.2):
+    - CocoaLumberjack/Default (= 3.4.2)
+    - CocoaLumberjack/Extensions (= 3.4.2)
+  - CocoaLumberjack/Default (3.4.2)
+  - CocoaLumberjack/Extensions (3.4.2):
+    - CocoaLumberjack/Default
   - Crashlytics (3.10.9):
     - Fabric (~> 1.7.13)
   - Fabric (1.7.13)
@@ -70,12 +76,16 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.3.6):
     - GoogleUtilities/Logger
+  - IndoorAtlas (2.8.4)
   - MKDropdownMenu (1.4)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - SixgillSDK (1.3.0-beta.60):
+    - CocoaLumberjack
+    - IndoorAtlas
   - TTGSnackbar (1.7.5)
   - ULID (1.0.4)
 
@@ -88,12 +98,14 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - MKDropdownMenu
+  - SixgillSDK (~> 1.3.0-beta.60)
   - TTGSnackbar
   - ULID
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ActionSheetPicker-3.0
+    - CocoaLumberjack
     - Crashlytics
     - Fabric
     - Firebase
@@ -105,13 +117,17 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - GoogleUtilities
+    - IndoorAtlas
     - MKDropdownMenu
     - nanopb
     - TTGSnackbar
     - ULID
+  https://github.com/sixgill/SixgillPodSpecs.git:
+    - SixgillSDK
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
+  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   Crashlytics: 55e24fc23989680285a21cb1146578d9d18e432c
   Fabric: 25d0963b691fc97be566392243ff0ecef5a68338
   Firebase: 6df9a6114bc9f106a98fe83d5438d4d9833c2019
@@ -123,11 +139,13 @@ SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
+  IndoorAtlas: 397f5e9fe1daffe99d73d3ed5f29c1ac635e2e90
   MKDropdownMenu: 269df4a41d21a1db684ce8bc709befe419fc5bae
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  SixgillSDK: c8e87ed02772d7e40efbf68234a0988165a628a9
   TTGSnackbar: 2cf4e7b6ffbe5cddf248a73f3ee952b71bee8ea3
   ULID: 5420457422bc526c8e4ab88273c9abc834e97744
 
-PODFILE CHECKSUM: 6f35d8a5b9bc60fd0a47d9a992bf20f82a873a23
+PODFILE CHECKSUM: 65c50b1392f028d7f590145a4b4b8d829f390b3b
 
 COCOAPODS: 1.5.3
