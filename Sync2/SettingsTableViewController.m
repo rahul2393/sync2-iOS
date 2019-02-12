@@ -122,7 +122,7 @@
 
     switch (section) {
         case 0:
-            return 3;
+            return 4;
         default:
             return 6;
     }
@@ -158,7 +158,7 @@
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 break;
             }
-            case 3:{
+            case 2:{
                 cell.keyLabel.text = @"Hailer Channel";
                 DataChannel *selected = [[SettingsManager sharedManager] selectedHailerChannel];
                 NSString *t = @"";
@@ -169,7 +169,7 @@
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 break;
             }
-            case 4:{
+            case 3:{
                 cell.keyLabel.text = @"API URL";
                 cell.valueLabel.text = [SenseAPI serverAddress];
                 break;
@@ -229,7 +229,7 @@
                 // Open channel selection view
                 [self loadDataChannelsForHailerType:false];
                 break;
-            case 3:
+            case 2:
                 // Open channel selection view
                 [self loadDataChannelsForHailerType:true];
                 break;
