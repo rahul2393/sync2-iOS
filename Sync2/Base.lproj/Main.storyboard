@@ -5905,7 +5905,7 @@ revised: 5/9/2016</string>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfz-fz-rtz">
                                         <rect key="frame" x="10" y="56.666666666666657" width="335" height="131.33333333333334"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">You can manage and create organizations within Sixgill Sense. An organization is essentially a way to control who can access your data and manipulate your devices.  We recommend selecting a Organization that you want to test for.</string>
+                                        <string key="text">You can manage and create organizations within Sixgill Sense. An organization is essentially a way to control who can access your data and manipulate your devices.  Select the organization you'd like to connect to.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
