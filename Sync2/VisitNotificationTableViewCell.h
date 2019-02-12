@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EventNotification.h"
 @import MapKit;
+@import SixgillSDK;
 
 @interface VisitNotificationTableViewCell : UITableViewCell <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -18,6 +18,6 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
--(void)configureCell:(EventNotification *)notification;
+-(void)configureCell:(Notification *)notification;
 
 @end

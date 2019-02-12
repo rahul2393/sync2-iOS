@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "GCPlaceholderTextView.h"
-#import "FeedbackNotification.h"
+
+@import SixgillSDK;
 
 @interface FeedbackNotificationTableViewCell : UITableViewCell<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -18,5 +19,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *button;
 
--(void)configureCell:(FeedbackNotification *)notification;
+-(void)configureCell:(Notification *)notification;
 @end

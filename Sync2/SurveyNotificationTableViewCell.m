@@ -28,16 +28,19 @@
     self.radioButtonChecked = [[NSMutableArray alloc] init];
 }
 
-- (void)configureCell:(SurveyNotification *)notification {
+- (void)configureCell:(Notification *)notification {
     self.titleLabel.text = notification.title;
     self.detailLabel.text = notification.body;
-    self.dateLabel.text = [notification displayableDate];
     
-    self.data = notification.options;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMMM dd, h:mm a"];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)]]];
+    
+    self.data = notification.optionsArray;
     [self.button setTitle:notification.buttonText forState:UIControlStateNormal];
-    self.submitURL = notification.submitUrl;
+    self.submitURL = notification.submitURL;
     
-    for (id _ in notification.options) {
+    for (id _ in notification.optionsArray) {
         [self.radioButtonChecked addObject:[NSNumber numberWithBool:FALSE]];
     }
     
@@ -59,7 +62,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     OptionSurveyTableViewCell *cell = (OptionSurveyTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"OptionSurveyTableViewCellIdentifier" forIndexPath:indexPath];
-    SurveyOption *option = (SurveyOption *) self.data[indexPath.row];
+    Notification_Options *option = self.data[indexPath.row];
     cell.optionValueLabel.text = option.text;
     cell.selectedImageView.image = [[self.radioButtonChecked objectAtIndex:indexPath.row] boolValue] ? [UIImage imageNamed: @"radio-button-check"] : [UIImage imageNamed: @"radio-button-unselected"];
     return cell;

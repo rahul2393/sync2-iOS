@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ScheduleNotification.h"
+
+@import SixgillSDK;
 
 @interface ScheduleNotificationTableViewCell : UITableViewCell
 
@@ -22,6 +23,6 @@
 
 - (IBAction)datePickerTapped:(id)sender;
 
--(void)configureCell:(ScheduleNotification *)notification;
+-(void)configureCell:(Notification *)notification;
 
 @end

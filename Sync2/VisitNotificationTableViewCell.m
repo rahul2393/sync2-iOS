@@ -17,18 +17,21 @@
     [self.mapView setUserInteractionEnabled:NO];
 }
 
-- (void)configureCell:(EventNotification *)notification {
+- (void)configureCell:(Notification *)notification {
     
     self.titleLabel.text = notification.title;
     self.detailLabel.text = notification.body;
-    self.dateLabel.text = [notification displayableDate];
+
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMMM dd, h:mm a"];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)]]];
     
     self.address1Label.text = notification.addressTitle;
     self.address2Label.text = notification.address;
     
-    CLLocationCoordinate2D location = CLLocationCoordinate2DMake([notification.latitude doubleValue], [notification.longitude doubleValue]);
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(notification.latitude, notification.longitude);
     [self.mapView setCenterCoordinate:location animated:YES];
-    MKCoordinateRegion  zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
+    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
     [self.mapView setRegion:zoomRegion animated:YES];
     
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];

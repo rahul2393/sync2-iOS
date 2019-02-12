@@ -27,14 +27,17 @@
     // Configure the view for the selected state
 }
 
-- (void)configureCell:(FeedbackNotification *)notification {
+- (void)configureCell:(Notification *)notification {
     self.titleLabel.text = notification.title;
     self.detailLabel.text = notification.body;
-    self.dateLabel.text = [notification displayableDate];
+
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMMM dd, h:mm a"];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)]]];
     
     self.feedbackTextView.placeholder = notification.commentHint;
     [self.button setTitle:notification.buttonText forState:UIControlStateNormal];
-    self.submitURL = notification.submitUrl;
+    self.submitURL = notification.submitURL;
 }
 
 - (IBAction)sendFeedbackTapped:(id)sender {

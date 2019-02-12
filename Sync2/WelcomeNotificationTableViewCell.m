@@ -21,6 +21,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
+    self.pTagContent = @"";
+    self.aTagContent = @"";
+    self.aTagURL = @"";
+    
     // Initialization code
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTapped:)];
     [self.detailLabel addGestureRecognizer:tapGestureRecognizer];
@@ -33,7 +37,7 @@
     // Configure the view for the selected state
 }
 
-- (void)configureCell:(InformationNotification *)notification {
+- (void)configureCell:(Notification *)notification {
     self.titleLabel.text = notification.title;
     
     [self parseHTMLTags:notification.body];
@@ -46,7 +50,9 @@
     [attributedString setAttributes:linkAttributes range:linkRange];
     self.detailLabel.attributedText = attributedString;
     
-    self.dateLabel.text = [notification displayableDate];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMMM dd, h:mm a"];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)]]];
 }
 
 - (void)labelTapped:(UITapGestureRecognizer *)recognizer {
@@ -68,14 +74,20 @@
     
     NSString *pTagXpathQueryString = @"/html/body/p";
     NSArray *pTagArray = [tutorialsParser searchWithXPathQuery:pTagXpathQueryString];
-    TFHppleElement *pTagElement = pTagArray[0];
-    self.pTagContent = pTagElement.content;
     
-    // set aTagContent and aTagURL
-    
-    TFHppleElement *aTagContentElement = pTagElement.children[1];
-    self.aTagContent = aTagContentElement.content;
-    self.aTagURL = aTagContentElement.attributes[@"href"];
+    if (pTagArray.count > 0) {
+        TFHppleElement *pTagElement = pTagArray[0];
+        self.pTagContent = pTagElement.content;
+        
+        // set aTagContent and aTagURL
+        if (pTagElement.children.count > 1) {
+            TFHppleElement *aTagContentElement = pTagElement.children[1];
+            self.aTagContent = aTagContentElement.content;
+            if (aTagContentElement.attributes[@"href"]) {
+                self.aTagURL = aTagContentElement.attributes[@"href"];
+            }
+        }
+    }
 }
 
 @end

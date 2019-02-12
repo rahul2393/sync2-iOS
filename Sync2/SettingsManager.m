@@ -10,15 +10,7 @@
 #import "SenseAPI.h"
 #import "NotificationType.h"
 
-#import "TextNotification.h"
 #import "SDKManager.h"
-#import "InformationNotification.h"
-#import "ActionNotification.h"
-#import "FeedbackNotification.h"
-#import "SurveyNotification.h"
-#import "ScheduleNotification.h"
-#import "EventNotification.h"
-
 
 #define KEY_HASONBOARDED @"hasOnboarded"
 
@@ -105,75 +97,75 @@
 
 - (void)saveRemoteNotificationPayload:(NSDictionary *)payload {
     
-    if (!payload[SG_PUSH_CMD_FIELD]) {
-        return;
-    }
-    
-    NSDictionary *data = payload[SG_PUSH_CMD_FIELD];
-    if (!data[SG_PUSH_TYPE]) {
-        return;
-    }
-    
-    NSString *type = data[SG_PUSH_TYPE];
-    
-    kNotificationType notificationType = [[[NotificationType alloc] init] notificationTypeFor:type];
-    
-    switch (notificationType) {
-        case INFORMATION: {
-            InformationNotification *informationNotification = [[InformationNotification alloc] initWithPayload:data];
-            if (informationNotification != nil) {
-                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-                [savedNotifications insertObject:informationNotification atIndex:0];
-                [self addRemoteNotificationPayloads:savedNotifications];
-            }
-            break;
-        }
-        case ACTION_NOTIFICATION: {
-            ActionNotification *actionNotification = [[ActionNotification alloc] initWithPayload:data];
-            if (actionNotification != nil) {
-                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-                [savedNotifications insertObject:actionNotification atIndex:0];
-                [self addRemoteNotificationPayloads:savedNotifications];
-            }
-            break;
-        }
-        case FEEDBACK: {
-            FeedbackNotification *feedbackNotification = [[FeedbackNotification alloc] initWithPayload:data];
-            if (feedbackNotification != nil) {
-                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-                [savedNotifications insertObject:feedbackNotification atIndex:0];
-                [self addRemoteNotificationPayloads:savedNotifications];
-            }
-            break;
-        }
-        case SURVEY: {
-            SurveyNotification *surveyNotification = [[SurveyNotification alloc] initWithPayload:data];
-            if (surveyNotification != nil) {
-                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-                [savedNotifications insertObject:surveyNotification atIndex:0];
-                [self addRemoteNotificationPayloads:savedNotifications];
-            }
-            break;
-        }
-        case SCHEDULE: {
-            ScheduleNotification *scheduleNotification = [[ScheduleNotification alloc] initWithPayload:data];
-            if (scheduleNotification != nil) {
-                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-                [savedNotifications insertObject:scheduleNotification atIndex:0];
-                [self addRemoteNotificationPayloads:savedNotifications];
-            }
-            break;
-        }
-        case EVENT: {
-            EventNotification *eventNotification = [[EventNotification alloc] initWithPayload:data];
-            if (eventNotification != nil) {
-                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-                [savedNotifications insertObject:eventNotification atIndex:0];
-                [self addRemoteNotificationPayloads:savedNotifications];
-            }
-            break;
-        }
-    }
+//    if (!payload[SG_PUSH_CMD_FIELD]) {
+//        return;
+//    }
+//    
+//    NSDictionary *data = payload[SG_PUSH_CMD_FIELD];
+//    if (!data[SG_PUSH_TYPE]) {
+//        return;
+//    }
+//    
+//    NSString *type = data[SG_PUSH_TYPE];
+//    
+//    kNotificationType notificationType = [[[NotificationType alloc] init] notificationTypeFor:type];
+//    
+//    switch (notificationType) {
+//        case INFORMATION: {
+//            InformationNotification *informationNotification = [[InformationNotification alloc] initWithPayload:data];
+//            if (informationNotification != nil) {
+//                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+//                [savedNotifications insertObject:informationNotification atIndex:0];
+//                [self addRemoteNotificationPayloads:savedNotifications];
+//            }
+//            break;
+//        }
+//        case ACTION_NOTIFICATION: {
+//            ActionNotification *actionNotification = [[ActionNotification alloc] initWithPayload:data];
+//            if (actionNotification != nil) {
+//                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+//                [savedNotifications insertObject:actionNotification atIndex:0];
+//                [self addRemoteNotificationPayloads:savedNotifications];
+//            }
+//            break;
+//        }
+//        case FEEDBACK: {
+//            FeedbackNotification *feedbackNotification = [[FeedbackNotification alloc] initWithPayload:data];
+//            if (feedbackNotification != nil) {
+//                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+//                [savedNotifications insertObject:feedbackNotification atIndex:0];
+//                [self addRemoteNotificationPayloads:savedNotifications];
+//            }
+//            break;
+//        }
+//        case SURVEY: {
+//            SurveyNotification *surveyNotification = [[SurveyNotification alloc] initWithPayload:data];
+//            if (surveyNotification != nil) {
+//                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+//                [savedNotifications insertObject:surveyNotification atIndex:0];
+//                [self addRemoteNotificationPayloads:savedNotifications];
+//            }
+//            break;
+//        }
+//        case SCHEDULE: {
+//            ScheduleNotification *scheduleNotification = [[ScheduleNotification alloc] initWithPayload:data];
+//            if (scheduleNotification != nil) {
+//                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+//                [savedNotifications insertObject:scheduleNotification atIndex:0];
+//                [self addRemoteNotificationPayloads:savedNotifications];
+//            }
+//            break;
+//        }
+//        case EVENT: {
+//            EventNotification *eventNotification = [[EventNotification alloc] initWithPayload:data];
+//            if (eventNotification != nil) {
+//                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+//                [savedNotifications insertObject:eventNotification atIndex:0];
+//                [self addRemoteNotificationPayloads:savedNotifications];
+//            }
+//            break;
+//        }
+//    }
 }
 
 - (NSArray *)savedRemoteNotificationPayloads {

@@ -22,16 +22,19 @@
     // Initialization code
 }
 
-- (void)configureCell:(ScheduleNotification *)notification {
+- (void)configureCell:(Notification *)notification {
     self.titleLabel.text = notification.title;
     self.detailLabel.text = notification.body;
-    self.dateLabel.text = [notification displayableDate];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMMM dd, h:mm a"];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)]]];
     
     [self.button setTitle:notification.buttonText forState:UIControlStateNormal];
-    self.submitURL = notification.submitUrl;
+    self.submitURL = notification.submitURL;
     
-    self.startDate = [NSDate dateWithTimeIntervalSince1970:(notification.startTimeStamp / 1000.0)];
-    self.endDate = [NSDate dateWithTimeIntervalSince1970:(notification.endTimeStamp / 1000.0)];
+    self.startDate = [NSDate dateWithTimeIntervalSince1970:(notification.startTimestamp / 1000.0)];
+    self.endDate = [NSDate dateWithTimeIntervalSince1970:(notification.endTimestamp / 1000.0)];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
