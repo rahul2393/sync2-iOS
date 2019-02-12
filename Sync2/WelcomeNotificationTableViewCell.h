@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "InformationNotification.h"
+
+@import SixgillSDK;
 
 @interface WelcomeNotificationTableViewCell : UITableViewCell
 
@@ -15,5 +16,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
--(void)configureCell:(InformationNotification *)notification;
+-(void)configureCell:(Notification *)notification;
 @end

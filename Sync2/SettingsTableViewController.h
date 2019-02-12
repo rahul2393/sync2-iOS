@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)logoutTapped:(id)sender;
 -(void) logout;
+- (IBAction)forceSensorUpdateTapped:(UIButton *)sender;
+- (IBAction)onDemandLocationUpdateTapped:(UIButton *)sender;
 
 @end

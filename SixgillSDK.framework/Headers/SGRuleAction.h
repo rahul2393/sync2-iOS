@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *subject;
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSArray *recipients;
+@property (nonatomic, readwrite) BOOL reflect;
 
 
 @property (nonatomic, strong) NSString *url;

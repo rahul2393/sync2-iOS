@@ -20,7 +20,6 @@
 @interface RulesCloudViewController ()
 
 @property (nonatomic, strong) NSArray<SGRule *> *rules;
-@property (nonatomic, readwrite) Project *currentProject;
 @property (nonatomic, readwrite) long conditionsCount;
 @end
 
@@ -35,8 +34,6 @@
     
     [self.tableView setHidden:YES];
     [self.emptyView setHidden:NO];
-    
-    _currentProject = [[SettingsManager sharedManager] selectedProject];
     
     // Setting tableview constraints
     switch (UIDevice.currentDevice.screenType) {
@@ -57,10 +54,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    if (!_currentProject || !_currentProject.objectId || [_currentProject.objectId isEqualToString:@""]) {
-        return;
-    }
     
     [SGSDK getRulesOfType:@"cloud" andSuccessHandler:^(NSMutableArray<SGRule *> *rules) {
         self.rules = rules;

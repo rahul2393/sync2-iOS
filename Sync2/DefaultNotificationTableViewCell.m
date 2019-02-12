@@ -2,7 +2,7 @@
 //  DefaultNotificationTableViewCell.m
 //  Sync2
 //
-//  Created by Sanchit Mittal on 07/01/19.
+//  Created by Sanchit Mittal on 05/02/19.
 //  Copyright © 2019 Sixgill. All rights reserved.
 //
 
@@ -26,18 +26,6 @@
     self.titleLabel.text = notification.subject;
     self.detailLabel.text = notification.message;
     
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:notification.timestamp];
-    self.dateLabel.text = [self displayableDateFor:date];
-
 }
-
--(NSString *)displayableDateFor:(NSDate *)date{
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MMMM dd, h:mm a"];
-    
-    return [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:date]];
-}
-
 
 @end

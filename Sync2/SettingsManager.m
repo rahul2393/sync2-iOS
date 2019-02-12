@@ -10,15 +10,7 @@
 #import "SenseAPI.h"
 #import "NotificationType.h"
 
-#import "TextNotification.h"
 #import "SDKManager.h"
-#import "InformationNotification.h"
-#import "ActionNotification.h"
-#import "FeedbackNotification.h"
-#import "SurveyNotification.h"
-#import "ScheduleNotification.h"
-#import "EventNotification.h"
-
 
 #define KEY_HASONBOARDED @"hasOnboarded"
 
@@ -42,7 +34,7 @@
 
 #define KEY_Notifications @"notifications"
 
-#define KEY_SelectedProject @"selectedProject"
+#define KEY_SelectedOrganization @"selectedOrganization"
 #define KEY_SelectedDataChannel @"selectedDataChannel"
 #define KEY_SelectedHailerChannel @"selectedHailerChannel"
 
@@ -106,75 +98,75 @@
 
 - (void)saveRemoteNotificationPayload:(NSDictionary *)payload {
     
-    if (!payload[SG_PUSH_CMD_FIELD]) {
-        return;
-    }
-    
-    NSDictionary *data = payload[SG_PUSH_CMD_FIELD];
-    if (!data[SG_PUSH_TYPE]) {
-        return;
-    }
-    
-    NSString *type = data[SG_PUSH_TYPE];
-    
-    kNotificationType notificationType = [[[NotificationType alloc] init] notificationTypeFor:type];
-    
-    switch (notificationType) {
-        case INFORMATION: {
-            InformationNotification *informationNotification = [[InformationNotification alloc] initWithPayload:data];
-            if (informationNotification != nil) {
-                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-                [savedNotifications insertObject:informationNotification atIndex:0];
-                [self addRemoteNotificationPayloads:savedNotifications];
-            }
-            break;
-        }
-        case ACTION_NOTIFICATION: {
-            ActionNotification *actionNotification = [[ActionNotification alloc] initWithPayload:data];
-            if (actionNotification != nil) {
-                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-                [savedNotifications insertObject:actionNotification atIndex:0];
-                [self addRemoteNotificationPayloads:savedNotifications];
-            }
-            break;
-        }
-        case FEEDBACK: {
-            FeedbackNotification *feedbackNotification = [[FeedbackNotification alloc] initWithPayload:data];
-            if (feedbackNotification != nil) {
-                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-                [savedNotifications insertObject:feedbackNotification atIndex:0];
-                [self addRemoteNotificationPayloads:savedNotifications];
-            }
-            break;
-        }
-        case SURVEY: {
-            SurveyNotification *surveyNotification = [[SurveyNotification alloc] initWithPayload:data];
-            if (surveyNotification != nil) {
-                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-                [savedNotifications insertObject:surveyNotification atIndex:0];
-                [self addRemoteNotificationPayloads:savedNotifications];
-            }
-            break;
-        }
-        case SCHEDULE: {
-            ScheduleNotification *scheduleNotification = [[ScheduleNotification alloc] initWithPayload:data];
-            if (scheduleNotification != nil) {
-                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-                [savedNotifications insertObject:scheduleNotification atIndex:0];
-                [self addRemoteNotificationPayloads:savedNotifications];
-            }
-            break;
-        }
-        case EVENT: {
-            EventNotification *eventNotification = [[EventNotification alloc] initWithPayload:data];
-            if (eventNotification != nil) {
-                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
-                [savedNotifications insertObject:eventNotification atIndex:0];
-                [self addRemoteNotificationPayloads:savedNotifications];
-            }
-            break;
-        }
-    }
+//    if (!payload[SG_PUSH_CMD_FIELD]) {
+//        return;
+//    }
+//    
+//    NSDictionary *data = payload[SG_PUSH_CMD_FIELD];
+//    if (!data[SG_PUSH_TYPE]) {
+//        return;
+//    }
+//    
+//    NSString *type = data[SG_PUSH_TYPE];
+//    
+//    kNotificationType notificationType = [[[NotificationType alloc] init] notificationTypeFor:type];
+//    
+//    switch (notificationType) {
+//        case INFORMATION: {
+//            InformationNotification *informationNotification = [[InformationNotification alloc] initWithPayload:data];
+//            if (informationNotification != nil) {
+//                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+//                [savedNotifications insertObject:informationNotification atIndex:0];
+//                [self addRemoteNotificationPayloads:savedNotifications];
+//            }
+//            break;
+//        }
+//        case ACTION_NOTIFICATION: {
+//            ActionNotification *actionNotification = [[ActionNotification alloc] initWithPayload:data];
+//            if (actionNotification != nil) {
+//                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+//                [savedNotifications insertObject:actionNotification atIndex:0];
+//                [self addRemoteNotificationPayloads:savedNotifications];
+//            }
+//            break;
+//        }
+//        case FEEDBACK: {
+//            FeedbackNotification *feedbackNotification = [[FeedbackNotification alloc] initWithPayload:data];
+//            if (feedbackNotification != nil) {
+//                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+//                [savedNotifications insertObject:feedbackNotification atIndex:0];
+//                [self addRemoteNotificationPayloads:savedNotifications];
+//            }
+//            break;
+//        }
+//        case SURVEY: {
+//            SurveyNotification *surveyNotification = [[SurveyNotification alloc] initWithPayload:data];
+//            if (surveyNotification != nil) {
+//                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+//                [savedNotifications insertObject:surveyNotification atIndex:0];
+//                [self addRemoteNotificationPayloads:savedNotifications];
+//            }
+//            break;
+//        }
+//        case SCHEDULE: {
+//            ScheduleNotification *scheduleNotification = [[ScheduleNotification alloc] initWithPayload:data];
+//            if (scheduleNotification != nil) {
+//                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+//                [savedNotifications insertObject:scheduleNotification atIndex:0];
+//                [self addRemoteNotificationPayloads:savedNotifications];
+//            }
+//            break;
+//        }
+//        case EVENT: {
+//            EventNotification *eventNotification = [[EventNotification alloc] initWithPayload:data];
+//            if (eventNotification != nil) {
+//                NSMutableArray *savedNotifications = [[self savedRemoteNotificationPayloads] mutableCopy];
+//                [savedNotifications insertObject:eventNotification atIndex:0];
+//                [self addRemoteNotificationPayloads:savedNotifications];
+//            }
+//            break;
+//        }
+//    }
 }
 
 - (NSArray *)savedRemoteNotificationPayloads {
@@ -196,12 +188,12 @@
 }
 
 -(void) logout{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedOrganization];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannel];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedHailerChannel];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_AccountEmail];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_UserToken];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_UserOrgToken];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedProject];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_ACTIVEACCOUNTID];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_Notifications];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -209,20 +201,29 @@
     [[SDKManager sharedManager] clearSensorsData];
 }
 
--(Project *) selectedProject{
-    NSDictionary *d = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SelectedProject];
+- (Organization *)selectedOrganization{
+    NSDictionary *d = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_SelectedOrganization];
     if (!d) {
         return nil;
     }
     
-    Project *p = [[Project alloc]initWithData:d];
+    Organization *o = [[Organization alloc] initWithData:d];
     
-    return p;
+    return o;
 }
 
--(void) selectProject:(Project *)project{
-    [[NSUserDefaults standardUserDefaults] setObject:[project toDictionary] forKey:KEY_SelectedProject];
+- (void)selectOrganization:(Organization *)org withCompletionHandler:(void (^)(NSError * _Nullable))completionBlock{
+    [[NSUserDefaults standardUserDefaults] setObject:[org toDictionary] forKey:KEY_SelectedOrganization];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[SenseAPI sharedManager] SetOrgId:org.objectId withCompletion:^(NSError * _Nullable error) {
+        if (error) {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedOrganization];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+        }
+        completionBlock(error);
+    }];
 }
 
 -(DataChannel *) selectedDataChannel{

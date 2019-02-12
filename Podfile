@@ -21,7 +21,7 @@ target 'Sync2' do
     pod 'TTGSnackbar'
     pod 'ULID'
 
-#    pod 'SixgillSDK'
+#    pod 'SixgillSDK', '~> 1.2.19'
 
   target 'Sync2Tests' do
     inherit! :search_paths

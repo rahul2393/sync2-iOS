@@ -7,12 +7,10 @@
 //
 
 #import "SettingsTableViewController.h"
-#import "DummySettingsData.h"
 #import "SettingsManager.h"
 #import "SenseAPI.h"
 #import "SDKManager.h"
 #import "DataChannelSelectionViewController.h"
-#import "ProjectSelectionViewController.h"
 #import "EnvironmentSelectionViewController.h"
 #import "EnvironmentManager.h"
 #import "SettingsTableViewCell.h"
@@ -20,9 +18,7 @@
 @import SixgillSDK;
 
 @interface SettingsTableViewController ()
-@property (nonatomic, readwrite) BOOL useDummyData;
 @property (nonatomic, strong) NSArray *dataChannels;
-@property (nonatomic, strong) NSArray *projects;
 @property (nonatomic, readwrite) BOOL loadDataChannelsForHailerType;
 @property Event* log;
 @end
@@ -32,29 +28,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _useDummyData = NO;
-    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
     self.log = [[SDKManager sharedManager] sensorsData].lastObject;
     [self.tableView reloadData];
 }
 
 -(void) loadEnvironments{
     [self performSegueWithIdentifier:@"goToEnvironmentSelection" sender:self];
-}
-
--(void) loadProjects{
-    [[SenseAPI sharedManager] GetProjectsWithCompletion:^(NSArray *projects, NSError * _Nullable error) {
-        self.projects = projects;
-        dispatch_async(dispatch_get_main_queue(),^{
-            [self performSegueWithIdentifier:@"projectSelection" sender:self];
-        });
-    }];
 }
 
 -(void) loadDataChannelsForHailerType:(BOOL)loadDataChannelsForHailerType{
@@ -107,10 +93,6 @@
         DataChannelSelectionViewController *dcsvc = (DataChannelSelectionViewController *)nav.viewControllers[0];
         dcsvc.channels = self.dataChannels;
         dcsvc.shouldFilterHailerType = self.loadDataChannelsForHailerType;
-    }else if ([segue.identifier isEqualToString:@"projectSelection"]) {
-        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
-        ProjectSelectionViewController *vc = (ProjectSelectionViewController *)nav.viewControllers[0];
-        vc.projects = self.projects;
     }
 //    else if([segue.identifier isEqualToString:@"goToEnvironmentSelection"]){
 //        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
@@ -140,7 +122,7 @@
 
     switch (section) {
         case 0:
-            return 5;
+            return 3;
         default:
             return 6;
     }
@@ -166,47 +148,24 @@
                 break;
             }
             case 1:{
-                cell.keyLabel.text = @"Project";
-                if (self.useDummyData) {
-                    cell.valueLabel.text = [[DummySettingsData project] name];
-                }else{
-                    Project *selected = [[SettingsManager sharedManager] selectedProject];
-                    NSString *t = @"";
-                    if (selected) {
-                        t = selected.name;
-                    }
-                    cell.valueLabel.text = t;
-                }
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                break;
-            }
-            case 2:{
                 cell.keyLabel.text = @"Data Channel";
-                if (self.useDummyData) {
-                    cell.valueLabel.text = [[DummySettingsData dataChannel] name];
-                }else{
-                    DataChannel *selected = [[SettingsManager sharedManager] selectedDataChannel];
-                    NSString *t = @"";
-                    if (selected) {
-                        t = selected.name;
-                    }
-                    cell.valueLabel.text = t;
+                DataChannel *selected = [[SettingsManager sharedManager] selectedDataChannel];
+                NSString *t = @"";
+                if (selected) {
+                    t = selected.name;
                 }
+                cell.valueLabel.text = t;
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 break;
             }
             case 3:{
                 cell.keyLabel.text = @"Hailer Channel";
-                if (self.useDummyData) {
-                    cell.valueLabel.text = [[DummySettingsData dataChannel] name];
-                }else{
-                    DataChannel *selected = [[SettingsManager sharedManager] selectedHailerChannel];
-                    NSString *t = @"";
-                    if (selected) {
-                        t = selected.name;
-                    }
-                    cell.valueLabel.text = t;
+                DataChannel *selected = [[SettingsManager sharedManager] selectedHailerChannel];
+                NSString *t = @"";
+                if (selected) {
+                    t = selected.name;
                 }
+                cell.valueLabel.text = t;
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 break;
             }
@@ -267,11 +226,6 @@
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 1:
-                // Open project selection view
-                [self loadProjects];
-                break;
-                
-            case 2:
                 // Open channel selection view
                 [self loadDataChannelsForHailerType:false];
                 break;
@@ -293,6 +247,23 @@
     [[SettingsManager sharedManager] logout];
     [[SDKManager sharedManager] stopSDK];
     [self dismissModal];
+}
+
+- (IBAction)forceSensorUpdateTapped:(UIButton *)sender {
+    [SGSDK forceSensorUpdate];
+}
+
+- (IBAction)onDemandLocationUpdateTapped:(UIButton *)sender {
+    [SGSDK getLocationWithSuccessHandler:^(Location *location) {
+        NSString *locMessage = [NSString stringWithFormat:@"\nLatitude: %f\nLongtitude: %f\nAccuracy: %f", location.latitude, location.longitude, location.accuracy];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Location Update" message:locMessage preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alertController animated:true completion:nil];
+    } andFailureHandler:^(Error *error) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:error.errorMessage preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alertController animated:true completion:nil];
+    }];
 }
 
 - (IBAction)logoutTapped:(id)sender {

@@ -2,7 +2,7 @@
 //  DefaultNotificationTableViewCell.h
 //  Sync2
 //
-//  Created by Sanchit Mittal on 07/01/19.
+//  Created by Sanchit Mittal on 05/02/19.
 //  Copyright © 2019 Sixgill. All rights reserved.
 //
 
@@ -12,8 +12,6 @@
 @interface DefaultNotificationTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-
 
 -(void)configureCell:(Notification *)notification;
 @end
