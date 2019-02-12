@@ -2559,7 +2559,6 @@ Notifications yet.</string>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="chooseMapTapped:" destination="M6G-YW-ApW" eventType="touchUpInside" id="VcK-fD-Dbw"/>
-                                                    <segue destination="xHe-oy-Xez" kind="show" id="ghf-UB-Ufj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -5643,11 +5642,11 @@ revised: 5/9/2016</string>
                         <viewControllerLayoutGuide type="bottom" id="BBe-la-mZD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yy2-fP-JsG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zvG-yj-hTe">
-                                <rect key="frame" x="10" y="98" width="355" height="621"/>
+                                <rect key="frame" x="10" y="54" width="355" height="714"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="K86-NW-tis">
                                     <rect key="frame" x="0.0" y="77" width="355" height="59"/>
