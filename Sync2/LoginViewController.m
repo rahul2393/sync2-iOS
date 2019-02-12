@@ -12,7 +12,6 @@
 #import "SenseAPI.h"
 #import "SDKManager.h"
 #import "DataChannelSelectionViewController.h"
-#import "ProjectSelectionViewController.h"
 #import "WebViewController.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
@@ -36,7 +35,7 @@
     
     self.checkBoxSelected = false;
     
-//    self.emailAddressField.text = @"abhay@hotcocoasoftware.com";
+//    self.emailAddressField.text = @"sanchit.mittal@hotcocoasoftware.com";
 //    self.passwordField.text = @"password123";
 //    self.phoneNumberField.text = @"1234";
     

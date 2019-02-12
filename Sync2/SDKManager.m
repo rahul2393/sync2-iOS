@@ -104,7 +104,7 @@
     config.ingressURL = [[EnvironmentManager sharedManager] selectedIngressURL];
     
     NSString *phoneNumber = [[NSUserDefaults standardUserDefaults] stringForKey:kPhoneNumber];
-    if (phoneNumber) {
+    if (![phoneNumber isEqualToString:@""] ) {
         NSMutableDictionary<NSString*, NSString*> *aliases = [[NSMutableDictionary alloc] init];
         [aliases setValue:phoneNumber forKey:@"phone_number"];
         config.aliases = aliases;

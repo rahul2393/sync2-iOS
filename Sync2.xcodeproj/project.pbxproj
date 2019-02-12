@@ -16,6 +16,8 @@
 		7520226620610845007FD829 /* EULAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7520226520610845007FD829 /* EULAViewController.m */; };
 		7520226A2061099C007FD829 /* TOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752022692061099C007FD829 /* TOSViewController.m */; };
 		7531658821F5BD93005940EF /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 7531658721F5BD93005940EF /* UIView+Toast.m */; };
+		7536010B220C160900669093 /* OrganizationSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7536010A220C160900669093 /* OrganizationSelectionViewController.m */; };
+		753B0CBD2201C34300F21657 /* Organization.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B0CBC2201C34300F21657 /* Organization.m */; };
 		753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70C2105600B00C11223 /* UIViewExtension.m */; };
 		753CB7102105D07900C11223 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB70F2105D07900C11223 /* GradientView.m */; };
 		753CB71921070B8100C11223 /* WelcomeNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB71821070B8100C11223 /* WelcomeNotificationTableViewCell.m */; };
@@ -24,7 +26,7 @@
 		753CB72221070BFD00C11223 /* SurveyNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB72121070BFD00C11223 /* SurveyNotificationTableViewCell.m */; };
 		753CB72521070C1500C11223 /* ScheduleNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB72421070C1500C11223 /* ScheduleNotificationTableViewCell.m */; };
 		753CB72821070C2C00C11223 /* VisitNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 753CB72721070C2C00C11223 /* VisitNotificationTableViewCell.m */; };
-		753CB72A210715E300C11223 /* ProjectSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 753CB729210715DC00C11223 /* ProjectSelectionTableViewCell.xib */; };
+		753CB72A210715E300C11223 /* SelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 753CB729210715DC00C11223 /* SelectionTableViewCell.xib */; };
 		75502A4F210876D300BFCA2A /* GCPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A4D210876D300BFCA2A /* GCPlaceholderTextView.m */; };
 		75502A5221087DA600BFCA2A /* OptionSurveyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A5121087DA600BFCA2A /* OptionSurveyTableViewCell.m */; };
 		75502A7421099DA800BFCA2A /* CustomSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 75502A7321099DA700BFCA2A /* CustomSegmentControl.m */; };
@@ -53,12 +55,9 @@
 		75D71593210C899F007378D5 /* ChooseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71592210C899F007378D5 /* ChooseMapViewController.m */; };
 		75D71596210C8C0A007378D5 /* ChooseMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D71595210C8C0A007378D5 /* ChooseMapTableViewCell.m */; };
 		75DABA39211043820040A170 /* CustomSegmentControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DABA38211043820040A170 /* CustomSegmentControlViewController.m */; };
-		75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */; };
+		75DE397B2101D3490006BA78 /* SelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DE39792101D3490006BA78 /* SelectionTableViewCell.m */; };
 		75E352952116B80400471D39 /* LogMapDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E352942116B80400471D39 /* LogMapDataViewController.m */; };
 		75E352982116D62800471D39 /* LogInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E352972116D62800471D39 /* LogInformationViewController.m */; };
-		75E48B2521BE9FFA00AB485D /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; };
-		75E48B2621BEA00100AB485D /* SixgillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; };
-		75E48B2721BEA00100AB485D /* SixgillSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75E68A4A212E962500797E27 /* LogBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E68A49212E962500797E27 /* LogBaseViewController.m */; };
 		75F4C98521AD52EF009596E1 /* SignupWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F4C98421AD52EF009596E1 /* SignupWebVC.swift */; };
 		997E4336B252968CFF9C832F /* libPods-Sync2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 894FBF645A04BBF448E4B5C9 /* libPods-Sync2Tests.a */; };
@@ -79,9 +78,7 @@
 		E943D3E82012C27800882D09 /* DummyProjectData.m in Sources */ = {isa = PBXBuildFile; fileRef = E943D3E72012C27800882D09 /* DummyProjectData.m */; };
 		E943D3EC2012CC0700882D09 /* DummyMapData.m in Sources */ = {isa = PBXBuildFile; fileRef = E943D3EB2012CC0700882D09 /* DummyMapData.m */; };
 		E9485EA920194DA800B553E2 /* DummyRulesData.m in Sources */ = {isa = PBXBuildFile; fileRef = E9485EA820194DA800B553E2 /* DummyRulesData.m */; };
-		E9518B542017EF9E001818CC /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B532017EF9E001818CC /* Project.m */; };
 		E9518B572017EFA6001818CC /* DataChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B562017EFA6001818CC /* DataChannel.m */; };
-		E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B5A2017F0C8001818CC /* DummySettingsData.m */; };
 		E9518B5F2018026B001818CC /* DummyNotificationData.m in Sources */ = {isa = PBXBuildFile; fileRef = E9518B5E2018026B001818CC /* DummyNotificationData.m */; };
 		E95B9DC11F609481007943CA /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E95B9DC01F609481007943CA /* TextFieldTableViewCell.m */; };
 		E95F58261EE61E57000562FC /* MotionPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E95F58251EE61E57000562FC /* MotionPermissionViewController.m */; };
@@ -123,7 +120,6 @@
 		E9B76D43200D32580095030C /* RulesCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D42200D32580095030C /* RulesCloudViewController.m */; };
 		E9B76D47200D35BB0095030C /* LogDayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D46200D35BB0095030C /* LogDayTableViewController.m */; };
 		E9B76D4F200D4E580095030C /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D4E200D4E580095030C /* SettingsTableViewController.m */; };
-		E9B76D5B200D4F450095030C /* ProjectSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D5A200D4F450095030C /* ProjectSelectionViewController.m */; };
 		E9B76D5F200D4F5F0095030C /* DataChannelSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B76D5E200D4F5F0095030C /* DataChannelSelectionViewController.m */; };
 		E9CCF4C51EF1E78200BF96C6 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4BB1EF1E78200BF96C6 /* QRCameraSwitchButton.m */; };
 		E9CCF4C61EF1E78200BF96C6 /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CCF4BD1EF1E78200BF96C6 /* QRCodeReader.m */; };
@@ -161,7 +157,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				75E48B2721BEA00100AB485D /* SixgillSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +182,10 @@
 		752022692061099C007FD829 /* TOSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOSViewController.m; sourceTree = "<group>"; };
 		7531658621F5BD93005940EF /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		7531658721F5BD93005940EF /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		75360109220C160900669093 /* OrganizationSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrganizationSelectionViewController.h; sourceTree = "<group>"; };
+		7536010A220C160900669093 /* OrganizationSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrganizationSelectionViewController.m; sourceTree = "<group>"; };
+		753B0CBB2201C34300F21657 /* Organization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Organization.h; sourceTree = "<group>"; };
+		753B0CBC2201C34300F21657 /* Organization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Organization.m; sourceTree = "<group>"; };
 		753CB70B21055FF600C11223 /* UIViewExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewExtension.h; sourceTree = "<group>"; };
 		753CB70C2105600B00C11223 /* UIViewExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewExtension.m; sourceTree = "<group>"; };
 		753CB70E2105D06000C11223 /* GradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
@@ -203,7 +202,7 @@
 		753CB72421070C1500C11223 /* ScheduleNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScheduleNotificationTableViewCell.m; sourceTree = "<group>"; };
 		753CB72621070C2C00C11223 /* VisitNotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VisitNotificationTableViewCell.h; sourceTree = "<group>"; };
 		753CB72721070C2C00C11223 /* VisitNotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisitNotificationTableViewCell.m; sourceTree = "<group>"; };
-		753CB729210715DC00C11223 /* ProjectSelectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectSelectionTableViewCell.xib; sourceTree = "<group>"; };
+		753CB729210715DC00C11223 /* SelectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionTableViewCell.xib; sourceTree = "<group>"; };
 		75502A4D210876D300BFCA2A /* GCPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCPlaceholderTextView.m; sourceTree = "<group>"; };
 		75502A4E210876D300BFCA2A /* GCPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCPlaceholderTextView.h; sourceTree = "<group>"; };
 		75502A5021087DA600BFCA2A /* OptionSurveyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionSurveyTableViewCell.h; sourceTree = "<group>"; };
@@ -257,13 +256,12 @@
 		75D71595210C8C0A007378D5 /* ChooseMapTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseMapTableViewCell.m; sourceTree = "<group>"; };
 		75DABA37211043820040A170 /* CustomSegmentControlViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSegmentControlViewController.h; sourceTree = "<group>"; };
 		75DABA38211043820040A170 /* CustomSegmentControlViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentControlViewController.m; sourceTree = "<group>"; };
-		75DE39782101D3490006BA78 /* ProjectSelectionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectSelectionTableViewCell.h; sourceTree = "<group>"; };
-		75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectSelectionTableViewCell.m; sourceTree = "<group>"; };
+		75DE39782101D3490006BA78 /* SelectionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectionTableViewCell.h; sourceTree = "<group>"; };
+		75DE39792101D3490006BA78 /* SelectionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectionTableViewCell.m; sourceTree = "<group>"; };
 		75E352932116B80400471D39 /* LogMapDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogMapDataViewController.h; sourceTree = "<group>"; };
 		75E352942116B80400471D39 /* LogMapDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogMapDataViewController.m; sourceTree = "<group>"; };
 		75E352962116D62800471D39 /* LogInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInformationViewController.h; sourceTree = "<group>"; };
 		75E352972116D62800471D39 /* LogInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInformationViewController.m; sourceTree = "<group>"; };
-		75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SixgillSDK.framework; sourceTree = "<group>"; };
 		75E68A48212E960A00797E27 /* LogBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogBaseViewController.h; sourceTree = "<group>"; };
 		75E68A49212E962500797E27 /* LogBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogBaseViewController.m; sourceTree = "<group>"; };
 		75F4C98421AD52EF009596E1 /* SignupWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupWebVC.swift; sourceTree = "<group>"; };
@@ -305,12 +303,8 @@
 		E94738822081465800A49CC2 /* Sync2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sync2-Bridging-Header.h"; sourceTree = "<group>"; };
 		E9485EA720194DA800B553E2 /* DummyRulesData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummyRulesData.h; sourceTree = "<group>"; };
 		E9485EA820194DA800B553E2 /* DummyRulesData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyRulesData.m; sourceTree = "<group>"; };
-		E9518B522017EF9E001818CC /* Project.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
-		E9518B532017EF9E001818CC /* Project.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		E9518B552017EFA6001818CC /* DataChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataChannel.h; sourceTree = "<group>"; };
 		E9518B562017EFA6001818CC /* DataChannel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataChannel.m; sourceTree = "<group>"; };
-		E9518B592017F0C8001818CC /* DummySettingsData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummySettingsData.h; sourceTree = "<group>"; };
-		E9518B5A2017F0C8001818CC /* DummySettingsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummySettingsData.m; sourceTree = "<group>"; };
 		E9518B5D2018026B001818CC /* DummyNotificationData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DummyNotificationData.h; sourceTree = "<group>"; };
 		E9518B5E2018026B001818CC /* DummyNotificationData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DummyNotificationData.m; sourceTree = "<group>"; };
 		E95B9DBF1F609481007943CA /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
@@ -380,8 +374,6 @@
 		E9B76D46200D35BB0095030C /* LogDayTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogDayTableViewController.m; sourceTree = "<group>"; };
 		E9B76D4D200D4E580095030C /* SettingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		E9B76D4E200D4E580095030C /* SettingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
-		E9B76D59200D4F450095030C /* ProjectSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectSelectionViewController.h; sourceTree = "<group>"; };
-		E9B76D5A200D4F450095030C /* ProjectSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectSelectionViewController.m; sourceTree = "<group>"; };
 		E9B76D5D200D4F5F0095030C /* DataChannelSelectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataChannelSelectionViewController.h; sourceTree = "<group>"; };
 		E9B76D5E200D4F5F0095030C /* DataChannelSelectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataChannelSelectionViewController.m; sourceTree = "<group>"; };
 		E9CCF4BA1EF1E78200BF96C6 /* QRCameraSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCameraSwitchButton.h; sourceTree = "<group>"; };
@@ -414,12 +406,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				75802C9D213D5E0B0068C856 /* libxml2.2.dylib in Frameworks */,
-				75E48B2521BE9FFA00AB485D /* SixgillSDK.framework in Frameworks */,
 				E962B36F1EF2F45000ECB920 /* CoreMotion.framework in Frameworks */,
 				E962B36D1EF2EEB300ECB920 /* AVFoundation.framework in Frameworks */,
 				E962B3641EF2140800ECB920 /* UserNotifications.framework in Frameworks */,
 				E962B3621EF213ED00ECB920 /* CoreLocation.framework in Frameworks */,
-				75E48B2621BEA00100AB485D /* SixgillSDK.framework in Frameworks */,
 				58001D842DCBFB8481B31204 /* libPods-Sync2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +470,24 @@
 			name = Toast;
 			sourceTree = "<group>";
 		};
+		75360108220C15D600669093 /* Organization Selection */ = {
+			isa = PBXGroup;
+			children = (
+				75360109220C160900669093 /* OrganizationSelectionViewController.h */,
+				7536010A220C160900669093 /* OrganizationSelectionViewController.m */,
+			);
+			name = "Organization Selection";
+			sourceTree = "<group>";
+		};
+		753B0CBA2201C31600F21657 /* Organization */ = {
+			isa = PBXGroup;
+			children = (
+				753B0CBB2201C34300F21657 /* Organization.h */,
+				753B0CBC2201C34300F21657 /* Organization.m */,
+			);
+			name = Organization;
+			sourceTree = "<group>";
+		};
 		753CB711210641C400C11223 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,7 +531,7 @@
 		753CB7142106423600C11223 /* Storyboard and Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				753CB729210715DC00C11223 /* ProjectSelectionTableViewCell.xib */,
+				753CB729210715DC00C11223 /* SelectionTableViewCell.xib */,
 				E9A3C2AF1ED5FD1500A938CB /* Main.storyboard */,
 				756B21CB213E86730089F731 /* ZoomControlView.xib */,
 			);
@@ -533,8 +541,8 @@
 		753CB71521070AF000C11223 /* Project-Channel-Selection */ = {
 			isa = PBXGroup;
 			children = (
-				75DE39782101D3490006BA78 /* ProjectSelectionTableViewCell.h */,
-				75DE39792101D3490006BA78 /* ProjectSelectionTableViewCell.m */,
+				75DE39782101D3490006BA78 /* SelectionTableViewCell.h */,
+				75DE39792101D3490006BA78 /* SelectionTableViewCell.m */,
 			);
 			name = "Project-Channel-Selection";
 			sourceTree = "<group>";
@@ -842,15 +850,6 @@
 			name = Rules;
 			sourceTree = "<group>";
 		};
-		E9518B502017EF6B001818CC /* Project */ = {
-			isa = PBXGroup;
-			children = (
-				E9518B522017EF9E001818CC /* Project.h */,
-				E9518B532017EF9E001818CC /* Project.m */,
-			);
-			name = Project;
-			sourceTree = "<group>";
-		};
 		E9518B512017EF78001818CC /* DataChannel */ = {
 			isa = PBXGroup;
 			children = (
@@ -858,15 +857,6 @@
 				E9518B562017EFA6001818CC /* DataChannel.m */,
 			);
 			name = DataChannel;
-			sourceTree = "<group>";
-		};
-		E9518B582017F0B8001818CC /* dummy settings data */ = {
-			isa = PBXGroup;
-			children = (
-				E9518B592017F0C8001818CC /* DummySettingsData.h */,
-				E9518B5A2017F0C8001818CC /* DummySettingsData.m */,
-			);
-			name = "dummy settings data";
 			sourceTree = "<group>";
 		};
 		E9518B5C20180240001818CC /* Dummy Notification Data */ = {
@@ -978,6 +968,7 @@
 		E966682820082707006911C3 /* UI Update */ = {
 			isa = PBXGroup;
 			children = (
+				75360108220C15D600669093 /* Organization Selection */,
 				75F4C98621AD58B7009596E1 /* WebView */,
 				759926E920FE2E190073693F /* Splash */,
 				E9B76D5C200D4F4F0095030C /* Data Channel Selection */,
@@ -1026,7 +1017,6 @@
 		E9A3C29A1ED5FD1500A938CB = {
 			isa = PBXGroup;
 			children = (
-				75E48B2421BE9FFA00AB485D /* SixgillSDK.framework */,
 				756C2D5720F5FEE7008560FF /* GoogleService-Info.plist */,
 				E9A3C2A51ED5FD1500A938CB /* Sync2 */,
 				E9A3C2BF1ED5FD1500A938CB /* Sync2Tests */,
@@ -1133,6 +1123,7 @@
 		E9A3C2E41ED77DAC00A938CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				753B0CBA2201C31600F21657 /* Organization */,
 				E9F29C162051BB0F0024E3B5 /* Environment Manager */,
 				E9F29C122050B8A60024E3B5 /* Environment */,
 				E9F0A29120240B2F007B7711 /* API Key */,
@@ -1143,7 +1134,6 @@
 				E9518B60201802D8001818CC /* Notifications */,
 				E90371411EE89AF40033DED0 /* Account */,
 				E9518B512017EF78001818CC /* DataChannel */,
-				E9518B502017EF6B001818CC /* Project */,
 				E9B76D66200D7CD40095030C /* TextCell - redesign */,
 				E9CCE7501F60930F008B1DE6 /* TextCell - old */,
 				E962B3531EF1FDB600ECB920 /* SDK Manager */,
@@ -1244,7 +1234,6 @@
 		E9B76D4C200D4D5F0095030C /* Settings Table */ = {
 			isa = PBXGroup;
 			children = (
-				E9518B582017F0B8001818CC /* dummy settings data */,
 				E9B76D4D200D4E580095030C /* SettingsTableViewController.h */,
 				E9B76D4E200D4E580095030C /* SettingsTableViewController.m */,
 				75D7158E210C5A2C007378D5 /* SettingsTableViewCell.h */,
@@ -1257,8 +1246,6 @@
 			isa = PBXGroup;
 			children = (
 				E943D3E52012C25A00882D09 /* dummy data */,
-				E9B76D59200D4F450095030C /* ProjectSelectionViewController.h */,
-				E9B76D5A200D4F450095030C /* ProjectSelectionViewController.m */,
 			);
 			name = "Project Selection";
 			sourceTree = "<group>";
@@ -1387,6 +1374,7 @@
 				2EB43ED78576AD2702BA706E /* [CP] Copy Pods Resources */,
 				E9FB148A207D828600A00EFF /* Embed Frameworks */,
 				756C2D5920F60012008560FF /* ShellScript */,
+				8927750AF6D9D187C7B52AFA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1509,7 +1497,7 @@
 				E9A3C2DE1ED6101100A938CB /* Lato-Light.ttf in Resources */,
 				E9A3C2B61ED5FD1500A938CB /* LaunchScreen.storyboard in Resources */,
 				E9A3C2D81ED6101100A938CB /* Lato-BlackItalic.ttf in Resources */,
-				753CB72A210715E300C11223 /* ProjectSelectionTableViewCell.xib in Resources */,
+				753CB72A210715E300C11223 /* SelectionTableViewCell.xib in Resources */,
 				E9A3C2B31ED5FD1500A938CB /* Assets.xcassets in Resources */,
 				E9A3C2DF1ED6101100A938CB /* Lato-LightItalic.ttf in Resources */,
 				E9A3C2DC1ED6101100A938CB /* Lato-HairlineItalic.ttf in Resources */,
@@ -1590,6 +1578,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8927750AF6D9D187C7B52AFA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh",
+				"${PODS_ROOT}/SixgillSDK/SixgillSDK/SixgillSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SixgillSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sync2/Pods-Sync2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F9857E0285B6AEDE068EA46F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1645,7 +1651,6 @@
 				75502A4F210876D300BFCA2A /* GCPlaceholderTextView.m in Sources */,
 				750220C421F8A155001FB953 /* TextNotification.m in Sources */,
 				751C4A7C210F0FC50040E717 /* RulesInformationCloudViewController.m in Sources */,
-				E9B76D5B200D4F450095030C /* ProjectSelectionViewController.m in Sources */,
 				E9A3C2EB1ED780CC00A938CB /* WelcomeViewController.m in Sources */,
 				753CB7102105D07900C11223 /* GradientView.m in Sources */,
 				E95B9DC11F609481007943CA /* TextFieldTableViewCell.m in Sources */,
@@ -1656,7 +1661,10 @@
 				E9352485201FF050008D4F19 /* SGToken.m in Sources */,
 				753CB71C21070BD500C11223 /* JoiningNotificationTableViewCell.m in Sources */,
 				75502A81210A5DC800BFCA2A /* LogMapViewController.m in Sources */,
+				753B0CBD2201C34300F21657 /* Organization.m in Sources */,
 				E98430BC20169E5A00F11887 /* MapSettingsViewController.m in Sources */,
+				E9518B64201802F9001818CC /* TextNotification.m in Sources */,
+				7536010B220C160900669093 /* OrganizationSelectionViewController.m in Sources */,
 				753CB70D2105600B00C11223 /* UIViewExtension.m in Sources */,
 				E9352479201FC9FE008D4F19 /* SetupInfoViewController.m in Sources */,
 				E9CCF4C81EF1E78200BF96C6 /* QRCodeReaderViewController.m in Sources */,
@@ -1695,7 +1703,6 @@
 				E90371441EE89B1E0033DED0 /* Account.m in Sources */,
 				75843ADF213A554600D7BB8D /* NotificationType.m in Sources */,
 				E943D3E82012C27800882D09 /* DummyProjectData.m in Sources */,
-				E9518B542017EF9E001818CC /* Project.m in Sources */,
 				E9B76D3B200D31940095030C /* MapViewController.m in Sources */,
 				E9D0A3671F3258CA00E7776C /* MapMarkerViewController.m in Sources */,
 				E9CCF4C91EF1E78200BF96C6 /* QRToggleTorchButton.m in Sources */,
@@ -1703,13 +1710,12 @@
 				E93C3F061EDDE9EC00F27619 /* PermissionPageController.m in Sources */,
 				7520226620610845007FD829 /* EULAViewController.m in Sources */,
 				E9B76D3F200D31E30095030C /* NotificationsViewController.m in Sources */,
-				E9518B5B2017F0C8001818CC /* DummySettingsData.m in Sources */,
 				E9F29C152050B8EB0024E3B5 /* Environment.m in Sources */,
 				75502A7B210A155200BFCA2A /* RulesEdgeViewController.m in Sources */,
 				753CB72221070BFD00C11223 /* SurveyNotificationTableViewCell.m in Sources */,
 				E962B3511EF1FB2600ECB920 /* LogViewController.m in Sources */,
 				75502A7E210A162D00BFCA2A /* RulesViewController.m in Sources */,
-				75DE397B2101D3490006BA78 /* ProjectSelectionTableViewCell.m in Sources */,
+				75DE397B2101D3490006BA78 /* SelectionTableViewCell.m in Sources */,
 				E9B76D5F200D4F5F0095030C /* DataChannelSelectionViewController.m in Sources */,
 				E9FC99FB204E0BE20060B81D /* EnvironmentSelectionViewController.m in Sources */,
 				75E68A4A212E962500797E27 /* LogBaseViewController.m in Sources */,
