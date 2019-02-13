@@ -60,10 +60,7 @@
     
     [self loadNotifications];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(loadNotifications)
-                                                 name:@"PushReceived"
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadNotifications) name:@"PushReceived" object:nil];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
