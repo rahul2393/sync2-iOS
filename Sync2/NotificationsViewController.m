@@ -21,9 +21,12 @@
 @import UserNotifications;
 @import SixgillSDK;
 
-@interface NotificationsViewController ()
+#define kLimit 20
 
-@property (nonatomic, strong) NSArray<Notification *> *notifications;
+@interface NotificationsViewController ()
+@property (nonatomic, strong) NSMutableArray<Notification *> *notifications;
+@property (nonatomic, readwrite) NSInteger currentOffset;
+@property (nonatomic, readwrite) BOOL hasMoreData;
 @end
 
 @implementation NotificationsViewController
@@ -37,7 +40,25 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 200;
     
+    UIRefreshControl *refreshControl = [UIRefreshControl new];
+    [refreshControl addTarget:self action:@selector(didPullToRefresh) forControlEvents:UIControlEventValueChanged];
+
+    
+    // Add Refresh Control to Table View
+    if (@available(iOS 10, *)) {
+        self.tableView.refreshControl = refreshControl;
+    } else {
+        [self.tableView addSubview:refreshControl];
+    }
+    
     [self permissionChanged];
+}
+
+-(void) didPullToRefresh{
+    self.currentOffset = 0;
+    self.hasMoreData = false;
+    self.notifications = [@[] mutableCopy];
+    [self loadNotifications];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -58,6 +79,9 @@
     [super viewWillAppear:animated];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    self.currentOffset = 0;
+    self.hasMoreData = false;
+    self.notifications = [@[] mutableCopy];
     [self loadNotifications];
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadNotifications) name:@"PushReceived" object:nil];
@@ -79,6 +103,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == (self.currentOffset + kLimit -5)  &&  self.hasMoreData) {
+        self.currentOffset += kLimit;
+        [self loadNotifications];
+    }
+    
     Notification *n = self.notifications[indexPath.section];
     if ([n.type isEqualToString:@""]) {
         DefaultNotificationTableViewCell *cell = (DefaultNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"DefaultNotificationTableViewCellIdentifier" forIndexPath:indexPath];
@@ -184,8 +214,16 @@
 }
 
 - (void) loadNotifications {
-    [SGSDK showNotificationsFromOffset:0 andLimit:20 andSuccessHandler:^(NSArray<Notification *> *notifications) {
-        if (notifications.count == 0) {
+    [self.tableView.refreshControl beginRefreshing];
+    
+    [SGSDK showNotificationsFromOffset:self.currentOffset andLimit:(NSInteger)kLimit andSuccessHandler:^(NotificationResponse *notificationResponse) {
+        
+        [self.tableView.refreshControl endRefreshing];
+        
+        self.hasMoreData = notificationResponse.hasMoreData;
+        [self.notifications addObjectsFromArray:notificationResponse.notificationsArray];
+        
+        if (self.notifications.count == 0) {
             self.tableView.hidden = true;
             self.noNotificationsView.hidden = false;
         } else {
@@ -193,11 +231,9 @@
             self.noNotificationsView.hidden = true;
         }
         
-        self.notifications = notifications;
         [self.tableView reloadData];
-        
     } andFailureHandler:^(NSString *failureMsg) {
-        
+        [self.tableView.refreshControl endRefreshing];
     }];
 }
 
