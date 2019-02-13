@@ -843,6 +843,7 @@ typedef GPB_ENUM(Notification_Options_FieldNumber) {
 
 typedef GPB_ENUM(NotificationResponse_FieldNumber) {
   NotificationResponse_FieldNumber_NotificationsArray = 1,
+  NotificationResponse_FieldNumber_HasMoreData = 2,
 };
 
 @interface NotificationResponse : GPBMessage
@@ -850,6 +851,8 @@ typedef GPB_ENUM(NotificationResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Notification*> *notificationsArray;
 /** The number of items in @c notificationsArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger notificationsArray_Count;
+
+@property(nonatomic, readwrite) BOOL hasMoreData;
 
 @end
 
