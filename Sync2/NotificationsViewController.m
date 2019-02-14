@@ -134,25 +134,29 @@
             }
             case ACTION_NOTIFICATION: {
                 JoiningNotificationTableViewCell *cell = (JoiningNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"JoiningNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-                [cell configureCell:n];
+                cell.notification = n;
+                [cell configureCell];
 
                 return cell;
             }
             case FEEDBACK: {
                 FeedbackNotificationTableViewCell *cell = (FeedbackNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"FeedbackNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-                [cell configureCell:n];
+                cell.notification = n;
+                [cell configureCell];
 
                 return cell;
             }
             case SURVEY: {
                 SurveyNotificationTableViewCell *cell = (SurveyNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"SurveyNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-                [cell configureCell:n];
+                cell.notification = n;
+                [cell configureCell];
 
                 return cell;
             }
             case SCHEDULE: {
                 ScheduleNotificationTableViewCell *cell = (ScheduleNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"ScheduleNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-                [cell configureCell:n];
+                cell.notification = n;
+                [cell configureCell];
 
                 return cell;
             }
