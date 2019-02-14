@@ -28,19 +28,19 @@
     self.radioButtonChecked = [[NSMutableArray alloc] init];
 }
 
-- (void)configureCell:(Notification *)notification {
-    self.titleLabel.text = notification.title;
-    self.detailLabel.text = notification.body;
+- (void)configureCell{
+    self.titleLabel.text = self.notification.title;
+    self.detailLabel.text = self.notification.body;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMMM dd, h:mm a"];
-    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)]]];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(self.notification.timestamp / 1000.0)]]];
     
-    self.data = notification.optionsArray;
-    [self.button setTitle:notification.buttonText forState:UIControlStateNormal];
-    self.submitURL = notification.submitURL;
+    self.data = self.notification.optionsArray;
+    [self.button setTitle:self.notification.buttonText forState:UIControlStateNormal];
+    self.submitURL = self.notification.submitURL;
     
-    for (id _ in notification.optionsArray) {
+    for (id _ in self.notification.optionsArray) {
         [self.radioButtonChecked addObject:[NSNumber numberWithBool:FALSE]];
     }
     
@@ -58,12 +58,19 @@
 - (IBAction)sendTapped:(id)sender {
     
     // use submitURL and send request
+    NSDictionary *body = @{ @"response": @{ @"value": @[ @0, @2, @4 ] } };
+    [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
+        
+    } andFailureHandler:^(NSString *failureMsg) {
+        
+    }];
+    
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     OptionSurveyTableViewCell *cell = (OptionSurveyTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"OptionSurveyTableViewCellIdentifier" forIndexPath:indexPath];
     Notification_Options *option = self.data[indexPath.row];
-    cell.optionValueLabel.text = option.text;
+    cell.optionValueLabel.text = option.label;
     cell.selectedImageView.image = [[self.radioButtonChecked objectAtIndex:indexPath.row] boolValue] ? [UIImage imageNamed: @"radio-button-check"] : [UIImage imageNamed: @"radio-button-unselected"];
     return cell;
 }

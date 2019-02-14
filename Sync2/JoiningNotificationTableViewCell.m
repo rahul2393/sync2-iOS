@@ -9,6 +9,8 @@
 #import "JoiningNotificationTableViewCell.h"
 #import "UIViewExtension.h"
 
+@import SixgillSDK;
+
 @interface JoiningNotificationTableViewCell ()
 @property (nonatomic, strong) NSArray *actions;
 @property (nonatomic, strong) NSString *submitURL;
@@ -22,19 +24,19 @@
     
 }
 
-- (void)configureCell:(Notification *)notification {
-    self.titleLabel.text = notification.title;
-    self.detailLabel.text = notification.body;
-    self.actionLabel.text = notification.actionTitle;
+- (void)configureCell{
+    self.titleLabel.text = self.notification.title;
+    self.detailLabel.text = self.notification.body;
+    self.actionLabel.text = self.notification.actionTitle;
 
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMMM dd, h:mm a"];
-    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)]]];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(self.notification.timestamp / 1000.0)]]];
     
-    self.submitURL = notification.submitURL;
-    self.actions = notification.actionsArray;
+    self.submitURL = self.notification.submitURL;
+    self.actions = self.notification.actionsArray;
     
-    [notification.actionsArray enumerateObjectsUsingBlock:^(Notification_Actions* action, NSUInteger idx, BOOL *stop) {
+    [self.notification.actionsArray enumerateObjectsUsingBlock:^(Notification_Actions* action, NSUInteger idx, BOOL *stop) {
 
         UIButton * btn = [self.actionButtons objectAtIndex:idx];
         [btn setTitle:action.text forState:UIControlStateNormal];
@@ -57,11 +59,22 @@
 
 
 - (IBAction)firstButtonTapped:(id)sender {
+    NSDictionary *body = @{ @"response": @{ @"value": @"primary" } };
     
+    [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
+        
+    } andFailureHandler:^(NSString *failureMsg) {
+        
+    }];
 }
 
 - (IBAction)secondButtonTapped:(id)sender {
-    
+    NSDictionary *body = @{ @"response": @{ @"value": @"secondary" } };
+    [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
+        
+    } andFailureHandler:^(NSString *failureMsg) {
+        
+    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

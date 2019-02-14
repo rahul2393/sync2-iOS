@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString *submitURL;
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, readwrite) NSDate *endDate;
+@property (nonatomic, readwrite) NSDate *selectedDate;
 @end
 
 @implementation ScheduleNotificationTableViewCell
@@ -22,19 +23,19 @@
     // Initialization code
 }
 
-- (void)configureCell:(Notification *)notification {
-    self.titleLabel.text = notification.title;
-    self.detailLabel.text = notification.body;
+- (void)configureCell{
+    self.titleLabel.text = self.notification.title;
+    self.detailLabel.text = self.notification.body;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMMM dd, h:mm a"];
-    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)]]];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(self.notification.timestamp / 1000.0)]]];
     
-    [self.button setTitle:notification.buttonText forState:UIControlStateNormal];
-    self.submitURL = notification.submitURL;
+    [self.button setTitle:self.notification.buttonText forState:UIControlStateNormal];
+    self.submitURL = self.notification.submitURL;
     
-    self.startDate = [NSDate dateWithTimeIntervalSince1970:(notification.startTimestamp / 1000.0)];
-    self.endDate = [NSDate dateWithTimeIntervalSince1970:(notification.endTimestamp / 1000.0)];
+    self.startDate = [NSDate dateWithTimeIntervalSince1970:(self.notification.startTimestamp / 1000.0)];
+    self.endDate = [NSDate dateWithTimeIntervalSince1970:(self.notification.endTimestamp / 1000.0)];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -44,11 +45,16 @@
 }
 
 - (IBAction)scheduleTapped:(id)sender {
+    NSDictionary *body = @{ @"response": @{ @"value": [NSNumber numberWithDouble:[self.selectedDate timeIntervalSince1970]] } };
+    [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
+
+    } andFailureHandler:^(NSString *failureMsg) {
+
+    }];
 }
 
 - (IBAction)datePickerTapped:(id)sender {
-    [ActionSheetDatePicker showPickerWithTitle:@"Pick Date and Time" datePickerMode:UIDatePickerModeDateAndTime selectedDate:[NSDate date] minimumDate:self.startDate maximumDate:self.endDate doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
-        
+    [ActionSheetDatePicker showPickerWithTitle:@"Pick Date and Time" datePickerMode:UIDatePickerModeDateAndTime selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"dd"];
         self.calendarDateLabel.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:selectedDate]];
@@ -56,6 +62,8 @@
         NSDateFormatter *dayTimeFormatter = [[NSDateFormatter alloc] init];
         [dayTimeFormatter setDateFormat:@"EEEE, h:mm a"];
         self.calendarDayTimeLabel.text = [NSString stringWithFormat:@"%@", [dayTimeFormatter stringFromDate:selectedDate]];
+        
+        self.selectedDate = selectedDate;
     } cancelBlock:^(ActionSheetDatePicker *picker) {
         
     } origin:sender];
