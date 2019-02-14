@@ -29,14 +29,14 @@
     self.address1Label.text = notification.addressTitle;
     self.address2Label.text = notification.address;
     
-    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(notification.latitude, notification.longitude);
-    [self.mapView setCenterCoordinate:location animated:YES];
-    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
-    [self.mapView setRegion:zoomRegion animated:YES];
+//    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(notification.latitude, notification.longitude);
+//    [self.mapView setCenterCoordinate:location animated:YES];
+//    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
+//    [self.mapView setRegion:zoomRegion animated:YES];
     
-    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-    point.coordinate = location;
-    [self.mapView addAnnotation:point];
+//    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+//    point.coordinate = location;
+//    [self.mapView addAnnotation:point];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

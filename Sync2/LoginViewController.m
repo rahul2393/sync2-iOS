@@ -35,7 +35,7 @@
     
     self.checkBoxSelected = false;
     
-    self.emailAddressField.text = @"sanchit.mittal@hotcocoasoftware.com";
+    self.emailAddressField.text = @"abhay@hotcocoasoftware.com";
     self.passwordField.text = @"password123";
     self.phoneNumberField.text = @"1234";
     
