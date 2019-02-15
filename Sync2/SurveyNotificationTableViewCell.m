@@ -58,7 +58,7 @@
 - (IBAction)sendTapped:(id)sender {
     
     // use submitURL and send request
-    NSDictionary *body = @{ @"response": @{ @"value": @[ @0, @2, @4 ] } };
+    NSDictionary *body = @{ @"responseData": @{ @"value": @[ @0, @2, @4 ] } };
     [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
         
     } andFailureHandler:^(NSString *failureMsg) {

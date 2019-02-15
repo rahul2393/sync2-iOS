@@ -45,7 +45,7 @@
 }
 
 - (IBAction)scheduleTapped:(id)sender {
-    NSDictionary *body = @{ @"response": @{ @"value": [NSNumber numberWithDouble:[self.selectedDate timeIntervalSince1970]] } };
+    NSDictionary *body = @{ @"responseData": @{ @"value": [NSNumber numberWithDouble:[self.selectedDate timeIntervalSince1970]] } };
     [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
 
     } andFailureHandler:^(NSString *failureMsg) {

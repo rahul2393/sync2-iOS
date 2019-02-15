@@ -59,7 +59,7 @@
 
 
 - (IBAction)firstButtonTapped:(id)sender {
-    NSDictionary *body = @{ @"response": @{ @"value": @"primary" } };
+    NSDictionary *body = @{ @"responseData": @{ @"value": @"secondary" } };
     
     [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
         
@@ -69,7 +69,7 @@
 }
 
 - (IBAction)secondButtonTapped:(id)sender {
-    NSDictionary *body = @{ @"response": @{ @"value": @"secondary" } };
+    NSDictionary *body = @{ @"responseData": @{ @"value": @"primary" } };
     [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
         
     } andFailureHandler:^(NSString *failureMsg) {

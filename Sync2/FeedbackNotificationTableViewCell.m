@@ -41,7 +41,7 @@
 }
 
 - (IBAction)sendFeedbackTapped:(id)sender {
-    NSDictionary *body = @{ @"response": @{ @"value": self.feedbackTextView.text } };
+    NSDictionary *body = @{ @"responseData": @{ @"value": self.feedbackTextView.text } };
     [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
         
     } andFailureHandler:^(NSString *failureMsg) {
