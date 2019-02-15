@@ -57,6 +57,9 @@
 
 - (IBAction)sendTapped:(id)sender {
     
+    
+//    send selected ones value
+    
     // use submitURL and send request
     NSDictionary *body = @{ @"responseData": @{ @"value": @[ @0, @2, @4 ] } };
     [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{

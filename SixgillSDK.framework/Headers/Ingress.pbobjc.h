@@ -748,16 +748,14 @@ typedef GPB_ENUM(Notification_FieldNumber) {
   Notification_FieldNumber_SubmitURL = 10,
   Notification_FieldNumber_CommentHint = 11,
   Notification_FieldNumber_ButtonText = 12,
-  Notification_FieldNumber_StartTimestamp = 13,
-  Notification_FieldNumber_EndTimestamp = 14,
-  Notification_FieldNumber_LandmarkId = 15,
-  Notification_FieldNumber_Address = 16,
-  Notification_FieldNumber_AddressTitle = 17,
-  Notification_FieldNumber_ActionsArray = 18,
-  Notification_FieldNumber_OptionsArray = 19,
-  Notification_FieldNumber_RuleId = 20,
-  Notification_FieldNumber_ActionId = 21,
-  Notification_FieldNumber_ScheduleTitle = 22,
+  Notification_FieldNumber_LandmarkId = 13,
+  Notification_FieldNumber_Address = 14,
+  Notification_FieldNumber_AddressTitle = 15,
+  Notification_FieldNumber_ActionsArray = 16,
+  Notification_FieldNumber_OptionsArray = 17,
+  Notification_FieldNumber_RuleId = 18,
+  Notification_FieldNumber_ActionId = 19,
+  Notification_FieldNumber_ScheduleTitle = 20,
 };
 
 @interface Notification : GPBMessage
@@ -786,10 +784,6 @@ typedef GPB_ENUM(Notification_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *buttonText;
 
-@property(nonatomic, readwrite) int64_t startTimestamp;
-
-@property(nonatomic, readwrite) int64_t endTimestamp;
-
 @property(nonatomic, readwrite, copy, null_resettable) NSString *landmarkId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *address;
@@ -815,18 +809,18 @@ typedef GPB_ENUM(Notification_FieldNumber) {
 #pragma mark - Notification_Actions
 
 typedef GPB_ENUM(Notification_Actions_FieldNumber) {
-  Notification_Actions_FieldNumber_ActionId = 1,
-  Notification_Actions_FieldNumber_ActionType = 2,
-  Notification_Actions_FieldNumber_Text = 3,
+  Notification_Actions_FieldNumber_Text = 1,
+  Notification_Actions_FieldNumber_Message = 2,
+  Notification_Actions_FieldNumber_Type = 3,
 };
 
 @interface Notification_Actions : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *actionId;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *actionType;
-
 @property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *message;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *type;
 
 @end
 
@@ -841,7 +835,7 @@ typedef GPB_ENUM(Notification_Options_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *label;
 
-@property(nonatomic, readwrite) BOOL value;
+@property(nonatomic, readwrite) int64_t value;
 
 @end
 
@@ -899,9 +893,7 @@ typedef GPB_ENUM(Response_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *type;
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *responseData;
-/** The number of items in @c responseData without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger responseData_Count;
+@property(nonatomic, readwrite, copy, null_resettable) NSData *responseData;
 
 @end
 

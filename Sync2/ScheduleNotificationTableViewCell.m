@@ -34,8 +34,8 @@
     [self.button setTitle:self.notification.buttonText forState:UIControlStateNormal];
     self.submitURL = self.notification.submitURL;
     
-    self.startDate = [NSDate dateWithTimeIntervalSince1970:(self.notification.startTimestamp / 1000.0)];
-    self.endDate = [NSDate dateWithTimeIntervalSince1970:(self.notification.endTimestamp / 1000.0)];
+//    self.startDate = [NSDate dateWithTimeIntervalSince1970:(self.notification.startTimestamp / 1000.0)];
+//    self.endDate = [NSDate dateWithTimeIntervalSince1970:(self.notification.endTimestamp / 1000.0)];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

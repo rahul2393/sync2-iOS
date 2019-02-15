@@ -41,13 +41,13 @@
         UIButton * btn = [self.actionButtons objectAtIndex:idx];
         [btn setTitle:action.text forState:UIControlStateNormal];
 
-        if ([action.actionType isEqual: @"secondary"]) {
+        if ([action.type isEqual: @"secondary"]) {
 
             [btn setTitleColor:[UIColor colorWithRed:1.0 green:0.11 blue:0.15 alpha:1] forState:UIControlStateNormal];
             btn.backgroundColor = [UIColor clearColor];
             btn.borderColor = [UIColor colorWithRed:1.0 green:0.11 blue:0.15 alpha:1];
 
-        } else if ([action.actionType isEqual: @"primary"]) {
+        } else if ([action.type isEqual: @"primary"]) {
 
             [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             btn.backgroundColor = [UIColor colorWithRed:0 green:0.32 blue:0.78 alpha:1];
