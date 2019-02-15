@@ -11,6 +11,9 @@
 @import SixgillSDK;
 
 @interface VisitNotificationTableViewCell : UITableViewCell <MKMapViewDelegate>
+
+@property (strong, nonatomic) Notification *notification;
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *address1Label;
@@ -18,6 +21,6 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
--(void)configureCell:(Notification *)notification;
+-(void)configureCell;
 
 @end

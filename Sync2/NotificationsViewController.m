@@ -113,7 +113,8 @@
     if ([n.type isEqualToString:@""]) {
         DefaultNotificationTableViewCell *cell = (DefaultNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"DefaultNotificationTableViewCellIdentifier" forIndexPath:indexPath];
         Notification *n = self.notifications[indexPath.section];
-        [cell configureCell:n];
+        cell.notification = n;
+        [cell configureCell];
         
         return cell;
     } else {
@@ -122,13 +123,15 @@
             case PUSH: {
                 DefaultNotificationTableViewCell *cell = (DefaultNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"DefaultNotificationTableViewCellIdentifier" forIndexPath:indexPath];
                 Notification *n = self.notifications[indexPath.section];
-                [cell configureCell:n];
+                cell.notification = n;
+                [cell configureCell];
                 
                 return cell;
             }
             case INFORMATION: {
                 WelcomeNotificationTableViewCell *cell = (WelcomeNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"WelcomeNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-                [cell configureCell:n];
+                cell.notification = n;
+                [cell configureCell];
 
                 return cell;
             }
@@ -162,7 +165,8 @@
             }
             case EVENT: {
                 VisitNotificationTableViewCell *cell = (VisitNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"VisitNotificationTableViewCellIdentifier" forIndexPath:indexPath];
-                [cell configureCell:n];
+                cell.notification = n;
+                [cell configureCell];
 
                 return cell;
             }
