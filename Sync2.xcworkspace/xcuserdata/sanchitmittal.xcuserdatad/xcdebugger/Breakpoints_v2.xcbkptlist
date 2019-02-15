@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sync2/ScheduleNotificationTableViewCell.m"
-            timestampString = "571917859.255438"
+            timestampString = "571929471.756109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sync2/CameraViewController.m"
-            timestampString = "571926997.825586"
+            timestampString = "571931562.747268"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
             landmarkName = "-didEnterRegionWithFloorMap:andImage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sync2/CameraViewController.m"
-            timestampString = "571926997.8316669"
+            timestampString = "571931562.757718"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
             landmarkName = "-didExitRegion"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sync2/CameraViewController.m"
-            timestampString = "571926997.8325371"
+            timestampString = "571931562.758346"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "-createActivityTapped:"
             landmarkType = "7">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sync2/CameraViewController.m"
-            timestampString = "571926997.833137"
+            timestampString = "571931562.758891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "-createActivityTapped:"
             landmarkType = "7">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sync2/CameraViewController.m"
-            timestampString = "571926997.833795"
+            timestampString = "571931562.759797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "-didEnterRegionWithFloorMap:andImage:"
             landmarkType = "7">
          </BreakpointContent>
