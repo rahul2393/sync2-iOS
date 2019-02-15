@@ -56,12 +56,16 @@
 }
 
 - (IBAction)sendTapped:(id)sender {
+    NSMutableArray *responseArray = [NSMutableArray new];
     
-    
-//    send selected ones value
+    [self.radioButtonChecked enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj boolValue]) {
+            [responseArray addObject:[NSNumber numberWithLongLong:self.notification.optionsArray[idx].value]];
+        }
+    }];
     
     // use submitURL and send request
-    NSDictionary *body = @{ @"responseData": @{ @"value": @[ @0, @2, @4 ] } };
+    NSDictionary *body = @{ @"responseData": @{ @"value": responseArray } };
     [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
         
     } andFailureHandler:^(NSString *failureMsg) {
