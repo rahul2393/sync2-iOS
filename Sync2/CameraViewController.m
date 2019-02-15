@@ -18,6 +18,9 @@
 @interface CameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, SGAtlasDelegate>
 @property (nonatomic, readwrite) NSURL *imagePath;
 @property (nonatomic, strong) NSArray *dataChannels;
+
+@property (nonatomic, strong) UIImageView *providerMapImageView;
+@property (nonatomic, strong) UIView *providerMapBlueDot;
 @end
 
 @implementation CameraViewController
@@ -87,6 +90,10 @@
 }
 
 - (IBAction)createActivityTapped:(UIButton *)sender {
+    if (!self.providerMapImageView) {
+        [self showAlertWithTitle:@"No Indoor Atlas Image" andMessage:@"Select an image first"];
+        return;
+    }
     if (!self.imagePath) {
         [self showAlertWithTitle:@"Error" andMessage:@"Select an image first"];
         return;
@@ -104,7 +111,22 @@
     [self.activityIndicator setHidden:NO];
     [self.activityIndicator startAnimating];
     
-    [SGSDK makehailerIncidentWithFilePath:self.imagePath andCustomer:self.customerTextField.text andDescription:self.descriptionTextField.text andUploadProgressHandler:^(NSProgress *uploadProgress) {
+    
+    NSFileManager *fileManager = NSFileManager.defaultManager;
+    NSURL *documentPath = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
+    NSString *imageName = [NSString stringWithFormat:@"%@.jpg", [[ULID new] ulidString]];
+    NSURL *indoorImagePath = [documentPath URLByAppendingPathComponent:imageName];
+    NSData *imageData = [NSKeyedArchiver archivedDataWithRootObject:self.providerMapImageView];
+    
+    UIImage *img = [UIImage imageWithData:imageData];
+    NSData *finalData = UIImageJPEGRepresentation(img, 1.0f);
+    [finalData writeToURL:indoorImagePath atomically:YES];
+//    NSData *imageData = UIImageJPEGRepresentation(self.providerMapImageView.image, 1.0f);
+    [imageData writeToURL:indoorImagePath atomically:YES];
+    
+//    self.imageView.image = self.providerMapImageView;// .image;
+    
+    [SGSDK makehailerIncidentWithFilePath:indoorImagePath andCustomer:self.customerTextField.text andDescription:self.descriptionTextField.text andUploadProgressHandler:^(NSProgress *uploadProgress) {
         self.progressView.progress = uploadProgress.fractionCompleted;
     } andSuccessHandler:^{
         
@@ -189,15 +211,43 @@
 }
 
 - (void)didEnterRegionWithFloorMap:(IAFloorPlan *)floorplan andImage:(NSData *)imageData{
+    float blueDotSize = 20;
     
+    UIImage *image = [[UIImage alloc] initWithData:imageData];
+    
+    self.providerMapImageView = [UIImageView new];
+    self.providerMapImageView.image = image;
+    [self.providerMapImageView sizeToFit];
+    self.providerMapImageView.backgroundColor = [UIColor whiteColor];
+    
+    self.providerMapBlueDot = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1.0, 1.0)];
+    self.providerMapBlueDot.backgroundColor =  [UIColor colorWithRed:0 green:0.3176 blue:0.7764 alpha:1];
+    self.providerMapBlueDot.layer.cornerRadius = self.providerMapBlueDot.frame.size.width / 2;
+    self.providerMapBlueDot.layer.borderColor = [[UIColor whiteColor] CGColor];
+    self.providerMapBlueDot.layer.borderWidth = 0.2;
+    
+    [self.providerMapImageView addSubview:self.providerMapBlueDot];
+    self.providerMapBlueDot.center = self.providerMapImageView.center;
+    self.providerMapBlueDot.transform = CGAffineTransformMakeScale(blueDotSize, blueDotSize);
+    
+    [self hideEmptyView:YES];
+    self.imageView.image = self.providerMapImageView.image;
 }
 
 - (void)didUpdateLocation:(IALocation *)location andPoint:(CGPoint)point{
-    
+    if (self.providerMapImageView) {
+    self.providerMapBlueDot.center = point;
+//        [UIView animateWithDuration:(self.providerMapBlueDot.hidden ? 0.0f : 0.35f) animations:^{
+//            self.providerMapBlueDot.center = point;
+//
+//            [self.view bringSubviewToFront:self.providerMapBlueDot];
+//        }];
+    }
 }
 
 - (void)didExitRegion{
-    
+    self.providerMapImageView = nil;
+    self.providerMapBlueDot = nil;
 }
 
 @end
