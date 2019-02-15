@@ -15,7 +15,7 @@
 #import "SenseAPI.h"
 #import "DataChannelSelectionViewController.h"
 
-@interface CameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface CameraViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, SGAtlasDelegate>
 @property (nonatomic, readwrite) NSURL *imagePath;
 @property (nonatomic, strong) NSArray *dataChannels;
 @end
@@ -47,6 +47,15 @@
             
         }];
     }
+    
+    [[SGSDK sharedInstance].providerManager setProviderDelegate:self];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    
+    [[SGSDK sharedInstance].providerManager setProviderDelegate:nil];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -178,4 +187,17 @@
     [alertController addAction:[UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alertController animated:true completion:nil];
 }
+
+- (void)didEnterRegionWithFloorMap:(IAFloorPlan *)floorplan andImage:(NSData *)imageData{
+    
+}
+
+- (void)didUpdateLocation:(IALocation *)location andPoint:(CGPoint)point{
+    
+}
+
+- (void)didExitRegion{
+    
+}
+
 @end
