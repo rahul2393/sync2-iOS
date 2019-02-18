@@ -37,7 +37,7 @@
     self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(self.notification.timestamp / 1000.0)]]];
     
     self.data = self.notification.optionsArray;
-    [self.button setTitle:self.notification.buttonText forState:UIControlStateNormal];
+    [self.button setTitle:self.notification.actionsArray[0].text forState:UIControlStateNormal];
     self.submitURL = self.notification.submitURL;
     
     for (id _ in self.notification.optionsArray) {
@@ -77,7 +77,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     OptionSurveyTableViewCell *cell = (OptionSurveyTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"OptionSurveyTableViewCellIdentifier" forIndexPath:indexPath];
     Notification_Options *option = self.data[indexPath.row];
-    cell.optionValueLabel.text = option.label;
+    cell.optionValueLabel.text = option.text;
     cell.selectedImageView.image = [[self.radioButtonChecked objectAtIndex:indexPath.row] boolValue] ? [UIImage imageNamed: @"radio-button-check"] : [UIImage imageNamed: @"radio-button-unselected"];
     return cell;
 }

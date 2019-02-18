@@ -35,8 +35,8 @@
     [formatter setDateFormat:@"MMMM dd, h:mm a"];
     self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(self.notification.timestamp / 1000.0)]]];
     
-    self.feedbackTextView.placeholder = self.notification.commentHint;
-    [self.button setTitle:self.notification.buttonText forState:UIControlStateNormal];
+    self.feedbackTextView.placeholder = self.notification.hint;
+    [self.button setTitle:self.notification.actionsArray[0].text forState:UIControlStateNormal];
     self.submitURL = self.notification.submitURL;
 }
 
