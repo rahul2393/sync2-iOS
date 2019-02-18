@@ -746,16 +746,16 @@ typedef GPB_ENUM(Notification_FieldNumber) {
   Notification_FieldNumber_Body = 8,
   Notification_FieldNumber_ActionTitle = 9,
   Notification_FieldNumber_SubmitURL = 10,
-  Notification_FieldNumber_CommentHint = 11,
-  Notification_FieldNumber_ButtonText = 12,
-  Notification_FieldNumber_LandmarkId = 13,
-  Notification_FieldNumber_Address = 14,
-  Notification_FieldNumber_AddressTitle = 15,
-  Notification_FieldNumber_ActionsArray = 16,
-  Notification_FieldNumber_OptionsArray = 17,
-  Notification_FieldNumber_RuleId = 18,
-  Notification_FieldNumber_ActionId = 19,
-  Notification_FieldNumber_ScheduleTitle = 20,
+  Notification_FieldNumber_Hint = 11,
+  Notification_FieldNumber_LandmarkId = 12,
+  Notification_FieldNumber_Address = 13,
+  Notification_FieldNumber_AddressTitle = 14,
+  Notification_FieldNumber_ActionsArray = 15,
+  Notification_FieldNumber_OptionsArray = 16,
+  Notification_FieldNumber_RuleId = 17,
+  Notification_FieldNumber_ActionId = 18,
+  Notification_FieldNumber_MultipleChoice = 19,
+  Notification_FieldNumber_Landmark = 20,
 };
 
 @interface Notification : GPBMessage
@@ -780,9 +780,7 @@ typedef GPB_ENUM(Notification_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *submitURL;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *commentHint;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *buttonText;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *hint;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *landmarkId;
 
@@ -802,7 +800,9 @@ typedef GPB_ENUM(Notification_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *actionId;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *scheduleTitle;
+@property(nonatomic, readwrite) BOOL multipleChoice;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *landmark;
 
 @end
 
@@ -827,13 +827,13 @@ typedef GPB_ENUM(Notification_Actions_FieldNumber) {
 #pragma mark - Notification_Options
 
 typedef GPB_ENUM(Notification_Options_FieldNumber) {
-  Notification_Options_FieldNumber_Label = 1,
+  Notification_Options_FieldNumber_Text = 1,
   Notification_Options_FieldNumber_Value = 2,
 };
 
 @interface Notification_Options : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *label;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
 
 @property(nonatomic, readwrite) int64_t value;
 
