@@ -29,6 +29,25 @@
     self.address1Label.text = self.notification.addressTitle;
     self.address2Label.text = self.notification.address;
     
+    self.notification.landmark
+    
+//    if ([lm.geometryType isEqualToString:@"circle"]) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            GMSCircle *p = [lm googleMkCircle];
+//            p.map = self.mapView;
+//        });
+//    }else if([lm.geometryType isEqualToString:@"rectangle"]){
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            GMSPolygon *p = [lm googleMkRect];
+//            p.map = self.mapView;
+//        });
+//    }else if([lm.geometryType isEqualToString:@"polygon"]){
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            GMSPolygon *p = [lm googleMkPolygon];
+//            p.map = self.mapView;
+//        });
+//    }
+    
 //    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(notification.latitude, notification.longitude);
 //    [self.mapView setCenterCoordinate:location animated:YES];
 //    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
