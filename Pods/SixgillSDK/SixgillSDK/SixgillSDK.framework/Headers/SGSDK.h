@@ -73,7 +73,7 @@
 +(void) saveCoreDataContext;
 
 // Hailer Integration
-+(void) uploadFileFromURL:(NSURL *)filePath andUploadProgressHandler:(nullable void (^)(NSProgress *uploadProgress))uploadProgressBlock andSuccessHandler:(void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
-+(void) makehailerIncidentWithFilePath:(NSURL *)filePath andCustomer:(NSString *)customer andDescription:(NSString *)description andUploadProgressHandler:(nullable void (^)(NSProgress *uploadProgress))uploadProgressBlock andSuccessHandler:(void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
++(void) uploadFilesFromURLs:(NSMutableArray<NSURL *> *)filePaths andUploadProgressHandlers:(NSMutableArray<void (^)(NSProgress *uploadProgress)>*)uploadProgressBlocks andSuccessHandler:(void (^)(NSMutableArray<UploadFiles *>* _Nullable uploadedFiles))successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
++(void) makehailerIncidentWithFilePaths:(NSMutableArray<NSURL *> *)filePaths andCustomer:(NSString *)customer andDescription:(NSString *)description andUploadProgressHandlers:(NSMutableArray<void (^)(NSProgress *uploadProgress)>*)uploadProgressBlocks andSuccessHandler:(void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
 
 @end

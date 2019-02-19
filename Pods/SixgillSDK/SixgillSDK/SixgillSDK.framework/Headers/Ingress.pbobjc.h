@@ -867,6 +867,18 @@ typedef GPB_ENUM(MobileEvents_FieldNumber) {
 
 @end
 
+#pragma mark - UploadFiles
+
+typedef GPB_ENUM(UploadFiles_FieldNumber) {
+  UploadFiles_FieldNumber_Key = 1,
+};
+
+@interface UploadFiles : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *key;
+
+@end
+
 NS_ASSUME_NONNULL_END
 
 CF_EXTERN_C_END
