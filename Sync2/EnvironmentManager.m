@@ -76,8 +76,8 @@
         
         Environment *gaurav = [[Environment alloc] init];
         gaurav.name = @"Staging";
-        gaurav.senseURL = @"http://192.168.0.103:5005";
-        gaurav.ingressURL = @"http://192.168.0.103:5000";
+        gaurav.senseURL = @"http://192.168.0.104:5005";
+        gaurav.ingressURL = @"http://192.168.0.104:5000";
         gaurav.forgotPasswordURL = @"https://dashboard.staging.sixgill.io/request-password";
         
         self.environments = @[prod, staging, gaurav];
