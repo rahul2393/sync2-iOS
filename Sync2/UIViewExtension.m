@@ -71,8 +71,19 @@
 }
 
 -(void) setCornerRadius:(CGFloat)cornerRadius {
-//    self.layer.cornerRadius = abs(CGFloat(int(cornerRadius * 100)) / 100);
     self.layer.cornerRadius = cornerRadius;
+}
+
+- (UIViewController *)findViewController{
+    
+    UIResponder *responder = self;
+    while (![responder isKindOfClass:[UIViewController class]]) {
+        responder = [responder nextResponder];
+        if (nil == responder) {
+            break;
+        }
+    }
+    return (UIViewController *)responder;
 }
 
 @end

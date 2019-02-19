@@ -27,4 +27,6 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable CGFloat borderWidth;
 @property (nonatomic) IBInspectable CGFloat cornerRadius;
 
+-(UIViewController *)findViewController;
+
 @end
