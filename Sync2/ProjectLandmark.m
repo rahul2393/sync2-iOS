@@ -98,6 +98,45 @@
     return self;
 }
 
+- (instancetype)initWithNotificationData:(NSDictionary *)data{
+    self = [super init];
+    if (self) {
+        self.geometryType = data[@"type"];
+        
+        NSArray *coordinate = data[@"coordinates"];
+        
+        if ([self.geometryType isEqualToString:@"circle"]) {
+            
+            NSMutableDictionary *centerDict = [[NSMutableDictionary alloc]initWithCapacity:2];
+            [centerDict setValue:coordinate[0] forKey:@"lon"];
+            [centerDict setValue:coordinate[1] forKey:@"lat"];
+            
+            self.center = centerDict;
+            
+            self.radius = data[@"radius"];
+            
+        } else if ([self.geometryType isEqualToString:@"envelope"]){
+            
+            NSArray *coordinate = data[@"coordinates"];
+            NSMutableDictionary *seDict = [[NSMutableDictionary alloc]initWithCapacity:2];
+            [seDict setValue:coordinate[0][0] forKey:@"lon"];
+            [seDict setValue:coordinate[0][1] forKey:@"lat"];
+            
+            NSMutableDictionary *nwDict = [[NSMutableDictionary alloc]initWithCapacity:2];
+            [nwDict setValue:coordinate[1][0] forKey:@"lon"];
+            [nwDict setValue:coordinate[1][1] forKey:@"lat"];
+            
+            self.sePoint = seDict;
+            self.nwPoint = nwDict;
+            
+        } else if ([self.geometryType isEqualToString:@"polygon"]){
+            
+            self.polyPts = coordinate.firstObject;
+        }
+    }
+    return self;
+}
+
 - (GMSPolygon *)googleMkPolygon {
     
     if (![self.geometryType isEqualToString:@"polygon"]) {
