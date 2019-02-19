@@ -90,10 +90,7 @@
 }
 
 - (IBAction)createActivityTapped:(UIButton *)sender {
-    if (!self.providerMapImageView) {
-        [self showAlertWithTitle:@"No Indoor Atlas Image" andMessage:@"Select an image first"];
-        return;
-    }else if (!self.imagePath) {
+    if (!self.imagePath) {
         [self showAlertWithTitle:@"Error" andMessage:@"Select an image first"];
         return;
     } else if ([self.customerTextField.text isEqualToString:@""]) {
@@ -110,26 +107,36 @@
     [self.activityIndicator setHidden:NO];
     [self.activityIndicator startAnimating];
     
+    NSMutableArray<void (^)(NSProgress *uploadProgress)>* uploadProgresses = [NSMutableArray new];
+    NSMutableArray<NSURL *> *filePaths = [NSMutableArray new];
     
-    NSFileManager *fileManager = NSFileManager.defaultManager;
-    NSURL *documentPath = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
-    NSString *imageName = [NSString stringWithFormat:@"%@.jpg", [[ULID new] ulidString]];
-    NSURL *indoorImagePath = [documentPath URLByAppendingPathComponent:imageName];
-
-
-    UIGraphicsBeginImageContextWithOptions(self.providerMapImageView.bounds.size, self.providerMapImageView.opaque, 0.0);
-    [self.providerMapImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    self.imageView.image = img;
-    
-    NSData *imageData = UIImageJPEGRepresentation(img, 1.0f);
-    [imageData writeToURL:indoorImagePath atomically:YES];
-    
-    [SGSDK makehailerIncidentWithFilePath:indoorImagePath andCustomer:self.customerTextField.text andDescription:self.descriptionTextField.text andUploadProgressHandler:^(NSProgress *uploadProgress) {
+    [filePaths addObject:self.imagePath];
+    [uploadProgresses addObject:^void(NSProgress *uploadProgress) {
         self.progressView.progress = uploadProgress.fractionCompleted;
-    } andSuccessHandler:^{
+    }];
+    
+    
+    if (self.providerMapImageView) {
+        NSFileManager *fileManager = NSFileManager.defaultManager;
+        NSURL *documentPath = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
+        NSString *imageName = [NSString stringWithFormat:@"%@.jpg", [[ULID new] ulidString]];
+        NSURL *indoorImagePath = [documentPath URLByAppendingPathComponent:imageName];
+        
+        UIGraphicsBeginImageContextWithOptions(self.providerMapImageView.bounds.size, self.providerMapImageView.opaque, 0.0);
+        [self.providerMapImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+        UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        NSData *imageData = UIImageJPEGRepresentation(img, 1.0f);
+        [imageData writeToURL:indoorImagePath atomically:YES];
+        
+        [filePaths addObject:indoorImagePath];
+        [uploadProgresses addObject:^void(NSProgress *uploadProgress) {
+            
+        }];
+    }
+    
+    [SGSDK makehailerIncidentWithFilePaths:filePaths andCustomer:self.customerTextField.text andDescription:self.descriptionTextField.text andUploadProgressHandlers:uploadProgresses andSuccessHandler:^{
         
         [self.activityIndicator setHidden:YES];
         [self.activityIndicator stopAnimating];
@@ -142,10 +149,7 @@
         }]];
         [self presentViewController:alertController animated:true completion:nil];
         
-        
-        
     } andFailureHandler:^(NSString *failureMsg) {
-        
         [self.activityIndicator setHidden:YES];
         [self.activityIndicator stopAnimating];
         
@@ -230,16 +234,11 @@
     [self.providerMapImageView addSubview:self.providerMapBlueDot];
     self.providerMapBlueDot.center = self.providerMapImageView.center;
     self.providerMapBlueDot.transform = CGAffineTransformMakeScale(blueDotSize, blueDotSize);
-    
-    [self hideEmptyView:YES];
-    self.imageView.image = self.providerMapImageView.image;
-    
-    self.providerMapBlueDot.center = self.providerMapImageView.center;
 }
 
 - (void)didUpdateLocation:(IALocation *)location andPoint:(CGPoint)point{
     if (self.providerMapImageView) {
-//    self.providerMapBlueDot.center = point;
+        self.providerMapBlueDot.center = point;
     }
 }
 
