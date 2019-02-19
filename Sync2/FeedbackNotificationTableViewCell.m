@@ -7,6 +7,8 @@
 //
 
 #import "FeedbackNotificationTableViewCell.h"
+#import "UIViewExtension.h"
+#import "UIView+Toast.h"
 
 @interface FeedbackNotificationTableViewCell ()
 @property (nonatomic, strong) NSString *submitURL;
@@ -17,8 +19,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
-    self.feedbackTextView.delegate = self;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -28,6 +28,9 @@
 }
 
 - (void)configureCell{
+    
+    self.feedbackTextView.delegate = self;
+    
     self.titleLabel.text = self.notification.title;
     self.detailLabel.text = self.notification.body;
 
@@ -43,9 +46,9 @@
 - (IBAction)sendFeedbackTapped:(id)sender {
     NSDictionary *body = @{ @"responseData": @{ @"value": self.feedbackTextView.text } };
     [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
-        
+        [[self findViewController].view makeToast:self.notification.actionsArray[0].message];
     } andFailureHandler:^(NSString *failureMsg) {
-        
+        [[self findViewController].view makeToast:failureMsg];
     }];
 }
 

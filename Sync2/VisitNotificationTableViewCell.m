@@ -13,14 +13,16 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
-    [self.mapView setUserInteractionEnabled:YES];
 }
 
 - (void)configureCell {
     
+    [self.mapView setUserInteractionEnabled:YES];
+    
     self.titleLabel.text = self.notification.title;
     self.detailLabel.text = self.notification.body;
+    
+    [self.mapView clear];
 
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMMM dd, h:mm a"];
@@ -29,40 +31,56 @@
     self.address1Label.text = self.notification.addressTitle;
     self.address2Label.text = self.notification.address;
     
-//    CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:currentEvent.locationsArray[0].latitude longitude: currentEvent.locationsArray[0].longitude];
-//    GMSCameraPosition *camera = [GMSCameraPosition cameraWithTarget:currentLocation.coordinate zoom:10];
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        self.mapView.camera = camera;
-//    });
-    
-    
     NSError *error = nil;
-    id object = [NSJSONSerialization
+    id landmark = [NSJSONSerialization
                  JSONObjectWithData:self.notification.landmark
                  options:0
                  error:&error];
     
+
+    __block CLLocationCoordinate2D currentLocation = CLLocationCoordinate2DMake(0, 0);
     
-    if ([object isKindOfClass:[NSDictionary class]]) {
-        NSDictionary *responseDict = (NSDictionary *)object;
-        ProjectLandmark *pl = [[ProjectLandmark alloc] initWithData:responseDict];
+    if ([landmark isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *landmarkDict = (NSDictionary *)landmark;
+        ProjectLandmark *pl = [[ProjectLandmark alloc] initWithNotificationData:landmarkDict];
         
         if ([pl.geometryType isEqualToString:@"circle"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                GMSCircle *p = [pl googleMkCircle];
-                p.map = self.mapView;
+                GMSCircle *c = [pl googleMkCircle];
+                
+                NSNumber *latNum = (NSNumber *)pl.center[@"lat"];
+                NSNumber *lonNum = (NSNumber *)pl.center[@"lon"];
+                currentLocation = CLLocationCoordinate2DMake(latNum.doubleValue, lonNum.doubleValue);
+                
+                c.map = self.mapView;
             });
         }else if([pl.geometryType isEqualToString:@"envelope"]){
             dispatch_async(dispatch_get_main_queue(), ^{
-                GMSPolygon *p = [pl googleMkRect];
-                p.map = self.mapView;
+                GMSPolygon *e = [pl googleMkRect];
+                
+                NSNumber *nwLatNum = (NSNumber *)pl.nwPoint[@"lat"];
+                NSNumber *nwLonNum = (NSNumber *)pl.nwPoint[@"lon"];
+                
+                currentLocation = CLLocationCoordinate2DMake(nwLatNum.doubleValue, nwLonNum.doubleValue);
+                
+                e.map = self.mapView;
             });
         }else if([pl.geometryType isEqualToString:@"polygon"]){
             dispatch_async(dispatch_get_main_queue(), ^{
                 GMSPolygon *p = [pl googleMkPolygon];
+                
+                NSNumber *latNum = (NSNumber *)pl.polyPts[0][1];
+                NSNumber *lonNum = (NSNumber *)pl.polyPts[0][0];
+                
+                currentLocation = CLLocationCoordinate2DMake(latNum.doubleValue, lonNum.doubleValue);
+                
                 p.map = self.mapView;
             });
         }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            GMSCameraPosition *camera = [GMSCameraPosition cameraWithTarget:currentLocation zoom:10];
+            self.mapView.camera = camera;
+        });
     }
 }
 

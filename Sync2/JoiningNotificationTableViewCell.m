@@ -8,6 +8,7 @@
 
 #import "JoiningNotificationTableViewCell.h"
 #import "UIViewExtension.h"
+#import "UIView+Toast.h"
 
 @import SixgillSDK;
 
@@ -41,13 +42,13 @@
         UIButton * btn = [self.actionButtons objectAtIndex:idx];
         [btn setTitle:action.text forState:UIControlStateNormal];
 
-        if ([action.type isEqual: @"secondary"]) {
+        if ([action.type isEqual: @"cancel"]) {
 
             [btn setTitleColor:[UIColor colorWithRed:1.0 green:0.11 blue:0.15 alpha:1] forState:UIControlStateNormal];
             btn.backgroundColor = [UIColor clearColor];
             btn.borderColor = [UIColor colorWithRed:1.0 green:0.11 blue:0.15 alpha:1];
 
-        } else if ([action.type isEqual: @"primary"]) {
+        } else if ([action.type isEqual: @"success"]) {
 
             [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             btn.backgroundColor = [UIColor colorWithRed:0 green:0.32 blue:0.78 alpha:1];
@@ -63,8 +64,13 @@
     
     [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
         
-    } andFailureHandler:^(NSString *failureMsg) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.type contains[cd] %@",@"cancel"];
+        Notification_Actions *a = [self.notification.actionsArray filteredArrayUsingPredicate:predicate].firstObject;
+        [self.contentView.window.rootViewController.view makeToast:a.message];
+        [[self findViewController].view makeToast:a.message];
         
+    } andFailureHandler:^(NSString *failureMsg) {
+        [[self findViewController].view makeToast:failureMsg];
     }];
 }
 
@@ -72,8 +78,12 @@
     NSDictionary *body = @{ @"responseData": @{ @"value": @"primary" } };
     [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
         
-    } andFailureHandler:^(NSString *failureMsg) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.type contains[cd] %@",@"success"];
+        Notification_Actions *a = [self.notification.actionsArray filteredArrayUsingPredicate:predicate].firstObject;
+        [[self findViewController].view makeToast:a.message];
         
+    } andFailureHandler:^(NSString *failureMsg) {
+        [[self findViewController].view makeToast:failureMsg];
     }];
 }
 

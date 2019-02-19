@@ -9,6 +9,9 @@
 #import "ScheduleNotificationTableViewCell.h"
 #import "ActionSheetPicker.h"
 
+#import "UIView+Toast.h"
+#import "UIViewExtension.h"
+
 @interface ScheduleNotificationTableViewCell ()
 @property (nonatomic, strong) NSString *submitURL;
 @property (nonatomic, strong) NSDate *startDate;
@@ -47,9 +50,9 @@
 - (IBAction)scheduleTapped:(id)sender {
     NSDictionary *body = @{ @"responseData": @{ @"value": [NSNumber numberWithDouble:[self.selectedDate timeIntervalSince1970]] } };
     [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
-
+        [[self findViewController].view makeToast:self.notification.actionsArray[0].message];
     } andFailureHandler:^(NSString *failureMsg) {
-
+        [[self findViewController].view makeToast:failureMsg];
     }];
 }
 

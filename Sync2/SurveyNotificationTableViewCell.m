@@ -9,6 +9,9 @@
 #import "SurveyNotificationTableViewCell.h"
 #import "OptionSurveyTableViewCell.h"
 
+#import "UIViewExtension.h"
+#import "UIView+Toast.h"
+
 #define SURVEY_OPTION_CELL_HEIGHT 38
 
 @interface SurveyNotificationTableViewCell ()
@@ -23,12 +26,14 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.radioButtonChecked = [[NSMutableArray alloc] init];
 }
 
 - (void)configureCell{
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.radioButtonChecked = [[NSMutableArray alloc] init];
+    
     self.titleLabel.text = self.notification.title;
     self.detailLabel.text = self.notification.body;
     
@@ -67,9 +72,9 @@
     // use submitURL and send request
     NSDictionary *body = @{ @"responseData": @{ @"value": responseArray } };
     [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
-        
+        [[self findViewController].view makeToast:self.notification.actionsArray[0].message];
     } andFailureHandler:^(NSString *failureMsg) {
-        
+        [[self findViewController].view makeToast:failureMsg];
     }];
     
 }
@@ -93,6 +98,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [[self.radioButtonChecked objectAtIndex:indexPath.row] boolValue] ? [self.radioButtonChecked replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:FALSE]] : [self.radioButtonChecked replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:TRUE]];
+    
+    if (!self.notification.multipleChoice) {
+        for (int i = 0; i < self.notification.optionsArray.count; i++) {
+            if (i != indexPath.row) {
+                self.radioButtonChecked[i] = [NSNumber numberWithBool:FALSE];
+            }
+        }
+    }
+    
     [self.tableView reloadData];
 }
 

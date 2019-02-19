@@ -20,15 +20,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
-    self.pTagContent = @"";
-    self.aTagContent = @"";
-    self.aTagURL = @"";
-    
-    // Initialization code
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTapped:)];
-    [self.detailLabel addGestureRecognizer:tapGestureRecognizer];
-    self.detailLabel.userInteractionEnabled = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -38,6 +29,16 @@
 }
 
 - (void)configureCell{
+    
+    self.pTagContent = @"";
+    self.aTagContent = @"";
+    self.aTagURL = @"";
+    
+    // Initialization code
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTapped:)];
+    [self.detailLabel addGestureRecognizer:tapGestureRecognizer];
+    self.detailLabel.userInteractionEnabled = YES;
+    
     self.titleLabel.text = self.notification.title;
     
     [self parseHTMLTags:self.notification.body];
