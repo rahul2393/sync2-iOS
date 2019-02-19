@@ -247,7 +247,7 @@
                 GMSCircle *p = [lm googleMkCircle];
                 p.map = self.mapView;
             });
-        }else if([lm.geometryType isEqualToString:@"rectangle"]){
+        }else if([lm.geometryType isEqualToString:@"envelope"]){
             dispatch_async(dispatch_get_main_queue(), ^{
                 GMSPolygon *p = [lm googleMkRect];
                 p.map = self.mapView;
