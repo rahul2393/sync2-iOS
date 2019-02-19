@@ -163,7 +163,7 @@
 
                 return cell;
             }
-            case EVENT: {
+            case LOCATION: {
                 VisitNotificationTableViewCell *cell = (VisitNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"VisitNotificationTableViewCellIdentifier" forIndexPath:indexPath];
                 cell.notification = n;
                 [cell configureCell];

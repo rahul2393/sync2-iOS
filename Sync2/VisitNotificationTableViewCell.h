@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@import MapKit;
+@import GoogleMaps;
 @import SixgillSDK;
 
-@interface VisitNotificationTableViewCell : UITableViewCell <MKMapViewDelegate>
+@interface VisitNotificationTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) Notification *notification;
 
@@ -18,8 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *address1Label;
 @property (weak, nonatomic) IBOutlet UILabel *address2Label;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 
 -(void)configureCell;
 

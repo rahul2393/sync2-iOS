@@ -27,7 +27,7 @@
 - (void)configureCell{
     self.titleLabel.text = self.notification.title;
     self.detailLabel.text = self.notification.body;
-    self.actionLabel.text = self.notification.actionTitle;
+    self.actionLabel.text = self.notification.hint;
 
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMMM dd, h:mm a"];

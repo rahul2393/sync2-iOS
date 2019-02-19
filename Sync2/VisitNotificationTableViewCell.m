@@ -7,14 +7,14 @@
 //
 
 #import "VisitNotificationTableViewCell.h"
+#import "ProjectLandmark.h"
 
 @implementation VisitNotificationTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    self.mapView.delegate = self;
-    [self.mapView setUserInteractionEnabled:NO];
+    [self.mapView setUserInteractionEnabled:YES];
 }
 
 - (void)configureCell {
@@ -29,33 +29,41 @@
     self.address1Label.text = self.notification.addressTitle;
     self.address2Label.text = self.notification.address;
     
-    self.notification.landmark
+//    CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:currentEvent.locationsArray[0].latitude longitude: currentEvent.locationsArray[0].longitude];
+//    GMSCameraPosition *camera = [GMSCameraPosition cameraWithTarget:currentLocation.coordinate zoom:10];
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        self.mapView.camera = camera;
+//    });
     
-//    if ([lm.geometryType isEqualToString:@"circle"]) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            GMSCircle *p = [lm googleMkCircle];
-//            p.map = self.mapView;
-//        });
-//    }else if([lm.geometryType isEqualToString:@"rectangle"]){
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            GMSPolygon *p = [lm googleMkRect];
-//            p.map = self.mapView;
-//        });
-//    }else if([lm.geometryType isEqualToString:@"polygon"]){
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            GMSPolygon *p = [lm googleMkPolygon];
-//            p.map = self.mapView;
-//        });
-//    }
     
-//    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(notification.latitude, notification.longitude);
-//    [self.mapView setCenterCoordinate:location animated:YES];
-//    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
-//    [self.mapView setRegion:zoomRegion animated:YES];
+    NSError *error = nil;
+    id object = [NSJSONSerialization
+                 JSONObjectWithData:self.notification.landmark
+                 options:0
+                 error:&error];
     
-//    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-//    point.coordinate = location;
-//    [self.mapView addAnnotation:point];
+    
+    if ([object isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *responseDict = (NSDictionary *)object;
+        ProjectLandmark *pl = [[ProjectLandmark alloc] initWithData:responseDict];
+        
+        if ([pl.geometryType isEqualToString:@"circle"]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                GMSCircle *p = [pl googleMkCircle];
+                p.map = self.mapView;
+            });
+        }else if([pl.geometryType isEqualToString:@"envelope"]){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                GMSPolygon *p = [pl googleMkRect];
+                p.map = self.mapView;
+            });
+        }else if([pl.geometryType isEqualToString:@"polygon"]){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                GMSPolygon *p = [pl googleMkPolygon];
+                p.map = self.mapView;
+            });
+        }
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
