@@ -131,6 +131,7 @@
         [filePaths addObject:indoorImagePath];
         [uploadProgresses addObject:^void(NSProgress *uploadProgress) {
             
+            self.progressView.progress = uploadProgress.fractionCompleted;
         }];
     }
     
@@ -230,7 +231,6 @@
     self.providerMapBlueDot.layer.borderWidth = 0.2;
     
     [self.providerMapImageView addSubview:self.providerMapBlueDot];
-    self.providerMapBlueDot.center = self.providerMapImageView.center;
     self.providerMapBlueDot.transform = CGAffineTransformMakeScale(blueDotSize, blueDotSize);
 }
 
