@@ -94,8 +94,7 @@
 		</data>
 		<key>Headers/Ingress.pbobjc.h</key>
 		<data>
-<<<<<<< HEAD:Pods/SixgillSDK/SixgillSDK/SixgillSDK.framework/_CodeSignature/CodeResources
-		WpvlPaboCzPZ4ximK0uy/x6vLa0=
+		iu8PZw8bF1m71i5UA1Pt8Bj+AtA=
 		</data>
 		<key>Headers/SGAtlasDelegate.h</key>
 		<data>
@@ -108,9 +107,6 @@
 		<key>Headers/SGEventToken.h</key>
 		<data>
 		11gH04jGVuVKgGMp4wURFrlSOhA=
-=======
-		nCm+Aa8jJQe2mW+LF8n5aIlT1Fc=
->>>>>>> origin/master:SixgillSDK.framework/_CodeSignature/CodeResources
 		</data>
 		<key>Headers/SGIoTDevice.h</key>
 		<data>
@@ -138,11 +134,7 @@
 		</data>
 		<key>Headers/SGSDK.h</key>
 		<data>
-<<<<<<< HEAD:Pods/SixgillSDK/SixgillSDK/SixgillSDK.framework/_CodeSignature/CodeResources
-		q2BvRV9O70OIrKQuQlc0VeQ1iLQ=
-=======
-		twtwBsDF/9WLPbspTR8YYmNTj+w=
->>>>>>> origin/master:SixgillSDK.framework/_CodeSignature/CodeResources
+		ArWUFKu7HDgpXwGjNbga17IjRyI=
 		</data>
 		<key>Headers/SGSDKConfigManager.h</key>
 		<data>
@@ -509,12 +501,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-<<<<<<< HEAD:Pods/SixgillSDK/SixgillSDK/SixgillSDK.framework/_CodeSignature/CodeResources
-			WpvlPaboCzPZ4ximK0uy/x6vLa0=
+			iu8PZw8bF1m71i5UA1Pt8Bj+AtA=
 			</data>
 			<key>hash2</key>
 			<data>
-			8tqoMfQa4iPWzs+Y39V7EHcKdO7Y0eYohAfxH8G7las=
+			CR3hwZnOzRkCA2fEsCk+1AAOx1O811ODDl8jDgaUGaU=
 			</data>
 		</dict>
 		<key>Headers/SGAtlasDelegate.h</key>
@@ -548,13 +539,6 @@
 			<key>hash2</key>
 			<data>
 			hkpj053WRnsCaQxS4tJvfefo4rIRu5kWXJiLKVfZkQs=
-=======
-			nCm+Aa8jJQe2mW+LF8n5aIlT1Fc=
-			</data>
-			<key>hash2</key>
-			<data>
-			m7dQbULmTRWO51wTVZB29wPmBj8Cr+oTh0OdhFM7Sls=
->>>>>>> origin/master:SixgillSDK.framework/_CodeSignature/CodeResources
 			</data>
 		</dict>
 		<key>Headers/SGIoTDevice.h</key>
@@ -627,19 +611,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-<<<<<<< HEAD:Pods/SixgillSDK/SixgillSDK/SixgillSDK.framework/_CodeSignature/CodeResources
-			q2BvRV9O70OIrKQuQlc0VeQ1iLQ=
+			ArWUFKu7HDgpXwGjNbga17IjRyI=
 			</data>
 			<key>hash2</key>
 			<data>
-			+MQWMKQYDbZdI6T7a9wkKmPZYv57pjR0QtgM5Xrqdv4=
-=======
-			twtwBsDF/9WLPbspTR8YYmNTj+w=
-			</data>
-			<key>hash2</key>
-			<data>
-			hUK2xOLwfKm7e9g0ByWL2TG/eudt/IyFndWNBsKC26A=
->>>>>>> origin/master:SixgillSDK.framework/_CodeSignature/CodeResources
+			SnRJ7ZBxHHmVMB6TuFeeP317TibjDTrejQNILEi4jgM=
 			</data>
 		</dict>
 		<key>Headers/SGSDKConfigManager.h</key>

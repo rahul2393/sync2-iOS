@@ -870,17 +870,6 @@ typedef GPB_ENUM(MobileEvents_FieldNumber) {
 
 @end
 
-<<<<<<< HEAD:Pods/SixgillSDK/SixgillSDK/SixgillSDK.framework/Headers/Ingress.pbobjc.h
-#pragma mark - UploadFiles
-
-typedef GPB_ENUM(UploadFiles_FieldNumber) {
-  UploadFiles_FieldNumber_Key = 1,
-};
-
-@interface UploadFiles : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *key;
-=======
 #pragma mark - Response
 
 typedef GPB_ENUM(Response_FieldNumber) {
@@ -905,7 +894,18 @@ typedef GPB_ENUM(Response_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *type;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSData *responseData;
->>>>>>> origin/master:SixgillSDK.framework/Headers/Ingress.pbobjc.h
+
+@end
+
+#pragma mark - UploadFiles
+
+typedef GPB_ENUM(UploadFiles_FieldNumber) {
+  UploadFiles_FieldNumber_Key = 1,
+};
+
+@interface UploadFiles : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *key;
 
 @end
 
