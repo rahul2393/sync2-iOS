@@ -12,6 +12,8 @@
 
 @interface ScheduleNotificationTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) Notification *notification;
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *calendarDateLabel;
@@ -23,6 +25,6 @@
 
 - (IBAction)datePickerTapped:(id)sender;
 
--(void)configureCell:(Notification *)notification;
+-(void)configureCell;
 
 @end

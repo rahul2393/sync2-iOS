@@ -11,6 +11,9 @@
 @import SixgillSDK;
 
 @interface JoiningNotificationTableViewCell : UITableViewCell
+
+@property (strong, nonatomic) Notification *notification;
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *actionLabel;
@@ -20,6 +23,6 @@
 
 - (IBAction)secondButtonTapped:(id)sender;
 
--(void)configureCell:(Notification *)notification;
+-(void)configureCell;
 
 @end

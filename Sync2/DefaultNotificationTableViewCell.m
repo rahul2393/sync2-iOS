@@ -21,10 +21,9 @@
     // Configure the view for the selected state
 }
 
-- (void)configureCell:(Notification *)notification{
-    
-    self.titleLabel.text = notification.subject;
-    self.detailLabel.text = notification.message;
+- (void)configureCell{
+    self.titleLabel.text = self.notification.subject;
+    self.detailLabel.text = self.notification.message;
     
 }
 

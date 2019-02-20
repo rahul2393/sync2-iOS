@@ -20,6 +20,15 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+- (void)configureCell{
     
     self.pTagContent = @"";
     self.aTagContent = @"";
@@ -29,18 +38,10 @@
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTapped:)];
     [self.detailLabel addGestureRecognizer:tapGestureRecognizer];
     self.detailLabel.userInteractionEnabled = YES;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
-- (void)configureCell:(Notification *)notification {
-    self.titleLabel.text = notification.title;
     
-    [self parseHTMLTags:notification.body];
+    self.titleLabel.text = self.notification.title;
+    
+    [self parseHTMLTags:self.notification.body];
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.pTagContent attributes:nil];
     NSDictionary *linkAttributes = @{ NSForegroundColorAttributeName : [UIColor colorWithRed:0.05 green:0.4 blue:0.65 alpha:1.0],
@@ -52,7 +53,7 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMMM dd, h:mm a"];
-    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)]]];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(self.notification.timestamp / 1000.0)]]];
 }
 
 - (void)labelTapped:(UITapGestureRecognizer *)recognizer {

@@ -67,7 +67,8 @@
 
 +(void)getRulesOfType:(NSString *)type andSuccessHandler:(nullable void (^)(NSMutableArray<SGRule*> *))successBlock andFailureHandler:(nullable void (^)(NSString *))failureBlock;
 
-+(void) showNotificationsFromOffset:(NSInteger *)offset andLimit:(NSInteger *)limit andSuccessHandler:(void (^)(NSArray<Notification*> *))successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
++(void) showNotificationsFromOffset:(NSInteger)offset andLimit:(NSInteger)limit andSuccessHandler:(void (^)(NotificationResponse *))successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
+-(void) postNotificationFeedbackForNotification:(Notification *)notification withBody:(NSMutableDictionary *)body andSuccessHandler:(void (^)())successBlock andFailureHandler:(void (^)(NSString *))failureBlock;
 
 #pragma mark - Core Data
 +(void) saveCoreDataContext;

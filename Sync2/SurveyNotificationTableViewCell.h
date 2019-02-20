@@ -12,6 +12,8 @@
 
 @interface SurveyNotificationTableViewCell : UITableViewCell <UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) Notification *notification;
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UIButton *button;
@@ -21,6 +23,6 @@
 
 - (IBAction)sendTapped:(id)sender;
 
--(void)configureCell:(Notification *)notification;
+-(void)configureCell;
 
 @end

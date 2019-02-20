@@ -78,9 +78,7 @@
     [SGSDK didReceivePushNotificationPayload:userInfo withCompletionHandler:completionHandler];
     
     //PushReceived
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"PushReceived"
-     object:self];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"PushReceived" object:self];
     
     if(application.applicationState == UIApplicationStateActive) {
         

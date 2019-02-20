@@ -45,5 +45,6 @@
 -(GMSPolygon *) googleMkRect;
 
 - (instancetype)initWithData:(NSDictionary *)data;
+- (instancetype)initWithNotificationData:(NSDictionary *)data;
 
 @end
