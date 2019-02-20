@@ -8,8 +8,6 @@
 
 @import SixgillSDK;
 
-#import <ULID/ULID.h>
-
 #import "CameraViewController.h"
 #import "SettingsManager.h"
 #import "SenseAPI.h"
@@ -119,7 +117,7 @@
     if (self.providerMapImageView) {
         NSFileManager *fileManager = NSFileManager.defaultManager;
         NSURL *documentPath = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
-        NSString *imageName = [NSString stringWithFormat:@"%@.jpg", [[ULID new] ulidString]];
+        NSString *imageName = @"indoormap.jpg";
         NSURL *indoorImagePath = [documentPath URLByAppendingPathComponent:imageName];
         
         UIGraphicsBeginImageContextWithOptions(self.providerMapImageView.bounds.size, self.providerMapImageView.opaque, 0.0);
@@ -164,7 +162,7 @@
     
     NSFileManager *fileManager = NSFileManager.defaultManager;
     NSURL *documentPath = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
-    NSString *imageName = [NSString stringWithFormat:@"%@.jpg", [[ULID new] ulidString]];
+    NSString *imageName = @"userImage.jpg";
     self.imagePath = [documentPath URLByAppendingPathComponent:imageName];
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
