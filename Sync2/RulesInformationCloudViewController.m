@@ -107,6 +107,7 @@
     }
     
     cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.backgroundColor = [UIColor whiteColor];
 //    [cell setIndentationLevel:1];
     
     switch (indexPath.section) {
@@ -120,6 +121,9 @@
         case 1: {
             cell.textLabel.text = self.actionsArray[indexPath.row].key;
             cell.detailTextLabel.text = self.actionsArray[indexPath.row].value;
+            if ([cell.textLabel.text isEqualToString:@""]) {
+                cell.backgroundColor = [UIColor clearColor];
+            }
             break;
         }
         case 2: {
@@ -225,7 +229,14 @@
             rC5.indentationLevel = level;
             [self.actionsArray addObject:rC5];
         }
+        
+        RuleTableViewUtil *emptyRC = [[RuleTableViewUtil alloc] init];
+        emptyRC.key = @"";
+        emptyRC.value = @"";
+        emptyRC.indentationLevel = level;
+        [self.actionsArray addObject:emptyRC];
     }
+    [self.actionsArray removeLastObject];
 }
 
 -(void) makeConditionsObject:(NSArray<SGRuleCondition *> *)ruleConditions andIndendation:(NSInteger )level {
