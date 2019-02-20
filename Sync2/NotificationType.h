@@ -21,10 +21,10 @@ typedef enum {
     FEEDBACK,
     SURVEY,
     SCHEDULE,
-    EVENT
+    LOCATION
 } kNotificationType;
 
-#define kNotificationTypeArray @"push", @"push-information", @"push-action", @"push-feedback", @"push-survey", @"push-schedule", @"push-event", nil
+#define kNotificationTypeArray @"push", @"push-information", @"push-action", @"push-feedback", @"push-survey", @"push-schedule", @"push-location", nil
 
 @interface NotificationType : NSObject
 

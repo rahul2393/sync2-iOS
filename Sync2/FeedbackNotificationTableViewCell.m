@@ -7,6 +7,8 @@
 //
 
 #import "FeedbackNotificationTableViewCell.h"
+#import "UIViewExtension.h"
+#import "UIView+Toast.h"
 
 @interface FeedbackNotificationTableViewCell ()
 @property (nonatomic, strong) NSString *submitURL;
@@ -17,8 +19,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    
-    self.feedbackTextView.delegate = self;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -27,21 +27,29 @@
     // Configure the view for the selected state
 }
 
-- (void)configureCell:(Notification *)notification {
-    self.titleLabel.text = notification.title;
-    self.detailLabel.text = notification.body;
+- (void)configureCell{
+    
+    self.feedbackTextView.delegate = self;
+    
+    self.titleLabel.text = self.notification.title;
+    self.detailLabel.text = self.notification.body;
 
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMMM dd, h:mm a"];
-    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(notification.timestamp / 1000.0)]]];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:(self.notification.timestamp / 1000.0)]]];
     
-    self.feedbackTextView.placeholder = notification.commentHint;
-    [self.button setTitle:notification.buttonText forState:UIControlStateNormal];
-    self.submitURL = notification.submitURL;
+    self.feedbackTextView.placeholder = self.notification.hint;
+    [self.button setTitle:self.notification.actionsArray[0].text forState:UIControlStateNormal];
+    self.submitURL = self.notification.submitURL;
 }
 
 - (IBAction)sendFeedbackTapped:(id)sender {
-    // use submit url and send request
+    NSDictionary *body = @{ @"responseData": @{ @"value": self.feedbackTextView.text } };
+    [[SGSDK sharedInstance] postNotificationFeedbackForNotification:self.notification withBody:[body mutableCopy] andSuccessHandler:^{
+        [[self findViewController].view makeToast:self.notification.actionsArray[0].message];
+    } andFailureHandler:^(NSString *failureMsg) {
+        [[self findViewController].view makeToast:failureMsg];
+    }];
 }
 
 #pragma mark - UITextViewDelegate methods
@@ -55,5 +63,3 @@
 }
 
 @end
-
-//cell.feedbackTextView.placeholder = @"e.g. Needs another whiteboard";

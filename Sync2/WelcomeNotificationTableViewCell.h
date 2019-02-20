@@ -12,9 +12,11 @@
 
 @interface WelcomeNotificationTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) Notification *notification;
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
--(void)configureCell:(Notification *)notification;
+-(void)configureCell;
 @end
