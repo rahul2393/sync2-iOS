@@ -83,7 +83,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - SixgillSDK (1.3.0-beta.65):
+  - SixgillSDK (1.3.0-beta.69):
     - CocoaLumberjack
     - IndoorAtlas
   - TTGSnackbar (1.7.5)
@@ -97,7 +97,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - MKDropdownMenu
-  - SixgillSDK (~> 1.3.0-beta.65)
+  - SixgillSDK (~> 1.3.0-beta.69)
   - TTGSnackbar
 
 SPEC REPOS:
@@ -139,9 +139,9 @@ SPEC CHECKSUMS:
   IndoorAtlas: 397f5e9fe1daffe99d73d3ed5f29c1ac635e2e90
   MKDropdownMenu: 269df4a41d21a1db684ce8bc709befe419fc5bae
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  SixgillSDK: 95a75bfa7366b77d7b18bfc8cd1d94a58167b66b
+  SixgillSDK: c0c8c3e04442885fc5a2d4383c840583ceb91231
   TTGSnackbar: 2cf4e7b6ffbe5cddf248a73f3ee952b71bee8ea3
 
-PODFILE CHECKSUM: 0fbdb712e3452aeb4f3695235c3285593a260d3a
+PODFILE CHECKSUM: 0d88d32c95805acdbef5dc946209aed2b2e2d9e7
 
 COCOAPODS: 1.5.3
