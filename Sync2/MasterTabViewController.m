@@ -11,6 +11,7 @@
 #import "SenseAPI.h"
 #import "OrganizationSelectionViewController.h"
 #import "DataChannelSelectionViewController.h"
+#import "ProviderKeysViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "SDKManager.h"
 
@@ -59,6 +60,11 @@
         [self loadOrganizations];
     }else if (![[SettingsManager sharedManager] selectedDataChannel]) {
         [self loadDataChannels];
+    } else if (![[SettingsManager sharedManager] providerApiKey]) {
+        
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self performSegueWithIdentifier:@"showSetProviderKey" sender:self];
+        });
     }
 }
 
@@ -83,6 +89,9 @@
         UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
         OrganizationSelectionViewController *vc = (OrganizationSelectionViewController *)nav.viewControllers[0];
         vc.organizations = self.organizations;
+    }else if ([segue.identifier isEqualToString:@"showSetProviderKey"]) {
+//        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
+//        ProviderKeysViewController *vc = (ProviderKeysViewController *)nav.viewControllers[0];
     }
 }
 

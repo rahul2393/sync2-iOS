@@ -36,6 +36,12 @@
 -(DataChannel *) selectedHailerChannel;
 -(void) selectHailerChannel:(DataChannel *)dataChannel withSuccessHandler:(void ( ^ _Nullable )(NSArray * apiKeys, NSError * _Nullable error))successBlock withFailureHandler:(void ( ^ _Nullable )())failureBlock;
 
+-(NSString *) providerApiKey;
+-(void) setProviderAPIKey:(NSString *)apiKey;
+
+-(NSString *) providerSecretKey;
+-(void) setProviderSecretKey:(NSString *)secretKey;
+
 - (NSArray*)savedRemoteNotificationPayloads;
 - (void)saveRemoteNotificationPayload:(NSDictionary *)payload;
     

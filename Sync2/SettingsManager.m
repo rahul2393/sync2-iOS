@@ -38,6 +38,9 @@
 #define KEY_SelectedDataChannel @"selectedDataChannel"
 #define KEY_SelectedHailerChannel @"selectedHailerChannel"
 
+#define KEY_ProviderAPIKey @"providerAPIKey"
+#define KEY_ProviderSecretKey @"providerSecretKey"
+
 #define SG_PUSH_CMD_FIELD @"data"
 
 #define SG_PUSH_TYPE @"type"
@@ -191,6 +194,8 @@
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedOrganization];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedDataChannel];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_SelectedHailerChannel];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_ProviderAPIKey];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_ProviderSecretKey];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_AccountEmail];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_UserToken];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_UserOrgToken];
@@ -278,6 +283,34 @@
             successBlock(apiKeys, error);
         }
     }];
+}
+
+- (NSString *)providerApiKey{
+    NSString *s = [[NSUserDefaults standardUserDefaults] stringForKey:KEY_ProviderAPIKey];
+    if(!s) {
+        return nil;
+    }
+    
+    return s;
+}
+
+- (void)setProviderAPIKey:(NSString *)apiKey{
+    [[NSUserDefaults standardUserDefaults] setObject:apiKey forKey:KEY_ProviderAPIKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSString *)providerSecretKey{
+    NSString *s = [[NSUserDefaults standardUserDefaults] stringForKey:KEY_ProviderSecretKey];
+    if(!s) {
+        return nil;
+    }
+    
+    return s;
+}
+
+- (void)setProviderSecretKey:(NSString *)secretKey{
+    [[NSUserDefaults standardUserDefaults] setObject:secretKey forKey:KEY_ProviderSecretKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(BOOL) mapShowLast5Pts{

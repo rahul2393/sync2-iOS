@@ -112,8 +112,12 @@
     
     [[SGSDK sharedInstance] startWithAPIKey:apiKey andConfig:config andSuccessHandler:^{
         
-        SGAtlasProvider *atlasProvider = [[SGAtlasProvider alloc] initWithApiKey:@"660e9157-3c4c-41dd-872d-68c9729ba3bd" secretKey:@"yuy/dWyMTboHe4QUEMXEEKIh+KIXEzj5ArBOT7VlQPtSrAwq9EHCUVVy+VpKtsSPYakf9Llt+a/55oGqBbxc92j4RORGH9ewWqvv/SfAKWCl3i5fw32sWaBP0l24XQ=="];
-        [[SGSDK sharedInstance] setProviderManager:atlasProvider];
+        if ([[SettingsManager sharedManager] providerApiKey]) {
+            NSString *apiKey = [[SettingsManager sharedManager] providerApiKey];
+            NSString *secretKey = [[SettingsManager sharedManager] providerSecretKey];
+            SGAtlasProvider *atlasProvider = [[SGAtlasProvider alloc] initWithApiKey:apiKey secretKey:secretKey];
+            [[SGSDK sharedInstance] setProviderManager:atlasProvider];
+        }
         
         [SGSDK enableWithSuccessHandler:^{
             successBlock();
