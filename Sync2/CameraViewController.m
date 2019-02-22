@@ -72,7 +72,6 @@
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
-    picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
     [self presentViewController:picker animated:YES completion:NULL];
@@ -81,7 +80,6 @@
 - (IBAction)captureImageTapped:(UIButton *)sender {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
-    picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
     [self presentViewController:picker animated:YES completion:NULL];
@@ -166,7 +164,7 @@
     NSString *imageName = @"userImage.jpg";
     self.imagePath = [documentPath URLByAppendingPathComponent:imageName];
     
-    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
     NSData *imageData = UIImageJPEGRepresentation(chosenImage, 1.0f);
     [imageData writeToURL:self.imagePath atomically:YES];
     self.imageView.image = chosenImage;

@@ -3331,7 +3331,7 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BAy-4S-szW">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BAy-4S-szW">
                                                 <rect key="frame" x="20" y="299.33333333333326" width="335" height="450"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="450" id="Vgr-ky-FHm"/>
@@ -6518,7 +6518,7 @@ revised: 5/9/2016</string>
     <inferredMetricsTieBreakers>
         <segue reference="mI5-qK-Wad"/>
         <segue reference="dKW-jL-B8K"/>
-        <segue reference="bdL-UT-Onr"/>
+        <segue reference="mEf-ez-l8r"/>
         <segue reference="oDz-uZ-zzx"/>
         <segue reference="06h-aU-o4p"/>
     </inferredMetricsTieBreakers>
