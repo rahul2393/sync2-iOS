@@ -26,6 +26,11 @@
 			<key>orderHint</key>
 			<integer>18</integer>
 		</dict>
+		<key>EventNotificationContentExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
 		<key>FeedbackNotificationContentExtension.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
