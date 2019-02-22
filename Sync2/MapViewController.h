@@ -14,14 +14,12 @@
 @interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, SGAtlasDelegate, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-    
 @property (weak, nonatomic) IBOutlet UIButton *mapSettingsButton;
-
-- (IBAction)mapSettingsTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *permissionMissingView;
-- (IBAction)openDeviceSettings:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *chooseMapView;
-
+    
+- (IBAction)mapSettingsTapped:(id)sender;
+- (IBAction)openDeviceSettings:(id)sender;
 @end
 
 @protocol MapViewDelegate

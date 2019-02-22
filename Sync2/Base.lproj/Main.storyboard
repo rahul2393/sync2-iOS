@@ -2540,38 +2540,24 @@ Notifications yet.</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glT-tP-kic">
                                         <rect key="frame" x="10" y="11" width="294" height="49"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="gVe-r6-qDO">
+                                                <rect key="frame" x="268" y="20.666666666666671" width="16" height="8"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="8" id="iCA-fA-pg5"/>
+                                                    <constraint firstAttribute="width" constant="16" id="p07-bp-yS1"/>
+                                                </constraints>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="World Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLv-6r-IzO">
                                                 <rect key="frame" x="15" y="16" width="69" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBT-dl-fus">
-                                                <rect key="frame" x="27" y="-40" width="240" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fep-hh-Isy">
-                                                <rect key="frame" x="250" y="2.6666666666666714" width="44" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="44" id="PII-fa-4iY"/>
-                                                    <constraint firstAttribute="width" constant="44" id="ZrV-eM-2YD"/>
-                                                </constraints>
-                                                <state key="normal" image="arrow-down"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="chooseMapTapped:" destination="M6G-YW-ApW" eventType="touchUpInside" id="VcK-fD-Dbw"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="fep-hh-Isy" secondAttribute="trailing" id="A17-cC-NS2"/>
-                                            <constraint firstItem="fep-hh-Isy" firstAttribute="centerY" secondItem="glT-tP-kic" secondAttribute="centerY" id="cD8-UP-wl0"/>
+                                            <constraint firstAttribute="trailing" secondItem="gVe-r6-qDO" secondAttribute="trailing" constant="10" id="Lpl-1L-gSW"/>
+                                            <constraint firstItem="gVe-r6-qDO" firstAttribute="centerY" secondItem="glT-tP-kic" secondAttribute="centerY" id="c75-Kb-xHf"/>
                                             <constraint firstItem="XLv-6r-IzO" firstAttribute="leading" secondItem="glT-tP-kic" secondAttribute="leading" constant="15" id="dEV-Lt-D5g"/>
                                             <constraint firstAttribute="height" constant="49" id="nhy-0R-jnw"/>
                                             <constraint firstItem="XLv-6r-IzO" firstAttribute="centerY" secondItem="glT-tP-kic" secondAttribute="centerY" id="yZZ-6n-DTT"/>
@@ -2628,12 +2614,19 @@ Notifications yet.</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </mapView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zh-sh-E3R">
+                                        <rect key="frame" x="10" y="72" width="355" height="559"/>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="wZf-uv-HVs" secondAttribute="bottom" constant="10" id="4dj-co-yDm"/>
                                     <constraint firstAttribute="trailing" secondItem="wZf-uv-HVs" secondAttribute="trailing" constant="10" id="DAA-qf-wJ0"/>
+                                    <constraint firstItem="1zh-sh-E3R" firstAttribute="leading" secondItem="NPL-vw-5Mz" secondAttribute="leading" constant="10" id="DHa-ai-YXJ"/>
                                     <constraint firstItem="wZf-uv-HVs" firstAttribute="top" secondItem="glT-tP-kic" secondAttribute="bottom" constant="12" id="U1V-Nk-bZZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="1zh-sh-E3R" secondAttribute="trailing" constant="10" id="Unp-5i-n8c"/>
+                                    <constraint firstAttribute="bottom" secondItem="1zh-sh-E3R" secondAttribute="bottom" constant="10" id="d5Y-5p-uAc"/>
+                                    <constraint firstItem="1zh-sh-E3R" firstAttribute="top" secondItem="glT-tP-kic" secondAttribute="bottom" constant="12" id="eos-pb-1Wh"/>
                                     <constraint firstItem="6vP-Mv-nyH" firstAttribute="top" secondItem="NPL-vw-5Mz" secondAttribute="top" constant="11" id="fdp-r0-D5n"/>
                                     <constraint firstAttribute="trailing" secondItem="6vP-Mv-nyH" secondAttribute="trailing" constant="10" id="gKO-Dw-04I"/>
                                     <constraint firstItem="glT-tP-kic" firstAttribute="leading" secondItem="NPL-vw-5Mz" secondAttribute="leading" constant="10" id="hGj-cl-eOm"/>
@@ -2738,9 +2731,11 @@ You need to enable Location Services in your Device Settings for Sync app.</stri
                     </view>
                     <navigationItem key="navigationItem" id="A95-Fs-dqN"/>
                     <connections>
+                        <outlet property="chooseMapView" destination="glT-tP-kic" id="v54-Jj-6WE"/>
                         <outlet property="mapSettingsButton" destination="h5K-2y-mVX" id="spd-r6-jDB"/>
                         <outlet property="mapView" destination="wZf-uv-HVs" id="6Rt-u4-geF"/>
                         <outlet property="permissionMissingView" destination="d1A-f9-nrI" id="L8R-mW-s9G"/>
+                        <outlet property="scrollView" destination="1zh-sh-E3R" id="WNd-Vg-mbG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7p-jI-A3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -6065,7 +6060,7 @@ revised: 5/9/2016</string>
         <!--Choose Map View Controller-->
         <scene sceneID="aQs-rg-Bm3">
             <objects>
-                <viewController id="xHe-oy-Xez" customClass="ChooseMapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseMapViewControllerIdentifier" id="xHe-oy-Xez" customClass="ChooseMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jbv-wl-aUr"/>
                         <viewControllerLayoutGuide type="bottom" id="BBe-la-mZD"/>
@@ -6096,6 +6091,9 @@ revised: 5/9/2016</string>
                                                     <real key="value" value="3"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="selectMapTapped:" destination="xHe-oy-Xez" eventType="touchUpInside" id="oft-Gp-avM"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -6511,7 +6509,7 @@ revised: 5/9/2016</string>
         <image name="no-notification" width="80" height="80"/>
         <image name="push-graphic" width="240" height="240"/>
         <image name="rules-green-circle" width="12" height="12"/>
-        <image name="sixgill-logo" width="165" height="120"/>
+        <image name="sixgill-logo" width="325" height="95"/>
         <image name="spinner" width="48" height="48"/>
         <image name="sync-logo" width="462" height="195"/>
         <image name="welcome-graphic" width="255" height="240"/>
