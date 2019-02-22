@@ -35,10 +35,6 @@
     
     self.checkBoxSelected = false;
     
-    self.emailAddressField.text = @"abhay@hotcocoasoftware.com";
-    self.passwordField.text = @"password123";
-    self.phoneNumberField.text = @"1234";
-    
     Environment *env = [[EnvironmentManager sharedManager] environments][0];
     self.selectedURLLabel.text = env.senseURL;
     self.forgotPasswordURL = env.forgotPasswordURL;
