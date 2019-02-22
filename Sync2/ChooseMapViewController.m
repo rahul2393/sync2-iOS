@@ -8,10 +8,9 @@
 
 #import "ChooseMapViewController.h"
 #import "ChooseMapTableViewCell.h"
+#import "MapViewController.h"
 
 @interface ChooseMapViewController ()
-
-@property (nonatomic, readwrite) NSInteger selectedChannelIx;
 @end
 
 @implementation ChooseMapViewController
@@ -29,8 +28,6 @@
     [self.selectMapButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self setButtonEnabled:NO];
     
-    self.selectedChannelIx = -1;
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -42,7 +39,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.floorplan ? 2 : 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,21 +53,10 @@
     if (cell == nil) {
         cell = [[ChooseMapTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ChooseMapTableViewCellIdentifier"];
     }
-    switch (indexPath.row) {
-        case 0: {
-            cell.nameLabel.text = @"World Map";
-            break;
-        }
-        case 1: {
-            cell.nameLabel.text = @"Office: Floor 1";
-            break;
-        }
-        case 2: {
-            cell.nameLabel.text = @"Office: Floor 2";
-            break;
-        }
-        default:
-            break;
+    if (indexPath.row == 0) {
+        cell.nameLabel.text = @"World Map";
+    } else {
+        cell.nameLabel.text = self.floorplan.name;
     }
     cell.selectedImage.image = (self.selectedChannelIx == indexPath.row) ? [UIImage imageNamed: @"selectedChannelCell"] : [UIImage imageNamed: @"deSelectedChannelCell"];
     
@@ -90,6 +76,17 @@
 
 -(void) setButtonEnabled:(BOOL)enabled{
     self.selectMapButton.enabled = enabled;
+}
+
+- (IBAction)selectMapTapped:(UIButton *)sender {
+    
+    if (self.selectedChannelIx == 0) {
+        [self.mapViewDelegate showWorldMap:YES];
+    } else {
+        [self.mapViewDelegate showWorldMap:NO];
+    }
+    
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 @end
