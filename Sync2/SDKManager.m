@@ -112,7 +112,7 @@
     
     [[SGSDK sharedInstance] startWithAPIKey:apiKey andConfig:config andSuccessHandler:^{
         
-        SGAtlasProvider *atlasProvider = [[SGAtlasProvider alloc] initWithApiKey:@"840ff9ee-8a33-4d06-8cc0-d6f25984d9e1" secretKey:@"ONgeMu8bgEl1OI+0B3Z+B6cOSKJQsgCy2N4Ytiw+siiZEcm6MS3FKjSHc0BrxHlcH1MT7J2rbdFknpLMWnkTTbKgdfMA5z7v48mJB9XLbU8buIE1hJqboxuFblh8mg=="];
+        SGAtlasProvider *atlasProvider = [[SGAtlasProvider alloc] initWithApiKey:@"" secretKey:@""];
         [[SGSDK sharedInstance] setProviderManager:atlasProvider];
         
         [SGSDK enableWithSuccessHandler:^{
