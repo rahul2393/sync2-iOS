@@ -226,22 +226,26 @@
     
     [SGSDK showNotificationsFromOffset:self.currentOffset andLimit:(NSInteger)kLimit andSuccessHandler:^(NotificationResponse *notificationResponse) {
         
-        [self.tableView.refreshControl endRefreshing];
-        
         self.hasMoreData = notificationResponse.hasMoreData;
         [self.notifications addObjectsFromArray:notificationResponse.notificationsArray];
         
-        if (self.notifications.count == 0) {
-            self.tableView.hidden = true;
-            self.noNotificationsView.hidden = false;
-        } else {
-            self.tableView.hidden = false;
-            self.noNotificationsView.hidden = true;
-        }
-        
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self.tableView.refreshControl endRefreshing];
+            
+            if (self.notifications.count == 0) {
+                self.tableView.hidden = true;
+                self.noNotificationsView.hidden = false;
+            } else {
+                self.tableView.hidden = false;
+                self.noNotificationsView.hidden = true;
+            }
+            
+            [self.tableView reloadData];
+        });
     } andFailureHandler:^(NSString *failureMsg) {
-        [self.tableView.refreshControl endRefreshing];
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self.tableView.refreshControl endRefreshing];
+        });
     }];
 }
 
